@@ -136,7 +136,7 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(756, 772);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(756, 802);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button5
@@ -177,7 +177,7 @@
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel8);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 64);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(745, 666);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(745, 701);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // dataGridView1
@@ -213,7 +213,7 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 395);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(730, 47);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(730, 53);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // comboBox1
@@ -313,10 +313,10 @@
             this.flowLayoutPanel5.Controls.Add(this.jumps2);
             this.flowLayoutPanel5.Controls.Add(this.label8);
             this.flowLayoutPanel5.Controls.Add(this.triples2);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 450);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 456);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(730, 47);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(730, 53);
             this.flowLayoutPanel5.TabIndex = 9;
             // 
             // comboBox2
@@ -409,10 +409,10 @@
             this.flowLayoutPanel6.Controls.Add(this.jumps3);
             this.flowLayoutPanel6.Controls.Add(this.label11);
             this.flowLayoutPanel6.Controls.Add(this.triples3);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 505);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 517);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(730, 47);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(730, 53);
             this.flowLayoutPanel6.TabIndex = 9;
             // 
             // comboBox3
@@ -508,10 +508,10 @@
             this.flowLayoutPanel7.Controls.Add(this.jumps4);
             this.flowLayoutPanel7.Controls.Add(this.label14);
             this.flowLayoutPanel7.Controls.Add(this.triples4);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 560);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 578);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(730, 47);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(730, 53);
             this.flowLayoutPanel7.TabIndex = 9;
             // 
             // comboBox4
@@ -609,10 +609,10 @@
             this.flowLayoutPanel8.Controls.Add(this.jumps5);
             this.flowLayoutPanel8.Controls.Add(this.label15);
             this.flowLayoutPanel8.Controls.Add(this.triples5);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 615);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 639);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(730, 47);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(730, 60);
             this.flowLayoutPanel8.TabIndex = 9;
             // 
             // comboBox5
@@ -698,9 +698,11 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.flowLayoutPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.flowLayoutPanel3.Controls.Add(this.button3);
             this.flowLayoutPanel3.Controls.Add(this.button4);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 736);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 771);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(472, 32);
             this.flowLayoutPanel3.TabIndex = 6;
@@ -826,7 +828,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(774, 789);
+            this.ClientSize = new System.Drawing.Size(774, 813);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Stepper";

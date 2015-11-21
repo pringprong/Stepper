@@ -41,11 +41,8 @@ namespace Stepper
             for (int i = 0; i < arrows_per_measure; i++)
             {
                 file.WriteLine(steps[i]);
-                if (((i + 1) % arrows_per_measure) == 0)
-                {
-                    file.WriteLine(",");
-                }
             }
+            file.WriteLine(",");
         }
 
         public string[] generateSteps(string[] foot_laststep)

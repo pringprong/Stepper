@@ -1,6 +1,6 @@
 ﻿namespace Stepper
 {
-    partial class Form1
+    partial class Stepper
     {
         /// <summary>
         /// Required designer variable.
@@ -78,6 +78,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,7 +103,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(562, 3);
+            this.button1.Location = new System.Drawing.Point(562, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 0;
@@ -111,6 +113,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.textBox1);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
@@ -118,20 +121,20 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(810, 740);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(810, 772);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Location = new System.Drawing.Point(3, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(553, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "C:\\Games\\StepMania 5\\Songs\\HIIT1";
+            this.textBox1.Text = "C:\\Games\\StepMania 5\\Songs\\Cardio";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(675, 3);
+            this.button2.Location = new System.Drawing.Point(675, 35);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(73, 23);
             this.button2.TabIndex = 2;
@@ -147,7 +150,7 @@
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel8);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 32);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 64);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(796, 666);
             this.flowLayoutPanel2.TabIndex = 3;
@@ -653,7 +656,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.button3);
             this.flowLayoutPanel3.Controls.Add(this.button4);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 704);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 736);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(472, 32);
             this.flowLayoutPanel3.TabIndex = 6;
@@ -678,15 +681,27 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Form1
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(780, 26);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Instructions";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // Stepper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 762);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(831, 790);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Stepper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Stepper";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -768,6 +783,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown jumps5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }
 }

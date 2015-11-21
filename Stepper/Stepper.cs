@@ -12,13 +12,14 @@ using System.Text.RegularExpressions;
 
 namespace Stepper
 {
-    public partial class Form1 : Form
+    public partial class Stepper : Form
     {
 
         private List<Song> songs;
         private int beats_per_measure = 4;
         Random r;
-        public Form1()
+        Instructions i;
+        public Stepper()
         {
             InitializeComponent();
             songs = new List<Song>();
@@ -33,6 +34,8 @@ namespace Stepper
             comboBox5.SelectedIndex = 4;
             comboBox5.Refresh();
             r = new Random();
+            i = new Instructions();
+            i.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -253,6 +256,11 @@ namespace Stepper
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            i.Show();
         }
 
     

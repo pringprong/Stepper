@@ -209,7 +209,7 @@ namespace Stepper
         {
              songs.ForEach(delegate(Song s)
             {
-                string timestamp = DateTime.Now.ToString("yyyyMMddhhmm");
+                string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
                 string old_path = s.getPath();
                 Regex alter_extension = new Regex("\\.sm");
                 string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
@@ -225,27 +225,27 @@ namespace Stepper
                 });
 
                 Noteset note1 = new Noteset(s.getNumMeasures(), (System.String)comboBox1.SelectedItem, beats_per_measure,
-                    alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)jumps.Value, r);
+                    alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)jumps.Value, r, (int)triples.Value);
                 note1.generateSteps();
                 note1.writeSteps(file);
 
                 Noteset note2 = new Noteset(s.getNumMeasures(), (System.String)comboBox2.SelectedItem, beats_per_measure,
-                    alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)jumps2.Value, r);
+                    alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)jumps2.Value, r, (int)triples2.Value);
                 note2.generateSteps();
                 note2.writeSteps(file);
 
                 Noteset note3 = new Noteset(s.getNumMeasures(), (System.String)comboBox3.SelectedItem, beats_per_measure,
-                    alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)jumps3.Value, r);
+                    alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)jumps3.Value, r, (int)triples3.Value);
                 note3.generateSteps();
                 note3.writeSteps(file);
 
                 Noteset note4 = new Noteset(s.getNumMeasures(), (System.String)comboBox4.SelectedItem, beats_per_measure,
-                    alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)jumps4.Value, r);
+                    alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)jumps4.Value, r, (int)triples4.Value);
                 note4.generateSteps();
                 note4.writeSteps(file);
 
                 Noteset note5 = new Noteset(s.getNumMeasures(), (System.String)comboBox5.SelectedItem, beats_per_measure,
-                    alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)jumps5.Value, r);
+                    alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)jumps5.Value, r, (int)triples5.Value);
                 note5.generateSteps();
                 note5.writeSteps(file);
 
@@ -263,7 +263,6 @@ namespace Stepper
         {
             i.Show();
         }
-
-    
+   
      }
 }

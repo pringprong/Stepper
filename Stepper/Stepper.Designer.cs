@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,6 +43,7 @@
             this.stepFill = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.jumps = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.alternate_foot2 = new System.Windows.Forms.CheckBox();
@@ -78,8 +80,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button5 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.triples = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.triples2 = new System.Windows.Forms.NumericUpDown();
+            this.triples3 = new System.Windows.Forms.NumericUpDown();
+            this.triples4 = new System.Windows.Forms.NumericUpDown();
+            this.triples5 = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,6 +109,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.stepFill5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumps5)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.triples)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples5)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -121,8 +136,18 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(810, 772);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(756, 772);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(745, 26);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Instructions";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
@@ -152,7 +177,7 @@
             this.flowLayoutPanel2.Controls.Add(this.flowLayoutPanel8);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 64);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(796, 666);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(745, 666);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // dataGridView1
@@ -170,7 +195,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 384);
             this.dataGridView1.TabIndex = 0;
             // 
             // flowLayoutPanel4
@@ -183,10 +208,12 @@
             this.flowLayoutPanel4.Controls.Add(this.stepFill);
             this.flowLayoutPanel4.Controls.Add(this.label3);
             this.flowLayoutPanel4.Controls.Add(this.jumps);
+            this.flowLayoutPanel4.Controls.Add(this.label1);
+            this.flowLayoutPanel4.Controls.Add(this.triples);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 395);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(777, 47);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(730, 47);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // comboBox1
@@ -265,6 +292,15 @@
             this.jumps.TabIndex = 8;
             this.jumps.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Percent half-beat steps including triples:";
+            // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -275,10 +311,12 @@
             this.flowLayoutPanel5.Controls.Add(this.stepFill2);
             this.flowLayoutPanel5.Controls.Add(this.label6);
             this.flowLayoutPanel5.Controls.Add(this.jumps2);
+            this.flowLayoutPanel5.Controls.Add(this.label8);
+            this.flowLayoutPanel5.Controls.Add(this.triples2);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 450);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(777, 47);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(730, 47);
             this.flowLayoutPanel5.TabIndex = 9;
             // 
             // comboBox2
@@ -369,10 +407,12 @@
             this.flowLayoutPanel6.Controls.Add(this.stepFill3);
             this.flowLayoutPanel6.Controls.Add(this.label7);
             this.flowLayoutPanel6.Controls.Add(this.jumps3);
+            this.flowLayoutPanel6.Controls.Add(this.label11);
+            this.flowLayoutPanel6.Controls.Add(this.triples3);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 505);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(777, 47);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(730, 47);
             this.flowLayoutPanel6.TabIndex = 9;
             // 
             // comboBox3
@@ -466,10 +506,12 @@
             this.flowLayoutPanel7.Controls.Add(this.stepFill4);
             this.flowLayoutPanel7.Controls.Add(this.label10);
             this.flowLayoutPanel7.Controls.Add(this.jumps4);
+            this.flowLayoutPanel7.Controls.Add(this.label14);
+            this.flowLayoutPanel7.Controls.Add(this.triples4);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 560);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(777, 47);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(730, 47);
             this.flowLayoutPanel7.TabIndex = 9;
             // 
             // comboBox4
@@ -565,10 +607,12 @@
             this.flowLayoutPanel8.Controls.Add(this.stepFill5);
             this.flowLayoutPanel8.Controls.Add(this.label13);
             this.flowLayoutPanel8.Controls.Add(this.jumps5);
+            this.flowLayoutPanel8.Controls.Add(this.label15);
+            this.flowLayoutPanel8.Controls.Add(this.triples5);
             this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 615);
             this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(777, 47);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(730, 47);
             this.flowLayoutPanel8.TabIndex = 9;
             // 
             // comboBox5
@@ -667,7 +711,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(198, 23);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Overwrite Stepfile";
+            this.button3.Text = "Overwrite Stepfiles";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -681,22 +725,108 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // triples
             // 
-            this.button5.Location = new System.Drawing.Point(3, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(780, 26);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Instructions";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.triples.Location = new System.Drawing.Point(203, 30);
+            this.triples.Name = "triples";
+            this.triples.Size = new System.Drawing.Size(42, 20);
+            this.triples.TabIndex = 10;
+            this.triples.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(194, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Percent half-beat steps including triples:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(194, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Percent half-beat steps including triples:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 27);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(194, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Percent half-beat steps including triples:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(194, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Percent half-beat steps including triples:";
+            // 
+            // triples2
+            // 
+            this.triples2.Location = new System.Drawing.Point(203, 30);
+            this.triples2.Name = "triples2";
+            this.triples2.Size = new System.Drawing.Size(42, 20);
+            this.triples2.TabIndex = 11;
+            this.triples2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.triples2.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // triples3
+            // 
+            this.triples3.Location = new System.Drawing.Point(203, 30);
+            this.triples3.Name = "triples3";
+            this.triples3.Size = new System.Drawing.Size(42, 20);
+            this.triples3.TabIndex = 11;
+            this.triples3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.triples3.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // triples4
+            // 
+            this.triples4.Location = new System.Drawing.Point(203, 30);
+            this.triples4.Name = "triples4";
+            this.triples4.Size = new System.Drawing.Size(42, 20);
+            this.triples4.TabIndex = 11;
+            this.triples4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.triples4.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // triples5
+            // 
+            this.triples5.Location = new System.Drawing.Point(203, 30);
+            this.triples5.Name = "triples5";
+            this.triples5.Size = new System.Drawing.Size(42, 20);
+            this.triples5.TabIndex = 11;
+            this.triples5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.triples5.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             // 
             // Stepper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(831, 790);
+            this.ClientSize = new System.Drawing.Size(774, 789);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Stepper";
@@ -727,6 +857,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.stepFill5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumps5)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.triples)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triples5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -785,6 +920,16 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown triples;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown triples2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown triples3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown triples4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown triples5;
 
     }
 }

@@ -209,13 +209,14 @@ namespace Stepper
         {
              songs.ForEach(delegate(Song s)
             {
-                // change the timestamp to just yyyyMMDDhhmm and check if the file exists before moving.
-                
-                string timestamp = DateTime.Now.ToString("yyyyMMddhhmmss");
+                string timestamp = DateTime.Now.ToString("yyyyMMddhhmm");
                 string old_path = s.getPath();
                 Regex alter_extension = new Regex("\\.sm");
-                string backup_path = alter_extension.Replace(old_path, ".sm.bak." + timestamp);
-                System.IO.File.Move(old_path, backup_path);
+                string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
+                if (!File.Exists(backup_path))
+                {
+                    System.IO.File.Move(old_path, backup_path);
+                }
                 System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
                 List<string> header_lines = s.getHeader();
                 header_lines.ForEach(delegate(string header_line)

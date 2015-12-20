@@ -18,9 +18,12 @@ namespace Stepper
         bool repeat_arrow; // whether repeats of exactly the same note are allowed
         int stepfill; // the percentage of notes that are not "0000" (which is no arrow at all"
         int jumps; // the percentage of notes that are jumps
+        int onBeat; // the percentage of notes that are on the beat only, with no half-beat
         Random r;
         Measure[] measures;
-        int triples;
+        int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
+        bool triples_on_both_1_and_3;
+        bool quintuples_either_on_1_or_2; 
 
         public Noteset()
         {
@@ -28,7 +31,8 @@ namespace Stepper
         }
         
         public Noteset(int measure, string interface_lvl, int beats_p_measure, bool alt_foot, bool repeat_arrows, 
-            int percent_stepfill, int percent_jumps, Random random, int percent_triples) {
+            int percent_stepfill, int percent_onbeat, int percent_jumps, Random random, int percent_quintuples,
+            bool triples_on_1_and_3, bool quintuples_on_1_or_2) {
             num_measures = measure;
             interface_level = interface_lvl;
             beats_per_measure = beats_p_measure;
@@ -38,7 +42,10 @@ namespace Stepper
             stepfill = percent_stepfill;
             jumps = percent_jumps;
             r = random;
-            triples = percent_triples;
+            quintuples = percent_quintuples;
+            onBeat = percent_onbeat;
+            triples_on_both_1_and_3 = triples_on_1_and_3;
+            quintuples_either_on_1_or_2 = quintuples_on_1_or_2;
 
             difficulty = 1;
             if (interface_level.Equals("Novice"))
@@ -87,7 +94,8 @@ namespace Stepper
             string[] foot_laststep = new string[] { "left", "0000" };
             for (int i = 0; i < num_measures; i++)
             {
-                Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, jumps, r, triples);
+                Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                    triples_on_both_1_and_3, quintuples_either_on_1_or_2);
                 foot_laststep = m.generateSteps(foot_laststep);
                 measures[i] = m;
             }

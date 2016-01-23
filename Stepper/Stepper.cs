@@ -19,6 +19,8 @@ namespace Stepper
         private int beats_per_measure = 4;
         Random r;
         Instructions i;
+        private bool folderTextChanged = false;
+        private ToolTip toolTip1;
         public Stepper()
         {
             InitializeComponent();
@@ -26,14 +28,104 @@ namespace Stepper
             r = new Random();
             i = new Instructions();
             i.Hide();
+            toolTip1 = new ToolTip();
+            // Set up the delays for the ToolTip.
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 200;
+            toolTip1.ReshowDelay = 200;
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip1.ShowAlways = true;
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(this.folderChooser, "Open folder chooser");
+            toolTip1.SetToolTip(this.getInfo, "Click here to get some information about the song files in the selected folder");
+            toolTip1.SetToolTip(this.overwriteStepfiles, "Overwrite the stepfiles in the selected folder according to the settings below");
+            toolTip1.SetToolTip(this.instructions, "Open instructions window");
+            toolTip1.SetToolTip(this.close, "Close this application");
+            toolTip1.SetToolTip(this.currentFolder, "The currently selected folder");
+
+            toolTip1.SetToolTip(this.level, "Settings for the \"Novice\" level in Stepmania");
+            toolTip1.SetToolTip(this.level2, "Settings for the \"Easy\" level in Stepmania");
+            toolTip1.SetToolTip(this.level3, "Settings for the \"Medium\" level in Stepmania");
+            toolTip1.SetToolTip(this.level4, "Settings for the \"Hard\" level in Stepmania");
+            toolTip1.SetToolTip(this.level5, "Settings for the \"Expert\" level in Stepmania");
+
+            toolTip1.SetToolTip(this.alternate_foot, "Check if you want single steps to always alternate between left and right foot");
+            toolTip1.SetToolTip(this.alternate_foot2, "Check if you want single steps to always alternate between left and right foot");
+            toolTip1.SetToolTip(this.alternate_foot3, "Check if you want single steps to always alternate between left and right foot");
+            toolTip1.SetToolTip(this.alternate_foot4, "Check if you want single steps to always alternate between left and right foot");
+            toolTip1.SetToolTip(this.alternate_foot5, "Check if you want single steps to always alternate between left and right foot");
+
+            toolTip1.SetToolTip(this.stepFill_trackbar, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill_trackbar2, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill2, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill_trackbar3, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill3, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill_trackbar4, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill4, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill_trackbar5, "Percentage of beats that should have an arrow");
+            toolTip1.SetToolTip(this.stepFill5, "Percentage of beats that should have an arrow");
+
+            toolTip1.SetToolTip(this.onBeat, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeatTrackbar, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeat2, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeatTrackbar2, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeat3, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeatTrackbar3, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeat4, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeatTrackbar4, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeat5, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+            toolTip1.SetToolTip(this.onBeatTrackbar5, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
+
+            toolTip1.SetToolTip(this.jumps, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumpsTrackbar, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumps2, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumpsTrackbar2, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumps3, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumpsTrackbar3, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumps4, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumpsTrackbar4, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumps5, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+            toolTip1.SetToolTip(this.jumpsTrackbar5, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
+
+            toolTip1.SetToolTip(this.quintuples, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuplesTrackbar, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuples2, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuplesTrackbar2, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuples3, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuplesTrackbar3, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuples4, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuplesTrackbar4, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuples5, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+            toolTip1.SetToolTip(this.quintuplesTrackbar5, "Of beats with half-beat arrows, percentage of quintuples vs triples");
+
+            toolTip1.SetToolTip(this.arrow_repeat, "Allow the same arrow twice in a row");
+            toolTip1.SetToolTip(this.arrow_repeat2, "Allow the same arrow twice in a row");
+            toolTip1.SetToolTip(this.arrow_repeat3, "Allow the same arrow twice in a row");
+            toolTip1.SetToolTip(this.arrow_repeat4, "Allow the same arrow twice in a row");
+            toolTip1.SetToolTip(this.arrow_repeat5, "Allow the same arrow twice in a row");
+
+            toolTip1.SetToolTip(this.triples_on_1_and_3, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.triples_on_1_and_32, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.triples_on_1_and_33, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.triples_on_1_and_34, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.triples_on_1_and_35, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
+
+            toolTip1.SetToolTip(this.quintuples_on_1_or_2, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.quintuples_on_1_or_22, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.quintuples_on_1_or_23, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void selectFolder_Click(object sender, EventArgs e)
         {
             string default_folder = "C:\\Games\\StepMania 5\\Songs";
-            if ((Directory.Exists(textBox1.Text)))
+            if ((Directory.Exists(currentFolder.Text)))
             {
-                folderBrowserDialog1.SelectedPath = textBox1.Text;
+                folderBrowserDialog1.SelectedPath = currentFolder.Text;
             }
             else if ((Directory.Exists(default_folder)))
             {
@@ -46,12 +138,20 @@ namespace Stepper
             var result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                textBox1.Text = folderBrowserDialog1.SelectedPath;
-             }
+                currentFolder.Text = folderBrowserDialog1.SelectedPath;
+                folderTextChanged = true;
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void getInfo_Click(object sender, EventArgs e)
         {
+            songs.Clear();
+            if (!(Directory.Exists(currentFolder.Text)))
+            {
+                MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
+                    return;
+                }
+
             Regex bpms = new Regex("^\\s*#BPMS:\\s*");
             Regex notes = new Regex("^\\s*#NOTES\\s*");
             Regex stops = new Regex("^\\s*#STOPS:\\s*");
@@ -66,23 +166,39 @@ namespace Stepper
             List<string> header_text = new List<string>();
             bool is_header = true;
 
-            string[] dirs = Directory.GetDirectories(@textBox1.Text);
+            string[] dirs = Directory.GetDirectories(currentFolder.Text);
             var fileCount = dirs.Count();
-            dataGridView1.ColumnCount = 7;
-            dataGridView1.Columns[0].HeaderText = "Song Path";
-            dataGridView1.Columns[1].HeaderText = "Min BPM";
-            dataGridView1.Columns[2].HeaderText = "Max BPM";
-            dataGridView1.Columns[3].HeaderText = "# BPM Changes";
-            dataGridView1.Columns[4].HeaderText = "# Stops";
-            dataGridView1.Columns[5].HeaderText = "# Note Sets";
-            dataGridView1.Columns[6].HeaderText = "# Measures";
-            dataGridView1.RowCount = fileCount;
-            DataGridViewColumnCollection coll = dataGridView1.Columns;
+            songInfo.ColumnCount = 7;
+            songInfo.Columns[0].HeaderText = "Song Path";
+            songInfo.Columns[1].HeaderText = "Min BPM";
+            songInfo.Columns[2].HeaderText = "Max BPM";
+            songInfo.Columns[3].HeaderText = "# BPM Changes";
+            songInfo.Columns[4].HeaderText = "# Stops";
+            songInfo.Columns[5].HeaderText = "# Arrow Sets";
+            songInfo.Columns[6].HeaderText = "# Measures";
+            songInfo.Columns[0].Width = 510;
+            songInfo.Columns[1].Width = 100;
+            songInfo.Columns[2].Width = 100;
+            songInfo.Columns[3].Width = 130;
+            songInfo.Columns[4].Width = 100;
+            songInfo.Columns[5].Width = 100;
+            songInfo.Columns[6].Width = 100;
+            songInfo.Columns[0].ToolTipText = "Complete path name of each Stepmania song folder";
+            songInfo.Columns[1].ToolTipText = "Minimum beats per minute of each song";
+            songInfo.Columns[2].ToolTipText = "Maximum beats per minute of each song";
+            songInfo.Columns[3].ToolTipText = "Number of times the beats per minute changes during each song";
+            songInfo.Columns[4].ToolTipText = "Number of stops during each song";
+            songInfo.Columns[5].ToolTipText = "Number of sets of arrows for each song, including Single, Double, and Solo. This program will produce 5 Single sets";
+            songInfo.Columns[6].ToolTipText = "Range of number of measures found in each set of arrows. There are 4 beats per measure.";
+
+
+            songInfo.RowCount = fileCount;
+            DataGridViewColumnCollection coll = songInfo.Columns;
             DataGridViewColumn c = coll[0];
             for (int i = 0; i < fileCount; i++) 
             {
                 note_sets = 0;
-                dataGridView1[0, i].Value = dirs[i];
+                songInfo[0, i].Value = dirs[i];
                 string[] files = Directory.GetFiles(dirs[i], "*.sm");
                 if (files.Count() > 0)
                 {
@@ -127,9 +243,9 @@ namespace Stepper
                                 int num = trimmed.Count();
                                 num--;
 
-                                dataGridView1[1, i].Value = trimmed.Min();
-                                dataGridView1[2, i].Value = trimmed.Max();
-                                dataGridView1[3, i].Value = num;
+                                songInfo[1, i].Value = trimmed.Min();
+                                songInfo[2, i].Value = trimmed.Max();
+                                songInfo[3, i].Value = num;
                             }
 
                             if (stops.Match(line).Success)
@@ -156,7 +272,7 @@ namespace Stepper
                                 {
                                     num = 0;
                                 }
-                                dataGridView1[4, i].Value = num;
+                                songInfo[4, i].Value = num;
                             }
 
                             if (notes.Match(line).Success)
@@ -191,83 +307,104 @@ namespace Stepper
 
                         } while (true);
                     } // end using StreamReader; end of song file
-                     dataGridView1[5, i].Value = note_sets;
+                     songInfo[5, i].Value = note_sets;
                      if (measures_list.Min() != measures_list.Max())
                     {
-                        dataGridView1[6, i].Value = measures_list.Min() + "-" + measures_list.Max();
+                        songInfo[6, i].Value = measures_list.Min() + "-" + measures_list.Max();
                     } else {
-                        dataGridView1[6, i].Value = measures_list.Min();
+                        songInfo[6, i].Value = measures_list.Min();
                     }
-                    dataGridView1.ClearSelection();
+                    songInfo.ClearSelection();
                     Song s = new Song(files[0], header_text, measures_list.Max());
                     songs.Add(s);
                 }
 
-
             } // end for (int i = 0; i < fileCount; i++) 
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-             songs.ForEach(delegate(Song s)
+            if (songs.Count == 0)
             {
-                string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
-                string old_path = s.getPath();
-                Regex alter_extension = new Regex("\\.sm");
-                string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
-                if (!File.Exists(backup_path))
-                {
-                    System.IO.File.Move(old_path, backup_path);
-                }
-                System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
-                List<string> header_lines = s.getHeader();
-                header_lines.ForEach(delegate(string header_line)
-                {
-                    file.WriteLine(header_line);
-                });
+                MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
+                return;
+            }
 
-                Noteset note1 = new Noteset(s.getNumMeasures(), level.Text, beats_per_measure,
-                    alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
-                    (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
-                note1.generateSteps();
-                note1.writeSteps(file);
-
-                Noteset note2 = new Noteset(s.getNumMeasures(), level2.Text, beats_per_measure,
-                    alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
-                    (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
-                note2.generateSteps();
-                note2.writeSteps(file);
-
-                Noteset note3 = new Noteset(s.getNumMeasures(), level3.Text, beats_per_measure,
-                   alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
-                   (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
-                note3.generateSteps();
-                note3.writeSteps(file);
-
-                Noteset note4 = new Noteset(s.getNumMeasures(), level4.Text, beats_per_measure,
-                    alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
-                    (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
-                note4.generateSteps();
-                note4.writeSteps(file);
-
-                Noteset note5 = new Noteset(s.getNumMeasures(), level5.Text, beats_per_measure,
-                    alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
-                    (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
-                note5.generateSteps();
-                note5.writeSteps(file);
-
-
-                file.Close();
-            });
+            folderTextChanged = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void overwriteStepfiles_Click(object sender, EventArgs e)
+        {
+            if (songs.Count == 0)
+            {
+                MessageBox.Show("Please choose a Stepmania song group folder and click \"Get info\"", "Click Get info");
+                return;
+            }
+            if (folderTextChanged)
+            {
+                MessageBox.Show("The folder name has changed. Please click \"Get info\" to update the song info table", "Click Get info");
+                return;
+            }
+            DialogResult result1 = MessageBox.Show("Are you sure you want to overwrite the stepfiles in " + currentFolder.Text + " ? This action cannot be undone.",
+                "Warning: Overwriting stepfiles",
+                MessageBoxButtons.YesNo);
+            if (result1 == DialogResult.Yes)
+            {
+                songs.ForEach(delegate(Song s)
+                {
+                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
+                    string old_path = s.getPath();
+                    Regex alter_extension = new Regex("\\.sm");
+                    string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
+                    if (!File.Exists(backup_path))
+                    {
+                        System.IO.File.Move(old_path, backup_path);
+                    }
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
+                    List<string> header_lines = s.getHeader();
+                    header_lines.ForEach(delegate(string header_line)
+                    {
+                        file.WriteLine(header_line);
+                    });
+
+                    Noteset note1 = new Noteset(s.getNumMeasures(), level.Text, beats_per_measure,
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
+                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                    note1.generateSteps();
+                    note1.writeSteps(file);
+
+                    Noteset note2 = new Noteset(s.getNumMeasures(), level2.Text, beats_per_measure,
+                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
+                        (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                    note2.generateSteps();
+                    note2.writeSteps(file);
+
+                    Noteset note3 = new Noteset(s.getNumMeasures(), level3.Text, beats_per_measure,
+                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
+                       (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                    note3.generateSteps();
+                    note3.writeSteps(file);
+
+                    Noteset note4 = new Noteset(s.getNumMeasures(), level4.Text, beats_per_measure,
+                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
+                        (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                    note4.generateSteps();
+                    note4.writeSteps(file);
+
+                    Noteset note5 = new Noteset(s.getNumMeasures(), level5.Text, beats_per_measure,
+                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
+                        (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                    note5.generateSteps();
+                    note5.writeSteps(file);
+
+
+                    file.Close();
+                });
+            }
+        }
+
+        private void close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void instructions_Click(object sender, EventArgs e)
         {
             i.Show();
         }
@@ -472,6 +609,11 @@ namespace Stepper
         private void quintuples5_ValueChanged(object sender, EventArgs e)
         {
             quintuplesTrackbar5.Value = Convert.ToInt32(quintuples5.Value);
+        }
+
+        private void currentFolder_TextChanged(object sender, EventArgs e)
+        {
+            folderTextChanged = true;
         }
 
      }

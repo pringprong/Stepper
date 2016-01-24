@@ -454,7 +454,7 @@
             this.quintuplesTrackbar5.Size = new System.Drawing.Size(203, 45);
             this.quintuplesTrackbar5.TabIndex = 14;
             this.quintuplesTrackbar5.TickFrequency = 10;
-            this.quintuplesTrackbar5.Value = 100;
+            this.quintuplesTrackbar5.Value = 75;
             this.quintuplesTrackbar5.ValueChanged += new System.EventHandler(this.quintuplesTrackbar5_ValueChanged);
             // 
             // quintuples5
@@ -465,7 +465,7 @@
             this.quintuples5.TabIndex = 8;
             this.quintuples5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.quintuples5.Value = new decimal(new int[] {
-            100,
+            75,
             0,
             0,
             0});
@@ -520,7 +520,7 @@
             this.jumpsTrackbar5.Size = new System.Drawing.Size(203, 45);
             this.jumpsTrackbar5.TabIndex = 14;
             this.jumpsTrackbar5.TickFrequency = 10;
-            this.jumpsTrackbar5.Value = 25;
+            this.jumpsTrackbar5.Value = 30;
             this.jumpsTrackbar5.ValueChanged += new System.EventHandler(this.jumpsTrackbar5_ValueChanged);
             // 
             // jumps5
@@ -531,7 +531,7 @@
             this.jumps5.TabIndex = 8;
             this.jumps5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.jumps5.Value = new decimal(new int[] {
-            25,
+            30,
             0,
             0,
             0});
@@ -544,6 +544,11 @@
             this.onBeat5.Size = new System.Drawing.Size(42, 20);
             this.onBeat5.TabIndex = 11;
             this.onBeat5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeat5.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             this.onBeat5.ValueChanged += new System.EventHandler(this.onBeat5_ValueChanged);
             // 
             // label50
@@ -573,6 +578,7 @@
             this.onBeatTrackbar5.Size = new System.Drawing.Size(45, 110);
             this.onBeatTrackbar5.TabIndex = 2;
             this.onBeatTrackbar5.TickFrequency = 10;
+            this.onBeatTrackbar5.Value = 25;
             this.onBeatTrackbar5.ValueChanged += new System.EventHandler(this.onBeatTrackbar5_ValueChanged);
             // 
             // panel26
@@ -655,6 +661,7 @@
             // 
             // stepFill_trackbar5
             // 
+            this.stepFill_trackbar5.BackColor = System.Drawing.SystemColors.Control;
             this.stepFill_trackbar5.Location = new System.Drawing.Point(11, 30);
             this.stepFill_trackbar5.Maximum = 100;
             this.stepFill_trackbar5.Name = "stepFill_trackbar5";
@@ -668,6 +675,7 @@
             // level5
             // 
             this.level5.AutoSize = true;
+            this.level5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.level5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.level5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.level5.Location = new System.Drawing.Point(15, 10);
@@ -768,7 +776,6 @@
             this.quintuplesTrackbar4.Size = new System.Drawing.Size(203, 45);
             this.quintuplesTrackbar4.TabIndex = 14;
             this.quintuplesTrackbar4.TickFrequency = 10;
-            this.quintuplesTrackbar4.Value = 75;
             this.quintuplesTrackbar4.ValueChanged += new System.EventHandler(this.quintuplesTrackbar4_ValueChanged);
             // 
             // quintuples4
@@ -778,11 +785,6 @@
             this.quintuples4.Size = new System.Drawing.Size(42, 20);
             this.quintuples4.TabIndex = 8;
             this.quintuples4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.quintuples4.Value = new decimal(new int[] {
-            75,
-            0,
-            0,
-            0});
             this.quintuples4.ValueChanged += new System.EventHandler(this.quintuples4_ValueChanged);
             // 
             // panel20
@@ -834,7 +836,7 @@
             this.jumpsTrackbar4.Size = new System.Drawing.Size(203, 45);
             this.jumpsTrackbar4.TabIndex = 14;
             this.jumpsTrackbar4.TickFrequency = 10;
-            this.jumpsTrackbar4.Value = 20;
+            this.jumpsTrackbar4.Value = 25;
             this.jumpsTrackbar4.ValueChanged += new System.EventHandler(this.jumpsTrackbar4_ValueChanged);
             // 
             // jumps4
@@ -845,7 +847,7 @@
             this.jumps4.TabIndex = 8;
             this.jumps4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.jumps4.Value = new decimal(new int[] {
-            20,
+            25,
             0,
             0,
             0});
@@ -859,7 +861,7 @@
             this.onBeat4.TabIndex = 11;
             this.onBeat4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.onBeat4.Value = new decimal(new int[] {
-            15,
+            65,
             0,
             0,
             0});
@@ -892,7 +894,7 @@
             this.onBeatTrackbar4.Size = new System.Drawing.Size(45, 110);
             this.onBeatTrackbar4.TabIndex = 2;
             this.onBeatTrackbar4.TickFrequency = 10;
-            this.onBeatTrackbar4.Value = 15;
+            this.onBeatTrackbar4.Value = 65;
             this.onBeatTrackbar4.ValueChanged += new System.EventHandler(this.onBeatTrackbar4_ValueChanged);
             // 
             // panel21
@@ -986,6 +988,7 @@
             // level4
             // 
             this.level4.AutoSize = true;
+            this.level4.BackColor = System.Drawing.Color.OrangeRed;
             this.level4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.level4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.level4.Location = new System.Drawing.Point(15, 10);
@@ -1086,7 +1089,6 @@
             this.quintuplesTrackbar2.Size = new System.Drawing.Size(203, 45);
             this.quintuplesTrackbar2.TabIndex = 14;
             this.quintuplesTrackbar2.TickFrequency = 10;
-            this.quintuplesTrackbar2.Value = 10;
             this.quintuplesTrackbar2.ValueChanged += new System.EventHandler(this.quintuplesTrackbar2_ValueChanged);
             // 
             // quintuples2
@@ -1096,11 +1098,6 @@
             this.quintuples2.Size = new System.Drawing.Size(42, 20);
             this.quintuples2.TabIndex = 8;
             this.quintuples2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.quintuples2.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.quintuples2.ValueChanged += new System.EventHandler(this.quintuples2_ValueChanged);
             // 
             // panel9
@@ -1152,7 +1149,6 @@
             this.jumpsTrackbar2.Size = new System.Drawing.Size(203, 45);
             this.jumpsTrackbar2.TabIndex = 14;
             this.jumpsTrackbar2.TickFrequency = 10;
-            this.jumpsTrackbar2.Value = 15;
             this.jumpsTrackbar2.ValueChanged += new System.EventHandler(this.jumpsTrackbar2_ValueChanged);
             // 
             // jumps2
@@ -1162,11 +1158,6 @@
             this.jumps2.Size = new System.Drawing.Size(42, 20);
             this.jumps2.TabIndex = 8;
             this.jumps2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.jumps2.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
             this.jumps2.ValueChanged += new System.EventHandler(this.jumps2_ValueChanged);
             // 
             // onBeat2
@@ -1177,7 +1168,7 @@
             this.onBeat2.TabIndex = 11;
             this.onBeat2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.onBeat2.Value = new decimal(new int[] {
-            50,
+            100,
             0,
             0,
             0});
@@ -1210,7 +1201,7 @@
             this.onBeatTrackbar2.Size = new System.Drawing.Size(45, 110);
             this.onBeatTrackbar2.TabIndex = 2;
             this.onBeatTrackbar2.TickFrequency = 10;
-            this.onBeatTrackbar2.Value = 50;
+            this.onBeatTrackbar2.Value = 100;
             this.onBeatTrackbar2.ValueChanged += new System.EventHandler(this.onBeatTrackbar2_ValueChanged);
             // 
             // panel10
@@ -1248,8 +1239,6 @@
             // arrow_repeat2
             // 
             this.arrow_repeat2.AutoSize = true;
-            this.arrow_repeat2.Checked = true;
-            this.arrow_repeat2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.arrow_repeat2.Location = new System.Drawing.Point(102, 4);
             this.arrow_repeat2.Name = "arrow_repeat2";
             this.arrow_repeat2.Size = new System.Drawing.Size(86, 17);
@@ -1302,6 +1291,7 @@
             // level2
             // 
             this.level2.AutoSize = true;
+            this.level2.BackColor = System.Drawing.Color.LawnGreen;
             this.level2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.level2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.level2.Location = new System.Drawing.Point(15, 10);
@@ -1312,6 +1302,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.stepFill);
             this.panel1.Controls.Add(this.panel3);
@@ -1333,7 +1324,7 @@
             this.stepFill.TabIndex = 5;
             this.stepFill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.stepFill.Value = new decimal(new int[] {
-            100,
+            60,
             0,
             0,
             0});
@@ -1481,7 +1472,7 @@
             this.onBeat.TabIndex = 11;
             this.onBeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.onBeat.Value = new decimal(new int[] {
-            50,
+            100,
             0,
             0,
             0});
@@ -1514,7 +1505,7 @@
             this.onBeatTrackbar.Size = new System.Drawing.Size(45, 110);
             this.onBeatTrackbar.TabIndex = 2;
             this.onBeatTrackbar.TickFrequency = 10;
-            this.onBeatTrackbar.Value = 50;
+            this.onBeatTrackbar.Value = 100;
             this.onBeatTrackbar.ValueChanged += new System.EventHandler(this.onBeatTrackbar_ValueChanged);
             // 
             // panel2
@@ -1552,6 +1543,8 @@
             // arrow_repeat
             // 
             this.arrow_repeat.AutoSize = true;
+            this.arrow_repeat.Checked = true;
+            this.arrow_repeat.CheckState = System.Windows.Forms.CheckState.Checked;
             this.arrow_repeat.Location = new System.Drawing.Point(102, 4);
             this.arrow_repeat.Name = "arrow_repeat";
             this.arrow_repeat.Size = new System.Drawing.Size(86, 17);
@@ -1598,12 +1591,13 @@
             this.stepFill_trackbar.Size = new System.Drawing.Size(45, 146);
             this.stepFill_trackbar.TabIndex = 1;
             this.stepFill_trackbar.TickFrequency = 10;
-            this.stepFill_trackbar.Value = 100;
+            this.stepFill_trackbar.Value = 60;
             this.stepFill_trackbar.ValueChanged += new System.EventHandler(this.stepFill_trackbar_ValueChanged);
             // 
             // level
             // 
             this.level.AutoSize = true;
+            this.level.BackColor = System.Drawing.Color.Fuchsia;
             this.level.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.level.Location = new System.Drawing.Point(15, 10);
@@ -1770,7 +1764,7 @@
             this.jumpsTrackbar3.Size = new System.Drawing.Size(203, 45);
             this.jumpsTrackbar3.TabIndex = 14;
             this.jumpsTrackbar3.TickFrequency = 10;
-            this.jumpsTrackbar3.Value = 15;
+            this.jumpsTrackbar3.Value = 20;
             this.jumpsTrackbar3.ValueChanged += new System.EventHandler(this.jumpsTrackbar3_ValueChanged);
             // 
             // jumps3
@@ -1781,7 +1775,7 @@
             this.jumps3.TabIndex = 8;
             this.jumps3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.jumps3.Value = new decimal(new int[] {
-            15,
+            20,
             0,
             0,
             0});
@@ -1795,7 +1789,7 @@
             this.onBeat3.TabIndex = 11;
             this.onBeat3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.onBeat3.Value = new decimal(new int[] {
-            65,
+            100,
             0,
             0,
             0});
@@ -1828,7 +1822,7 @@
             this.onBeatTrackbar3.Size = new System.Drawing.Size(45, 110);
             this.onBeatTrackbar3.TabIndex = 2;
             this.onBeatTrackbar3.TickFrequency = 10;
-            this.onBeatTrackbar3.Value = 65;
+            this.onBeatTrackbar3.Value = 100;
             this.onBeatTrackbar3.ValueChanged += new System.EventHandler(this.onBeatTrackbar3_ValueChanged);
             // 
             // panel15
@@ -1922,6 +1916,7 @@
             // level3
             // 
             this.level3.AutoSize = true;
+            this.level3.BackColor = System.Drawing.Color.Khaki;
             this.level3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.level3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.level3.Location = new System.Drawing.Point(15, 10);

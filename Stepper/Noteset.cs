@@ -8,6 +8,7 @@ namespace Stepper
 {
     class Noteset
     {
+        string dance_style;
         int num_measures;  // number of measures in this noteset
         string interface_level; // the level on the public interface: Novice, Easy, Medium, Hard, Expert
         string note_level; // the level inside the stepfile: Beginner, Easy Medium, Hard, Expert
@@ -23,16 +24,17 @@ namespace Stepper
         Measure[] measures;
         int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
         bool triples_on_both_1_and_3;
-        bool quintuples_either_on_1_or_2; 
+        bool quintuples_either_on_1_or_2;
 
         public Noteset()
         {
 
         }
         
-        public Noteset(int measure, string interface_lvl, int beats_p_measure, bool alt_foot, bool repeat_arrows, 
+        public Noteset(string interface_style, int measure, string interface_lvl, int beats_p_measure, bool alt_foot, bool repeat_arrows, 
             int percent_stepfill, int percent_onbeat, int percent_jumps, Random random, int percent_quintuples,
             bool triples_on_1_and_3, bool quintuples_on_1_or_2) {
+            dance_style = interface_style;
             num_measures = measure;
             interface_level = interface_lvl;
             beats_per_measure = beats_p_measure;
@@ -77,7 +79,7 @@ namespace Stepper
         public void writeSteps(System.IO.StreamWriter file)
         {
             file.WriteLine("#NOTES:");
-            file.WriteLine("     dance-single:");
+            file.WriteLine("     " + dance_style + ":");
             file.WriteLine("     :");
             file.WriteLine("     " + note_level + ":");
             file.WriteLine("     " + difficulty + ":");
@@ -91,13 +93,27 @@ namespace Stepper
 
         public void generateSteps()
         {
-            string[] foot_laststep = new string[] { "left", "0000" };
-            for (int i = 0; i < num_measures; i++)
+            if (dance_style == "dance-single")
             {
-                Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
-                    triples_on_both_1_and_3, quintuples_either_on_1_or_2);
-                foot_laststep = m.generateSteps(foot_laststep);
-                measures[i] = m;
+                string[] foot_laststep = new string[] { "left", "0000" };
+                for (int i = 0; i < num_measures; i++)
+                {
+                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
+                    foot_laststep = m.generateDanceSingleSteps(foot_laststep);
+                    measures[i] = m;
+                }
+            }
+            else if (dance_style == "pump-single")
+            {
+                string[] foot_laststep = new string[] { "left", "00000" };
+                for (int i = 0; i < num_measures; i++)
+                {
+                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
+                    foot_laststep = m.generatePumpSingleSteps(foot_laststep);
+                    measures[i] = m;
+                }
             }
         }
     }

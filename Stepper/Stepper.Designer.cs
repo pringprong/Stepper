@@ -180,6 +180,11 @@
             this.level3 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songInfo)).BeginInit();
@@ -365,6 +370,7 @@
             // panel22
             // 
             this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel22.Controls.Add(this.label55);
             this.panel22.Controls.Add(this.stepFill5);
             this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.panel26);
@@ -379,7 +385,7 @@
             // 
             // stepFill5
             // 
-            this.stepFill5.Location = new System.Drawing.Point(40, 85);
+            this.stepFill5.Location = new System.Drawing.Point(40, 71);
             this.stepFill5.Name = "stepFill5";
             this.stepFill5.Size = new System.Drawing.Size(42, 20);
             this.stepFill5.TabIndex = 5;
@@ -687,6 +693,7 @@
             // panel17
             // 
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel17.Controls.Add(this.label43);
             this.panel17.Controls.Add(this.stepFill4);
             this.panel17.Controls.Add(this.panel18);
             this.panel17.Controls.Add(this.panel21);
@@ -701,7 +708,7 @@
             // 
             // stepFill4
             // 
-            this.stepFill4.Location = new System.Drawing.Point(40, 85);
+            this.stepFill4.Location = new System.Drawing.Point(40, 75);
             this.stepFill4.Name = "stepFill4";
             this.stepFill4.Size = new System.Drawing.Size(42, 20);
             this.stepFill4.TabIndex = 5;
@@ -1000,6 +1007,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.label32);
             this.panel6.Controls.Add(this.stepFill2);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.panel10);
@@ -1014,7 +1022,7 @@
             // 
             // stepFill2
             // 
-            this.stepFill2.Location = new System.Drawing.Point(40, 85);
+            this.stepFill2.Location = new System.Drawing.Point(40, 75);
             this.stepFill2.Name = "stepFill2";
             this.stepFill2.Size = new System.Drawing.Size(42, 20);
             this.stepFill2.TabIndex = 5;
@@ -1304,6 +1312,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.stepFill);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -1318,7 +1327,7 @@
             // 
             // stepFill
             // 
-            this.stepFill.Location = new System.Drawing.Point(40, 85);
+            this.stepFill.Location = new System.Drawing.Point(40, 72);
             this.stepFill.Name = "stepFill";
             this.stepFill.Size = new System.Drawing.Size(42, 20);
             this.stepFill.TabIndex = 5;
@@ -1609,6 +1618,7 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.label54);
             this.panel11.Controls.Add(this.stepFill3);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Controls.Add(this.panel15);
@@ -1623,7 +1633,7 @@
             // 
             // stepFill3
             // 
-            this.stepFill3.Location = new System.Drawing.Point(40, 85);
+            this.stepFill3.Location = new System.Drawing.Point(40, 75);
             this.stepFill3.Name = "stepFill3";
             this.stepFill3.Size = new System.Drawing.Size(42, 20);
             this.stepFill3.TabIndex = 5;
@@ -1925,6 +1935,51 @@
             this.level3.TabIndex = 0;
             this.level3.Text = "Medium";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 97);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Every 2nd";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(35, 97);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.TabIndex = 12;
+            this.label32.Text = "Every 2nd";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(34, 98);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(55, 13);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Every 2nd";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(35, 98);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(55, 13);
+            this.label54.TabIndex = 14;
+            this.label54.Text = "Every 2nd";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(35, 96);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(55, 13);
+            this.label55.TabIndex = 15;
+            this.label55.Text = "Every 2nd";
+            // 
             // Stepper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2189,6 +2244,11 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TrackBar stepFill_trackbar3;
         private System.Windows.Forms.Label level3;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label54;
 
     }
 }

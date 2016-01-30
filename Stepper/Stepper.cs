@@ -318,15 +318,14 @@ namespace Stepper
                     Song s = new Song(files[0], header_text, measures_list.Max());
                     songs.Add(s);
                 }
-
             } // end for (int i = 0; i < fileCount; i++) 
+            folderTextChanged = false;
             if (songs.Count == 0)
             {
                 MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
+                folderTextChanged = true;
                 return;
             }
-
-            folderTextChanged = false;
         }
 
         private void overwriteStepfiles_Click(object sender, EventArgs e)
@@ -338,7 +337,7 @@ namespace Stepper
             }
             if (folderTextChanged)
             {
-                MessageBox.Show("The folder name has changed. Please click \"Get info\" to update the song info table", "Click Get info");
+                MessageBox.Show("The folder name has changed or is invalid. Please choose a Stepmania song group folder and click \"Get info\" to update the song info table", "Click Get info");
                 return;
             }
             DialogResult result1 = MessageBox.Show("Are you sure you want to overwrite the stepfiles in " + currentFolder.Text + " ? This action cannot be undone.",
@@ -363,35 +362,65 @@ namespace Stepper
                         file.WriteLine(header_line);
                     });
 
-                    Noteset note1 = new Noteset(s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset note1 = new Noteset("dance-single", s.getNumMeasures(), level.Text, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     note1.generateSteps();
                     note1.writeSteps(file);
 
-                    Noteset note2 = new Noteset(s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset note2 = new Noteset("dance-single", s.getNumMeasures(), level2.Text, beats_per_measure,
                         alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
                         (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
                     note2.generateSteps();
                     note2.writeSteps(file);
 
-                    Noteset note3 = new Noteset(s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset note3 = new Noteset("dance-single", s.getNumMeasures(), level3.Text, beats_per_measure,
                        alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
                        (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
                     note3.generateSteps();
                     note3.writeSteps(file);
 
-                    Noteset note4 = new Noteset(s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset note4 = new Noteset("dance-single", s.getNumMeasures(), level4.Text, beats_per_measure,
                         alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
                         (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
                     note4.generateSteps();
                     note4.writeSteps(file);
 
-                    Noteset note5 = new Noteset(s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset note5 = new Noteset("dance-single", s.getNumMeasures(), level5.Text, beats_per_measure,
                         alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
                         (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     note5.generateSteps();
                     note5.writeSteps(file);
+
+                    Noteset pump_single1 = new Noteset("pump-single", s.getNumMeasures(), level.Text, beats_per_measure,
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
+                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                    pump_single1.generateSteps();
+                    pump_single1.writeSteps(file);
+
+                    Noteset pump_single2 = new Noteset("pump-single", s.getNumMeasures(), level2.Text, beats_per_measure,
+                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
+                        (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                    pump_single2.generateSteps();
+                    pump_single2.writeSteps(file);
+
+                    Noteset pump_single3 = new Noteset("pump-single", s.getNumMeasures(), level3.Text, beats_per_measure,
+                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
+                       (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                    pump_single3.generateSteps();
+                    pump_single3.writeSteps(file);
+
+                    Noteset pump_single4 = new Noteset("pump-single", s.getNumMeasures(), level4.Text, beats_per_measure,
+                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
+                        (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                    pump_single4.generateSteps();
+                    pump_single4.writeSteps(file);
+
+                    Noteset pump_single5 = new Noteset("pump-single", s.getNumMeasures(), level5.Text, beats_per_measure,
+                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
+                        (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                    pump_single5.generateSteps();
+                    pump_single5.writeSteps(file);
 
 
                     file.Close();

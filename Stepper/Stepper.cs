@@ -14,13 +14,13 @@ namespace Stepper
 {
     public partial class Stepper : Form
     {
-
         private List<Song> songs;
         private int beats_per_measure = 4;
         Random r;
         Instructions i;
         private bool folderTextChanged = false;
         private ToolTip toolTip1;
+
         public Stepper()
         {
             InitializeComponent();
@@ -149,26 +149,12 @@ namespace Stepper
             if (!(Directory.Exists(currentFolder.Text)))
             {
                 MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
-                    return;
-                }
-
-            Regex bpms = new Regex("^\\s*#BPMS:\\s*");
-            Regex notes = new Regex("^\\s*#NOTES\\s*");
-            Regex stops = new Regex("^\\s*#STOPS:\\s*");
-            Regex commas = new Regex("^\\s*,\\s*(//)*");  // line contains nothing but a single comma, maybe whitespace, and maybe a comment
-            Regex semicolon = new Regex("^\\s*[0-9]*\\s*,*\\s*;"); // line contains a semicolon, possibly preceded by a digits and/or a comma
-            Regex comment = new Regex("^\\s*(//)+"); // comments
-            Regex blank = new Regex("^\\s*$"); // blank lines
-            int note_sets = 0;
-            bool in_a_note_set = false;
-            int count_measures = 0;
-            List<int> measures_list = new List<int>();
-            List<string> header_text = new List<string>();
-            bool is_header = true;
+                return;
+            }
 
             string[] dirs = Directory.GetDirectories(currentFolder.Text);
             var fileCount = dirs.Count();
-            songInfo.ColumnCount = 7;
+            songInfo.ColumnCount = 8;
             songInfo.Columns[0].HeaderText = "Song Path";
             songInfo.Columns[1].HeaderText = "Min BPM";
             songInfo.Columns[2].HeaderText = "Max BPM";
@@ -176,13 +162,15 @@ namespace Stepper
             songInfo.Columns[4].HeaderText = "# Stops";
             songInfo.Columns[5].HeaderText = "# Arrow Sets";
             songInfo.Columns[6].HeaderText = "# Measures";
-            songInfo.Columns[0].Width = 510;
+            songInfo.Columns[7].HeaderText = "Type";
+            songInfo.Columns[0].Width = 460;
             songInfo.Columns[1].Width = 100;
             songInfo.Columns[2].Width = 100;
             songInfo.Columns[3].Width = 130;
             songInfo.Columns[4].Width = 100;
             songInfo.Columns[5].Width = 100;
             songInfo.Columns[6].Width = 100;
+            songInfo.Columns[7].Width = 50;
             songInfo.Columns[0].ToolTipText = "Complete path name of each Stepmania song folder";
             songInfo.Columns[1].ToolTipText = "Minimum beats per minute of each song";
             songInfo.Columns[2].ToolTipText = "Maximum beats per minute of each song";
@@ -190,133 +178,72 @@ namespace Stepper
             songInfo.Columns[4].ToolTipText = "Number of stops during each song";
             songInfo.Columns[5].ToolTipText = "Number of sets of arrows for each song, including Single, Double, and Solo. This program will produce 5 Single sets";
             songInfo.Columns[6].ToolTipText = "Range of number of measures found in each set of arrows. There are 4 beats per measure.";
-
+            songInfo.Columns[7].ToolTipText = "Stepfile type: .ssc, .sm, or .dwi";
 
             songInfo.RowCount = fileCount;
             DataGridViewColumnCollection coll = songInfo.Columns;
             DataGridViewColumn c = coll[0];
-            for (int i = 0; i < fileCount; i++) 
+            for (int i = 0; i < fileCount; i++)
             {
-                note_sets = 0;
                 songInfo[0, i].Value = dirs[i];
-                string[] files = Directory.GetFiles(dirs[i], "*.sm");
-                if (files.Count() > 0)
+                if (Directory.GetFiles(dirs[i], "*.ssc").Count() > 0)
                 {
-                    using (Stream fileStream = File.Open(files[0], FileMode.Open))
-                    using (StreamReader reader = new StreamReader(fileStream))
+                    //parse .ssc file
+                    string[] files = Directory.GetFiles(dirs[i], "*.ssc");
+                    Song s = parseSSCFile(files[0]);
+                    if (!s.Equals(null))
                     {
-                        note_sets = 0; 
-                        in_a_note_set = false;
-                        string line = null;
-                        measures_list = new List<int>();
-                        is_header = true;
-                        header_text = new List<string>();
-                        do
+                        songs.Add(s);
+                        songInfo[1, i].Value = s.getMinBPM();
+                        songInfo[2, i].Value = s.getMaxBPM();
+                        songInfo[3, i].Value = s.getBPMChanges();
+                        songInfo[4, i].Value = s.getNumStops();
+                        songInfo[5, i].Value = s.getNumNotesets();
+                        if (s.getMinMeasures() == s.getMaxMeasures())
                         {
-                            // get the next line from the file
-                            line = reader.ReadLine();
-                            if (line == null)
-                            {
-                                // there are no more lines; break out of the loop
-                                break;
-                            }
-
-                            if (blank.Match(line).Success || comment.Match(line).Success) {
-                                continue;
-                            }
-
-                            if (bpms.Match(line).Success)
-                            {
-                                string current = bpms.Replace(line, ""); // trim the line type indicator  #BPMS:
-                                Regex r = new Regex(";");
-                                current = r.Replace(current, ""); // trim the trailing semicolon
-                                string[] bpms_array = current.Split(','); // split the list on comma
-                                List<string> trimmed = new List<string>();
-                                Regex leading_beat_count = new Regex("[0-9]+\\.[0-9]*=");
-                                Regex floor = new Regex("\\.[0-9]+");
-                                foreach (string b in bpms_array)
-                                {
-                                    string a = leading_beat_count.Replace(b, "");
-                                    a = floor.Replace(a, "");
-                                    trimmed.Add(a);
-                                }
-                                int num = trimmed.Count();
-                                num--;
-
-                                songInfo[1, i].Value = trimmed.Min();
-                                songInfo[2, i].Value = trimmed.Max();
-                                songInfo[3, i].Value = num;
-                            }
-
-                            if (stops.Match(line).Success)
-                            {
-                                string song_name = files[0];
-                                // split the line on each semicolon character
-                                //  string[] parts = line.Split(';');
-                                string complete_stops = "";
-                                Regex r = new Regex(";");
-                                // STOPS might be spread out over several lines, so first we will concatenate them 
-                                while (!r.Match(line).Success)
-                                {
-                                    header_text.Add(line);
-                                    complete_stops += line;
-                                    line = reader.ReadLine();
-                                }
-                                complete_stops += line;
-                                complete_stops = stops.Replace(complete_stops, ""); // trim the line type indicator  #STOPS:
-                                complete_stops = r.Replace(complete_stops, ""); // trim the trailing semicolon
-                                string[] stops_array = complete_stops.Split(','); // split the list on comma
-                                string all_stops = string.Join(" ", stops_array);
-                                int num = stops_array.Count();
-                                if (complete_stops.Equals(""))
-                                {
-                                    num = 0;
-                                }
-                                songInfo[4, i].Value = num;
-                            }
-
-                            if (notes.Match(line).Success)
-                            {
-                                in_a_note_set = true;
-                                is_header = false;
-                            }
-
-                            if (is_header)
-                            {
-                                header_text.Add(line);
-                            }
-
-                            if (in_a_note_set)
-                            {
-                                if (commas.Match(line).Success)
-                                {
-                                    count_measures++;
-                                }
-                            }
-                            if (semicolon.Match(line).Success && in_a_note_set)
-                            {
-                                // end of note set
-                                if (count_measures > 0)
-                                {
-                                    measures_list.Add(count_measures);
-                                }
-                                note_sets++;
-                                count_measures = 0;
-                                in_a_note_set = false;
-                            }
-
-                        } while (true);
-                    } // end using StreamReader; end of song file
-                     songInfo[5, i].Value = note_sets;
-                     if (measures_list.Min() != measures_list.Max())
-                    {
-                        songInfo[6, i].Value = measures_list.Min() + "-" + measures_list.Max();
-                    } else {
-                        songInfo[6, i].Value = measures_list.Min();
+                            songInfo[6, i].Value = s.getMinMeasures();
+                        }
+                        else
+                        {
+                            songInfo[6, i].Value = s.getMinMeasures() + "-" + s.getMaxMeasures();
+                        }
+                        songInfo[7, i].Value = s.getType();
+                        songInfo.ClearSelection();
                     }
+                }
+                else if (Directory.GetFiles(dirs[i], "*.sm").Count() > 0)
+                {
+                    // parse .sm file
+                    string[] files = Directory.GetFiles(dirs[i], "*.sm");
+                    Song s = parseSMFile(files[0]);
+                    if (!s.Equals(null))
+                    {
+                        songs.Add(s);
+                        songInfo[1, i].Value = s.getMinBPM();
+                        songInfo[2, i].Value = s.getMaxBPM();
+                        songInfo[3, i].Value = s.getBPMChanges();
+                        songInfo[4, i].Value = s.getNumStops();
+                        songInfo[5, i].Value = s.getNumNotesets();
+                        if (s.getMinMeasures() == s.getMaxMeasures())
+                        {
+                            songInfo[6, i].Value = s.getMinMeasures();
+                        }
+                        else
+                        {
+                            songInfo[6, i].Value = s.getMinMeasures() + "-" + s.getMaxMeasures();
+                        }
+                        songInfo[7, i].Value = s.getType();
+                        songInfo.ClearSelection();
+                    }
+                }
+                else if (Directory.GetFiles(dirs[i], "*.dwi").Count() > 0)
+                {
+                    songInfo[7, i].Value = "DWI";
                     songInfo.ClearSelection();
-                    Song s = new Song(files[0], header_text, measures_list.Max());
-                    songs.Add(s);
+                }
+                else
+                {
+                    // no valid stepfile found
                 }
             } // end for (int i = 0; i < fileCount; i++) 
             folderTextChanged = false;
@@ -347,85 +274,385 @@ namespace Stepper
             {
                 songs.ForEach(delegate(Song s)
                 {
-                    string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
-                    string old_path = s.getPath();
-                    Regex alter_extension = new Regex("\\.sm");
-                    string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
-                    if (!File.Exists(backup_path))
-                    {
-                        System.IO.File.Move(old_path, backup_path);
-                    }
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
-                    List<string> header_lines = s.getHeader();
-                    header_lines.ForEach(delegate(string header_line)
-                    {
-                        file.WriteLine(header_line);
-                    });
-
-                    Noteset note1 = new Noteset("dance-single", s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset note1 = new Noteset("dance-single", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     note1.generateSteps();
-                    note1.writeSteps(file);
 
-                    Noteset note2 = new Noteset("dance-single", s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset note2 = new Noteset("dance-single", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
                         alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
                         (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
                     note2.generateSteps();
-                    note2.writeSteps(file);
 
-                    Noteset note3 = new Noteset("dance-single", s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset note3 = new Noteset("dance-single", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
                        alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
                        (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
                     note3.generateSteps();
-                    note3.writeSteps(file);
 
-                    Noteset note4 = new Noteset("dance-single", s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset note4 = new Noteset("dance-single", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
                         alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
                         (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
                     note4.generateSteps();
-                    note4.writeSteps(file);
 
-                    Noteset note5 = new Noteset("dance-single", s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset note5 = new Noteset("dance-single", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
                         alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
                         (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     note5.generateSteps();
-                    note5.writeSteps(file);
 
-                    Noteset pump_single1 = new Noteset("pump-single", s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset pump_single1 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     pump_single1.generateSteps();
-                    pump_single1.writeSteps(file);
 
-                    Noteset pump_single2 = new Noteset("pump-single", s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset pump_single2 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
                         alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
                         (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
                     pump_single2.generateSteps();
-                    pump_single2.writeSteps(file);
 
-                    Noteset pump_single3 = new Noteset("pump-single", s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset pump_single3 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
                        alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
                        (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
                     pump_single3.generateSteps();
-                    pump_single3.writeSteps(file);
 
-                    Noteset pump_single4 = new Noteset("pump-single", s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset pump_single4 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
                         alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
                         (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
                     pump_single4.generateSteps();
-                    pump_single4.writeSteps(file);
 
-                    Noteset pump_single5 = new Noteset("pump-single", s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset pump_single5 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
                         alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
                         (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     pump_single5.generateSteps();
-                    pump_single5.writeSteps(file);
 
+                    if (s.getType().Equals("SSC"))
+                    {
+                        // no ssc file, so backup the old .sm file and then overwrite it
+                        string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
+                        string old_path = s.getPath();
+                        Regex alter_extension = new Regex("\\.ssc");
+                        string backup_path = alter_extension.Replace(old_path, ".ssc." + timestamp + ".bak");
+                        if (!File.Exists(backup_path))
+                        {
+                            System.IO.File.Move(old_path, backup_path);
+                        }
+                        System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
+                        List<string> header_lines = s.getHeader();
+                        header_lines.ForEach(delegate(string header_line)
+                        {
+                            file.WriteLine(header_line);
+                        });
+                        note1.writeSSCSteps(file);
+                        note2.writeSSCSteps(file);
+                        note3.writeSSCSteps(file);
+                        note4.writeSSCSteps(file);
+                        note5.writeSSCSteps(file);
+                        pump_single1.writeSSCSteps(file);
+                        pump_single2.writeSSCSteps(file);
+                        pump_single3.writeSSCSteps(file);
+                        pump_single4.writeSSCSteps(file);
+                        pump_single5.writeSSCSteps(file);
 
-                    file.Close();
+                        file.Close();
+                    }
+                    else if (s.getType().Equals("SM"))
+                    {
+                        // no ssc file, so backup the old .sm file and then overwrite it
+                        string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
+                        string old_path = s.getPath();
+                        Regex alter_extension = new Regex("\\.sm");
+                        string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
+                        if (!File.Exists(backup_path))
+                        {
+                            System.IO.File.Move(old_path, backup_path);
+                        }
+                        System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
+                        List<string> header_lines = s.getHeader();
+                        header_lines.ForEach(delegate(string header_line)
+                        {
+                            file.WriteLine(header_line);
+                        });
+                        note1.writeSMSteps(file);
+                        note2.writeSMSteps(file);
+                        note3.writeSMSteps(file);
+                        note4.writeSMSteps(file);
+                        note5.writeSMSteps(file);
+                        pump_single1.writeSMSteps(file);
+                        pump_single2.writeSMSteps(file);
+                        pump_single3.writeSMSteps(file);
+                        pump_single4.writeSMSteps(file);
+                        pump_single5.writeSMSteps(file);
+
+                        file.Close();
+                    }
                 });
             }
+        }
+
+        private Song parseSSCFile(string file)
+        {
+            Regex bpms = new Regex("^\\s*#BPMS:\\s*");
+            Regex notedata = new Regex("^\\s*#NOTEDATA:\\s*");
+            Regex notes = new Regex("^\\s*#NOTES:\\s*");
+            Regex stops = new Regex("^\\s*#STOPS:\\s*");
+            Regex commas = new Regex("^\\s*,\\s*(//)*");  // line contains nothing but a single comma, maybe whitespace, and maybe a comment
+            Regex final_comma = new Regex("\\s*,\\s*(//)*$");  // maybe whitespace, definite comma, maybe whitespace, maybe comment, end of line
+            Regex semicolon = new Regex("^\\s*[0-9]*\\s*,*\\s*;"); // line contains a semicolon, possibly preceded by a digits and/or a comma
+            Regex comment = new Regex("^\\s*(//)+"); // comments
+            Regex blank = new Regex("^\\s*$"); // blank lines
+            Regex semicolon_only = new Regex(";");
+            Regex leading_beat_count = new Regex("[0-9]+\\.[0-9]*=");
+            Regex floor = new Regex("\\.[0-9]+");
+
+            int note_sets = 0;
+            bool in_a_note_set = false;
+            bool in_a_note_set_header = false;
+            int count_measures = 0;
+            List<int> measures_list = new List<int>();
+            List<string> header_text = new List<string>();
+            bool is_header = true;
+            List<int> trimmed;
+            int trimmed_count = -1;
+            int trimmed_min = -1;
+            int trimmed_max = -1;
+            int num_stops = -1;
+            string[] bpms_array;
+
+            using (Stream fileStream = File.Open(file, FileMode.Open))
+            using (StreamReader reader = new StreamReader(fileStream))
+            {
+                note_sets = 0;
+                in_a_note_set = false;
+                in_a_note_set_header = false;
+                string line = null;
+                measures_list = new List<int>();
+                is_header = true;
+                header_text = new List<string>();
+                do
+                {
+                    line = reader.ReadLine(); // get the next line from the file
+                    if (line == null)
+                    {
+                        // there are no more lines; break out of the loop
+                        break;
+                    }
+                    if (blank.Match(line).Success || comment.Match(line).Success)
+                    {
+                        continue;
+                    }
+                    if (bpms.Match(line).Success && !in_a_note_set && !in_a_note_set_header)
+                    {
+                        string current = bpms.Replace(line, ""); // trim the line type indicator  #BPMS:
+                        current = semicolon_only.Replace(current, ""); // trim the trailing semicolon
+                        current = final_comma.Replace(current, "");// trim trailing whitespace, comma, comment
+                        bpms_array = current.Split(','); // split the list on comma
+                        trimmed = new List<int>();
+                        foreach (string b in bpms_array)
+                        {
+                            if (b != "")
+                            {
+                                string a = leading_beat_count.Replace(b, "");
+                                a = floor.Replace(a, "");
+                                trimmed.Add(Convert.ToInt32(a));
+                            }
+                        }
+                        trimmed_count = trimmed.Count() - 1;
+                        trimmed_min = trimmed.Min();
+                        trimmed_max = trimmed.Max();
+                    }
+                    if (stops.Match(line).Success && !in_a_note_set && !in_a_note_set_header)
+                    {
+                        string song_name = file;
+                        // split the line on each semicolon character
+                        //  string[] parts = line.Split(';');
+                        string complete_stops = "";
+                        // STOPS might be spread out over several lines, so first we will concatenate them 
+                        while (!semicolon_only.Match(line).Success)
+                        {
+                            header_text.Add(line);
+                            complete_stops += line;
+                            line = reader.ReadLine();
+                        }
+                        complete_stops += line;
+                        complete_stops = stops.Replace(complete_stops, ""); // trim the line type indicator  #STOPS:
+                        complete_stops = semicolon_only.Replace(complete_stops, ""); // trim the trailing semicolon
+                        string[] stops_array = complete_stops.Split(','); // split the list on comma
+                        string all_stops = string.Join(" ", stops_array);
+                        num_stops = stops_array.Count();
+                        if (complete_stops.Equals(""))
+                        {
+                            num_stops = 0;
+                        }
+                    }
+                    if (is_header && !notedata.Match(line).Success)
+                    {
+                        header_text.Add(line);
+                    }
+                    if (in_a_note_set)
+                    {
+                        if (commas.Match(line).Success)
+                        {
+                            count_measures++;
+                        }
+                    }
+                    if (semicolon.Match(line).Success && in_a_note_set)
+                    {
+                        // end of note set
+                        if (count_measures > 0)
+                        {
+                            measures_list.Add(count_measures);
+                        }
+                        note_sets++;
+                        count_measures = 0;
+                        in_a_note_set = false;
+                        in_a_note_set_header = false;
+                    }
+                    if (notedata.Match(line).Success)
+                    {
+                        in_a_note_set_header = true;
+                        is_header = false;
+                        in_a_note_set = false;
+                    }
+                    if (notes.Match(line).Success)
+                    {
+                        in_a_note_set_header = false;
+                        is_header = false;
+                        in_a_note_set = true;
+                    }
+                } while (true);
+            } // end using StreamReader; end of song file
+            var groups = measures_list.GroupBy(v => v);
+            int maxCount = groups.Max(g => g.Count());
+            int mode = groups.First(g => g.Count() == maxCount).Key;
+            Song s = new Song("SSC", file, header_text, mode, trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
+            return s;
+        }
+
+        private Song parseSMFile(string file)
+        {
+            Regex bpms = new Regex("^\\s*#BPMS:\\s*");
+            Regex notes = new Regex("^\\s*#NOTES\\s*");
+            Regex stops = new Regex("^\\s*#STOPS:\\s*");
+            Regex commas = new Regex("^\\s*,\\s*(//)*");  // line contains nothing but a single comma, maybe whitespace, and maybe a comment
+            Regex semicolon = new Regex("^\\s*[0-9]*\\s*,*\\s*;"); // line contains a semicolon, possibly preceded by a digits and/or a comma
+            Regex comment = new Regex("^\\s*(//)+"); // comments
+            Regex blank = new Regex("^\\s*$"); // blank lines
+
+            int note_sets = 0;
+            bool in_a_note_set = false;
+            int count_measures = 0;
+            List<int> measures_list = new List<int>();
+            List<string> header_text = new List<string>();
+            bool is_header = true;
+            List<int> trimmed;
+            int trimmed_count = 0;
+            int trimmed_min = 0;
+            int trimmed_max = 0;
+            int num_stops = 0;
+
+            using (Stream fileStream = File.Open(file, FileMode.Open))
+            using (StreamReader reader = new StreamReader(fileStream))
+            {
+                note_sets = 0;
+                in_a_note_set = false;
+                string line = null;
+                measures_list = new List<int>();
+                is_header = true;
+                header_text = new List<string>();
+                do
+                {
+                    // get the next line from the file
+                    line = reader.ReadLine();
+                    if (line == null)
+                    {
+                        // there are no more lines; break out of the loop
+                        break;
+                    }
+
+                    if (blank.Match(line).Success || comment.Match(line).Success)
+                    {
+                        continue;
+                    }
+
+                    if (bpms.Match(line).Success)
+                    {
+                        string current = bpms.Replace(line, ""); // trim the line type indicator  #BPMS:
+                        Regex r = new Regex(";");
+                        current = r.Replace(current, ""); // trim the trailing semicolon
+                        string[] bpms_array = current.Split(','); // split the list on comma
+                        trimmed = new List<int>();
+                        Regex leading_beat_count = new Regex("[0-9]+\\.[0-9]*=");
+                        Regex floor = new Regex("\\.[0-9]+");
+                        foreach (string b in bpms_array)
+                        {
+                            string a = leading_beat_count.Replace(b, "");
+                            a = floor.Replace(a, "");
+                            trimmed.Add(Convert.ToInt32(a));
+                        }
+                        trimmed_count = trimmed.Count() - 1;
+                        trimmed_min = trimmed.Min();
+                        trimmed_max = trimmed.Max();
+                    }
+
+                    if (stops.Match(line).Success)
+                    {
+                        string song_name = file;
+                        // split the line on each semicolon character
+                        //  string[] parts = line.Split(';');
+                        string complete_stops = "";
+                        Regex r = new Regex(";");
+                        // STOPS might be spread out over several lines, so first we will concatenate them 
+                        while (!r.Match(line).Success)
+                        {
+                            header_text.Add(line);
+                            complete_stops += line;
+                            line = reader.ReadLine();
+                        }
+                        complete_stops += line;
+                        complete_stops = stops.Replace(complete_stops, ""); // trim the line type indicator  #STOPS:
+                        complete_stops = r.Replace(complete_stops, ""); // trim the trailing semicolon
+                        string[] stops_array = complete_stops.Split(','); // split the list on comma
+                        string all_stops = string.Join(" ", stops_array);
+                        num_stops = stops_array.Count();
+                        if (complete_stops.Equals(""))
+                        {
+                            num_stops = 0;
+                        }
+                    }
+
+                    if (notes.Match(line).Success)
+                    {
+                        in_a_note_set = true;
+                        is_header = false;
+                    }
+
+                    if (is_header)
+                    {
+                        header_text.Add(line);
+                    }
+
+                    if (in_a_note_set)
+                    {
+                        if (commas.Match(line).Success)
+                        {
+                            count_measures++;
+                        }
+                    }
+                    if (semicolon.Match(line).Success && in_a_note_set)
+                    {
+                        // end of note set
+                        if (count_measures > 0)
+                        {
+                            measures_list.Add(count_measures);
+                        }
+                        note_sets++;
+                        count_measures = 0;
+                        in_a_note_set = false;
+                    }
+
+                } while (true);
+            } // end using StreamReader; end of song file
+            Song s = new Song("SM", file, header_text, (int)measures_list.Max(), trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
+            return s;
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -518,7 +745,6 @@ namespace Stepper
             quintuplesTrackbar2.Value = Convert.ToInt32(quintuples2.Value);
         }
 
-
         private void stepFill3_ValueChanged(object sender, EventArgs e)
         {
             stepFill_trackbar3.Value = Convert.ToInt32(stepFill3.Value);
@@ -558,7 +784,6 @@ namespace Stepper
         {
             quintuplesTrackbar3.Value = Convert.ToInt32(quintuples3.Value);
         }
-
 
         private void stepFill4_ValueChanged(object sender, EventArgs e)
         {
@@ -644,6 +869,5 @@ namespace Stepper
         {
             folderTextChanged = true;
         }
-
-     }
+    }
 }

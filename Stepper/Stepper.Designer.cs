@@ -39,6 +39,7 @@
             this.songInfo = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.label55 = new System.Windows.Forms.Label();
             this.stepFill5 = new System.Windows.Forms.NumericUpDown();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -67,6 +68,7 @@
             this.stepFill_trackbar5 = new System.Windows.Forms.TrackBar();
             this.level5 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.label43 = new System.Windows.Forms.Label();
             this.stepFill4 = new System.Windows.Forms.NumericUpDown();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -95,6 +97,7 @@
             this.stepFill_trackbar4 = new System.Windows.Forms.TrackBar();
             this.level4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
             this.stepFill2 = new System.Windows.Forms.NumericUpDown();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -123,6 +126,7 @@
             this.stepFill_trackbar2 = new System.Windows.Forms.TrackBar();
             this.level2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.stepFill = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -151,6 +155,7 @@
             this.stepFill_trackbar = new System.Windows.Forms.TrackBar();
             this.level = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label54 = new System.Windows.Forms.Label();
             this.stepFill3 = new System.Windows.Forms.NumericUpDown();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -180,11 +185,6 @@
             this.level3 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songInfo)).BeginInit();
@@ -382,6 +382,15 @@
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(595, 183);
             this.panel22.TabIndex = 13;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(35, 96);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(55, 13);
+            this.label55.TabIndex = 15;
+            this.label55.Text = "Every 2nd";
             // 
             // stepFill5
             // 
@@ -706,6 +715,15 @@
             this.panel17.Size = new System.Drawing.Size(595, 183);
             this.panel17.TabIndex = 13;
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(34, 98);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(55, 13);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Every 2nd";
+            // 
             // stepFill4
             // 
             this.stepFill4.Location = new System.Drawing.Point(40, 75);
@@ -1020,6 +1038,15 @@
             this.panel6.Size = new System.Drawing.Size(595, 183);
             this.panel6.TabIndex = 11;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(35, 97);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.TabIndex = 12;
+            this.label32.Text = "Every 2nd";
+            // 
             // stepFill2
             // 
             this.stepFill2.Location = new System.Drawing.Point(40, 75);
@@ -1324,6 +1351,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 183);
             this.panel1.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 97);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Every 2nd";
             // 
             // stepFill
             // 
@@ -1631,6 +1667,15 @@
             this.panel11.Size = new System.Drawing.Size(595, 183);
             this.panel11.TabIndex = 12;
             // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(35, 98);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(55, 13);
+            this.label54.TabIndex = 14;
+            this.label54.Text = "Every 2nd";
+            // 
             // stepFill3
             // 
             this.stepFill3.Location = new System.Drawing.Point(40, 75);
@@ -1935,59 +1980,15 @@
             this.level3.TabIndex = 0;
             this.level3.Text = "Medium";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 97);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Every 2nd";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(35, 97);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(55, 13);
-            this.label32.TabIndex = 12;
-            this.label32.Text = "Every 2nd";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(34, 98);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(55, 13);
-            this.label43.TabIndex = 13;
-            this.label43.Text = "Every 2nd";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(35, 98);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(55, 13);
-            this.label54.TabIndex = 14;
-            this.label54.Text = "Every 2nd";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(35, 96);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(55, 13);
-            this.label55.TabIndex = 15;
-            this.label55.Text = "Every 2nd";
-            // 
             // Stepper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1250, 827);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(1266, 865);
             this.Name = "Stepper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stepper";

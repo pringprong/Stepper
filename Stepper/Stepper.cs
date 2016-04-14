@@ -869,5 +869,25 @@ namespace Stepper
         {
             folderTextChanged = true;
         }
+
+        private void full8thStream_CheckedChanged(object sender, EventArgs e)
+        {
+            if (full8thStream.Checked)
+            {
+                triples_on_1_and_3.Enabled = false;
+                quintuplesTrackbar.Enabled = false;
+                quintuples_on_1_or_2.Enabled = false;
+                quintuples.Enabled = false;
+                label25.Enabled = false;
+            }
+            else
+            {
+                triples_on_1_and_3.Enabled = true;
+                quintuplesTrackbar.Enabled = true;
+                quintuples_on_1_or_2.Enabled = true;
+                quintuples.Enabled = true;
+                label25.Enabled = true;
+            }
+        }
     }
 }

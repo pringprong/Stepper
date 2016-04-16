@@ -17,17 +17,31 @@ namespace Stepper
         private List<Song> songs;
         private int beats_per_measure = 4;
         Random r;
-        Instructions i;
         private bool folderTextChanged = false;
         private ToolTip toolTip1;
 
+        private int instructionsTextboxGap = 40;
+
         public Stepper()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
+
+Instructions:
+1. Before running Stepper, open C:\Games\StepMania 5\Songs and create a new song group folder such as 'Cardio'
+2. Copy songs (entire folders containing .mp3, .ssc, etc.) from your other song group folders into the new one.
+3. Run Stepper and change the settings for the 5 difficulty levels of each set of steps 'Dance Single', 'Pump Single' etc.
+4. Move to the 'Write Stepfiles' tab. Browse to the new folder and click 'Get Info'. The table will show the songs, max and min beats per minute, number of stops, etc. in the selected song group folder
+5. Click 'Overwrite stepfiles' to overwrite the existing stepfiles and create dance steps for each song according to the settings.
+6. Open Stepmania and try out your new steps!
+
+Warnings: 
+1. Although Stepper will create a backup of the old stepfile, there is no quick way to restore from backup. It's better to copy the song folders to a new song group folder before you start instead of changing the old .sm files in place
+2. Stepmania stores information about each song in a cache. If Stepmania doesn't display all 5 song levels created by Stepper, go to C:\Users\<your username>\AppData\Roaming\StepMania 5\Cache and delete everything, then restart Stepmania to refresh the cache
+3. Some songs use a .dwi file instead of a .sm or .ssc file to store step information. Stepper does not work for .dwi format stepfiles."; 
+           
             songs = new List<Song>();
             r = new Random();
-            i = new Instructions();
-            i.Hide();
             toolTip1 = new ToolTip();
             // Set up the delays for the ToolTip.
             toolTip1.AutoPopDelay = 5000;
@@ -40,7 +54,6 @@ namespace Stepper
             toolTip1.SetToolTip(this.folderChooser, "Open folder chooser");
             toolTip1.SetToolTip(this.getInfo, "Click here to get some information about the song files in the selected folder");
             toolTip1.SetToolTip(this.overwriteStepfiles, "Overwrite the stepfiles in the selected folder according to the settings below");
-            toolTip1.SetToolTip(this.instructions, "Open instructions window");
             toolTip1.SetToolTip(this.close, "Close this application");
             toolTip1.SetToolTip(this.currentFolder, "The currently selected folder");
 
@@ -117,7 +130,7 @@ namespace Stepper
             toolTip1.SetToolTip(this.quintuples_on_1_or_23, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-
+            
         }
 
         private void selectFolder_Click(object sender, EventArgs e)
@@ -160,16 +173,16 @@ namespace Stepper
             songInfo.Columns[2].HeaderText = "Max BPM";
             songInfo.Columns[3].HeaderText = "# BPM Changes";
             songInfo.Columns[4].HeaderText = "# Stops";
-            songInfo.Columns[5].HeaderText = "# Arrow Sets";
+            songInfo.Columns[5].HeaderText = "# Step Sets";
             songInfo.Columns[6].HeaderText = "# Measures";
             songInfo.Columns[7].HeaderText = "Type";
-            songInfo.Columns[0].Width = 460;
-            songInfo.Columns[1].Width = 100;
-            songInfo.Columns[2].Width = 100;
-            songInfo.Columns[3].Width = 130;
-            songInfo.Columns[4].Width = 100;
-            songInfo.Columns[5].Width = 100;
-            songInfo.Columns[6].Width = 100;
+            songInfo.Columns[0].Width = 420;
+            songInfo.Columns[1].Width = 90;
+            songInfo.Columns[2].Width = 90;
+            songInfo.Columns[3].Width = 110;
+            songInfo.Columns[4].Width = 70;
+            songInfo.Columns[5].Width = 90;
+            songInfo.Columns[6].Width = 90;
             songInfo.Columns[7].Width = 50;
             songInfo.Columns[0].ToolTipText = "Complete path name of each Stepmania song folder";
             songInfo.Columns[1].ToolTipText = "Minimum beats per minute of each song";
@@ -238,12 +251,25 @@ namespace Stepper
                 }
                 else if (Directory.GetFiles(dirs[i], "*.dwi").Count() > 0)
                 {
+                    songInfo[1, i].Value = "";
+                    songInfo[2, i].Value = "";
+                    songInfo[3, i].Value = "";
+                    songInfo[4, i].Value = "";
+                    songInfo[5, i].Value = "";
+                    songInfo[6, i].Value = "";
                     songInfo[7, i].Value = "DWI";
                     songInfo.ClearSelection();
                 }
                 else
                 {
-                    // no valid stepfile found
+                    songInfo[1, i].Value = "";
+                    songInfo[2, i].Value = "";
+                    songInfo[3, i].Value = "";
+                    songInfo[4, i].Value = "";
+                    songInfo[5, i].Value = "";
+                    songInfo[6, i].Value = "";
+                    songInfo[7, i].Value = "NONE";
+                    songInfo.ClearSelection();
                 }
             } // end for (int i = 0; i < fileCount; i++) 
             folderTextChanged = false;
@@ -660,11 +686,6 @@ namespace Stepper
             this.Close();
         }
 
-        private void instructions_Click(object sender, EventArgs e)
-        {
-            i.Show();
-        }
-
         private void stepFill_ValueChanged(object sender, EventArgs e)
         {
             stepFill_trackbar.Value = Convert.ToInt32(stepFill.Value);
@@ -888,6 +909,173 @@ namespace Stepper
                 quintuples.Enabled = true;
                 label25.Enabled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage4;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void panel30_Resize(object sender, EventArgs e)
+        {
+            button4.Width = panel30.Width / 2 - 5;
+            button5.Width = panel30.Width / 2 - 5;
+        }
+
+        private void tabPage1_Resize(object sender, EventArgs e)
+        {
+            textBox1.Height = tabPage1.Height - instructionsTextboxGap;
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            button7.Width = Math.Max(Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15)), button7.MinimumSize.Width);
+            currentFolder.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.25));
+            folderChooser.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15));
+            getInfo.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15));
+            overwriteStepfiles.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15));
+            close.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.1));
+        }
+
+        private void tabPage4_Resize(object sender, EventArgs e)
+        {
+            songInfo.Height = tabPage4.Height - instructionsTextboxGap;
+        }
+
+        private void panel29_Resize(object sender, EventArgs e)
+        {
+            button2.Width = panel29.Width / 2 - 5;
+            button3.Width = panel29.Width / 2 - 5;
+        }
+
+        private void tabPage2_Resize(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Height = tabPage2.Height - instructionsTextboxGap;
+        }
+
+        private void tripleTypetrackbar_ValueChanged(object sender, EventArgs e)
+        {
+            tripleType.Value = tripleTypetrackbar.Value;
+        }
+
+        private void tripleType_ValueChanged(object sender, EventArgs e)
+        {
+            tripleTypetrackbar.Value = Convert.ToInt32(tripleType.Value);
+        }
+
+        private void tripleTypetrackbar2_ValueChanged(object sender, EventArgs e)
+        {
+            tripleType2.Value = tripleTypetrackbar2.Value;
+        }
+
+        private void tripleType2_ValueChanged(object sender, EventArgs e)
+        {
+            tripleTypetrackbar2.Value = Convert.ToInt32(tripleType2.Value);
+        }
+
+        private void tripleTypetrackbar3_ValueChanged(object sender, EventArgs e)
+        {
+            tripleType3.Value = tripleTypetrackbar3.Value;
+        }
+
+        private void tripleType3_ValueChanged(object sender, EventArgs e)
+        {
+            tripleTypetrackbar3.Value = Convert.ToInt32(tripleType3.Value);
+        }
+
+        private void tripleTypetrackbar4_ValueChanged(object sender, EventArgs e)
+        {
+            tripleType4.Value = tripleTypetrackbar4.Value;
+        }
+
+        private void tripleType4_ValueChanged(object sender, EventArgs e)
+        {
+            tripleTypetrackbar4.Value = Convert.ToInt32(tripleType4.Value);
+        }
+
+        private void tripleTypetrackbar5_ValueChanged(object sender, EventArgs e)
+        {
+            tripleType5.Value = tripleTypetrackbar5.Value;
+        }
+
+        private void tripleType5_ValueChanged(object sender, EventArgs e)
+        {
+            tripleTypetrackbar5.Value = Convert.ToInt32(tripleType5.Value);
+        }
+
+        private void quintupleTypetrackbar_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleType.Value = quintupleTypetrackbar.Value;
+        }
+
+        private void quintupleType_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleTypetrackbar.Value = Convert.ToInt32(quintupleType.Value);
+        }
+
+        private void quintupleTypetrackbar2_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleType2.Value = quintupleTypetrackbar2.Value;
+        }
+
+        private void quintupleType2_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleTypetrackbar2.Value = Convert.ToInt32(quintupleType2.Value);
+        }
+
+        private void quintupleTypetrackbar3_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleType3.Value = quintupleTypetrackbar3.Value;
+        }
+
+        private void quintupleType3_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleTypetrackbar3.Value = Convert.ToInt32(quintupleType3.Value);
+        }
+
+        private void quintupleTypetrackbar4_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleType4.Value = quintupleTypetrackbar4.Value;
+        }
+
+        private void quintupleType4_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleTypetrackbar4.Value = Convert.ToInt32(quintupleType4.Value);
+        }
+
+        private void quintupleTypetrackbar5_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleType5.Value = quintupleTypetrackbar5.Value;
+        }
+
+        private void quintupleType5_ValueChanged(object sender, EventArgs e)
+        {
+            quintupleTypetrackbar5.Value = Convert.ToInt32(quintupleType5.Value);
         }
     }
 }

@@ -326,78 +326,78 @@ Warnings:
                     note5.generateSteps();
 
                     Noteset dance_solo1 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
-                        (int)quintuplesDS1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                        alternate_footDS1.Checked, arrow_repeatDS1.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
+                        (int)quintuplesDS1.Value, triples_on_1_and_3DS1.Checked, quintuples_on_1_or_2DS1.Checked);
                     dance_solo1.generateSteps();
 
                     Noteset dance_solo2 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
-                        (int)quintuplesDS2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                        alternate_footDS2.Checked, arrow_repeatDS2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
+                        (int)quintuplesDS2.Value, triples_on_1_and_3DS2.Checked, quintuples_on_1_or_2DS2.Checked);
                     dance_solo2.generateSteps();
 
                     Noteset dance_solo3 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
-                       (int)quintuplesDS3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                       alternate_footDS3.Checked, arrow_repeatDS3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
+                       (int)quintuplesDS3.Value, triples_on_1_and_3DS3.Checked, quintuples_on_1_or_2DS3.Checked);
                     dance_solo3.generateSteps();
 
                     Noteset dance_solo4 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
-                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
-                        (int)quintuplesDS4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                        alternate_footDS4.Checked, arrow_repeatDS4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
+                        (int)quintuplesDS4.Value, triples_on_1_and_3DS4.Checked, quintuples_on_1_or_2DS4.Checked);
                     dance_solo4.generateSteps();
 
                     Noteset dance_solo5 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
-                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
-                        (int)quintuplesDS5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                        alternate_footDS5.Checked, arrow_repeatDS5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
+                        (int)quintuplesDS5.Value, triples_on_1_and_3DS5.Checked, quintuples_on_1_or_2DS5.Checked);
                     dance_solo5.generateSteps();
 
                     Noteset dance_double1 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
-                        (int)quintuplesDD1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                        alternate_footDD1.Checked, arrow_repeatDD1.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
+                        (int)quintuplesDD1.Value, triples_on_1_and_3DD1.Checked, quintuples_on_1_or_2DD1.Checked);
                     dance_double1.generateSteps();
 
                     Noteset dance_double2 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
-                        (int)quintuplesDD2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                        alternate_footDD2.Checked, arrow_repeatDD2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
+                        (int)quintuplesDD2.Value, triples_on_1_and_3DD2.Checked, quintuples_on_1_or_2DD2.Checked);
                     dance_double2.generateSteps();
 
                     Noteset dance_double3 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
-                       (int)quintuplesDD3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                       alternate_footDD3.Checked, arrow_repeatDD3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
+                       (int)quintuplesDD3.Value, triples_on_1_and_3DD3.Checked, quintuples_on_1_or_2DD3.Checked);
                     dance_double3.generateSteps();
 
                     Noteset dance_double4 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
-                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
-                        (int)quintuplesDD4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                        alternate_footDD4.Checked, arrow_repeatDD4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
+                        (int)quintuplesDD4.Value, triples_on_1_and_3DD4.Checked, quintuples_on_1_or_2DD4.Checked);
                     dance_double4.generateSteps();
 
                     Noteset dance_double5 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
-                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
-                        (int)quintuplesDD5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                        alternate_footDD5.Checked, arrow_repeatDD5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
+                        (int)quintuplesDD5.Value, triples_on_1_and_3DD5.Checked, quintuples_on_1_or_2DD5.Checked);
                     dance_double5.generateSteps();
 
                     Noteset pump_single1 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
-                        (int)quintuplesPS1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                        alternate_footPS1.Checked, arrow_repeatPS1.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
+                        (int)quintuplesPS1.Value, triples_on_1_and_3PS1.Checked, quintuples_on_1_or_2PS1.Checked);
                     pump_single1.generateSteps();
 
                     Noteset pump_single2 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
-                        (int)quintuplesPS2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                        alternate_footPS2.Checked, arrow_repeatPS2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
+                        (int)quintuplesPS2.Value, triples_on_1_and_3PS2.Checked, quintuples_on_1_or_2PS2.Checked);
                     pump_single2.generateSteps();
 
                     Noteset pump_single3 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
-                       (int)quintuplesPS3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                       alternate_footPS3.Checked, arrow_repeatPS3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
+                       (int)quintuplesPS3.Value, triples_on_1_and_3PS3.Checked, quintuples_on_1_or_2PS3.Checked);
                     pump_single3.generateSteps();
 
                     Noteset pump_single4 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
-                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
-                        (int)quintuplesPS4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                        alternate_footPS4.Checked, arrow_repeatPS4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
+                        (int)quintuplesPS4.Value, triples_on_1_and_3PS4.Checked, quintuples_on_1_or_2PS4.Checked);
                     pump_single4.generateSteps();
 
                     Noteset pump_single5 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
-                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
-                        (int)quintuplesPS5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                        alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
+                        (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
                     pump_single5.generateSteps();
 
 
@@ -1768,7 +1768,5 @@ Warnings:
         {
             quintuplesTrackbarPS5.Value = Convert.ToInt32(quintuplesPS5.Value);
         }
-
-
      }
 }

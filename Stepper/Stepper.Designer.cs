@@ -292,10 +292,10 @@
             this.onBeatTrackbarDS1 = new System.Windows.Forms.TrackBar();
             this.panel44 = new System.Windows.Forms.Panel();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DS1 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DS1 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDS1 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDS1 = new System.Windows.Forms.CheckBox();
             this.label101 = new System.Windows.Forms.Label();
             this.label102 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDS1 = new System.Windows.Forms.TrackBar();
@@ -334,10 +334,10 @@
             this.onBeatTrackbarDS2 = new System.Windows.Forms.TrackBar();
             this.panel51 = new System.Windows.Forms.Panel();
             this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DS2 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DS2 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDS2 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDS2 = new System.Windows.Forms.CheckBox();
             this.label119 = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDS2 = new System.Windows.Forms.TrackBar();
@@ -378,13 +378,13 @@
             this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DS3 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DS3 = new System.Windows.Forms.CheckBox();
             this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDS3 = new System.Windows.Forms.CheckBox();
             this.checkBox28 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDS3 = new System.Windows.Forms.CheckBox();
             this.label137 = new System.Windows.Forms.Label();
             this.label138 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDS3 = new System.Windows.Forms.TrackBar();
@@ -423,10 +423,10 @@
             this.onBeatTrackbarDS4 = new System.Windows.Forms.TrackBar();
             this.panel65 = new System.Windows.Forms.Panel();
             this.checkBox30 = new System.Windows.Forms.CheckBox();
-            this.checkBox31 = new System.Windows.Forms.CheckBox();
-            this.checkBox32 = new System.Windows.Forms.CheckBox();
-            this.checkBox33 = new System.Windows.Forms.CheckBox();
-            this.checkBox34 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DS4 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DS4 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDS4 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDS4 = new System.Windows.Forms.CheckBox();
             this.label155 = new System.Windows.Forms.Label();
             this.label156 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDS4 = new System.Windows.Forms.TrackBar();
@@ -465,10 +465,10 @@
             this.onBeatTrackbarDS5 = new System.Windows.Forms.TrackBar();
             this.panel72 = new System.Windows.Forms.Panel();
             this.checkBox35 = new System.Windows.Forms.CheckBox();
-            this.checkBox36 = new System.Windows.Forms.CheckBox();
-            this.checkBox37 = new System.Windows.Forms.CheckBox();
-            this.checkBox38 = new System.Windows.Forms.CheckBox();
-            this.checkBox39 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DS5 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DS5 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDS5 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDS5 = new System.Windows.Forms.CheckBox();
             this.label173 = new System.Windows.Forms.Label();
             this.label174 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDS5 = new System.Windows.Forms.TrackBar();
@@ -512,10 +512,10 @@
             this.onBeatTrackbarDD1 = new System.Windows.Forms.TrackBar();
             this.panel79 = new System.Windows.Forms.Panel();
             this.checkBox40 = new System.Windows.Forms.CheckBox();
-            this.checkBox41 = new System.Windows.Forms.CheckBox();
-            this.checkBox42 = new System.Windows.Forms.CheckBox();
-            this.checkBox43 = new System.Windows.Forms.CheckBox();
-            this.checkBox44 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DD1 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DD1 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDD1 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDD1 = new System.Windows.Forms.CheckBox();
             this.label191 = new System.Windows.Forms.Label();
             this.label192 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDD1 = new System.Windows.Forms.TrackBar();
@@ -554,10 +554,10 @@
             this.onBeatTrackbarDD2 = new System.Windows.Forms.TrackBar();
             this.panel86 = new System.Windows.Forms.Panel();
             this.checkBox45 = new System.Windows.Forms.CheckBox();
-            this.checkBox46 = new System.Windows.Forms.CheckBox();
-            this.checkBox47 = new System.Windows.Forms.CheckBox();
-            this.checkBox48 = new System.Windows.Forms.CheckBox();
-            this.checkBox49 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DD2 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DD2 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDD2 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDD2 = new System.Windows.Forms.CheckBox();
             this.label209 = new System.Windows.Forms.Label();
             this.label210 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDD2 = new System.Windows.Forms.TrackBar();
@@ -598,13 +598,13 @@
             this.checkBox50 = new System.Windows.Forms.CheckBox();
             this.checkBox51 = new System.Windows.Forms.CheckBox();
             this.checkBox52 = new System.Windows.Forms.CheckBox();
-            this.checkBox53 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DD3 = new System.Windows.Forms.CheckBox();
             this.checkBox54 = new System.Windows.Forms.CheckBox();
-            this.checkBox55 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DD3 = new System.Windows.Forms.CheckBox();
             this.checkBox56 = new System.Windows.Forms.CheckBox();
-            this.checkBox57 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDD3 = new System.Windows.Forms.CheckBox();
             this.checkBox58 = new System.Windows.Forms.CheckBox();
-            this.checkBox59 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDD3 = new System.Windows.Forms.CheckBox();
             this.label227 = new System.Windows.Forms.Label();
             this.label228 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDD3 = new System.Windows.Forms.TrackBar();
@@ -643,10 +643,10 @@
             this.onBeatTrackbarDD4 = new System.Windows.Forms.TrackBar();
             this.panel100 = new System.Windows.Forms.Panel();
             this.checkBox60 = new System.Windows.Forms.CheckBox();
-            this.checkBox61 = new System.Windows.Forms.CheckBox();
-            this.checkBox62 = new System.Windows.Forms.CheckBox();
-            this.checkBox63 = new System.Windows.Forms.CheckBox();
-            this.checkBox64 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DD4 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DD4 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDD4 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDD4 = new System.Windows.Forms.CheckBox();
             this.label245 = new System.Windows.Forms.Label();
             this.label246 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDD4 = new System.Windows.Forms.TrackBar();
@@ -685,10 +685,10 @@
             this.onBeatTrackbarDD5 = new System.Windows.Forms.TrackBar();
             this.panel107 = new System.Windows.Forms.Panel();
             this.checkBox65 = new System.Windows.Forms.CheckBox();
-            this.checkBox66 = new System.Windows.Forms.CheckBox();
-            this.checkBox67 = new System.Windows.Forms.CheckBox();
-            this.checkBox68 = new System.Windows.Forms.CheckBox();
-            this.checkBox69 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2DD5 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3DD5 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatDD5 = new System.Windows.Forms.CheckBox();
+            this.alternate_footDD5 = new System.Windows.Forms.CheckBox();
             this.label263 = new System.Windows.Forms.Label();
             this.label264 = new System.Windows.Forms.Label();
             this.stepfill_trackbarDD5 = new System.Windows.Forms.TrackBar();
@@ -729,10 +729,10 @@
             this.onBeatTrackbarPS1 = new System.Windows.Forms.TrackBar();
             this.panel116 = new System.Windows.Forms.Panel();
             this.checkBox70 = new System.Windows.Forms.CheckBox();
-            this.checkBox71 = new System.Windows.Forms.CheckBox();
-            this.checkBox72 = new System.Windows.Forms.CheckBox();
-            this.checkBox73 = new System.Windows.Forms.CheckBox();
-            this.checkBox74 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2PS1 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3PS1 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatPS1 = new System.Windows.Forms.CheckBox();
+            this.alternate_footPS1 = new System.Windows.Forms.CheckBox();
             this.label281 = new System.Windows.Forms.Label();
             this.label282 = new System.Windows.Forms.Label();
             this.stepfill_trackbarPS1 = new System.Windows.Forms.TrackBar();
@@ -771,10 +771,10 @@
             this.onBeatTrackbarPS2 = new System.Windows.Forms.TrackBar();
             this.panel123 = new System.Windows.Forms.Panel();
             this.checkBox75 = new System.Windows.Forms.CheckBox();
-            this.checkBox76 = new System.Windows.Forms.CheckBox();
-            this.checkBox77 = new System.Windows.Forms.CheckBox();
-            this.checkBox78 = new System.Windows.Forms.CheckBox();
-            this.checkBox79 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2PS2 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3PS2 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatPS2 = new System.Windows.Forms.CheckBox();
+            this.alternate_footPS2 = new System.Windows.Forms.CheckBox();
             this.label299 = new System.Windows.Forms.Label();
             this.label300 = new System.Windows.Forms.Label();
             this.stepfill_trackbarPS2 = new System.Windows.Forms.TrackBar();
@@ -815,13 +815,13 @@
             this.checkBox80 = new System.Windows.Forms.CheckBox();
             this.checkBox81 = new System.Windows.Forms.CheckBox();
             this.checkBox82 = new System.Windows.Forms.CheckBox();
-            this.checkBox83 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2PS3 = new System.Windows.Forms.CheckBox();
             this.checkBox84 = new System.Windows.Forms.CheckBox();
-            this.checkBox85 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3PS3 = new System.Windows.Forms.CheckBox();
             this.checkBox86 = new System.Windows.Forms.CheckBox();
-            this.checkBox87 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatPS3 = new System.Windows.Forms.CheckBox();
             this.checkBox88 = new System.Windows.Forms.CheckBox();
-            this.checkBox89 = new System.Windows.Forms.CheckBox();
+            this.alternate_footPS3 = new System.Windows.Forms.CheckBox();
             this.label317 = new System.Windows.Forms.Label();
             this.label318 = new System.Windows.Forms.Label();
             this.stepfill_trackbarPS3 = new System.Windows.Forms.TrackBar();
@@ -860,10 +860,10 @@
             this.onBeatTrackbarPS4 = new System.Windows.Forms.TrackBar();
             this.panel137 = new System.Windows.Forms.Panel();
             this.checkBox90 = new System.Windows.Forms.CheckBox();
-            this.checkBox91 = new System.Windows.Forms.CheckBox();
-            this.checkBox92 = new System.Windows.Forms.CheckBox();
-            this.checkBox93 = new System.Windows.Forms.CheckBox();
-            this.checkBox94 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2PS4 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3PS4 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatPS4 = new System.Windows.Forms.CheckBox();
+            this.alternate_footPS4 = new System.Windows.Forms.CheckBox();
             this.label335 = new System.Windows.Forms.Label();
             this.label336 = new System.Windows.Forms.Label();
             this.stepfill_trackbarPS4 = new System.Windows.Forms.TrackBar();
@@ -902,10 +902,10 @@
             this.onBeatTrackbarPS5 = new System.Windows.Forms.TrackBar();
             this.panel144 = new System.Windows.Forms.Panel();
             this.checkBox95 = new System.Windows.Forms.CheckBox();
-            this.checkBox96 = new System.Windows.Forms.CheckBox();
-            this.checkBox97 = new System.Windows.Forms.CheckBox();
-            this.checkBox98 = new System.Windows.Forms.CheckBox();
-            this.checkBox99 = new System.Windows.Forms.CheckBox();
+            this.quintuples_on_1_or_2PS5 = new System.Windows.Forms.CheckBox();
+            this.triples_on_1_and_3PS5 = new System.Windows.Forms.CheckBox();
+            this.arrow_repeatPS5 = new System.Windows.Forms.CheckBox();
+            this.alternate_footPS5 = new System.Windows.Forms.CheckBox();
             this.label353 = new System.Windows.Forms.Label();
             this.label354 = new System.Windows.Forms.Label();
             this.stepfill_trackbarPS5 = new System.Windows.Forms.TrackBar();
@@ -4242,10 +4242,10 @@
             // 
             this.panel44.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel44.Controls.Add(this.checkBox10);
-            this.panel44.Controls.Add(this.checkBox11);
-            this.panel44.Controls.Add(this.checkBox12);
-            this.panel44.Controls.Add(this.checkBox13);
-            this.panel44.Controls.Add(this.checkBox14);
+            this.panel44.Controls.Add(this.quintuples_on_1_or_2DS1);
+            this.panel44.Controls.Add(this.triples_on_1_and_3DS1);
+            this.panel44.Controls.Add(this.arrow_repeatDS1);
+            this.panel44.Controls.Add(this.alternate_footDS1);
             this.panel44.Location = new System.Drawing.Point(849, 3);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(157, 110);
@@ -4262,49 +4262,49 @@
             this.checkBox10.Text = "Full 8th stream";
             this.checkBox10.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // quintuples_on_1_or_2DS1
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(5, 65);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(150, 17);
-            this.checkBox11.TabIndex = 6;
-            this.checkBox11.Text = "Quintuples on either 1 or 2";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DS1.AutoSize = true;
+            this.quintuples_on_1_or_2DS1.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DS1.Name = "quintuples_on_1_or_2DS1";
+            this.quintuples_on_1_or_2DS1.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DS1.TabIndex = 6;
+            this.quintuples_on_1_or_2DS1.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // triples_on_1_and_3DS1
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(5, 45);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(135, 17);
-            this.checkBox12.TabIndex = 5;
-            this.checkBox12.Text = "Triples on both 1 and 3";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DS1.AutoSize = true;
+            this.triples_on_1_and_3DS1.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DS1.Name = "triples_on_1_and_3DS1";
+            this.triples_on_1_and_3DS1.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DS1.TabIndex = 5;
+            this.triples_on_1_and_3DS1.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // arrow_repeatDS1
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Checked = true;
-            this.checkBox13.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox13.Location = new System.Drawing.Point(5, 25);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(86, 17);
-            this.checkBox13.TabIndex = 4;
-            this.checkBox13.Text = "Arrow repeat";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.arrow_repeatDS1.AutoSize = true;
+            this.arrow_repeatDS1.Checked = true;
+            this.arrow_repeatDS1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDS1.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDS1.Name = "arrow_repeatDS1";
+            this.arrow_repeatDS1.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDS1.TabIndex = 4;
+            this.arrow_repeatDS1.Text = "Arrow repeat";
+            this.arrow_repeatDS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // alternate_footDS1
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Checked = true;
-            this.checkBox14.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox14.Location = new System.Drawing.Point(5, 5);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(100, 17);
-            this.checkBox14.TabIndex = 3;
-            this.checkBox14.Text = "Alternating feet ";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.alternate_footDS1.AutoSize = true;
+            this.alternate_footDS1.Checked = true;
+            this.alternate_footDS1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDS1.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDS1.Name = "alternate_footDS1";
+            this.alternate_footDS1.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDS1.TabIndex = 3;
+            this.alternate_footDS1.Text = "Alternating feet ";
+            this.alternate_footDS1.UseVisualStyleBackColor = true;
             // 
             // label101
             // 
@@ -4694,10 +4694,10 @@
             // 
             this.panel51.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel51.Controls.Add(this.checkBox15);
-            this.panel51.Controls.Add(this.checkBox16);
-            this.panel51.Controls.Add(this.checkBox17);
-            this.panel51.Controls.Add(this.checkBox18);
-            this.panel51.Controls.Add(this.checkBox19);
+            this.panel51.Controls.Add(this.quintuples_on_1_or_2DS2);
+            this.panel51.Controls.Add(this.triples_on_1_and_3DS2);
+            this.panel51.Controls.Add(this.arrow_repeatDS2);
+            this.panel51.Controls.Add(this.alternate_footDS2);
             this.panel51.Location = new System.Drawing.Point(849, 3);
             this.panel51.Name = "panel51";
             this.panel51.Size = new System.Drawing.Size(157, 110);
@@ -4714,47 +4714,47 @@
             this.checkBox15.Text = "Full 8th stream";
             this.checkBox15.UseVisualStyleBackColor = true;
             // 
-            // checkBox16
+            // quintuples_on_1_or_2DS2
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(5, 65);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(150, 17);
-            this.checkBox16.TabIndex = 6;
-            this.checkBox16.Text = "Quintuples on either 1 or 2";
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DS2.AutoSize = true;
+            this.quintuples_on_1_or_2DS2.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DS2.Name = "quintuples_on_1_or_2DS2";
+            this.quintuples_on_1_or_2DS2.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DS2.TabIndex = 6;
+            this.quintuples_on_1_or_2DS2.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox17
+            // triples_on_1_and_3DS2
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(5, 45);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(135, 17);
-            this.checkBox17.TabIndex = 5;
-            this.checkBox17.Text = "Triples on both 1 and 3";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DS2.AutoSize = true;
+            this.triples_on_1_and_3DS2.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DS2.Name = "triples_on_1_and_3DS2";
+            this.triples_on_1_and_3DS2.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DS2.TabIndex = 5;
+            this.triples_on_1_and_3DS2.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox18
+            // arrow_repeatDS2
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(5, 25);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(86, 17);
-            this.checkBox18.TabIndex = 4;
-            this.checkBox18.Text = "Arrow repeat";
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.arrow_repeatDS2.AutoSize = true;
+            this.arrow_repeatDS2.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDS2.Name = "arrow_repeatDS2";
+            this.arrow_repeatDS2.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDS2.TabIndex = 4;
+            this.arrow_repeatDS2.Text = "Arrow repeat";
+            this.arrow_repeatDS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox19
+            // alternate_footDS2
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Checked = true;
-            this.checkBox19.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox19.Location = new System.Drawing.Point(5, 5);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(100, 17);
-            this.checkBox19.TabIndex = 3;
-            this.checkBox19.Text = "Alternating feet ";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.alternate_footDS2.AutoSize = true;
+            this.alternate_footDS2.Checked = true;
+            this.alternate_footDS2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDS2.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDS2.Name = "alternate_footDS2";
+            this.alternate_footDS2.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDS2.TabIndex = 3;
+            this.alternate_footDS2.Text = "Alternating feet ";
+            this.alternate_footDS2.UseVisualStyleBackColor = true;
             // 
             // label119
             // 
@@ -5158,13 +5158,13 @@
             this.panel58.Controls.Add(this.checkBox20);
             this.panel58.Controls.Add(this.checkBox21);
             this.panel58.Controls.Add(this.checkBox22);
-            this.panel58.Controls.Add(this.checkBox23);
+            this.panel58.Controls.Add(this.quintuples_on_1_or_2DS3);
             this.panel58.Controls.Add(this.checkBox24);
-            this.panel58.Controls.Add(this.checkBox25);
+            this.panel58.Controls.Add(this.triples_on_1_and_3DS3);
             this.panel58.Controls.Add(this.checkBox26);
-            this.panel58.Controls.Add(this.checkBox27);
+            this.panel58.Controls.Add(this.arrow_repeatDS3);
             this.panel58.Controls.Add(this.checkBox28);
-            this.panel58.Controls.Add(this.checkBox29);
+            this.panel58.Controls.Add(this.alternate_footDS3);
             this.panel58.Location = new System.Drawing.Point(849, 3);
             this.panel58.Name = "panel58";
             this.panel58.Size = new System.Drawing.Size(157, 110);
@@ -5201,17 +5201,17 @@
             this.checkBox22.Text = "Quintuples on either 1 or 2";
             this.checkBox22.UseVisualStyleBackColor = true;
             // 
-            // checkBox23
+            // quintuples_on_1_or_2DS3
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Checked = true;
-            this.checkBox23.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox23.Location = new System.Drawing.Point(5, 65);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(150, 17);
-            this.checkBox23.TabIndex = 6;
-            this.checkBox23.Text = "Quintuples on either 1 or 2";
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DS3.AutoSize = true;
+            this.quintuples_on_1_or_2DS3.Checked = true;
+            this.quintuples_on_1_or_2DS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2DS3.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DS3.Name = "quintuples_on_1_or_2DS3";
+            this.quintuples_on_1_or_2DS3.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DS3.TabIndex = 6;
+            this.quintuples_on_1_or_2DS3.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DS3.UseVisualStyleBackColor = true;
             // 
             // checkBox24
             // 
@@ -5223,15 +5223,15 @@
             this.checkBox24.Text = "Triples on both 1 and 3";
             this.checkBox24.UseVisualStyleBackColor = true;
             // 
-            // checkBox25
+            // triples_on_1_and_3DS3
             // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(5, 45);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(135, 17);
-            this.checkBox25.TabIndex = 5;
-            this.checkBox25.Text = "Triples on both 1 and 3";
-            this.checkBox25.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DS3.AutoSize = true;
+            this.triples_on_1_and_3DS3.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DS3.Name = "triples_on_1_and_3DS3";
+            this.triples_on_1_and_3DS3.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DS3.TabIndex = 5;
+            this.triples_on_1_and_3DS3.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DS3.UseVisualStyleBackColor = true;
             // 
             // checkBox26
             // 
@@ -5245,17 +5245,17 @@
             this.checkBox26.Text = "Arrow repeat";
             this.checkBox26.UseVisualStyleBackColor = true;
             // 
-            // checkBox27
+            // arrow_repeatDS3
             // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Checked = true;
-            this.checkBox27.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox27.Location = new System.Drawing.Point(5, 25);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(86, 17);
-            this.checkBox27.TabIndex = 4;
-            this.checkBox27.Text = "Arrow repeat";
-            this.checkBox27.UseVisualStyleBackColor = true;
+            this.arrow_repeatDS3.AutoSize = true;
+            this.arrow_repeatDS3.Checked = true;
+            this.arrow_repeatDS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDS3.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDS3.Name = "arrow_repeatDS3";
+            this.arrow_repeatDS3.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDS3.TabIndex = 4;
+            this.arrow_repeatDS3.Text = "Arrow repeat";
+            this.arrow_repeatDS3.UseVisualStyleBackColor = true;
             // 
             // checkBox28
             // 
@@ -5269,17 +5269,17 @@
             this.checkBox28.Text = "Alternating feet ";
             this.checkBox28.UseVisualStyleBackColor = true;
             // 
-            // checkBox29
+            // alternate_footDS3
             // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Checked = true;
-            this.checkBox29.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox29.Location = new System.Drawing.Point(5, 5);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(100, 17);
-            this.checkBox29.TabIndex = 3;
-            this.checkBox29.Text = "Alternating feet ";
-            this.checkBox29.UseVisualStyleBackColor = true;
+            this.alternate_footDS3.AutoSize = true;
+            this.alternate_footDS3.Checked = true;
+            this.alternate_footDS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDS3.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDS3.Name = "alternate_footDS3";
+            this.alternate_footDS3.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDS3.TabIndex = 3;
+            this.alternate_footDS3.Text = "Alternating feet ";
+            this.alternate_footDS3.UseVisualStyleBackColor = true;
             // 
             // label137
             // 
@@ -5675,10 +5675,10 @@
             // 
             this.panel65.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel65.Controls.Add(this.checkBox30);
-            this.panel65.Controls.Add(this.checkBox31);
-            this.panel65.Controls.Add(this.checkBox32);
-            this.panel65.Controls.Add(this.checkBox33);
-            this.panel65.Controls.Add(this.checkBox34);
+            this.panel65.Controls.Add(this.quintuples_on_1_or_2DS4);
+            this.panel65.Controls.Add(this.triples_on_1_and_3DS4);
+            this.panel65.Controls.Add(this.arrow_repeatDS4);
+            this.panel65.Controls.Add(this.alternate_footDS4);
             this.panel65.Location = new System.Drawing.Point(849, 3);
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(157, 110);
@@ -5695,51 +5695,51 @@
             this.checkBox30.Text = "Full 8th stream";
             this.checkBox30.UseVisualStyleBackColor = true;
             // 
-            // checkBox31
+            // quintuples_on_1_or_2DS4
             // 
-            this.checkBox31.AutoSize = true;
-            this.checkBox31.Location = new System.Drawing.Point(5, 65);
-            this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(150, 17);
-            this.checkBox31.TabIndex = 6;
-            this.checkBox31.Text = "Quintuples on either 1 or 2";
-            this.checkBox31.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DS4.AutoSize = true;
+            this.quintuples_on_1_or_2DS4.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DS4.Name = "quintuples_on_1_or_2DS4";
+            this.quintuples_on_1_or_2DS4.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DS4.TabIndex = 6;
+            this.quintuples_on_1_or_2DS4.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox32
+            // triples_on_1_and_3DS4
             // 
-            this.checkBox32.AutoSize = true;
-            this.checkBox32.Checked = true;
-            this.checkBox32.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox32.Location = new System.Drawing.Point(5, 45);
-            this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(135, 17);
-            this.checkBox32.TabIndex = 5;
-            this.checkBox32.Text = "Triples on both 1 and 3";
-            this.checkBox32.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DS4.AutoSize = true;
+            this.triples_on_1_and_3DS4.Checked = true;
+            this.triples_on_1_and_3DS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3DS4.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DS4.Name = "triples_on_1_and_3DS4";
+            this.triples_on_1_and_3DS4.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DS4.TabIndex = 5;
+            this.triples_on_1_and_3DS4.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox33
+            // arrow_repeatDS4
             // 
-            this.checkBox33.AutoSize = true;
-            this.checkBox33.Checked = true;
-            this.checkBox33.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox33.Location = new System.Drawing.Point(5, 25);
-            this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(86, 17);
-            this.checkBox33.TabIndex = 4;
-            this.checkBox33.Text = "Arrow repeat";
-            this.checkBox33.UseVisualStyleBackColor = true;
+            this.arrow_repeatDS4.AutoSize = true;
+            this.arrow_repeatDS4.Checked = true;
+            this.arrow_repeatDS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDS4.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDS4.Name = "arrow_repeatDS4";
+            this.arrow_repeatDS4.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDS4.TabIndex = 4;
+            this.arrow_repeatDS4.Text = "Arrow repeat";
+            this.arrow_repeatDS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox34
+            // alternate_footDS4
             // 
-            this.checkBox34.AutoSize = true;
-            this.checkBox34.Checked = true;
-            this.checkBox34.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox34.Location = new System.Drawing.Point(5, 5);
-            this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(100, 17);
-            this.checkBox34.TabIndex = 3;
-            this.checkBox34.Text = "Alternating feet ";
-            this.checkBox34.UseVisualStyleBackColor = true;
+            this.alternate_footDS4.AutoSize = true;
+            this.alternate_footDS4.Checked = true;
+            this.alternate_footDS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDS4.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDS4.Name = "alternate_footDS4";
+            this.alternate_footDS4.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDS4.TabIndex = 3;
+            this.alternate_footDS4.Text = "Alternating feet ";
+            this.alternate_footDS4.UseVisualStyleBackColor = true;
             // 
             // label155
             // 
@@ -6141,10 +6141,10 @@
             // 
             this.panel72.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel72.Controls.Add(this.checkBox35);
-            this.panel72.Controls.Add(this.checkBox36);
-            this.panel72.Controls.Add(this.checkBox37);
-            this.panel72.Controls.Add(this.checkBox38);
-            this.panel72.Controls.Add(this.checkBox39);
+            this.panel72.Controls.Add(this.quintuples_on_1_or_2DS5);
+            this.panel72.Controls.Add(this.triples_on_1_and_3DS5);
+            this.panel72.Controls.Add(this.arrow_repeatDS5);
+            this.panel72.Controls.Add(this.alternate_footDS5);
             this.panel72.Location = new System.Drawing.Point(849, 3);
             this.panel72.Name = "panel72";
             this.panel72.Size = new System.Drawing.Size(157, 110);
@@ -6161,53 +6161,53 @@
             this.checkBox35.Text = "Full 8th stream";
             this.checkBox35.UseVisualStyleBackColor = true;
             // 
-            // checkBox36
+            // quintuples_on_1_or_2DS5
             // 
-            this.checkBox36.AutoSize = true;
-            this.checkBox36.Checked = true;
-            this.checkBox36.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox36.Location = new System.Drawing.Point(5, 65);
-            this.checkBox36.Name = "checkBox36";
-            this.checkBox36.Size = new System.Drawing.Size(150, 17);
-            this.checkBox36.TabIndex = 6;
-            this.checkBox36.Text = "Quintuples on either 1 or 2";
-            this.checkBox36.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DS5.AutoSize = true;
+            this.quintuples_on_1_or_2DS5.Checked = true;
+            this.quintuples_on_1_or_2DS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2DS5.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DS5.Name = "quintuples_on_1_or_2DS5";
+            this.quintuples_on_1_or_2DS5.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DS5.TabIndex = 6;
+            this.quintuples_on_1_or_2DS5.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox37
+            // triples_on_1_and_3DS5
             // 
-            this.checkBox37.AutoSize = true;
-            this.checkBox37.Checked = true;
-            this.checkBox37.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox37.Location = new System.Drawing.Point(5, 45);
-            this.checkBox37.Name = "checkBox37";
-            this.checkBox37.Size = new System.Drawing.Size(135, 17);
-            this.checkBox37.TabIndex = 5;
-            this.checkBox37.Text = "Triples on both 1 and 3";
-            this.checkBox37.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DS5.AutoSize = true;
+            this.triples_on_1_and_3DS5.Checked = true;
+            this.triples_on_1_and_3DS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3DS5.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DS5.Name = "triples_on_1_and_3DS5";
+            this.triples_on_1_and_3DS5.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DS5.TabIndex = 5;
+            this.triples_on_1_and_3DS5.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox38
+            // arrow_repeatDS5
             // 
-            this.checkBox38.AutoSize = true;
-            this.checkBox38.Checked = true;
-            this.checkBox38.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox38.Location = new System.Drawing.Point(5, 25);
-            this.checkBox38.Name = "checkBox38";
-            this.checkBox38.Size = new System.Drawing.Size(86, 17);
-            this.checkBox38.TabIndex = 4;
-            this.checkBox38.Text = "Arrow repeat";
-            this.checkBox38.UseVisualStyleBackColor = true;
+            this.arrow_repeatDS5.AutoSize = true;
+            this.arrow_repeatDS5.Checked = true;
+            this.arrow_repeatDS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDS5.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDS5.Name = "arrow_repeatDS5";
+            this.arrow_repeatDS5.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDS5.TabIndex = 4;
+            this.arrow_repeatDS5.Text = "Arrow repeat";
+            this.arrow_repeatDS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox39
+            // alternate_footDS5
             // 
-            this.checkBox39.AutoSize = true;
-            this.checkBox39.Checked = true;
-            this.checkBox39.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox39.Location = new System.Drawing.Point(5, 5);
-            this.checkBox39.Name = "checkBox39";
-            this.checkBox39.Size = new System.Drawing.Size(100, 17);
-            this.checkBox39.TabIndex = 3;
-            this.checkBox39.Text = "Alternating feet ";
-            this.checkBox39.UseVisualStyleBackColor = true;
+            this.alternate_footDS5.AutoSize = true;
+            this.alternate_footDS5.Checked = true;
+            this.alternate_footDS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDS5.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDS5.Name = "alternate_footDS5";
+            this.alternate_footDS5.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDS5.TabIndex = 3;
+            this.alternate_footDS5.Text = "Alternating feet ";
+            this.alternate_footDS5.UseVisualStyleBackColor = true;
             // 
             // label173
             // 
@@ -6665,10 +6665,10 @@
             // 
             this.panel79.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel79.Controls.Add(this.checkBox40);
-            this.panel79.Controls.Add(this.checkBox41);
-            this.panel79.Controls.Add(this.checkBox42);
-            this.panel79.Controls.Add(this.checkBox43);
-            this.panel79.Controls.Add(this.checkBox44);
+            this.panel79.Controls.Add(this.quintuples_on_1_or_2DD1);
+            this.panel79.Controls.Add(this.triples_on_1_and_3DD1);
+            this.panel79.Controls.Add(this.arrow_repeatDD1);
+            this.panel79.Controls.Add(this.alternate_footDD1);
             this.panel79.Location = new System.Drawing.Point(849, 3);
             this.panel79.Name = "panel79";
             this.panel79.Size = new System.Drawing.Size(157, 110);
@@ -6685,49 +6685,49 @@
             this.checkBox40.Text = "Full 8th stream";
             this.checkBox40.UseVisualStyleBackColor = true;
             // 
-            // checkBox41
+            // quintuples_on_1_or_2DD1
             // 
-            this.checkBox41.AutoSize = true;
-            this.checkBox41.Location = new System.Drawing.Point(5, 65);
-            this.checkBox41.Name = "checkBox41";
-            this.checkBox41.Size = new System.Drawing.Size(150, 17);
-            this.checkBox41.TabIndex = 6;
-            this.checkBox41.Text = "Quintuples on either 1 or 2";
-            this.checkBox41.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DD1.AutoSize = true;
+            this.quintuples_on_1_or_2DD1.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DD1.Name = "quintuples_on_1_or_2DD1";
+            this.quintuples_on_1_or_2DD1.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DD1.TabIndex = 6;
+            this.quintuples_on_1_or_2DD1.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DD1.UseVisualStyleBackColor = true;
             // 
-            // checkBox42
+            // triples_on_1_and_3DD1
             // 
-            this.checkBox42.AutoSize = true;
-            this.checkBox42.Location = new System.Drawing.Point(5, 45);
-            this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(135, 17);
-            this.checkBox42.TabIndex = 5;
-            this.checkBox42.Text = "Triples on both 1 and 3";
-            this.checkBox42.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DD1.AutoSize = true;
+            this.triples_on_1_and_3DD1.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DD1.Name = "triples_on_1_and_3DD1";
+            this.triples_on_1_and_3DD1.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DD1.TabIndex = 5;
+            this.triples_on_1_and_3DD1.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DD1.UseVisualStyleBackColor = true;
             // 
-            // checkBox43
+            // arrow_repeatDD1
             // 
-            this.checkBox43.AutoSize = true;
-            this.checkBox43.Checked = true;
-            this.checkBox43.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox43.Location = new System.Drawing.Point(5, 25);
-            this.checkBox43.Name = "checkBox43";
-            this.checkBox43.Size = new System.Drawing.Size(86, 17);
-            this.checkBox43.TabIndex = 4;
-            this.checkBox43.Text = "Arrow repeat";
-            this.checkBox43.UseVisualStyleBackColor = true;
+            this.arrow_repeatDD1.AutoSize = true;
+            this.arrow_repeatDD1.Checked = true;
+            this.arrow_repeatDD1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDD1.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDD1.Name = "arrow_repeatDD1";
+            this.arrow_repeatDD1.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDD1.TabIndex = 4;
+            this.arrow_repeatDD1.Text = "Arrow repeat";
+            this.arrow_repeatDD1.UseVisualStyleBackColor = true;
             // 
-            // checkBox44
+            // alternate_footDD1
             // 
-            this.checkBox44.AutoSize = true;
-            this.checkBox44.Checked = true;
-            this.checkBox44.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox44.Location = new System.Drawing.Point(5, 5);
-            this.checkBox44.Name = "checkBox44";
-            this.checkBox44.Size = new System.Drawing.Size(100, 17);
-            this.checkBox44.TabIndex = 3;
-            this.checkBox44.Text = "Alternating feet ";
-            this.checkBox44.UseVisualStyleBackColor = true;
+            this.alternate_footDD1.AutoSize = true;
+            this.alternate_footDD1.Checked = true;
+            this.alternate_footDD1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDD1.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDD1.Name = "alternate_footDD1";
+            this.alternate_footDD1.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDD1.TabIndex = 3;
+            this.alternate_footDD1.Text = "Alternating feet ";
+            this.alternate_footDD1.UseVisualStyleBackColor = true;
             // 
             // label191
             // 
@@ -7117,10 +7117,10 @@
             // 
             this.panel86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel86.Controls.Add(this.checkBox45);
-            this.panel86.Controls.Add(this.checkBox46);
-            this.panel86.Controls.Add(this.checkBox47);
-            this.panel86.Controls.Add(this.checkBox48);
-            this.panel86.Controls.Add(this.checkBox49);
+            this.panel86.Controls.Add(this.quintuples_on_1_or_2DD2);
+            this.panel86.Controls.Add(this.triples_on_1_and_3DD2);
+            this.panel86.Controls.Add(this.arrow_repeatDD2);
+            this.panel86.Controls.Add(this.alternate_footDD2);
             this.panel86.Location = new System.Drawing.Point(849, 3);
             this.panel86.Name = "panel86";
             this.panel86.Size = new System.Drawing.Size(157, 110);
@@ -7137,47 +7137,47 @@
             this.checkBox45.Text = "Full 8th stream";
             this.checkBox45.UseVisualStyleBackColor = true;
             // 
-            // checkBox46
+            // quintuples_on_1_or_2DD2
             // 
-            this.checkBox46.AutoSize = true;
-            this.checkBox46.Location = new System.Drawing.Point(5, 65);
-            this.checkBox46.Name = "checkBox46";
-            this.checkBox46.Size = new System.Drawing.Size(150, 17);
-            this.checkBox46.TabIndex = 6;
-            this.checkBox46.Text = "Quintuples on either 1 or 2";
-            this.checkBox46.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DD2.AutoSize = true;
+            this.quintuples_on_1_or_2DD2.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DD2.Name = "quintuples_on_1_or_2DD2";
+            this.quintuples_on_1_or_2DD2.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DD2.TabIndex = 6;
+            this.quintuples_on_1_or_2DD2.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DD2.UseVisualStyleBackColor = true;
             // 
-            // checkBox47
+            // triples_on_1_and_3DD2
             // 
-            this.checkBox47.AutoSize = true;
-            this.checkBox47.Location = new System.Drawing.Point(5, 45);
-            this.checkBox47.Name = "checkBox47";
-            this.checkBox47.Size = new System.Drawing.Size(135, 17);
-            this.checkBox47.TabIndex = 5;
-            this.checkBox47.Text = "Triples on both 1 and 3";
-            this.checkBox47.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DD2.AutoSize = true;
+            this.triples_on_1_and_3DD2.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DD2.Name = "triples_on_1_and_3DD2";
+            this.triples_on_1_and_3DD2.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DD2.TabIndex = 5;
+            this.triples_on_1_and_3DD2.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DD2.UseVisualStyleBackColor = true;
             // 
-            // checkBox48
+            // arrow_repeatDD2
             // 
-            this.checkBox48.AutoSize = true;
-            this.checkBox48.Location = new System.Drawing.Point(5, 25);
-            this.checkBox48.Name = "checkBox48";
-            this.checkBox48.Size = new System.Drawing.Size(86, 17);
-            this.checkBox48.TabIndex = 4;
-            this.checkBox48.Text = "Arrow repeat";
-            this.checkBox48.UseVisualStyleBackColor = true;
+            this.arrow_repeatDD2.AutoSize = true;
+            this.arrow_repeatDD2.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDD2.Name = "arrow_repeatDD2";
+            this.arrow_repeatDD2.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDD2.TabIndex = 4;
+            this.arrow_repeatDD2.Text = "Arrow repeat";
+            this.arrow_repeatDD2.UseVisualStyleBackColor = true;
             // 
-            // checkBox49
+            // alternate_footDD2
             // 
-            this.checkBox49.AutoSize = true;
-            this.checkBox49.Checked = true;
-            this.checkBox49.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox49.Location = new System.Drawing.Point(5, 5);
-            this.checkBox49.Name = "checkBox49";
-            this.checkBox49.Size = new System.Drawing.Size(100, 17);
-            this.checkBox49.TabIndex = 3;
-            this.checkBox49.Text = "Alternating feet ";
-            this.checkBox49.UseVisualStyleBackColor = true;
+            this.alternate_footDD2.AutoSize = true;
+            this.alternate_footDD2.Checked = true;
+            this.alternate_footDD2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDD2.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDD2.Name = "alternate_footDD2";
+            this.alternate_footDD2.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDD2.TabIndex = 3;
+            this.alternate_footDD2.Text = "Alternating feet ";
+            this.alternate_footDD2.UseVisualStyleBackColor = true;
             // 
             // label209
             // 
@@ -7581,13 +7581,13 @@
             this.panel93.Controls.Add(this.checkBox50);
             this.panel93.Controls.Add(this.checkBox51);
             this.panel93.Controls.Add(this.checkBox52);
-            this.panel93.Controls.Add(this.checkBox53);
+            this.panel93.Controls.Add(this.quintuples_on_1_or_2DD3);
             this.panel93.Controls.Add(this.checkBox54);
-            this.panel93.Controls.Add(this.checkBox55);
+            this.panel93.Controls.Add(this.triples_on_1_and_3DD3);
             this.panel93.Controls.Add(this.checkBox56);
-            this.panel93.Controls.Add(this.checkBox57);
+            this.panel93.Controls.Add(this.arrow_repeatDD3);
             this.panel93.Controls.Add(this.checkBox58);
-            this.panel93.Controls.Add(this.checkBox59);
+            this.panel93.Controls.Add(this.alternate_footDD3);
             this.panel93.Location = new System.Drawing.Point(849, 3);
             this.panel93.Name = "panel93";
             this.panel93.Size = new System.Drawing.Size(157, 110);
@@ -7624,17 +7624,17 @@
             this.checkBox52.Text = "Quintuples on either 1 or 2";
             this.checkBox52.UseVisualStyleBackColor = true;
             // 
-            // checkBox53
+            // quintuples_on_1_or_2DD3
             // 
-            this.checkBox53.AutoSize = true;
-            this.checkBox53.Checked = true;
-            this.checkBox53.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox53.Location = new System.Drawing.Point(5, 65);
-            this.checkBox53.Name = "checkBox53";
-            this.checkBox53.Size = new System.Drawing.Size(150, 17);
-            this.checkBox53.TabIndex = 6;
-            this.checkBox53.Text = "Quintuples on either 1 or 2";
-            this.checkBox53.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DD3.AutoSize = true;
+            this.quintuples_on_1_or_2DD3.Checked = true;
+            this.quintuples_on_1_or_2DD3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2DD3.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DD3.Name = "quintuples_on_1_or_2DD3";
+            this.quintuples_on_1_or_2DD3.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DD3.TabIndex = 6;
+            this.quintuples_on_1_or_2DD3.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DD3.UseVisualStyleBackColor = true;
             // 
             // checkBox54
             // 
@@ -7646,15 +7646,15 @@
             this.checkBox54.Text = "Triples on both 1 and 3";
             this.checkBox54.UseVisualStyleBackColor = true;
             // 
-            // checkBox55
+            // triples_on_1_and_3DD3
             // 
-            this.checkBox55.AutoSize = true;
-            this.checkBox55.Location = new System.Drawing.Point(5, 45);
-            this.checkBox55.Name = "checkBox55";
-            this.checkBox55.Size = new System.Drawing.Size(135, 17);
-            this.checkBox55.TabIndex = 5;
-            this.checkBox55.Text = "Triples on both 1 and 3";
-            this.checkBox55.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DD3.AutoSize = true;
+            this.triples_on_1_and_3DD3.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DD3.Name = "triples_on_1_and_3DD3";
+            this.triples_on_1_and_3DD3.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DD3.TabIndex = 5;
+            this.triples_on_1_and_3DD3.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DD3.UseVisualStyleBackColor = true;
             // 
             // checkBox56
             // 
@@ -7668,17 +7668,17 @@
             this.checkBox56.Text = "Arrow repeat";
             this.checkBox56.UseVisualStyleBackColor = true;
             // 
-            // checkBox57
+            // arrow_repeatDD3
             // 
-            this.checkBox57.AutoSize = true;
-            this.checkBox57.Checked = true;
-            this.checkBox57.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox57.Location = new System.Drawing.Point(5, 25);
-            this.checkBox57.Name = "checkBox57";
-            this.checkBox57.Size = new System.Drawing.Size(86, 17);
-            this.checkBox57.TabIndex = 4;
-            this.checkBox57.Text = "Arrow repeat";
-            this.checkBox57.UseVisualStyleBackColor = true;
+            this.arrow_repeatDD3.AutoSize = true;
+            this.arrow_repeatDD3.Checked = true;
+            this.arrow_repeatDD3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDD3.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDD3.Name = "arrow_repeatDD3";
+            this.arrow_repeatDD3.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDD3.TabIndex = 4;
+            this.arrow_repeatDD3.Text = "Arrow repeat";
+            this.arrow_repeatDD3.UseVisualStyleBackColor = true;
             // 
             // checkBox58
             // 
@@ -7692,17 +7692,17 @@
             this.checkBox58.Text = "Alternating feet ";
             this.checkBox58.UseVisualStyleBackColor = true;
             // 
-            // checkBox59
+            // alternate_footDD3
             // 
-            this.checkBox59.AutoSize = true;
-            this.checkBox59.Checked = true;
-            this.checkBox59.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox59.Location = new System.Drawing.Point(5, 5);
-            this.checkBox59.Name = "checkBox59";
-            this.checkBox59.Size = new System.Drawing.Size(100, 17);
-            this.checkBox59.TabIndex = 3;
-            this.checkBox59.Text = "Alternating feet ";
-            this.checkBox59.UseVisualStyleBackColor = true;
+            this.alternate_footDD3.AutoSize = true;
+            this.alternate_footDD3.Checked = true;
+            this.alternate_footDD3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDD3.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDD3.Name = "alternate_footDD3";
+            this.alternate_footDD3.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDD3.TabIndex = 3;
+            this.alternate_footDD3.Text = "Alternating feet ";
+            this.alternate_footDD3.UseVisualStyleBackColor = true;
             // 
             // label227
             // 
@@ -8098,10 +8098,10 @@
             // 
             this.panel100.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel100.Controls.Add(this.checkBox60);
-            this.panel100.Controls.Add(this.checkBox61);
-            this.panel100.Controls.Add(this.checkBox62);
-            this.panel100.Controls.Add(this.checkBox63);
-            this.panel100.Controls.Add(this.checkBox64);
+            this.panel100.Controls.Add(this.quintuples_on_1_or_2DD4);
+            this.panel100.Controls.Add(this.triples_on_1_and_3DD4);
+            this.panel100.Controls.Add(this.arrow_repeatDD4);
+            this.panel100.Controls.Add(this.alternate_footDD4);
             this.panel100.Location = new System.Drawing.Point(849, 3);
             this.panel100.Name = "panel100";
             this.panel100.Size = new System.Drawing.Size(157, 110);
@@ -8118,51 +8118,51 @@
             this.checkBox60.Text = "Full 8th stream";
             this.checkBox60.UseVisualStyleBackColor = true;
             // 
-            // checkBox61
+            // quintuples_on_1_or_2DD4
             // 
-            this.checkBox61.AutoSize = true;
-            this.checkBox61.Location = new System.Drawing.Point(5, 65);
-            this.checkBox61.Name = "checkBox61";
-            this.checkBox61.Size = new System.Drawing.Size(150, 17);
-            this.checkBox61.TabIndex = 6;
-            this.checkBox61.Text = "Quintuples on either 1 or 2";
-            this.checkBox61.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DD4.AutoSize = true;
+            this.quintuples_on_1_or_2DD4.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DD4.Name = "quintuples_on_1_or_2DD4";
+            this.quintuples_on_1_or_2DD4.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DD4.TabIndex = 6;
+            this.quintuples_on_1_or_2DD4.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DD4.UseVisualStyleBackColor = true;
             // 
-            // checkBox62
+            // triples_on_1_and_3DD4
             // 
-            this.checkBox62.AutoSize = true;
-            this.checkBox62.Checked = true;
-            this.checkBox62.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox62.Location = new System.Drawing.Point(5, 45);
-            this.checkBox62.Name = "checkBox62";
-            this.checkBox62.Size = new System.Drawing.Size(135, 17);
-            this.checkBox62.TabIndex = 5;
-            this.checkBox62.Text = "Triples on both 1 and 3";
-            this.checkBox62.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DD4.AutoSize = true;
+            this.triples_on_1_and_3DD4.Checked = true;
+            this.triples_on_1_and_3DD4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3DD4.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DD4.Name = "triples_on_1_and_3DD4";
+            this.triples_on_1_and_3DD4.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DD4.TabIndex = 5;
+            this.triples_on_1_and_3DD4.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DD4.UseVisualStyleBackColor = true;
             // 
-            // checkBox63
+            // arrow_repeatDD4
             // 
-            this.checkBox63.AutoSize = true;
-            this.checkBox63.Checked = true;
-            this.checkBox63.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox63.Location = new System.Drawing.Point(5, 25);
-            this.checkBox63.Name = "checkBox63";
-            this.checkBox63.Size = new System.Drawing.Size(86, 17);
-            this.checkBox63.TabIndex = 4;
-            this.checkBox63.Text = "Arrow repeat";
-            this.checkBox63.UseVisualStyleBackColor = true;
+            this.arrow_repeatDD4.AutoSize = true;
+            this.arrow_repeatDD4.Checked = true;
+            this.arrow_repeatDD4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDD4.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDD4.Name = "arrow_repeatDD4";
+            this.arrow_repeatDD4.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDD4.TabIndex = 4;
+            this.arrow_repeatDD4.Text = "Arrow repeat";
+            this.arrow_repeatDD4.UseVisualStyleBackColor = true;
             // 
-            // checkBox64
+            // alternate_footDD4
             // 
-            this.checkBox64.AutoSize = true;
-            this.checkBox64.Checked = true;
-            this.checkBox64.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox64.Location = new System.Drawing.Point(5, 5);
-            this.checkBox64.Name = "checkBox64";
-            this.checkBox64.Size = new System.Drawing.Size(100, 17);
-            this.checkBox64.TabIndex = 3;
-            this.checkBox64.Text = "Alternating feet ";
-            this.checkBox64.UseVisualStyleBackColor = true;
+            this.alternate_footDD4.AutoSize = true;
+            this.alternate_footDD4.Checked = true;
+            this.alternate_footDD4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDD4.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDD4.Name = "alternate_footDD4";
+            this.alternate_footDD4.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDD4.TabIndex = 3;
+            this.alternate_footDD4.Text = "Alternating feet ";
+            this.alternate_footDD4.UseVisualStyleBackColor = true;
             // 
             // label245
             // 
@@ -8564,10 +8564,10 @@
             // 
             this.panel107.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel107.Controls.Add(this.checkBox65);
-            this.panel107.Controls.Add(this.checkBox66);
-            this.panel107.Controls.Add(this.checkBox67);
-            this.panel107.Controls.Add(this.checkBox68);
-            this.panel107.Controls.Add(this.checkBox69);
+            this.panel107.Controls.Add(this.quintuples_on_1_or_2DD5);
+            this.panel107.Controls.Add(this.triples_on_1_and_3DD5);
+            this.panel107.Controls.Add(this.arrow_repeatDD5);
+            this.panel107.Controls.Add(this.alternate_footDD5);
             this.panel107.Location = new System.Drawing.Point(849, 3);
             this.panel107.Name = "panel107";
             this.panel107.Size = new System.Drawing.Size(157, 110);
@@ -8584,53 +8584,53 @@
             this.checkBox65.Text = "Full 8th stream";
             this.checkBox65.UseVisualStyleBackColor = true;
             // 
-            // checkBox66
+            // quintuples_on_1_or_2DD5
             // 
-            this.checkBox66.AutoSize = true;
-            this.checkBox66.Checked = true;
-            this.checkBox66.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox66.Location = new System.Drawing.Point(5, 65);
-            this.checkBox66.Name = "checkBox66";
-            this.checkBox66.Size = new System.Drawing.Size(150, 17);
-            this.checkBox66.TabIndex = 6;
-            this.checkBox66.Text = "Quintuples on either 1 or 2";
-            this.checkBox66.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2DD5.AutoSize = true;
+            this.quintuples_on_1_or_2DD5.Checked = true;
+            this.quintuples_on_1_or_2DD5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2DD5.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2DD5.Name = "quintuples_on_1_or_2DD5";
+            this.quintuples_on_1_or_2DD5.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2DD5.TabIndex = 6;
+            this.quintuples_on_1_or_2DD5.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2DD5.UseVisualStyleBackColor = true;
             // 
-            // checkBox67
+            // triples_on_1_and_3DD5
             // 
-            this.checkBox67.AutoSize = true;
-            this.checkBox67.Checked = true;
-            this.checkBox67.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox67.Location = new System.Drawing.Point(5, 45);
-            this.checkBox67.Name = "checkBox67";
-            this.checkBox67.Size = new System.Drawing.Size(135, 17);
-            this.checkBox67.TabIndex = 5;
-            this.checkBox67.Text = "Triples on both 1 and 3";
-            this.checkBox67.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3DD5.AutoSize = true;
+            this.triples_on_1_and_3DD5.Checked = true;
+            this.triples_on_1_and_3DD5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3DD5.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3DD5.Name = "triples_on_1_and_3DD5";
+            this.triples_on_1_and_3DD5.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3DD5.TabIndex = 5;
+            this.triples_on_1_and_3DD5.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3DD5.UseVisualStyleBackColor = true;
             // 
-            // checkBox68
+            // arrow_repeatDD5
             // 
-            this.checkBox68.AutoSize = true;
-            this.checkBox68.Checked = true;
-            this.checkBox68.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox68.Location = new System.Drawing.Point(5, 25);
-            this.checkBox68.Name = "checkBox68";
-            this.checkBox68.Size = new System.Drawing.Size(86, 17);
-            this.checkBox68.TabIndex = 4;
-            this.checkBox68.Text = "Arrow repeat";
-            this.checkBox68.UseVisualStyleBackColor = true;
+            this.arrow_repeatDD5.AutoSize = true;
+            this.arrow_repeatDD5.Checked = true;
+            this.arrow_repeatDD5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatDD5.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatDD5.Name = "arrow_repeatDD5";
+            this.arrow_repeatDD5.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatDD5.TabIndex = 4;
+            this.arrow_repeatDD5.Text = "Arrow repeat";
+            this.arrow_repeatDD5.UseVisualStyleBackColor = true;
             // 
-            // checkBox69
+            // alternate_footDD5
             // 
-            this.checkBox69.AutoSize = true;
-            this.checkBox69.Checked = true;
-            this.checkBox69.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox69.Location = new System.Drawing.Point(5, 5);
-            this.checkBox69.Name = "checkBox69";
-            this.checkBox69.Size = new System.Drawing.Size(100, 17);
-            this.checkBox69.TabIndex = 3;
-            this.checkBox69.Text = "Alternating feet ";
-            this.checkBox69.UseVisualStyleBackColor = true;
+            this.alternate_footDD5.AutoSize = true;
+            this.alternate_footDD5.Checked = true;
+            this.alternate_footDD5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footDD5.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footDD5.Name = "alternate_footDD5";
+            this.alternate_footDD5.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footDD5.TabIndex = 3;
+            this.alternate_footDD5.Text = "Alternating feet ";
+            this.alternate_footDD5.UseVisualStyleBackColor = true;
             // 
             // label263
             // 
@@ -9052,10 +9052,10 @@
             // 
             this.panel116.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel116.Controls.Add(this.checkBox70);
-            this.panel116.Controls.Add(this.checkBox71);
-            this.panel116.Controls.Add(this.checkBox72);
-            this.panel116.Controls.Add(this.checkBox73);
-            this.panel116.Controls.Add(this.checkBox74);
+            this.panel116.Controls.Add(this.quintuples_on_1_or_2PS1);
+            this.panel116.Controls.Add(this.triples_on_1_and_3PS1);
+            this.panel116.Controls.Add(this.arrow_repeatPS1);
+            this.panel116.Controls.Add(this.alternate_footPS1);
             this.panel116.Location = new System.Drawing.Point(849, 3);
             this.panel116.Name = "panel116";
             this.panel116.Size = new System.Drawing.Size(157, 110);
@@ -9072,49 +9072,49 @@
             this.checkBox70.Text = "Full 8th stream";
             this.checkBox70.UseVisualStyleBackColor = true;
             // 
-            // checkBox71
+            // quintuples_on_1_or_2PS1
             // 
-            this.checkBox71.AutoSize = true;
-            this.checkBox71.Location = new System.Drawing.Point(5, 65);
-            this.checkBox71.Name = "checkBox71";
-            this.checkBox71.Size = new System.Drawing.Size(150, 17);
-            this.checkBox71.TabIndex = 6;
-            this.checkBox71.Text = "Quintuples on either 1 or 2";
-            this.checkBox71.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2PS1.AutoSize = true;
+            this.quintuples_on_1_or_2PS1.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2PS1.Name = "quintuples_on_1_or_2PS1";
+            this.quintuples_on_1_or_2PS1.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2PS1.TabIndex = 6;
+            this.quintuples_on_1_or_2PS1.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2PS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox72
+            // triples_on_1_and_3PS1
             // 
-            this.checkBox72.AutoSize = true;
-            this.checkBox72.Location = new System.Drawing.Point(5, 45);
-            this.checkBox72.Name = "checkBox72";
-            this.checkBox72.Size = new System.Drawing.Size(135, 17);
-            this.checkBox72.TabIndex = 5;
-            this.checkBox72.Text = "Triples on both 1 and 3";
-            this.checkBox72.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3PS1.AutoSize = true;
+            this.triples_on_1_and_3PS1.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3PS1.Name = "triples_on_1_and_3PS1";
+            this.triples_on_1_and_3PS1.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3PS1.TabIndex = 5;
+            this.triples_on_1_and_3PS1.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3PS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox73
+            // arrow_repeatPS1
             // 
-            this.checkBox73.AutoSize = true;
-            this.checkBox73.Checked = true;
-            this.checkBox73.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox73.Location = new System.Drawing.Point(5, 25);
-            this.checkBox73.Name = "checkBox73";
-            this.checkBox73.Size = new System.Drawing.Size(86, 17);
-            this.checkBox73.TabIndex = 4;
-            this.checkBox73.Text = "Arrow repeat";
-            this.checkBox73.UseVisualStyleBackColor = true;
+            this.arrow_repeatPS1.AutoSize = true;
+            this.arrow_repeatPS1.Checked = true;
+            this.arrow_repeatPS1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatPS1.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatPS1.Name = "arrow_repeatPS1";
+            this.arrow_repeatPS1.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatPS1.TabIndex = 4;
+            this.arrow_repeatPS1.Text = "Arrow repeat";
+            this.arrow_repeatPS1.UseVisualStyleBackColor = true;
             // 
-            // checkBox74
+            // alternate_footPS1
             // 
-            this.checkBox74.AutoSize = true;
-            this.checkBox74.Checked = true;
-            this.checkBox74.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox74.Location = new System.Drawing.Point(5, 5);
-            this.checkBox74.Name = "checkBox74";
-            this.checkBox74.Size = new System.Drawing.Size(100, 17);
-            this.checkBox74.TabIndex = 3;
-            this.checkBox74.Text = "Alternating feet ";
-            this.checkBox74.UseVisualStyleBackColor = true;
+            this.alternate_footPS1.AutoSize = true;
+            this.alternate_footPS1.Checked = true;
+            this.alternate_footPS1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footPS1.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footPS1.Name = "alternate_footPS1";
+            this.alternate_footPS1.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footPS1.TabIndex = 3;
+            this.alternate_footPS1.Text = "Alternating feet ";
+            this.alternate_footPS1.UseVisualStyleBackColor = true;
             // 
             // label281
             // 
@@ -9504,10 +9504,10 @@
             // 
             this.panel123.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel123.Controls.Add(this.checkBox75);
-            this.panel123.Controls.Add(this.checkBox76);
-            this.panel123.Controls.Add(this.checkBox77);
-            this.panel123.Controls.Add(this.checkBox78);
-            this.panel123.Controls.Add(this.checkBox79);
+            this.panel123.Controls.Add(this.quintuples_on_1_or_2PS2);
+            this.panel123.Controls.Add(this.triples_on_1_and_3PS2);
+            this.panel123.Controls.Add(this.arrow_repeatPS2);
+            this.panel123.Controls.Add(this.alternate_footPS2);
             this.panel123.Location = new System.Drawing.Point(849, 3);
             this.panel123.Name = "panel123";
             this.panel123.Size = new System.Drawing.Size(157, 110);
@@ -9524,47 +9524,47 @@
             this.checkBox75.Text = "Full 8th stream";
             this.checkBox75.UseVisualStyleBackColor = true;
             // 
-            // checkBox76
+            // quintuples_on_1_or_2PS2
             // 
-            this.checkBox76.AutoSize = true;
-            this.checkBox76.Location = new System.Drawing.Point(5, 65);
-            this.checkBox76.Name = "checkBox76";
-            this.checkBox76.Size = new System.Drawing.Size(150, 17);
-            this.checkBox76.TabIndex = 6;
-            this.checkBox76.Text = "Quintuples on either 1 or 2";
-            this.checkBox76.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2PS2.AutoSize = true;
+            this.quintuples_on_1_or_2PS2.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2PS2.Name = "quintuples_on_1_or_2PS2";
+            this.quintuples_on_1_or_2PS2.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2PS2.TabIndex = 6;
+            this.quintuples_on_1_or_2PS2.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2PS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox77
+            // triples_on_1_and_3PS2
             // 
-            this.checkBox77.AutoSize = true;
-            this.checkBox77.Location = new System.Drawing.Point(5, 45);
-            this.checkBox77.Name = "checkBox77";
-            this.checkBox77.Size = new System.Drawing.Size(135, 17);
-            this.checkBox77.TabIndex = 5;
-            this.checkBox77.Text = "Triples on both 1 and 3";
-            this.checkBox77.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3PS2.AutoSize = true;
+            this.triples_on_1_and_3PS2.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3PS2.Name = "triples_on_1_and_3PS2";
+            this.triples_on_1_and_3PS2.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3PS2.TabIndex = 5;
+            this.triples_on_1_and_3PS2.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3PS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox78
+            // arrow_repeatPS2
             // 
-            this.checkBox78.AutoSize = true;
-            this.checkBox78.Location = new System.Drawing.Point(5, 25);
-            this.checkBox78.Name = "checkBox78";
-            this.checkBox78.Size = new System.Drawing.Size(86, 17);
-            this.checkBox78.TabIndex = 4;
-            this.checkBox78.Text = "Arrow repeat";
-            this.checkBox78.UseVisualStyleBackColor = true;
+            this.arrow_repeatPS2.AutoSize = true;
+            this.arrow_repeatPS2.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatPS2.Name = "arrow_repeatPS2";
+            this.arrow_repeatPS2.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatPS2.TabIndex = 4;
+            this.arrow_repeatPS2.Text = "Arrow repeat";
+            this.arrow_repeatPS2.UseVisualStyleBackColor = true;
             // 
-            // checkBox79
+            // alternate_footPS2
             // 
-            this.checkBox79.AutoSize = true;
-            this.checkBox79.Checked = true;
-            this.checkBox79.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox79.Location = new System.Drawing.Point(5, 5);
-            this.checkBox79.Name = "checkBox79";
-            this.checkBox79.Size = new System.Drawing.Size(100, 17);
-            this.checkBox79.TabIndex = 3;
-            this.checkBox79.Text = "Alternating feet ";
-            this.checkBox79.UseVisualStyleBackColor = true;
+            this.alternate_footPS2.AutoSize = true;
+            this.alternate_footPS2.Checked = true;
+            this.alternate_footPS2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footPS2.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footPS2.Name = "alternate_footPS2";
+            this.alternate_footPS2.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footPS2.TabIndex = 3;
+            this.alternate_footPS2.Text = "Alternating feet ";
+            this.alternate_footPS2.UseVisualStyleBackColor = true;
             // 
             // label299
             // 
@@ -9968,13 +9968,13 @@
             this.panel130.Controls.Add(this.checkBox80);
             this.panel130.Controls.Add(this.checkBox81);
             this.panel130.Controls.Add(this.checkBox82);
-            this.panel130.Controls.Add(this.checkBox83);
+            this.panel130.Controls.Add(this.quintuples_on_1_or_2PS3);
             this.panel130.Controls.Add(this.checkBox84);
-            this.panel130.Controls.Add(this.checkBox85);
+            this.panel130.Controls.Add(this.triples_on_1_and_3PS3);
             this.panel130.Controls.Add(this.checkBox86);
-            this.panel130.Controls.Add(this.checkBox87);
+            this.panel130.Controls.Add(this.arrow_repeatPS3);
             this.panel130.Controls.Add(this.checkBox88);
-            this.panel130.Controls.Add(this.checkBox89);
+            this.panel130.Controls.Add(this.alternate_footPS3);
             this.panel130.Location = new System.Drawing.Point(849, 3);
             this.panel130.Name = "panel130";
             this.panel130.Size = new System.Drawing.Size(157, 110);
@@ -10011,17 +10011,17 @@
             this.checkBox82.Text = "Quintuples on either 1 or 2";
             this.checkBox82.UseVisualStyleBackColor = true;
             // 
-            // checkBox83
+            // quintuples_on_1_or_2PS3
             // 
-            this.checkBox83.AutoSize = true;
-            this.checkBox83.Checked = true;
-            this.checkBox83.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox83.Location = new System.Drawing.Point(5, 65);
-            this.checkBox83.Name = "checkBox83";
-            this.checkBox83.Size = new System.Drawing.Size(150, 17);
-            this.checkBox83.TabIndex = 6;
-            this.checkBox83.Text = "Quintuples on either 1 or 2";
-            this.checkBox83.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2PS3.AutoSize = true;
+            this.quintuples_on_1_or_2PS3.Checked = true;
+            this.quintuples_on_1_or_2PS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2PS3.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2PS3.Name = "quintuples_on_1_or_2PS3";
+            this.quintuples_on_1_or_2PS3.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2PS3.TabIndex = 6;
+            this.quintuples_on_1_or_2PS3.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2PS3.UseVisualStyleBackColor = true;
             // 
             // checkBox84
             // 
@@ -10033,15 +10033,15 @@
             this.checkBox84.Text = "Triples on both 1 and 3";
             this.checkBox84.UseVisualStyleBackColor = true;
             // 
-            // checkBox85
+            // triples_on_1_and_3PS3
             // 
-            this.checkBox85.AutoSize = true;
-            this.checkBox85.Location = new System.Drawing.Point(5, 45);
-            this.checkBox85.Name = "checkBox85";
-            this.checkBox85.Size = new System.Drawing.Size(135, 17);
-            this.checkBox85.TabIndex = 5;
-            this.checkBox85.Text = "Triples on both 1 and 3";
-            this.checkBox85.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3PS3.AutoSize = true;
+            this.triples_on_1_and_3PS3.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3PS3.Name = "triples_on_1_and_3PS3";
+            this.triples_on_1_and_3PS3.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3PS3.TabIndex = 5;
+            this.triples_on_1_and_3PS3.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3PS3.UseVisualStyleBackColor = true;
             // 
             // checkBox86
             // 
@@ -10055,17 +10055,17 @@
             this.checkBox86.Text = "Arrow repeat";
             this.checkBox86.UseVisualStyleBackColor = true;
             // 
-            // checkBox87
+            // arrow_repeatPS3
             // 
-            this.checkBox87.AutoSize = true;
-            this.checkBox87.Checked = true;
-            this.checkBox87.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox87.Location = new System.Drawing.Point(5, 25);
-            this.checkBox87.Name = "checkBox87";
-            this.checkBox87.Size = new System.Drawing.Size(86, 17);
-            this.checkBox87.TabIndex = 4;
-            this.checkBox87.Text = "Arrow repeat";
-            this.checkBox87.UseVisualStyleBackColor = true;
+            this.arrow_repeatPS3.AutoSize = true;
+            this.arrow_repeatPS3.Checked = true;
+            this.arrow_repeatPS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatPS3.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatPS3.Name = "arrow_repeatPS3";
+            this.arrow_repeatPS3.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatPS3.TabIndex = 4;
+            this.arrow_repeatPS3.Text = "Arrow repeat";
+            this.arrow_repeatPS3.UseVisualStyleBackColor = true;
             // 
             // checkBox88
             // 
@@ -10079,17 +10079,17 @@
             this.checkBox88.Text = "Alternating feet ";
             this.checkBox88.UseVisualStyleBackColor = true;
             // 
-            // checkBox89
+            // alternate_footPS3
             // 
-            this.checkBox89.AutoSize = true;
-            this.checkBox89.Checked = true;
-            this.checkBox89.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox89.Location = new System.Drawing.Point(5, 5);
-            this.checkBox89.Name = "checkBox89";
-            this.checkBox89.Size = new System.Drawing.Size(100, 17);
-            this.checkBox89.TabIndex = 3;
-            this.checkBox89.Text = "Alternating feet ";
-            this.checkBox89.UseVisualStyleBackColor = true;
+            this.alternate_footPS3.AutoSize = true;
+            this.alternate_footPS3.Checked = true;
+            this.alternate_footPS3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footPS3.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footPS3.Name = "alternate_footPS3";
+            this.alternate_footPS3.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footPS3.TabIndex = 3;
+            this.alternate_footPS3.Text = "Alternating feet ";
+            this.alternate_footPS3.UseVisualStyleBackColor = true;
             // 
             // label317
             // 
@@ -10485,10 +10485,10 @@
             // 
             this.panel137.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel137.Controls.Add(this.checkBox90);
-            this.panel137.Controls.Add(this.checkBox91);
-            this.panel137.Controls.Add(this.checkBox92);
-            this.panel137.Controls.Add(this.checkBox93);
-            this.panel137.Controls.Add(this.checkBox94);
+            this.panel137.Controls.Add(this.quintuples_on_1_or_2PS4);
+            this.panel137.Controls.Add(this.triples_on_1_and_3PS4);
+            this.panel137.Controls.Add(this.arrow_repeatPS4);
+            this.panel137.Controls.Add(this.alternate_footPS4);
             this.panel137.Location = new System.Drawing.Point(849, 3);
             this.panel137.Name = "panel137";
             this.panel137.Size = new System.Drawing.Size(157, 110);
@@ -10505,51 +10505,51 @@
             this.checkBox90.Text = "Full 8th stream";
             this.checkBox90.UseVisualStyleBackColor = true;
             // 
-            // checkBox91
+            // quintuples_on_1_or_2PS4
             // 
-            this.checkBox91.AutoSize = true;
-            this.checkBox91.Location = new System.Drawing.Point(5, 65);
-            this.checkBox91.Name = "checkBox91";
-            this.checkBox91.Size = new System.Drawing.Size(150, 17);
-            this.checkBox91.TabIndex = 6;
-            this.checkBox91.Text = "Quintuples on either 1 or 2";
-            this.checkBox91.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2PS4.AutoSize = true;
+            this.quintuples_on_1_or_2PS4.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2PS4.Name = "quintuples_on_1_or_2PS4";
+            this.quintuples_on_1_or_2PS4.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2PS4.TabIndex = 6;
+            this.quintuples_on_1_or_2PS4.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2PS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox92
+            // triples_on_1_and_3PS4
             // 
-            this.checkBox92.AutoSize = true;
-            this.checkBox92.Checked = true;
-            this.checkBox92.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox92.Location = new System.Drawing.Point(5, 45);
-            this.checkBox92.Name = "checkBox92";
-            this.checkBox92.Size = new System.Drawing.Size(135, 17);
-            this.checkBox92.TabIndex = 5;
-            this.checkBox92.Text = "Triples on both 1 and 3";
-            this.checkBox92.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3PS4.AutoSize = true;
+            this.triples_on_1_and_3PS4.Checked = true;
+            this.triples_on_1_and_3PS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3PS4.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3PS4.Name = "triples_on_1_and_3PS4";
+            this.triples_on_1_and_3PS4.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3PS4.TabIndex = 5;
+            this.triples_on_1_and_3PS4.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3PS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox93
+            // arrow_repeatPS4
             // 
-            this.checkBox93.AutoSize = true;
-            this.checkBox93.Checked = true;
-            this.checkBox93.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox93.Location = new System.Drawing.Point(5, 25);
-            this.checkBox93.Name = "checkBox93";
-            this.checkBox93.Size = new System.Drawing.Size(86, 17);
-            this.checkBox93.TabIndex = 4;
-            this.checkBox93.Text = "Arrow repeat";
-            this.checkBox93.UseVisualStyleBackColor = true;
+            this.arrow_repeatPS4.AutoSize = true;
+            this.arrow_repeatPS4.Checked = true;
+            this.arrow_repeatPS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatPS4.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatPS4.Name = "arrow_repeatPS4";
+            this.arrow_repeatPS4.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatPS4.TabIndex = 4;
+            this.arrow_repeatPS4.Text = "Arrow repeat";
+            this.arrow_repeatPS4.UseVisualStyleBackColor = true;
             // 
-            // checkBox94
+            // alternate_footPS4
             // 
-            this.checkBox94.AutoSize = true;
-            this.checkBox94.Checked = true;
-            this.checkBox94.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox94.Location = new System.Drawing.Point(5, 5);
-            this.checkBox94.Name = "checkBox94";
-            this.checkBox94.Size = new System.Drawing.Size(100, 17);
-            this.checkBox94.TabIndex = 3;
-            this.checkBox94.Text = "Alternating feet ";
-            this.checkBox94.UseVisualStyleBackColor = true;
+            this.alternate_footPS4.AutoSize = true;
+            this.alternate_footPS4.Checked = true;
+            this.alternate_footPS4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footPS4.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footPS4.Name = "alternate_footPS4";
+            this.alternate_footPS4.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footPS4.TabIndex = 3;
+            this.alternate_footPS4.Text = "Alternating feet ";
+            this.alternate_footPS4.UseVisualStyleBackColor = true;
             // 
             // label335
             // 
@@ -10951,10 +10951,10 @@
             // 
             this.panel144.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel144.Controls.Add(this.checkBox95);
-            this.panel144.Controls.Add(this.checkBox96);
-            this.panel144.Controls.Add(this.checkBox97);
-            this.panel144.Controls.Add(this.checkBox98);
-            this.panel144.Controls.Add(this.checkBox99);
+            this.panel144.Controls.Add(this.quintuples_on_1_or_2PS5);
+            this.panel144.Controls.Add(this.triples_on_1_and_3PS5);
+            this.panel144.Controls.Add(this.arrow_repeatPS5);
+            this.panel144.Controls.Add(this.alternate_footPS5);
             this.panel144.Location = new System.Drawing.Point(849, 3);
             this.panel144.Name = "panel144";
             this.panel144.Size = new System.Drawing.Size(157, 110);
@@ -10971,53 +10971,53 @@
             this.checkBox95.Text = "Full 8th stream";
             this.checkBox95.UseVisualStyleBackColor = true;
             // 
-            // checkBox96
+            // quintuples_on_1_or_2PS5
             // 
-            this.checkBox96.AutoSize = true;
-            this.checkBox96.Checked = true;
-            this.checkBox96.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox96.Location = new System.Drawing.Point(5, 65);
-            this.checkBox96.Name = "checkBox96";
-            this.checkBox96.Size = new System.Drawing.Size(150, 17);
-            this.checkBox96.TabIndex = 6;
-            this.checkBox96.Text = "Quintuples on either 1 or 2";
-            this.checkBox96.UseVisualStyleBackColor = true;
+            this.quintuples_on_1_or_2PS5.AutoSize = true;
+            this.quintuples_on_1_or_2PS5.Checked = true;
+            this.quintuples_on_1_or_2PS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.quintuples_on_1_or_2PS5.Location = new System.Drawing.Point(5, 65);
+            this.quintuples_on_1_or_2PS5.Name = "quintuples_on_1_or_2PS5";
+            this.quintuples_on_1_or_2PS5.Size = new System.Drawing.Size(150, 17);
+            this.quintuples_on_1_or_2PS5.TabIndex = 6;
+            this.quintuples_on_1_or_2PS5.Text = "Quintuples on either 1 or 2";
+            this.quintuples_on_1_or_2PS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox97
+            // triples_on_1_and_3PS5
             // 
-            this.checkBox97.AutoSize = true;
-            this.checkBox97.Checked = true;
-            this.checkBox97.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox97.Location = new System.Drawing.Point(5, 45);
-            this.checkBox97.Name = "checkBox97";
-            this.checkBox97.Size = new System.Drawing.Size(135, 17);
-            this.checkBox97.TabIndex = 5;
-            this.checkBox97.Text = "Triples on both 1 and 3";
-            this.checkBox97.UseVisualStyleBackColor = true;
+            this.triples_on_1_and_3PS5.AutoSize = true;
+            this.triples_on_1_and_3PS5.Checked = true;
+            this.triples_on_1_and_3PS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.triples_on_1_and_3PS5.Location = new System.Drawing.Point(5, 45);
+            this.triples_on_1_and_3PS5.Name = "triples_on_1_and_3PS5";
+            this.triples_on_1_and_3PS5.Size = new System.Drawing.Size(135, 17);
+            this.triples_on_1_and_3PS5.TabIndex = 5;
+            this.triples_on_1_and_3PS5.Text = "Triples on both 1 and 3";
+            this.triples_on_1_and_3PS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox98
+            // arrow_repeatPS5
             // 
-            this.checkBox98.AutoSize = true;
-            this.checkBox98.Checked = true;
-            this.checkBox98.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox98.Location = new System.Drawing.Point(5, 25);
-            this.checkBox98.Name = "checkBox98";
-            this.checkBox98.Size = new System.Drawing.Size(86, 17);
-            this.checkBox98.TabIndex = 4;
-            this.checkBox98.Text = "Arrow repeat";
-            this.checkBox98.UseVisualStyleBackColor = true;
+            this.arrow_repeatPS5.AutoSize = true;
+            this.arrow_repeatPS5.Checked = true;
+            this.arrow_repeatPS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.arrow_repeatPS5.Location = new System.Drawing.Point(5, 25);
+            this.arrow_repeatPS5.Name = "arrow_repeatPS5";
+            this.arrow_repeatPS5.Size = new System.Drawing.Size(86, 17);
+            this.arrow_repeatPS5.TabIndex = 4;
+            this.arrow_repeatPS5.Text = "Arrow repeat";
+            this.arrow_repeatPS5.UseVisualStyleBackColor = true;
             // 
-            // checkBox99
+            // alternate_footPS5
             // 
-            this.checkBox99.AutoSize = true;
-            this.checkBox99.Checked = true;
-            this.checkBox99.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox99.Location = new System.Drawing.Point(5, 5);
-            this.checkBox99.Name = "checkBox99";
-            this.checkBox99.Size = new System.Drawing.Size(100, 17);
-            this.checkBox99.TabIndex = 3;
-            this.checkBox99.Text = "Alternating feet ";
-            this.checkBox99.UseVisualStyleBackColor = true;
+            this.alternate_footPS5.AutoSize = true;
+            this.alternate_footPS5.Checked = true;
+            this.alternate_footPS5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.alternate_footPS5.Location = new System.Drawing.Point(5, 5);
+            this.alternate_footPS5.Name = "alternate_footPS5";
+            this.alternate_footPS5.Size = new System.Drawing.Size(100, 17);
+            this.alternate_footPS5.TabIndex = 3;
+            this.alternate_footPS5.Text = "Alternating feet ";
+            this.alternate_footPS5.UseVisualStyleBackColor = true;
             // 
             // label353
             // 
@@ -12060,10 +12060,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDS1;
         private System.Windows.Forms.Panel panel44;
         private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DS1;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DS1;
+        private System.Windows.Forms.CheckBox arrow_repeatDS1;
+        private System.Windows.Forms.CheckBox alternate_footDS1;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.TrackBar stepfill_trackbarDS1;
@@ -12102,10 +12102,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDS2;
         private System.Windows.Forms.Panel panel51;
         private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DS2;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DS2;
+        private System.Windows.Forms.CheckBox arrow_repeatDS2;
+        private System.Windows.Forms.CheckBox alternate_footDS2;
         private System.Windows.Forms.Label label119;
         private System.Windows.Forms.Label label120;
         private System.Windows.Forms.TrackBar stepfill_trackbarDS2;
@@ -12146,13 +12146,13 @@
         private System.Windows.Forms.CheckBox checkBox20;
         private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DS3;
         private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox25;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DS3;
         private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.CheckBox checkBox27;
+        private System.Windows.Forms.CheckBox arrow_repeatDS3;
         private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.CheckBox checkBox29;
+        private System.Windows.Forms.CheckBox alternate_footDS3;
         private System.Windows.Forms.Label label137;
         private System.Windows.Forms.Label label138;
         private System.Windows.Forms.TrackBar stepfill_trackbarDS3;
@@ -12191,10 +12191,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDS4;
         private System.Windows.Forms.Panel panel65;
         private System.Windows.Forms.CheckBox checkBox30;
-        private System.Windows.Forms.CheckBox checkBox31;
-        private System.Windows.Forms.CheckBox checkBox32;
-        private System.Windows.Forms.CheckBox checkBox33;
-        private System.Windows.Forms.CheckBox checkBox34;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DS4;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DS4;
+        private System.Windows.Forms.CheckBox arrow_repeatDS4;
+        private System.Windows.Forms.CheckBox alternate_footDS4;
         private System.Windows.Forms.Label label155;
         private System.Windows.Forms.Label label156;
         private System.Windows.Forms.TrackBar stepfill_trackbarDS4;
@@ -12233,10 +12233,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDS5;
         private System.Windows.Forms.Panel panel72;
         private System.Windows.Forms.CheckBox checkBox35;
-        private System.Windows.Forms.CheckBox checkBox36;
-        private System.Windows.Forms.CheckBox checkBox37;
-        private System.Windows.Forms.CheckBox checkBox38;
-        private System.Windows.Forms.CheckBox checkBox39;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DS5;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DS5;
+        private System.Windows.Forms.CheckBox arrow_repeatDS5;
+        private System.Windows.Forms.CheckBox alternate_footDS5;
         private System.Windows.Forms.Label label173;
         private System.Windows.Forms.Label label174;
         private System.Windows.Forms.TrackBar stepfill_trackbarDS5;
@@ -12279,10 +12279,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDD1;
         private System.Windows.Forms.Panel panel79;
         private System.Windows.Forms.CheckBox checkBox40;
-        private System.Windows.Forms.CheckBox checkBox41;
-        private System.Windows.Forms.CheckBox checkBox42;
-        private System.Windows.Forms.CheckBox checkBox43;
-        private System.Windows.Forms.CheckBox checkBox44;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DD1;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DD1;
+        private System.Windows.Forms.CheckBox arrow_repeatDD1;
+        private System.Windows.Forms.CheckBox alternate_footDD1;
         private System.Windows.Forms.Label label191;
         private System.Windows.Forms.Label label192;
         private System.Windows.Forms.TrackBar stepfill_trackbarDD1;
@@ -12321,10 +12321,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDD2;
         private System.Windows.Forms.Panel panel86;
         private System.Windows.Forms.CheckBox checkBox45;
-        private System.Windows.Forms.CheckBox checkBox46;
-        private System.Windows.Forms.CheckBox checkBox47;
-        private System.Windows.Forms.CheckBox checkBox48;
-        private System.Windows.Forms.CheckBox checkBox49;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DD2;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DD2;
+        private System.Windows.Forms.CheckBox arrow_repeatDD2;
+        private System.Windows.Forms.CheckBox alternate_footDD2;
         private System.Windows.Forms.Label label209;
         private System.Windows.Forms.Label label210;
         private System.Windows.Forms.TrackBar stepfill_trackbarDD2;
@@ -12365,13 +12365,13 @@
         private System.Windows.Forms.CheckBox checkBox50;
         private System.Windows.Forms.CheckBox checkBox51;
         private System.Windows.Forms.CheckBox checkBox52;
-        private System.Windows.Forms.CheckBox checkBox53;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DD3;
         private System.Windows.Forms.CheckBox checkBox54;
-        private System.Windows.Forms.CheckBox checkBox55;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DD3;
         private System.Windows.Forms.CheckBox checkBox56;
-        private System.Windows.Forms.CheckBox checkBox57;
+        private System.Windows.Forms.CheckBox arrow_repeatDD3;
         private System.Windows.Forms.CheckBox checkBox58;
-        private System.Windows.Forms.CheckBox checkBox59;
+        private System.Windows.Forms.CheckBox alternate_footDD3;
         private System.Windows.Forms.Label label227;
         private System.Windows.Forms.Label label228;
         private System.Windows.Forms.TrackBar stepfill_trackbarDD3;
@@ -12410,10 +12410,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDD4;
         private System.Windows.Forms.Panel panel100;
         private System.Windows.Forms.CheckBox checkBox60;
-        private System.Windows.Forms.CheckBox checkBox61;
-        private System.Windows.Forms.CheckBox checkBox62;
-        private System.Windows.Forms.CheckBox checkBox63;
-        private System.Windows.Forms.CheckBox checkBox64;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DD4;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DD4;
+        private System.Windows.Forms.CheckBox arrow_repeatDD4;
+        private System.Windows.Forms.CheckBox alternate_footDD4;
         private System.Windows.Forms.Label label245;
         private System.Windows.Forms.Label label246;
         private System.Windows.Forms.TrackBar stepfill_trackbarDD4;
@@ -12452,10 +12452,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarDD5;
         private System.Windows.Forms.Panel panel107;
         private System.Windows.Forms.CheckBox checkBox65;
-        private System.Windows.Forms.CheckBox checkBox66;
-        private System.Windows.Forms.CheckBox checkBox67;
-        private System.Windows.Forms.CheckBox checkBox68;
-        private System.Windows.Forms.CheckBox checkBox69;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2DD5;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3DD5;
+        private System.Windows.Forms.CheckBox arrow_repeatDD5;
+        private System.Windows.Forms.CheckBox alternate_footDD5;
         private System.Windows.Forms.Label label263;
         private System.Windows.Forms.Label label264;
         private System.Windows.Forms.TrackBar stepfill_trackbarDD5;
@@ -12495,10 +12495,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarPS1;
         private System.Windows.Forms.Panel panel116;
         private System.Windows.Forms.CheckBox checkBox70;
-        private System.Windows.Forms.CheckBox checkBox71;
-        private System.Windows.Forms.CheckBox checkBox72;
-        private System.Windows.Forms.CheckBox checkBox73;
-        private System.Windows.Forms.CheckBox checkBox74;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2PS1;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3PS1;
+        private System.Windows.Forms.CheckBox arrow_repeatPS1;
+        private System.Windows.Forms.CheckBox alternate_footPS1;
         private System.Windows.Forms.Label label281;
         private System.Windows.Forms.Label label282;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS1;
@@ -12537,10 +12537,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarPS2;
         private System.Windows.Forms.Panel panel123;
         private System.Windows.Forms.CheckBox checkBox75;
-        private System.Windows.Forms.CheckBox checkBox76;
-        private System.Windows.Forms.CheckBox checkBox77;
-        private System.Windows.Forms.CheckBox checkBox78;
-        private System.Windows.Forms.CheckBox checkBox79;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2PS2;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3PS2;
+        private System.Windows.Forms.CheckBox arrow_repeatPS2;
+        private System.Windows.Forms.CheckBox alternate_footPS2;
         private System.Windows.Forms.Label label299;
         private System.Windows.Forms.Label label300;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS2;
@@ -12581,13 +12581,13 @@
         private System.Windows.Forms.CheckBox checkBox80;
         private System.Windows.Forms.CheckBox checkBox81;
         private System.Windows.Forms.CheckBox checkBox82;
-        private System.Windows.Forms.CheckBox checkBox83;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2PS3;
         private System.Windows.Forms.CheckBox checkBox84;
-        private System.Windows.Forms.CheckBox checkBox85;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3PS3;
         private System.Windows.Forms.CheckBox checkBox86;
-        private System.Windows.Forms.CheckBox checkBox87;
+        private System.Windows.Forms.CheckBox arrow_repeatPS3;
         private System.Windows.Forms.CheckBox checkBox88;
-        private System.Windows.Forms.CheckBox checkBox89;
+        private System.Windows.Forms.CheckBox alternate_footPS3;
         private System.Windows.Forms.Label label317;
         private System.Windows.Forms.Label label318;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS3;
@@ -12626,10 +12626,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarPS4;
         private System.Windows.Forms.Panel panel137;
         private System.Windows.Forms.CheckBox checkBox90;
-        private System.Windows.Forms.CheckBox checkBox91;
-        private System.Windows.Forms.CheckBox checkBox92;
-        private System.Windows.Forms.CheckBox checkBox93;
-        private System.Windows.Forms.CheckBox checkBox94;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2PS4;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3PS4;
+        private System.Windows.Forms.CheckBox arrow_repeatPS4;
+        private System.Windows.Forms.CheckBox alternate_footPS4;
         private System.Windows.Forms.Label label335;
         private System.Windows.Forms.Label label336;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS4;
@@ -12668,10 +12668,10 @@
         private System.Windows.Forms.TrackBar onBeatTrackbarPS5;
         private System.Windows.Forms.Panel panel144;
         private System.Windows.Forms.CheckBox checkBox95;
-        private System.Windows.Forms.CheckBox checkBox96;
-        private System.Windows.Forms.CheckBox checkBox97;
-        private System.Windows.Forms.CheckBox checkBox98;
-        private System.Windows.Forms.CheckBox checkBox99;
+        private System.Windows.Forms.CheckBox quintuples_on_1_or_2PS5;
+        private System.Windows.Forms.CheckBox triples_on_1_and_3PS5;
+        private System.Windows.Forms.CheckBox arrow_repeatPS5;
+        private System.Windows.Forms.CheckBox alternate_footPS5;
         private System.Windows.Forms.Label label353;
         private System.Windows.Forms.Label label354;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS5;

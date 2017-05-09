@@ -140,6 +140,28 @@ namespace Stepper
                     measures[i] = m;
                 }
             }
+            else if (dance_style == "dance-solo")
+            {
+                string[] foot_laststep = new string[] { "left", "000000" };
+                for (int i = 0; i < num_measures; i++)
+                {
+                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
+                    foot_laststep = m.generateDanceSoloSteps(foot_laststep);
+                    measures[i] = m;
+                }
+            }
+            else if (dance_style == "dance-double")
+            {
+                string[] foot_laststep = new string[] { "left", "00000000" };
+                for (int i = 0; i < num_measures; i++)
+                {
+                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
+                    foot_laststep = m.generateDanceDoubleSteps(foot_laststep);
+                    measures[i] = m;
+                }
+            }
         }
     }
 }

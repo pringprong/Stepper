@@ -394,6 +394,75 @@ namespace Stepper
             return finish_foot_laststep;
         } // end method string generateDanceSingleSteps(string[])
 
+
+        public string[] generateDanceSoloSteps(string[] foot_laststep)
+        {
+            string foot = foot_laststep[0];
+            string laststep = foot_laststep[1];
+            arrows_per_measure = beats_per_measure * 2;
+            steps = new string[] { "000000", "000000", "000000", "000000", "000000", "000000", "000000", "000000" };
+
+            for (int i = 0; i < arrows_per_measure; i++)
+            {
+                // set initial step options
+                string[] singlesteps = new string[] { "100000", "010000", "001000", "000100", "000010", "000001" };
+                int rStepFill = r.Next(0, 100);
+                if ((((i == 0) || (i == 4)) && (stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
+                    || ((stepfill >= 50) && (rStepFill < ((stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
+                    || (((i == 0) || (i == 4)) && (rStepFill < (stepfill * 2))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
+                    ) // decide if there will be an arrow here at all
+                {
+                    laststep = singlesteps[r.Next(0, singlesteps.Count())];
+                    steps[i] = laststep;
+                    i++;
+                } // end if
+                else
+                {
+                    i++;
+                    i++;// no arrow so skip the half-beat arrow, which is prefilled with "0000"
+                }
+
+            } // end for loop
+            string[] finish_foot_laststep = new string[2];
+            finish_foot_laststep[0] = foot;
+            finish_foot_laststep[1] = laststep;
+            return finish_foot_laststep;
+        }// end method string generateDanceSoloSteps(string[])
+
+        public string[] generateDanceDoubleSteps(string[] foot_laststep)
+        {
+            string foot = foot_laststep[0];
+            string laststep = foot_laststep[1];
+            arrows_per_measure = beats_per_measure * 2;
+            steps = new string[] { "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000" };
+
+            for (int i = 0; i < arrows_per_measure; i++)
+            {
+                // set initial step options
+                string[] singlesteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000", "00000100", "00000010", "00000001" };
+                int rStepFill = r.Next(0, 100);
+                if ((((i == 0) || (i == 4)) && (stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
+                    || ((stepfill >= 50) && (rStepFill < ((stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
+                    || (((i == 0) || (i == 4)) && (rStepFill < (stepfill * 2))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
+                    ) // decide if there will be an arrow here at all
+                {
+                    laststep = singlesteps[r.Next(0, singlesteps.Count())];
+                    steps[i] = laststep;
+                    i++;
+                } // end if
+                else
+                {
+                    i++;
+                    i++;// no arrow so skip the half-beat arrow, which is prefilled with "0000"
+                }
+
+            } // end for loop
+            string[] finish_foot_laststep = new string[2];
+            finish_foot_laststep[0] = foot;
+            finish_foot_laststep[1] = laststep;
+            return finish_foot_laststep;
+        }// end method string generateDanceDoubleSteps(string[])
+
         public string[] generatePumpSingleSteps(string[] foot_laststep)
         {
             string foot = foot_laststep[0];
@@ -789,5 +858,6 @@ namespace Stepper
             finish_foot_laststep[1] = laststep;
             return finish_foot_laststep;
         } // end method string generatePumpSingleSteps(string[])
+
     }
 }

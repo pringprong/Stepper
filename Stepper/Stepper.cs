@@ -135,7 +135,7 @@ Warnings:
 
         private void selectFolder_Click(object sender, EventArgs e)
         {
-            string default_folder = "C:\\Games\\StepMania 5\\Songs";
+            string default_folder = "C:\\Games\\StepMania 5\\Test";
             if ((Directory.Exists(currentFolder.Text)))
             {
                 folderBrowserDialog1.SelectedPath = currentFolder.Text;
@@ -325,30 +325,81 @@ Warnings:
                         (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     note5.generateSteps();
 
+                    Noteset dance_solo1 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
+                        (int)quintuplesDS1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                    dance_solo1.generateSteps();
+
+                    Noteset dance_solo2 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
+                        (int)quintuplesDS2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                    dance_solo2.generateSteps();
+
+                    Noteset dance_solo3 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
+                       (int)quintuplesDS3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                    dance_solo3.generateSteps();
+
+                    Noteset dance_solo4 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
+                        (int)quintuplesDS4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                    dance_solo4.generateSteps();
+
+                    Noteset dance_solo5 = new Noteset("dance-solo", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
+                        (int)quintuplesDS5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                    dance_solo5.generateSteps();
+
+                    Noteset dance_double1 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
+                        (int)quintuplesDD1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                    dance_double1.generateSteps();
+
+                    Noteset dance_double2 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
+                        (int)quintuplesDD2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                    dance_double2.generateSteps();
+
+                    Noteset dance_double3 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
+                       (int)quintuplesDD3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                    dance_double3.generateSteps();
+
+                    Noteset dance_double4 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
+                        (int)quintuplesDD4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                    dance_double4.generateSteps();
+
+                    Noteset dance_double5 = new Noteset("dance-double", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
+                        (int)quintuplesDD5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                    dance_double5.generateSteps();
+
                     Noteset pump_single1 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
-                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
+                        (int)quintuplesPS1.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     pump_single1.generateSteps();
 
                     Noteset pump_single2 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
-                        (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
+                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
+                        (int)quintuplesPS2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
                     pump_single2.generateSteps();
 
                     Noteset pump_single3 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
-                       (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
+                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
+                       (int)quintuplesPS3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
                     pump_single3.generateSteps();
 
                     Noteset pump_single4 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
-                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
-                        (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
+                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
+                        (int)quintuplesPS4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
                     pump_single4.generateSteps();
 
                     Noteset pump_single5 = new Noteset("pump-single", s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
-                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
-                        (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
+                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
+                        (int)quintuplesPS5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     pump_single5.generateSteps();
+
 
                     if (s.getType().Equals("SSC"))
                     {
@@ -372,6 +423,16 @@ Warnings:
                         note3.writeSSCSteps(file);
                         note4.writeSSCSteps(file);
                         note5.writeSSCSteps(file);
+                        dance_solo1.writeSSCSteps(file);
+                        dance_solo2.writeSSCSteps(file);
+                        dance_solo3.writeSSCSteps(file);
+                        dance_solo4.writeSSCSteps(file);
+                        dance_solo5.writeSSCSteps(file);
+                        dance_double1.writeSSCSteps(file);
+                        dance_double2.writeSSCSteps(file);
+                        dance_double3.writeSSCSteps(file);
+                        dance_double4.writeSSCSteps(file);
+                        dance_double5.writeSSCSteps(file);
                         pump_single1.writeSSCSteps(file);
                         pump_single2.writeSSCSteps(file);
                         pump_single3.writeSSCSteps(file);
@@ -402,6 +463,16 @@ Warnings:
                         note3.writeSMSteps(file);
                         note4.writeSMSteps(file);
                         note5.writeSMSteps(file);
+                        dance_solo1.writeSMSteps(file);
+                        dance_solo2.writeSMSteps(file);
+                        dance_solo3.writeSMSteps(file);
+                        dance_solo4.writeSMSteps(file);
+                        dance_solo5.writeSMSteps(file);
+                        dance_double1.writeSMSteps(file);
+                        dance_double2.writeSMSteps(file);
+                        dance_double3.writeSMSteps(file);
+                        dance_double4.writeSMSteps(file);
+                        dance_double5.writeSMSteps(file);
                         pump_single1.writeSMSteps(file);
                         pump_single2.writeSMSteps(file);
                         pump_single3.writeSMSteps(file);
@@ -923,12 +994,12 @@ Warnings:
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage3;
+            tabControl1.SelectedTab = tabPage5;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage2;
+            tabControl1.SelectedTab = tabPage6;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1077,5 +1148,627 @@ Warnings:
         {
             quintupleTypetrackbar5.Value = Convert.ToInt32(quintupleType5.Value);
         }
-    }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage6;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage5;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void stepfill_trackbarDS1_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDS1.Value = stepfill_trackbarDS1.Value;
+        }
+
+        private void stepFillDS1_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDS1.Value =  Convert.ToInt32(stepFillDS1.Value);
+        }
+
+        private void stepfill_trackbarDS2_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDS2.Value = stepfill_trackbarDS2.Value;
+        }
+
+         private void stepFillDS2_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDS2.Value = Convert.ToInt32(stepFillDS2.Value);
+        }
+
+        private void stepfill_trackbarDS3_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDS3.Value = stepfill_trackbarDS3.Value;
+        }
+
+        private void stepFillDS3_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDS3.Value = Convert.ToInt32(stepFillDS3.Value);
+        }
+
+        private void stepfill_trackbarDS4_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDS4.Value = stepfill_trackbarDS4.Value;
+        }
+
+        private void stepFillDS4_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDS4.Value = Convert.ToInt32(stepFillDS4.Value);
+        }
+
+        private void stepfill_trackbarDS5_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDS5.Value = stepfill_trackbarDS5.Value;
+        }
+
+        private void stepFillDS5_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDS5.Value = Convert.ToInt32(stepFillDS5.Value);
+        }
+
+        private void stepfill_trackbarDD1_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDD1.Value = stepfill_trackbarDD1.Value;
+        }
+
+        private void stepFillDD1_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDD1.Value = Convert.ToInt32(stepFillDD1.Value);
+        }
+
+        private void stepfill_trackbarDD2_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDD2.Value = stepfill_trackbarDD2.Value;
+        }
+
+        private void stepFillDD2_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDD2.Value = Convert.ToInt32(stepFillDD2.Value);
+        }
+
+        private void stepfill_trackbarDD3_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDD3.Value = stepfill_trackbarDD3.Value;
+        }
+
+        private void stepFillDD3_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDD3.Value = Convert.ToInt32(stepFillDD3.Value);
+        }
+
+        private void stepfill_trackbarDD4_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDD4.Value = stepfill_trackbarDD4.Value;
+        }
+
+        private void stepFillDD4_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDD4.Value = Convert.ToInt32(stepFillDD4.Value);
+        }
+
+        private void stepfill_trackbarDD5_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillDD5.Value = stepfill_trackbarDD5.Value;
+        }
+
+        private void stepFillDD5_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarDD5.Value = Convert.ToInt32(stepFillDD5.Value);
+        }
+
+        private void stepfill_trackbarPS1_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillPS1.Value = stepfill_trackbarPS1.Value;
+        }
+
+        private void stepFillPS1_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarPS1.Value = Convert.ToInt32(stepFillPS1.Value);
+        }
+
+        private void stepfill_trackbarPS2_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillPS2.Value = stepfill_trackbarPS2.Value;
+        }
+
+        private void stepFillPS2_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarPS2.Value = Convert.ToInt32(stepFillPS2.Value);
+        }
+
+        private void stepfill_trackbarPS3_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillPS3.Value = stepfill_trackbarPS3.Value;
+        }
+
+        private void stepFillPS3_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarPS3.Value = Convert.ToInt32(stepFillPS3.Value);
+        }
+
+        private void stepfill_trackbarPS4_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillPS4.Value = stepfill_trackbarPS4.Value;
+        }
+
+        private void stepFillPS4_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarPS4.Value = Convert.ToInt32(stepFillPS4.Value);
+        }
+
+        private void stepfill_trackbarPS5_ValueChanged(object sender, EventArgs e)
+        {
+            stepFillPS5.Value = stepfill_trackbarPS5.Value;
+        }
+
+        private void stepFillPS5_ValueChanged(object sender, EventArgs e)
+        {
+            stepfill_trackbarPS5.Value = Convert.ToInt32(stepFillPS5.Value);
+        }
+
+        private void onBeatDS1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDS1.Value = Convert.ToInt32(onBeatDS1.Value);
+        }
+
+        private void onBeatTrackbarDS1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDS1.Value = onBeatTrackbarDS1.Value;
+        }
+
+        private void onBeatDS2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDS2.Value = Convert.ToInt32(onBeatDS2.Value);
+        }
+
+        private void onBeatTrackbarDS2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDS2.Value = onBeatTrackbarDS2.Value;
+        }
+
+        private void onBeatDS3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDS3.Value = Convert.ToInt32(onBeatDS3.Value);
+        }
+
+        private void onBeatTrackbarDS3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDS3.Value = onBeatTrackbarDS3.Value;
+        }
+
+        private void onBeatDS4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDS4.Value = Convert.ToInt32(onBeatDS4.Value);
+        }
+
+        private void onBeatTrackbarDS4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDS4.Value = onBeatTrackbarDS4.Value;
+        }
+
+        private void onBeatDS5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDS5.Value = Convert.ToInt32(onBeatDS5.Value);
+        }
+
+        private void onBeatTrackbarDS5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDS5.Value = onBeatTrackbarDS5.Value;
+        }
+
+        private void onBeatDD1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDD1.Value = Convert.ToInt32(onBeatDD1.Value);
+        }
+
+        private void onBeatTrackbarDD1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDD1.Value = onBeatTrackbarDD1.Value;
+        }
+
+        private void onBeatDD2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDD2.Value = Convert.ToInt32(onBeatDD2.Value);
+        }
+
+        private void onBeatTrackbarDD2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDD2.Value = onBeatTrackbarDD2.Value;
+        }
+
+        private void onBeatDD3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDD3.Value = Convert.ToInt32(onBeatDD3.Value);
+        }
+
+        private void onBeatTrackbarDD3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDD3.Value = onBeatTrackbarDD3.Value;
+        }
+
+        private void onBeatDD4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDD4.Value = Convert.ToInt32(onBeatDD4.Value);
+        }
+
+        private void onBeatTrackbarDD4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDD4.Value = onBeatTrackbarDD4.Value;
+        }
+
+        private void onBeatDD5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarDD5.Value = Convert.ToInt32(onBeatDD5.Value);
+        }
+
+        private void onBeatTrackbarDD5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatDD5.Value = onBeatTrackbarDD5.Value;
+        }
+
+        private void onBeatPS1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarPS1.Value = Convert.ToInt32(onBeatPS1.Value);
+        }
+
+        private void onBeatTrackbarPS1_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatPS1.Value = onBeatTrackbarPS1.Value;
+        }
+
+        private void onBeatPS2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarPS2.Value = Convert.ToInt32(onBeatPS2.Value);
+        }
+
+        private void onBeatTrackbarPS2_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatPS2.Value = onBeatTrackbarPS2.Value;
+        }
+
+        private void onBeatPS3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarPS3.Value = Convert.ToInt32(onBeatPS3.Value);
+        }
+
+        private void onBeatTrackbarPS3_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatPS3.Value = onBeatTrackbarPS3.Value;
+        }
+
+        private void onBeatPS4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarPS4.Value = Convert.ToInt32(onBeatPS4.Value);
+        }
+
+        private void onBeatTrackbarPS4_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatPS4.Value = onBeatTrackbarPS4.Value;
+        }
+
+        private void onBeatPS5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatTrackbarPS5.Value = Convert.ToInt32(onBeatPS5.Value);
+        }
+
+        private void onBeatTrackbarPS5_ValueChanged(object sender, EventArgs e)
+        {
+            onBeatPS5.Value = onBeatTrackbarPS5.Value;
+        }
+
+        private void jumpsTrackbarDS1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDS1.Value = jumpsTrackbarDS1.Value;
+        }
+
+        private void jumpsDS1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDS1.Value = Convert.ToInt32(jumpsDS1.Value);
+        }
+
+        private void jumpsTrackbarDS2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDS2.Value = jumpsTrackbarDS2.Value;
+        }
+
+        private void jumpsDS2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDS2.Value = Convert.ToInt32(jumpsDS2.Value);
+        }
+
+        private void jumpsTrackbarDS3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDS3.Value = jumpsTrackbarDS3.Value;
+        }
+
+        private void jumpsDS3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDS3.Value = Convert.ToInt32(jumpsDS3.Value);
+        }
+
+        private void jumpsTrackbarDS4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDS4.Value = jumpsTrackbarDS4.Value;
+        }
+
+        private void jumpsDS4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDS4.Value = Convert.ToInt32(jumpsDS4.Value);
+        }
+
+        private void jumpsTrackbarDS5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDS5.Value = jumpsTrackbarDS5.Value;
+        }
+
+        private void jumpsDS5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDS5.Value = Convert.ToInt32(jumpsDS5.Value);
+        }
+
+        private void jumpsTrackbarDD1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDD1.Value = jumpsTrackbarDD1.Value;
+        }
+
+        private void jumpsDD1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDD1.Value = Convert.ToInt32(jumpsDD1.Value);
+        }
+
+        private void jumpsTrackbarDD2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDD2.Value = jumpsTrackbarDD2.Value;
+        }
+
+        private void jumpsDD2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDD2.Value = Convert.ToInt32(jumpsDD2.Value);
+        }
+
+        private void jumpsTrackbarDD3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDD3.Value = jumpsTrackbarDD3.Value;
+        }
+
+        private void jumpsDD3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDD3.Value = Convert.ToInt32(jumpsDD3.Value);
+        }
+
+        private void jumpsTrackbarDD4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDD4.Value = jumpsTrackbarDD4.Value;
+        }
+
+        private void jumpsDD4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDD4.Value = Convert.ToInt32(jumpsDD4.Value);
+        }
+
+        private void jumpsTrackbarDD5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsDD5.Value = jumpsTrackbarDD5.Value;
+        }
+
+        private void jumpsDD5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarDD5.Value = Convert.ToInt32(jumpsDD5.Value);
+        }
+
+        private void jumpsTrackbarPS1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsPS1.Value = jumpsTrackbarPS1.Value;
+        }
+
+        private void jumpsPS1_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarPS1.Value = Convert.ToInt32(jumpsPS1.Value);
+        }
+
+        private void jumpsTrackbarPS2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsPS2.Value = jumpsTrackbarPS2.Value;
+        }
+
+        private void jumpsPS2_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarPS2.Value = Convert.ToInt32(jumpsPS2.Value);
+        }
+
+        private void jumpsTrackbarPS3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsPS3.Value = jumpsTrackbarPS3.Value;
+        }
+
+        private void jumpsPS3_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarPS3.Value = Convert.ToInt32(jumpsPS3.Value);
+        }
+
+        private void jumpsTrackbarPS4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsPS4.Value = jumpsTrackbarPS4.Value;
+        }
+
+        private void jumpsPS4_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarPS4.Value = Convert.ToInt32(jumpsPS4.Value);
+        }
+
+        private void jumpsTrackbarPS5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsPS5.Value = jumpsTrackbarPS5.Value;
+        }
+
+        private void jumpsPS5_ValueChanged(object sender, EventArgs e)
+        {
+            jumpsTrackbarPS5.Value = Convert.ToInt32(jumpsPS5.Value);
+        }
+
+        private void quintuplesTrackbarDS1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDS1.Value = quintuplesTrackbarDS1.Value;
+        }
+
+        private void quintuplesDS1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDS1.Value = Convert.ToInt32(quintuplesDS1.Value);
+        }
+
+        private void quintuplesTrackbarDS2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDS2.Value = quintuplesTrackbarDS2.Value;
+        }
+
+        private void quintuplesDS2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDS2.Value = Convert.ToInt32(quintuplesDS2.Value);
+        }
+
+        private void quintuplesTrackbarDS3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDS3.Value = quintuplesTrackbarDS3.Value;
+        }
+
+        private void quintuplesDS3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDS3.Value = Convert.ToInt32(quintuplesDS3.Value);
+        }
+
+        private void quintuplesTrackbarDS4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDS4.Value = quintuplesTrackbarDS4.Value;
+        }
+
+        private void quintuplesDS4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDS4.Value = Convert.ToInt32(quintuplesDS4.Value);
+        }
+
+        private void quintuplesTrackbarDS5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDS5.Value = quintuplesTrackbarDS5.Value;
+        }
+
+        private void quintuplesDS5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDS5.Value = Convert.ToInt32(quintuplesDS5.Value);
+        }
+
+        private void quintuplesTrackbarDD1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDD1.Value = quintuplesTrackbarDD1.Value;
+        }
+
+        private void quintuplesDD1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDD1.Value = Convert.ToInt32(quintuplesDD1.Value);
+        }
+
+        private void quintuplesTrackbarDD2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDD2.Value = quintuplesTrackbarDD2.Value;
+        }
+
+        private void quintuplesDD2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDD2.Value = Convert.ToInt32(quintuplesDD2.Value);
+        }
+
+        private void quintuplesTrackbarDD3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDD3.Value = quintuplesTrackbarDD3.Value;
+        }
+
+        private void quintuplesDD3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDD3.Value = Convert.ToInt32(quintuplesDD3.Value);
+        }
+
+        private void quintuplesTrackbarDD4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDD4.Value = quintuplesTrackbarDD4.Value;
+        }
+
+        private void quintuplesDD4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDD4.Value = Convert.ToInt32(quintuplesDD4.Value);
+        }
+
+        private void quintuplesTrackbarDD5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesDD5.Value = quintuplesTrackbarDD5.Value;
+        }
+
+        private void quintuplesDD5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarDD5.Value = Convert.ToInt32(quintuplesDD5.Value);
+        }
+
+        private void quintuplesTrackbarPS1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesPS1.Value = quintuplesTrackbarPS1.Value;
+        }
+
+        private void quintuplesPS1_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarPS1.Value = Convert.ToInt32(quintuplesPS1.Value);
+        }
+
+        private void quintuplesTrackbarPS2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesPS2.Value = quintuplesTrackbarPS2.Value;
+        }
+
+        private void quintuplesPS2_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarPS2.Value = Convert.ToInt32(quintuplesPS2.Value);
+        }
+
+        private void quintuplesTrackbarPS3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesPS3.Value = quintuplesTrackbarPS3.Value;
+        }
+
+        private void quintuplesPS3_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarPS3.Value = Convert.ToInt32(quintuplesPS3.Value);
+        }
+
+        private void quintuplesTrackbarPS4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesPS4.Value = quintuplesTrackbarPS4.Value;
+        }
+
+        private void quintuplesPS4_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarPS4.Value = Convert.ToInt32(quintuplesPS4.Value);
+        }
+
+        private void quintuplesTrackbarPS5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesPS5.Value = quintuplesTrackbarPS5.Value;
+        }
+
+        private void quintuplesPS5_ValueChanged(object sender, EventArgs e)
+        {
+            quintuplesTrackbarPS5.Value = Convert.ToInt32(quintuplesPS5.Value);
+        }
+
+
+     }
 }

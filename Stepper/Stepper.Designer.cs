@@ -253,7 +253,663 @@
             this.panel29 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel108 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label92 = new System.Windows.Forms.Label();
+            this.stepFillDS1 = new System.Windows.Forms.NumericUpDown();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.onBeatDS1 = new System.Windows.Forms.NumericUpDown();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDS1 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDS1 = new System.Windows.Forms.NumericUpDown();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDS1 = new System.Windows.Forms.TrackBar();
+            this.jumpsDS1 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatTrackbarDS1 = new System.Windows.Forms.TrackBar();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDS1 = new System.Windows.Forms.TrackBar();
+            this.label103 = new System.Windows.Forms.Label();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.trackBar7 = new System.Windows.Forms.TrackBar();
+            this.panel47 = new System.Windows.Forms.Panel();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.trackBar8 = new System.Windows.Forms.TrackBar();
+            this.label110 = new System.Windows.Forms.Label();
+            this.stepFillDS2 = new System.Windows.Forms.NumericUpDown();
+            this.panel48 = new System.Windows.Forms.Panel();
+            this.panel49 = new System.Windows.Forms.Panel();
+            this.label111 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDS2 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDS2 = new System.Windows.Forms.NumericUpDown();
+            this.panel50 = new System.Windows.Forms.Panel();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDS2 = new System.Windows.Forms.TrackBar();
+            this.jumpsDS2 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDS2 = new System.Windows.Forms.NumericUpDown();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDS2 = new System.Windows.Forms.TrackBar();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDS2 = new System.Windows.Forms.TrackBar();
+            this.label121 = new System.Windows.Forms.Label();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.panel53 = new System.Windows.Forms.Panel();
+            this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.label124 = new System.Windows.Forms.Label();
+            this.trackBar13 = new System.Windows.Forms.TrackBar();
+            this.panel54 = new System.Windows.Forms.Panel();
+            this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
+            this.label125 = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.trackBar14 = new System.Windows.Forms.TrackBar();
+            this.label128 = new System.Windows.Forms.Label();
+            this.stepFillDS3 = new System.Windows.Forms.NumericUpDown();
+            this.panel55 = new System.Windows.Forms.Panel();
+            this.panel56 = new System.Windows.Forms.Panel();
+            this.label129 = new System.Windows.Forms.Label();
+            this.label130 = new System.Windows.Forms.Label();
+            this.label131 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDS3 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDS3 = new System.Windows.Forms.NumericUpDown();
+            this.panel57 = new System.Windows.Forms.Panel();
+            this.label132 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDS3 = new System.Windows.Forms.TrackBar();
+            this.jumpsDS3 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDS3 = new System.Windows.Forms.NumericUpDown();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDS3 = new System.Windows.Forms.TrackBar();
+            this.panel58 = new System.Windows.Forms.Panel();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.checkBox25 = new System.Windows.Forms.CheckBox();
+            this.checkBox26 = new System.Windows.Forms.CheckBox();
+            this.checkBox27 = new System.Windows.Forms.CheckBox();
+            this.checkBox28 = new System.Windows.Forms.CheckBox();
+            this.checkBox29 = new System.Windows.Forms.CheckBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDS3 = new System.Windows.Forms.TrackBar();
+            this.label139 = new System.Windows.Forms.Label();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.panel60 = new System.Windows.Forms.Panel();
+            this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
+            this.label140 = new System.Windows.Forms.Label();
+            this.label141 = new System.Windows.Forms.Label();
+            this.label142 = new System.Windows.Forms.Label();
+            this.trackBar19 = new System.Windows.Forms.TrackBar();
+            this.panel61 = new System.Windows.Forms.Panel();
+            this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
+            this.label143 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.trackBar20 = new System.Windows.Forms.TrackBar();
+            this.label146 = new System.Windows.Forms.Label();
+            this.stepFillDS4 = new System.Windows.Forms.NumericUpDown();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.label147 = new System.Windows.Forms.Label();
+            this.label148 = new System.Windows.Forms.Label();
+            this.label149 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDS4 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDS4 = new System.Windows.Forms.NumericUpDown();
+            this.panel64 = new System.Windows.Forms.Panel();
+            this.label150 = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
+            this.label152 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDS4 = new System.Windows.Forms.TrackBar();
+            this.jumpsDS4 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDS4 = new System.Windows.Forms.NumericUpDown();
+            this.label153 = new System.Windows.Forms.Label();
+            this.label154 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDS4 = new System.Windows.Forms.TrackBar();
+            this.panel65 = new System.Windows.Forms.Panel();
+            this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.checkBox31 = new System.Windows.Forms.CheckBox();
+            this.checkBox32 = new System.Windows.Forms.CheckBox();
+            this.checkBox33 = new System.Windows.Forms.CheckBox();
+            this.checkBox34 = new System.Windows.Forms.CheckBox();
+            this.label155 = new System.Windows.Forms.Label();
+            this.label156 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDS4 = new System.Windows.Forms.TrackBar();
+            this.label157 = new System.Windows.Forms.Label();
+            this.panel66 = new System.Windows.Forms.Panel();
+            this.panel67 = new System.Windows.Forms.Panel();
+            this.numericUpDown25 = new System.Windows.Forms.NumericUpDown();
+            this.label158 = new System.Windows.Forms.Label();
+            this.label159 = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.trackBar25 = new System.Windows.Forms.TrackBar();
+            this.panel68 = new System.Windows.Forms.Panel();
+            this.numericUpDown26 = new System.Windows.Forms.NumericUpDown();
+            this.label161 = new System.Windows.Forms.Label();
+            this.label162 = new System.Windows.Forms.Label();
+            this.label163 = new System.Windows.Forms.Label();
+            this.trackBar26 = new System.Windows.Forms.TrackBar();
+            this.label164 = new System.Windows.Forms.Label();
+            this.stepFillDS5 = new System.Windows.Forms.NumericUpDown();
+            this.panel69 = new System.Windows.Forms.Panel();
+            this.panel70 = new System.Windows.Forms.Panel();
+            this.label165 = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
+            this.label167 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDS5 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDS5 = new System.Windows.Forms.NumericUpDown();
+            this.panel71 = new System.Windows.Forms.Panel();
+            this.label168 = new System.Windows.Forms.Label();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDS5 = new System.Windows.Forms.TrackBar();
+            this.jumpsDS5 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDS5 = new System.Windows.Forms.NumericUpDown();
+            this.label171 = new System.Windows.Forms.Label();
+            this.label172 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDS5 = new System.Windows.Forms.TrackBar();
+            this.panel72 = new System.Windows.Forms.Panel();
+            this.checkBox35 = new System.Windows.Forms.CheckBox();
+            this.checkBox36 = new System.Windows.Forms.CheckBox();
+            this.checkBox37 = new System.Windows.Forms.CheckBox();
+            this.checkBox38 = new System.Windows.Forms.CheckBox();
+            this.checkBox39 = new System.Windows.Forms.CheckBox();
+            this.label173 = new System.Windows.Forms.Label();
+            this.label174 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDS5 = new System.Windows.Forms.TrackBar();
+            this.label175 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.panel109 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel73 = new System.Windows.Forms.Panel();
+            this.panel74 = new System.Windows.Forms.Panel();
+            this.numericUpDown31 = new System.Windows.Forms.NumericUpDown();
+            this.label176 = new System.Windows.Forms.Label();
+            this.label177 = new System.Windows.Forms.Label();
+            this.label178 = new System.Windows.Forms.Label();
+            this.trackBar31 = new System.Windows.Forms.TrackBar();
+            this.panel75 = new System.Windows.Forms.Panel();
+            this.numericUpDown32 = new System.Windows.Forms.NumericUpDown();
+            this.label179 = new System.Windows.Forms.Label();
+            this.label180 = new System.Windows.Forms.Label();
+            this.label181 = new System.Windows.Forms.Label();
+            this.trackBar32 = new System.Windows.Forms.TrackBar();
+            this.label182 = new System.Windows.Forms.Label();
+            this.stepFillDD1 = new System.Windows.Forms.NumericUpDown();
+            this.panel76 = new System.Windows.Forms.Panel();
+            this.onBeatDD1 = new System.Windows.Forms.NumericUpDown();
+            this.label183 = new System.Windows.Forms.Label();
+            this.label184 = new System.Windows.Forms.Label();
+            this.panel77 = new System.Windows.Forms.Panel();
+            this.label185 = new System.Windows.Forms.Label();
+            this.label186 = new System.Windows.Forms.Label();
+            this.label187 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDD1 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDD1 = new System.Windows.Forms.NumericUpDown();
+            this.panel78 = new System.Windows.Forms.Panel();
+            this.label188 = new System.Windows.Forms.Label();
+            this.label189 = new System.Windows.Forms.Label();
+            this.label190 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDD1 = new System.Windows.Forms.TrackBar();
+            this.jumpsDD1 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatTrackbarDD1 = new System.Windows.Forms.TrackBar();
+            this.panel79 = new System.Windows.Forms.Panel();
+            this.checkBox40 = new System.Windows.Forms.CheckBox();
+            this.checkBox41 = new System.Windows.Forms.CheckBox();
+            this.checkBox42 = new System.Windows.Forms.CheckBox();
+            this.checkBox43 = new System.Windows.Forms.CheckBox();
+            this.checkBox44 = new System.Windows.Forms.CheckBox();
+            this.label191 = new System.Windows.Forms.Label();
+            this.label192 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDD1 = new System.Windows.Forms.TrackBar();
+            this.label193 = new System.Windows.Forms.Label();
+            this.panel80 = new System.Windows.Forms.Panel();
+            this.panel81 = new System.Windows.Forms.Panel();
+            this.numericUpDown37 = new System.Windows.Forms.NumericUpDown();
+            this.label194 = new System.Windows.Forms.Label();
+            this.label195 = new System.Windows.Forms.Label();
+            this.label196 = new System.Windows.Forms.Label();
+            this.trackBar37 = new System.Windows.Forms.TrackBar();
+            this.panel82 = new System.Windows.Forms.Panel();
+            this.numericUpDown38 = new System.Windows.Forms.NumericUpDown();
+            this.label197 = new System.Windows.Forms.Label();
+            this.label198 = new System.Windows.Forms.Label();
+            this.label199 = new System.Windows.Forms.Label();
+            this.trackBar38 = new System.Windows.Forms.TrackBar();
+            this.label200 = new System.Windows.Forms.Label();
+            this.stepFillDD2 = new System.Windows.Forms.NumericUpDown();
+            this.panel83 = new System.Windows.Forms.Panel();
+            this.panel84 = new System.Windows.Forms.Panel();
+            this.label201 = new System.Windows.Forms.Label();
+            this.label202 = new System.Windows.Forms.Label();
+            this.label203 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDD2 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDD2 = new System.Windows.Forms.NumericUpDown();
+            this.panel85 = new System.Windows.Forms.Panel();
+            this.label204 = new System.Windows.Forms.Label();
+            this.label205 = new System.Windows.Forms.Label();
+            this.label206 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDD2 = new System.Windows.Forms.TrackBar();
+            this.jumpsDD2 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDD2 = new System.Windows.Forms.NumericUpDown();
+            this.label207 = new System.Windows.Forms.Label();
+            this.label208 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDD2 = new System.Windows.Forms.TrackBar();
+            this.panel86 = new System.Windows.Forms.Panel();
+            this.checkBox45 = new System.Windows.Forms.CheckBox();
+            this.checkBox46 = new System.Windows.Forms.CheckBox();
+            this.checkBox47 = new System.Windows.Forms.CheckBox();
+            this.checkBox48 = new System.Windows.Forms.CheckBox();
+            this.checkBox49 = new System.Windows.Forms.CheckBox();
+            this.label209 = new System.Windows.Forms.Label();
+            this.label210 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDD2 = new System.Windows.Forms.TrackBar();
+            this.label211 = new System.Windows.Forms.Label();
+            this.panel87 = new System.Windows.Forms.Panel();
+            this.panel88 = new System.Windows.Forms.Panel();
+            this.numericUpDown43 = new System.Windows.Forms.NumericUpDown();
+            this.label212 = new System.Windows.Forms.Label();
+            this.label213 = new System.Windows.Forms.Label();
+            this.label214 = new System.Windows.Forms.Label();
+            this.trackBar43 = new System.Windows.Forms.TrackBar();
+            this.panel89 = new System.Windows.Forms.Panel();
+            this.numericUpDown44 = new System.Windows.Forms.NumericUpDown();
+            this.label215 = new System.Windows.Forms.Label();
+            this.label216 = new System.Windows.Forms.Label();
+            this.label217 = new System.Windows.Forms.Label();
+            this.trackBar44 = new System.Windows.Forms.TrackBar();
+            this.label218 = new System.Windows.Forms.Label();
+            this.stepFillDD3 = new System.Windows.Forms.NumericUpDown();
+            this.panel90 = new System.Windows.Forms.Panel();
+            this.panel91 = new System.Windows.Forms.Panel();
+            this.label219 = new System.Windows.Forms.Label();
+            this.label220 = new System.Windows.Forms.Label();
+            this.label221 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDD3 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDD3 = new System.Windows.Forms.NumericUpDown();
+            this.panel92 = new System.Windows.Forms.Panel();
+            this.label222 = new System.Windows.Forms.Label();
+            this.label223 = new System.Windows.Forms.Label();
+            this.label224 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDD3 = new System.Windows.Forms.TrackBar();
+            this.jumpsDD3 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDD3 = new System.Windows.Forms.NumericUpDown();
+            this.label225 = new System.Windows.Forms.Label();
+            this.label226 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDD3 = new System.Windows.Forms.TrackBar();
+            this.panel93 = new System.Windows.Forms.Panel();
+            this.checkBox50 = new System.Windows.Forms.CheckBox();
+            this.checkBox51 = new System.Windows.Forms.CheckBox();
+            this.checkBox52 = new System.Windows.Forms.CheckBox();
+            this.checkBox53 = new System.Windows.Forms.CheckBox();
+            this.checkBox54 = new System.Windows.Forms.CheckBox();
+            this.checkBox55 = new System.Windows.Forms.CheckBox();
+            this.checkBox56 = new System.Windows.Forms.CheckBox();
+            this.checkBox57 = new System.Windows.Forms.CheckBox();
+            this.checkBox58 = new System.Windows.Forms.CheckBox();
+            this.checkBox59 = new System.Windows.Forms.CheckBox();
+            this.label227 = new System.Windows.Forms.Label();
+            this.label228 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDD3 = new System.Windows.Forms.TrackBar();
+            this.label229 = new System.Windows.Forms.Label();
+            this.panel94 = new System.Windows.Forms.Panel();
+            this.panel95 = new System.Windows.Forms.Panel();
+            this.numericUpDown49 = new System.Windows.Forms.NumericUpDown();
+            this.label230 = new System.Windows.Forms.Label();
+            this.label231 = new System.Windows.Forms.Label();
+            this.label232 = new System.Windows.Forms.Label();
+            this.trackBar49 = new System.Windows.Forms.TrackBar();
+            this.panel96 = new System.Windows.Forms.Panel();
+            this.numericUpDown50 = new System.Windows.Forms.NumericUpDown();
+            this.label233 = new System.Windows.Forms.Label();
+            this.label234 = new System.Windows.Forms.Label();
+            this.label235 = new System.Windows.Forms.Label();
+            this.trackBar50 = new System.Windows.Forms.TrackBar();
+            this.label236 = new System.Windows.Forms.Label();
+            this.stepFillDD4 = new System.Windows.Forms.NumericUpDown();
+            this.panel97 = new System.Windows.Forms.Panel();
+            this.panel98 = new System.Windows.Forms.Panel();
+            this.label237 = new System.Windows.Forms.Label();
+            this.label238 = new System.Windows.Forms.Label();
+            this.label239 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDD4 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDD4 = new System.Windows.Forms.NumericUpDown();
+            this.panel99 = new System.Windows.Forms.Panel();
+            this.label240 = new System.Windows.Forms.Label();
+            this.label241 = new System.Windows.Forms.Label();
+            this.label242 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDD4 = new System.Windows.Forms.TrackBar();
+            this.jumpsDD4 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDD4 = new System.Windows.Forms.NumericUpDown();
+            this.label243 = new System.Windows.Forms.Label();
+            this.label244 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDD4 = new System.Windows.Forms.TrackBar();
+            this.panel100 = new System.Windows.Forms.Panel();
+            this.checkBox60 = new System.Windows.Forms.CheckBox();
+            this.checkBox61 = new System.Windows.Forms.CheckBox();
+            this.checkBox62 = new System.Windows.Forms.CheckBox();
+            this.checkBox63 = new System.Windows.Forms.CheckBox();
+            this.checkBox64 = new System.Windows.Forms.CheckBox();
+            this.label245 = new System.Windows.Forms.Label();
+            this.label246 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDD4 = new System.Windows.Forms.TrackBar();
+            this.label247 = new System.Windows.Forms.Label();
+            this.panel101 = new System.Windows.Forms.Panel();
+            this.panel102 = new System.Windows.Forms.Panel();
+            this.numericUpDown55 = new System.Windows.Forms.NumericUpDown();
+            this.label248 = new System.Windows.Forms.Label();
+            this.label249 = new System.Windows.Forms.Label();
+            this.label250 = new System.Windows.Forms.Label();
+            this.trackBar55 = new System.Windows.Forms.TrackBar();
+            this.panel103 = new System.Windows.Forms.Panel();
+            this.numericUpDown56 = new System.Windows.Forms.NumericUpDown();
+            this.label251 = new System.Windows.Forms.Label();
+            this.label252 = new System.Windows.Forms.Label();
+            this.label253 = new System.Windows.Forms.Label();
+            this.trackBar56 = new System.Windows.Forms.TrackBar();
+            this.label254 = new System.Windows.Forms.Label();
+            this.stepFillDD5 = new System.Windows.Forms.NumericUpDown();
+            this.panel104 = new System.Windows.Forms.Panel();
+            this.panel105 = new System.Windows.Forms.Panel();
+            this.label255 = new System.Windows.Forms.Label();
+            this.label256 = new System.Windows.Forms.Label();
+            this.label257 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarDD5 = new System.Windows.Forms.TrackBar();
+            this.quintuplesDD5 = new System.Windows.Forms.NumericUpDown();
+            this.panel106 = new System.Windows.Forms.Panel();
+            this.label258 = new System.Windows.Forms.Label();
+            this.label259 = new System.Windows.Forms.Label();
+            this.label260 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarDD5 = new System.Windows.Forms.TrackBar();
+            this.jumpsDD5 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatDD5 = new System.Windows.Forms.NumericUpDown();
+            this.label261 = new System.Windows.Forms.Label();
+            this.label262 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarDD5 = new System.Windows.Forms.TrackBar();
+            this.panel107 = new System.Windows.Forms.Panel();
+            this.checkBox65 = new System.Windows.Forms.CheckBox();
+            this.checkBox66 = new System.Windows.Forms.CheckBox();
+            this.checkBox67 = new System.Windows.Forms.CheckBox();
+            this.checkBox68 = new System.Windows.Forms.CheckBox();
+            this.checkBox69 = new System.Windows.Forms.CheckBox();
+            this.label263 = new System.Windows.Forms.Label();
+            this.label264 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarDD5 = new System.Windows.Forms.TrackBar();
+            this.label265 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel110 = new System.Windows.Forms.Panel();
+            this.panel111 = new System.Windows.Forms.Panel();
+            this.numericUpDown61 = new System.Windows.Forms.NumericUpDown();
+            this.label266 = new System.Windows.Forms.Label();
+            this.label267 = new System.Windows.Forms.Label();
+            this.label268 = new System.Windows.Forms.Label();
+            this.trackBar61 = new System.Windows.Forms.TrackBar();
+            this.panel112 = new System.Windows.Forms.Panel();
+            this.numericUpDown62 = new System.Windows.Forms.NumericUpDown();
+            this.label269 = new System.Windows.Forms.Label();
+            this.label270 = new System.Windows.Forms.Label();
+            this.label271 = new System.Windows.Forms.Label();
+            this.trackBar62 = new System.Windows.Forms.TrackBar();
+            this.label272 = new System.Windows.Forms.Label();
+            this.stepFillPS1 = new System.Windows.Forms.NumericUpDown();
+            this.panel113 = new System.Windows.Forms.Panel();
+            this.onBeatPS1 = new System.Windows.Forms.NumericUpDown();
+            this.label273 = new System.Windows.Forms.Label();
+            this.label274 = new System.Windows.Forms.Label();
+            this.panel114 = new System.Windows.Forms.Panel();
+            this.label275 = new System.Windows.Forms.Label();
+            this.label276 = new System.Windows.Forms.Label();
+            this.label277 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarPS1 = new System.Windows.Forms.TrackBar();
+            this.quintuplesPS1 = new System.Windows.Forms.NumericUpDown();
+            this.panel115 = new System.Windows.Forms.Panel();
+            this.label278 = new System.Windows.Forms.Label();
+            this.label279 = new System.Windows.Forms.Label();
+            this.label280 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarPS1 = new System.Windows.Forms.TrackBar();
+            this.jumpsPS1 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatTrackbarPS1 = new System.Windows.Forms.TrackBar();
+            this.panel116 = new System.Windows.Forms.Panel();
+            this.checkBox70 = new System.Windows.Forms.CheckBox();
+            this.checkBox71 = new System.Windows.Forms.CheckBox();
+            this.checkBox72 = new System.Windows.Forms.CheckBox();
+            this.checkBox73 = new System.Windows.Forms.CheckBox();
+            this.checkBox74 = new System.Windows.Forms.CheckBox();
+            this.label281 = new System.Windows.Forms.Label();
+            this.label282 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarPS1 = new System.Windows.Forms.TrackBar();
+            this.label283 = new System.Windows.Forms.Label();
+            this.panel117 = new System.Windows.Forms.Panel();
+            this.panel118 = new System.Windows.Forms.Panel();
+            this.numericUpDown67 = new System.Windows.Forms.NumericUpDown();
+            this.label284 = new System.Windows.Forms.Label();
+            this.label285 = new System.Windows.Forms.Label();
+            this.label286 = new System.Windows.Forms.Label();
+            this.trackBar67 = new System.Windows.Forms.TrackBar();
+            this.panel119 = new System.Windows.Forms.Panel();
+            this.numericUpDown68 = new System.Windows.Forms.NumericUpDown();
+            this.label287 = new System.Windows.Forms.Label();
+            this.label288 = new System.Windows.Forms.Label();
+            this.label289 = new System.Windows.Forms.Label();
+            this.trackBar68 = new System.Windows.Forms.TrackBar();
+            this.label290 = new System.Windows.Forms.Label();
+            this.stepFillPS2 = new System.Windows.Forms.NumericUpDown();
+            this.panel120 = new System.Windows.Forms.Panel();
+            this.panel121 = new System.Windows.Forms.Panel();
+            this.label291 = new System.Windows.Forms.Label();
+            this.label292 = new System.Windows.Forms.Label();
+            this.label293 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarPS2 = new System.Windows.Forms.TrackBar();
+            this.quintuplesPS2 = new System.Windows.Forms.NumericUpDown();
+            this.panel122 = new System.Windows.Forms.Panel();
+            this.label294 = new System.Windows.Forms.Label();
+            this.label295 = new System.Windows.Forms.Label();
+            this.label296 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarPS2 = new System.Windows.Forms.TrackBar();
+            this.jumpsPS2 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatPS2 = new System.Windows.Forms.NumericUpDown();
+            this.label297 = new System.Windows.Forms.Label();
+            this.label298 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarPS2 = new System.Windows.Forms.TrackBar();
+            this.panel123 = new System.Windows.Forms.Panel();
+            this.checkBox75 = new System.Windows.Forms.CheckBox();
+            this.checkBox76 = new System.Windows.Forms.CheckBox();
+            this.checkBox77 = new System.Windows.Forms.CheckBox();
+            this.checkBox78 = new System.Windows.Forms.CheckBox();
+            this.checkBox79 = new System.Windows.Forms.CheckBox();
+            this.label299 = new System.Windows.Forms.Label();
+            this.label300 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarPS2 = new System.Windows.Forms.TrackBar();
+            this.label301 = new System.Windows.Forms.Label();
+            this.panel124 = new System.Windows.Forms.Panel();
+            this.panel125 = new System.Windows.Forms.Panel();
+            this.numericUpDown73 = new System.Windows.Forms.NumericUpDown();
+            this.label302 = new System.Windows.Forms.Label();
+            this.label303 = new System.Windows.Forms.Label();
+            this.label304 = new System.Windows.Forms.Label();
+            this.trackBar73 = new System.Windows.Forms.TrackBar();
+            this.panel126 = new System.Windows.Forms.Panel();
+            this.numericUpDown74 = new System.Windows.Forms.NumericUpDown();
+            this.label305 = new System.Windows.Forms.Label();
+            this.label306 = new System.Windows.Forms.Label();
+            this.label307 = new System.Windows.Forms.Label();
+            this.trackBar74 = new System.Windows.Forms.TrackBar();
+            this.label308 = new System.Windows.Forms.Label();
+            this.stepFillPS3 = new System.Windows.Forms.NumericUpDown();
+            this.panel127 = new System.Windows.Forms.Panel();
+            this.panel128 = new System.Windows.Forms.Panel();
+            this.label309 = new System.Windows.Forms.Label();
+            this.label310 = new System.Windows.Forms.Label();
+            this.label311 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarPS3 = new System.Windows.Forms.TrackBar();
+            this.quintuplesPS3 = new System.Windows.Forms.NumericUpDown();
+            this.panel129 = new System.Windows.Forms.Panel();
+            this.label312 = new System.Windows.Forms.Label();
+            this.label313 = new System.Windows.Forms.Label();
+            this.label314 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarPS3 = new System.Windows.Forms.TrackBar();
+            this.jumpsPS3 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatPS3 = new System.Windows.Forms.NumericUpDown();
+            this.label315 = new System.Windows.Forms.Label();
+            this.label316 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarPS3 = new System.Windows.Forms.TrackBar();
+            this.panel130 = new System.Windows.Forms.Panel();
+            this.checkBox80 = new System.Windows.Forms.CheckBox();
+            this.checkBox81 = new System.Windows.Forms.CheckBox();
+            this.checkBox82 = new System.Windows.Forms.CheckBox();
+            this.checkBox83 = new System.Windows.Forms.CheckBox();
+            this.checkBox84 = new System.Windows.Forms.CheckBox();
+            this.checkBox85 = new System.Windows.Forms.CheckBox();
+            this.checkBox86 = new System.Windows.Forms.CheckBox();
+            this.checkBox87 = new System.Windows.Forms.CheckBox();
+            this.checkBox88 = new System.Windows.Forms.CheckBox();
+            this.checkBox89 = new System.Windows.Forms.CheckBox();
+            this.label317 = new System.Windows.Forms.Label();
+            this.label318 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarPS3 = new System.Windows.Forms.TrackBar();
+            this.label319 = new System.Windows.Forms.Label();
+            this.panel131 = new System.Windows.Forms.Panel();
+            this.panel132 = new System.Windows.Forms.Panel();
+            this.numericUpDown79 = new System.Windows.Forms.NumericUpDown();
+            this.label320 = new System.Windows.Forms.Label();
+            this.label321 = new System.Windows.Forms.Label();
+            this.label322 = new System.Windows.Forms.Label();
+            this.trackBar79 = new System.Windows.Forms.TrackBar();
+            this.panel133 = new System.Windows.Forms.Panel();
+            this.numericUpDown80 = new System.Windows.Forms.NumericUpDown();
+            this.label323 = new System.Windows.Forms.Label();
+            this.label324 = new System.Windows.Forms.Label();
+            this.label325 = new System.Windows.Forms.Label();
+            this.trackBar80 = new System.Windows.Forms.TrackBar();
+            this.label326 = new System.Windows.Forms.Label();
+            this.stepFillPS4 = new System.Windows.Forms.NumericUpDown();
+            this.panel134 = new System.Windows.Forms.Panel();
+            this.panel135 = new System.Windows.Forms.Panel();
+            this.label327 = new System.Windows.Forms.Label();
+            this.label328 = new System.Windows.Forms.Label();
+            this.label329 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarPS4 = new System.Windows.Forms.TrackBar();
+            this.quintuplesPS4 = new System.Windows.Forms.NumericUpDown();
+            this.panel136 = new System.Windows.Forms.Panel();
+            this.label330 = new System.Windows.Forms.Label();
+            this.label331 = new System.Windows.Forms.Label();
+            this.label332 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarPS4 = new System.Windows.Forms.TrackBar();
+            this.jumpsPS4 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatPS4 = new System.Windows.Forms.NumericUpDown();
+            this.label333 = new System.Windows.Forms.Label();
+            this.label334 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarPS4 = new System.Windows.Forms.TrackBar();
+            this.panel137 = new System.Windows.Forms.Panel();
+            this.checkBox90 = new System.Windows.Forms.CheckBox();
+            this.checkBox91 = new System.Windows.Forms.CheckBox();
+            this.checkBox92 = new System.Windows.Forms.CheckBox();
+            this.checkBox93 = new System.Windows.Forms.CheckBox();
+            this.checkBox94 = new System.Windows.Forms.CheckBox();
+            this.label335 = new System.Windows.Forms.Label();
+            this.label336 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarPS4 = new System.Windows.Forms.TrackBar();
+            this.label337 = new System.Windows.Forms.Label();
+            this.panel138 = new System.Windows.Forms.Panel();
+            this.panel139 = new System.Windows.Forms.Panel();
+            this.numericUpDown85 = new System.Windows.Forms.NumericUpDown();
+            this.label338 = new System.Windows.Forms.Label();
+            this.label339 = new System.Windows.Forms.Label();
+            this.label340 = new System.Windows.Forms.Label();
+            this.trackBar85 = new System.Windows.Forms.TrackBar();
+            this.panel140 = new System.Windows.Forms.Panel();
+            this.numericUpDown86 = new System.Windows.Forms.NumericUpDown();
+            this.label341 = new System.Windows.Forms.Label();
+            this.label342 = new System.Windows.Forms.Label();
+            this.label343 = new System.Windows.Forms.Label();
+            this.trackBar86 = new System.Windows.Forms.TrackBar();
+            this.label344 = new System.Windows.Forms.Label();
+            this.stepFillPS5 = new System.Windows.Forms.NumericUpDown();
+            this.panel141 = new System.Windows.Forms.Panel();
+            this.panel142 = new System.Windows.Forms.Panel();
+            this.label345 = new System.Windows.Forms.Label();
+            this.label346 = new System.Windows.Forms.Label();
+            this.label347 = new System.Windows.Forms.Label();
+            this.quintuplesTrackbarPS5 = new System.Windows.Forms.TrackBar();
+            this.quintuplesPS5 = new System.Windows.Forms.NumericUpDown();
+            this.panel143 = new System.Windows.Forms.Panel();
+            this.label348 = new System.Windows.Forms.Label();
+            this.label349 = new System.Windows.Forms.Label();
+            this.label350 = new System.Windows.Forms.Label();
+            this.jumpsTrackbarPS5 = new System.Windows.Forms.TrackBar();
+            this.jumpsPS5 = new System.Windows.Forms.NumericUpDown();
+            this.onBeatPS5 = new System.Windows.Forms.NumericUpDown();
+            this.label351 = new System.Windows.Forms.Label();
+            this.label352 = new System.Windows.Forms.Label();
+            this.onBeatTrackbarPS5 = new System.Windows.Forms.TrackBar();
+            this.panel144 = new System.Windows.Forms.Panel();
+            this.checkBox95 = new System.Windows.Forms.CheckBox();
+            this.checkBox96 = new System.Windows.Forms.CheckBox();
+            this.checkBox97 = new System.Windows.Forms.CheckBox();
+            this.checkBox98 = new System.Windows.Forms.CheckBox();
+            this.checkBox99 = new System.Windows.Forms.CheckBox();
+            this.label353 = new System.Windows.Forms.Label();
+            this.label354 = new System.Windows.Forms.Label();
+            this.stepfill_trackbarPS5 = new System.Windows.Forms.TrackBar();
+            this.label355 = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -366,7 +1022,299 @@
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepFill_trackbar5)).BeginInit();
             this.panel29.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.panel108.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panel38.SuspendLayout();
+            this.panel39.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS1)).BeginInit();
+            this.panel41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS1)).BeginInit();
+            this.panel42.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS1)).BeginInit();
+            this.panel43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS1)).BeginInit();
+            this.panel44.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS1)).BeginInit();
+            this.panel45.SuspendLayout();
+            this.panel46.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).BeginInit();
+            this.panel47.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS2)).BeginInit();
+            this.panel48.SuspendLayout();
+            this.panel49.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS2)).BeginInit();
+            this.panel50.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS2)).BeginInit();
+            this.panel51.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS2)).BeginInit();
+            this.panel52.SuspendLayout();
+            this.panel53.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar13)).BeginInit();
+            this.panel54.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS3)).BeginInit();
+            this.panel55.SuspendLayout();
+            this.panel56.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS3)).BeginInit();
+            this.panel57.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS3)).BeginInit();
+            this.panel58.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS3)).BeginInit();
+            this.panel59.SuspendLayout();
+            this.panel60.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).BeginInit();
+            this.panel61.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS4)).BeginInit();
+            this.panel62.SuspendLayout();
+            this.panel63.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS4)).BeginInit();
+            this.panel64.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS4)).BeginInit();
+            this.panel65.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS4)).BeginInit();
+            this.panel66.SuspendLayout();
+            this.panel67.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).BeginInit();
+            this.panel68.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS5)).BeginInit();
+            this.panel69.SuspendLayout();
+            this.panel70.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS5)).BeginInit();
+            this.panel71.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS5)).BeginInit();
+            this.panel72.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS5)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.panel109.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel73.SuspendLayout();
+            this.panel74.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar31)).BeginInit();
+            this.panel75.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD1)).BeginInit();
+            this.panel76.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD1)).BeginInit();
+            this.panel77.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD1)).BeginInit();
+            this.panel78.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD1)).BeginInit();
+            this.panel79.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD1)).BeginInit();
+            this.panel80.SuspendLayout();
+            this.panel81.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar37)).BeginInit();
+            this.panel82.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD2)).BeginInit();
+            this.panel83.SuspendLayout();
+            this.panel84.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD2)).BeginInit();
+            this.panel85.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD2)).BeginInit();
+            this.panel86.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD2)).BeginInit();
+            this.panel87.SuspendLayout();
+            this.panel88.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar43)).BeginInit();
+            this.panel89.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD3)).BeginInit();
+            this.panel90.SuspendLayout();
+            this.panel91.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD3)).BeginInit();
+            this.panel92.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD3)).BeginInit();
+            this.panel93.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD3)).BeginInit();
+            this.panel94.SuspendLayout();
+            this.panel95.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar49)).BeginInit();
+            this.panel96.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD4)).BeginInit();
+            this.panel97.SuspendLayout();
+            this.panel98.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD4)).BeginInit();
+            this.panel99.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD4)).BeginInit();
+            this.panel100.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD4)).BeginInit();
+            this.panel101.SuspendLayout();
+            this.panel102.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar55)).BeginInit();
+            this.panel103.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar56)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD5)).BeginInit();
+            this.panel104.SuspendLayout();
+            this.panel105.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD5)).BeginInit();
+            this.panel106.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD5)).BeginInit();
+            this.panel107.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD5)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.panel110.SuspendLayout();
+            this.panel111.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar61)).BeginInit();
+            this.panel112.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS1)).BeginInit();
+            this.panel113.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS1)).BeginInit();
+            this.panel114.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS1)).BeginInit();
+            this.panel115.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS1)).BeginInit();
+            this.panel116.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS1)).BeginInit();
+            this.panel117.SuspendLayout();
+            this.panel118.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown67)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar67)).BeginInit();
+            this.panel119.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown68)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar68)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS2)).BeginInit();
+            this.panel120.SuspendLayout();
+            this.panel121.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS2)).BeginInit();
+            this.panel122.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS2)).BeginInit();
+            this.panel123.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS2)).BeginInit();
+            this.panel124.SuspendLayout();
+            this.panel125.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown73)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar73)).BeginInit();
+            this.panel126.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS3)).BeginInit();
+            this.panel127.SuspendLayout();
+            this.panel128.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS3)).BeginInit();
+            this.panel129.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS3)).BeginInit();
+            this.panel130.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS3)).BeginInit();
+            this.panel131.SuspendLayout();
+            this.panel132.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown79)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar79)).BeginInit();
+            this.panel133.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown80)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar80)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS4)).BeginInit();
+            this.panel134.SuspendLayout();
+            this.panel135.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS4)).BeginInit();
+            this.panel136.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS4)).BeginInit();
+            this.panel137.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS4)).BeginInit();
+            this.panel138.SuspendLayout();
+            this.panel139.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown85)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar85)).BeginInit();
+            this.panel140.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown86)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar86)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS5)).BeginInit();
+            this.panel141.SuspendLayout();
+            this.panel142.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS5)).BeginInit();
+            this.panel143.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS5)).BeginInit();
+            this.panel144.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS5)).BeginInit();
             this.panel30.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -381,6 +1329,8 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2863,7 +3813,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(514, 30);
             this.button3.TabIndex = 1;
-            this.button3.Text = "Continue to Pump Single";
+            this.button3.Text = "Continue to Dance Solo";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -2879,9 +3829,4856 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.panel108);
+            this.tabPage5.Controls.Add(this.flowLayoutPanel3);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1038, 672);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Dance Solo";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel108
+            // 
+            this.panel108.AutoSize = true;
+            this.panel108.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel108.Controls.Add(this.button6);
+            this.panel108.Controls.Add(this.button8);
+            this.panel108.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel108.Location = new System.Drawing.Point(3, 639);
+            this.panel108.MinimumSize = new System.Drawing.Size(100, 30);
+            this.panel108.Name = "panel108";
+            this.panel108.Size = new System.Drawing.Size(1032, 30);
+            this.panel108.TabIndex = 22;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.YellowGreen;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button6.Location = new System.Drawing.Point(518, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(514, 30);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Continue to Dance Double";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button8.Location = new System.Drawing.Point(0, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(514, 30);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "Back to Dance Single";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoScroll = true;
+            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.Controls.Add(this.panel38);
+            this.flowLayoutPanel3.Controls.Add(this.panel45);
+            this.flowLayoutPanel3.Controls.Add(this.panel52);
+            this.flowLayoutPanel3.Controls.Add(this.panel59);
+            this.flowLayoutPanel3.Controls.Add(this.panel66);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1032, 630);
+            this.flowLayoutPanel3.TabIndex = 21;
+            this.flowLayoutPanel3.WrapContents = false;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel38.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel38.Controls.Add(this.panel39);
+            this.panel38.Controls.Add(this.panel40);
+            this.panel38.Controls.Add(this.label92);
+            this.panel38.Controls.Add(this.stepFillDS1);
+            this.panel38.Controls.Add(this.panel41);
+            this.panel38.Controls.Add(this.panel44);
+            this.panel38.Controls.Add(this.label101);
+            this.panel38.Controls.Add(this.label102);
+            this.panel38.Controls.Add(this.stepfill_trackbarDS1);
+            this.panel38.Controls.Add(this.label103);
+            this.panel38.Location = new System.Drawing.Point(3, 3);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(1020, 120);
+            this.panel38.TabIndex = 5;
+            // 
+            // panel39
+            // 
+            this.panel39.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel39.Controls.Add(this.numericUpDown1);
+            this.panel39.Controls.Add(this.label86);
+            this.panel39.Controls.Add(this.label87);
+            this.panel39.Controls.Add(this.label88);
+            this.panel39.Controls.Add(this.trackBar1);
+            this.panel39.Enabled = false;
+            this.panel39.Location = new System.Drawing.Point(715, 3);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(131, 110);
+            this.panel39.TabIndex = 19;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown1.TabIndex = 8;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(1, 8);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(60, 13);
+            this.label86.TabIndex = 16;
+            this.label86.Text = "Quintuples:";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(79, 88);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(43, 13);
+            this.label87.TabIndex = 13;
+            this.label87.Text = "ABCDE";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(79, 7);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(42, 13);
+            this.label88.TabIndex = 15;
+            this.label88.Text = "ABABA";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(53, 3);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.RightToLeftLayout = true;
+            this.trackBar1.Size = new System.Drawing.Size(45, 105);
+            this.trackBar1.TabIndex = 14;
+            this.trackBar1.TickFrequency = 10;
+            // 
+            // panel40
+            // 
+            this.panel40.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel40.Controls.Add(this.numericUpDown2);
+            this.panel40.Controls.Add(this.label89);
+            this.panel40.Controls.Add(this.label90);
+            this.panel40.Controls.Add(this.label91);
+            this.panel40.Controls.Add(this.trackBar2);
+            this.panel40.Enabled = false;
+            this.panel40.Location = new System.Drawing.Point(594, 3);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(117, 112);
+            this.panel40.TabIndex = 18;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown2.TabIndex = 8;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(1, 8);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(41, 13);
+            this.label89.TabIndex = 16;
+            this.label89.Text = "Triples:";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(62, 88);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(28, 13);
+            this.label90.TabIndex = 13;
+            this.label90.Text = "ABC";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(62, 7);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(28, 13);
+            this.label91.TabIndex = 15;
+            this.label91.Text = "ABA";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(40, 1);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar2.RightToLeftLayout = true;
+            this.trackBar2.Size = new System.Drawing.Size(45, 105);
+            this.trackBar2.TabIndex = 14;
+            this.trackBar2.TickFrequency = 10;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(35, 58);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(55, 13);
+            this.label92.TabIndex = 11;
+            this.label92.Text = "Every 2nd";
+            // 
+            // stepFillDS1
+            // 
+            this.stepFillDS1.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDS1.Name = "stepFillDS1";
+            this.stepFillDS1.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDS1.TabIndex = 5;
+            this.stepFillDS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDS1.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.stepFillDS1.ValueChanged += new System.EventHandler(this.stepFillDS1_ValueChanged);
+            // 
+            // panel41
+            // 
+            this.panel41.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel41.Controls.Add(this.onBeatDS1);
+            this.panel41.Controls.Add(this.label93);
+            this.panel41.Controls.Add(this.label94);
+            this.panel41.Controls.Add(this.panel42);
+            this.panel41.Controls.Add(this.panel43);
+            this.panel41.Controls.Add(this.onBeatTrackbarDS1);
+            this.panel41.Location = new System.Drawing.Point(129, 3);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(459, 110);
+            this.panel41.TabIndex = 10;
+            // 
+            // onBeatDS1
+            // 
+            this.onBeatDS1.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDS1.Name = "onBeatDS1";
+            this.onBeatDS1.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDS1.TabIndex = 11;
+            this.onBeatDS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDS1.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDS1.ValueChanged += new System.EventHandler(this.onBeatDS1_ValueChanged);
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(6, 87);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(98, 13);
+            this.label93.TabIndex = 4;
+            this.label93.Text = "On beat + half beat";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(37, 11);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(67, 13);
+            this.label94.TabIndex = 3;
+            this.label94.Text = "On beat only";
+            // 
+            // panel42
+            // 
+            this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel42.Controls.Add(this.label95);
+            this.panel42.Controls.Add(this.label96);
+            this.panel42.Controls.Add(this.label97);
+            this.panel42.Controls.Add(this.quintuplesTrackbarDS1);
+            this.panel42.Controls.Add(this.quintuplesDS1);
+            this.panel42.Location = new System.Drawing.Point(141, 55);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(310, 50);
+            this.panel42.TabIndex = 16;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(9, 8);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(53, 13);
+            this.label95.TabIndex = 16;
+            this.label95.Text = "Half-beat:";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(214, 28);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(57, 13);
+            this.label96.TabIndex = 13;
+            this.label96.Text = "Quintuples";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(69, 28);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(38, 13);
+            this.label97.TabIndex = 15;
+            this.label97.Text = "Triples";
+            // 
+            // quintuplesTrackbarDS1
+            // 
+            this.quintuplesTrackbarDS1.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDS1.Maximum = 100;
+            this.quintuplesTrackbarDS1.Name = "quintuplesTrackbarDS1";
+            this.quintuplesTrackbarDS1.RightToLeftLayout = true;
+            this.quintuplesTrackbarDS1.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDS1.TabIndex = 14;
+            this.quintuplesTrackbarDS1.TickFrequency = 10;
+            this.quintuplesTrackbarDS1.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDS1_ValueChanged);
+            // 
+            // quintuplesDS1
+            // 
+            this.quintuplesDS1.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDS1.Name = "quintuplesDS1";
+            this.quintuplesDS1.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDS1.TabIndex = 8;
+            this.quintuplesDS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDS1.ValueChanged += new System.EventHandler(this.quintuplesDS1_ValueChanged);
+            // 
+            // panel43
+            // 
+            this.panel43.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel43.Controls.Add(this.label98);
+            this.panel43.Controls.Add(this.label99);
+            this.panel43.Controls.Add(this.label100);
+            this.panel43.Controls.Add(this.jumpsTrackbarDS1);
+            this.panel43.Controls.Add(this.jumpsDS1);
+            this.panel43.Location = new System.Drawing.Point(141, 2);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(310, 50);
+            this.panel43.TabIndex = 12;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(8, 7);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(48, 13);
+            this.label98.TabIndex = 17;
+            this.label98.Text = "On beat:";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(214, 28);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(37, 13);
+            this.label99.TabIndex = 13;
+            this.label99.Text = "Jumps";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(69, 28);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(57, 13);
+            this.label100.TabIndex = 15;
+            this.label100.Text = "Single foot";
+            // 
+            // jumpsTrackbarDS1
+            // 
+            this.jumpsTrackbarDS1.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDS1.Maximum = 100;
+            this.jumpsTrackbarDS1.Name = "jumpsTrackbarDS1";
+            this.jumpsTrackbarDS1.RightToLeftLayout = true;
+            this.jumpsTrackbarDS1.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDS1.TabIndex = 14;
+            this.jumpsTrackbarDS1.TickFrequency = 10;
+            this.jumpsTrackbarDS1.ValueChanged += new System.EventHandler(this.jumpsTrackbarDS1_ValueChanged);
+            // 
+            // jumpsDS1
+            // 
+            this.jumpsDS1.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDS1.Name = "jumpsDS1";
+            this.jumpsDS1.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDS1.TabIndex = 8;
+            this.jumpsDS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDS1.ValueChanged += new System.EventHandler(this.jumpsDS1_ValueChanged);
+            // 
+            // onBeatTrackbarDS1
+            // 
+            this.onBeatTrackbarDS1.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDS1.Maximum = 100;
+            this.onBeatTrackbarDS1.Name = "onBeatTrackbarDS1";
+            this.onBeatTrackbarDS1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDS1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDS1.RightToLeftLayout = true;
+            this.onBeatTrackbarDS1.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDS1.TabIndex = 2;
+            this.onBeatTrackbarDS1.TickFrequency = 10;
+            this.onBeatTrackbarDS1.Value = 100;
+            this.onBeatTrackbarDS1.ValueChanged += new System.EventHandler(this.onBeatTrackbarDS1_ValueChanged);
+            // 
+            // panel44
+            // 
+            this.panel44.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel44.Controls.Add(this.checkBox10);
+            this.panel44.Controls.Add(this.checkBox11);
+            this.panel44.Controls.Add(this.checkBox12);
+            this.panel44.Controls.Add(this.checkBox13);
+            this.panel44.Controls.Add(this.checkBox14);
+            this.panel44.Location = new System.Drawing.Point(849, 3);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(157, 110);
+            this.panel44.TabIndex = 9;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Enabled = false;
+            this.checkBox10.Location = new System.Drawing.Point(5, 85);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(94, 17);
+            this.checkBox10.TabIndex = 7;
+            this.checkBox10.Text = "Full 8th stream";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(5, 65);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(150, 17);
+            this.checkBox11.TabIndex = 6;
+            this.checkBox11.Text = "Quintuples on either 1 or 2";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(5, 45);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(135, 17);
+            this.checkBox12.TabIndex = 5;
+            this.checkBox12.Text = "Triples on both 1 and 3";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Checked = true;
+            this.checkBox13.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox13.Location = new System.Drawing.Point(5, 25);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(86, 17);
+            this.checkBox13.TabIndex = 4;
+            this.checkBox13.Text = "Arrow repeat";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Checked = true;
+            this.checkBox14.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox14.Location = new System.Drawing.Point(5, 5);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(100, 17);
+            this.checkBox14.TabIndex = 3;
+            this.checkBox14.Text = "Alternating feet ";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(35, 95);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(50, 13);
+            this.label101.TabIndex = 8;
+            this.label101.Text = "No arrow";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(35, 25);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(34, 13);
+            this.label102.TabIndex = 7;
+            this.label102.Text = "Arrow";
+            // 
+            // stepfill_trackbarDS1
+            // 
+            this.stepfill_trackbarDS1.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDS1.Maximum = 100;
+            this.stepfill_trackbarDS1.Name = "stepfill_trackbarDS1";
+            this.stepfill_trackbarDS1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDS1.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDS1.TabIndex = 1;
+            this.stepfill_trackbarDS1.TickFrequency = 10;
+            this.stepfill_trackbarDS1.Value = 60;
+            this.stepfill_trackbarDS1.ValueChanged += new System.EventHandler(this.stepfill_trackbarDS1_ValueChanged);
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.BackColor = System.Drawing.Color.Fuchsia;
+            this.label103.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label103.Location = new System.Drawing.Point(2, 2);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(53, 19);
+            this.label103.TabIndex = 0;
+            this.label103.Text = "Novice";
+            // 
+            // panel45
+            // 
+            this.panel45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel45.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel45.Controls.Add(this.panel46);
+            this.panel45.Controls.Add(this.panel47);
+            this.panel45.Controls.Add(this.label110);
+            this.panel45.Controls.Add(this.stepFillDS2);
+            this.panel45.Controls.Add(this.panel48);
+            this.panel45.Controls.Add(this.panel51);
+            this.panel45.Controls.Add(this.label119);
+            this.panel45.Controls.Add(this.label120);
+            this.panel45.Controls.Add(this.stepfill_trackbarDS2);
+            this.panel45.Controls.Add(this.label121);
+            this.panel45.Location = new System.Drawing.Point(3, 129);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(1020, 120);
+            this.panel45.TabIndex = 15;
+            // 
+            // panel46
+            // 
+            this.panel46.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel46.Controls.Add(this.numericUpDown7);
+            this.panel46.Controls.Add(this.label104);
+            this.panel46.Controls.Add(this.label105);
+            this.panel46.Controls.Add(this.label106);
+            this.panel46.Controls.Add(this.trackBar7);
+            this.panel46.Enabled = false;
+            this.panel46.Location = new System.Drawing.Point(715, 3);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(131, 110);
+            this.panel46.TabIndex = 20;
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown7.TabIndex = 8;
+            this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(1, 8);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(60, 13);
+            this.label104.TabIndex = 16;
+            this.label104.Text = "Quintuples:";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(79, 88);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(43, 13);
+            this.label105.TabIndex = 13;
+            this.label105.Text = "ABCDE";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(79, 7);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(42, 13);
+            this.label106.TabIndex = 15;
+            this.label106.Text = "ABABA";
+            // 
+            // trackBar7
+            // 
+            this.trackBar7.Location = new System.Drawing.Point(53, 3);
+            this.trackBar7.Maximum = 100;
+            this.trackBar7.Name = "trackBar7";
+            this.trackBar7.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar7.RightToLeftLayout = true;
+            this.trackBar7.Size = new System.Drawing.Size(45, 105);
+            this.trackBar7.TabIndex = 14;
+            this.trackBar7.TickFrequency = 10;
+            // 
+            // panel47
+            // 
+            this.panel47.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel47.Controls.Add(this.numericUpDown8);
+            this.panel47.Controls.Add(this.label107);
+            this.panel47.Controls.Add(this.label108);
+            this.panel47.Controls.Add(this.label109);
+            this.panel47.Controls.Add(this.trackBar8);
+            this.panel47.Enabled = false;
+            this.panel47.Location = new System.Drawing.Point(594, 3);
+            this.panel47.Name = "panel47";
+            this.panel47.Size = new System.Drawing.Size(117, 112);
+            this.panel47.TabIndex = 19;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown8.TabIndex = 8;
+            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(1, 8);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(41, 13);
+            this.label107.TabIndex = 16;
+            this.label107.Text = "Triples:";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(62, 88);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(28, 13);
+            this.label108.TabIndex = 13;
+            this.label108.Text = "ABC";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(62, 7);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(28, 13);
+            this.label109.TabIndex = 15;
+            this.label109.Text = "ABA";
+            // 
+            // trackBar8
+            // 
+            this.trackBar8.Location = new System.Drawing.Point(40, 1);
+            this.trackBar8.Maximum = 100;
+            this.trackBar8.Name = "trackBar8";
+            this.trackBar8.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar8.RightToLeftLayout = true;
+            this.trackBar8.Size = new System.Drawing.Size(45, 105);
+            this.trackBar8.TabIndex = 14;
+            this.trackBar8.TickFrequency = 10;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(35, 58);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(55, 13);
+            this.label110.TabIndex = 12;
+            this.label110.Text = "Every 2nd";
+            // 
+            // stepFillDS2
+            // 
+            this.stepFillDS2.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDS2.Name = "stepFillDS2";
+            this.stepFillDS2.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDS2.TabIndex = 5;
+            this.stepFillDS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDS2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDS2.ValueChanged += new System.EventHandler(this.stepFillDS2_ValueChanged);
+            // 
+            // panel48
+            // 
+            this.panel48.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel48.Controls.Add(this.panel49);
+            this.panel48.Controls.Add(this.panel50);
+            this.panel48.Controls.Add(this.onBeatDS2);
+            this.panel48.Controls.Add(this.label117);
+            this.panel48.Controls.Add(this.label118);
+            this.panel48.Controls.Add(this.onBeatTrackbarDS2);
+            this.panel48.Location = new System.Drawing.Point(129, 3);
+            this.panel48.Name = "panel48";
+            this.panel48.Size = new System.Drawing.Size(459, 110);
+            this.panel48.TabIndex = 10;
+            // 
+            // panel49
+            // 
+            this.panel49.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel49.Controls.Add(this.label111);
+            this.panel49.Controls.Add(this.label112);
+            this.panel49.Controls.Add(this.label113);
+            this.panel49.Controls.Add(this.quintuplesTrackbarDS2);
+            this.panel49.Controls.Add(this.quintuplesDS2);
+            this.panel49.Location = new System.Drawing.Point(141, 55);
+            this.panel49.Name = "panel49";
+            this.panel49.Size = new System.Drawing.Size(310, 50);
+            this.panel49.TabIndex = 16;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(9, 8);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(53, 13);
+            this.label111.TabIndex = 16;
+            this.label111.Text = "Half-beat:";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(214, 28);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(57, 13);
+            this.label112.TabIndex = 13;
+            this.label112.Text = "Quintuples";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(69, 28);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(38, 13);
+            this.label113.TabIndex = 15;
+            this.label113.Text = "Triples";
+            // 
+            // quintuplesTrackbarDS2
+            // 
+            this.quintuplesTrackbarDS2.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDS2.Maximum = 100;
+            this.quintuplesTrackbarDS2.Name = "quintuplesTrackbarDS2";
+            this.quintuplesTrackbarDS2.RightToLeftLayout = true;
+            this.quintuplesTrackbarDS2.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDS2.TabIndex = 14;
+            this.quintuplesTrackbarDS2.TickFrequency = 10;
+            this.quintuplesTrackbarDS2.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDS2_ValueChanged);
+            // 
+            // quintuplesDS2
+            // 
+            this.quintuplesDS2.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDS2.Name = "quintuplesDS2";
+            this.quintuplesDS2.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDS2.TabIndex = 8;
+            this.quintuplesDS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDS2.ValueChanged += new System.EventHandler(this.quintuplesDS2_ValueChanged);
+            // 
+            // panel50
+            // 
+            this.panel50.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel50.Controls.Add(this.label114);
+            this.panel50.Controls.Add(this.label115);
+            this.panel50.Controls.Add(this.label116);
+            this.panel50.Controls.Add(this.jumpsTrackbarDS2);
+            this.panel50.Controls.Add(this.jumpsDS2);
+            this.panel50.Location = new System.Drawing.Point(141, 2);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(310, 50);
+            this.panel50.TabIndex = 12;
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(8, 7);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(48, 13);
+            this.label114.TabIndex = 17;
+            this.label114.Text = "On beat:";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(214, 28);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(37, 13);
+            this.label115.TabIndex = 13;
+            this.label115.Text = "Jumps";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(69, 28);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(57, 13);
+            this.label116.TabIndex = 15;
+            this.label116.Text = "Single foot";
+            // 
+            // jumpsTrackbarDS2
+            // 
+            this.jumpsTrackbarDS2.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDS2.Maximum = 100;
+            this.jumpsTrackbarDS2.Name = "jumpsTrackbarDS2";
+            this.jumpsTrackbarDS2.RightToLeftLayout = true;
+            this.jumpsTrackbarDS2.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDS2.TabIndex = 14;
+            this.jumpsTrackbarDS2.TickFrequency = 10;
+            this.jumpsTrackbarDS2.ValueChanged += new System.EventHandler(this.jumpsTrackbarDS2_ValueChanged);
+            // 
+            // jumpsDS2
+            // 
+            this.jumpsDS2.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDS2.Name = "jumpsDS2";
+            this.jumpsDS2.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDS2.TabIndex = 8;
+            this.jumpsDS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDS2.ValueChanged += new System.EventHandler(this.jumpsDS2_ValueChanged);
+            // 
+            // onBeatDS2
+            // 
+            this.onBeatDS2.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDS2.Name = "onBeatDS2";
+            this.onBeatDS2.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDS2.TabIndex = 11;
+            this.onBeatDS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDS2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDS2.ValueChanged += new System.EventHandler(this.onBeatDS2_ValueChanged);
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Location = new System.Drawing.Point(6, 87);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(98, 13);
+            this.label117.TabIndex = 4;
+            this.label117.Text = "On beat + half beat";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Location = new System.Drawing.Point(37, 11);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(67, 13);
+            this.label118.TabIndex = 3;
+            this.label118.Text = "On beat only";
+            // 
+            // onBeatTrackbarDS2
+            // 
+            this.onBeatTrackbarDS2.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDS2.Maximum = 100;
+            this.onBeatTrackbarDS2.Name = "onBeatTrackbarDS2";
+            this.onBeatTrackbarDS2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDS2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDS2.RightToLeftLayout = true;
+            this.onBeatTrackbarDS2.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDS2.TabIndex = 2;
+            this.onBeatTrackbarDS2.TickFrequency = 10;
+            this.onBeatTrackbarDS2.Value = 100;
+            this.onBeatTrackbarDS2.ValueChanged += new System.EventHandler(this.onBeatTrackbarDS2_ValueChanged);
+            // 
+            // panel51
+            // 
+            this.panel51.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel51.Controls.Add(this.checkBox15);
+            this.panel51.Controls.Add(this.checkBox16);
+            this.panel51.Controls.Add(this.checkBox17);
+            this.panel51.Controls.Add(this.checkBox18);
+            this.panel51.Controls.Add(this.checkBox19);
+            this.panel51.Location = new System.Drawing.Point(849, 3);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(157, 110);
+            this.panel51.TabIndex = 9;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Enabled = false;
+            this.checkBox15.Location = new System.Drawing.Point(5, 85);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(94, 17);
+            this.checkBox15.TabIndex = 8;
+            this.checkBox15.Text = "Full 8th stream";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(5, 65);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(150, 17);
+            this.checkBox16.TabIndex = 6;
+            this.checkBox16.Text = "Quintuples on either 1 or 2";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(5, 45);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(135, 17);
+            this.checkBox17.TabIndex = 5;
+            this.checkBox17.Text = "Triples on both 1 and 3";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(5, 25);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(86, 17);
+            this.checkBox18.TabIndex = 4;
+            this.checkBox18.Text = "Arrow repeat";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Checked = true;
+            this.checkBox19.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox19.Location = new System.Drawing.Point(5, 5);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(100, 17);
+            this.checkBox19.TabIndex = 3;
+            this.checkBox19.Text = "Alternating feet ";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Location = new System.Drawing.Point(35, 95);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(50, 13);
+            this.label119.TabIndex = 8;
+            this.label119.Text = "No arrow";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Location = new System.Drawing.Point(35, 25);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(34, 13);
+            this.label120.TabIndex = 7;
+            this.label120.Text = "Arrow";
+            // 
+            // stepfill_trackbarDS2
+            // 
+            this.stepfill_trackbarDS2.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDS2.Maximum = 100;
+            this.stepfill_trackbarDS2.Name = "stepfill_trackbarDS2";
+            this.stepfill_trackbarDS2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDS2.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDS2.TabIndex = 1;
+            this.stepfill_trackbarDS2.TickFrequency = 10;
+            this.stepfill_trackbarDS2.Value = 100;
+            this.stepfill_trackbarDS2.ValueChanged += new System.EventHandler(this.stepfill_trackbarDS2_ValueChanged);
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.BackColor = System.Drawing.Color.LawnGreen;
+            this.label121.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label121.Location = new System.Drawing.Point(2, 2);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(41, 19);
+            this.label121.TabIndex = 0;
+            this.label121.Text = "Easy";
+            // 
+            // panel52
+            // 
+            this.panel52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel52.Controls.Add(this.panel53);
+            this.panel52.Controls.Add(this.panel54);
+            this.panel52.Controls.Add(this.label128);
+            this.panel52.Controls.Add(this.stepFillDS3);
+            this.panel52.Controls.Add(this.panel55);
+            this.panel52.Controls.Add(this.panel58);
+            this.panel52.Controls.Add(this.label137);
+            this.panel52.Controls.Add(this.label138);
+            this.panel52.Controls.Add(this.stepfill_trackbarDS3);
+            this.panel52.Controls.Add(this.label139);
+            this.panel52.Location = new System.Drawing.Point(3, 255);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(1020, 120);
+            this.panel52.TabIndex = 13;
+            // 
+            // panel53
+            // 
+            this.panel53.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel53.Controls.Add(this.numericUpDown13);
+            this.panel53.Controls.Add(this.label122);
+            this.panel53.Controls.Add(this.label123);
+            this.panel53.Controls.Add(this.label124);
+            this.panel53.Controls.Add(this.trackBar13);
+            this.panel53.Enabled = false;
+            this.panel53.Location = new System.Drawing.Point(715, 3);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(131, 110);
+            this.panel53.TabIndex = 21;
+            // 
+            // numericUpDown13
+            // 
+            this.numericUpDown13.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown13.Name = "numericUpDown13";
+            this.numericUpDown13.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown13.TabIndex = 8;
+            this.numericUpDown13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(1, 8);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(60, 13);
+            this.label122.TabIndex = 16;
+            this.label122.Text = "Quintuples:";
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(79, 88);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(43, 13);
+            this.label123.TabIndex = 13;
+            this.label123.Text = "ABCDE";
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(79, 7);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(42, 13);
+            this.label124.TabIndex = 15;
+            this.label124.Text = "ABABA";
+            // 
+            // trackBar13
+            // 
+            this.trackBar13.Location = new System.Drawing.Point(53, 3);
+            this.trackBar13.Maximum = 100;
+            this.trackBar13.Name = "trackBar13";
+            this.trackBar13.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar13.RightToLeftLayout = true;
+            this.trackBar13.Size = new System.Drawing.Size(45, 105);
+            this.trackBar13.TabIndex = 14;
+            this.trackBar13.TickFrequency = 10;
+            // 
+            // panel54
+            // 
+            this.panel54.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel54.Controls.Add(this.numericUpDown14);
+            this.panel54.Controls.Add(this.label125);
+            this.panel54.Controls.Add(this.label126);
+            this.panel54.Controls.Add(this.label127);
+            this.panel54.Controls.Add(this.trackBar14);
+            this.panel54.Enabled = false;
+            this.panel54.Location = new System.Drawing.Point(594, 3);
+            this.panel54.Name = "panel54";
+            this.panel54.Size = new System.Drawing.Size(117, 112);
+            this.panel54.TabIndex = 20;
+            // 
+            // numericUpDown14
+            // 
+            this.numericUpDown14.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown14.Name = "numericUpDown14";
+            this.numericUpDown14.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown14.TabIndex = 8;
+            this.numericUpDown14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(1, 8);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(41, 13);
+            this.label125.TabIndex = 16;
+            this.label125.Text = "Triples:";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Location = new System.Drawing.Point(62, 88);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(28, 13);
+            this.label126.TabIndex = 13;
+            this.label126.Text = "ABC";
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(62, 7);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(28, 13);
+            this.label127.TabIndex = 15;
+            this.label127.Text = "ABA";
+            // 
+            // trackBar14
+            // 
+            this.trackBar14.Location = new System.Drawing.Point(40, 1);
+            this.trackBar14.Maximum = 100;
+            this.trackBar14.Name = "trackBar14";
+            this.trackBar14.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar14.RightToLeftLayout = true;
+            this.trackBar14.Size = new System.Drawing.Size(45, 105);
+            this.trackBar14.TabIndex = 14;
+            this.trackBar14.TickFrequency = 10;
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(35, 58);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(55, 13);
+            this.label128.TabIndex = 14;
+            this.label128.Text = "Every 2nd";
+            // 
+            // stepFillDS3
+            // 
+            this.stepFillDS3.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDS3.Name = "stepFillDS3";
+            this.stepFillDS3.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDS3.TabIndex = 5;
+            this.stepFillDS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDS3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDS3.ValueChanged += new System.EventHandler(this.stepFillDS3_ValueChanged);
+            // 
+            // panel55
+            // 
+            this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel55.Controls.Add(this.panel56);
+            this.panel55.Controls.Add(this.panel57);
+            this.panel55.Controls.Add(this.onBeatDS3);
+            this.panel55.Controls.Add(this.label135);
+            this.panel55.Controls.Add(this.label136);
+            this.panel55.Controls.Add(this.onBeatTrackbarDS3);
+            this.panel55.Location = new System.Drawing.Point(129, 3);
+            this.panel55.Name = "panel55";
+            this.panel55.Size = new System.Drawing.Size(459, 110);
+            this.panel55.TabIndex = 10;
+            // 
+            // panel56
+            // 
+            this.panel56.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel56.Controls.Add(this.label129);
+            this.panel56.Controls.Add(this.label130);
+            this.panel56.Controls.Add(this.label131);
+            this.panel56.Controls.Add(this.quintuplesTrackbarDS3);
+            this.panel56.Controls.Add(this.quintuplesDS3);
+            this.panel56.Location = new System.Drawing.Point(141, 55);
+            this.panel56.Name = "panel56";
+            this.panel56.Size = new System.Drawing.Size(310, 50);
+            this.panel56.TabIndex = 16;
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(9, 8);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(53, 13);
+            this.label129.TabIndex = 16;
+            this.label129.Text = "Half-beat:";
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Location = new System.Drawing.Point(214, 28);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(57, 13);
+            this.label130.TabIndex = 13;
+            this.label130.Text = "Quintuples";
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Location = new System.Drawing.Point(69, 28);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(38, 13);
+            this.label131.TabIndex = 15;
+            this.label131.Text = "Triples";
+            // 
+            // quintuplesTrackbarDS3
+            // 
+            this.quintuplesTrackbarDS3.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDS3.Maximum = 100;
+            this.quintuplesTrackbarDS3.Name = "quintuplesTrackbarDS3";
+            this.quintuplesTrackbarDS3.RightToLeftLayout = true;
+            this.quintuplesTrackbarDS3.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDS3.TabIndex = 14;
+            this.quintuplesTrackbarDS3.TickFrequency = 10;
+            this.quintuplesTrackbarDS3.Value = 50;
+            this.quintuplesTrackbarDS3.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDS3_ValueChanged);
+            // 
+            // quintuplesDS3
+            // 
+            this.quintuplesDS3.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDS3.Name = "quintuplesDS3";
+            this.quintuplesDS3.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDS3.TabIndex = 8;
+            this.quintuplesDS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDS3.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.quintuplesDS3.ValueChanged += new System.EventHandler(this.quintuplesDS3_ValueChanged);
+            // 
+            // panel57
+            // 
+            this.panel57.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel57.Controls.Add(this.label132);
+            this.panel57.Controls.Add(this.label133);
+            this.panel57.Controls.Add(this.label134);
+            this.panel57.Controls.Add(this.jumpsTrackbarDS3);
+            this.panel57.Controls.Add(this.jumpsDS3);
+            this.panel57.Location = new System.Drawing.Point(141, 2);
+            this.panel57.Name = "panel57";
+            this.panel57.Size = new System.Drawing.Size(310, 50);
+            this.panel57.TabIndex = 12;
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Location = new System.Drawing.Point(8, 7);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(48, 13);
+            this.label132.TabIndex = 17;
+            this.label132.Text = "On beat:";
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(214, 28);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(37, 13);
+            this.label133.TabIndex = 13;
+            this.label133.Text = "Jumps";
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(69, 28);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(57, 13);
+            this.label134.TabIndex = 15;
+            this.label134.Text = "Single foot";
+            // 
+            // jumpsTrackbarDS3
+            // 
+            this.jumpsTrackbarDS3.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDS3.Maximum = 100;
+            this.jumpsTrackbarDS3.Name = "jumpsTrackbarDS3";
+            this.jumpsTrackbarDS3.RightToLeftLayout = true;
+            this.jumpsTrackbarDS3.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDS3.TabIndex = 14;
+            this.jumpsTrackbarDS3.TickFrequency = 10;
+            this.jumpsTrackbarDS3.Value = 20;
+            this.jumpsTrackbarDS3.ValueChanged += new System.EventHandler(this.jumpsTrackbarDS3_ValueChanged);
+            // 
+            // jumpsDS3
+            // 
+            this.jumpsDS3.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDS3.Name = "jumpsDS3";
+            this.jumpsDS3.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDS3.TabIndex = 8;
+            this.jumpsDS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDS3.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.jumpsDS3.ValueChanged += new System.EventHandler(this.jumpsDS3_ValueChanged);
+            // 
+            // onBeatDS3
+            // 
+            this.onBeatDS3.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDS3.Name = "onBeatDS3";
+            this.onBeatDS3.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDS3.TabIndex = 11;
+            this.onBeatDS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDS3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDS3.ValueChanged += new System.EventHandler(this.onBeatDS3_ValueChanged);
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(6, 87);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(98, 13);
+            this.label135.TabIndex = 4;
+            this.label135.Text = "On beat + half beat";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(37, 11);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(67, 13);
+            this.label136.TabIndex = 3;
+            this.label136.Text = "On beat only";
+            // 
+            // onBeatTrackbarDS3
+            // 
+            this.onBeatTrackbarDS3.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDS3.Maximum = 100;
+            this.onBeatTrackbarDS3.Name = "onBeatTrackbarDS3";
+            this.onBeatTrackbarDS3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDS3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDS3.RightToLeftLayout = true;
+            this.onBeatTrackbarDS3.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDS3.TabIndex = 2;
+            this.onBeatTrackbarDS3.TickFrequency = 10;
+            this.onBeatTrackbarDS3.Value = 100;
+            this.onBeatTrackbarDS3.ValueChanged += new System.EventHandler(this.onBeatTrackbarDS3_ValueChanged);
+            // 
+            // panel58
+            // 
+            this.panel58.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel58.Controls.Add(this.checkBox20);
+            this.panel58.Controls.Add(this.checkBox21);
+            this.panel58.Controls.Add(this.checkBox22);
+            this.panel58.Controls.Add(this.checkBox23);
+            this.panel58.Controls.Add(this.checkBox24);
+            this.panel58.Controls.Add(this.checkBox25);
+            this.panel58.Controls.Add(this.checkBox26);
+            this.panel58.Controls.Add(this.checkBox27);
+            this.panel58.Controls.Add(this.checkBox28);
+            this.panel58.Controls.Add(this.checkBox29);
+            this.panel58.Location = new System.Drawing.Point(849, 3);
+            this.panel58.Name = "panel58";
+            this.panel58.Size = new System.Drawing.Size(157, 110);
+            this.panel58.TabIndex = 9;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(2, -165);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(94, 17);
+            this.checkBox20.TabIndex = 7;
+            this.checkBox20.Text = "Full 8th stream";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Enabled = false;
+            this.checkBox21.Location = new System.Drawing.Point(5, 85);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(94, 17);
+            this.checkBox21.TabIndex = 9;
+            this.checkBox21.Text = "Full 8th stream";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.Location = new System.Drawing.Point(2, -188);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(150, 17);
+            this.checkBox22.TabIndex = 6;
+            this.checkBox22.Text = "Quintuples on either 1 or 2";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            // 
+            // checkBox23
+            // 
+            this.checkBox23.AutoSize = true;
+            this.checkBox23.Checked = true;
+            this.checkBox23.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox23.Location = new System.Drawing.Point(5, 65);
+            this.checkBox23.Name = "checkBox23";
+            this.checkBox23.Size = new System.Drawing.Size(150, 17);
+            this.checkBox23.TabIndex = 6;
+            this.checkBox23.Text = "Quintuples on either 1 or 2";
+            this.checkBox23.UseVisualStyleBackColor = true;
+            // 
+            // checkBox24
+            // 
+            this.checkBox24.AutoSize = true;
+            this.checkBox24.Location = new System.Drawing.Point(2, -207);
+            this.checkBox24.Name = "checkBox24";
+            this.checkBox24.Size = new System.Drawing.Size(135, 17);
+            this.checkBox24.TabIndex = 5;
+            this.checkBox24.Text = "Triples on both 1 and 3";
+            this.checkBox24.UseVisualStyleBackColor = true;
+            // 
+            // checkBox25
+            // 
+            this.checkBox25.AutoSize = true;
+            this.checkBox25.Location = new System.Drawing.Point(5, 45);
+            this.checkBox25.Name = "checkBox25";
+            this.checkBox25.Size = new System.Drawing.Size(135, 17);
+            this.checkBox25.TabIndex = 5;
+            this.checkBox25.Text = "Triples on both 1 and 3";
+            this.checkBox25.UseVisualStyleBackColor = true;
+            // 
+            // checkBox26
+            // 
+            this.checkBox26.AutoSize = true;
+            this.checkBox26.Checked = true;
+            this.checkBox26.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox26.Location = new System.Drawing.Point(2, -223);
+            this.checkBox26.Name = "checkBox26";
+            this.checkBox26.Size = new System.Drawing.Size(86, 17);
+            this.checkBox26.TabIndex = 4;
+            this.checkBox26.Text = "Arrow repeat";
+            this.checkBox26.UseVisualStyleBackColor = true;
+            // 
+            // checkBox27
+            // 
+            this.checkBox27.AutoSize = true;
+            this.checkBox27.Checked = true;
+            this.checkBox27.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox27.Location = new System.Drawing.Point(5, 25);
+            this.checkBox27.Name = "checkBox27";
+            this.checkBox27.Size = new System.Drawing.Size(86, 17);
+            this.checkBox27.TabIndex = 4;
+            this.checkBox27.Text = "Arrow repeat";
+            this.checkBox27.UseVisualStyleBackColor = true;
+            // 
+            // checkBox28
+            // 
+            this.checkBox28.AutoSize = true;
+            this.checkBox28.Checked = true;
+            this.checkBox28.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox28.Location = new System.Drawing.Point(2, -244);
+            this.checkBox28.Name = "checkBox28";
+            this.checkBox28.Size = new System.Drawing.Size(100, 17);
+            this.checkBox28.TabIndex = 3;
+            this.checkBox28.Text = "Alternating feet ";
+            this.checkBox28.UseVisualStyleBackColor = true;
+            // 
+            // checkBox29
+            // 
+            this.checkBox29.AutoSize = true;
+            this.checkBox29.Checked = true;
+            this.checkBox29.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox29.Location = new System.Drawing.Point(5, 5);
+            this.checkBox29.Name = "checkBox29";
+            this.checkBox29.Size = new System.Drawing.Size(100, 17);
+            this.checkBox29.TabIndex = 3;
+            this.checkBox29.Text = "Alternating feet ";
+            this.checkBox29.UseVisualStyleBackColor = true;
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Location = new System.Drawing.Point(35, 95);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(50, 13);
+            this.label137.TabIndex = 8;
+            this.label137.Text = "No arrow";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(35, 25);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(34, 13);
+            this.label138.TabIndex = 7;
+            this.label138.Text = "Arrow";
+            // 
+            // stepfill_trackbarDS3
+            // 
+            this.stepfill_trackbarDS3.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDS3.Maximum = 100;
+            this.stepfill_trackbarDS3.Name = "stepfill_trackbarDS3";
+            this.stepfill_trackbarDS3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDS3.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDS3.TabIndex = 1;
+            this.stepfill_trackbarDS3.TickFrequency = 10;
+            this.stepfill_trackbarDS3.Value = 100;
+            this.stepfill_trackbarDS3.ValueChanged += new System.EventHandler(this.stepfill_trackbarDS3_ValueChanged);
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.BackColor = System.Drawing.Color.Khaki;
+            this.label139.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label139.Location = new System.Drawing.Point(2, 2);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(59, 19);
+            this.label139.TabIndex = 0;
+            this.label139.Text = "Medium";
+            // 
+            // panel59
+            // 
+            this.panel59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel59.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel59.Controls.Add(this.panel60);
+            this.panel59.Controls.Add(this.panel61);
+            this.panel59.Controls.Add(this.label146);
+            this.panel59.Controls.Add(this.stepFillDS4);
+            this.panel59.Controls.Add(this.panel62);
+            this.panel59.Controls.Add(this.panel65);
+            this.panel59.Controls.Add(this.label155);
+            this.panel59.Controls.Add(this.label156);
+            this.panel59.Controls.Add(this.stepfill_trackbarDS4);
+            this.panel59.Controls.Add(this.label157);
+            this.panel59.Location = new System.Drawing.Point(3, 381);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(1020, 120);
+            this.panel59.TabIndex = 16;
+            // 
+            // panel60
+            // 
+            this.panel60.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel60.Controls.Add(this.numericUpDown19);
+            this.panel60.Controls.Add(this.label140);
+            this.panel60.Controls.Add(this.label141);
+            this.panel60.Controls.Add(this.label142);
+            this.panel60.Controls.Add(this.trackBar19);
+            this.panel60.Enabled = false;
+            this.panel60.Location = new System.Drawing.Point(715, 3);
+            this.panel60.Name = "panel60";
+            this.panel60.Size = new System.Drawing.Size(131, 110);
+            this.panel60.TabIndex = 22;
+            // 
+            // numericUpDown19
+            // 
+            this.numericUpDown19.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown19.Name = "numericUpDown19";
+            this.numericUpDown19.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown19.TabIndex = 8;
+            this.numericUpDown19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Location = new System.Drawing.Point(1, 8);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(60, 13);
+            this.label140.TabIndex = 16;
+            this.label140.Text = "Quintuples:";
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(79, 88);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(43, 13);
+            this.label141.TabIndex = 13;
+            this.label141.Text = "ABCDE";
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Location = new System.Drawing.Point(79, 7);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(42, 13);
+            this.label142.TabIndex = 15;
+            this.label142.Text = "ABABA";
+            // 
+            // trackBar19
+            // 
+            this.trackBar19.Location = new System.Drawing.Point(53, 3);
+            this.trackBar19.Maximum = 100;
+            this.trackBar19.Name = "trackBar19";
+            this.trackBar19.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar19.RightToLeftLayout = true;
+            this.trackBar19.Size = new System.Drawing.Size(45, 105);
+            this.trackBar19.TabIndex = 14;
+            this.trackBar19.TickFrequency = 10;
+            // 
+            // panel61
+            // 
+            this.panel61.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel61.Controls.Add(this.numericUpDown20);
+            this.panel61.Controls.Add(this.label143);
+            this.panel61.Controls.Add(this.label144);
+            this.panel61.Controls.Add(this.label145);
+            this.panel61.Controls.Add(this.trackBar20);
+            this.panel61.Enabled = false;
+            this.panel61.Location = new System.Drawing.Point(594, 3);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(117, 112);
+            this.panel61.TabIndex = 21;
+            // 
+            // numericUpDown20
+            // 
+            this.numericUpDown20.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown20.Name = "numericUpDown20";
+            this.numericUpDown20.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown20.TabIndex = 8;
+            this.numericUpDown20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Location = new System.Drawing.Point(1, 8);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(41, 13);
+            this.label143.TabIndex = 16;
+            this.label143.Text = "Triples:";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Location = new System.Drawing.Point(62, 88);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(28, 13);
+            this.label144.TabIndex = 13;
+            this.label144.Text = "ABC";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Location = new System.Drawing.Point(62, 7);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(28, 13);
+            this.label145.TabIndex = 15;
+            this.label145.Text = "ABA";
+            // 
+            // trackBar20
+            // 
+            this.trackBar20.Location = new System.Drawing.Point(40, 1);
+            this.trackBar20.Maximum = 100;
+            this.trackBar20.Name = "trackBar20";
+            this.trackBar20.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar20.RightToLeftLayout = true;
+            this.trackBar20.Size = new System.Drawing.Size(45, 105);
+            this.trackBar20.TabIndex = 14;
+            this.trackBar20.TickFrequency = 10;
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Location = new System.Drawing.Point(35, 58);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(55, 13);
+            this.label146.TabIndex = 13;
+            this.label146.Text = "Every 2nd";
+            // 
+            // stepFillDS4
+            // 
+            this.stepFillDS4.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDS4.Name = "stepFillDS4";
+            this.stepFillDS4.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDS4.TabIndex = 5;
+            this.stepFillDS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDS4.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDS4.ValueChanged += new System.EventHandler(this.stepFillDS4_ValueChanged);
+            // 
+            // panel62
+            // 
+            this.panel62.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel62.Controls.Add(this.panel63);
+            this.panel62.Controls.Add(this.panel64);
+            this.panel62.Controls.Add(this.onBeatDS4);
+            this.panel62.Controls.Add(this.label153);
+            this.panel62.Controls.Add(this.label154);
+            this.panel62.Controls.Add(this.onBeatTrackbarDS4);
+            this.panel62.Location = new System.Drawing.Point(129, 3);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(459, 110);
+            this.panel62.TabIndex = 10;
+            // 
+            // panel63
+            // 
+            this.panel63.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel63.Controls.Add(this.label147);
+            this.panel63.Controls.Add(this.label148);
+            this.panel63.Controls.Add(this.label149);
+            this.panel63.Controls.Add(this.quintuplesTrackbarDS4);
+            this.panel63.Controls.Add(this.quintuplesDS4);
+            this.panel63.Location = new System.Drawing.Point(141, 55);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(310, 50);
+            this.panel63.TabIndex = 16;
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Location = new System.Drawing.Point(9, 8);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(53, 13);
+            this.label147.TabIndex = 16;
+            this.label147.Text = "Half-beat:";
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Location = new System.Drawing.Point(214, 28);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(57, 13);
+            this.label148.TabIndex = 13;
+            this.label148.Text = "Quintuples";
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Location = new System.Drawing.Point(69, 28);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(38, 13);
+            this.label149.TabIndex = 15;
+            this.label149.Text = "Triples";
+            // 
+            // quintuplesTrackbarDS4
+            // 
+            this.quintuplesTrackbarDS4.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDS4.Maximum = 100;
+            this.quintuplesTrackbarDS4.Name = "quintuplesTrackbarDS4";
+            this.quintuplesTrackbarDS4.RightToLeftLayout = true;
+            this.quintuplesTrackbarDS4.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDS4.TabIndex = 14;
+            this.quintuplesTrackbarDS4.TickFrequency = 10;
+            this.quintuplesTrackbarDS4.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDS4_ValueChanged);
+            // 
+            // quintuplesDS4
+            // 
+            this.quintuplesDS4.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDS4.Name = "quintuplesDS4";
+            this.quintuplesDS4.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDS4.TabIndex = 8;
+            this.quintuplesDS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDS4.ValueChanged += new System.EventHandler(this.quintuplesDS4_ValueChanged);
+            // 
+            // panel64
+            // 
+            this.panel64.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel64.Controls.Add(this.label150);
+            this.panel64.Controls.Add(this.label151);
+            this.panel64.Controls.Add(this.label152);
+            this.panel64.Controls.Add(this.jumpsTrackbarDS4);
+            this.panel64.Controls.Add(this.jumpsDS4);
+            this.panel64.Location = new System.Drawing.Point(141, 2);
+            this.panel64.Name = "panel64";
+            this.panel64.Size = new System.Drawing.Size(310, 50);
+            this.panel64.TabIndex = 12;
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Location = new System.Drawing.Point(8, 7);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(48, 13);
+            this.label150.TabIndex = 17;
+            this.label150.Text = "On beat:";
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.Location = new System.Drawing.Point(214, 28);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(37, 13);
+            this.label151.TabIndex = 13;
+            this.label151.Text = "Jumps";
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Location = new System.Drawing.Point(69, 28);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(57, 13);
+            this.label152.TabIndex = 15;
+            this.label152.Text = "Single foot";
+            // 
+            // jumpsTrackbarDS4
+            // 
+            this.jumpsTrackbarDS4.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDS4.Maximum = 100;
+            this.jumpsTrackbarDS4.Name = "jumpsTrackbarDS4";
+            this.jumpsTrackbarDS4.RightToLeftLayout = true;
+            this.jumpsTrackbarDS4.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDS4.TabIndex = 14;
+            this.jumpsTrackbarDS4.TickFrequency = 10;
+            this.jumpsTrackbarDS4.Value = 25;
+            this.jumpsTrackbarDS4.ValueChanged += new System.EventHandler(this.jumpsTrackbarDS4_ValueChanged);
+            // 
+            // jumpsDS4
+            // 
+            this.jumpsDS4.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDS4.Name = "jumpsDS4";
+            this.jumpsDS4.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDS4.TabIndex = 8;
+            this.jumpsDS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDS4.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.jumpsDS4.ValueChanged += new System.EventHandler(this.jumpsDS4_ValueChanged);
+            // 
+            // onBeatDS4
+            // 
+            this.onBeatDS4.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDS4.Name = "onBeatDS4";
+            this.onBeatDS4.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDS4.TabIndex = 11;
+            this.onBeatDS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDS4.Value = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
+            this.onBeatDS4.ValueChanged += new System.EventHandler(this.onBeatDS4_ValueChanged);
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.Location = new System.Drawing.Point(6, 87);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(98, 13);
+            this.label153.TabIndex = 4;
+            this.label153.Text = "On beat + half beat";
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Location = new System.Drawing.Point(37, 11);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(67, 13);
+            this.label154.TabIndex = 3;
+            this.label154.Text = "On beat only";
+            // 
+            // onBeatTrackbarDS4
+            // 
+            this.onBeatTrackbarDS4.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDS4.Maximum = 100;
+            this.onBeatTrackbarDS4.Name = "onBeatTrackbarDS4";
+            this.onBeatTrackbarDS4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDS4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDS4.RightToLeftLayout = true;
+            this.onBeatTrackbarDS4.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDS4.TabIndex = 2;
+            this.onBeatTrackbarDS4.TickFrequency = 10;
+            this.onBeatTrackbarDS4.Value = 65;
+            this.onBeatTrackbarDS4.ValueChanged += new System.EventHandler(this.onBeatTrackbarDS4_ValueChanged);
+            // 
+            // panel65
+            // 
+            this.panel65.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel65.Controls.Add(this.checkBox30);
+            this.panel65.Controls.Add(this.checkBox31);
+            this.panel65.Controls.Add(this.checkBox32);
+            this.panel65.Controls.Add(this.checkBox33);
+            this.panel65.Controls.Add(this.checkBox34);
+            this.panel65.Location = new System.Drawing.Point(849, 3);
+            this.panel65.Name = "panel65";
+            this.panel65.Size = new System.Drawing.Size(157, 110);
+            this.panel65.TabIndex = 9;
+            // 
+            // checkBox30
+            // 
+            this.checkBox30.AutoSize = true;
+            this.checkBox30.Enabled = false;
+            this.checkBox30.Location = new System.Drawing.Point(5, 85);
+            this.checkBox30.Name = "checkBox30";
+            this.checkBox30.Size = new System.Drawing.Size(94, 17);
+            this.checkBox30.TabIndex = 10;
+            this.checkBox30.Text = "Full 8th stream";
+            this.checkBox30.UseVisualStyleBackColor = true;
+            // 
+            // checkBox31
+            // 
+            this.checkBox31.AutoSize = true;
+            this.checkBox31.Location = new System.Drawing.Point(5, 65);
+            this.checkBox31.Name = "checkBox31";
+            this.checkBox31.Size = new System.Drawing.Size(150, 17);
+            this.checkBox31.TabIndex = 6;
+            this.checkBox31.Text = "Quintuples on either 1 or 2";
+            this.checkBox31.UseVisualStyleBackColor = true;
+            // 
+            // checkBox32
+            // 
+            this.checkBox32.AutoSize = true;
+            this.checkBox32.Checked = true;
+            this.checkBox32.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox32.Location = new System.Drawing.Point(5, 45);
+            this.checkBox32.Name = "checkBox32";
+            this.checkBox32.Size = new System.Drawing.Size(135, 17);
+            this.checkBox32.TabIndex = 5;
+            this.checkBox32.Text = "Triples on both 1 and 3";
+            this.checkBox32.UseVisualStyleBackColor = true;
+            // 
+            // checkBox33
+            // 
+            this.checkBox33.AutoSize = true;
+            this.checkBox33.Checked = true;
+            this.checkBox33.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox33.Location = new System.Drawing.Point(5, 25);
+            this.checkBox33.Name = "checkBox33";
+            this.checkBox33.Size = new System.Drawing.Size(86, 17);
+            this.checkBox33.TabIndex = 4;
+            this.checkBox33.Text = "Arrow repeat";
+            this.checkBox33.UseVisualStyleBackColor = true;
+            // 
+            // checkBox34
+            // 
+            this.checkBox34.AutoSize = true;
+            this.checkBox34.Checked = true;
+            this.checkBox34.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox34.Location = new System.Drawing.Point(5, 5);
+            this.checkBox34.Name = "checkBox34";
+            this.checkBox34.Size = new System.Drawing.Size(100, 17);
+            this.checkBox34.TabIndex = 3;
+            this.checkBox34.Text = "Alternating feet ";
+            this.checkBox34.UseVisualStyleBackColor = true;
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Location = new System.Drawing.Point(35, 95);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(50, 13);
+            this.label155.TabIndex = 8;
+            this.label155.Text = "No arrow";
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(35, 25);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(34, 13);
+            this.label156.TabIndex = 7;
+            this.label156.Text = "Arrow";
+            // 
+            // stepfill_trackbarDS4
+            // 
+            this.stepfill_trackbarDS4.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDS4.Maximum = 100;
+            this.stepfill_trackbarDS4.Name = "stepfill_trackbarDS4";
+            this.stepfill_trackbarDS4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDS4.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDS4.TabIndex = 1;
+            this.stepfill_trackbarDS4.TickFrequency = 10;
+            this.stepfill_trackbarDS4.Value = 100;
+            this.stepfill_trackbarDS4.ValueChanged += new System.EventHandler(this.stepfill_trackbarDS4_ValueChanged);
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.BackColor = System.Drawing.Color.OrangeRed;
+            this.label157.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label157.Location = new System.Drawing.Point(2, 2);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(41, 19);
+            this.label157.TabIndex = 0;
+            this.label157.Text = "Hard";
+            // 
+            // panel66
+            // 
+            this.panel66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel66.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel66.Controls.Add(this.panel67);
+            this.panel66.Controls.Add(this.panel68);
+            this.panel66.Controls.Add(this.label164);
+            this.panel66.Controls.Add(this.stepFillDS5);
+            this.panel66.Controls.Add(this.panel69);
+            this.panel66.Controls.Add(this.panel72);
+            this.panel66.Controls.Add(this.label173);
+            this.panel66.Controls.Add(this.label174);
+            this.panel66.Controls.Add(this.stepfill_trackbarDS5);
+            this.panel66.Controls.Add(this.label175);
+            this.panel66.Location = new System.Drawing.Point(3, 507);
+            this.panel66.Name = "panel66";
+            this.panel66.Size = new System.Drawing.Size(1020, 120);
+            this.panel66.TabIndex = 14;
+            // 
+            // panel67
+            // 
+            this.panel67.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel67.Controls.Add(this.numericUpDown25);
+            this.panel67.Controls.Add(this.label158);
+            this.panel67.Controls.Add(this.label159);
+            this.panel67.Controls.Add(this.label160);
+            this.panel67.Controls.Add(this.trackBar25);
+            this.panel67.Enabled = false;
+            this.panel67.Location = new System.Drawing.Point(715, 3);
+            this.panel67.Name = "panel67";
+            this.panel67.Size = new System.Drawing.Size(131, 110);
+            this.panel67.TabIndex = 23;
+            // 
+            // numericUpDown25
+            // 
+            this.numericUpDown25.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown25.Name = "numericUpDown25";
+            this.numericUpDown25.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown25.TabIndex = 8;
+            this.numericUpDown25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Location = new System.Drawing.Point(1, 8);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(60, 13);
+            this.label158.TabIndex = 16;
+            this.label158.Text = "Quintuples:";
+            // 
+            // label159
+            // 
+            this.label159.AutoSize = true;
+            this.label159.Location = new System.Drawing.Point(79, 88);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(43, 13);
+            this.label159.TabIndex = 13;
+            this.label159.Text = "ABCDE";
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Location = new System.Drawing.Point(79, 7);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(42, 13);
+            this.label160.TabIndex = 15;
+            this.label160.Text = "ABABA";
+            // 
+            // trackBar25
+            // 
+            this.trackBar25.Location = new System.Drawing.Point(53, 3);
+            this.trackBar25.Maximum = 100;
+            this.trackBar25.Name = "trackBar25";
+            this.trackBar25.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar25.RightToLeftLayout = true;
+            this.trackBar25.Size = new System.Drawing.Size(45, 105);
+            this.trackBar25.TabIndex = 14;
+            this.trackBar25.TickFrequency = 10;
+            // 
+            // panel68
+            // 
+            this.panel68.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel68.Controls.Add(this.numericUpDown26);
+            this.panel68.Controls.Add(this.label161);
+            this.panel68.Controls.Add(this.label162);
+            this.panel68.Controls.Add(this.label163);
+            this.panel68.Controls.Add(this.trackBar26);
+            this.panel68.Enabled = false;
+            this.panel68.Location = new System.Drawing.Point(594, 3);
+            this.panel68.Name = "panel68";
+            this.panel68.Size = new System.Drawing.Size(117, 110);
+            this.panel68.TabIndex = 22;
+            // 
+            // numericUpDown26
+            // 
+            this.numericUpDown26.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown26.Name = "numericUpDown26";
+            this.numericUpDown26.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown26.TabIndex = 8;
+            this.numericUpDown26.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Location = new System.Drawing.Point(1, 8);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(41, 13);
+            this.label161.TabIndex = 16;
+            this.label161.Text = "Triples:";
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Location = new System.Drawing.Point(62, 88);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(28, 13);
+            this.label162.TabIndex = 13;
+            this.label162.Text = "ABC";
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.Location = new System.Drawing.Point(62, 7);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(28, 13);
+            this.label163.TabIndex = 15;
+            this.label163.Text = "ABA";
+            // 
+            // trackBar26
+            // 
+            this.trackBar26.Location = new System.Drawing.Point(40, 1);
+            this.trackBar26.Maximum = 100;
+            this.trackBar26.Name = "trackBar26";
+            this.trackBar26.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar26.RightToLeftLayout = true;
+            this.trackBar26.Size = new System.Drawing.Size(45, 105);
+            this.trackBar26.TabIndex = 14;
+            this.trackBar26.TickFrequency = 10;
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.Location = new System.Drawing.Point(35, 58);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(55, 13);
+            this.label164.TabIndex = 15;
+            this.label164.Text = "Every 2nd";
+            // 
+            // stepFillDS5
+            // 
+            this.stepFillDS5.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDS5.Name = "stepFillDS5";
+            this.stepFillDS5.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDS5.TabIndex = 5;
+            this.stepFillDS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDS5.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDS5.ValueChanged += new System.EventHandler(this.stepFillDS5_ValueChanged);
+            // 
+            // panel69
+            // 
+            this.panel69.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel69.Controls.Add(this.panel70);
+            this.panel69.Controls.Add(this.panel71);
+            this.panel69.Controls.Add(this.onBeatDS5);
+            this.panel69.Controls.Add(this.label171);
+            this.panel69.Controls.Add(this.label172);
+            this.panel69.Controls.Add(this.onBeatTrackbarDS5);
+            this.panel69.Location = new System.Drawing.Point(129, 3);
+            this.panel69.Name = "panel69";
+            this.panel69.Size = new System.Drawing.Size(459, 110);
+            this.panel69.TabIndex = 10;
+            // 
+            // panel70
+            // 
+            this.panel70.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel70.Controls.Add(this.label165);
+            this.panel70.Controls.Add(this.label166);
+            this.panel70.Controls.Add(this.label167);
+            this.panel70.Controls.Add(this.quintuplesTrackbarDS5);
+            this.panel70.Controls.Add(this.quintuplesDS5);
+            this.panel70.Location = new System.Drawing.Point(141, 55);
+            this.panel70.Name = "panel70";
+            this.panel70.Size = new System.Drawing.Size(310, 50);
+            this.panel70.TabIndex = 16;
+            // 
+            // label165
+            // 
+            this.label165.AutoSize = true;
+            this.label165.Location = new System.Drawing.Point(9, 8);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(53, 13);
+            this.label165.TabIndex = 16;
+            this.label165.Text = "Half-beat:";
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Location = new System.Drawing.Point(214, 28);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(57, 13);
+            this.label166.TabIndex = 13;
+            this.label166.Text = "Quintuples";
+            // 
+            // label167
+            // 
+            this.label167.AutoSize = true;
+            this.label167.Location = new System.Drawing.Point(69, 28);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(38, 13);
+            this.label167.TabIndex = 15;
+            this.label167.Text = "Triples";
+            // 
+            // quintuplesTrackbarDS5
+            // 
+            this.quintuplesTrackbarDS5.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDS5.Maximum = 100;
+            this.quintuplesTrackbarDS5.Name = "quintuplesTrackbarDS5";
+            this.quintuplesTrackbarDS5.RightToLeftLayout = true;
+            this.quintuplesTrackbarDS5.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDS5.TabIndex = 14;
+            this.quintuplesTrackbarDS5.TickFrequency = 10;
+            this.quintuplesTrackbarDS5.Value = 75;
+            this.quintuplesTrackbarDS5.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDS5_ValueChanged);
+            // 
+            // quintuplesDS5
+            // 
+            this.quintuplesDS5.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDS5.Name = "quintuplesDS5";
+            this.quintuplesDS5.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDS5.TabIndex = 8;
+            this.quintuplesDS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDS5.Value = new decimal(new int[] {
+            75,
+            0,
+            0,
+            0});
+            this.quintuplesDS5.ValueChanged += new System.EventHandler(this.quintuplesDS5_ValueChanged);
+            // 
+            // panel71
+            // 
+            this.panel71.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel71.Controls.Add(this.label168);
+            this.panel71.Controls.Add(this.label169);
+            this.panel71.Controls.Add(this.label170);
+            this.panel71.Controls.Add(this.jumpsTrackbarDS5);
+            this.panel71.Controls.Add(this.jumpsDS5);
+            this.panel71.Location = new System.Drawing.Point(141, 2);
+            this.panel71.Name = "panel71";
+            this.panel71.Size = new System.Drawing.Size(310, 50);
+            this.panel71.TabIndex = 12;
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Location = new System.Drawing.Point(8, 7);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(48, 13);
+            this.label168.TabIndex = 17;
+            this.label168.Text = "On beat:";
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Location = new System.Drawing.Point(214, 28);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(37, 13);
+            this.label169.TabIndex = 13;
+            this.label169.Text = "Jumps";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Location = new System.Drawing.Point(69, 28);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(57, 13);
+            this.label170.TabIndex = 15;
+            this.label170.Text = "Single foot";
+            // 
+            // jumpsTrackbarDS5
+            // 
+            this.jumpsTrackbarDS5.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDS5.Maximum = 100;
+            this.jumpsTrackbarDS5.Name = "jumpsTrackbarDS5";
+            this.jumpsTrackbarDS5.RightToLeftLayout = true;
+            this.jumpsTrackbarDS5.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDS5.TabIndex = 14;
+            this.jumpsTrackbarDS5.TickFrequency = 10;
+            this.jumpsTrackbarDS5.Value = 30;
+            this.jumpsTrackbarDS5.ValueChanged += new System.EventHandler(this.jumpsTrackbarDS5_ValueChanged);
+            // 
+            // jumpsDS5
+            // 
+            this.jumpsDS5.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDS5.Name = "jumpsDS5";
+            this.jumpsDS5.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDS5.TabIndex = 8;
+            this.jumpsDS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDS5.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.jumpsDS5.ValueChanged += new System.EventHandler(this.jumpsDS5_ValueChanged);
+            // 
+            // onBeatDS5
+            // 
+            this.onBeatDS5.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDS5.Name = "onBeatDS5";
+            this.onBeatDS5.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDS5.TabIndex = 11;
+            this.onBeatDS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDS5.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.onBeatDS5.ValueChanged += new System.EventHandler(this.onBeatDS5_ValueChanged);
+            // 
+            // label171
+            // 
+            this.label171.AutoSize = true;
+            this.label171.Location = new System.Drawing.Point(6, 87);
+            this.label171.Name = "label171";
+            this.label171.Size = new System.Drawing.Size(98, 13);
+            this.label171.TabIndex = 4;
+            this.label171.Text = "On beat + half beat";
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Location = new System.Drawing.Point(37, 11);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(67, 13);
+            this.label172.TabIndex = 3;
+            this.label172.Text = "On beat only";
+            // 
+            // onBeatTrackbarDS5
+            // 
+            this.onBeatTrackbarDS5.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDS5.Maximum = 100;
+            this.onBeatTrackbarDS5.Name = "onBeatTrackbarDS5";
+            this.onBeatTrackbarDS5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDS5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDS5.RightToLeftLayout = true;
+            this.onBeatTrackbarDS5.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDS5.TabIndex = 2;
+            this.onBeatTrackbarDS5.TickFrequency = 10;
+            this.onBeatTrackbarDS5.Value = 25;
+            this.onBeatTrackbarDS5.ValueChanged += new System.EventHandler(this.onBeatTrackbarDS5_ValueChanged);
+            // 
+            // panel72
+            // 
+            this.panel72.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel72.Controls.Add(this.checkBox35);
+            this.panel72.Controls.Add(this.checkBox36);
+            this.panel72.Controls.Add(this.checkBox37);
+            this.panel72.Controls.Add(this.checkBox38);
+            this.panel72.Controls.Add(this.checkBox39);
+            this.panel72.Location = new System.Drawing.Point(849, 3);
+            this.panel72.Name = "panel72";
+            this.panel72.Size = new System.Drawing.Size(157, 110);
+            this.panel72.TabIndex = 9;
+            // 
+            // checkBox35
+            // 
+            this.checkBox35.AutoSize = true;
+            this.checkBox35.Enabled = false;
+            this.checkBox35.Location = new System.Drawing.Point(5, 85);
+            this.checkBox35.Name = "checkBox35";
+            this.checkBox35.Size = new System.Drawing.Size(94, 17);
+            this.checkBox35.TabIndex = 11;
+            this.checkBox35.Text = "Full 8th stream";
+            this.checkBox35.UseVisualStyleBackColor = true;
+            // 
+            // checkBox36
+            // 
+            this.checkBox36.AutoSize = true;
+            this.checkBox36.Checked = true;
+            this.checkBox36.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox36.Location = new System.Drawing.Point(5, 65);
+            this.checkBox36.Name = "checkBox36";
+            this.checkBox36.Size = new System.Drawing.Size(150, 17);
+            this.checkBox36.TabIndex = 6;
+            this.checkBox36.Text = "Quintuples on either 1 or 2";
+            this.checkBox36.UseVisualStyleBackColor = true;
+            // 
+            // checkBox37
+            // 
+            this.checkBox37.AutoSize = true;
+            this.checkBox37.Checked = true;
+            this.checkBox37.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox37.Location = new System.Drawing.Point(5, 45);
+            this.checkBox37.Name = "checkBox37";
+            this.checkBox37.Size = new System.Drawing.Size(135, 17);
+            this.checkBox37.TabIndex = 5;
+            this.checkBox37.Text = "Triples on both 1 and 3";
+            this.checkBox37.UseVisualStyleBackColor = true;
+            // 
+            // checkBox38
+            // 
+            this.checkBox38.AutoSize = true;
+            this.checkBox38.Checked = true;
+            this.checkBox38.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox38.Location = new System.Drawing.Point(5, 25);
+            this.checkBox38.Name = "checkBox38";
+            this.checkBox38.Size = new System.Drawing.Size(86, 17);
+            this.checkBox38.TabIndex = 4;
+            this.checkBox38.Text = "Arrow repeat";
+            this.checkBox38.UseVisualStyleBackColor = true;
+            // 
+            // checkBox39
+            // 
+            this.checkBox39.AutoSize = true;
+            this.checkBox39.Checked = true;
+            this.checkBox39.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox39.Location = new System.Drawing.Point(5, 5);
+            this.checkBox39.Name = "checkBox39";
+            this.checkBox39.Size = new System.Drawing.Size(100, 17);
+            this.checkBox39.TabIndex = 3;
+            this.checkBox39.Text = "Alternating feet ";
+            this.checkBox39.UseVisualStyleBackColor = true;
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Location = new System.Drawing.Point(35, 95);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(50, 13);
+            this.label173.TabIndex = 8;
+            this.label173.Text = "No arrow";
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Location = new System.Drawing.Point(35, 25);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(34, 13);
+            this.label174.TabIndex = 7;
+            this.label174.Text = "Arrow";
+            // 
+            // stepfill_trackbarDS5
+            // 
+            this.stepfill_trackbarDS5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stepfill_trackbarDS5.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDS5.Maximum = 100;
+            this.stepfill_trackbarDS5.Name = "stepfill_trackbarDS5";
+            this.stepfill_trackbarDS5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDS5.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDS5.TabIndex = 1;
+            this.stepfill_trackbarDS5.TickFrequency = 10;
+            this.stepfill_trackbarDS5.Value = 100;
+            this.stepfill_trackbarDS5.ValueChanged += new System.EventHandler(this.stepfill_trackbarDS5_ValueChanged);
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label175.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label175.Location = new System.Drawing.Point(2, 2);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(50, 19);
+            this.label175.TabIndex = 0;
+            this.label175.Text = "Expert";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.panel109);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel4);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1038, 672);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Dance Double";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // panel109
+            // 
+            this.panel109.AutoSize = true;
+            this.panel109.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel109.Controls.Add(this.button9);
+            this.panel109.Controls.Add(this.button10);
+            this.panel109.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel109.Location = new System.Drawing.Point(3, 639);
+            this.panel109.MinimumSize = new System.Drawing.Size(100, 30);
+            this.panel109.Name = "panel109";
+            this.panel109.Size = new System.Drawing.Size(1032, 30);
+            this.panel109.TabIndex = 23;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.YellowGreen;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button9.Location = new System.Drawing.Point(518, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(514, 30);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "Continue to Pump Single";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button10.Location = new System.Drawing.Point(0, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(514, 30);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Back to Dance Solo";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.AutoScroll = true;
+            this.flowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel4.Controls.Add(this.panel73);
+            this.flowLayoutPanel4.Controls.Add(this.panel80);
+            this.flowLayoutPanel4.Controls.Add(this.panel87);
+            this.flowLayoutPanel4.Controls.Add(this.panel94);
+            this.flowLayoutPanel4.Controls.Add(this.panel101);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1032, 630);
+            this.flowLayoutPanel4.TabIndex = 22;
+            this.flowLayoutPanel4.WrapContents = false;
+            // 
+            // panel73
+            // 
+            this.panel73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel73.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel73.Controls.Add(this.panel74);
+            this.panel73.Controls.Add(this.panel75);
+            this.panel73.Controls.Add(this.label182);
+            this.panel73.Controls.Add(this.stepFillDD1);
+            this.panel73.Controls.Add(this.panel76);
+            this.panel73.Controls.Add(this.panel79);
+            this.panel73.Controls.Add(this.label191);
+            this.panel73.Controls.Add(this.label192);
+            this.panel73.Controls.Add(this.stepfill_trackbarDD1);
+            this.panel73.Controls.Add(this.label193);
+            this.panel73.Location = new System.Drawing.Point(3, 3);
+            this.panel73.Name = "panel73";
+            this.panel73.Size = new System.Drawing.Size(1020, 120);
+            this.panel73.TabIndex = 5;
+            // 
+            // panel74
+            // 
+            this.panel74.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel74.Controls.Add(this.numericUpDown31);
+            this.panel74.Controls.Add(this.label176);
+            this.panel74.Controls.Add(this.label177);
+            this.panel74.Controls.Add(this.label178);
+            this.panel74.Controls.Add(this.trackBar31);
+            this.panel74.Enabled = false;
+            this.panel74.Location = new System.Drawing.Point(715, 3);
+            this.panel74.Name = "panel74";
+            this.panel74.Size = new System.Drawing.Size(131, 110);
+            this.panel74.TabIndex = 19;
+            // 
+            // numericUpDown31
+            // 
+            this.numericUpDown31.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown31.Name = "numericUpDown31";
+            this.numericUpDown31.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown31.TabIndex = 8;
+            this.numericUpDown31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Location = new System.Drawing.Point(1, 8);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(60, 13);
+            this.label176.TabIndex = 16;
+            this.label176.Text = "Quintuples:";
+            // 
+            // label177
+            // 
+            this.label177.AutoSize = true;
+            this.label177.Location = new System.Drawing.Point(79, 88);
+            this.label177.Name = "label177";
+            this.label177.Size = new System.Drawing.Size(43, 13);
+            this.label177.TabIndex = 13;
+            this.label177.Text = "ABCDE";
+            // 
+            // label178
+            // 
+            this.label178.AutoSize = true;
+            this.label178.Location = new System.Drawing.Point(79, 7);
+            this.label178.Name = "label178";
+            this.label178.Size = new System.Drawing.Size(42, 13);
+            this.label178.TabIndex = 15;
+            this.label178.Text = "ABABA";
+            // 
+            // trackBar31
+            // 
+            this.trackBar31.Location = new System.Drawing.Point(53, 3);
+            this.trackBar31.Maximum = 100;
+            this.trackBar31.Name = "trackBar31";
+            this.trackBar31.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar31.RightToLeftLayout = true;
+            this.trackBar31.Size = new System.Drawing.Size(45, 105);
+            this.trackBar31.TabIndex = 14;
+            this.trackBar31.TickFrequency = 10;
+            // 
+            // panel75
+            // 
+            this.panel75.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel75.Controls.Add(this.numericUpDown32);
+            this.panel75.Controls.Add(this.label179);
+            this.panel75.Controls.Add(this.label180);
+            this.panel75.Controls.Add(this.label181);
+            this.panel75.Controls.Add(this.trackBar32);
+            this.panel75.Enabled = false;
+            this.panel75.Location = new System.Drawing.Point(594, 3);
+            this.panel75.Name = "panel75";
+            this.panel75.Size = new System.Drawing.Size(117, 112);
+            this.panel75.TabIndex = 18;
+            // 
+            // numericUpDown32
+            // 
+            this.numericUpDown32.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown32.Name = "numericUpDown32";
+            this.numericUpDown32.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown32.TabIndex = 8;
+            this.numericUpDown32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label179
+            // 
+            this.label179.AutoSize = true;
+            this.label179.Location = new System.Drawing.Point(1, 8);
+            this.label179.Name = "label179";
+            this.label179.Size = new System.Drawing.Size(41, 13);
+            this.label179.TabIndex = 16;
+            this.label179.Text = "Triples:";
+            // 
+            // label180
+            // 
+            this.label180.AutoSize = true;
+            this.label180.Location = new System.Drawing.Point(62, 88);
+            this.label180.Name = "label180";
+            this.label180.Size = new System.Drawing.Size(28, 13);
+            this.label180.TabIndex = 13;
+            this.label180.Text = "ABC";
+            // 
+            // label181
+            // 
+            this.label181.AutoSize = true;
+            this.label181.Location = new System.Drawing.Point(62, 7);
+            this.label181.Name = "label181";
+            this.label181.Size = new System.Drawing.Size(28, 13);
+            this.label181.TabIndex = 15;
+            this.label181.Text = "ABA";
+            // 
+            // trackBar32
+            // 
+            this.trackBar32.Location = new System.Drawing.Point(40, 1);
+            this.trackBar32.Maximum = 100;
+            this.trackBar32.Name = "trackBar32";
+            this.trackBar32.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar32.RightToLeftLayout = true;
+            this.trackBar32.Size = new System.Drawing.Size(45, 105);
+            this.trackBar32.TabIndex = 14;
+            this.trackBar32.TickFrequency = 10;
+            // 
+            // label182
+            // 
+            this.label182.AutoSize = true;
+            this.label182.Location = new System.Drawing.Point(35, 58);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(55, 13);
+            this.label182.TabIndex = 11;
+            this.label182.Text = "Every 2nd";
+            // 
+            // stepFillDD1
+            // 
+            this.stepFillDD1.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDD1.Name = "stepFillDD1";
+            this.stepFillDD1.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDD1.TabIndex = 5;
+            this.stepFillDD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDD1.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.stepFillDD1.ValueChanged += new System.EventHandler(this.stepFillDD1_ValueChanged);
+            // 
+            // panel76
+            // 
+            this.panel76.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel76.Controls.Add(this.onBeatDD1);
+            this.panel76.Controls.Add(this.label183);
+            this.panel76.Controls.Add(this.label184);
+            this.panel76.Controls.Add(this.panel77);
+            this.panel76.Controls.Add(this.panel78);
+            this.panel76.Controls.Add(this.onBeatTrackbarDD1);
+            this.panel76.Location = new System.Drawing.Point(129, 3);
+            this.panel76.Name = "panel76";
+            this.panel76.Size = new System.Drawing.Size(459, 110);
+            this.panel76.TabIndex = 10;
+            // 
+            // onBeatDD1
+            // 
+            this.onBeatDD1.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDD1.Name = "onBeatDD1";
+            this.onBeatDD1.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDD1.TabIndex = 11;
+            this.onBeatDD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDD1.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDD1.ValueChanged += new System.EventHandler(this.onBeatDD1_ValueChanged);
+            // 
+            // label183
+            // 
+            this.label183.AutoSize = true;
+            this.label183.Location = new System.Drawing.Point(6, 87);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(98, 13);
+            this.label183.TabIndex = 4;
+            this.label183.Text = "On beat + half beat";
+            // 
+            // label184
+            // 
+            this.label184.AutoSize = true;
+            this.label184.Location = new System.Drawing.Point(37, 11);
+            this.label184.Name = "label184";
+            this.label184.Size = new System.Drawing.Size(67, 13);
+            this.label184.TabIndex = 3;
+            this.label184.Text = "On beat only";
+            // 
+            // panel77
+            // 
+            this.panel77.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel77.Controls.Add(this.label185);
+            this.panel77.Controls.Add(this.label186);
+            this.panel77.Controls.Add(this.label187);
+            this.panel77.Controls.Add(this.quintuplesTrackbarDD1);
+            this.panel77.Controls.Add(this.quintuplesDD1);
+            this.panel77.Location = new System.Drawing.Point(141, 55);
+            this.panel77.Name = "panel77";
+            this.panel77.Size = new System.Drawing.Size(310, 50);
+            this.panel77.TabIndex = 16;
+            // 
+            // label185
+            // 
+            this.label185.AutoSize = true;
+            this.label185.Location = new System.Drawing.Point(9, 8);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(53, 13);
+            this.label185.TabIndex = 16;
+            this.label185.Text = "Half-beat:";
+            // 
+            // label186
+            // 
+            this.label186.AutoSize = true;
+            this.label186.Location = new System.Drawing.Point(214, 28);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(57, 13);
+            this.label186.TabIndex = 13;
+            this.label186.Text = "Quintuples";
+            // 
+            // label187
+            // 
+            this.label187.AutoSize = true;
+            this.label187.Location = new System.Drawing.Point(69, 28);
+            this.label187.Name = "label187";
+            this.label187.Size = new System.Drawing.Size(38, 13);
+            this.label187.TabIndex = 15;
+            this.label187.Text = "Triples";
+            // 
+            // quintuplesTrackbarDD1
+            // 
+            this.quintuplesTrackbarDD1.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDD1.Maximum = 100;
+            this.quintuplesTrackbarDD1.Name = "quintuplesTrackbarDD1";
+            this.quintuplesTrackbarDD1.RightToLeftLayout = true;
+            this.quintuplesTrackbarDD1.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDD1.TabIndex = 14;
+            this.quintuplesTrackbarDD1.TickFrequency = 10;
+            this.quintuplesTrackbarDD1.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDD1_ValueChanged);
+            // 
+            // quintuplesDD1
+            // 
+            this.quintuplesDD1.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDD1.Name = "quintuplesDD1";
+            this.quintuplesDD1.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDD1.TabIndex = 8;
+            this.quintuplesDD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDD1.ValueChanged += new System.EventHandler(this.quintuplesDD1_ValueChanged);
+            // 
+            // panel78
+            // 
+            this.panel78.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel78.Controls.Add(this.label188);
+            this.panel78.Controls.Add(this.label189);
+            this.panel78.Controls.Add(this.label190);
+            this.panel78.Controls.Add(this.jumpsTrackbarDD1);
+            this.panel78.Controls.Add(this.jumpsDD1);
+            this.panel78.Location = new System.Drawing.Point(141, 2);
+            this.panel78.Name = "panel78";
+            this.panel78.Size = new System.Drawing.Size(310, 50);
+            this.panel78.TabIndex = 12;
+            // 
+            // label188
+            // 
+            this.label188.AutoSize = true;
+            this.label188.Location = new System.Drawing.Point(8, 7);
+            this.label188.Name = "label188";
+            this.label188.Size = new System.Drawing.Size(48, 13);
+            this.label188.TabIndex = 17;
+            this.label188.Text = "On beat:";
+            // 
+            // label189
+            // 
+            this.label189.AutoSize = true;
+            this.label189.Location = new System.Drawing.Point(214, 28);
+            this.label189.Name = "label189";
+            this.label189.Size = new System.Drawing.Size(37, 13);
+            this.label189.TabIndex = 13;
+            this.label189.Text = "Jumps";
+            // 
+            // label190
+            // 
+            this.label190.AutoSize = true;
+            this.label190.Location = new System.Drawing.Point(69, 28);
+            this.label190.Name = "label190";
+            this.label190.Size = new System.Drawing.Size(57, 13);
+            this.label190.TabIndex = 15;
+            this.label190.Text = "Single foot";
+            // 
+            // jumpsTrackbarDD1
+            // 
+            this.jumpsTrackbarDD1.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDD1.Maximum = 100;
+            this.jumpsTrackbarDD1.Name = "jumpsTrackbarDD1";
+            this.jumpsTrackbarDD1.RightToLeftLayout = true;
+            this.jumpsTrackbarDD1.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDD1.TabIndex = 14;
+            this.jumpsTrackbarDD1.TickFrequency = 10;
+            this.jumpsTrackbarDD1.ValueChanged += new System.EventHandler(this.jumpsTrackbarDD1_ValueChanged);
+            // 
+            // jumpsDD1
+            // 
+            this.jumpsDD1.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDD1.Name = "jumpsDD1";
+            this.jumpsDD1.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDD1.TabIndex = 8;
+            this.jumpsDD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDD1.ValueChanged += new System.EventHandler(this.jumpsDD1_ValueChanged);
+            // 
+            // onBeatTrackbarDD1
+            // 
+            this.onBeatTrackbarDD1.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDD1.Maximum = 100;
+            this.onBeatTrackbarDD1.Name = "onBeatTrackbarDD1";
+            this.onBeatTrackbarDD1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDD1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDD1.RightToLeftLayout = true;
+            this.onBeatTrackbarDD1.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDD1.TabIndex = 2;
+            this.onBeatTrackbarDD1.TickFrequency = 10;
+            this.onBeatTrackbarDD1.Value = 100;
+            this.onBeatTrackbarDD1.ValueChanged += new System.EventHandler(this.onBeatTrackbarDD1_ValueChanged);
+            // 
+            // panel79
+            // 
+            this.panel79.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel79.Controls.Add(this.checkBox40);
+            this.panel79.Controls.Add(this.checkBox41);
+            this.panel79.Controls.Add(this.checkBox42);
+            this.panel79.Controls.Add(this.checkBox43);
+            this.panel79.Controls.Add(this.checkBox44);
+            this.panel79.Location = new System.Drawing.Point(849, 3);
+            this.panel79.Name = "panel79";
+            this.panel79.Size = new System.Drawing.Size(157, 110);
+            this.panel79.TabIndex = 9;
+            // 
+            // checkBox40
+            // 
+            this.checkBox40.AutoSize = true;
+            this.checkBox40.Enabled = false;
+            this.checkBox40.Location = new System.Drawing.Point(5, 85);
+            this.checkBox40.Name = "checkBox40";
+            this.checkBox40.Size = new System.Drawing.Size(94, 17);
+            this.checkBox40.TabIndex = 7;
+            this.checkBox40.Text = "Full 8th stream";
+            this.checkBox40.UseVisualStyleBackColor = true;
+            // 
+            // checkBox41
+            // 
+            this.checkBox41.AutoSize = true;
+            this.checkBox41.Location = new System.Drawing.Point(5, 65);
+            this.checkBox41.Name = "checkBox41";
+            this.checkBox41.Size = new System.Drawing.Size(150, 17);
+            this.checkBox41.TabIndex = 6;
+            this.checkBox41.Text = "Quintuples on either 1 or 2";
+            this.checkBox41.UseVisualStyleBackColor = true;
+            // 
+            // checkBox42
+            // 
+            this.checkBox42.AutoSize = true;
+            this.checkBox42.Location = new System.Drawing.Point(5, 45);
+            this.checkBox42.Name = "checkBox42";
+            this.checkBox42.Size = new System.Drawing.Size(135, 17);
+            this.checkBox42.TabIndex = 5;
+            this.checkBox42.Text = "Triples on both 1 and 3";
+            this.checkBox42.UseVisualStyleBackColor = true;
+            // 
+            // checkBox43
+            // 
+            this.checkBox43.AutoSize = true;
+            this.checkBox43.Checked = true;
+            this.checkBox43.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox43.Location = new System.Drawing.Point(5, 25);
+            this.checkBox43.Name = "checkBox43";
+            this.checkBox43.Size = new System.Drawing.Size(86, 17);
+            this.checkBox43.TabIndex = 4;
+            this.checkBox43.Text = "Arrow repeat";
+            this.checkBox43.UseVisualStyleBackColor = true;
+            // 
+            // checkBox44
+            // 
+            this.checkBox44.AutoSize = true;
+            this.checkBox44.Checked = true;
+            this.checkBox44.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox44.Location = new System.Drawing.Point(5, 5);
+            this.checkBox44.Name = "checkBox44";
+            this.checkBox44.Size = new System.Drawing.Size(100, 17);
+            this.checkBox44.TabIndex = 3;
+            this.checkBox44.Text = "Alternating feet ";
+            this.checkBox44.UseVisualStyleBackColor = true;
+            // 
+            // label191
+            // 
+            this.label191.AutoSize = true;
+            this.label191.Location = new System.Drawing.Point(35, 95);
+            this.label191.Name = "label191";
+            this.label191.Size = new System.Drawing.Size(50, 13);
+            this.label191.TabIndex = 8;
+            this.label191.Text = "No arrow";
+            // 
+            // label192
+            // 
+            this.label192.AutoSize = true;
+            this.label192.Location = new System.Drawing.Point(35, 25);
+            this.label192.Name = "label192";
+            this.label192.Size = new System.Drawing.Size(34, 13);
+            this.label192.TabIndex = 7;
+            this.label192.Text = "Arrow";
+            // 
+            // stepfill_trackbarDD1
+            // 
+            this.stepfill_trackbarDD1.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDD1.Maximum = 100;
+            this.stepfill_trackbarDD1.Name = "stepfill_trackbarDD1";
+            this.stepfill_trackbarDD1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDD1.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDD1.TabIndex = 1;
+            this.stepfill_trackbarDD1.TickFrequency = 10;
+            this.stepfill_trackbarDD1.Value = 60;
+            this.stepfill_trackbarDD1.ValueChanged += new System.EventHandler(this.stepfill_trackbarDD1_ValueChanged);
+            // 
+            // label193
+            // 
+            this.label193.AutoSize = true;
+            this.label193.BackColor = System.Drawing.Color.Fuchsia;
+            this.label193.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label193.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label193.Location = new System.Drawing.Point(2, 2);
+            this.label193.Name = "label193";
+            this.label193.Size = new System.Drawing.Size(53, 19);
+            this.label193.TabIndex = 0;
+            this.label193.Text = "Novice";
+            // 
+            // panel80
+            // 
+            this.panel80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel80.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel80.Controls.Add(this.panel81);
+            this.panel80.Controls.Add(this.panel82);
+            this.panel80.Controls.Add(this.label200);
+            this.panel80.Controls.Add(this.stepFillDD2);
+            this.panel80.Controls.Add(this.panel83);
+            this.panel80.Controls.Add(this.panel86);
+            this.panel80.Controls.Add(this.label209);
+            this.panel80.Controls.Add(this.label210);
+            this.panel80.Controls.Add(this.stepfill_trackbarDD2);
+            this.panel80.Controls.Add(this.label211);
+            this.panel80.Location = new System.Drawing.Point(3, 129);
+            this.panel80.Name = "panel80";
+            this.panel80.Size = new System.Drawing.Size(1020, 120);
+            this.panel80.TabIndex = 15;
+            // 
+            // panel81
+            // 
+            this.panel81.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel81.Controls.Add(this.numericUpDown37);
+            this.panel81.Controls.Add(this.label194);
+            this.panel81.Controls.Add(this.label195);
+            this.panel81.Controls.Add(this.label196);
+            this.panel81.Controls.Add(this.trackBar37);
+            this.panel81.Enabled = false;
+            this.panel81.Location = new System.Drawing.Point(715, 3);
+            this.panel81.Name = "panel81";
+            this.panel81.Size = new System.Drawing.Size(131, 110);
+            this.panel81.TabIndex = 20;
+            // 
+            // numericUpDown37
+            // 
+            this.numericUpDown37.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown37.Name = "numericUpDown37";
+            this.numericUpDown37.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown37.TabIndex = 8;
+            this.numericUpDown37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label194
+            // 
+            this.label194.AutoSize = true;
+            this.label194.Location = new System.Drawing.Point(1, 8);
+            this.label194.Name = "label194";
+            this.label194.Size = new System.Drawing.Size(60, 13);
+            this.label194.TabIndex = 16;
+            this.label194.Text = "Quintuples:";
+            // 
+            // label195
+            // 
+            this.label195.AutoSize = true;
+            this.label195.Location = new System.Drawing.Point(79, 88);
+            this.label195.Name = "label195";
+            this.label195.Size = new System.Drawing.Size(43, 13);
+            this.label195.TabIndex = 13;
+            this.label195.Text = "ABCDE";
+            // 
+            // label196
+            // 
+            this.label196.AutoSize = true;
+            this.label196.Location = new System.Drawing.Point(79, 7);
+            this.label196.Name = "label196";
+            this.label196.Size = new System.Drawing.Size(42, 13);
+            this.label196.TabIndex = 15;
+            this.label196.Text = "ABABA";
+            // 
+            // trackBar37
+            // 
+            this.trackBar37.Location = new System.Drawing.Point(53, 3);
+            this.trackBar37.Maximum = 100;
+            this.trackBar37.Name = "trackBar37";
+            this.trackBar37.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar37.RightToLeftLayout = true;
+            this.trackBar37.Size = new System.Drawing.Size(45, 105);
+            this.trackBar37.TabIndex = 14;
+            this.trackBar37.TickFrequency = 10;
+            // 
+            // panel82
+            // 
+            this.panel82.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel82.Controls.Add(this.numericUpDown38);
+            this.panel82.Controls.Add(this.label197);
+            this.panel82.Controls.Add(this.label198);
+            this.panel82.Controls.Add(this.label199);
+            this.panel82.Controls.Add(this.trackBar38);
+            this.panel82.Enabled = false;
+            this.panel82.Location = new System.Drawing.Point(594, 3);
+            this.panel82.Name = "panel82";
+            this.panel82.Size = new System.Drawing.Size(117, 112);
+            this.panel82.TabIndex = 19;
+            // 
+            // numericUpDown38
+            // 
+            this.numericUpDown38.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown38.Name = "numericUpDown38";
+            this.numericUpDown38.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown38.TabIndex = 8;
+            this.numericUpDown38.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label197
+            // 
+            this.label197.AutoSize = true;
+            this.label197.Location = new System.Drawing.Point(1, 8);
+            this.label197.Name = "label197";
+            this.label197.Size = new System.Drawing.Size(41, 13);
+            this.label197.TabIndex = 16;
+            this.label197.Text = "Triples:";
+            // 
+            // label198
+            // 
+            this.label198.AutoSize = true;
+            this.label198.Location = new System.Drawing.Point(62, 88);
+            this.label198.Name = "label198";
+            this.label198.Size = new System.Drawing.Size(28, 13);
+            this.label198.TabIndex = 13;
+            this.label198.Text = "ABC";
+            // 
+            // label199
+            // 
+            this.label199.AutoSize = true;
+            this.label199.Location = new System.Drawing.Point(62, 7);
+            this.label199.Name = "label199";
+            this.label199.Size = new System.Drawing.Size(28, 13);
+            this.label199.TabIndex = 15;
+            this.label199.Text = "ABA";
+            // 
+            // trackBar38
+            // 
+            this.trackBar38.Location = new System.Drawing.Point(40, 1);
+            this.trackBar38.Maximum = 100;
+            this.trackBar38.Name = "trackBar38";
+            this.trackBar38.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar38.RightToLeftLayout = true;
+            this.trackBar38.Size = new System.Drawing.Size(45, 105);
+            this.trackBar38.TabIndex = 14;
+            this.trackBar38.TickFrequency = 10;
+            // 
+            // label200
+            // 
+            this.label200.AutoSize = true;
+            this.label200.Location = new System.Drawing.Point(35, 58);
+            this.label200.Name = "label200";
+            this.label200.Size = new System.Drawing.Size(55, 13);
+            this.label200.TabIndex = 12;
+            this.label200.Text = "Every 2nd";
+            // 
+            // stepFillDD2
+            // 
+            this.stepFillDD2.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDD2.Name = "stepFillDD2";
+            this.stepFillDD2.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDD2.TabIndex = 5;
+            this.stepFillDD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDD2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDD2.ValueChanged += new System.EventHandler(this.stepFillDD2_ValueChanged);
+            // 
+            // panel83
+            // 
+            this.panel83.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel83.Controls.Add(this.panel84);
+            this.panel83.Controls.Add(this.panel85);
+            this.panel83.Controls.Add(this.onBeatDD2);
+            this.panel83.Controls.Add(this.label207);
+            this.panel83.Controls.Add(this.label208);
+            this.panel83.Controls.Add(this.onBeatTrackbarDD2);
+            this.panel83.Location = new System.Drawing.Point(129, 3);
+            this.panel83.Name = "panel83";
+            this.panel83.Size = new System.Drawing.Size(459, 110);
+            this.panel83.TabIndex = 10;
+            // 
+            // panel84
+            // 
+            this.panel84.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel84.Controls.Add(this.label201);
+            this.panel84.Controls.Add(this.label202);
+            this.panel84.Controls.Add(this.label203);
+            this.panel84.Controls.Add(this.quintuplesTrackbarDD2);
+            this.panel84.Controls.Add(this.quintuplesDD2);
+            this.panel84.Location = new System.Drawing.Point(141, 55);
+            this.panel84.Name = "panel84";
+            this.panel84.Size = new System.Drawing.Size(310, 50);
+            this.panel84.TabIndex = 16;
+            // 
+            // label201
+            // 
+            this.label201.AutoSize = true;
+            this.label201.Location = new System.Drawing.Point(9, 8);
+            this.label201.Name = "label201";
+            this.label201.Size = new System.Drawing.Size(53, 13);
+            this.label201.TabIndex = 16;
+            this.label201.Text = "Half-beat:";
+            // 
+            // label202
+            // 
+            this.label202.AutoSize = true;
+            this.label202.Location = new System.Drawing.Point(214, 28);
+            this.label202.Name = "label202";
+            this.label202.Size = new System.Drawing.Size(57, 13);
+            this.label202.TabIndex = 13;
+            this.label202.Text = "Quintuples";
+            // 
+            // label203
+            // 
+            this.label203.AutoSize = true;
+            this.label203.Location = new System.Drawing.Point(69, 28);
+            this.label203.Name = "label203";
+            this.label203.Size = new System.Drawing.Size(38, 13);
+            this.label203.TabIndex = 15;
+            this.label203.Text = "Triples";
+            // 
+            // quintuplesTrackbarDD2
+            // 
+            this.quintuplesTrackbarDD2.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDD2.Maximum = 100;
+            this.quintuplesTrackbarDD2.Name = "quintuplesTrackbarDD2";
+            this.quintuplesTrackbarDD2.RightToLeftLayout = true;
+            this.quintuplesTrackbarDD2.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDD2.TabIndex = 14;
+            this.quintuplesTrackbarDD2.TickFrequency = 10;
+            this.quintuplesTrackbarDD2.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDD2_ValueChanged);
+            // 
+            // quintuplesDD2
+            // 
+            this.quintuplesDD2.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDD2.Name = "quintuplesDD2";
+            this.quintuplesDD2.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDD2.TabIndex = 8;
+            this.quintuplesDD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDD2.ValueChanged += new System.EventHandler(this.quintuplesDD2_ValueChanged);
+            // 
+            // panel85
+            // 
+            this.panel85.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel85.Controls.Add(this.label204);
+            this.panel85.Controls.Add(this.label205);
+            this.panel85.Controls.Add(this.label206);
+            this.panel85.Controls.Add(this.jumpsTrackbarDD2);
+            this.panel85.Controls.Add(this.jumpsDD2);
+            this.panel85.Location = new System.Drawing.Point(141, 2);
+            this.panel85.Name = "panel85";
+            this.panel85.Size = new System.Drawing.Size(310, 50);
+            this.panel85.TabIndex = 12;
+            // 
+            // label204
+            // 
+            this.label204.AutoSize = true;
+            this.label204.Location = new System.Drawing.Point(8, 7);
+            this.label204.Name = "label204";
+            this.label204.Size = new System.Drawing.Size(48, 13);
+            this.label204.TabIndex = 17;
+            this.label204.Text = "On beat:";
+            // 
+            // label205
+            // 
+            this.label205.AutoSize = true;
+            this.label205.Location = new System.Drawing.Point(214, 28);
+            this.label205.Name = "label205";
+            this.label205.Size = new System.Drawing.Size(37, 13);
+            this.label205.TabIndex = 13;
+            this.label205.Text = "Jumps";
+            // 
+            // label206
+            // 
+            this.label206.AutoSize = true;
+            this.label206.Location = new System.Drawing.Point(69, 28);
+            this.label206.Name = "label206";
+            this.label206.Size = new System.Drawing.Size(57, 13);
+            this.label206.TabIndex = 15;
+            this.label206.Text = "Single foot";
+            // 
+            // jumpsTrackbarDD2
+            // 
+            this.jumpsTrackbarDD2.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDD2.Maximum = 100;
+            this.jumpsTrackbarDD2.Name = "jumpsTrackbarDD2";
+            this.jumpsTrackbarDD2.RightToLeftLayout = true;
+            this.jumpsTrackbarDD2.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDD2.TabIndex = 14;
+            this.jumpsTrackbarDD2.TickFrequency = 10;
+            this.jumpsTrackbarDD2.ValueChanged += new System.EventHandler(this.jumpsTrackbarDD2_ValueChanged);
+            // 
+            // jumpsDD2
+            // 
+            this.jumpsDD2.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDD2.Name = "jumpsDD2";
+            this.jumpsDD2.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDD2.TabIndex = 8;
+            this.jumpsDD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDD2.ValueChanged += new System.EventHandler(this.jumpsDD2_ValueChanged);
+            // 
+            // onBeatDD2
+            // 
+            this.onBeatDD2.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDD2.Name = "onBeatDD2";
+            this.onBeatDD2.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDD2.TabIndex = 11;
+            this.onBeatDD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDD2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDD2.ValueChanged += new System.EventHandler(this.onBeatDD2_ValueChanged);
+            // 
+            // label207
+            // 
+            this.label207.AutoSize = true;
+            this.label207.Location = new System.Drawing.Point(6, 87);
+            this.label207.Name = "label207";
+            this.label207.Size = new System.Drawing.Size(98, 13);
+            this.label207.TabIndex = 4;
+            this.label207.Text = "On beat + half beat";
+            // 
+            // label208
+            // 
+            this.label208.AutoSize = true;
+            this.label208.Location = new System.Drawing.Point(37, 11);
+            this.label208.Name = "label208";
+            this.label208.Size = new System.Drawing.Size(67, 13);
+            this.label208.TabIndex = 3;
+            this.label208.Text = "On beat only";
+            // 
+            // onBeatTrackbarDD2
+            // 
+            this.onBeatTrackbarDD2.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDD2.Maximum = 100;
+            this.onBeatTrackbarDD2.Name = "onBeatTrackbarDD2";
+            this.onBeatTrackbarDD2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDD2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDD2.RightToLeftLayout = true;
+            this.onBeatTrackbarDD2.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDD2.TabIndex = 2;
+            this.onBeatTrackbarDD2.TickFrequency = 10;
+            this.onBeatTrackbarDD2.Value = 100;
+            this.onBeatTrackbarDD2.ValueChanged += new System.EventHandler(this.onBeatTrackbarDD2_ValueChanged);
+            // 
+            // panel86
+            // 
+            this.panel86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel86.Controls.Add(this.checkBox45);
+            this.panel86.Controls.Add(this.checkBox46);
+            this.panel86.Controls.Add(this.checkBox47);
+            this.panel86.Controls.Add(this.checkBox48);
+            this.panel86.Controls.Add(this.checkBox49);
+            this.panel86.Location = new System.Drawing.Point(849, 3);
+            this.panel86.Name = "panel86";
+            this.panel86.Size = new System.Drawing.Size(157, 110);
+            this.panel86.TabIndex = 9;
+            // 
+            // checkBox45
+            // 
+            this.checkBox45.AutoSize = true;
+            this.checkBox45.Enabled = false;
+            this.checkBox45.Location = new System.Drawing.Point(5, 85);
+            this.checkBox45.Name = "checkBox45";
+            this.checkBox45.Size = new System.Drawing.Size(94, 17);
+            this.checkBox45.TabIndex = 8;
+            this.checkBox45.Text = "Full 8th stream";
+            this.checkBox45.UseVisualStyleBackColor = true;
+            // 
+            // checkBox46
+            // 
+            this.checkBox46.AutoSize = true;
+            this.checkBox46.Location = new System.Drawing.Point(5, 65);
+            this.checkBox46.Name = "checkBox46";
+            this.checkBox46.Size = new System.Drawing.Size(150, 17);
+            this.checkBox46.TabIndex = 6;
+            this.checkBox46.Text = "Quintuples on either 1 or 2";
+            this.checkBox46.UseVisualStyleBackColor = true;
+            // 
+            // checkBox47
+            // 
+            this.checkBox47.AutoSize = true;
+            this.checkBox47.Location = new System.Drawing.Point(5, 45);
+            this.checkBox47.Name = "checkBox47";
+            this.checkBox47.Size = new System.Drawing.Size(135, 17);
+            this.checkBox47.TabIndex = 5;
+            this.checkBox47.Text = "Triples on both 1 and 3";
+            this.checkBox47.UseVisualStyleBackColor = true;
+            // 
+            // checkBox48
+            // 
+            this.checkBox48.AutoSize = true;
+            this.checkBox48.Location = new System.Drawing.Point(5, 25);
+            this.checkBox48.Name = "checkBox48";
+            this.checkBox48.Size = new System.Drawing.Size(86, 17);
+            this.checkBox48.TabIndex = 4;
+            this.checkBox48.Text = "Arrow repeat";
+            this.checkBox48.UseVisualStyleBackColor = true;
+            // 
+            // checkBox49
+            // 
+            this.checkBox49.AutoSize = true;
+            this.checkBox49.Checked = true;
+            this.checkBox49.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox49.Location = new System.Drawing.Point(5, 5);
+            this.checkBox49.Name = "checkBox49";
+            this.checkBox49.Size = new System.Drawing.Size(100, 17);
+            this.checkBox49.TabIndex = 3;
+            this.checkBox49.Text = "Alternating feet ";
+            this.checkBox49.UseVisualStyleBackColor = true;
+            // 
+            // label209
+            // 
+            this.label209.AutoSize = true;
+            this.label209.Location = new System.Drawing.Point(35, 95);
+            this.label209.Name = "label209";
+            this.label209.Size = new System.Drawing.Size(50, 13);
+            this.label209.TabIndex = 8;
+            this.label209.Text = "No arrow";
+            // 
+            // label210
+            // 
+            this.label210.AutoSize = true;
+            this.label210.Location = new System.Drawing.Point(35, 25);
+            this.label210.Name = "label210";
+            this.label210.Size = new System.Drawing.Size(34, 13);
+            this.label210.TabIndex = 7;
+            this.label210.Text = "Arrow";
+            // 
+            // stepfill_trackbarDD2
+            // 
+            this.stepfill_trackbarDD2.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDD2.Maximum = 100;
+            this.stepfill_trackbarDD2.Name = "stepfill_trackbarDD2";
+            this.stepfill_trackbarDD2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDD2.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDD2.TabIndex = 1;
+            this.stepfill_trackbarDD2.TickFrequency = 10;
+            this.stepfill_trackbarDD2.Value = 100;
+            this.stepfill_trackbarDD2.ValueChanged += new System.EventHandler(this.stepfill_trackbarDD2_ValueChanged);
+            // 
+            // label211
+            // 
+            this.label211.AutoSize = true;
+            this.label211.BackColor = System.Drawing.Color.LawnGreen;
+            this.label211.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label211.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label211.Location = new System.Drawing.Point(2, 2);
+            this.label211.Name = "label211";
+            this.label211.Size = new System.Drawing.Size(41, 19);
+            this.label211.TabIndex = 0;
+            this.label211.Text = "Easy";
+            // 
+            // panel87
+            // 
+            this.panel87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel87.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel87.Controls.Add(this.panel88);
+            this.panel87.Controls.Add(this.panel89);
+            this.panel87.Controls.Add(this.label218);
+            this.panel87.Controls.Add(this.stepFillDD3);
+            this.panel87.Controls.Add(this.panel90);
+            this.panel87.Controls.Add(this.panel93);
+            this.panel87.Controls.Add(this.label227);
+            this.panel87.Controls.Add(this.label228);
+            this.panel87.Controls.Add(this.stepfill_trackbarDD3);
+            this.panel87.Controls.Add(this.label229);
+            this.panel87.Location = new System.Drawing.Point(3, 255);
+            this.panel87.Name = "panel87";
+            this.panel87.Size = new System.Drawing.Size(1020, 120);
+            this.panel87.TabIndex = 13;
+            // 
+            // panel88
+            // 
+            this.panel88.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel88.Controls.Add(this.numericUpDown43);
+            this.panel88.Controls.Add(this.label212);
+            this.panel88.Controls.Add(this.label213);
+            this.panel88.Controls.Add(this.label214);
+            this.panel88.Controls.Add(this.trackBar43);
+            this.panel88.Enabled = false;
+            this.panel88.Location = new System.Drawing.Point(715, 3);
+            this.panel88.Name = "panel88";
+            this.panel88.Size = new System.Drawing.Size(131, 110);
+            this.panel88.TabIndex = 21;
+            // 
+            // numericUpDown43
+            // 
+            this.numericUpDown43.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown43.Name = "numericUpDown43";
+            this.numericUpDown43.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown43.TabIndex = 8;
+            this.numericUpDown43.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label212
+            // 
+            this.label212.AutoSize = true;
+            this.label212.Location = new System.Drawing.Point(1, 8);
+            this.label212.Name = "label212";
+            this.label212.Size = new System.Drawing.Size(60, 13);
+            this.label212.TabIndex = 16;
+            this.label212.Text = "Quintuples:";
+            // 
+            // label213
+            // 
+            this.label213.AutoSize = true;
+            this.label213.Location = new System.Drawing.Point(79, 88);
+            this.label213.Name = "label213";
+            this.label213.Size = new System.Drawing.Size(43, 13);
+            this.label213.TabIndex = 13;
+            this.label213.Text = "ABCDE";
+            // 
+            // label214
+            // 
+            this.label214.AutoSize = true;
+            this.label214.Location = new System.Drawing.Point(79, 7);
+            this.label214.Name = "label214";
+            this.label214.Size = new System.Drawing.Size(42, 13);
+            this.label214.TabIndex = 15;
+            this.label214.Text = "ABABA";
+            // 
+            // trackBar43
+            // 
+            this.trackBar43.Location = new System.Drawing.Point(53, 3);
+            this.trackBar43.Maximum = 100;
+            this.trackBar43.Name = "trackBar43";
+            this.trackBar43.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar43.RightToLeftLayout = true;
+            this.trackBar43.Size = new System.Drawing.Size(45, 105);
+            this.trackBar43.TabIndex = 14;
+            this.trackBar43.TickFrequency = 10;
+            // 
+            // panel89
+            // 
+            this.panel89.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel89.Controls.Add(this.numericUpDown44);
+            this.panel89.Controls.Add(this.label215);
+            this.panel89.Controls.Add(this.label216);
+            this.panel89.Controls.Add(this.label217);
+            this.panel89.Controls.Add(this.trackBar44);
+            this.panel89.Enabled = false;
+            this.panel89.Location = new System.Drawing.Point(594, 3);
+            this.panel89.Name = "panel89";
+            this.panel89.Size = new System.Drawing.Size(117, 112);
+            this.panel89.TabIndex = 20;
+            // 
+            // numericUpDown44
+            // 
+            this.numericUpDown44.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown44.Name = "numericUpDown44";
+            this.numericUpDown44.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown44.TabIndex = 8;
+            this.numericUpDown44.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label215
+            // 
+            this.label215.AutoSize = true;
+            this.label215.Location = new System.Drawing.Point(1, 8);
+            this.label215.Name = "label215";
+            this.label215.Size = new System.Drawing.Size(41, 13);
+            this.label215.TabIndex = 16;
+            this.label215.Text = "Triples:";
+            // 
+            // label216
+            // 
+            this.label216.AutoSize = true;
+            this.label216.Location = new System.Drawing.Point(62, 88);
+            this.label216.Name = "label216";
+            this.label216.Size = new System.Drawing.Size(28, 13);
+            this.label216.TabIndex = 13;
+            this.label216.Text = "ABC";
+            // 
+            // label217
+            // 
+            this.label217.AutoSize = true;
+            this.label217.Location = new System.Drawing.Point(62, 7);
+            this.label217.Name = "label217";
+            this.label217.Size = new System.Drawing.Size(28, 13);
+            this.label217.TabIndex = 15;
+            this.label217.Text = "ABA";
+            // 
+            // trackBar44
+            // 
+            this.trackBar44.Location = new System.Drawing.Point(40, 1);
+            this.trackBar44.Maximum = 100;
+            this.trackBar44.Name = "trackBar44";
+            this.trackBar44.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar44.RightToLeftLayout = true;
+            this.trackBar44.Size = new System.Drawing.Size(45, 105);
+            this.trackBar44.TabIndex = 14;
+            this.trackBar44.TickFrequency = 10;
+            // 
+            // label218
+            // 
+            this.label218.AutoSize = true;
+            this.label218.Location = new System.Drawing.Point(35, 58);
+            this.label218.Name = "label218";
+            this.label218.Size = new System.Drawing.Size(55, 13);
+            this.label218.TabIndex = 14;
+            this.label218.Text = "Every 2nd";
+            // 
+            // stepFillDD3
+            // 
+            this.stepFillDD3.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDD3.Name = "stepFillDD3";
+            this.stepFillDD3.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDD3.TabIndex = 5;
+            this.stepFillDD3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDD3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDD3.ValueChanged += new System.EventHandler(this.stepFillDD3_ValueChanged);
+            // 
+            // panel90
+            // 
+            this.panel90.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel90.Controls.Add(this.panel91);
+            this.panel90.Controls.Add(this.panel92);
+            this.panel90.Controls.Add(this.onBeatDD3);
+            this.panel90.Controls.Add(this.label225);
+            this.panel90.Controls.Add(this.label226);
+            this.panel90.Controls.Add(this.onBeatTrackbarDD3);
+            this.panel90.Location = new System.Drawing.Point(129, 3);
+            this.panel90.Name = "panel90";
+            this.panel90.Size = new System.Drawing.Size(459, 110);
+            this.panel90.TabIndex = 10;
+            // 
+            // panel91
+            // 
+            this.panel91.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel91.Controls.Add(this.label219);
+            this.panel91.Controls.Add(this.label220);
+            this.panel91.Controls.Add(this.label221);
+            this.panel91.Controls.Add(this.quintuplesTrackbarDD3);
+            this.panel91.Controls.Add(this.quintuplesDD3);
+            this.panel91.Location = new System.Drawing.Point(141, 55);
+            this.panel91.Name = "panel91";
+            this.panel91.Size = new System.Drawing.Size(310, 50);
+            this.panel91.TabIndex = 16;
+            // 
+            // label219
+            // 
+            this.label219.AutoSize = true;
+            this.label219.Location = new System.Drawing.Point(9, 8);
+            this.label219.Name = "label219";
+            this.label219.Size = new System.Drawing.Size(53, 13);
+            this.label219.TabIndex = 16;
+            this.label219.Text = "Half-beat:";
+            // 
+            // label220
+            // 
+            this.label220.AutoSize = true;
+            this.label220.Location = new System.Drawing.Point(214, 28);
+            this.label220.Name = "label220";
+            this.label220.Size = new System.Drawing.Size(57, 13);
+            this.label220.TabIndex = 13;
+            this.label220.Text = "Quintuples";
+            // 
+            // label221
+            // 
+            this.label221.AutoSize = true;
+            this.label221.Location = new System.Drawing.Point(69, 28);
+            this.label221.Name = "label221";
+            this.label221.Size = new System.Drawing.Size(38, 13);
+            this.label221.TabIndex = 15;
+            this.label221.Text = "Triples";
+            // 
+            // quintuplesTrackbarDD3
+            // 
+            this.quintuplesTrackbarDD3.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDD3.Maximum = 100;
+            this.quintuplesTrackbarDD3.Name = "quintuplesTrackbarDD3";
+            this.quintuplesTrackbarDD3.RightToLeftLayout = true;
+            this.quintuplesTrackbarDD3.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDD3.TabIndex = 14;
+            this.quintuplesTrackbarDD3.TickFrequency = 10;
+            this.quintuplesTrackbarDD3.Value = 50;
+            this.quintuplesTrackbarDD3.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDD3_ValueChanged);
+            // 
+            // quintuplesDD3
+            // 
+            this.quintuplesDD3.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDD3.Name = "quintuplesDD3";
+            this.quintuplesDD3.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDD3.TabIndex = 8;
+            this.quintuplesDD3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDD3.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.quintuplesDD3.ValueChanged += new System.EventHandler(this.quintuplesDD3_ValueChanged);
+            // 
+            // panel92
+            // 
+            this.panel92.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel92.Controls.Add(this.label222);
+            this.panel92.Controls.Add(this.label223);
+            this.panel92.Controls.Add(this.label224);
+            this.panel92.Controls.Add(this.jumpsTrackbarDD3);
+            this.panel92.Controls.Add(this.jumpsDD3);
+            this.panel92.Location = new System.Drawing.Point(141, 2);
+            this.panel92.Name = "panel92";
+            this.panel92.Size = new System.Drawing.Size(310, 50);
+            this.panel92.TabIndex = 12;
+            // 
+            // label222
+            // 
+            this.label222.AutoSize = true;
+            this.label222.Location = new System.Drawing.Point(8, 7);
+            this.label222.Name = "label222";
+            this.label222.Size = new System.Drawing.Size(48, 13);
+            this.label222.TabIndex = 17;
+            this.label222.Text = "On beat:";
+            // 
+            // label223
+            // 
+            this.label223.AutoSize = true;
+            this.label223.Location = new System.Drawing.Point(214, 28);
+            this.label223.Name = "label223";
+            this.label223.Size = new System.Drawing.Size(37, 13);
+            this.label223.TabIndex = 13;
+            this.label223.Text = "Jumps";
+            // 
+            // label224
+            // 
+            this.label224.AutoSize = true;
+            this.label224.Location = new System.Drawing.Point(69, 28);
+            this.label224.Name = "label224";
+            this.label224.Size = new System.Drawing.Size(57, 13);
+            this.label224.TabIndex = 15;
+            this.label224.Text = "Single foot";
+            // 
+            // jumpsTrackbarDD3
+            // 
+            this.jumpsTrackbarDD3.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDD3.Maximum = 100;
+            this.jumpsTrackbarDD3.Name = "jumpsTrackbarDD3";
+            this.jumpsTrackbarDD3.RightToLeftLayout = true;
+            this.jumpsTrackbarDD3.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDD3.TabIndex = 14;
+            this.jumpsTrackbarDD3.TickFrequency = 10;
+            this.jumpsTrackbarDD3.Value = 20;
+            this.jumpsTrackbarDD3.ValueChanged += new System.EventHandler(this.jumpsTrackbarDD3_ValueChanged);
+            // 
+            // jumpsDD3
+            // 
+            this.jumpsDD3.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDD3.Name = "jumpsDD3";
+            this.jumpsDD3.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDD3.TabIndex = 8;
+            this.jumpsDD3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDD3.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.jumpsDD3.ValueChanged += new System.EventHandler(this.jumpsDD3_ValueChanged);
+            // 
+            // onBeatDD3
+            // 
+            this.onBeatDD3.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDD3.Name = "onBeatDD3";
+            this.onBeatDD3.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDD3.TabIndex = 11;
+            this.onBeatDD3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDD3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatDD3.ValueChanged += new System.EventHandler(this.onBeatDD3_ValueChanged);
+            // 
+            // label225
+            // 
+            this.label225.AutoSize = true;
+            this.label225.Location = new System.Drawing.Point(6, 87);
+            this.label225.Name = "label225";
+            this.label225.Size = new System.Drawing.Size(98, 13);
+            this.label225.TabIndex = 4;
+            this.label225.Text = "On beat + half beat";
+            // 
+            // label226
+            // 
+            this.label226.AutoSize = true;
+            this.label226.Location = new System.Drawing.Point(37, 11);
+            this.label226.Name = "label226";
+            this.label226.Size = new System.Drawing.Size(67, 13);
+            this.label226.TabIndex = 3;
+            this.label226.Text = "On beat only";
+            // 
+            // onBeatTrackbarDD3
+            // 
+            this.onBeatTrackbarDD3.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDD3.Maximum = 100;
+            this.onBeatTrackbarDD3.Name = "onBeatTrackbarDD3";
+            this.onBeatTrackbarDD3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDD3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDD3.RightToLeftLayout = true;
+            this.onBeatTrackbarDD3.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDD3.TabIndex = 2;
+            this.onBeatTrackbarDD3.TickFrequency = 10;
+            this.onBeatTrackbarDD3.Value = 100;
+            this.onBeatTrackbarDD3.ValueChanged += new System.EventHandler(this.onBeatTrackbarDD3_ValueChanged);
+            // 
+            // panel93
+            // 
+            this.panel93.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel93.Controls.Add(this.checkBox50);
+            this.panel93.Controls.Add(this.checkBox51);
+            this.panel93.Controls.Add(this.checkBox52);
+            this.panel93.Controls.Add(this.checkBox53);
+            this.panel93.Controls.Add(this.checkBox54);
+            this.panel93.Controls.Add(this.checkBox55);
+            this.panel93.Controls.Add(this.checkBox56);
+            this.panel93.Controls.Add(this.checkBox57);
+            this.panel93.Controls.Add(this.checkBox58);
+            this.panel93.Controls.Add(this.checkBox59);
+            this.panel93.Location = new System.Drawing.Point(849, 3);
+            this.panel93.Name = "panel93";
+            this.panel93.Size = new System.Drawing.Size(157, 110);
+            this.panel93.TabIndex = 9;
+            // 
+            // checkBox50
+            // 
+            this.checkBox50.AutoSize = true;
+            this.checkBox50.Location = new System.Drawing.Point(2, -165);
+            this.checkBox50.Name = "checkBox50";
+            this.checkBox50.Size = new System.Drawing.Size(94, 17);
+            this.checkBox50.TabIndex = 7;
+            this.checkBox50.Text = "Full 8th stream";
+            this.checkBox50.UseVisualStyleBackColor = true;
+            // 
+            // checkBox51
+            // 
+            this.checkBox51.AutoSize = true;
+            this.checkBox51.Enabled = false;
+            this.checkBox51.Location = new System.Drawing.Point(5, 85);
+            this.checkBox51.Name = "checkBox51";
+            this.checkBox51.Size = new System.Drawing.Size(94, 17);
+            this.checkBox51.TabIndex = 9;
+            this.checkBox51.Text = "Full 8th stream";
+            this.checkBox51.UseVisualStyleBackColor = true;
+            // 
+            // checkBox52
+            // 
+            this.checkBox52.AutoSize = true;
+            this.checkBox52.Location = new System.Drawing.Point(2, -188);
+            this.checkBox52.Name = "checkBox52";
+            this.checkBox52.Size = new System.Drawing.Size(150, 17);
+            this.checkBox52.TabIndex = 6;
+            this.checkBox52.Text = "Quintuples on either 1 or 2";
+            this.checkBox52.UseVisualStyleBackColor = true;
+            // 
+            // checkBox53
+            // 
+            this.checkBox53.AutoSize = true;
+            this.checkBox53.Checked = true;
+            this.checkBox53.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox53.Location = new System.Drawing.Point(5, 65);
+            this.checkBox53.Name = "checkBox53";
+            this.checkBox53.Size = new System.Drawing.Size(150, 17);
+            this.checkBox53.TabIndex = 6;
+            this.checkBox53.Text = "Quintuples on either 1 or 2";
+            this.checkBox53.UseVisualStyleBackColor = true;
+            // 
+            // checkBox54
+            // 
+            this.checkBox54.AutoSize = true;
+            this.checkBox54.Location = new System.Drawing.Point(2, -207);
+            this.checkBox54.Name = "checkBox54";
+            this.checkBox54.Size = new System.Drawing.Size(135, 17);
+            this.checkBox54.TabIndex = 5;
+            this.checkBox54.Text = "Triples on both 1 and 3";
+            this.checkBox54.UseVisualStyleBackColor = true;
+            // 
+            // checkBox55
+            // 
+            this.checkBox55.AutoSize = true;
+            this.checkBox55.Location = new System.Drawing.Point(5, 45);
+            this.checkBox55.Name = "checkBox55";
+            this.checkBox55.Size = new System.Drawing.Size(135, 17);
+            this.checkBox55.TabIndex = 5;
+            this.checkBox55.Text = "Triples on both 1 and 3";
+            this.checkBox55.UseVisualStyleBackColor = true;
+            // 
+            // checkBox56
+            // 
+            this.checkBox56.AutoSize = true;
+            this.checkBox56.Checked = true;
+            this.checkBox56.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox56.Location = new System.Drawing.Point(2, -223);
+            this.checkBox56.Name = "checkBox56";
+            this.checkBox56.Size = new System.Drawing.Size(86, 17);
+            this.checkBox56.TabIndex = 4;
+            this.checkBox56.Text = "Arrow repeat";
+            this.checkBox56.UseVisualStyleBackColor = true;
+            // 
+            // checkBox57
+            // 
+            this.checkBox57.AutoSize = true;
+            this.checkBox57.Checked = true;
+            this.checkBox57.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox57.Location = new System.Drawing.Point(5, 25);
+            this.checkBox57.Name = "checkBox57";
+            this.checkBox57.Size = new System.Drawing.Size(86, 17);
+            this.checkBox57.TabIndex = 4;
+            this.checkBox57.Text = "Arrow repeat";
+            this.checkBox57.UseVisualStyleBackColor = true;
+            // 
+            // checkBox58
+            // 
+            this.checkBox58.AutoSize = true;
+            this.checkBox58.Checked = true;
+            this.checkBox58.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox58.Location = new System.Drawing.Point(2, -244);
+            this.checkBox58.Name = "checkBox58";
+            this.checkBox58.Size = new System.Drawing.Size(100, 17);
+            this.checkBox58.TabIndex = 3;
+            this.checkBox58.Text = "Alternating feet ";
+            this.checkBox58.UseVisualStyleBackColor = true;
+            // 
+            // checkBox59
+            // 
+            this.checkBox59.AutoSize = true;
+            this.checkBox59.Checked = true;
+            this.checkBox59.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox59.Location = new System.Drawing.Point(5, 5);
+            this.checkBox59.Name = "checkBox59";
+            this.checkBox59.Size = new System.Drawing.Size(100, 17);
+            this.checkBox59.TabIndex = 3;
+            this.checkBox59.Text = "Alternating feet ";
+            this.checkBox59.UseVisualStyleBackColor = true;
+            // 
+            // label227
+            // 
+            this.label227.AutoSize = true;
+            this.label227.Location = new System.Drawing.Point(35, 95);
+            this.label227.Name = "label227";
+            this.label227.Size = new System.Drawing.Size(50, 13);
+            this.label227.TabIndex = 8;
+            this.label227.Text = "No arrow";
+            // 
+            // label228
+            // 
+            this.label228.AutoSize = true;
+            this.label228.Location = new System.Drawing.Point(35, 25);
+            this.label228.Name = "label228";
+            this.label228.Size = new System.Drawing.Size(34, 13);
+            this.label228.TabIndex = 7;
+            this.label228.Text = "Arrow";
+            // 
+            // stepfill_trackbarDD3
+            // 
+            this.stepfill_trackbarDD3.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDD3.Maximum = 100;
+            this.stepfill_trackbarDD3.Name = "stepfill_trackbarDD3";
+            this.stepfill_trackbarDD3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDD3.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDD3.TabIndex = 1;
+            this.stepfill_trackbarDD3.TickFrequency = 10;
+            this.stepfill_trackbarDD3.Value = 100;
+            this.stepfill_trackbarDD3.ValueChanged += new System.EventHandler(this.stepfill_trackbarDD3_ValueChanged);
+            // 
+            // label229
+            // 
+            this.label229.AutoSize = true;
+            this.label229.BackColor = System.Drawing.Color.Khaki;
+            this.label229.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label229.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label229.Location = new System.Drawing.Point(2, 2);
+            this.label229.Name = "label229";
+            this.label229.Size = new System.Drawing.Size(59, 19);
+            this.label229.TabIndex = 0;
+            this.label229.Text = "Medium";
+            // 
+            // panel94
+            // 
+            this.panel94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel94.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel94.Controls.Add(this.panel95);
+            this.panel94.Controls.Add(this.panel96);
+            this.panel94.Controls.Add(this.label236);
+            this.panel94.Controls.Add(this.stepFillDD4);
+            this.panel94.Controls.Add(this.panel97);
+            this.panel94.Controls.Add(this.panel100);
+            this.panel94.Controls.Add(this.label245);
+            this.panel94.Controls.Add(this.label246);
+            this.panel94.Controls.Add(this.stepfill_trackbarDD4);
+            this.panel94.Controls.Add(this.label247);
+            this.panel94.Location = new System.Drawing.Point(3, 381);
+            this.panel94.Name = "panel94";
+            this.panel94.Size = new System.Drawing.Size(1020, 120);
+            this.panel94.TabIndex = 16;
+            // 
+            // panel95
+            // 
+            this.panel95.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel95.Controls.Add(this.numericUpDown49);
+            this.panel95.Controls.Add(this.label230);
+            this.panel95.Controls.Add(this.label231);
+            this.panel95.Controls.Add(this.label232);
+            this.panel95.Controls.Add(this.trackBar49);
+            this.panel95.Enabled = false;
+            this.panel95.Location = new System.Drawing.Point(715, 3);
+            this.panel95.Name = "panel95";
+            this.panel95.Size = new System.Drawing.Size(131, 110);
+            this.panel95.TabIndex = 22;
+            // 
+            // numericUpDown49
+            // 
+            this.numericUpDown49.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown49.Name = "numericUpDown49";
+            this.numericUpDown49.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown49.TabIndex = 8;
+            this.numericUpDown49.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label230
+            // 
+            this.label230.AutoSize = true;
+            this.label230.Location = new System.Drawing.Point(1, 8);
+            this.label230.Name = "label230";
+            this.label230.Size = new System.Drawing.Size(60, 13);
+            this.label230.TabIndex = 16;
+            this.label230.Text = "Quintuples:";
+            // 
+            // label231
+            // 
+            this.label231.AutoSize = true;
+            this.label231.Location = new System.Drawing.Point(79, 88);
+            this.label231.Name = "label231";
+            this.label231.Size = new System.Drawing.Size(43, 13);
+            this.label231.TabIndex = 13;
+            this.label231.Text = "ABCDE";
+            // 
+            // label232
+            // 
+            this.label232.AutoSize = true;
+            this.label232.Location = new System.Drawing.Point(79, 7);
+            this.label232.Name = "label232";
+            this.label232.Size = new System.Drawing.Size(42, 13);
+            this.label232.TabIndex = 15;
+            this.label232.Text = "ABABA";
+            // 
+            // trackBar49
+            // 
+            this.trackBar49.Location = new System.Drawing.Point(53, 3);
+            this.trackBar49.Maximum = 100;
+            this.trackBar49.Name = "trackBar49";
+            this.trackBar49.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar49.RightToLeftLayout = true;
+            this.trackBar49.Size = new System.Drawing.Size(45, 105);
+            this.trackBar49.TabIndex = 14;
+            this.trackBar49.TickFrequency = 10;
+            // 
+            // panel96
+            // 
+            this.panel96.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel96.Controls.Add(this.numericUpDown50);
+            this.panel96.Controls.Add(this.label233);
+            this.panel96.Controls.Add(this.label234);
+            this.panel96.Controls.Add(this.label235);
+            this.panel96.Controls.Add(this.trackBar50);
+            this.panel96.Enabled = false;
+            this.panel96.Location = new System.Drawing.Point(594, 3);
+            this.panel96.Name = "panel96";
+            this.panel96.Size = new System.Drawing.Size(117, 112);
+            this.panel96.TabIndex = 21;
+            // 
+            // numericUpDown50
+            // 
+            this.numericUpDown50.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown50.Name = "numericUpDown50";
+            this.numericUpDown50.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown50.TabIndex = 8;
+            this.numericUpDown50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label233
+            // 
+            this.label233.AutoSize = true;
+            this.label233.Location = new System.Drawing.Point(1, 8);
+            this.label233.Name = "label233";
+            this.label233.Size = new System.Drawing.Size(41, 13);
+            this.label233.TabIndex = 16;
+            this.label233.Text = "Triples:";
+            // 
+            // label234
+            // 
+            this.label234.AutoSize = true;
+            this.label234.Location = new System.Drawing.Point(62, 88);
+            this.label234.Name = "label234";
+            this.label234.Size = new System.Drawing.Size(28, 13);
+            this.label234.TabIndex = 13;
+            this.label234.Text = "ABC";
+            // 
+            // label235
+            // 
+            this.label235.AutoSize = true;
+            this.label235.Location = new System.Drawing.Point(62, 7);
+            this.label235.Name = "label235";
+            this.label235.Size = new System.Drawing.Size(28, 13);
+            this.label235.TabIndex = 15;
+            this.label235.Text = "ABA";
+            // 
+            // trackBar50
+            // 
+            this.trackBar50.Location = new System.Drawing.Point(40, 1);
+            this.trackBar50.Maximum = 100;
+            this.trackBar50.Name = "trackBar50";
+            this.trackBar50.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar50.RightToLeftLayout = true;
+            this.trackBar50.Size = new System.Drawing.Size(45, 105);
+            this.trackBar50.TabIndex = 14;
+            this.trackBar50.TickFrequency = 10;
+            // 
+            // label236
+            // 
+            this.label236.AutoSize = true;
+            this.label236.Location = new System.Drawing.Point(35, 58);
+            this.label236.Name = "label236";
+            this.label236.Size = new System.Drawing.Size(55, 13);
+            this.label236.TabIndex = 13;
+            this.label236.Text = "Every 2nd";
+            // 
+            // stepFillDD4
+            // 
+            this.stepFillDD4.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDD4.Name = "stepFillDD4";
+            this.stepFillDD4.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDD4.TabIndex = 5;
+            this.stepFillDD4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDD4.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDD4.ValueChanged += new System.EventHandler(this.stepFillDD4_ValueChanged);
+            // 
+            // panel97
+            // 
+            this.panel97.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel97.Controls.Add(this.panel98);
+            this.panel97.Controls.Add(this.panel99);
+            this.panel97.Controls.Add(this.onBeatDD4);
+            this.panel97.Controls.Add(this.label243);
+            this.panel97.Controls.Add(this.label244);
+            this.panel97.Controls.Add(this.onBeatTrackbarDD4);
+            this.panel97.Location = new System.Drawing.Point(129, 3);
+            this.panel97.Name = "panel97";
+            this.panel97.Size = new System.Drawing.Size(459, 110);
+            this.panel97.TabIndex = 10;
+            // 
+            // panel98
+            // 
+            this.panel98.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel98.Controls.Add(this.label237);
+            this.panel98.Controls.Add(this.label238);
+            this.panel98.Controls.Add(this.label239);
+            this.panel98.Controls.Add(this.quintuplesTrackbarDD4);
+            this.panel98.Controls.Add(this.quintuplesDD4);
+            this.panel98.Location = new System.Drawing.Point(141, 55);
+            this.panel98.Name = "panel98";
+            this.panel98.Size = new System.Drawing.Size(310, 50);
+            this.panel98.TabIndex = 16;
+            // 
+            // label237
+            // 
+            this.label237.AutoSize = true;
+            this.label237.Location = new System.Drawing.Point(9, 8);
+            this.label237.Name = "label237";
+            this.label237.Size = new System.Drawing.Size(53, 13);
+            this.label237.TabIndex = 16;
+            this.label237.Text = "Half-beat:";
+            // 
+            // label238
+            // 
+            this.label238.AutoSize = true;
+            this.label238.Location = new System.Drawing.Point(214, 28);
+            this.label238.Name = "label238";
+            this.label238.Size = new System.Drawing.Size(57, 13);
+            this.label238.TabIndex = 13;
+            this.label238.Text = "Quintuples";
+            // 
+            // label239
+            // 
+            this.label239.AutoSize = true;
+            this.label239.Location = new System.Drawing.Point(69, 28);
+            this.label239.Name = "label239";
+            this.label239.Size = new System.Drawing.Size(38, 13);
+            this.label239.TabIndex = 15;
+            this.label239.Text = "Triples";
+            // 
+            // quintuplesTrackbarDD4
+            // 
+            this.quintuplesTrackbarDD4.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDD4.Maximum = 100;
+            this.quintuplesTrackbarDD4.Name = "quintuplesTrackbarDD4";
+            this.quintuplesTrackbarDD4.RightToLeftLayout = true;
+            this.quintuplesTrackbarDD4.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDD4.TabIndex = 14;
+            this.quintuplesTrackbarDD4.TickFrequency = 10;
+            this.quintuplesTrackbarDD4.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDD4_ValueChanged);
+            // 
+            // quintuplesDD4
+            // 
+            this.quintuplesDD4.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDD4.Name = "quintuplesDD4";
+            this.quintuplesDD4.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDD4.TabIndex = 8;
+            this.quintuplesDD4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDD4.ValueChanged += new System.EventHandler(this.quintuplesDD4_ValueChanged);
+            // 
+            // panel99
+            // 
+            this.panel99.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel99.Controls.Add(this.label240);
+            this.panel99.Controls.Add(this.label241);
+            this.panel99.Controls.Add(this.label242);
+            this.panel99.Controls.Add(this.jumpsTrackbarDD4);
+            this.panel99.Controls.Add(this.jumpsDD4);
+            this.panel99.Location = new System.Drawing.Point(141, 2);
+            this.panel99.Name = "panel99";
+            this.panel99.Size = new System.Drawing.Size(310, 50);
+            this.panel99.TabIndex = 12;
+            // 
+            // label240
+            // 
+            this.label240.AutoSize = true;
+            this.label240.Location = new System.Drawing.Point(8, 7);
+            this.label240.Name = "label240";
+            this.label240.Size = new System.Drawing.Size(48, 13);
+            this.label240.TabIndex = 17;
+            this.label240.Text = "On beat:";
+            // 
+            // label241
+            // 
+            this.label241.AutoSize = true;
+            this.label241.Location = new System.Drawing.Point(214, 28);
+            this.label241.Name = "label241";
+            this.label241.Size = new System.Drawing.Size(37, 13);
+            this.label241.TabIndex = 13;
+            this.label241.Text = "Jumps";
+            // 
+            // label242
+            // 
+            this.label242.AutoSize = true;
+            this.label242.Location = new System.Drawing.Point(69, 28);
+            this.label242.Name = "label242";
+            this.label242.Size = new System.Drawing.Size(57, 13);
+            this.label242.TabIndex = 15;
+            this.label242.Text = "Single foot";
+            // 
+            // jumpsTrackbarDD4
+            // 
+            this.jumpsTrackbarDD4.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDD4.Maximum = 100;
+            this.jumpsTrackbarDD4.Name = "jumpsTrackbarDD4";
+            this.jumpsTrackbarDD4.RightToLeftLayout = true;
+            this.jumpsTrackbarDD4.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDD4.TabIndex = 14;
+            this.jumpsTrackbarDD4.TickFrequency = 10;
+            this.jumpsTrackbarDD4.Value = 25;
+            this.jumpsTrackbarDD4.ValueChanged += new System.EventHandler(this.jumpsTrackbarDD4_ValueChanged);
+            // 
+            // jumpsDD4
+            // 
+            this.jumpsDD4.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDD4.Name = "jumpsDD4";
+            this.jumpsDD4.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDD4.TabIndex = 8;
+            this.jumpsDD4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDD4.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.jumpsDD4.ValueChanged += new System.EventHandler(this.jumpsDD4_ValueChanged);
+            // 
+            // onBeatDD4
+            // 
+            this.onBeatDD4.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDD4.Name = "onBeatDD4";
+            this.onBeatDD4.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDD4.TabIndex = 11;
+            this.onBeatDD4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDD4.Value = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
+            this.onBeatDD4.ValueChanged += new System.EventHandler(this.onBeatDD4_ValueChanged);
+            // 
+            // label243
+            // 
+            this.label243.AutoSize = true;
+            this.label243.Location = new System.Drawing.Point(6, 87);
+            this.label243.Name = "label243";
+            this.label243.Size = new System.Drawing.Size(98, 13);
+            this.label243.TabIndex = 4;
+            this.label243.Text = "On beat + half beat";
+            // 
+            // label244
+            // 
+            this.label244.AutoSize = true;
+            this.label244.Location = new System.Drawing.Point(37, 11);
+            this.label244.Name = "label244";
+            this.label244.Size = new System.Drawing.Size(67, 13);
+            this.label244.TabIndex = 3;
+            this.label244.Text = "On beat only";
+            // 
+            // onBeatTrackbarDD4
+            // 
+            this.onBeatTrackbarDD4.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDD4.Maximum = 100;
+            this.onBeatTrackbarDD4.Name = "onBeatTrackbarDD4";
+            this.onBeatTrackbarDD4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDD4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDD4.RightToLeftLayout = true;
+            this.onBeatTrackbarDD4.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDD4.TabIndex = 2;
+            this.onBeatTrackbarDD4.TickFrequency = 10;
+            this.onBeatTrackbarDD4.Value = 65;
+            this.onBeatTrackbarDD4.ValueChanged += new System.EventHandler(this.onBeatTrackbarDD4_ValueChanged);
+            // 
+            // panel100
+            // 
+            this.panel100.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel100.Controls.Add(this.checkBox60);
+            this.panel100.Controls.Add(this.checkBox61);
+            this.panel100.Controls.Add(this.checkBox62);
+            this.panel100.Controls.Add(this.checkBox63);
+            this.panel100.Controls.Add(this.checkBox64);
+            this.panel100.Location = new System.Drawing.Point(849, 3);
+            this.panel100.Name = "panel100";
+            this.panel100.Size = new System.Drawing.Size(157, 110);
+            this.panel100.TabIndex = 9;
+            // 
+            // checkBox60
+            // 
+            this.checkBox60.AutoSize = true;
+            this.checkBox60.Enabled = false;
+            this.checkBox60.Location = new System.Drawing.Point(5, 85);
+            this.checkBox60.Name = "checkBox60";
+            this.checkBox60.Size = new System.Drawing.Size(94, 17);
+            this.checkBox60.TabIndex = 10;
+            this.checkBox60.Text = "Full 8th stream";
+            this.checkBox60.UseVisualStyleBackColor = true;
+            // 
+            // checkBox61
+            // 
+            this.checkBox61.AutoSize = true;
+            this.checkBox61.Location = new System.Drawing.Point(5, 65);
+            this.checkBox61.Name = "checkBox61";
+            this.checkBox61.Size = new System.Drawing.Size(150, 17);
+            this.checkBox61.TabIndex = 6;
+            this.checkBox61.Text = "Quintuples on either 1 or 2";
+            this.checkBox61.UseVisualStyleBackColor = true;
+            // 
+            // checkBox62
+            // 
+            this.checkBox62.AutoSize = true;
+            this.checkBox62.Checked = true;
+            this.checkBox62.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox62.Location = new System.Drawing.Point(5, 45);
+            this.checkBox62.Name = "checkBox62";
+            this.checkBox62.Size = new System.Drawing.Size(135, 17);
+            this.checkBox62.TabIndex = 5;
+            this.checkBox62.Text = "Triples on both 1 and 3";
+            this.checkBox62.UseVisualStyleBackColor = true;
+            // 
+            // checkBox63
+            // 
+            this.checkBox63.AutoSize = true;
+            this.checkBox63.Checked = true;
+            this.checkBox63.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox63.Location = new System.Drawing.Point(5, 25);
+            this.checkBox63.Name = "checkBox63";
+            this.checkBox63.Size = new System.Drawing.Size(86, 17);
+            this.checkBox63.TabIndex = 4;
+            this.checkBox63.Text = "Arrow repeat";
+            this.checkBox63.UseVisualStyleBackColor = true;
+            // 
+            // checkBox64
+            // 
+            this.checkBox64.AutoSize = true;
+            this.checkBox64.Checked = true;
+            this.checkBox64.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox64.Location = new System.Drawing.Point(5, 5);
+            this.checkBox64.Name = "checkBox64";
+            this.checkBox64.Size = new System.Drawing.Size(100, 17);
+            this.checkBox64.TabIndex = 3;
+            this.checkBox64.Text = "Alternating feet ";
+            this.checkBox64.UseVisualStyleBackColor = true;
+            // 
+            // label245
+            // 
+            this.label245.AutoSize = true;
+            this.label245.Location = new System.Drawing.Point(35, 95);
+            this.label245.Name = "label245";
+            this.label245.Size = new System.Drawing.Size(50, 13);
+            this.label245.TabIndex = 8;
+            this.label245.Text = "No arrow";
+            // 
+            // label246
+            // 
+            this.label246.AutoSize = true;
+            this.label246.Location = new System.Drawing.Point(35, 25);
+            this.label246.Name = "label246";
+            this.label246.Size = new System.Drawing.Size(34, 13);
+            this.label246.TabIndex = 7;
+            this.label246.Text = "Arrow";
+            // 
+            // stepfill_trackbarDD4
+            // 
+            this.stepfill_trackbarDD4.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDD4.Maximum = 100;
+            this.stepfill_trackbarDD4.Name = "stepfill_trackbarDD4";
+            this.stepfill_trackbarDD4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDD4.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDD4.TabIndex = 1;
+            this.stepfill_trackbarDD4.TickFrequency = 10;
+            this.stepfill_trackbarDD4.Value = 100;
+            this.stepfill_trackbarDD4.ValueChanged += new System.EventHandler(this.stepfill_trackbarDD4_ValueChanged);
+            // 
+            // label247
+            // 
+            this.label247.AutoSize = true;
+            this.label247.BackColor = System.Drawing.Color.OrangeRed;
+            this.label247.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label247.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label247.Location = new System.Drawing.Point(2, 2);
+            this.label247.Name = "label247";
+            this.label247.Size = new System.Drawing.Size(41, 19);
+            this.label247.TabIndex = 0;
+            this.label247.Text = "Hard";
+            // 
+            // panel101
+            // 
+            this.panel101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel101.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel101.Controls.Add(this.panel102);
+            this.panel101.Controls.Add(this.panel103);
+            this.panel101.Controls.Add(this.label254);
+            this.panel101.Controls.Add(this.stepFillDD5);
+            this.panel101.Controls.Add(this.panel104);
+            this.panel101.Controls.Add(this.panel107);
+            this.panel101.Controls.Add(this.label263);
+            this.panel101.Controls.Add(this.label264);
+            this.panel101.Controls.Add(this.stepfill_trackbarDD5);
+            this.panel101.Controls.Add(this.label265);
+            this.panel101.Location = new System.Drawing.Point(3, 507);
+            this.panel101.Name = "panel101";
+            this.panel101.Size = new System.Drawing.Size(1020, 120);
+            this.panel101.TabIndex = 14;
+            // 
+            // panel102
+            // 
+            this.panel102.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel102.Controls.Add(this.numericUpDown55);
+            this.panel102.Controls.Add(this.label248);
+            this.panel102.Controls.Add(this.label249);
+            this.panel102.Controls.Add(this.label250);
+            this.panel102.Controls.Add(this.trackBar55);
+            this.panel102.Enabled = false;
+            this.panel102.Location = new System.Drawing.Point(715, 3);
+            this.panel102.Name = "panel102";
+            this.panel102.Size = new System.Drawing.Size(131, 110);
+            this.panel102.TabIndex = 23;
+            // 
+            // numericUpDown55
+            // 
+            this.numericUpDown55.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown55.Name = "numericUpDown55";
+            this.numericUpDown55.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown55.TabIndex = 8;
+            this.numericUpDown55.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label248
+            // 
+            this.label248.AutoSize = true;
+            this.label248.Location = new System.Drawing.Point(1, 8);
+            this.label248.Name = "label248";
+            this.label248.Size = new System.Drawing.Size(60, 13);
+            this.label248.TabIndex = 16;
+            this.label248.Text = "Quintuples:";
+            // 
+            // label249
+            // 
+            this.label249.AutoSize = true;
+            this.label249.Location = new System.Drawing.Point(79, 88);
+            this.label249.Name = "label249";
+            this.label249.Size = new System.Drawing.Size(43, 13);
+            this.label249.TabIndex = 13;
+            this.label249.Text = "ABCDE";
+            // 
+            // label250
+            // 
+            this.label250.AutoSize = true;
+            this.label250.Location = new System.Drawing.Point(79, 7);
+            this.label250.Name = "label250";
+            this.label250.Size = new System.Drawing.Size(42, 13);
+            this.label250.TabIndex = 15;
+            this.label250.Text = "ABABA";
+            // 
+            // trackBar55
+            // 
+            this.trackBar55.Location = new System.Drawing.Point(53, 3);
+            this.trackBar55.Maximum = 100;
+            this.trackBar55.Name = "trackBar55";
+            this.trackBar55.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar55.RightToLeftLayout = true;
+            this.trackBar55.Size = new System.Drawing.Size(45, 105);
+            this.trackBar55.TabIndex = 14;
+            this.trackBar55.TickFrequency = 10;
+            // 
+            // panel103
+            // 
+            this.panel103.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel103.Controls.Add(this.numericUpDown56);
+            this.panel103.Controls.Add(this.label251);
+            this.panel103.Controls.Add(this.label252);
+            this.panel103.Controls.Add(this.label253);
+            this.panel103.Controls.Add(this.trackBar56);
+            this.panel103.Enabled = false;
+            this.panel103.Location = new System.Drawing.Point(594, 3);
+            this.panel103.Name = "panel103";
+            this.panel103.Size = new System.Drawing.Size(117, 110);
+            this.panel103.TabIndex = 22;
+            // 
+            // numericUpDown56
+            // 
+            this.numericUpDown56.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown56.Name = "numericUpDown56";
+            this.numericUpDown56.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown56.TabIndex = 8;
+            this.numericUpDown56.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label251
+            // 
+            this.label251.AutoSize = true;
+            this.label251.Location = new System.Drawing.Point(1, 8);
+            this.label251.Name = "label251";
+            this.label251.Size = new System.Drawing.Size(41, 13);
+            this.label251.TabIndex = 16;
+            this.label251.Text = "Triples:";
+            // 
+            // label252
+            // 
+            this.label252.AutoSize = true;
+            this.label252.Location = new System.Drawing.Point(62, 88);
+            this.label252.Name = "label252";
+            this.label252.Size = new System.Drawing.Size(28, 13);
+            this.label252.TabIndex = 13;
+            this.label252.Text = "ABC";
+            // 
+            // label253
+            // 
+            this.label253.AutoSize = true;
+            this.label253.Location = new System.Drawing.Point(62, 7);
+            this.label253.Name = "label253";
+            this.label253.Size = new System.Drawing.Size(28, 13);
+            this.label253.TabIndex = 15;
+            this.label253.Text = "ABA";
+            // 
+            // trackBar56
+            // 
+            this.trackBar56.Location = new System.Drawing.Point(40, 1);
+            this.trackBar56.Maximum = 100;
+            this.trackBar56.Name = "trackBar56";
+            this.trackBar56.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar56.RightToLeftLayout = true;
+            this.trackBar56.Size = new System.Drawing.Size(45, 105);
+            this.trackBar56.TabIndex = 14;
+            this.trackBar56.TickFrequency = 10;
+            // 
+            // label254
+            // 
+            this.label254.AutoSize = true;
+            this.label254.Location = new System.Drawing.Point(35, 58);
+            this.label254.Name = "label254";
+            this.label254.Size = new System.Drawing.Size(55, 13);
+            this.label254.TabIndex = 15;
+            this.label254.Text = "Every 2nd";
+            // 
+            // stepFillDD5
+            // 
+            this.stepFillDD5.Location = new System.Drawing.Point(75, 36);
+            this.stepFillDD5.Name = "stepFillDD5";
+            this.stepFillDD5.Size = new System.Drawing.Size(42, 20);
+            this.stepFillDD5.TabIndex = 5;
+            this.stepFillDD5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillDD5.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillDD5.ValueChanged += new System.EventHandler(this.stepFillDD5_ValueChanged);
+            // 
+            // panel104
+            // 
+            this.panel104.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel104.Controls.Add(this.panel105);
+            this.panel104.Controls.Add(this.panel106);
+            this.panel104.Controls.Add(this.onBeatDD5);
+            this.panel104.Controls.Add(this.label261);
+            this.panel104.Controls.Add(this.label262);
+            this.panel104.Controls.Add(this.onBeatTrackbarDD5);
+            this.panel104.Location = new System.Drawing.Point(129, 3);
+            this.panel104.Name = "panel104";
+            this.panel104.Size = new System.Drawing.Size(459, 110);
+            this.panel104.TabIndex = 10;
+            // 
+            // panel105
+            // 
+            this.panel105.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel105.Controls.Add(this.label255);
+            this.panel105.Controls.Add(this.label256);
+            this.panel105.Controls.Add(this.label257);
+            this.panel105.Controls.Add(this.quintuplesTrackbarDD5);
+            this.panel105.Controls.Add(this.quintuplesDD5);
+            this.panel105.Location = new System.Drawing.Point(141, 55);
+            this.panel105.Name = "panel105";
+            this.panel105.Size = new System.Drawing.Size(310, 50);
+            this.panel105.TabIndex = 16;
+            // 
+            // label255
+            // 
+            this.label255.AutoSize = true;
+            this.label255.Location = new System.Drawing.Point(9, 8);
+            this.label255.Name = "label255";
+            this.label255.Size = new System.Drawing.Size(53, 13);
+            this.label255.TabIndex = 16;
+            this.label255.Text = "Half-beat:";
+            // 
+            // label256
+            // 
+            this.label256.AutoSize = true;
+            this.label256.Location = new System.Drawing.Point(214, 28);
+            this.label256.Name = "label256";
+            this.label256.Size = new System.Drawing.Size(57, 13);
+            this.label256.TabIndex = 13;
+            this.label256.Text = "Quintuples";
+            // 
+            // label257
+            // 
+            this.label257.AutoSize = true;
+            this.label257.Location = new System.Drawing.Point(69, 28);
+            this.label257.Name = "label257";
+            this.label257.Size = new System.Drawing.Size(38, 13);
+            this.label257.TabIndex = 15;
+            this.label257.Text = "Triples";
+            // 
+            // quintuplesTrackbarDD5
+            // 
+            this.quintuplesTrackbarDD5.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarDD5.Maximum = 100;
+            this.quintuplesTrackbarDD5.Name = "quintuplesTrackbarDD5";
+            this.quintuplesTrackbarDD5.RightToLeftLayout = true;
+            this.quintuplesTrackbarDD5.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarDD5.TabIndex = 14;
+            this.quintuplesTrackbarDD5.TickFrequency = 10;
+            this.quintuplesTrackbarDD5.Value = 75;
+            this.quintuplesTrackbarDD5.ValueChanged += new System.EventHandler(this.quintuplesTrackbarDD5_ValueChanged);
+            // 
+            // quintuplesDD5
+            // 
+            this.quintuplesDD5.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesDD5.Name = "quintuplesDD5";
+            this.quintuplesDD5.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesDD5.TabIndex = 8;
+            this.quintuplesDD5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesDD5.Value = new decimal(new int[] {
+            75,
+            0,
+            0,
+            0});
+            this.quintuplesDD5.ValueChanged += new System.EventHandler(this.quintuplesDD5_ValueChanged);
+            // 
+            // panel106
+            // 
+            this.panel106.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel106.Controls.Add(this.label258);
+            this.panel106.Controls.Add(this.label259);
+            this.panel106.Controls.Add(this.label260);
+            this.panel106.Controls.Add(this.jumpsTrackbarDD5);
+            this.panel106.Controls.Add(this.jumpsDD5);
+            this.panel106.Location = new System.Drawing.Point(141, 2);
+            this.panel106.Name = "panel106";
+            this.panel106.Size = new System.Drawing.Size(310, 50);
+            this.panel106.TabIndex = 12;
+            // 
+            // label258
+            // 
+            this.label258.AutoSize = true;
+            this.label258.Location = new System.Drawing.Point(8, 7);
+            this.label258.Name = "label258";
+            this.label258.Size = new System.Drawing.Size(48, 13);
+            this.label258.TabIndex = 17;
+            this.label258.Text = "On beat:";
+            // 
+            // label259
+            // 
+            this.label259.AutoSize = true;
+            this.label259.Location = new System.Drawing.Point(214, 28);
+            this.label259.Name = "label259";
+            this.label259.Size = new System.Drawing.Size(37, 13);
+            this.label259.TabIndex = 13;
+            this.label259.Text = "Jumps";
+            // 
+            // label260
+            // 
+            this.label260.AutoSize = true;
+            this.label260.Location = new System.Drawing.Point(69, 28);
+            this.label260.Name = "label260";
+            this.label260.Size = new System.Drawing.Size(57, 13);
+            this.label260.TabIndex = 15;
+            this.label260.Text = "Single foot";
+            // 
+            // jumpsTrackbarDD5
+            // 
+            this.jumpsTrackbarDD5.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarDD5.Maximum = 100;
+            this.jumpsTrackbarDD5.Name = "jumpsTrackbarDD5";
+            this.jumpsTrackbarDD5.RightToLeftLayout = true;
+            this.jumpsTrackbarDD5.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarDD5.TabIndex = 14;
+            this.jumpsTrackbarDD5.TickFrequency = 10;
+            this.jumpsTrackbarDD5.Value = 30;
+            this.jumpsTrackbarDD5.ValueChanged += new System.EventHandler(this.jumpsTrackbarDD5_ValueChanged);
+            // 
+            // jumpsDD5
+            // 
+            this.jumpsDD5.Location = new System.Drawing.Point(257, 6);
+            this.jumpsDD5.Name = "jumpsDD5";
+            this.jumpsDD5.Size = new System.Drawing.Size(42, 20);
+            this.jumpsDD5.TabIndex = 8;
+            this.jumpsDD5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsDD5.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.jumpsDD5.ValueChanged += new System.EventHandler(this.jumpsDD5_ValueChanged);
+            // 
+            // onBeatDD5
+            // 
+            this.onBeatDD5.Location = new System.Drawing.Point(62, 44);
+            this.onBeatDD5.Name = "onBeatDD5";
+            this.onBeatDD5.Size = new System.Drawing.Size(42, 20);
+            this.onBeatDD5.TabIndex = 11;
+            this.onBeatDD5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatDD5.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.onBeatDD5.ValueChanged += new System.EventHandler(this.onBeatDD5_ValueChanged);
+            // 
+            // label261
+            // 
+            this.label261.AutoSize = true;
+            this.label261.Location = new System.Drawing.Point(6, 87);
+            this.label261.Name = "label261";
+            this.label261.Size = new System.Drawing.Size(98, 13);
+            this.label261.TabIndex = 4;
+            this.label261.Text = "On beat + half beat";
+            // 
+            // label262
+            // 
+            this.label262.AutoSize = true;
+            this.label262.Location = new System.Drawing.Point(37, 11);
+            this.label262.Name = "label262";
+            this.label262.Size = new System.Drawing.Size(67, 13);
+            this.label262.TabIndex = 3;
+            this.label262.Text = "On beat only";
+            // 
+            // onBeatTrackbarDD5
+            // 
+            this.onBeatTrackbarDD5.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarDD5.Maximum = 100;
+            this.onBeatTrackbarDD5.Name = "onBeatTrackbarDD5";
+            this.onBeatTrackbarDD5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarDD5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarDD5.RightToLeftLayout = true;
+            this.onBeatTrackbarDD5.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarDD5.TabIndex = 2;
+            this.onBeatTrackbarDD5.TickFrequency = 10;
+            this.onBeatTrackbarDD5.Value = 25;
+            this.onBeatTrackbarDD5.ValueChanged += new System.EventHandler(this.onBeatTrackbarDD5_ValueChanged);
+            // 
+            // panel107
+            // 
+            this.panel107.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel107.Controls.Add(this.checkBox65);
+            this.panel107.Controls.Add(this.checkBox66);
+            this.panel107.Controls.Add(this.checkBox67);
+            this.panel107.Controls.Add(this.checkBox68);
+            this.panel107.Controls.Add(this.checkBox69);
+            this.panel107.Location = new System.Drawing.Point(849, 3);
+            this.panel107.Name = "panel107";
+            this.panel107.Size = new System.Drawing.Size(157, 110);
+            this.panel107.TabIndex = 9;
+            // 
+            // checkBox65
+            // 
+            this.checkBox65.AutoSize = true;
+            this.checkBox65.Enabled = false;
+            this.checkBox65.Location = new System.Drawing.Point(5, 85);
+            this.checkBox65.Name = "checkBox65";
+            this.checkBox65.Size = new System.Drawing.Size(94, 17);
+            this.checkBox65.TabIndex = 11;
+            this.checkBox65.Text = "Full 8th stream";
+            this.checkBox65.UseVisualStyleBackColor = true;
+            // 
+            // checkBox66
+            // 
+            this.checkBox66.AutoSize = true;
+            this.checkBox66.Checked = true;
+            this.checkBox66.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox66.Location = new System.Drawing.Point(5, 65);
+            this.checkBox66.Name = "checkBox66";
+            this.checkBox66.Size = new System.Drawing.Size(150, 17);
+            this.checkBox66.TabIndex = 6;
+            this.checkBox66.Text = "Quintuples on either 1 or 2";
+            this.checkBox66.UseVisualStyleBackColor = true;
+            // 
+            // checkBox67
+            // 
+            this.checkBox67.AutoSize = true;
+            this.checkBox67.Checked = true;
+            this.checkBox67.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox67.Location = new System.Drawing.Point(5, 45);
+            this.checkBox67.Name = "checkBox67";
+            this.checkBox67.Size = new System.Drawing.Size(135, 17);
+            this.checkBox67.TabIndex = 5;
+            this.checkBox67.Text = "Triples on both 1 and 3";
+            this.checkBox67.UseVisualStyleBackColor = true;
+            // 
+            // checkBox68
+            // 
+            this.checkBox68.AutoSize = true;
+            this.checkBox68.Checked = true;
+            this.checkBox68.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox68.Location = new System.Drawing.Point(5, 25);
+            this.checkBox68.Name = "checkBox68";
+            this.checkBox68.Size = new System.Drawing.Size(86, 17);
+            this.checkBox68.TabIndex = 4;
+            this.checkBox68.Text = "Arrow repeat";
+            this.checkBox68.UseVisualStyleBackColor = true;
+            // 
+            // checkBox69
+            // 
+            this.checkBox69.AutoSize = true;
+            this.checkBox69.Checked = true;
+            this.checkBox69.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox69.Location = new System.Drawing.Point(5, 5);
+            this.checkBox69.Name = "checkBox69";
+            this.checkBox69.Size = new System.Drawing.Size(100, 17);
+            this.checkBox69.TabIndex = 3;
+            this.checkBox69.Text = "Alternating feet ";
+            this.checkBox69.UseVisualStyleBackColor = true;
+            // 
+            // label263
+            // 
+            this.label263.AutoSize = true;
+            this.label263.Location = new System.Drawing.Point(35, 95);
+            this.label263.Name = "label263";
+            this.label263.Size = new System.Drawing.Size(50, 13);
+            this.label263.TabIndex = 8;
+            this.label263.Text = "No arrow";
+            // 
+            // label264
+            // 
+            this.label264.AutoSize = true;
+            this.label264.Location = new System.Drawing.Point(35, 25);
+            this.label264.Name = "label264";
+            this.label264.Size = new System.Drawing.Size(34, 13);
+            this.label264.TabIndex = 7;
+            this.label264.Text = "Arrow";
+            // 
+            // stepfill_trackbarDD5
+            // 
+            this.stepfill_trackbarDD5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stepfill_trackbarDD5.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarDD5.Maximum = 100;
+            this.stepfill_trackbarDD5.Name = "stepfill_trackbarDD5";
+            this.stepfill_trackbarDD5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarDD5.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarDD5.TabIndex = 1;
+            this.stepfill_trackbarDD5.TickFrequency = 10;
+            this.stepfill_trackbarDD5.Value = 100;
+            this.stepfill_trackbarDD5.ValueChanged += new System.EventHandler(this.stepfill_trackbarDD5_ValueChanged);
+            // 
+            // label265
+            // 
+            this.label265.AutoSize = true;
+            this.label265.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label265.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label265.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label265.Location = new System.Drawing.Point(2, 2);
+            this.label265.Name = "label265";
+            this.label265.Size = new System.Drawing.Size(50, 19);
+            this.label265.TabIndex = 0;
+            this.label265.Text = "Expert";
+            // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.flowLayoutPanel5);
             this.tabPage3.Controls.Add(this.panel30);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -2890,6 +8687,2380 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pump Single";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoScroll = true;
+            this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel5.Controls.Add(this.panel110);
+            this.flowLayoutPanel5.Controls.Add(this.panel117);
+            this.flowLayoutPanel5.Controls.Add(this.panel124);
+            this.flowLayoutPanel5.Controls.Add(this.panel131);
+            this.flowLayoutPanel5.Controls.Add(this.panel138);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1032, 630);
+            this.flowLayoutPanel5.TabIndex = 23;
+            this.flowLayoutPanel5.WrapContents = false;
+            // 
+            // panel110
+            // 
+            this.panel110.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel110.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel110.Controls.Add(this.panel111);
+            this.panel110.Controls.Add(this.panel112);
+            this.panel110.Controls.Add(this.label272);
+            this.panel110.Controls.Add(this.stepFillPS1);
+            this.panel110.Controls.Add(this.panel113);
+            this.panel110.Controls.Add(this.panel116);
+            this.panel110.Controls.Add(this.label281);
+            this.panel110.Controls.Add(this.label282);
+            this.panel110.Controls.Add(this.stepfill_trackbarPS1);
+            this.panel110.Controls.Add(this.label283);
+            this.panel110.Location = new System.Drawing.Point(3, 3);
+            this.panel110.Name = "panel110";
+            this.panel110.Size = new System.Drawing.Size(1020, 120);
+            this.panel110.TabIndex = 5;
+            // 
+            // panel111
+            // 
+            this.panel111.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel111.Controls.Add(this.numericUpDown61);
+            this.panel111.Controls.Add(this.label266);
+            this.panel111.Controls.Add(this.label267);
+            this.panel111.Controls.Add(this.label268);
+            this.panel111.Controls.Add(this.trackBar61);
+            this.panel111.Enabled = false;
+            this.panel111.Location = new System.Drawing.Point(715, 3);
+            this.panel111.Name = "panel111";
+            this.panel111.Size = new System.Drawing.Size(131, 110);
+            this.panel111.TabIndex = 19;
+            // 
+            // numericUpDown61
+            // 
+            this.numericUpDown61.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown61.Name = "numericUpDown61";
+            this.numericUpDown61.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown61.TabIndex = 8;
+            this.numericUpDown61.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label266
+            // 
+            this.label266.AutoSize = true;
+            this.label266.Location = new System.Drawing.Point(1, 8);
+            this.label266.Name = "label266";
+            this.label266.Size = new System.Drawing.Size(60, 13);
+            this.label266.TabIndex = 16;
+            this.label266.Text = "Quintuples:";
+            // 
+            // label267
+            // 
+            this.label267.AutoSize = true;
+            this.label267.Location = new System.Drawing.Point(79, 88);
+            this.label267.Name = "label267";
+            this.label267.Size = new System.Drawing.Size(43, 13);
+            this.label267.TabIndex = 13;
+            this.label267.Text = "ABCDE";
+            // 
+            // label268
+            // 
+            this.label268.AutoSize = true;
+            this.label268.Location = new System.Drawing.Point(79, 7);
+            this.label268.Name = "label268";
+            this.label268.Size = new System.Drawing.Size(42, 13);
+            this.label268.TabIndex = 15;
+            this.label268.Text = "ABABA";
+            // 
+            // trackBar61
+            // 
+            this.trackBar61.Location = new System.Drawing.Point(53, 3);
+            this.trackBar61.Maximum = 100;
+            this.trackBar61.Name = "trackBar61";
+            this.trackBar61.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar61.RightToLeftLayout = true;
+            this.trackBar61.Size = new System.Drawing.Size(45, 105);
+            this.trackBar61.TabIndex = 14;
+            this.trackBar61.TickFrequency = 10;
+            // 
+            // panel112
+            // 
+            this.panel112.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel112.Controls.Add(this.numericUpDown62);
+            this.panel112.Controls.Add(this.label269);
+            this.panel112.Controls.Add(this.label270);
+            this.panel112.Controls.Add(this.label271);
+            this.panel112.Controls.Add(this.trackBar62);
+            this.panel112.Enabled = false;
+            this.panel112.Location = new System.Drawing.Point(594, 3);
+            this.panel112.Name = "panel112";
+            this.panel112.Size = new System.Drawing.Size(117, 112);
+            this.panel112.TabIndex = 18;
+            // 
+            // numericUpDown62
+            // 
+            this.numericUpDown62.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown62.Name = "numericUpDown62";
+            this.numericUpDown62.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown62.TabIndex = 8;
+            this.numericUpDown62.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label269
+            // 
+            this.label269.AutoSize = true;
+            this.label269.Location = new System.Drawing.Point(1, 8);
+            this.label269.Name = "label269";
+            this.label269.Size = new System.Drawing.Size(41, 13);
+            this.label269.TabIndex = 16;
+            this.label269.Text = "Triples:";
+            // 
+            // label270
+            // 
+            this.label270.AutoSize = true;
+            this.label270.Location = new System.Drawing.Point(62, 88);
+            this.label270.Name = "label270";
+            this.label270.Size = new System.Drawing.Size(28, 13);
+            this.label270.TabIndex = 13;
+            this.label270.Text = "ABC";
+            // 
+            // label271
+            // 
+            this.label271.AutoSize = true;
+            this.label271.Location = new System.Drawing.Point(62, 7);
+            this.label271.Name = "label271";
+            this.label271.Size = new System.Drawing.Size(28, 13);
+            this.label271.TabIndex = 15;
+            this.label271.Text = "ABA";
+            // 
+            // trackBar62
+            // 
+            this.trackBar62.Location = new System.Drawing.Point(40, 1);
+            this.trackBar62.Maximum = 100;
+            this.trackBar62.Name = "trackBar62";
+            this.trackBar62.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar62.RightToLeftLayout = true;
+            this.trackBar62.Size = new System.Drawing.Size(45, 105);
+            this.trackBar62.TabIndex = 14;
+            this.trackBar62.TickFrequency = 10;
+            // 
+            // label272
+            // 
+            this.label272.AutoSize = true;
+            this.label272.Location = new System.Drawing.Point(35, 58);
+            this.label272.Name = "label272";
+            this.label272.Size = new System.Drawing.Size(55, 13);
+            this.label272.TabIndex = 11;
+            this.label272.Text = "Every 2nd";
+            // 
+            // stepFillPS1
+            // 
+            this.stepFillPS1.Location = new System.Drawing.Point(75, 36);
+            this.stepFillPS1.Name = "stepFillPS1";
+            this.stepFillPS1.Size = new System.Drawing.Size(42, 20);
+            this.stepFillPS1.TabIndex = 5;
+            this.stepFillPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillPS1.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.stepFillPS1.ValueChanged += new System.EventHandler(this.stepFillPS1_ValueChanged);
+            // 
+            // panel113
+            // 
+            this.panel113.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel113.Controls.Add(this.onBeatPS1);
+            this.panel113.Controls.Add(this.label273);
+            this.panel113.Controls.Add(this.label274);
+            this.panel113.Controls.Add(this.panel114);
+            this.panel113.Controls.Add(this.panel115);
+            this.panel113.Controls.Add(this.onBeatTrackbarPS1);
+            this.panel113.Location = new System.Drawing.Point(129, 3);
+            this.panel113.Name = "panel113";
+            this.panel113.Size = new System.Drawing.Size(459, 110);
+            this.panel113.TabIndex = 10;
+            // 
+            // onBeatPS1
+            // 
+            this.onBeatPS1.Location = new System.Drawing.Point(62, 44);
+            this.onBeatPS1.Name = "onBeatPS1";
+            this.onBeatPS1.Size = new System.Drawing.Size(42, 20);
+            this.onBeatPS1.TabIndex = 11;
+            this.onBeatPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatPS1.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatPS1.ValueChanged += new System.EventHandler(this.onBeatPS1_ValueChanged);
+            // 
+            // label273
+            // 
+            this.label273.AutoSize = true;
+            this.label273.Location = new System.Drawing.Point(6, 87);
+            this.label273.Name = "label273";
+            this.label273.Size = new System.Drawing.Size(98, 13);
+            this.label273.TabIndex = 4;
+            this.label273.Text = "On beat + half beat";
+            // 
+            // label274
+            // 
+            this.label274.AutoSize = true;
+            this.label274.Location = new System.Drawing.Point(37, 11);
+            this.label274.Name = "label274";
+            this.label274.Size = new System.Drawing.Size(67, 13);
+            this.label274.TabIndex = 3;
+            this.label274.Text = "On beat only";
+            // 
+            // panel114
+            // 
+            this.panel114.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel114.Controls.Add(this.label275);
+            this.panel114.Controls.Add(this.label276);
+            this.panel114.Controls.Add(this.label277);
+            this.panel114.Controls.Add(this.quintuplesTrackbarPS1);
+            this.panel114.Controls.Add(this.quintuplesPS1);
+            this.panel114.Location = new System.Drawing.Point(141, 55);
+            this.panel114.Name = "panel114";
+            this.panel114.Size = new System.Drawing.Size(310, 50);
+            this.panel114.TabIndex = 16;
+            // 
+            // label275
+            // 
+            this.label275.AutoSize = true;
+            this.label275.Location = new System.Drawing.Point(9, 8);
+            this.label275.Name = "label275";
+            this.label275.Size = new System.Drawing.Size(53, 13);
+            this.label275.TabIndex = 16;
+            this.label275.Text = "Half-beat:";
+            // 
+            // label276
+            // 
+            this.label276.AutoSize = true;
+            this.label276.Location = new System.Drawing.Point(214, 28);
+            this.label276.Name = "label276";
+            this.label276.Size = new System.Drawing.Size(57, 13);
+            this.label276.TabIndex = 13;
+            this.label276.Text = "Quintuples";
+            // 
+            // label277
+            // 
+            this.label277.AutoSize = true;
+            this.label277.Location = new System.Drawing.Point(69, 28);
+            this.label277.Name = "label277";
+            this.label277.Size = new System.Drawing.Size(38, 13);
+            this.label277.TabIndex = 15;
+            this.label277.Text = "Triples";
+            // 
+            // quintuplesTrackbarPS1
+            // 
+            this.quintuplesTrackbarPS1.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarPS1.Maximum = 100;
+            this.quintuplesTrackbarPS1.Name = "quintuplesTrackbarPS1";
+            this.quintuplesTrackbarPS1.RightToLeftLayout = true;
+            this.quintuplesTrackbarPS1.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarPS1.TabIndex = 14;
+            this.quintuplesTrackbarPS1.TickFrequency = 10;
+            this.quintuplesTrackbarPS1.ValueChanged += new System.EventHandler(this.quintuplesTrackbarPS1_ValueChanged);
+            // 
+            // quintuplesPS1
+            // 
+            this.quintuplesPS1.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesPS1.Name = "quintuplesPS1";
+            this.quintuplesPS1.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesPS1.TabIndex = 8;
+            this.quintuplesPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesPS1.ValueChanged += new System.EventHandler(this.quintuplesPS1_ValueChanged);
+            // 
+            // panel115
+            // 
+            this.panel115.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel115.Controls.Add(this.label278);
+            this.panel115.Controls.Add(this.label279);
+            this.panel115.Controls.Add(this.label280);
+            this.panel115.Controls.Add(this.jumpsTrackbarPS1);
+            this.panel115.Controls.Add(this.jumpsPS1);
+            this.panel115.Location = new System.Drawing.Point(141, 2);
+            this.panel115.Name = "panel115";
+            this.panel115.Size = new System.Drawing.Size(310, 50);
+            this.panel115.TabIndex = 12;
+            // 
+            // label278
+            // 
+            this.label278.AutoSize = true;
+            this.label278.Location = new System.Drawing.Point(8, 7);
+            this.label278.Name = "label278";
+            this.label278.Size = new System.Drawing.Size(48, 13);
+            this.label278.TabIndex = 17;
+            this.label278.Text = "On beat:";
+            // 
+            // label279
+            // 
+            this.label279.AutoSize = true;
+            this.label279.Location = new System.Drawing.Point(214, 28);
+            this.label279.Name = "label279";
+            this.label279.Size = new System.Drawing.Size(37, 13);
+            this.label279.TabIndex = 13;
+            this.label279.Text = "Jumps";
+            // 
+            // label280
+            // 
+            this.label280.AutoSize = true;
+            this.label280.Location = new System.Drawing.Point(69, 28);
+            this.label280.Name = "label280";
+            this.label280.Size = new System.Drawing.Size(57, 13);
+            this.label280.TabIndex = 15;
+            this.label280.Text = "Single foot";
+            // 
+            // jumpsTrackbarPS1
+            // 
+            this.jumpsTrackbarPS1.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarPS1.Maximum = 100;
+            this.jumpsTrackbarPS1.Name = "jumpsTrackbarPS1";
+            this.jumpsTrackbarPS1.RightToLeftLayout = true;
+            this.jumpsTrackbarPS1.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarPS1.TabIndex = 14;
+            this.jumpsTrackbarPS1.TickFrequency = 10;
+            this.jumpsTrackbarPS1.ValueChanged += new System.EventHandler(this.jumpsTrackbarPS1_ValueChanged);
+            // 
+            // jumpsPS1
+            // 
+            this.jumpsPS1.Location = new System.Drawing.Point(257, 6);
+            this.jumpsPS1.Name = "jumpsPS1";
+            this.jumpsPS1.Size = new System.Drawing.Size(42, 20);
+            this.jumpsPS1.TabIndex = 8;
+            this.jumpsPS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsPS1.ValueChanged += new System.EventHandler(this.jumpsPS1_ValueChanged);
+            // 
+            // onBeatTrackbarPS1
+            // 
+            this.onBeatTrackbarPS1.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarPS1.Maximum = 100;
+            this.onBeatTrackbarPS1.Name = "onBeatTrackbarPS1";
+            this.onBeatTrackbarPS1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarPS1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarPS1.RightToLeftLayout = true;
+            this.onBeatTrackbarPS1.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarPS1.TabIndex = 2;
+            this.onBeatTrackbarPS1.TickFrequency = 10;
+            this.onBeatTrackbarPS1.Value = 100;
+            this.onBeatTrackbarPS1.ValueChanged += new System.EventHandler(this.onBeatTrackbarPS1_ValueChanged);
+            // 
+            // panel116
+            // 
+            this.panel116.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel116.Controls.Add(this.checkBox70);
+            this.panel116.Controls.Add(this.checkBox71);
+            this.panel116.Controls.Add(this.checkBox72);
+            this.panel116.Controls.Add(this.checkBox73);
+            this.panel116.Controls.Add(this.checkBox74);
+            this.panel116.Location = new System.Drawing.Point(849, 3);
+            this.panel116.Name = "panel116";
+            this.panel116.Size = new System.Drawing.Size(157, 110);
+            this.panel116.TabIndex = 9;
+            // 
+            // checkBox70
+            // 
+            this.checkBox70.AutoSize = true;
+            this.checkBox70.Enabled = false;
+            this.checkBox70.Location = new System.Drawing.Point(5, 85);
+            this.checkBox70.Name = "checkBox70";
+            this.checkBox70.Size = new System.Drawing.Size(94, 17);
+            this.checkBox70.TabIndex = 7;
+            this.checkBox70.Text = "Full 8th stream";
+            this.checkBox70.UseVisualStyleBackColor = true;
+            // 
+            // checkBox71
+            // 
+            this.checkBox71.AutoSize = true;
+            this.checkBox71.Location = new System.Drawing.Point(5, 65);
+            this.checkBox71.Name = "checkBox71";
+            this.checkBox71.Size = new System.Drawing.Size(150, 17);
+            this.checkBox71.TabIndex = 6;
+            this.checkBox71.Text = "Quintuples on either 1 or 2";
+            this.checkBox71.UseVisualStyleBackColor = true;
+            // 
+            // checkBox72
+            // 
+            this.checkBox72.AutoSize = true;
+            this.checkBox72.Location = new System.Drawing.Point(5, 45);
+            this.checkBox72.Name = "checkBox72";
+            this.checkBox72.Size = new System.Drawing.Size(135, 17);
+            this.checkBox72.TabIndex = 5;
+            this.checkBox72.Text = "Triples on both 1 and 3";
+            this.checkBox72.UseVisualStyleBackColor = true;
+            // 
+            // checkBox73
+            // 
+            this.checkBox73.AutoSize = true;
+            this.checkBox73.Checked = true;
+            this.checkBox73.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox73.Location = new System.Drawing.Point(5, 25);
+            this.checkBox73.Name = "checkBox73";
+            this.checkBox73.Size = new System.Drawing.Size(86, 17);
+            this.checkBox73.TabIndex = 4;
+            this.checkBox73.Text = "Arrow repeat";
+            this.checkBox73.UseVisualStyleBackColor = true;
+            // 
+            // checkBox74
+            // 
+            this.checkBox74.AutoSize = true;
+            this.checkBox74.Checked = true;
+            this.checkBox74.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox74.Location = new System.Drawing.Point(5, 5);
+            this.checkBox74.Name = "checkBox74";
+            this.checkBox74.Size = new System.Drawing.Size(100, 17);
+            this.checkBox74.TabIndex = 3;
+            this.checkBox74.Text = "Alternating feet ";
+            this.checkBox74.UseVisualStyleBackColor = true;
+            // 
+            // label281
+            // 
+            this.label281.AutoSize = true;
+            this.label281.Location = new System.Drawing.Point(35, 95);
+            this.label281.Name = "label281";
+            this.label281.Size = new System.Drawing.Size(50, 13);
+            this.label281.TabIndex = 8;
+            this.label281.Text = "No arrow";
+            // 
+            // label282
+            // 
+            this.label282.AutoSize = true;
+            this.label282.Location = new System.Drawing.Point(35, 25);
+            this.label282.Name = "label282";
+            this.label282.Size = new System.Drawing.Size(34, 13);
+            this.label282.TabIndex = 7;
+            this.label282.Text = "Arrow";
+            // 
+            // stepfill_trackbarPS1
+            // 
+            this.stepfill_trackbarPS1.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarPS1.Maximum = 100;
+            this.stepfill_trackbarPS1.Name = "stepfill_trackbarPS1";
+            this.stepfill_trackbarPS1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarPS1.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarPS1.TabIndex = 1;
+            this.stepfill_trackbarPS1.TickFrequency = 10;
+            this.stepfill_trackbarPS1.Value = 60;
+            this.stepfill_trackbarPS1.ValueChanged += new System.EventHandler(this.stepfill_trackbarPS1_ValueChanged);
+            // 
+            // label283
+            // 
+            this.label283.AutoSize = true;
+            this.label283.BackColor = System.Drawing.Color.Fuchsia;
+            this.label283.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label283.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label283.Location = new System.Drawing.Point(2, 2);
+            this.label283.Name = "label283";
+            this.label283.Size = new System.Drawing.Size(53, 19);
+            this.label283.TabIndex = 0;
+            this.label283.Text = "Novice";
+            // 
+            // panel117
+            // 
+            this.panel117.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel117.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel117.Controls.Add(this.panel118);
+            this.panel117.Controls.Add(this.panel119);
+            this.panel117.Controls.Add(this.label290);
+            this.panel117.Controls.Add(this.stepFillPS2);
+            this.panel117.Controls.Add(this.panel120);
+            this.panel117.Controls.Add(this.panel123);
+            this.panel117.Controls.Add(this.label299);
+            this.panel117.Controls.Add(this.label300);
+            this.panel117.Controls.Add(this.stepfill_trackbarPS2);
+            this.panel117.Controls.Add(this.label301);
+            this.panel117.Location = new System.Drawing.Point(3, 129);
+            this.panel117.Name = "panel117";
+            this.panel117.Size = new System.Drawing.Size(1020, 120);
+            this.panel117.TabIndex = 15;
+            // 
+            // panel118
+            // 
+            this.panel118.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel118.Controls.Add(this.numericUpDown67);
+            this.panel118.Controls.Add(this.label284);
+            this.panel118.Controls.Add(this.label285);
+            this.panel118.Controls.Add(this.label286);
+            this.panel118.Controls.Add(this.trackBar67);
+            this.panel118.Enabled = false;
+            this.panel118.Location = new System.Drawing.Point(715, 3);
+            this.panel118.Name = "panel118";
+            this.panel118.Size = new System.Drawing.Size(131, 110);
+            this.panel118.TabIndex = 20;
+            // 
+            // numericUpDown67
+            // 
+            this.numericUpDown67.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown67.Name = "numericUpDown67";
+            this.numericUpDown67.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown67.TabIndex = 8;
+            this.numericUpDown67.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label284
+            // 
+            this.label284.AutoSize = true;
+            this.label284.Location = new System.Drawing.Point(1, 8);
+            this.label284.Name = "label284";
+            this.label284.Size = new System.Drawing.Size(60, 13);
+            this.label284.TabIndex = 16;
+            this.label284.Text = "Quintuples:";
+            // 
+            // label285
+            // 
+            this.label285.AutoSize = true;
+            this.label285.Location = new System.Drawing.Point(79, 88);
+            this.label285.Name = "label285";
+            this.label285.Size = new System.Drawing.Size(43, 13);
+            this.label285.TabIndex = 13;
+            this.label285.Text = "ABCDE";
+            // 
+            // label286
+            // 
+            this.label286.AutoSize = true;
+            this.label286.Location = new System.Drawing.Point(79, 7);
+            this.label286.Name = "label286";
+            this.label286.Size = new System.Drawing.Size(42, 13);
+            this.label286.TabIndex = 15;
+            this.label286.Text = "ABABA";
+            // 
+            // trackBar67
+            // 
+            this.trackBar67.Location = new System.Drawing.Point(53, 3);
+            this.trackBar67.Maximum = 100;
+            this.trackBar67.Name = "trackBar67";
+            this.trackBar67.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar67.RightToLeftLayout = true;
+            this.trackBar67.Size = new System.Drawing.Size(45, 105);
+            this.trackBar67.TabIndex = 14;
+            this.trackBar67.TickFrequency = 10;
+            // 
+            // panel119
+            // 
+            this.panel119.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel119.Controls.Add(this.numericUpDown68);
+            this.panel119.Controls.Add(this.label287);
+            this.panel119.Controls.Add(this.label288);
+            this.panel119.Controls.Add(this.label289);
+            this.panel119.Controls.Add(this.trackBar68);
+            this.panel119.Enabled = false;
+            this.panel119.Location = new System.Drawing.Point(594, 3);
+            this.panel119.Name = "panel119";
+            this.panel119.Size = new System.Drawing.Size(117, 112);
+            this.panel119.TabIndex = 19;
+            // 
+            // numericUpDown68
+            // 
+            this.numericUpDown68.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown68.Name = "numericUpDown68";
+            this.numericUpDown68.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown68.TabIndex = 8;
+            this.numericUpDown68.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label287
+            // 
+            this.label287.AutoSize = true;
+            this.label287.Location = new System.Drawing.Point(1, 8);
+            this.label287.Name = "label287";
+            this.label287.Size = new System.Drawing.Size(41, 13);
+            this.label287.TabIndex = 16;
+            this.label287.Text = "Triples:";
+            // 
+            // label288
+            // 
+            this.label288.AutoSize = true;
+            this.label288.Location = new System.Drawing.Point(62, 88);
+            this.label288.Name = "label288";
+            this.label288.Size = new System.Drawing.Size(28, 13);
+            this.label288.TabIndex = 13;
+            this.label288.Text = "ABC";
+            // 
+            // label289
+            // 
+            this.label289.AutoSize = true;
+            this.label289.Location = new System.Drawing.Point(62, 7);
+            this.label289.Name = "label289";
+            this.label289.Size = new System.Drawing.Size(28, 13);
+            this.label289.TabIndex = 15;
+            this.label289.Text = "ABA";
+            // 
+            // trackBar68
+            // 
+            this.trackBar68.Location = new System.Drawing.Point(40, 1);
+            this.trackBar68.Maximum = 100;
+            this.trackBar68.Name = "trackBar68";
+            this.trackBar68.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar68.RightToLeftLayout = true;
+            this.trackBar68.Size = new System.Drawing.Size(45, 105);
+            this.trackBar68.TabIndex = 14;
+            this.trackBar68.TickFrequency = 10;
+            // 
+            // label290
+            // 
+            this.label290.AutoSize = true;
+            this.label290.Location = new System.Drawing.Point(35, 58);
+            this.label290.Name = "label290";
+            this.label290.Size = new System.Drawing.Size(55, 13);
+            this.label290.TabIndex = 12;
+            this.label290.Text = "Every 2nd";
+            // 
+            // stepFillPS2
+            // 
+            this.stepFillPS2.Location = new System.Drawing.Point(75, 36);
+            this.stepFillPS2.Name = "stepFillPS2";
+            this.stepFillPS2.Size = new System.Drawing.Size(42, 20);
+            this.stepFillPS2.TabIndex = 5;
+            this.stepFillPS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillPS2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillPS2.ValueChanged += new System.EventHandler(this.stepFillPS2_ValueChanged);
+            // 
+            // panel120
+            // 
+            this.panel120.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel120.Controls.Add(this.panel121);
+            this.panel120.Controls.Add(this.panel122);
+            this.panel120.Controls.Add(this.onBeatPS2);
+            this.panel120.Controls.Add(this.label297);
+            this.panel120.Controls.Add(this.label298);
+            this.panel120.Controls.Add(this.onBeatTrackbarPS2);
+            this.panel120.Location = new System.Drawing.Point(129, 3);
+            this.panel120.Name = "panel120";
+            this.panel120.Size = new System.Drawing.Size(459, 110);
+            this.panel120.TabIndex = 10;
+            // 
+            // panel121
+            // 
+            this.panel121.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel121.Controls.Add(this.label291);
+            this.panel121.Controls.Add(this.label292);
+            this.panel121.Controls.Add(this.label293);
+            this.panel121.Controls.Add(this.quintuplesTrackbarPS2);
+            this.panel121.Controls.Add(this.quintuplesPS2);
+            this.panel121.Location = new System.Drawing.Point(141, 55);
+            this.panel121.Name = "panel121";
+            this.panel121.Size = new System.Drawing.Size(310, 50);
+            this.panel121.TabIndex = 16;
+            // 
+            // label291
+            // 
+            this.label291.AutoSize = true;
+            this.label291.Location = new System.Drawing.Point(9, 8);
+            this.label291.Name = "label291";
+            this.label291.Size = new System.Drawing.Size(53, 13);
+            this.label291.TabIndex = 16;
+            this.label291.Text = "Half-beat:";
+            // 
+            // label292
+            // 
+            this.label292.AutoSize = true;
+            this.label292.Location = new System.Drawing.Point(214, 28);
+            this.label292.Name = "label292";
+            this.label292.Size = new System.Drawing.Size(57, 13);
+            this.label292.TabIndex = 13;
+            this.label292.Text = "Quintuples";
+            // 
+            // label293
+            // 
+            this.label293.AutoSize = true;
+            this.label293.Location = new System.Drawing.Point(69, 28);
+            this.label293.Name = "label293";
+            this.label293.Size = new System.Drawing.Size(38, 13);
+            this.label293.TabIndex = 15;
+            this.label293.Text = "Triples";
+            // 
+            // quintuplesTrackbarPS2
+            // 
+            this.quintuplesTrackbarPS2.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarPS2.Maximum = 100;
+            this.quintuplesTrackbarPS2.Name = "quintuplesTrackbarPS2";
+            this.quintuplesTrackbarPS2.RightToLeftLayout = true;
+            this.quintuplesTrackbarPS2.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarPS2.TabIndex = 14;
+            this.quintuplesTrackbarPS2.TickFrequency = 10;
+            this.quintuplesTrackbarPS2.ValueChanged += new System.EventHandler(this.quintuplesTrackbarPS2_ValueChanged);
+            // 
+            // quintuplesPS2
+            // 
+            this.quintuplesPS2.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesPS2.Name = "quintuplesPS2";
+            this.quintuplesPS2.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesPS2.TabIndex = 8;
+            this.quintuplesPS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesPS2.ValueChanged += new System.EventHandler(this.quintuplesPS2_ValueChanged);
+            // 
+            // panel122
+            // 
+            this.panel122.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel122.Controls.Add(this.label294);
+            this.panel122.Controls.Add(this.label295);
+            this.panel122.Controls.Add(this.label296);
+            this.panel122.Controls.Add(this.jumpsTrackbarPS2);
+            this.panel122.Controls.Add(this.jumpsPS2);
+            this.panel122.Location = new System.Drawing.Point(141, 2);
+            this.panel122.Name = "panel122";
+            this.panel122.Size = new System.Drawing.Size(310, 50);
+            this.panel122.TabIndex = 12;
+            // 
+            // label294
+            // 
+            this.label294.AutoSize = true;
+            this.label294.Location = new System.Drawing.Point(8, 7);
+            this.label294.Name = "label294";
+            this.label294.Size = new System.Drawing.Size(48, 13);
+            this.label294.TabIndex = 17;
+            this.label294.Text = "On beat:";
+            // 
+            // label295
+            // 
+            this.label295.AutoSize = true;
+            this.label295.Location = new System.Drawing.Point(214, 28);
+            this.label295.Name = "label295";
+            this.label295.Size = new System.Drawing.Size(37, 13);
+            this.label295.TabIndex = 13;
+            this.label295.Text = "Jumps";
+            // 
+            // label296
+            // 
+            this.label296.AutoSize = true;
+            this.label296.Location = new System.Drawing.Point(69, 28);
+            this.label296.Name = "label296";
+            this.label296.Size = new System.Drawing.Size(57, 13);
+            this.label296.TabIndex = 15;
+            this.label296.Text = "Single foot";
+            // 
+            // jumpsTrackbarPS2
+            // 
+            this.jumpsTrackbarPS2.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarPS2.Maximum = 100;
+            this.jumpsTrackbarPS2.Name = "jumpsTrackbarPS2";
+            this.jumpsTrackbarPS2.RightToLeftLayout = true;
+            this.jumpsTrackbarPS2.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarPS2.TabIndex = 14;
+            this.jumpsTrackbarPS2.TickFrequency = 10;
+            this.jumpsTrackbarPS2.ValueChanged += new System.EventHandler(this.jumpsTrackbarPS2_ValueChanged);
+            // 
+            // jumpsPS2
+            // 
+            this.jumpsPS2.Location = new System.Drawing.Point(257, 6);
+            this.jumpsPS2.Name = "jumpsPS2";
+            this.jumpsPS2.Size = new System.Drawing.Size(42, 20);
+            this.jumpsPS2.TabIndex = 8;
+            this.jumpsPS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsPS2.ValueChanged += new System.EventHandler(this.jumpsPS2_ValueChanged);
+            // 
+            // onBeatPS2
+            // 
+            this.onBeatPS2.Location = new System.Drawing.Point(62, 44);
+            this.onBeatPS2.Name = "onBeatPS2";
+            this.onBeatPS2.Size = new System.Drawing.Size(42, 20);
+            this.onBeatPS2.TabIndex = 11;
+            this.onBeatPS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatPS2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatPS2.ValueChanged += new System.EventHandler(this.onBeatPS2_ValueChanged);
+            // 
+            // label297
+            // 
+            this.label297.AutoSize = true;
+            this.label297.Location = new System.Drawing.Point(6, 87);
+            this.label297.Name = "label297";
+            this.label297.Size = new System.Drawing.Size(98, 13);
+            this.label297.TabIndex = 4;
+            this.label297.Text = "On beat + half beat";
+            // 
+            // label298
+            // 
+            this.label298.AutoSize = true;
+            this.label298.Location = new System.Drawing.Point(37, 11);
+            this.label298.Name = "label298";
+            this.label298.Size = new System.Drawing.Size(67, 13);
+            this.label298.TabIndex = 3;
+            this.label298.Text = "On beat only";
+            // 
+            // onBeatTrackbarPS2
+            // 
+            this.onBeatTrackbarPS2.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarPS2.Maximum = 100;
+            this.onBeatTrackbarPS2.Name = "onBeatTrackbarPS2";
+            this.onBeatTrackbarPS2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarPS2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarPS2.RightToLeftLayout = true;
+            this.onBeatTrackbarPS2.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarPS2.TabIndex = 2;
+            this.onBeatTrackbarPS2.TickFrequency = 10;
+            this.onBeatTrackbarPS2.Value = 100;
+            this.onBeatTrackbarPS2.ValueChanged += new System.EventHandler(this.onBeatTrackbarPS2_ValueChanged);
+            // 
+            // panel123
+            // 
+            this.panel123.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel123.Controls.Add(this.checkBox75);
+            this.panel123.Controls.Add(this.checkBox76);
+            this.panel123.Controls.Add(this.checkBox77);
+            this.panel123.Controls.Add(this.checkBox78);
+            this.panel123.Controls.Add(this.checkBox79);
+            this.panel123.Location = new System.Drawing.Point(849, 3);
+            this.panel123.Name = "panel123";
+            this.panel123.Size = new System.Drawing.Size(157, 110);
+            this.panel123.TabIndex = 9;
+            // 
+            // checkBox75
+            // 
+            this.checkBox75.AutoSize = true;
+            this.checkBox75.Enabled = false;
+            this.checkBox75.Location = new System.Drawing.Point(5, 85);
+            this.checkBox75.Name = "checkBox75";
+            this.checkBox75.Size = new System.Drawing.Size(94, 17);
+            this.checkBox75.TabIndex = 8;
+            this.checkBox75.Text = "Full 8th stream";
+            this.checkBox75.UseVisualStyleBackColor = true;
+            // 
+            // checkBox76
+            // 
+            this.checkBox76.AutoSize = true;
+            this.checkBox76.Location = new System.Drawing.Point(5, 65);
+            this.checkBox76.Name = "checkBox76";
+            this.checkBox76.Size = new System.Drawing.Size(150, 17);
+            this.checkBox76.TabIndex = 6;
+            this.checkBox76.Text = "Quintuples on either 1 or 2";
+            this.checkBox76.UseVisualStyleBackColor = true;
+            // 
+            // checkBox77
+            // 
+            this.checkBox77.AutoSize = true;
+            this.checkBox77.Location = new System.Drawing.Point(5, 45);
+            this.checkBox77.Name = "checkBox77";
+            this.checkBox77.Size = new System.Drawing.Size(135, 17);
+            this.checkBox77.TabIndex = 5;
+            this.checkBox77.Text = "Triples on both 1 and 3";
+            this.checkBox77.UseVisualStyleBackColor = true;
+            // 
+            // checkBox78
+            // 
+            this.checkBox78.AutoSize = true;
+            this.checkBox78.Location = new System.Drawing.Point(5, 25);
+            this.checkBox78.Name = "checkBox78";
+            this.checkBox78.Size = new System.Drawing.Size(86, 17);
+            this.checkBox78.TabIndex = 4;
+            this.checkBox78.Text = "Arrow repeat";
+            this.checkBox78.UseVisualStyleBackColor = true;
+            // 
+            // checkBox79
+            // 
+            this.checkBox79.AutoSize = true;
+            this.checkBox79.Checked = true;
+            this.checkBox79.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox79.Location = new System.Drawing.Point(5, 5);
+            this.checkBox79.Name = "checkBox79";
+            this.checkBox79.Size = new System.Drawing.Size(100, 17);
+            this.checkBox79.TabIndex = 3;
+            this.checkBox79.Text = "Alternating feet ";
+            this.checkBox79.UseVisualStyleBackColor = true;
+            // 
+            // label299
+            // 
+            this.label299.AutoSize = true;
+            this.label299.Location = new System.Drawing.Point(35, 95);
+            this.label299.Name = "label299";
+            this.label299.Size = new System.Drawing.Size(50, 13);
+            this.label299.TabIndex = 8;
+            this.label299.Text = "No arrow";
+            // 
+            // label300
+            // 
+            this.label300.AutoSize = true;
+            this.label300.Location = new System.Drawing.Point(35, 25);
+            this.label300.Name = "label300";
+            this.label300.Size = new System.Drawing.Size(34, 13);
+            this.label300.TabIndex = 7;
+            this.label300.Text = "Arrow";
+            // 
+            // stepfill_trackbarPS2
+            // 
+            this.stepfill_trackbarPS2.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarPS2.Maximum = 100;
+            this.stepfill_trackbarPS2.Name = "stepfill_trackbarPS2";
+            this.stepfill_trackbarPS2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarPS2.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarPS2.TabIndex = 1;
+            this.stepfill_trackbarPS2.TickFrequency = 10;
+            this.stepfill_trackbarPS2.Value = 100;
+            this.stepfill_trackbarPS2.ValueChanged += new System.EventHandler(this.stepfill_trackbarPS2_ValueChanged);
+            // 
+            // label301
+            // 
+            this.label301.AutoSize = true;
+            this.label301.BackColor = System.Drawing.Color.LawnGreen;
+            this.label301.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label301.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label301.Location = new System.Drawing.Point(2, 2);
+            this.label301.Name = "label301";
+            this.label301.Size = new System.Drawing.Size(41, 19);
+            this.label301.TabIndex = 0;
+            this.label301.Text = "Easy";
+            // 
+            // panel124
+            // 
+            this.panel124.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel124.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel124.Controls.Add(this.panel125);
+            this.panel124.Controls.Add(this.panel126);
+            this.panel124.Controls.Add(this.label308);
+            this.panel124.Controls.Add(this.stepFillPS3);
+            this.panel124.Controls.Add(this.panel127);
+            this.panel124.Controls.Add(this.panel130);
+            this.panel124.Controls.Add(this.label317);
+            this.panel124.Controls.Add(this.label318);
+            this.panel124.Controls.Add(this.stepfill_trackbarPS3);
+            this.panel124.Controls.Add(this.label319);
+            this.panel124.Location = new System.Drawing.Point(3, 255);
+            this.panel124.Name = "panel124";
+            this.panel124.Size = new System.Drawing.Size(1020, 120);
+            this.panel124.TabIndex = 13;
+            // 
+            // panel125
+            // 
+            this.panel125.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel125.Controls.Add(this.numericUpDown73);
+            this.panel125.Controls.Add(this.label302);
+            this.panel125.Controls.Add(this.label303);
+            this.panel125.Controls.Add(this.label304);
+            this.panel125.Controls.Add(this.trackBar73);
+            this.panel125.Enabled = false;
+            this.panel125.Location = new System.Drawing.Point(715, 3);
+            this.panel125.Name = "panel125";
+            this.panel125.Size = new System.Drawing.Size(131, 110);
+            this.panel125.TabIndex = 21;
+            // 
+            // numericUpDown73
+            // 
+            this.numericUpDown73.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown73.Name = "numericUpDown73";
+            this.numericUpDown73.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown73.TabIndex = 8;
+            this.numericUpDown73.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label302
+            // 
+            this.label302.AutoSize = true;
+            this.label302.Location = new System.Drawing.Point(1, 8);
+            this.label302.Name = "label302";
+            this.label302.Size = new System.Drawing.Size(60, 13);
+            this.label302.TabIndex = 16;
+            this.label302.Text = "Quintuples:";
+            // 
+            // label303
+            // 
+            this.label303.AutoSize = true;
+            this.label303.Location = new System.Drawing.Point(79, 88);
+            this.label303.Name = "label303";
+            this.label303.Size = new System.Drawing.Size(43, 13);
+            this.label303.TabIndex = 13;
+            this.label303.Text = "ABCDE";
+            // 
+            // label304
+            // 
+            this.label304.AutoSize = true;
+            this.label304.Location = new System.Drawing.Point(79, 7);
+            this.label304.Name = "label304";
+            this.label304.Size = new System.Drawing.Size(42, 13);
+            this.label304.TabIndex = 15;
+            this.label304.Text = "ABABA";
+            // 
+            // trackBar73
+            // 
+            this.trackBar73.Location = new System.Drawing.Point(53, 3);
+            this.trackBar73.Maximum = 100;
+            this.trackBar73.Name = "trackBar73";
+            this.trackBar73.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar73.RightToLeftLayout = true;
+            this.trackBar73.Size = new System.Drawing.Size(45, 105);
+            this.trackBar73.TabIndex = 14;
+            this.trackBar73.TickFrequency = 10;
+            // 
+            // panel126
+            // 
+            this.panel126.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel126.Controls.Add(this.numericUpDown74);
+            this.panel126.Controls.Add(this.label305);
+            this.panel126.Controls.Add(this.label306);
+            this.panel126.Controls.Add(this.label307);
+            this.panel126.Controls.Add(this.trackBar74);
+            this.panel126.Enabled = false;
+            this.panel126.Location = new System.Drawing.Point(594, 3);
+            this.panel126.Name = "panel126";
+            this.panel126.Size = new System.Drawing.Size(117, 112);
+            this.panel126.TabIndex = 20;
+            // 
+            // numericUpDown74
+            // 
+            this.numericUpDown74.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown74.Name = "numericUpDown74";
+            this.numericUpDown74.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown74.TabIndex = 8;
+            this.numericUpDown74.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label305
+            // 
+            this.label305.AutoSize = true;
+            this.label305.Location = new System.Drawing.Point(1, 8);
+            this.label305.Name = "label305";
+            this.label305.Size = new System.Drawing.Size(41, 13);
+            this.label305.TabIndex = 16;
+            this.label305.Text = "Triples:";
+            // 
+            // label306
+            // 
+            this.label306.AutoSize = true;
+            this.label306.Location = new System.Drawing.Point(62, 88);
+            this.label306.Name = "label306";
+            this.label306.Size = new System.Drawing.Size(28, 13);
+            this.label306.TabIndex = 13;
+            this.label306.Text = "ABC";
+            // 
+            // label307
+            // 
+            this.label307.AutoSize = true;
+            this.label307.Location = new System.Drawing.Point(62, 7);
+            this.label307.Name = "label307";
+            this.label307.Size = new System.Drawing.Size(28, 13);
+            this.label307.TabIndex = 15;
+            this.label307.Text = "ABA";
+            // 
+            // trackBar74
+            // 
+            this.trackBar74.Location = new System.Drawing.Point(40, 1);
+            this.trackBar74.Maximum = 100;
+            this.trackBar74.Name = "trackBar74";
+            this.trackBar74.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar74.RightToLeftLayout = true;
+            this.trackBar74.Size = new System.Drawing.Size(45, 105);
+            this.trackBar74.TabIndex = 14;
+            this.trackBar74.TickFrequency = 10;
+            // 
+            // label308
+            // 
+            this.label308.AutoSize = true;
+            this.label308.Location = new System.Drawing.Point(35, 58);
+            this.label308.Name = "label308";
+            this.label308.Size = new System.Drawing.Size(55, 13);
+            this.label308.TabIndex = 14;
+            this.label308.Text = "Every 2nd";
+            // 
+            // stepFillPS3
+            // 
+            this.stepFillPS3.Location = new System.Drawing.Point(75, 36);
+            this.stepFillPS3.Name = "stepFillPS3";
+            this.stepFillPS3.Size = new System.Drawing.Size(42, 20);
+            this.stepFillPS3.TabIndex = 5;
+            this.stepFillPS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillPS3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillPS3.ValueChanged += new System.EventHandler(this.stepFillPS3_ValueChanged);
+            // 
+            // panel127
+            // 
+            this.panel127.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel127.Controls.Add(this.panel128);
+            this.panel127.Controls.Add(this.panel129);
+            this.panel127.Controls.Add(this.onBeatPS3);
+            this.panel127.Controls.Add(this.label315);
+            this.panel127.Controls.Add(this.label316);
+            this.panel127.Controls.Add(this.onBeatTrackbarPS3);
+            this.panel127.Location = new System.Drawing.Point(129, 3);
+            this.panel127.Name = "panel127";
+            this.panel127.Size = new System.Drawing.Size(459, 110);
+            this.panel127.TabIndex = 10;
+            // 
+            // panel128
+            // 
+            this.panel128.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel128.Controls.Add(this.label309);
+            this.panel128.Controls.Add(this.label310);
+            this.panel128.Controls.Add(this.label311);
+            this.panel128.Controls.Add(this.quintuplesTrackbarPS3);
+            this.panel128.Controls.Add(this.quintuplesPS3);
+            this.panel128.Location = new System.Drawing.Point(141, 55);
+            this.panel128.Name = "panel128";
+            this.panel128.Size = new System.Drawing.Size(310, 50);
+            this.panel128.TabIndex = 16;
+            // 
+            // label309
+            // 
+            this.label309.AutoSize = true;
+            this.label309.Location = new System.Drawing.Point(9, 8);
+            this.label309.Name = "label309";
+            this.label309.Size = new System.Drawing.Size(53, 13);
+            this.label309.TabIndex = 16;
+            this.label309.Text = "Half-beat:";
+            // 
+            // label310
+            // 
+            this.label310.AutoSize = true;
+            this.label310.Location = new System.Drawing.Point(214, 28);
+            this.label310.Name = "label310";
+            this.label310.Size = new System.Drawing.Size(57, 13);
+            this.label310.TabIndex = 13;
+            this.label310.Text = "Quintuples";
+            // 
+            // label311
+            // 
+            this.label311.AutoSize = true;
+            this.label311.Location = new System.Drawing.Point(69, 28);
+            this.label311.Name = "label311";
+            this.label311.Size = new System.Drawing.Size(38, 13);
+            this.label311.TabIndex = 15;
+            this.label311.Text = "Triples";
+            // 
+            // quintuplesTrackbarPS3
+            // 
+            this.quintuplesTrackbarPS3.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarPS3.Maximum = 100;
+            this.quintuplesTrackbarPS3.Name = "quintuplesTrackbarPS3";
+            this.quintuplesTrackbarPS3.RightToLeftLayout = true;
+            this.quintuplesTrackbarPS3.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarPS3.TabIndex = 14;
+            this.quintuplesTrackbarPS3.TickFrequency = 10;
+            this.quintuplesTrackbarPS3.Value = 50;
+            this.quintuplesTrackbarPS3.ValueChanged += new System.EventHandler(this.quintuplesTrackbarPS3_ValueChanged);
+            // 
+            // quintuplesPS3
+            // 
+            this.quintuplesPS3.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesPS3.Name = "quintuplesPS3";
+            this.quintuplesPS3.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesPS3.TabIndex = 8;
+            this.quintuplesPS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesPS3.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.quintuplesPS3.ValueChanged += new System.EventHandler(this.quintuplesPS3_ValueChanged);
+            // 
+            // panel129
+            // 
+            this.panel129.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel129.Controls.Add(this.label312);
+            this.panel129.Controls.Add(this.label313);
+            this.panel129.Controls.Add(this.label314);
+            this.panel129.Controls.Add(this.jumpsTrackbarPS3);
+            this.panel129.Controls.Add(this.jumpsPS3);
+            this.panel129.Location = new System.Drawing.Point(141, 2);
+            this.panel129.Name = "panel129";
+            this.panel129.Size = new System.Drawing.Size(310, 50);
+            this.panel129.TabIndex = 12;
+            // 
+            // label312
+            // 
+            this.label312.AutoSize = true;
+            this.label312.Location = new System.Drawing.Point(8, 7);
+            this.label312.Name = "label312";
+            this.label312.Size = new System.Drawing.Size(48, 13);
+            this.label312.TabIndex = 17;
+            this.label312.Text = "On beat:";
+            // 
+            // label313
+            // 
+            this.label313.AutoSize = true;
+            this.label313.Location = new System.Drawing.Point(214, 28);
+            this.label313.Name = "label313";
+            this.label313.Size = new System.Drawing.Size(37, 13);
+            this.label313.TabIndex = 13;
+            this.label313.Text = "Jumps";
+            // 
+            // label314
+            // 
+            this.label314.AutoSize = true;
+            this.label314.Location = new System.Drawing.Point(69, 28);
+            this.label314.Name = "label314";
+            this.label314.Size = new System.Drawing.Size(57, 13);
+            this.label314.TabIndex = 15;
+            this.label314.Text = "Single foot";
+            // 
+            // jumpsTrackbarPS3
+            // 
+            this.jumpsTrackbarPS3.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarPS3.Maximum = 100;
+            this.jumpsTrackbarPS3.Name = "jumpsTrackbarPS3";
+            this.jumpsTrackbarPS3.RightToLeftLayout = true;
+            this.jumpsTrackbarPS3.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarPS3.TabIndex = 14;
+            this.jumpsTrackbarPS3.TickFrequency = 10;
+            this.jumpsTrackbarPS3.Value = 20;
+            this.jumpsTrackbarPS3.ValueChanged += new System.EventHandler(this.jumpsTrackbarPS3_ValueChanged);
+            // 
+            // jumpsPS3
+            // 
+            this.jumpsPS3.Location = new System.Drawing.Point(257, 6);
+            this.jumpsPS3.Name = "jumpsPS3";
+            this.jumpsPS3.Size = new System.Drawing.Size(42, 20);
+            this.jumpsPS3.TabIndex = 8;
+            this.jumpsPS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsPS3.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.jumpsPS3.ValueChanged += new System.EventHandler(this.jumpsPS3_ValueChanged);
+            // 
+            // onBeatPS3
+            // 
+            this.onBeatPS3.Location = new System.Drawing.Point(62, 44);
+            this.onBeatPS3.Name = "onBeatPS3";
+            this.onBeatPS3.Size = new System.Drawing.Size(42, 20);
+            this.onBeatPS3.TabIndex = 11;
+            this.onBeatPS3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatPS3.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.onBeatPS3.ValueChanged += new System.EventHandler(this.onBeatPS3_ValueChanged);
+            // 
+            // label315
+            // 
+            this.label315.AutoSize = true;
+            this.label315.Location = new System.Drawing.Point(6, 87);
+            this.label315.Name = "label315";
+            this.label315.Size = new System.Drawing.Size(98, 13);
+            this.label315.TabIndex = 4;
+            this.label315.Text = "On beat + half beat";
+            // 
+            // label316
+            // 
+            this.label316.AutoSize = true;
+            this.label316.Location = new System.Drawing.Point(37, 11);
+            this.label316.Name = "label316";
+            this.label316.Size = new System.Drawing.Size(67, 13);
+            this.label316.TabIndex = 3;
+            this.label316.Text = "On beat only";
+            // 
+            // onBeatTrackbarPS3
+            // 
+            this.onBeatTrackbarPS3.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarPS3.Maximum = 100;
+            this.onBeatTrackbarPS3.Name = "onBeatTrackbarPS3";
+            this.onBeatTrackbarPS3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarPS3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarPS3.RightToLeftLayout = true;
+            this.onBeatTrackbarPS3.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarPS3.TabIndex = 2;
+            this.onBeatTrackbarPS3.TickFrequency = 10;
+            this.onBeatTrackbarPS3.Value = 100;
+            this.onBeatTrackbarPS3.ValueChanged += new System.EventHandler(this.onBeatTrackbarPS3_ValueChanged);
+            // 
+            // panel130
+            // 
+            this.panel130.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel130.Controls.Add(this.checkBox80);
+            this.panel130.Controls.Add(this.checkBox81);
+            this.panel130.Controls.Add(this.checkBox82);
+            this.panel130.Controls.Add(this.checkBox83);
+            this.panel130.Controls.Add(this.checkBox84);
+            this.panel130.Controls.Add(this.checkBox85);
+            this.panel130.Controls.Add(this.checkBox86);
+            this.panel130.Controls.Add(this.checkBox87);
+            this.panel130.Controls.Add(this.checkBox88);
+            this.panel130.Controls.Add(this.checkBox89);
+            this.panel130.Location = new System.Drawing.Point(849, 3);
+            this.panel130.Name = "panel130";
+            this.panel130.Size = new System.Drawing.Size(157, 110);
+            this.panel130.TabIndex = 9;
+            // 
+            // checkBox80
+            // 
+            this.checkBox80.AutoSize = true;
+            this.checkBox80.Location = new System.Drawing.Point(2, -165);
+            this.checkBox80.Name = "checkBox80";
+            this.checkBox80.Size = new System.Drawing.Size(94, 17);
+            this.checkBox80.TabIndex = 7;
+            this.checkBox80.Text = "Full 8th stream";
+            this.checkBox80.UseVisualStyleBackColor = true;
+            // 
+            // checkBox81
+            // 
+            this.checkBox81.AutoSize = true;
+            this.checkBox81.Enabled = false;
+            this.checkBox81.Location = new System.Drawing.Point(5, 85);
+            this.checkBox81.Name = "checkBox81";
+            this.checkBox81.Size = new System.Drawing.Size(94, 17);
+            this.checkBox81.TabIndex = 9;
+            this.checkBox81.Text = "Full 8th stream";
+            this.checkBox81.UseVisualStyleBackColor = true;
+            // 
+            // checkBox82
+            // 
+            this.checkBox82.AutoSize = true;
+            this.checkBox82.Location = new System.Drawing.Point(2, -188);
+            this.checkBox82.Name = "checkBox82";
+            this.checkBox82.Size = new System.Drawing.Size(150, 17);
+            this.checkBox82.TabIndex = 6;
+            this.checkBox82.Text = "Quintuples on either 1 or 2";
+            this.checkBox82.UseVisualStyleBackColor = true;
+            // 
+            // checkBox83
+            // 
+            this.checkBox83.AutoSize = true;
+            this.checkBox83.Checked = true;
+            this.checkBox83.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox83.Location = new System.Drawing.Point(5, 65);
+            this.checkBox83.Name = "checkBox83";
+            this.checkBox83.Size = new System.Drawing.Size(150, 17);
+            this.checkBox83.TabIndex = 6;
+            this.checkBox83.Text = "Quintuples on either 1 or 2";
+            this.checkBox83.UseVisualStyleBackColor = true;
+            // 
+            // checkBox84
+            // 
+            this.checkBox84.AutoSize = true;
+            this.checkBox84.Location = new System.Drawing.Point(2, -207);
+            this.checkBox84.Name = "checkBox84";
+            this.checkBox84.Size = new System.Drawing.Size(135, 17);
+            this.checkBox84.TabIndex = 5;
+            this.checkBox84.Text = "Triples on both 1 and 3";
+            this.checkBox84.UseVisualStyleBackColor = true;
+            // 
+            // checkBox85
+            // 
+            this.checkBox85.AutoSize = true;
+            this.checkBox85.Location = new System.Drawing.Point(5, 45);
+            this.checkBox85.Name = "checkBox85";
+            this.checkBox85.Size = new System.Drawing.Size(135, 17);
+            this.checkBox85.TabIndex = 5;
+            this.checkBox85.Text = "Triples on both 1 and 3";
+            this.checkBox85.UseVisualStyleBackColor = true;
+            // 
+            // checkBox86
+            // 
+            this.checkBox86.AutoSize = true;
+            this.checkBox86.Checked = true;
+            this.checkBox86.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox86.Location = new System.Drawing.Point(2, -223);
+            this.checkBox86.Name = "checkBox86";
+            this.checkBox86.Size = new System.Drawing.Size(86, 17);
+            this.checkBox86.TabIndex = 4;
+            this.checkBox86.Text = "Arrow repeat";
+            this.checkBox86.UseVisualStyleBackColor = true;
+            // 
+            // checkBox87
+            // 
+            this.checkBox87.AutoSize = true;
+            this.checkBox87.Checked = true;
+            this.checkBox87.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox87.Location = new System.Drawing.Point(5, 25);
+            this.checkBox87.Name = "checkBox87";
+            this.checkBox87.Size = new System.Drawing.Size(86, 17);
+            this.checkBox87.TabIndex = 4;
+            this.checkBox87.Text = "Arrow repeat";
+            this.checkBox87.UseVisualStyleBackColor = true;
+            // 
+            // checkBox88
+            // 
+            this.checkBox88.AutoSize = true;
+            this.checkBox88.Checked = true;
+            this.checkBox88.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox88.Location = new System.Drawing.Point(2, -244);
+            this.checkBox88.Name = "checkBox88";
+            this.checkBox88.Size = new System.Drawing.Size(100, 17);
+            this.checkBox88.TabIndex = 3;
+            this.checkBox88.Text = "Alternating feet ";
+            this.checkBox88.UseVisualStyleBackColor = true;
+            // 
+            // checkBox89
+            // 
+            this.checkBox89.AutoSize = true;
+            this.checkBox89.Checked = true;
+            this.checkBox89.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox89.Location = new System.Drawing.Point(5, 5);
+            this.checkBox89.Name = "checkBox89";
+            this.checkBox89.Size = new System.Drawing.Size(100, 17);
+            this.checkBox89.TabIndex = 3;
+            this.checkBox89.Text = "Alternating feet ";
+            this.checkBox89.UseVisualStyleBackColor = true;
+            // 
+            // label317
+            // 
+            this.label317.AutoSize = true;
+            this.label317.Location = new System.Drawing.Point(35, 95);
+            this.label317.Name = "label317";
+            this.label317.Size = new System.Drawing.Size(50, 13);
+            this.label317.TabIndex = 8;
+            this.label317.Text = "No arrow";
+            // 
+            // label318
+            // 
+            this.label318.AutoSize = true;
+            this.label318.Location = new System.Drawing.Point(35, 25);
+            this.label318.Name = "label318";
+            this.label318.Size = new System.Drawing.Size(34, 13);
+            this.label318.TabIndex = 7;
+            this.label318.Text = "Arrow";
+            // 
+            // stepfill_trackbarPS3
+            // 
+            this.stepfill_trackbarPS3.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarPS3.Maximum = 100;
+            this.stepfill_trackbarPS3.Name = "stepfill_trackbarPS3";
+            this.stepfill_trackbarPS3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarPS3.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarPS3.TabIndex = 1;
+            this.stepfill_trackbarPS3.TickFrequency = 10;
+            this.stepfill_trackbarPS3.Value = 100;
+            this.stepfill_trackbarPS3.ValueChanged += new System.EventHandler(this.stepfill_trackbarPS3_ValueChanged);
+            // 
+            // label319
+            // 
+            this.label319.AutoSize = true;
+            this.label319.BackColor = System.Drawing.Color.Khaki;
+            this.label319.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label319.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label319.Location = new System.Drawing.Point(2, 2);
+            this.label319.Name = "label319";
+            this.label319.Size = new System.Drawing.Size(59, 19);
+            this.label319.TabIndex = 0;
+            this.label319.Text = "Medium";
+            // 
+            // panel131
+            // 
+            this.panel131.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel131.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel131.Controls.Add(this.panel132);
+            this.panel131.Controls.Add(this.panel133);
+            this.panel131.Controls.Add(this.label326);
+            this.panel131.Controls.Add(this.stepFillPS4);
+            this.panel131.Controls.Add(this.panel134);
+            this.panel131.Controls.Add(this.panel137);
+            this.panel131.Controls.Add(this.label335);
+            this.panel131.Controls.Add(this.label336);
+            this.panel131.Controls.Add(this.stepfill_trackbarPS4);
+            this.panel131.Controls.Add(this.label337);
+            this.panel131.Location = new System.Drawing.Point(3, 381);
+            this.panel131.Name = "panel131";
+            this.panel131.Size = new System.Drawing.Size(1020, 120);
+            this.panel131.TabIndex = 16;
+            // 
+            // panel132
+            // 
+            this.panel132.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel132.Controls.Add(this.numericUpDown79);
+            this.panel132.Controls.Add(this.label320);
+            this.panel132.Controls.Add(this.label321);
+            this.panel132.Controls.Add(this.label322);
+            this.panel132.Controls.Add(this.trackBar79);
+            this.panel132.Enabled = false;
+            this.panel132.Location = new System.Drawing.Point(715, 3);
+            this.panel132.Name = "panel132";
+            this.panel132.Size = new System.Drawing.Size(131, 110);
+            this.panel132.TabIndex = 22;
+            // 
+            // numericUpDown79
+            // 
+            this.numericUpDown79.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown79.Name = "numericUpDown79";
+            this.numericUpDown79.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown79.TabIndex = 8;
+            this.numericUpDown79.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label320
+            // 
+            this.label320.AutoSize = true;
+            this.label320.Location = new System.Drawing.Point(1, 8);
+            this.label320.Name = "label320";
+            this.label320.Size = new System.Drawing.Size(60, 13);
+            this.label320.TabIndex = 16;
+            this.label320.Text = "Quintuples:";
+            // 
+            // label321
+            // 
+            this.label321.AutoSize = true;
+            this.label321.Location = new System.Drawing.Point(79, 88);
+            this.label321.Name = "label321";
+            this.label321.Size = new System.Drawing.Size(43, 13);
+            this.label321.TabIndex = 13;
+            this.label321.Text = "ABCDE";
+            // 
+            // label322
+            // 
+            this.label322.AutoSize = true;
+            this.label322.Location = new System.Drawing.Point(79, 7);
+            this.label322.Name = "label322";
+            this.label322.Size = new System.Drawing.Size(42, 13);
+            this.label322.TabIndex = 15;
+            this.label322.Text = "ABABA";
+            // 
+            // trackBar79
+            // 
+            this.trackBar79.Location = new System.Drawing.Point(53, 3);
+            this.trackBar79.Maximum = 100;
+            this.trackBar79.Name = "trackBar79";
+            this.trackBar79.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar79.RightToLeftLayout = true;
+            this.trackBar79.Size = new System.Drawing.Size(45, 105);
+            this.trackBar79.TabIndex = 14;
+            this.trackBar79.TickFrequency = 10;
+            // 
+            // panel133
+            // 
+            this.panel133.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel133.Controls.Add(this.numericUpDown80);
+            this.panel133.Controls.Add(this.label323);
+            this.panel133.Controls.Add(this.label324);
+            this.panel133.Controls.Add(this.label325);
+            this.panel133.Controls.Add(this.trackBar80);
+            this.panel133.Enabled = false;
+            this.panel133.Location = new System.Drawing.Point(594, 3);
+            this.panel133.Name = "panel133";
+            this.panel133.Size = new System.Drawing.Size(117, 112);
+            this.panel133.TabIndex = 21;
+            // 
+            // numericUpDown80
+            // 
+            this.numericUpDown80.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown80.Name = "numericUpDown80";
+            this.numericUpDown80.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown80.TabIndex = 8;
+            this.numericUpDown80.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label323
+            // 
+            this.label323.AutoSize = true;
+            this.label323.Location = new System.Drawing.Point(1, 8);
+            this.label323.Name = "label323";
+            this.label323.Size = new System.Drawing.Size(41, 13);
+            this.label323.TabIndex = 16;
+            this.label323.Text = "Triples:";
+            // 
+            // label324
+            // 
+            this.label324.AutoSize = true;
+            this.label324.Location = new System.Drawing.Point(62, 88);
+            this.label324.Name = "label324";
+            this.label324.Size = new System.Drawing.Size(28, 13);
+            this.label324.TabIndex = 13;
+            this.label324.Text = "ABC";
+            // 
+            // label325
+            // 
+            this.label325.AutoSize = true;
+            this.label325.Location = new System.Drawing.Point(62, 7);
+            this.label325.Name = "label325";
+            this.label325.Size = new System.Drawing.Size(28, 13);
+            this.label325.TabIndex = 15;
+            this.label325.Text = "ABA";
+            // 
+            // trackBar80
+            // 
+            this.trackBar80.Location = new System.Drawing.Point(40, 1);
+            this.trackBar80.Maximum = 100;
+            this.trackBar80.Name = "trackBar80";
+            this.trackBar80.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar80.RightToLeftLayout = true;
+            this.trackBar80.Size = new System.Drawing.Size(45, 105);
+            this.trackBar80.TabIndex = 14;
+            this.trackBar80.TickFrequency = 10;
+            // 
+            // label326
+            // 
+            this.label326.AutoSize = true;
+            this.label326.Location = new System.Drawing.Point(35, 58);
+            this.label326.Name = "label326";
+            this.label326.Size = new System.Drawing.Size(55, 13);
+            this.label326.TabIndex = 13;
+            this.label326.Text = "Every 2nd";
+            // 
+            // stepFillPS4
+            // 
+            this.stepFillPS4.Location = new System.Drawing.Point(75, 36);
+            this.stepFillPS4.Name = "stepFillPS4";
+            this.stepFillPS4.Size = new System.Drawing.Size(42, 20);
+            this.stepFillPS4.TabIndex = 5;
+            this.stepFillPS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillPS4.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillPS4.ValueChanged += new System.EventHandler(this.stepFillPS4_ValueChanged);
+            // 
+            // panel134
+            // 
+            this.panel134.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel134.Controls.Add(this.panel135);
+            this.panel134.Controls.Add(this.panel136);
+            this.panel134.Controls.Add(this.onBeatPS4);
+            this.panel134.Controls.Add(this.label333);
+            this.panel134.Controls.Add(this.label334);
+            this.panel134.Controls.Add(this.onBeatTrackbarPS4);
+            this.panel134.Location = new System.Drawing.Point(129, 3);
+            this.panel134.Name = "panel134";
+            this.panel134.Size = new System.Drawing.Size(459, 110);
+            this.panel134.TabIndex = 10;
+            // 
+            // panel135
+            // 
+            this.panel135.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel135.Controls.Add(this.label327);
+            this.panel135.Controls.Add(this.label328);
+            this.panel135.Controls.Add(this.label329);
+            this.panel135.Controls.Add(this.quintuplesTrackbarPS4);
+            this.panel135.Controls.Add(this.quintuplesPS4);
+            this.panel135.Location = new System.Drawing.Point(141, 55);
+            this.panel135.Name = "panel135";
+            this.panel135.Size = new System.Drawing.Size(310, 50);
+            this.panel135.TabIndex = 16;
+            // 
+            // label327
+            // 
+            this.label327.AutoSize = true;
+            this.label327.Location = new System.Drawing.Point(9, 8);
+            this.label327.Name = "label327";
+            this.label327.Size = new System.Drawing.Size(53, 13);
+            this.label327.TabIndex = 16;
+            this.label327.Text = "Half-beat:";
+            // 
+            // label328
+            // 
+            this.label328.AutoSize = true;
+            this.label328.Location = new System.Drawing.Point(214, 28);
+            this.label328.Name = "label328";
+            this.label328.Size = new System.Drawing.Size(57, 13);
+            this.label328.TabIndex = 13;
+            this.label328.Text = "Quintuples";
+            // 
+            // label329
+            // 
+            this.label329.AutoSize = true;
+            this.label329.Location = new System.Drawing.Point(69, 28);
+            this.label329.Name = "label329";
+            this.label329.Size = new System.Drawing.Size(38, 13);
+            this.label329.TabIndex = 15;
+            this.label329.Text = "Triples";
+            // 
+            // quintuplesTrackbarPS4
+            // 
+            this.quintuplesTrackbarPS4.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarPS4.Maximum = 100;
+            this.quintuplesTrackbarPS4.Name = "quintuplesTrackbarPS4";
+            this.quintuplesTrackbarPS4.RightToLeftLayout = true;
+            this.quintuplesTrackbarPS4.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarPS4.TabIndex = 14;
+            this.quintuplesTrackbarPS4.TickFrequency = 10;
+            this.quintuplesTrackbarPS4.ValueChanged += new System.EventHandler(this.quintuplesTrackbarPS4_ValueChanged);
+            // 
+            // quintuplesPS4
+            // 
+            this.quintuplesPS4.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesPS4.Name = "quintuplesPS4";
+            this.quintuplesPS4.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesPS4.TabIndex = 8;
+            this.quintuplesPS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesPS4.ValueChanged += new System.EventHandler(this.quintuplesPS4_ValueChanged);
+            // 
+            // panel136
+            // 
+            this.panel136.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel136.Controls.Add(this.label330);
+            this.panel136.Controls.Add(this.label331);
+            this.panel136.Controls.Add(this.label332);
+            this.panel136.Controls.Add(this.jumpsTrackbarPS4);
+            this.panel136.Controls.Add(this.jumpsPS4);
+            this.panel136.Location = new System.Drawing.Point(141, 2);
+            this.panel136.Name = "panel136";
+            this.panel136.Size = new System.Drawing.Size(310, 50);
+            this.panel136.TabIndex = 12;
+            // 
+            // label330
+            // 
+            this.label330.AutoSize = true;
+            this.label330.Location = new System.Drawing.Point(8, 7);
+            this.label330.Name = "label330";
+            this.label330.Size = new System.Drawing.Size(48, 13);
+            this.label330.TabIndex = 17;
+            this.label330.Text = "On beat:";
+            // 
+            // label331
+            // 
+            this.label331.AutoSize = true;
+            this.label331.Location = new System.Drawing.Point(214, 28);
+            this.label331.Name = "label331";
+            this.label331.Size = new System.Drawing.Size(37, 13);
+            this.label331.TabIndex = 13;
+            this.label331.Text = "Jumps";
+            // 
+            // label332
+            // 
+            this.label332.AutoSize = true;
+            this.label332.Location = new System.Drawing.Point(69, 28);
+            this.label332.Name = "label332";
+            this.label332.Size = new System.Drawing.Size(57, 13);
+            this.label332.TabIndex = 15;
+            this.label332.Text = "Single foot";
+            // 
+            // jumpsTrackbarPS4
+            // 
+            this.jumpsTrackbarPS4.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarPS4.Maximum = 100;
+            this.jumpsTrackbarPS4.Name = "jumpsTrackbarPS4";
+            this.jumpsTrackbarPS4.RightToLeftLayout = true;
+            this.jumpsTrackbarPS4.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarPS4.TabIndex = 14;
+            this.jumpsTrackbarPS4.TickFrequency = 10;
+            this.jumpsTrackbarPS4.Value = 25;
+            this.jumpsTrackbarPS4.ValueChanged += new System.EventHandler(this.jumpsTrackbarPS4_ValueChanged);
+            // 
+            // jumpsPS4
+            // 
+            this.jumpsPS4.Location = new System.Drawing.Point(257, 6);
+            this.jumpsPS4.Name = "jumpsPS4";
+            this.jumpsPS4.Size = new System.Drawing.Size(42, 20);
+            this.jumpsPS4.TabIndex = 8;
+            this.jumpsPS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsPS4.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.jumpsPS4.ValueChanged += new System.EventHandler(this.jumpsPS4_ValueChanged);
+            // 
+            // onBeatPS4
+            // 
+            this.onBeatPS4.Location = new System.Drawing.Point(62, 44);
+            this.onBeatPS4.Name = "onBeatPS4";
+            this.onBeatPS4.Size = new System.Drawing.Size(42, 20);
+            this.onBeatPS4.TabIndex = 11;
+            this.onBeatPS4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatPS4.Value = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
+            this.onBeatPS4.ValueChanged += new System.EventHandler(this.onBeatPS4_ValueChanged);
+            // 
+            // label333
+            // 
+            this.label333.AutoSize = true;
+            this.label333.Location = new System.Drawing.Point(6, 87);
+            this.label333.Name = "label333";
+            this.label333.Size = new System.Drawing.Size(98, 13);
+            this.label333.TabIndex = 4;
+            this.label333.Text = "On beat + half beat";
+            // 
+            // label334
+            // 
+            this.label334.AutoSize = true;
+            this.label334.Location = new System.Drawing.Point(37, 11);
+            this.label334.Name = "label334";
+            this.label334.Size = new System.Drawing.Size(67, 13);
+            this.label334.TabIndex = 3;
+            this.label334.Text = "On beat only";
+            // 
+            // onBeatTrackbarPS4
+            // 
+            this.onBeatTrackbarPS4.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarPS4.Maximum = 100;
+            this.onBeatTrackbarPS4.Name = "onBeatTrackbarPS4";
+            this.onBeatTrackbarPS4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarPS4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarPS4.RightToLeftLayout = true;
+            this.onBeatTrackbarPS4.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarPS4.TabIndex = 2;
+            this.onBeatTrackbarPS4.TickFrequency = 10;
+            this.onBeatTrackbarPS4.Value = 65;
+            this.onBeatTrackbarPS4.ValueChanged += new System.EventHandler(this.onBeatTrackbarPS4_ValueChanged);
+            // 
+            // panel137
+            // 
+            this.panel137.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel137.Controls.Add(this.checkBox90);
+            this.panel137.Controls.Add(this.checkBox91);
+            this.panel137.Controls.Add(this.checkBox92);
+            this.panel137.Controls.Add(this.checkBox93);
+            this.panel137.Controls.Add(this.checkBox94);
+            this.panel137.Location = new System.Drawing.Point(849, 3);
+            this.panel137.Name = "panel137";
+            this.panel137.Size = new System.Drawing.Size(157, 110);
+            this.panel137.TabIndex = 9;
+            // 
+            // checkBox90
+            // 
+            this.checkBox90.AutoSize = true;
+            this.checkBox90.Enabled = false;
+            this.checkBox90.Location = new System.Drawing.Point(5, 85);
+            this.checkBox90.Name = "checkBox90";
+            this.checkBox90.Size = new System.Drawing.Size(94, 17);
+            this.checkBox90.TabIndex = 10;
+            this.checkBox90.Text = "Full 8th stream";
+            this.checkBox90.UseVisualStyleBackColor = true;
+            // 
+            // checkBox91
+            // 
+            this.checkBox91.AutoSize = true;
+            this.checkBox91.Location = new System.Drawing.Point(5, 65);
+            this.checkBox91.Name = "checkBox91";
+            this.checkBox91.Size = new System.Drawing.Size(150, 17);
+            this.checkBox91.TabIndex = 6;
+            this.checkBox91.Text = "Quintuples on either 1 or 2";
+            this.checkBox91.UseVisualStyleBackColor = true;
+            // 
+            // checkBox92
+            // 
+            this.checkBox92.AutoSize = true;
+            this.checkBox92.Checked = true;
+            this.checkBox92.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox92.Location = new System.Drawing.Point(5, 45);
+            this.checkBox92.Name = "checkBox92";
+            this.checkBox92.Size = new System.Drawing.Size(135, 17);
+            this.checkBox92.TabIndex = 5;
+            this.checkBox92.Text = "Triples on both 1 and 3";
+            this.checkBox92.UseVisualStyleBackColor = true;
+            // 
+            // checkBox93
+            // 
+            this.checkBox93.AutoSize = true;
+            this.checkBox93.Checked = true;
+            this.checkBox93.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox93.Location = new System.Drawing.Point(5, 25);
+            this.checkBox93.Name = "checkBox93";
+            this.checkBox93.Size = new System.Drawing.Size(86, 17);
+            this.checkBox93.TabIndex = 4;
+            this.checkBox93.Text = "Arrow repeat";
+            this.checkBox93.UseVisualStyleBackColor = true;
+            // 
+            // checkBox94
+            // 
+            this.checkBox94.AutoSize = true;
+            this.checkBox94.Checked = true;
+            this.checkBox94.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox94.Location = new System.Drawing.Point(5, 5);
+            this.checkBox94.Name = "checkBox94";
+            this.checkBox94.Size = new System.Drawing.Size(100, 17);
+            this.checkBox94.TabIndex = 3;
+            this.checkBox94.Text = "Alternating feet ";
+            this.checkBox94.UseVisualStyleBackColor = true;
+            // 
+            // label335
+            // 
+            this.label335.AutoSize = true;
+            this.label335.Location = new System.Drawing.Point(35, 95);
+            this.label335.Name = "label335";
+            this.label335.Size = new System.Drawing.Size(50, 13);
+            this.label335.TabIndex = 8;
+            this.label335.Text = "No arrow";
+            // 
+            // label336
+            // 
+            this.label336.AutoSize = true;
+            this.label336.Location = new System.Drawing.Point(35, 25);
+            this.label336.Name = "label336";
+            this.label336.Size = new System.Drawing.Size(34, 13);
+            this.label336.TabIndex = 7;
+            this.label336.Text = "Arrow";
+            // 
+            // stepfill_trackbarPS4
+            // 
+            this.stepfill_trackbarPS4.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarPS4.Maximum = 100;
+            this.stepfill_trackbarPS4.Name = "stepfill_trackbarPS4";
+            this.stepfill_trackbarPS4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarPS4.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarPS4.TabIndex = 1;
+            this.stepfill_trackbarPS4.TickFrequency = 10;
+            this.stepfill_trackbarPS4.Value = 100;
+            this.stepfill_trackbarPS4.ValueChanged += new System.EventHandler(this.stepfill_trackbarPS4_ValueChanged);
+            // 
+            // label337
+            // 
+            this.label337.AutoSize = true;
+            this.label337.BackColor = System.Drawing.Color.OrangeRed;
+            this.label337.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label337.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label337.Location = new System.Drawing.Point(2, 2);
+            this.label337.Name = "label337";
+            this.label337.Size = new System.Drawing.Size(41, 19);
+            this.label337.TabIndex = 0;
+            this.label337.Text = "Hard";
+            // 
+            // panel138
+            // 
+            this.panel138.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel138.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel138.Controls.Add(this.panel139);
+            this.panel138.Controls.Add(this.panel140);
+            this.panel138.Controls.Add(this.label344);
+            this.panel138.Controls.Add(this.stepFillPS5);
+            this.panel138.Controls.Add(this.panel141);
+            this.panel138.Controls.Add(this.panel144);
+            this.panel138.Controls.Add(this.label353);
+            this.panel138.Controls.Add(this.label354);
+            this.panel138.Controls.Add(this.stepfill_trackbarPS5);
+            this.panel138.Controls.Add(this.label355);
+            this.panel138.Location = new System.Drawing.Point(3, 507);
+            this.panel138.Name = "panel138";
+            this.panel138.Size = new System.Drawing.Size(1020, 120);
+            this.panel138.TabIndex = 14;
+            // 
+            // panel139
+            // 
+            this.panel139.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel139.Controls.Add(this.numericUpDown85);
+            this.panel139.Controls.Add(this.label338);
+            this.panel139.Controls.Add(this.label339);
+            this.panel139.Controls.Add(this.label340);
+            this.panel139.Controls.Add(this.trackBar85);
+            this.panel139.Enabled = false;
+            this.panel139.Location = new System.Drawing.Point(715, 3);
+            this.panel139.Name = "panel139";
+            this.panel139.Size = new System.Drawing.Size(131, 110);
+            this.panel139.TabIndex = 23;
+            // 
+            // numericUpDown85
+            // 
+            this.numericUpDown85.Location = new System.Drawing.Point(82, 42);
+            this.numericUpDown85.Name = "numericUpDown85";
+            this.numericUpDown85.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown85.TabIndex = 8;
+            this.numericUpDown85.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label338
+            // 
+            this.label338.AutoSize = true;
+            this.label338.Location = new System.Drawing.Point(1, 8);
+            this.label338.Name = "label338";
+            this.label338.Size = new System.Drawing.Size(60, 13);
+            this.label338.TabIndex = 16;
+            this.label338.Text = "Quintuples:";
+            // 
+            // label339
+            // 
+            this.label339.AutoSize = true;
+            this.label339.Location = new System.Drawing.Point(79, 88);
+            this.label339.Name = "label339";
+            this.label339.Size = new System.Drawing.Size(43, 13);
+            this.label339.TabIndex = 13;
+            this.label339.Text = "ABCDE";
+            // 
+            // label340
+            // 
+            this.label340.AutoSize = true;
+            this.label340.Location = new System.Drawing.Point(79, 7);
+            this.label340.Name = "label340";
+            this.label340.Size = new System.Drawing.Size(42, 13);
+            this.label340.TabIndex = 15;
+            this.label340.Text = "ABABA";
+            // 
+            // trackBar85
+            // 
+            this.trackBar85.Location = new System.Drawing.Point(53, 3);
+            this.trackBar85.Maximum = 100;
+            this.trackBar85.Name = "trackBar85";
+            this.trackBar85.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar85.RightToLeftLayout = true;
+            this.trackBar85.Size = new System.Drawing.Size(45, 105);
+            this.trackBar85.TabIndex = 14;
+            this.trackBar85.TickFrequency = 10;
+            // 
+            // panel140
+            // 
+            this.panel140.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel140.Controls.Add(this.numericUpDown86);
+            this.panel140.Controls.Add(this.label341);
+            this.panel140.Controls.Add(this.label342);
+            this.panel140.Controls.Add(this.label343);
+            this.panel140.Controls.Add(this.trackBar86);
+            this.panel140.Enabled = false;
+            this.panel140.Location = new System.Drawing.Point(594, 3);
+            this.panel140.Name = "panel140";
+            this.panel140.Size = new System.Drawing.Size(117, 110);
+            this.panel140.TabIndex = 22;
+            // 
+            // numericUpDown86
+            // 
+            this.numericUpDown86.Location = new System.Drawing.Point(65, 42);
+            this.numericUpDown86.Name = "numericUpDown86";
+            this.numericUpDown86.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDown86.TabIndex = 8;
+            this.numericUpDown86.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label341
+            // 
+            this.label341.AutoSize = true;
+            this.label341.Location = new System.Drawing.Point(1, 8);
+            this.label341.Name = "label341";
+            this.label341.Size = new System.Drawing.Size(41, 13);
+            this.label341.TabIndex = 16;
+            this.label341.Text = "Triples:";
+            // 
+            // label342
+            // 
+            this.label342.AutoSize = true;
+            this.label342.Location = new System.Drawing.Point(62, 88);
+            this.label342.Name = "label342";
+            this.label342.Size = new System.Drawing.Size(28, 13);
+            this.label342.TabIndex = 13;
+            this.label342.Text = "ABC";
+            // 
+            // label343
+            // 
+            this.label343.AutoSize = true;
+            this.label343.Location = new System.Drawing.Point(62, 7);
+            this.label343.Name = "label343";
+            this.label343.Size = new System.Drawing.Size(28, 13);
+            this.label343.TabIndex = 15;
+            this.label343.Text = "ABA";
+            // 
+            // trackBar86
+            // 
+            this.trackBar86.Location = new System.Drawing.Point(40, 1);
+            this.trackBar86.Maximum = 100;
+            this.trackBar86.Name = "trackBar86";
+            this.trackBar86.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar86.RightToLeftLayout = true;
+            this.trackBar86.Size = new System.Drawing.Size(45, 105);
+            this.trackBar86.TabIndex = 14;
+            this.trackBar86.TickFrequency = 10;
+            // 
+            // label344
+            // 
+            this.label344.AutoSize = true;
+            this.label344.Location = new System.Drawing.Point(35, 58);
+            this.label344.Name = "label344";
+            this.label344.Size = new System.Drawing.Size(55, 13);
+            this.label344.TabIndex = 15;
+            this.label344.Text = "Every 2nd";
+            // 
+            // stepFillPS5
+            // 
+            this.stepFillPS5.Location = new System.Drawing.Point(75, 36);
+            this.stepFillPS5.Name = "stepFillPS5";
+            this.stepFillPS5.Size = new System.Drawing.Size(42, 20);
+            this.stepFillPS5.TabIndex = 5;
+            this.stepFillPS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.stepFillPS5.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.stepFillPS5.ValueChanged += new System.EventHandler(this.stepFillPS5_ValueChanged);
+            // 
+            // panel141
+            // 
+            this.panel141.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel141.Controls.Add(this.panel142);
+            this.panel141.Controls.Add(this.panel143);
+            this.panel141.Controls.Add(this.onBeatPS5);
+            this.panel141.Controls.Add(this.label351);
+            this.panel141.Controls.Add(this.label352);
+            this.panel141.Controls.Add(this.onBeatTrackbarPS5);
+            this.panel141.Location = new System.Drawing.Point(129, 3);
+            this.panel141.Name = "panel141";
+            this.panel141.Size = new System.Drawing.Size(459, 110);
+            this.panel141.TabIndex = 10;
+            // 
+            // panel142
+            // 
+            this.panel142.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel142.Controls.Add(this.label345);
+            this.panel142.Controls.Add(this.label346);
+            this.panel142.Controls.Add(this.label347);
+            this.panel142.Controls.Add(this.quintuplesTrackbarPS5);
+            this.panel142.Controls.Add(this.quintuplesPS5);
+            this.panel142.Location = new System.Drawing.Point(141, 55);
+            this.panel142.Name = "panel142";
+            this.panel142.Size = new System.Drawing.Size(310, 50);
+            this.panel142.TabIndex = 16;
+            // 
+            // label345
+            // 
+            this.label345.AutoSize = true;
+            this.label345.Location = new System.Drawing.Point(9, 8);
+            this.label345.Name = "label345";
+            this.label345.Size = new System.Drawing.Size(53, 13);
+            this.label345.TabIndex = 16;
+            this.label345.Text = "Half-beat:";
+            // 
+            // label346
+            // 
+            this.label346.AutoSize = true;
+            this.label346.Location = new System.Drawing.Point(214, 28);
+            this.label346.Name = "label346";
+            this.label346.Size = new System.Drawing.Size(57, 13);
+            this.label346.TabIndex = 13;
+            this.label346.Text = "Quintuples";
+            // 
+            // label347
+            // 
+            this.label347.AutoSize = true;
+            this.label347.Location = new System.Drawing.Point(69, 28);
+            this.label347.Name = "label347";
+            this.label347.Size = new System.Drawing.Size(38, 13);
+            this.label347.TabIndex = 15;
+            this.label347.Text = "Triples";
+            // 
+            // quintuplesTrackbarPS5
+            // 
+            this.quintuplesTrackbarPS5.Location = new System.Drawing.Point(67, 3);
+            this.quintuplesTrackbarPS5.Maximum = 100;
+            this.quintuplesTrackbarPS5.Name = "quintuplesTrackbarPS5";
+            this.quintuplesTrackbarPS5.RightToLeftLayout = true;
+            this.quintuplesTrackbarPS5.Size = new System.Drawing.Size(177, 45);
+            this.quintuplesTrackbarPS5.TabIndex = 14;
+            this.quintuplesTrackbarPS5.TickFrequency = 10;
+            this.quintuplesTrackbarPS5.Value = 75;
+            this.quintuplesTrackbarPS5.ValueChanged += new System.EventHandler(this.quintuplesTrackbarPS5_ValueChanged);
+            // 
+            // quintuplesPS5
+            // 
+            this.quintuplesPS5.Location = new System.Drawing.Point(257, 6);
+            this.quintuplesPS5.Name = "quintuplesPS5";
+            this.quintuplesPS5.Size = new System.Drawing.Size(42, 20);
+            this.quintuplesPS5.TabIndex = 8;
+            this.quintuplesPS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.quintuplesPS5.Value = new decimal(new int[] {
+            75,
+            0,
+            0,
+            0});
+            this.quintuplesPS5.ValueChanged += new System.EventHandler(this.quintuplesPS5_ValueChanged);
+            // 
+            // panel143
+            // 
+            this.panel143.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel143.Controls.Add(this.label348);
+            this.panel143.Controls.Add(this.label349);
+            this.panel143.Controls.Add(this.label350);
+            this.panel143.Controls.Add(this.jumpsTrackbarPS5);
+            this.panel143.Controls.Add(this.jumpsPS5);
+            this.panel143.Location = new System.Drawing.Point(141, 2);
+            this.panel143.Name = "panel143";
+            this.panel143.Size = new System.Drawing.Size(310, 50);
+            this.panel143.TabIndex = 12;
+            // 
+            // label348
+            // 
+            this.label348.AutoSize = true;
+            this.label348.Location = new System.Drawing.Point(8, 7);
+            this.label348.Name = "label348";
+            this.label348.Size = new System.Drawing.Size(48, 13);
+            this.label348.TabIndex = 17;
+            this.label348.Text = "On beat:";
+            // 
+            // label349
+            // 
+            this.label349.AutoSize = true;
+            this.label349.Location = new System.Drawing.Point(214, 28);
+            this.label349.Name = "label349";
+            this.label349.Size = new System.Drawing.Size(37, 13);
+            this.label349.TabIndex = 13;
+            this.label349.Text = "Jumps";
+            // 
+            // label350
+            // 
+            this.label350.AutoSize = true;
+            this.label350.Location = new System.Drawing.Point(69, 28);
+            this.label350.Name = "label350";
+            this.label350.Size = new System.Drawing.Size(57, 13);
+            this.label350.TabIndex = 15;
+            this.label350.Text = "Single foot";
+            // 
+            // jumpsTrackbarPS5
+            // 
+            this.jumpsTrackbarPS5.Location = new System.Drawing.Point(67, 3);
+            this.jumpsTrackbarPS5.Maximum = 100;
+            this.jumpsTrackbarPS5.Name = "jumpsTrackbarPS5";
+            this.jumpsTrackbarPS5.RightToLeftLayout = true;
+            this.jumpsTrackbarPS5.Size = new System.Drawing.Size(177, 45);
+            this.jumpsTrackbarPS5.TabIndex = 14;
+            this.jumpsTrackbarPS5.TickFrequency = 10;
+            this.jumpsTrackbarPS5.Value = 30;
+            this.jumpsTrackbarPS5.ValueChanged += new System.EventHandler(this.jumpsTrackbarPS5_ValueChanged);
+            // 
+            // jumpsPS5
+            // 
+            this.jumpsPS5.Location = new System.Drawing.Point(257, 6);
+            this.jumpsPS5.Name = "jumpsPS5";
+            this.jumpsPS5.Size = new System.Drawing.Size(42, 20);
+            this.jumpsPS5.TabIndex = 8;
+            this.jumpsPS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpsPS5.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.jumpsPS5.ValueChanged += new System.EventHandler(this.jumpsPS5_ValueChanged);
+            // 
+            // onBeatPS5
+            // 
+            this.onBeatPS5.Location = new System.Drawing.Point(62, 44);
+            this.onBeatPS5.Name = "onBeatPS5";
+            this.onBeatPS5.Size = new System.Drawing.Size(42, 20);
+            this.onBeatPS5.TabIndex = 11;
+            this.onBeatPS5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.onBeatPS5.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.onBeatPS5.ValueChanged += new System.EventHandler(this.onBeatPS5_ValueChanged);
+            // 
+            // label351
+            // 
+            this.label351.AutoSize = true;
+            this.label351.Location = new System.Drawing.Point(6, 87);
+            this.label351.Name = "label351";
+            this.label351.Size = new System.Drawing.Size(98, 13);
+            this.label351.TabIndex = 4;
+            this.label351.Text = "On beat + half beat";
+            // 
+            // label352
+            // 
+            this.label352.AutoSize = true;
+            this.label352.Location = new System.Drawing.Point(37, 11);
+            this.label352.Name = "label352";
+            this.label352.Size = new System.Drawing.Size(67, 13);
+            this.label352.TabIndex = 3;
+            this.label352.Text = "On beat only";
+            // 
+            // onBeatTrackbarPS5
+            // 
+            this.onBeatTrackbarPS5.Location = new System.Drawing.Point(89, 3);
+            this.onBeatTrackbarPS5.Maximum = 100;
+            this.onBeatTrackbarPS5.Name = "onBeatTrackbarPS5";
+            this.onBeatTrackbarPS5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.onBeatTrackbarPS5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onBeatTrackbarPS5.RightToLeftLayout = true;
+            this.onBeatTrackbarPS5.Size = new System.Drawing.Size(45, 102);
+            this.onBeatTrackbarPS5.TabIndex = 2;
+            this.onBeatTrackbarPS5.TickFrequency = 10;
+            this.onBeatTrackbarPS5.Value = 25;
+            this.onBeatTrackbarPS5.ValueChanged += new System.EventHandler(this.onBeatTrackbarPS5_ValueChanged);
+            // 
+            // panel144
+            // 
+            this.panel144.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel144.Controls.Add(this.checkBox95);
+            this.panel144.Controls.Add(this.checkBox96);
+            this.panel144.Controls.Add(this.checkBox97);
+            this.panel144.Controls.Add(this.checkBox98);
+            this.panel144.Controls.Add(this.checkBox99);
+            this.panel144.Location = new System.Drawing.Point(849, 3);
+            this.panel144.Name = "panel144";
+            this.panel144.Size = new System.Drawing.Size(157, 110);
+            this.panel144.TabIndex = 9;
+            // 
+            // checkBox95
+            // 
+            this.checkBox95.AutoSize = true;
+            this.checkBox95.Enabled = false;
+            this.checkBox95.Location = new System.Drawing.Point(5, 85);
+            this.checkBox95.Name = "checkBox95";
+            this.checkBox95.Size = new System.Drawing.Size(94, 17);
+            this.checkBox95.TabIndex = 11;
+            this.checkBox95.Text = "Full 8th stream";
+            this.checkBox95.UseVisualStyleBackColor = true;
+            // 
+            // checkBox96
+            // 
+            this.checkBox96.AutoSize = true;
+            this.checkBox96.Checked = true;
+            this.checkBox96.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox96.Location = new System.Drawing.Point(5, 65);
+            this.checkBox96.Name = "checkBox96";
+            this.checkBox96.Size = new System.Drawing.Size(150, 17);
+            this.checkBox96.TabIndex = 6;
+            this.checkBox96.Text = "Quintuples on either 1 or 2";
+            this.checkBox96.UseVisualStyleBackColor = true;
+            // 
+            // checkBox97
+            // 
+            this.checkBox97.AutoSize = true;
+            this.checkBox97.Checked = true;
+            this.checkBox97.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox97.Location = new System.Drawing.Point(5, 45);
+            this.checkBox97.Name = "checkBox97";
+            this.checkBox97.Size = new System.Drawing.Size(135, 17);
+            this.checkBox97.TabIndex = 5;
+            this.checkBox97.Text = "Triples on both 1 and 3";
+            this.checkBox97.UseVisualStyleBackColor = true;
+            // 
+            // checkBox98
+            // 
+            this.checkBox98.AutoSize = true;
+            this.checkBox98.Checked = true;
+            this.checkBox98.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox98.Location = new System.Drawing.Point(5, 25);
+            this.checkBox98.Name = "checkBox98";
+            this.checkBox98.Size = new System.Drawing.Size(86, 17);
+            this.checkBox98.TabIndex = 4;
+            this.checkBox98.Text = "Arrow repeat";
+            this.checkBox98.UseVisualStyleBackColor = true;
+            // 
+            // checkBox99
+            // 
+            this.checkBox99.AutoSize = true;
+            this.checkBox99.Checked = true;
+            this.checkBox99.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox99.Location = new System.Drawing.Point(5, 5);
+            this.checkBox99.Name = "checkBox99";
+            this.checkBox99.Size = new System.Drawing.Size(100, 17);
+            this.checkBox99.TabIndex = 3;
+            this.checkBox99.Text = "Alternating feet ";
+            this.checkBox99.UseVisualStyleBackColor = true;
+            // 
+            // label353
+            // 
+            this.label353.AutoSize = true;
+            this.label353.Location = new System.Drawing.Point(35, 95);
+            this.label353.Name = "label353";
+            this.label353.Size = new System.Drawing.Size(50, 13);
+            this.label353.TabIndex = 8;
+            this.label353.Text = "No arrow";
+            // 
+            // label354
+            // 
+            this.label354.AutoSize = true;
+            this.label354.Location = new System.Drawing.Point(35, 25);
+            this.label354.Name = "label354";
+            this.label354.Size = new System.Drawing.Size(34, 13);
+            this.label354.TabIndex = 7;
+            this.label354.Text = "Arrow";
+            // 
+            // stepfill_trackbarPS5
+            // 
+            this.stepfill_trackbarPS5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.stepfill_trackbarPS5.Location = new System.Drawing.Point(5, 20);
+            this.stepfill_trackbarPS5.Maximum = 100;
+            this.stepfill_trackbarPS5.Name = "stepfill_trackbarPS5";
+            this.stepfill_trackbarPS5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.stepfill_trackbarPS5.Size = new System.Drawing.Size(45, 90);
+            this.stepfill_trackbarPS5.TabIndex = 1;
+            this.stepfill_trackbarPS5.TickFrequency = 10;
+            this.stepfill_trackbarPS5.Value = 100;
+            this.stepfill_trackbarPS5.ValueChanged += new System.EventHandler(this.stepfill_trackbarPS5_ValueChanged);
+            // 
+            // label355
+            // 
+            this.label355.AutoSize = true;
+            this.label355.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label355.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label355.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label355.Location = new System.Drawing.Point(2, 2);
+            this.label355.Name = "label355";
+            this.label355.Size = new System.Drawing.Size(50, 19);
+            this.label355.TabIndex = 0;
+            this.label355.Text = "Expert";
             // 
             // panel30
             // 
@@ -2927,7 +11098,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(514, 30);
             this.button5.TabIndex = 0;
-            this.button5.Text = "Back to Dance Single";
+            this.button5.Text = "Back to Dance Double";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -2983,7 +11154,7 @@
             this.currentFolder.Name = "currentFolder";
             this.currentFolder.Size = new System.Drawing.Size(303, 26);
             this.currentFolder.TabIndex = 1;
-            this.currentFolder.Text = "C:\\Games\\StepMania 5\\Songs\\Cardio";
+            this.currentFolder.Text = "C:\\Games\\StepMania 5\\Songs\\Test";
             this.currentFolder.TextChanged += new System.EventHandler(this.currentFolder_TextChanged);
             // 
             // folderChooser
@@ -3197,8 +11368,407 @@
             this.panel26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepFill_trackbar5)).EndInit();
             this.panel29.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.panel108.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panel38.ResumeLayout(false);
+            this.panel38.PerformLayout();
+            this.panel39.ResumeLayout(false);
+            this.panel39.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panel40.ResumeLayout(false);
+            this.panel40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS1)).EndInit();
+            this.panel41.ResumeLayout(false);
+            this.panel41.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS1)).EndInit();
+            this.panel42.ResumeLayout(false);
+            this.panel42.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS1)).EndInit();
+            this.panel43.ResumeLayout(false);
+            this.panel43.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS1)).EndInit();
+            this.panel44.ResumeLayout(false);
+            this.panel44.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS1)).EndInit();
+            this.panel45.ResumeLayout(false);
+            this.panel45.PerformLayout();
+            this.panel46.ResumeLayout(false);
+            this.panel46.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar7)).EndInit();
+            this.panel47.ResumeLayout(false);
+            this.panel47.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS2)).EndInit();
+            this.panel48.ResumeLayout(false);
+            this.panel48.PerformLayout();
+            this.panel49.ResumeLayout(false);
+            this.panel49.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS2)).EndInit();
+            this.panel50.ResumeLayout(false);
+            this.panel50.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS2)).EndInit();
+            this.panel51.ResumeLayout(false);
+            this.panel51.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS2)).EndInit();
+            this.panel52.ResumeLayout(false);
+            this.panel52.PerformLayout();
+            this.panel53.ResumeLayout(false);
+            this.panel53.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar13)).EndInit();
+            this.panel54.ResumeLayout(false);
+            this.panel54.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS3)).EndInit();
+            this.panel55.ResumeLayout(false);
+            this.panel55.PerformLayout();
+            this.panel56.ResumeLayout(false);
+            this.panel56.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS3)).EndInit();
+            this.panel57.ResumeLayout(false);
+            this.panel57.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS3)).EndInit();
+            this.panel58.ResumeLayout(false);
+            this.panel58.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS3)).EndInit();
+            this.panel59.ResumeLayout(false);
+            this.panel59.PerformLayout();
+            this.panel60.ResumeLayout(false);
+            this.panel60.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar19)).EndInit();
+            this.panel61.ResumeLayout(false);
+            this.panel61.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS4)).EndInit();
+            this.panel62.ResumeLayout(false);
+            this.panel62.PerformLayout();
+            this.panel63.ResumeLayout(false);
+            this.panel63.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS4)).EndInit();
+            this.panel64.ResumeLayout(false);
+            this.panel64.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS4)).EndInit();
+            this.panel65.ResumeLayout(false);
+            this.panel65.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS4)).EndInit();
+            this.panel66.ResumeLayout(false);
+            this.panel66.PerformLayout();
+            this.panel67.ResumeLayout(false);
+            this.panel67.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).EndInit();
+            this.panel68.ResumeLayout(false);
+            this.panel68.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDS5)).EndInit();
+            this.panel69.ResumeLayout(false);
+            this.panel69.PerformLayout();
+            this.panel70.ResumeLayout(false);
+            this.panel70.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDS5)).EndInit();
+            this.panel71.ResumeLayout(false);
+            this.panel71.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDS5)).EndInit();
+            this.panel72.ResumeLayout(false);
+            this.panel72.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDS5)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.panel109.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel73.ResumeLayout(false);
+            this.panel73.PerformLayout();
+            this.panel74.ResumeLayout(false);
+            this.panel74.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar31)).EndInit();
+            this.panel75.ResumeLayout(false);
+            this.panel75.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD1)).EndInit();
+            this.panel76.ResumeLayout(false);
+            this.panel76.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD1)).EndInit();
+            this.panel77.ResumeLayout(false);
+            this.panel77.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD1)).EndInit();
+            this.panel78.ResumeLayout(false);
+            this.panel78.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD1)).EndInit();
+            this.panel79.ResumeLayout(false);
+            this.panel79.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD1)).EndInit();
+            this.panel80.ResumeLayout(false);
+            this.panel80.PerformLayout();
+            this.panel81.ResumeLayout(false);
+            this.panel81.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar37)).EndInit();
+            this.panel82.ResumeLayout(false);
+            this.panel82.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD2)).EndInit();
+            this.panel83.ResumeLayout(false);
+            this.panel83.PerformLayout();
+            this.panel84.ResumeLayout(false);
+            this.panel84.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD2)).EndInit();
+            this.panel85.ResumeLayout(false);
+            this.panel85.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD2)).EndInit();
+            this.panel86.ResumeLayout(false);
+            this.panel86.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD2)).EndInit();
+            this.panel87.ResumeLayout(false);
+            this.panel87.PerformLayout();
+            this.panel88.ResumeLayout(false);
+            this.panel88.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar43)).EndInit();
+            this.panel89.ResumeLayout(false);
+            this.panel89.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD3)).EndInit();
+            this.panel90.ResumeLayout(false);
+            this.panel90.PerformLayout();
+            this.panel91.ResumeLayout(false);
+            this.panel91.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD3)).EndInit();
+            this.panel92.ResumeLayout(false);
+            this.panel92.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD3)).EndInit();
+            this.panel93.ResumeLayout(false);
+            this.panel93.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD3)).EndInit();
+            this.panel94.ResumeLayout(false);
+            this.panel94.PerformLayout();
+            this.panel95.ResumeLayout(false);
+            this.panel95.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar49)).EndInit();
+            this.panel96.ResumeLayout(false);
+            this.panel96.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD4)).EndInit();
+            this.panel97.ResumeLayout(false);
+            this.panel97.PerformLayout();
+            this.panel98.ResumeLayout(false);
+            this.panel98.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD4)).EndInit();
+            this.panel99.ResumeLayout(false);
+            this.panel99.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD4)).EndInit();
+            this.panel100.ResumeLayout(false);
+            this.panel100.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD4)).EndInit();
+            this.panel101.ResumeLayout(false);
+            this.panel101.PerformLayout();
+            this.panel102.ResumeLayout(false);
+            this.panel102.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar55)).EndInit();
+            this.panel103.ResumeLayout(false);
+            this.panel103.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar56)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillDD5)).EndInit();
+            this.panel104.ResumeLayout(false);
+            this.panel104.PerformLayout();
+            this.panel105.ResumeLayout(false);
+            this.panel105.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarDD5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesDD5)).EndInit();
+            this.panel106.ResumeLayout(false);
+            this.panel106.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarDD5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsDD5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatDD5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarDD5)).EndInit();
+            this.panel107.ResumeLayout(false);
+            this.panel107.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarDD5)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.panel110.ResumeLayout(false);
+            this.panel110.PerformLayout();
+            this.panel111.ResumeLayout(false);
+            this.panel111.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar61)).EndInit();
+            this.panel112.ResumeLayout(false);
+            this.panel112.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS1)).EndInit();
+            this.panel113.ResumeLayout(false);
+            this.panel113.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS1)).EndInit();
+            this.panel114.ResumeLayout(false);
+            this.panel114.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS1)).EndInit();
+            this.panel115.ResumeLayout(false);
+            this.panel115.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS1)).EndInit();
+            this.panel116.ResumeLayout(false);
+            this.panel116.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS1)).EndInit();
+            this.panel117.ResumeLayout(false);
+            this.panel117.PerformLayout();
+            this.panel118.ResumeLayout(false);
+            this.panel118.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown67)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar67)).EndInit();
+            this.panel119.ResumeLayout(false);
+            this.panel119.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown68)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar68)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS2)).EndInit();
+            this.panel120.ResumeLayout(false);
+            this.panel120.PerformLayout();
+            this.panel121.ResumeLayout(false);
+            this.panel121.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS2)).EndInit();
+            this.panel122.ResumeLayout(false);
+            this.panel122.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS2)).EndInit();
+            this.panel123.ResumeLayout(false);
+            this.panel123.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS2)).EndInit();
+            this.panel124.ResumeLayout(false);
+            this.panel124.PerformLayout();
+            this.panel125.ResumeLayout(false);
+            this.panel125.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown73)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar73)).EndInit();
+            this.panel126.ResumeLayout(false);
+            this.panel126.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS3)).EndInit();
+            this.panel127.ResumeLayout(false);
+            this.panel127.PerformLayout();
+            this.panel128.ResumeLayout(false);
+            this.panel128.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS3)).EndInit();
+            this.panel129.ResumeLayout(false);
+            this.panel129.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS3)).EndInit();
+            this.panel130.ResumeLayout(false);
+            this.panel130.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS3)).EndInit();
+            this.panel131.ResumeLayout(false);
+            this.panel131.PerformLayout();
+            this.panel132.ResumeLayout(false);
+            this.panel132.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown79)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar79)).EndInit();
+            this.panel133.ResumeLayout(false);
+            this.panel133.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown80)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar80)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS4)).EndInit();
+            this.panel134.ResumeLayout(false);
+            this.panel134.PerformLayout();
+            this.panel135.ResumeLayout(false);
+            this.panel135.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS4)).EndInit();
+            this.panel136.ResumeLayout(false);
+            this.panel136.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS4)).EndInit();
+            this.panel137.ResumeLayout(false);
+            this.panel137.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS4)).EndInit();
+            this.panel138.ResumeLayout(false);
+            this.panel138.PerformLayout();
+            this.panel139.ResumeLayout(false);
+            this.panel139.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown85)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar85)).EndInit();
+            this.panel140.ResumeLayout(false);
+            this.panel140.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown86)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar86)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepFillPS5)).EndInit();
+            this.panel141.ResumeLayout(false);
+            this.panel141.PerformLayout();
+            this.panel142.ResumeLayout(false);
+            this.panel142.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesTrackbarPS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quintuplesPS5)).EndInit();
+            this.panel143.ResumeLayout(false);
+            this.panel143.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsTrackbarPS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpsPS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatPS5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.onBeatTrackbarPS5)).EndInit();
+            this.panel144.ResumeLayout(false);
+            this.panel144.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepfill_trackbarPS5)).EndInit();
             this.panel30.ResumeLayout(false);
             this.panel30.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -3450,6 +12020,662 @@
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Panel panel108;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.NumericUpDown stepFillDS1;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.NumericUpDown onBeatDS1;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDS1;
+        private System.Windows.Forms.NumericUpDown quintuplesDS1;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDS1;
+        private System.Windows.Forms.NumericUpDown jumpsDS1;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDS1;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDS1;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Panel panel45;
+        private System.Windows.Forms.Panel panel46;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.TrackBar trackBar7;
+        private System.Windows.Forms.Panel panel47;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TrackBar trackBar8;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.NumericUpDown stepFillDS2;
+        private System.Windows.Forms.Panel panel48;
+        private System.Windows.Forms.Panel panel49;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDS2;
+        private System.Windows.Forms.NumericUpDown quintuplesDS2;
+        private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDS2;
+        private System.Windows.Forms.NumericUpDown jumpsDS2;
+        private System.Windows.Forms.NumericUpDown onBeatDS2;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDS2;
+        private System.Windows.Forms.Panel panel51;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDS2;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Panel panel52;
+        private System.Windows.Forms.Panel panel53;
+        private System.Windows.Forms.NumericUpDown numericUpDown13;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.TrackBar trackBar13;
+        private System.Windows.Forms.Panel panel54;
+        private System.Windows.Forms.NumericUpDown numericUpDown14;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.TrackBar trackBar14;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.NumericUpDown stepFillDS3;
+        private System.Windows.Forms.Panel panel55;
+        private System.Windows.Forms.Panel panel56;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDS3;
+        private System.Windows.Forms.NumericUpDown quintuplesDS3;
+        private System.Windows.Forms.Panel panel57;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDS3;
+        private System.Windows.Forms.NumericUpDown jumpsDS3;
+        private System.Windows.Forms.NumericUpDown onBeatDS3;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDS3;
+        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.CheckBox checkBox22;
+        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.CheckBox checkBox24;
+        private System.Windows.Forms.CheckBox checkBox25;
+        private System.Windows.Forms.CheckBox checkBox26;
+        private System.Windows.Forms.CheckBox checkBox27;
+        private System.Windows.Forms.CheckBox checkBox28;
+        private System.Windows.Forms.CheckBox checkBox29;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDS3;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.Panel panel59;
+        private System.Windows.Forms.Panel panel60;
+        private System.Windows.Forms.NumericUpDown numericUpDown19;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.TrackBar trackBar19;
+        private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.NumericUpDown numericUpDown20;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.TrackBar trackBar20;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.NumericUpDown stepFillDS4;
+        private System.Windows.Forms.Panel panel62;
+        private System.Windows.Forms.Panel panel63;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDS4;
+        private System.Windows.Forms.NumericUpDown quintuplesDS4;
+        private System.Windows.Forms.Panel panel64;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.Label label151;
+        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDS4;
+        private System.Windows.Forms.NumericUpDown jumpsDS4;
+        private System.Windows.Forms.NumericUpDown onBeatDS4;
+        private System.Windows.Forms.Label label153;
+        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDS4;
+        private System.Windows.Forms.Panel panel65;
+        private System.Windows.Forms.CheckBox checkBox30;
+        private System.Windows.Forms.CheckBox checkBox31;
+        private System.Windows.Forms.CheckBox checkBox32;
+        private System.Windows.Forms.CheckBox checkBox33;
+        private System.Windows.Forms.CheckBox checkBox34;
+        private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDS4;
+        private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.Panel panel66;
+        private System.Windows.Forms.Panel panel67;
+        private System.Windows.Forms.NumericUpDown numericUpDown25;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.Label label159;
+        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.TrackBar trackBar25;
+        private System.Windows.Forms.Panel panel68;
+        private System.Windows.Forms.NumericUpDown numericUpDown26;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.Label label162;
+        private System.Windows.Forms.Label label163;
+        private System.Windows.Forms.TrackBar trackBar26;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.NumericUpDown stepFillDS5;
+        private System.Windows.Forms.Panel panel69;
+        private System.Windows.Forms.Panel panel70;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Label label166;
+        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDS5;
+        private System.Windows.Forms.NumericUpDown quintuplesDS5;
+        private System.Windows.Forms.Panel panel71;
+        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.Label label169;
+        private System.Windows.Forms.Label label170;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDS5;
+        private System.Windows.Forms.NumericUpDown jumpsDS5;
+        private System.Windows.Forms.NumericUpDown onBeatDS5;
+        private System.Windows.Forms.Label label171;
+        private System.Windows.Forms.Label label172;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDS5;
+        private System.Windows.Forms.Panel panel72;
+        private System.Windows.Forms.CheckBox checkBox35;
+        private System.Windows.Forms.CheckBox checkBox36;
+        private System.Windows.Forms.CheckBox checkBox37;
+        private System.Windows.Forms.CheckBox checkBox38;
+        private System.Windows.Forms.CheckBox checkBox39;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDS5;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.Panel panel109;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Panel panel73;
+        private System.Windows.Forms.Panel panel74;
+        private System.Windows.Forms.NumericUpDown numericUpDown31;
+        private System.Windows.Forms.Label label176;
+        private System.Windows.Forms.Label label177;
+        private System.Windows.Forms.Label label178;
+        private System.Windows.Forms.TrackBar trackBar31;
+        private System.Windows.Forms.Panel panel75;
+        private System.Windows.Forms.NumericUpDown numericUpDown32;
+        private System.Windows.Forms.Label label179;
+        private System.Windows.Forms.Label label180;
+        private System.Windows.Forms.Label label181;
+        private System.Windows.Forms.TrackBar trackBar32;
+        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.NumericUpDown stepFillDD1;
+        private System.Windows.Forms.Panel panel76;
+        private System.Windows.Forms.NumericUpDown onBeatDD1;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.Label label184;
+        private System.Windows.Forms.Panel panel77;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.Label label186;
+        private System.Windows.Forms.Label label187;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDD1;
+        private System.Windows.Forms.NumericUpDown quintuplesDD1;
+        private System.Windows.Forms.Panel panel78;
+        private System.Windows.Forms.Label label188;
+        private System.Windows.Forms.Label label189;
+        private System.Windows.Forms.Label label190;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDD1;
+        private System.Windows.Forms.NumericUpDown jumpsDD1;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDD1;
+        private System.Windows.Forms.Panel panel79;
+        private System.Windows.Forms.CheckBox checkBox40;
+        private System.Windows.Forms.CheckBox checkBox41;
+        private System.Windows.Forms.CheckBox checkBox42;
+        private System.Windows.Forms.CheckBox checkBox43;
+        private System.Windows.Forms.CheckBox checkBox44;
+        private System.Windows.Forms.Label label191;
+        private System.Windows.Forms.Label label192;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDD1;
+        private System.Windows.Forms.Label label193;
+        private System.Windows.Forms.Panel panel80;
+        private System.Windows.Forms.Panel panel81;
+        private System.Windows.Forms.NumericUpDown numericUpDown37;
+        private System.Windows.Forms.Label label194;
+        private System.Windows.Forms.Label label195;
+        private System.Windows.Forms.Label label196;
+        private System.Windows.Forms.TrackBar trackBar37;
+        private System.Windows.Forms.Panel panel82;
+        private System.Windows.Forms.NumericUpDown numericUpDown38;
+        private System.Windows.Forms.Label label197;
+        private System.Windows.Forms.Label label198;
+        private System.Windows.Forms.Label label199;
+        private System.Windows.Forms.TrackBar trackBar38;
+        private System.Windows.Forms.Label label200;
+        private System.Windows.Forms.NumericUpDown stepFillDD2;
+        private System.Windows.Forms.Panel panel83;
+        private System.Windows.Forms.Panel panel84;
+        private System.Windows.Forms.Label label201;
+        private System.Windows.Forms.Label label202;
+        private System.Windows.Forms.Label label203;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDD2;
+        private System.Windows.Forms.NumericUpDown quintuplesDD2;
+        private System.Windows.Forms.Panel panel85;
+        private System.Windows.Forms.Label label204;
+        private System.Windows.Forms.Label label205;
+        private System.Windows.Forms.Label label206;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDD2;
+        private System.Windows.Forms.NumericUpDown jumpsDD2;
+        private System.Windows.Forms.NumericUpDown onBeatDD2;
+        private System.Windows.Forms.Label label207;
+        private System.Windows.Forms.Label label208;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDD2;
+        private System.Windows.Forms.Panel panel86;
+        private System.Windows.Forms.CheckBox checkBox45;
+        private System.Windows.Forms.CheckBox checkBox46;
+        private System.Windows.Forms.CheckBox checkBox47;
+        private System.Windows.Forms.CheckBox checkBox48;
+        private System.Windows.Forms.CheckBox checkBox49;
+        private System.Windows.Forms.Label label209;
+        private System.Windows.Forms.Label label210;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDD2;
+        private System.Windows.Forms.Label label211;
+        private System.Windows.Forms.Panel panel87;
+        private System.Windows.Forms.Panel panel88;
+        private System.Windows.Forms.NumericUpDown numericUpDown43;
+        private System.Windows.Forms.Label label212;
+        private System.Windows.Forms.Label label213;
+        private System.Windows.Forms.Label label214;
+        private System.Windows.Forms.TrackBar trackBar43;
+        private System.Windows.Forms.Panel panel89;
+        private System.Windows.Forms.NumericUpDown numericUpDown44;
+        private System.Windows.Forms.Label label215;
+        private System.Windows.Forms.Label label216;
+        private System.Windows.Forms.Label label217;
+        private System.Windows.Forms.TrackBar trackBar44;
+        private System.Windows.Forms.Label label218;
+        private System.Windows.Forms.NumericUpDown stepFillDD3;
+        private System.Windows.Forms.Panel panel90;
+        private System.Windows.Forms.Panel panel91;
+        private System.Windows.Forms.Label label219;
+        private System.Windows.Forms.Label label220;
+        private System.Windows.Forms.Label label221;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDD3;
+        private System.Windows.Forms.NumericUpDown quintuplesDD3;
+        private System.Windows.Forms.Panel panel92;
+        private System.Windows.Forms.Label label222;
+        private System.Windows.Forms.Label label223;
+        private System.Windows.Forms.Label label224;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDD3;
+        private System.Windows.Forms.NumericUpDown jumpsDD3;
+        private System.Windows.Forms.NumericUpDown onBeatDD3;
+        private System.Windows.Forms.Label label225;
+        private System.Windows.Forms.Label label226;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDD3;
+        private System.Windows.Forms.Panel panel93;
+        private System.Windows.Forms.CheckBox checkBox50;
+        private System.Windows.Forms.CheckBox checkBox51;
+        private System.Windows.Forms.CheckBox checkBox52;
+        private System.Windows.Forms.CheckBox checkBox53;
+        private System.Windows.Forms.CheckBox checkBox54;
+        private System.Windows.Forms.CheckBox checkBox55;
+        private System.Windows.Forms.CheckBox checkBox56;
+        private System.Windows.Forms.CheckBox checkBox57;
+        private System.Windows.Forms.CheckBox checkBox58;
+        private System.Windows.Forms.CheckBox checkBox59;
+        private System.Windows.Forms.Label label227;
+        private System.Windows.Forms.Label label228;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDD3;
+        private System.Windows.Forms.Label label229;
+        private System.Windows.Forms.Panel panel94;
+        private System.Windows.Forms.Panel panel95;
+        private System.Windows.Forms.NumericUpDown numericUpDown49;
+        private System.Windows.Forms.Label label230;
+        private System.Windows.Forms.Label label231;
+        private System.Windows.Forms.Label label232;
+        private System.Windows.Forms.TrackBar trackBar49;
+        private System.Windows.Forms.Panel panel96;
+        private System.Windows.Forms.NumericUpDown numericUpDown50;
+        private System.Windows.Forms.Label label233;
+        private System.Windows.Forms.Label label234;
+        private System.Windows.Forms.Label label235;
+        private System.Windows.Forms.TrackBar trackBar50;
+        private System.Windows.Forms.Label label236;
+        private System.Windows.Forms.NumericUpDown stepFillDD4;
+        private System.Windows.Forms.Panel panel97;
+        private System.Windows.Forms.Panel panel98;
+        private System.Windows.Forms.Label label237;
+        private System.Windows.Forms.Label label238;
+        private System.Windows.Forms.Label label239;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDD4;
+        private System.Windows.Forms.NumericUpDown quintuplesDD4;
+        private System.Windows.Forms.Panel panel99;
+        private System.Windows.Forms.Label label240;
+        private System.Windows.Forms.Label label241;
+        private System.Windows.Forms.Label label242;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDD4;
+        private System.Windows.Forms.NumericUpDown jumpsDD4;
+        private System.Windows.Forms.NumericUpDown onBeatDD4;
+        private System.Windows.Forms.Label label243;
+        private System.Windows.Forms.Label label244;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDD4;
+        private System.Windows.Forms.Panel panel100;
+        private System.Windows.Forms.CheckBox checkBox60;
+        private System.Windows.Forms.CheckBox checkBox61;
+        private System.Windows.Forms.CheckBox checkBox62;
+        private System.Windows.Forms.CheckBox checkBox63;
+        private System.Windows.Forms.CheckBox checkBox64;
+        private System.Windows.Forms.Label label245;
+        private System.Windows.Forms.Label label246;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDD4;
+        private System.Windows.Forms.Label label247;
+        private System.Windows.Forms.Panel panel101;
+        private System.Windows.Forms.Panel panel102;
+        private System.Windows.Forms.NumericUpDown numericUpDown55;
+        private System.Windows.Forms.Label label248;
+        private System.Windows.Forms.Label label249;
+        private System.Windows.Forms.Label label250;
+        private System.Windows.Forms.TrackBar trackBar55;
+        private System.Windows.Forms.Panel panel103;
+        private System.Windows.Forms.NumericUpDown numericUpDown56;
+        private System.Windows.Forms.Label label251;
+        private System.Windows.Forms.Label label252;
+        private System.Windows.Forms.Label label253;
+        private System.Windows.Forms.TrackBar trackBar56;
+        private System.Windows.Forms.Label label254;
+        private System.Windows.Forms.NumericUpDown stepFillDD5;
+        private System.Windows.Forms.Panel panel104;
+        private System.Windows.Forms.Panel panel105;
+        private System.Windows.Forms.Label label255;
+        private System.Windows.Forms.Label label256;
+        private System.Windows.Forms.Label label257;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarDD5;
+        private System.Windows.Forms.NumericUpDown quintuplesDD5;
+        private System.Windows.Forms.Panel panel106;
+        private System.Windows.Forms.Label label258;
+        private System.Windows.Forms.Label label259;
+        private System.Windows.Forms.Label label260;
+        private System.Windows.Forms.TrackBar jumpsTrackbarDD5;
+        private System.Windows.Forms.NumericUpDown jumpsDD5;
+        private System.Windows.Forms.NumericUpDown onBeatDD5;
+        private System.Windows.Forms.Label label261;
+        private System.Windows.Forms.Label label262;
+        private System.Windows.Forms.TrackBar onBeatTrackbarDD5;
+        private System.Windows.Forms.Panel panel107;
+        private System.Windows.Forms.CheckBox checkBox65;
+        private System.Windows.Forms.CheckBox checkBox66;
+        private System.Windows.Forms.CheckBox checkBox67;
+        private System.Windows.Forms.CheckBox checkBox68;
+        private System.Windows.Forms.CheckBox checkBox69;
+        private System.Windows.Forms.Label label263;
+        private System.Windows.Forms.Label label264;
+        private System.Windows.Forms.TrackBar stepfill_trackbarDD5;
+        private System.Windows.Forms.Label label265;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Panel panel110;
+        private System.Windows.Forms.Panel panel111;
+        private System.Windows.Forms.NumericUpDown numericUpDown61;
+        private System.Windows.Forms.Label label266;
+        private System.Windows.Forms.Label label267;
+        private System.Windows.Forms.Label label268;
+        private System.Windows.Forms.TrackBar trackBar61;
+        private System.Windows.Forms.Panel panel112;
+        private System.Windows.Forms.NumericUpDown numericUpDown62;
+        private System.Windows.Forms.Label label269;
+        private System.Windows.Forms.Label label270;
+        private System.Windows.Forms.Label label271;
+        private System.Windows.Forms.TrackBar trackBar62;
+        private System.Windows.Forms.Label label272;
+        private System.Windows.Forms.NumericUpDown stepFillPS1;
+        private System.Windows.Forms.Panel panel113;
+        private System.Windows.Forms.NumericUpDown onBeatPS1;
+        private System.Windows.Forms.Label label273;
+        private System.Windows.Forms.Label label274;
+        private System.Windows.Forms.Panel panel114;
+        private System.Windows.Forms.Label label275;
+        private System.Windows.Forms.Label label276;
+        private System.Windows.Forms.Label label277;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarPS1;
+        private System.Windows.Forms.NumericUpDown quintuplesPS1;
+        private System.Windows.Forms.Panel panel115;
+        private System.Windows.Forms.Label label278;
+        private System.Windows.Forms.Label label279;
+        private System.Windows.Forms.Label label280;
+        private System.Windows.Forms.TrackBar jumpsTrackbarPS1;
+        private System.Windows.Forms.NumericUpDown jumpsPS1;
+        private System.Windows.Forms.TrackBar onBeatTrackbarPS1;
+        private System.Windows.Forms.Panel panel116;
+        private System.Windows.Forms.CheckBox checkBox70;
+        private System.Windows.Forms.CheckBox checkBox71;
+        private System.Windows.Forms.CheckBox checkBox72;
+        private System.Windows.Forms.CheckBox checkBox73;
+        private System.Windows.Forms.CheckBox checkBox74;
+        private System.Windows.Forms.Label label281;
+        private System.Windows.Forms.Label label282;
+        private System.Windows.Forms.TrackBar stepfill_trackbarPS1;
+        private System.Windows.Forms.Label label283;
+        private System.Windows.Forms.Panel panel117;
+        private System.Windows.Forms.Panel panel118;
+        private System.Windows.Forms.NumericUpDown numericUpDown67;
+        private System.Windows.Forms.Label label284;
+        private System.Windows.Forms.Label label285;
+        private System.Windows.Forms.Label label286;
+        private System.Windows.Forms.TrackBar trackBar67;
+        private System.Windows.Forms.Panel panel119;
+        private System.Windows.Forms.NumericUpDown numericUpDown68;
+        private System.Windows.Forms.Label label287;
+        private System.Windows.Forms.Label label288;
+        private System.Windows.Forms.Label label289;
+        private System.Windows.Forms.TrackBar trackBar68;
+        private System.Windows.Forms.Label label290;
+        private System.Windows.Forms.NumericUpDown stepFillPS2;
+        private System.Windows.Forms.Panel panel120;
+        private System.Windows.Forms.Panel panel121;
+        private System.Windows.Forms.Label label291;
+        private System.Windows.Forms.Label label292;
+        private System.Windows.Forms.Label label293;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarPS2;
+        private System.Windows.Forms.NumericUpDown quintuplesPS2;
+        private System.Windows.Forms.Panel panel122;
+        private System.Windows.Forms.Label label294;
+        private System.Windows.Forms.Label label295;
+        private System.Windows.Forms.Label label296;
+        private System.Windows.Forms.TrackBar jumpsTrackbarPS2;
+        private System.Windows.Forms.NumericUpDown jumpsPS2;
+        private System.Windows.Forms.NumericUpDown onBeatPS2;
+        private System.Windows.Forms.Label label297;
+        private System.Windows.Forms.Label label298;
+        private System.Windows.Forms.TrackBar onBeatTrackbarPS2;
+        private System.Windows.Forms.Panel panel123;
+        private System.Windows.Forms.CheckBox checkBox75;
+        private System.Windows.Forms.CheckBox checkBox76;
+        private System.Windows.Forms.CheckBox checkBox77;
+        private System.Windows.Forms.CheckBox checkBox78;
+        private System.Windows.Forms.CheckBox checkBox79;
+        private System.Windows.Forms.Label label299;
+        private System.Windows.Forms.Label label300;
+        private System.Windows.Forms.TrackBar stepfill_trackbarPS2;
+        private System.Windows.Forms.Label label301;
+        private System.Windows.Forms.Panel panel124;
+        private System.Windows.Forms.Panel panel125;
+        private System.Windows.Forms.NumericUpDown numericUpDown73;
+        private System.Windows.Forms.Label label302;
+        private System.Windows.Forms.Label label303;
+        private System.Windows.Forms.Label label304;
+        private System.Windows.Forms.TrackBar trackBar73;
+        private System.Windows.Forms.Panel panel126;
+        private System.Windows.Forms.NumericUpDown numericUpDown74;
+        private System.Windows.Forms.Label label305;
+        private System.Windows.Forms.Label label306;
+        private System.Windows.Forms.Label label307;
+        private System.Windows.Forms.TrackBar trackBar74;
+        private System.Windows.Forms.Label label308;
+        private System.Windows.Forms.NumericUpDown stepFillPS3;
+        private System.Windows.Forms.Panel panel127;
+        private System.Windows.Forms.Panel panel128;
+        private System.Windows.Forms.Label label309;
+        private System.Windows.Forms.Label label310;
+        private System.Windows.Forms.Label label311;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarPS3;
+        private System.Windows.Forms.NumericUpDown quintuplesPS3;
+        private System.Windows.Forms.Panel panel129;
+        private System.Windows.Forms.Label label312;
+        private System.Windows.Forms.Label label313;
+        private System.Windows.Forms.Label label314;
+        private System.Windows.Forms.TrackBar jumpsTrackbarPS3;
+        private System.Windows.Forms.NumericUpDown jumpsPS3;
+        private System.Windows.Forms.NumericUpDown onBeatPS3;
+        private System.Windows.Forms.Label label315;
+        private System.Windows.Forms.Label label316;
+        private System.Windows.Forms.TrackBar onBeatTrackbarPS3;
+        private System.Windows.Forms.Panel panel130;
+        private System.Windows.Forms.CheckBox checkBox80;
+        private System.Windows.Forms.CheckBox checkBox81;
+        private System.Windows.Forms.CheckBox checkBox82;
+        private System.Windows.Forms.CheckBox checkBox83;
+        private System.Windows.Forms.CheckBox checkBox84;
+        private System.Windows.Forms.CheckBox checkBox85;
+        private System.Windows.Forms.CheckBox checkBox86;
+        private System.Windows.Forms.CheckBox checkBox87;
+        private System.Windows.Forms.CheckBox checkBox88;
+        private System.Windows.Forms.CheckBox checkBox89;
+        private System.Windows.Forms.Label label317;
+        private System.Windows.Forms.Label label318;
+        private System.Windows.Forms.TrackBar stepfill_trackbarPS3;
+        private System.Windows.Forms.Label label319;
+        private System.Windows.Forms.Panel panel131;
+        private System.Windows.Forms.Panel panel132;
+        private System.Windows.Forms.NumericUpDown numericUpDown79;
+        private System.Windows.Forms.Label label320;
+        private System.Windows.Forms.Label label321;
+        private System.Windows.Forms.Label label322;
+        private System.Windows.Forms.TrackBar trackBar79;
+        private System.Windows.Forms.Panel panel133;
+        private System.Windows.Forms.NumericUpDown numericUpDown80;
+        private System.Windows.Forms.Label label323;
+        private System.Windows.Forms.Label label324;
+        private System.Windows.Forms.Label label325;
+        private System.Windows.Forms.TrackBar trackBar80;
+        private System.Windows.Forms.Label label326;
+        private System.Windows.Forms.NumericUpDown stepFillPS4;
+        private System.Windows.Forms.Panel panel134;
+        private System.Windows.Forms.Panel panel135;
+        private System.Windows.Forms.Label label327;
+        private System.Windows.Forms.Label label328;
+        private System.Windows.Forms.Label label329;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarPS4;
+        private System.Windows.Forms.NumericUpDown quintuplesPS4;
+        private System.Windows.Forms.Panel panel136;
+        private System.Windows.Forms.Label label330;
+        private System.Windows.Forms.Label label331;
+        private System.Windows.Forms.Label label332;
+        private System.Windows.Forms.TrackBar jumpsTrackbarPS4;
+        private System.Windows.Forms.NumericUpDown jumpsPS4;
+        private System.Windows.Forms.NumericUpDown onBeatPS4;
+        private System.Windows.Forms.Label label333;
+        private System.Windows.Forms.Label label334;
+        private System.Windows.Forms.TrackBar onBeatTrackbarPS4;
+        private System.Windows.Forms.Panel panel137;
+        private System.Windows.Forms.CheckBox checkBox90;
+        private System.Windows.Forms.CheckBox checkBox91;
+        private System.Windows.Forms.CheckBox checkBox92;
+        private System.Windows.Forms.CheckBox checkBox93;
+        private System.Windows.Forms.CheckBox checkBox94;
+        private System.Windows.Forms.Label label335;
+        private System.Windows.Forms.Label label336;
+        private System.Windows.Forms.TrackBar stepfill_trackbarPS4;
+        private System.Windows.Forms.Label label337;
+        private System.Windows.Forms.Panel panel138;
+        private System.Windows.Forms.Panel panel139;
+        private System.Windows.Forms.NumericUpDown numericUpDown85;
+        private System.Windows.Forms.Label label338;
+        private System.Windows.Forms.Label label339;
+        private System.Windows.Forms.Label label340;
+        private System.Windows.Forms.TrackBar trackBar85;
+        private System.Windows.Forms.Panel panel140;
+        private System.Windows.Forms.NumericUpDown numericUpDown86;
+        private System.Windows.Forms.Label label341;
+        private System.Windows.Forms.Label label342;
+        private System.Windows.Forms.Label label343;
+        private System.Windows.Forms.TrackBar trackBar86;
+        private System.Windows.Forms.Label label344;
+        private System.Windows.Forms.NumericUpDown stepFillPS5;
+        private System.Windows.Forms.Panel panel141;
+        private System.Windows.Forms.Panel panel142;
+        private System.Windows.Forms.Label label345;
+        private System.Windows.Forms.Label label346;
+        private System.Windows.Forms.Label label347;
+        private System.Windows.Forms.TrackBar quintuplesTrackbarPS5;
+        private System.Windows.Forms.NumericUpDown quintuplesPS5;
+        private System.Windows.Forms.Panel panel143;
+        private System.Windows.Forms.Label label348;
+        private System.Windows.Forms.Label label349;
+        private System.Windows.Forms.Label label350;
+        private System.Windows.Forms.TrackBar jumpsTrackbarPS5;
+        private System.Windows.Forms.NumericUpDown jumpsPS5;
+        private System.Windows.Forms.NumericUpDown onBeatPS5;
+        private System.Windows.Forms.Label label351;
+        private System.Windows.Forms.Label label352;
+        private System.Windows.Forms.TrackBar onBeatTrackbarPS5;
+        private System.Windows.Forms.Panel panel144;
+        private System.Windows.Forms.CheckBox checkBox95;
+        private System.Windows.Forms.CheckBox checkBox96;
+        private System.Windows.Forms.CheckBox checkBox97;
+        private System.Windows.Forms.CheckBox checkBox98;
+        private System.Windows.Forms.CheckBox checkBox99;
+        private System.Windows.Forms.Label label353;
+        private System.Windows.Forms.Label label354;
+        private System.Windows.Forms.TrackBar stepfill_trackbarPS5;
+        private System.Windows.Forms.Label label355;
 
     }
 }

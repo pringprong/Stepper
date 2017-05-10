@@ -19,6 +19,7 @@ namespace Stepper
         Random r;
         private bool folderTextChanged = false;
         private ToolTip toolTip1;
+        private SampleWindow sw;
 
         private int instructionsTextboxGap = 40;
 
@@ -1767,6 +1768,13 @@ Warnings:
         private void quintuplesPS5_ValueChanged(object sender, EventArgs e)
         {
             quintuplesTrackbarPS5.Value = Convert.ToInt32(quintuplesPS5.Value);
+        }
+
+        private void sample1_Click(object sender, EventArgs e)
+        {
+            sw = new SampleWindow(this, "dance-single");
+           // sw.setParentWindow(this);
+            sw.Show();
         }
      }
 }

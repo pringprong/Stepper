@@ -922,6 +922,7 @@
             this.overwriteStepfiles = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.songInfo = new System.Windows.Forms.DataGridView();
+            this.sample1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1417,6 +1418,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.sample1);
             this.panel1.Controls.Add(this.panel28);
             this.panel1.Controls.Add(this.panel16);
             this.panel1.Controls.Add(this.label11);
@@ -11220,6 +11222,16 @@
             this.songInfo.Size = new System.Drawing.Size(1032, 630);
             this.songInfo.TabIndex = 8;
             // 
+            // sample1
+            // 
+            this.sample1.Location = new System.Drawing.Point(66, 3);
+            this.sample1.Name = "sample1";
+            this.sample1.Size = new System.Drawing.Size(57, 22);
+            this.sample1.TabIndex = 20;
+            this.sample1.Text = "Sample";
+            this.sample1.UseVisualStyleBackColor = true;
+            this.sample1.Click += new System.EventHandler(this.sample1_Click);
+            // 
             // Stepper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -12676,6 +12688,7 @@
         private System.Windows.Forms.Label label354;
         private System.Windows.Forms.TrackBar stepfill_trackbarPS5;
         private System.Windows.Forms.Label label355;
+        private System.Windows.Forms.Button sample1;
 
     }
 }

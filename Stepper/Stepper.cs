@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Drawing.Drawing2D;
+
 
 namespace Stepper
 {
@@ -20,12 +22,32 @@ namespace Stepper
         private bool folderTextChanged = false;
         private ToolTip toolTip1;
         private SampleWindow sw;
+        private AdjustableArrowCap cap;
+        private Pen blackpen;
+        private Pen redpen;
+        private Pen bluepen;
+        private int measures_per_sample = 4;
 
         private int instructionsTextboxGap = 40;
 
         public Stepper()
         {
             InitializeComponent(); 
+
+            // create arrows and pens
+            cap = new AdjustableArrowCap(2, 1);
+            cap.WidthScale = 1;
+            cap.BaseCap = LineCap.Square;
+            cap.Height = 1;
+            blackpen = new Pen(Color.Black, 10);
+            blackpen.CustomEndCap = cap;
+            redpen = new Pen(Color.Red, 10);
+            redpen.CustomEndCap = cap;
+            bluepen = new Pen(Color.Blue, 10);
+            bluepen.CustomEndCap = cap;
+
+
+
             textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
 
 Instructions:
@@ -1772,8 +1794,13 @@ Warnings:
 
         private void sample1_Click(object sender, EventArgs e)
         {
-            sw = new SampleWindow(this, "dance-single");
-           // sw.setParentWindow(this);
+            Noteset sample_noteset = new Noteset("dance-single", "SM", measures_per_sample, level.Text, beats_per_measure,
+                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
+                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+            sample_noteset.generateSteps();
+            char[] f = sample_noteset.getFeet();
+            string[] s = sample_noteset.getSteps();
+            sw = new SampleWindow(this, "dance-single", measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
      }

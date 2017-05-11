@@ -26,6 +26,8 @@ namespace Stepper
         int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
         bool triples_on_both_1_and_3;
         bool quintuples_either_on_1_or_2;
+        char[] feet;
+        string[] steps;
 
         public Noteset()
         {
@@ -79,7 +81,11 @@ namespace Stepper
             if (file_type == "SSC" && interface_level == "Expert")
             {
                 note_level = "Challenge";
+            
             }
+            int numfeet = num_measures * numBeats * 2;
+            feet = new char[numfeet];
+            steps = new string[numfeet];
         }
 
         public void writeSMSteps(System.IO.StreamWriter file)
@@ -127,6 +133,17 @@ namespace Stepper
                         triples_on_both_1_and_3, quintuples_either_on_1_or_2);
                     foot_laststep = m.generateDanceSingleSteps(foot_laststep);
                     measures[i] = m;
+                    char[] thisfoot = m.getFeet();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
+                    }
+                    string[] thesesteps = m.getSteps();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
+                    }
+
                 }
             }
             else if (dance_style == "pump-single")
@@ -162,6 +179,16 @@ namespace Stepper
                     measures[i] = m;
                 }
             }
+        }
+
+        public char[] getFeet()
+        {
+            return feet;
+        }
+
+        public string[] getSteps()
+        {
+            return steps;
         }
     }
 }

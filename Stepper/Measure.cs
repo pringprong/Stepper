@@ -19,7 +19,8 @@ namespace Stepper
         Random r;
         int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
         bool triples_on_both_1_and_3;
-        bool quintuples_either_on_1_or_2; 
+        bool quintuples_either_on_1_or_2;
+        char[] feet; // set of letters 'L', 'R', 'E' (either), and 'J' (jumps) representing which feet are stepping on the arrows
 
         public Measure()
         {
@@ -41,6 +42,16 @@ namespace Stepper
             quintuples_either_on_1_or_2 = quintuples_on_1_or_2;
          }
 
+         public char[] getFeet()
+         {
+             return feet;
+         }
+
+         public string[] getSteps()
+         {
+             return steps;
+         }
+
         public void writeSteps(System.IO.StreamWriter file)
         {
             for (int i = 0; i < arrows_per_measure; i++)
@@ -56,6 +67,11 @@ namespace Stepper
             string laststep = foot_laststep[1];
             arrows_per_measure = beats_per_measure * 2;
             steps = new string[] { "0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000" };
+            feet = new char[arrows_per_measure];
+     //       for (int a = 0; a < arrows_per_measure; a++)
+      //      {
+     //           feet[a] = 'p';
+     //       }
 
             for (int i = 0; i < arrows_per_measure; i++)
             {
@@ -103,7 +119,9 @@ namespace Stepper
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i] = step;
+                            feet[i] = 'R';
                             steps[i + 2] = step;
+                            feet[i + 2] = 'R';
 
                             laststep = step;
                             while (step.Equals(laststep))
@@ -111,13 +129,17 @@ namespace Stepper
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i+1] = 'L';
                             steps[i + 3] = step;
+                            feet[i+3] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i + 4] = step;
+                            feet[i+4] = 'R';
+
                             // prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
                             if (fromJump && (
                                 ((steps[i] == "0100") && (steps[i + 1] == "0010")) || 
@@ -136,20 +158,25 @@ namespace Stepper
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i] = step;
+                            feet[i] = 'L';
                             steps[i + 2] = step;
+                            feet[i+2] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i+1] = 'R';
                             steps[i + 3] = step;
+                            feet[i+3] = 'R';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i + 4] = step;
+                            feet[i+4] = 'L';
                             // prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
                             if (fromJump && (
                                 ((steps[i] == "0100") && (steps[i + 1] == "0010")) || 
@@ -188,13 +215,16 @@ namespace Stepper
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i] = step;
+                            feet[i] = 'R';
                             steps[i + 2] = step;
+                            feet[i + 2] = 'R';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i+1] = 'L';
                             foot = "right";
                         }
                         else
@@ -205,13 +235,16 @@ namespace Stepper
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i] = step;
+                            feet[i] = 'L';
                             steps[i + 2] = step;
+                            feet[i+2] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i + 1] = 'R';
                             foot = "left";
                         }
                         i = i + 3;
@@ -223,10 +256,12 @@ namespace Stepper
                             if (r.Next(0, 100) < jumps) // first decide if it's going to be a jump or not
                             {
                                 steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
+                                feet[i] = 'J';
                             }
                             else
                             {
                                 steps[i] = singlesteps[r.Next(0, singlesteps.Count())];
+                                feet[i] = 'E';
                             }
                             // change feet for next (this will impact future triples and quintuples)
                             if (foot.Equals("left"))
@@ -248,6 +283,7 @@ namespace Stepper
                                     step = jumpsteps[r.Next(0, jumpsteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'J';
                             }
                             else
                             {
@@ -257,6 +293,7 @@ namespace Stepper
                                     step = singlesteps[r.Next(0, singlesteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'E';
                             }
                             // change feet for next (this will impact future triples and quintuples)
                             if (foot.Equals("left"))
@@ -278,6 +315,7 @@ namespace Stepper
                                     step = jumpsteps[r.Next(0, jumpsteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'J';
                                 // change feet for next
                                 if (foot.Equals("left"))
                                 {
@@ -298,6 +336,7 @@ namespace Stepper
                                         step = rightsteps[r.Next(0, rightsteps.Count())];
                                     }
                                     steps[i] = step;
+                                    feet[i] = 'R';
                                     foot = "right";
                                 }
                                 else
@@ -308,6 +347,7 @@ namespace Stepper
                                         step = leftsteps[r.Next(0, leftsteps.Count())];
                                     }
                                     steps[i] = step;
+                                    feet[i] = 'L';
                                     foot = "left";
                                 }
                             }
@@ -317,6 +357,8 @@ namespace Stepper
                             if (r.Next(0, 100) < jumps) // insert a jump
                             {
                                 steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
+                                feet[i] = 'J';
+
                                 // change feet for next
                                 if (foot.Equals("left"))
                                 {
@@ -350,6 +392,11 @@ namespace Stepper
                                     if (!step.Equals(laststep))
                                     {
                                         foot = "right";
+                                        feet[i] = 'R';
+                                    }
+                                    else
+                                    {
+                                        feet[i] = 'L';
                                     }
                                     steps[i] = step;
                                 }
@@ -374,6 +421,11 @@ namespace Stepper
                                     if (!step.Equals(laststep)) 
                                     {
                                         foot = "left";
+                                        feet[i] = 'L';
+                                    }
+                                    else
+                                    {
+                                        feet[i] = 'R';
                                     }
                                     steps[i] = step;
                                 }

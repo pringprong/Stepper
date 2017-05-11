@@ -15,80 +15,150 @@ namespace Stepper
 
         private Stepper parent;
         private String dance_class;
+         private Pen blackpen;
+        private Pen redpen;
+        private Pen bluepen;
+        int scalefactor = 3;
+        int nummeasures;
+        char[] feet;
+        string[] steps;
   
         public SampleWindow()
         {
             InitializeComponent();
         }
 
-        public SampleWindow(Stepper p, String dc)
+        public SampleWindow(Stepper p, String dc, int nm, char[] f, string[] s, Pen b, Pen red, Pen bl)
         {
             InitializeComponent();
             parent = p;
             dance_class = dc;
-            if (dc.Equals("dance-single"))
-            {
-                this.sampleDGV.ColumnCount = 7;
-                sampleDGV.RowCount = 17;
-                foreach (DataGridViewColumn c in sampleDGV.Columns)
+            nummeasures = nm;
+            feet = f;
+            steps = s;
+            blackpen = b;
+            redpen = red;
+            bluepen = bl;
+
+            int numrows = nummeasures * 8 + 1;
+            sampleDGV.RowCount = numrows;
+
+                if (dc.Equals("dance-single"))
                 {
-                    c.Width = sampleDGV.Width / sampleDGV.ColumnCount;
+                    this.sampleDGV.ColumnCount = 7;
+                    foreach (DataGridViewColumn c in sampleDGV.Columns)
+                    {
+                        if (c.Index == 0)
+                        {
+                            c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
+
+                        }
+                        else
+                        {
+                            c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
+                        }
+                    }
+                    foreach (DataGridViewRow r in sampleDGV.Rows)
+                    {
+                        r.Height = sampleDGV.Height / sampleDGV.RowCount;
+                    }
+                    sampleDGV.Rows[0].Cells[0].Value = "Measure";
+                    sampleDGV.Rows[0].Cells[1].Value = "Beat";
+                    sampleDGV.Rows[0].Cells[2].Value = "Foot";
+                    for (int r = 1; r< numrows; r++)
+                    {
+                        sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
+                        string step = steps[r-1];
+                        for (int c = 0; c < 4; c++)
+                        {
+                            if (step[c] != '0')
+                            {
+                                sampleDGV.Rows[r].Cells[c + 3].Value = "";
+                            }
+                        }
+                    }
                 }
-                foreach (DataGridViewRow r in sampleDGV.Rows)
+                int measurecount = 1;
+                int beatcount = 1;
+                for (int i = 0; i < numrows; i++)
                 {
-                    r.Height = sampleDGV.Height / sampleDGV.RowCount;
+                    if ((i - 1) % 8 == 0)
+                    {
+                        sampleDGV.Rows[i].Cells[0].Value = measurecount;
+                        measurecount++;
+                    }
+                    if (((i - 1) % 2) == 0)
+                    {
+                        sampleDGV.Rows[i].Cells[1].Value = beatcount;
+                        beatcount++;
+                        if (beatcount > 4) { beatcount = 1; }
+                    }
                 }
-                sampleDGV.Rows[0].Cells[0].Value = "Measure";
-                sampleDGV.Rows[0].Cells[1].Value = "Beat";
-                sampleDGV.Rows[0].Cells[2].Value = "Foot";
-            }
 
             sampleDGV.ClearSelection();
             sampleDGV.CurrentCell = null;
         }
 
-        public void setParentWindow(Stepper s)
-        {
-            parent = s;
-        }
-
-
-
         private void sampleDGV_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex == 0 && e.ColumnIndex==3 && dance_class.Equals("dance-single")) {
-                            // Create a Graphics object
+            if (dance_class.Equals("dance-single")) {
+                if (e.RowIndex == 0)
+                {
+                    drawDanceSingleArrow(blackpen, e);
+                }
 
-            // Create two AdjustableArrowCap objects
-            AdjustableArrowCap cap2 = new AdjustableArrowCap(2, 1);
-
-            // Set cap properties
-            cap2.WidthScale = 1;
-            cap2.BaseCap = LineCap.Square;
-            cap2.Height = 1;
-
-            // Create a pen
-            Pen blackPen = new Pen(Color.Black, 15);
-
-            // Set CustomStartCap and CustomEndCap properties
-            //blackPen.CustomStartCap = cap1;
-            blackPen.CustomEndCap = cap2;
-
-            // Draw line
-            e.Graphics.DrawLine(blackPen, 
-                e.CellBounds.X+40, 
-                e.CellBounds.Y+30, 
-                e.CellBounds.X, 
-                e.CellBounds.Y+30);
-
-            // Dispose of objects
-            e.PaintContent(e.ClipBounds);
-            e.Handled = true;
-            blackPen.Dispose();
-            
+                else if (((e.RowIndex % 2) == 0) && (e.ColumnIndex > 2) && sampleDGV[e.ColumnIndex, e.RowIndex].Value != null)
+                {
+                    drawDanceSingleArrow(bluepen, e);
+                    //sampleDGV[e.ColumnIndex, e.RowIndex].Value = null;
+                }
+                else if (((e.RowIndex % 2) == 1) && (e.ColumnIndex > 2) && sampleDGV[e.ColumnIndex, e.RowIndex].Value != null)
+                {
+                    drawDanceSingleArrow(redpen, e);
+                    //sampleDGV[e.ColumnIndex, e.RowIndex].Value = null;
+                }
+ 
             }
 
+            // Paint 
+            e.PaintContent(e.ClipBounds);
+            e.Handled = true;
+        }
 
+        private void drawDanceSingleArrow(Pen p, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                e.Graphics.DrawLine(p,
+                e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
+                e.CellBounds.Y + e.CellBounds.Height / 2,
+                e.CellBounds.X + e.CellBounds.Width / scalefactor,
+                e.CellBounds.Y + e.CellBounds.Height / 2);
+            }
+            else if (e.ColumnIndex == 4)
+            {
+                e.Graphics.DrawLine(p,
+                e.CellBounds.X + e.CellBounds.Width / 2,
+                e.CellBounds.Y,
+                e.CellBounds.X + e.CellBounds.Width / 2,
+                e.CellBounds.Y + e.CellBounds.Height);
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                e.Graphics.DrawLine(p,
+                e.CellBounds.X + e.CellBounds.Width / 2,
+                e.CellBounds.Y + e.CellBounds.Height,
+                e.CellBounds.X + e.CellBounds.Width / 2,
+                e.CellBounds.Y);
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                e.Graphics.DrawLine(p,
+                e.CellBounds.X + e.CellBounds.Width / scalefactor,
+                e.CellBounds.Y + e.CellBounds.Height / 2,
+                e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
+                e.CellBounds.Y + e.CellBounds.Height / 2);
+            }
         }
     }
 }

@@ -59,6 +59,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.sampleDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.sampleDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sampleDGV.Enabled = false;
             this.sampleDGV.EnableHeadersVisualStyles = false;
             this.sampleDGV.Location = new System.Drawing.Point(0, 0);
             this.sampleDGV.Name = "sampleDGV";
@@ -72,7 +73,7 @@
             this.sampleDGV.ShowCellToolTips = false;
             this.sampleDGV.ShowEditingIcon = false;
             this.sampleDGV.ShowRowErrors = false;
-            this.sampleDGV.Size = new System.Drawing.Size(782, 785);
+            this.sampleDGV.Size = new System.Drawing.Size(498, 785);
             this.sampleDGV.TabIndex = 1;
             this.sampleDGV.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.sampleDGV_CellPainting);
             // 
@@ -80,9 +81,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 785);
+            this.ClientSize = new System.Drawing.Size(498, 785);
             this.Controls.Add(this.sampleDGV);
             this.Name = "SampleWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SampleWindow";
             ((System.ComponentModel.ISupportInitialize)(this.sampleDGV)).EndInit();
             this.ResumeLayout(false);

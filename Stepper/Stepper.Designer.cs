@@ -36,6 +36,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sample1 = new System.Windows.Forms.Button();
             this.panel28 = new System.Windows.Forms.Panel();
             this.quintupleType = new System.Windows.Forms.NumericUpDown();
             this.label59 = new System.Windows.Forms.Label();
@@ -78,6 +79,7 @@
             this.stepFill_trackbar = new System.Windows.Forms.TrackBar();
             this.level = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.sample2 = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.quintupleType2 = new System.Windows.Forms.NumericUpDown();
             this.label65 = new System.Windows.Forms.Label();
@@ -120,6 +122,7 @@
             this.stepFill_trackbar2 = new System.Windows.Forms.TrackBar();
             this.level2 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.sample3 = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.quintupleType3 = new System.Windows.Forms.NumericUpDown();
             this.label71 = new System.Windows.Forms.Label();
@@ -167,6 +170,7 @@
             this.stepFill_trackbar3 = new System.Windows.Forms.TrackBar();
             this.level3 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.sample4 = new System.Windows.Forms.Button();
             this.panel35 = new System.Windows.Forms.Panel();
             this.quintupleType4 = new System.Windows.Forms.NumericUpDown();
             this.label77 = new System.Windows.Forms.Label();
@@ -209,6 +213,7 @@
             this.stepFill_trackbar4 = new System.Windows.Forms.TrackBar();
             this.level4 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.sample5 = new System.Windows.Forms.Button();
             this.panel37 = new System.Windows.Forms.Panel();
             this.quintupleType5 = new System.Windows.Forms.NumericUpDown();
             this.label83 = new System.Windows.Forms.Label();
@@ -922,7 +927,21 @@
             this.overwriteStepfiles = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.songInfo = new System.Windows.Forms.DataGridView();
-            this.sample1 = new System.Windows.Forms.Button();
+            this.sampleDS1 = new System.Windows.Forms.Button();
+            this.sampleDS2 = new System.Windows.Forms.Button();
+            this.sampleDS3 = new System.Windows.Forms.Button();
+            this.sampleDS4 = new System.Windows.Forms.Button();
+            this.sampleDS5 = new System.Windows.Forms.Button();
+            this.sampleDD1 = new System.Windows.Forms.Button();
+            this.sampleDD2 = new System.Windows.Forms.Button();
+            this.sampleDD3 = new System.Windows.Forms.Button();
+            this.sampleDD4 = new System.Windows.Forms.Button();
+            this.sampleDD5 = new System.Windows.Forms.Button();
+            this.samplePS1 = new System.Windows.Forms.Button();
+            this.samplePS2 = new System.Windows.Forms.Button();
+            this.samplePS3 = new System.Windows.Forms.Button();
+            this.samplePS4 = new System.Windows.Forms.Button();
+            this.samplePS5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1434,6 +1453,16 @@
             this.panel1.Size = new System.Drawing.Size(1020, 120);
             this.panel1.TabIndex = 5;
             // 
+            // sample1
+            // 
+            this.sample1.Location = new System.Drawing.Point(66, 3);
+            this.sample1.Name = "sample1";
+            this.sample1.Size = new System.Drawing.Size(57, 22);
+            this.sample1.TabIndex = 20;
+            this.sample1.Text = "Sample";
+            this.sample1.UseVisualStyleBackColor = true;
+            this.sample1.Click += new System.EventHandler(this.sample1_Click);
+            // 
             // panel28
             // 
             this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1876,6 +1905,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.sample2);
             this.panel6.Controls.Add(this.panel31);
             this.panel6.Controls.Add(this.panel27);
             this.panel6.Controls.Add(this.label32);
@@ -1890,6 +1920,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1020, 120);
             this.panel6.TabIndex = 15;
+            // 
+            // sample2
+            // 
+            this.sample2.Location = new System.Drawing.Point(66, 5);
+            this.sample2.Name = "sample2";
+            this.sample2.Size = new System.Drawing.Size(57, 22);
+            this.sample2.TabIndex = 21;
+            this.sample2.Text = "Sample";
+            this.sample2.UseVisualStyleBackColor = true;
+            this.sample2.Click += new System.EventHandler(this.sample2_Click);
             // 
             // panel31
             // 
@@ -2330,6 +2370,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.sample3);
             this.panel11.Controls.Add(this.panel33);
             this.panel11.Controls.Add(this.panel32);
             this.panel11.Controls.Add(this.label54);
@@ -2344,6 +2385,16 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1020, 120);
             this.panel11.TabIndex = 13;
+            // 
+            // sample3
+            // 
+            this.sample3.Location = new System.Drawing.Point(66, 5);
+            this.sample3.Name = "sample3";
+            this.sample3.Size = new System.Drawing.Size(57, 22);
+            this.sample3.TabIndex = 22;
+            this.sample3.Text = "Sample";
+            this.sample3.UseVisualStyleBackColor = true;
+            this.sample3.Click += new System.EventHandler(this.sample3_Click);
             // 
             // panel33
             // 
@@ -2860,6 +2911,7 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel17.Controls.Add(this.sample4);
             this.panel17.Controls.Add(this.panel35);
             this.panel17.Controls.Add(this.panel34);
             this.panel17.Controls.Add(this.label43);
@@ -2874,6 +2926,16 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(1020, 120);
             this.panel17.TabIndex = 16;
+            // 
+            // sample4
+            // 
+            this.sample4.Location = new System.Drawing.Point(66, 5);
+            this.sample4.Name = "sample4";
+            this.sample4.Size = new System.Drawing.Size(57, 22);
+            this.sample4.TabIndex = 23;
+            this.sample4.Text = "Sample";
+            this.sample4.UseVisualStyleBackColor = true;
+            this.sample4.Click += new System.EventHandler(this.sample4_Click);
             // 
             // panel35
             // 
@@ -3324,6 +3386,7 @@
             // 
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel22.Controls.Add(this.sample5);
             this.panel22.Controls.Add(this.panel37);
             this.panel22.Controls.Add(this.panel36);
             this.panel22.Controls.Add(this.label55);
@@ -3338,6 +3401,16 @@
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1020, 120);
             this.panel22.TabIndex = 14;
+            // 
+            // sample5
+            // 
+            this.sample5.Location = new System.Drawing.Point(66, 8);
+            this.sample5.Name = "sample5";
+            this.sample5.Size = new System.Drawing.Size(57, 22);
+            this.sample5.TabIndex = 24;
+            this.sample5.Text = "Sample";
+            this.sample5.UseVisualStyleBackColor = true;
+            this.sample5.Click += new System.EventHandler(this.sample5_Click);
             // 
             // panel37
             // 
@@ -3902,6 +3975,7 @@
             // 
             this.panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel38.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel38.Controls.Add(this.sampleDS1);
             this.panel38.Controls.Add(this.panel39);
             this.panel38.Controls.Add(this.panel40);
             this.panel38.Controls.Add(this.label92);
@@ -4354,6 +4428,7 @@
             // 
             this.panel45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel45.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel45.Controls.Add(this.sampleDS2);
             this.panel45.Controls.Add(this.panel46);
             this.panel45.Controls.Add(this.panel47);
             this.panel45.Controls.Add(this.label110);
@@ -4804,6 +4879,7 @@
             // 
             this.panel52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel52.Controls.Add(this.sampleDS3);
             this.panel52.Controls.Add(this.panel53);
             this.panel52.Controls.Add(this.panel54);
             this.panel52.Controls.Add(this.label128);
@@ -5329,6 +5405,7 @@
             // 
             this.panel59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel59.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel59.Controls.Add(this.sampleDS4);
             this.panel59.Controls.Add(this.panel60);
             this.panel59.Controls.Add(this.panel61);
             this.panel59.Controls.Add(this.label146);
@@ -5789,6 +5866,7 @@
             // 
             this.panel66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel66.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel66.Controls.Add(this.sampleDS5);
             this.panel66.Controls.Add(this.panel67);
             this.panel66.Controls.Add(this.panel68);
             this.panel66.Controls.Add(this.label164);
@@ -6325,6 +6403,7 @@
             // 
             this.panel73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel73.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel73.Controls.Add(this.sampleDD1);
             this.panel73.Controls.Add(this.panel74);
             this.panel73.Controls.Add(this.panel75);
             this.panel73.Controls.Add(this.label182);
@@ -6777,6 +6856,7 @@
             // 
             this.panel80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel80.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel80.Controls.Add(this.sampleDD2);
             this.panel80.Controls.Add(this.panel81);
             this.panel80.Controls.Add(this.panel82);
             this.panel80.Controls.Add(this.label200);
@@ -7227,6 +7307,7 @@
             // 
             this.panel87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel87.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel87.Controls.Add(this.sampleDD3);
             this.panel87.Controls.Add(this.panel88);
             this.panel87.Controls.Add(this.panel89);
             this.panel87.Controls.Add(this.label218);
@@ -7752,6 +7833,7 @@
             // 
             this.panel94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel94.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel94.Controls.Add(this.sampleDD4);
             this.panel94.Controls.Add(this.panel95);
             this.panel94.Controls.Add(this.panel96);
             this.panel94.Controls.Add(this.label236);
@@ -8212,6 +8294,7 @@
             // 
             this.panel101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel101.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel101.Controls.Add(this.sampleDD5);
             this.panel101.Controls.Add(this.panel102);
             this.panel101.Controls.Add(this.panel103);
             this.panel101.Controls.Add(this.label254);
@@ -8712,6 +8795,7 @@
             // 
             this.panel110.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel110.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel110.Controls.Add(this.samplePS1);
             this.panel110.Controls.Add(this.panel111);
             this.panel110.Controls.Add(this.panel112);
             this.panel110.Controls.Add(this.label272);
@@ -9164,6 +9248,7 @@
             // 
             this.panel117.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel117.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel117.Controls.Add(this.samplePS2);
             this.panel117.Controls.Add(this.panel118);
             this.panel117.Controls.Add(this.panel119);
             this.panel117.Controls.Add(this.label290);
@@ -9614,6 +9699,7 @@
             // 
             this.panel124.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel124.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel124.Controls.Add(this.samplePS3);
             this.panel124.Controls.Add(this.panel125);
             this.panel124.Controls.Add(this.panel126);
             this.panel124.Controls.Add(this.label308);
@@ -10139,6 +10225,7 @@
             // 
             this.panel131.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel131.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel131.Controls.Add(this.samplePS4);
             this.panel131.Controls.Add(this.panel132);
             this.panel131.Controls.Add(this.panel133);
             this.panel131.Controls.Add(this.label326);
@@ -10599,6 +10686,7 @@
             // 
             this.panel138.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel138.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel138.Controls.Add(this.samplePS5);
             this.panel138.Controls.Add(this.panel139);
             this.panel138.Controls.Add(this.panel140);
             this.panel138.Controls.Add(this.label344);
@@ -11222,15 +11310,165 @@
             this.songInfo.Size = new System.Drawing.Size(1032, 630);
             this.songInfo.TabIndex = 8;
             // 
-            // sample1
+            // sampleDS1
             // 
-            this.sample1.Location = new System.Drawing.Point(66, 3);
-            this.sample1.Name = "sample1";
-            this.sample1.Size = new System.Drawing.Size(57, 22);
-            this.sample1.TabIndex = 20;
-            this.sample1.Text = "Sample";
-            this.sample1.UseVisualStyleBackColor = true;
-            this.sample1.Click += new System.EventHandler(this.sample1_Click);
+            this.sampleDS1.Location = new System.Drawing.Point(66, 3);
+            this.sampleDS1.Name = "sampleDS1";
+            this.sampleDS1.Size = new System.Drawing.Size(57, 22);
+            this.sampleDS1.TabIndex = 21;
+            this.sampleDS1.Text = "Sample";
+            this.sampleDS1.UseVisualStyleBackColor = true;
+            this.sampleDS1.Click += new System.EventHandler(this.sampleDS1_Click);
+            // 
+            // sampleDS2
+            // 
+            this.sampleDS2.Location = new System.Drawing.Point(66, 7);
+            this.sampleDS2.Name = "sampleDS2";
+            this.sampleDS2.Size = new System.Drawing.Size(57, 22);
+            this.sampleDS2.TabIndex = 22;
+            this.sampleDS2.Text = "Sample";
+            this.sampleDS2.UseVisualStyleBackColor = true;
+            this.sampleDS2.Click += new System.EventHandler(this.sampleDS2_Click);
+            // 
+            // sampleDS3
+            // 
+            this.sampleDS3.Location = new System.Drawing.Point(66, 5);
+            this.sampleDS3.Name = "sampleDS3";
+            this.sampleDS3.Size = new System.Drawing.Size(57, 22);
+            this.sampleDS3.TabIndex = 23;
+            this.sampleDS3.Text = "Sample";
+            this.sampleDS3.UseVisualStyleBackColor = true;
+            this.sampleDS3.Click += new System.EventHandler(this.sampleDS3_Click);
+            // 
+            // sampleDS4
+            // 
+            this.sampleDS4.Location = new System.Drawing.Point(66, 4);
+            this.sampleDS4.Name = "sampleDS4";
+            this.sampleDS4.Size = new System.Drawing.Size(57, 22);
+            this.sampleDS4.TabIndex = 24;
+            this.sampleDS4.Text = "Sample";
+            this.sampleDS4.UseVisualStyleBackColor = true;
+            this.sampleDS4.Click += new System.EventHandler(this.sampleDS4_Click);
+            // 
+            // sampleDS5
+            // 
+            this.sampleDS5.Location = new System.Drawing.Point(66, 6);
+            this.sampleDS5.Name = "sampleDS5";
+            this.sampleDS5.Size = new System.Drawing.Size(57, 22);
+            this.sampleDS5.TabIndex = 25;
+            this.sampleDS5.Text = "Sample";
+            this.sampleDS5.UseVisualStyleBackColor = true;
+            this.sampleDS5.Click += new System.EventHandler(this.sampleDS5_Click);
+            // 
+            // sampleDD1
+            // 
+            this.sampleDD1.Location = new System.Drawing.Point(63, 4);
+            this.sampleDD1.Name = "sampleDD1";
+            this.sampleDD1.Size = new System.Drawing.Size(57, 22);
+            this.sampleDD1.TabIndex = 22;
+            this.sampleDD1.Text = "Sample";
+            this.sampleDD1.UseMnemonic = false;
+            this.sampleDD1.UseVisualStyleBackColor = true;
+            this.sampleDD1.Click += new System.EventHandler(this.sampleDD1_Click);
+            // 
+            // sampleDD2
+            // 
+            this.sampleDD2.Location = new System.Drawing.Point(63, 5);
+            this.sampleDD2.Name = "sampleDD2";
+            this.sampleDD2.Size = new System.Drawing.Size(57, 22);
+            this.sampleDD2.TabIndex = 23;
+            this.sampleDD2.Text = "Sample";
+            this.sampleDD2.UseMnemonic = false;
+            this.sampleDD2.UseVisualStyleBackColor = true;
+            this.sampleDD2.Click += new System.EventHandler(this.sampleDD2_Click);
+            // 
+            // sampleDD3
+            // 
+            this.sampleDD3.Location = new System.Drawing.Point(63, 5);
+            this.sampleDD3.Name = "sampleDD3";
+            this.sampleDD3.Size = new System.Drawing.Size(57, 22);
+            this.sampleDD3.TabIndex = 24;
+            this.sampleDD3.Text = "Sample";
+            this.sampleDD3.UseMnemonic = false;
+            this.sampleDD3.UseVisualStyleBackColor = true;
+            this.sampleDD3.Click += new System.EventHandler(this.sampleDD3_Click);
+            // 
+            // sampleDD4
+            // 
+            this.sampleDD4.Location = new System.Drawing.Point(63, 4);
+            this.sampleDD4.Name = "sampleDD4";
+            this.sampleDD4.Size = new System.Drawing.Size(57, 22);
+            this.sampleDD4.TabIndex = 25;
+            this.sampleDD4.Text = "Sample";
+            this.sampleDD4.UseMnemonic = false;
+            this.sampleDD4.UseVisualStyleBackColor = true;
+            this.sampleDD4.Click += new System.EventHandler(this.sampleDD4_Click);
+            // 
+            // sampleDD5
+            // 
+            this.sampleDD5.Location = new System.Drawing.Point(63, 2);
+            this.sampleDD5.Name = "sampleDD5";
+            this.sampleDD5.Size = new System.Drawing.Size(57, 22);
+            this.sampleDD5.TabIndex = 26;
+            this.sampleDD5.Text = "Sample";
+            this.sampleDD5.UseMnemonic = false;
+            this.sampleDD5.UseVisualStyleBackColor = true;
+            this.sampleDD5.Click += new System.EventHandler(this.sampleDD5_Click);
+            // 
+            // samplePS1
+            // 
+            this.samplePS1.Location = new System.Drawing.Point(66, 4);
+            this.samplePS1.Name = "samplePS1";
+            this.samplePS1.Size = new System.Drawing.Size(57, 22);
+            this.samplePS1.TabIndex = 23;
+            this.samplePS1.Text = "Sample";
+            this.samplePS1.UseMnemonic = false;
+            this.samplePS1.UseVisualStyleBackColor = true;
+            this.samplePS1.Click += new System.EventHandler(this.samplePS1_Click);
+            // 
+            // samplePS2
+            // 
+            this.samplePS2.Location = new System.Drawing.Point(66, 6);
+            this.samplePS2.Name = "samplePS2";
+            this.samplePS2.Size = new System.Drawing.Size(57, 22);
+            this.samplePS2.TabIndex = 24;
+            this.samplePS2.Text = "Sample";
+            this.samplePS2.UseMnemonic = false;
+            this.samplePS2.UseVisualStyleBackColor = true;
+            this.samplePS2.Click += new System.EventHandler(this.samplePS2_Click);
+            // 
+            // samplePS3
+            // 
+            this.samplePS3.Location = new System.Drawing.Point(66, 5);
+            this.samplePS3.Name = "samplePS3";
+            this.samplePS3.Size = new System.Drawing.Size(57, 22);
+            this.samplePS3.TabIndex = 25;
+            this.samplePS3.Text = "Sample";
+            this.samplePS3.UseMnemonic = false;
+            this.samplePS3.UseVisualStyleBackColor = true;
+            this.samplePS3.Click += new System.EventHandler(this.samplePS3_Click);
+            // 
+            // samplePS4
+            // 
+            this.samplePS4.Location = new System.Drawing.Point(66, 4);
+            this.samplePS4.Name = "samplePS4";
+            this.samplePS4.Size = new System.Drawing.Size(57, 22);
+            this.samplePS4.TabIndex = 26;
+            this.samplePS4.Text = "Sample";
+            this.samplePS4.UseMnemonic = false;
+            this.samplePS4.UseVisualStyleBackColor = true;
+            this.samplePS4.Click += new System.EventHandler(this.samplePS4_Click);
+            // 
+            // samplePS5
+            // 
+            this.samplePS5.Location = new System.Drawing.Point(66, 4);
+            this.samplePS5.Name = "samplePS5";
+            this.samplePS5.Size = new System.Drawing.Size(57, 22);
+            this.samplePS5.TabIndex = 27;
+            this.samplePS5.Text = "Sample";
+            this.samplePS5.UseMnemonic = false;
+            this.samplePS5.UseVisualStyleBackColor = true;
+            this.samplePS5.Click += new System.EventHandler(this.samplePS5_Click);
             // 
             // Stepper
             // 
@@ -12689,6 +12927,25 @@
         private System.Windows.Forms.TrackBar stepfill_trackbarPS5;
         private System.Windows.Forms.Label label355;
         private System.Windows.Forms.Button sample1;
+        private System.Windows.Forms.Button sample2;
+        private System.Windows.Forms.Button sample3;
+        private System.Windows.Forms.Button sample4;
+        private System.Windows.Forms.Button sample5;
+        private System.Windows.Forms.Button sampleDS1;
+        private System.Windows.Forms.Button sampleDS2;
+        private System.Windows.Forms.Button sampleDS3;
+        private System.Windows.Forms.Button sampleDS4;
+        private System.Windows.Forms.Button sampleDS5;
+        private System.Windows.Forms.Button sampleDD1;
+        private System.Windows.Forms.Button sampleDD2;
+        private System.Windows.Forms.Button sampleDD3;
+        private System.Windows.Forms.Button sampleDD4;
+        private System.Windows.Forms.Button sampleDD5;
+        private System.Windows.Forms.Button samplePS1;
+        private System.Windows.Forms.Button samplePS2;
+        private System.Windows.Forms.Button samplePS3;
+        private System.Windows.Forms.Button samplePS4;
+        private System.Windows.Forms.Button samplePS5;
 
     }
 }

@@ -155,6 +155,16 @@ namespace Stepper
                         triples_on_both_1_and_3, quintuples_either_on_1_or_2);
                     foot_laststep = m.generatePumpSingleSteps(foot_laststep);
                     measures[i] = m;
+                    char[] thisfoot = m.getFeet();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
+                    }
+                    string[] thesesteps = m.getSteps();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
+                    }
                 }
             }
             else if (dance_style == "dance-solo")
@@ -166,6 +176,16 @@ namespace Stepper
                         triples_on_both_1_and_3, quintuples_either_on_1_or_2);
                     foot_laststep = m.generateDanceSoloSteps(foot_laststep);
                     measures[i] = m;
+                    char[] thisfoot = m.getFeet();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
+                    }
+                    string[] thesesteps = m.getSteps();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
+                    }
                 }
             }
             else if (dance_style == "dance-double")
@@ -177,6 +197,16 @@ namespace Stepper
                         triples_on_both_1_and_3, quintuples_either_on_1_or_2);
                     foot_laststep = m.generateDanceDoubleSteps(foot_laststep);
                     measures[i] = m;
+                    char[] thisfoot = m.getFeet();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
+                    }
+                    string[] thesesteps = m.getSteps();
+                    for (int index = 0; index < 8; index++)
+                    {
+                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
+                    }
                 }
             }
         }

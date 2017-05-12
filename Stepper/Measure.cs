@@ -68,11 +68,6 @@ namespace Stepper
             arrows_per_measure = beats_per_measure * 2;
             steps = new string[] { "0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000" };
             feet = new char[arrows_per_measure];
-     //       for (int a = 0; a < arrows_per_measure; a++)
-      //      {
-     //           feet[a] = 'p';
-     //       }
-
             for (int i = 0; i < arrows_per_measure; i++)
             {
                 // set initial step options
@@ -446,13 +441,13 @@ namespace Stepper
             return finish_foot_laststep;
         } // end method string generateDanceSingleSteps(string[])
 
-
         public string[] generateDanceSoloSteps(string[] foot_laststep)
         {
             string foot = foot_laststep[0];
             string laststep = foot_laststep[1];
             arrows_per_measure = beats_per_measure * 2;
             steps = new string[] { "000000", "000000", "000000", "000000", "000000", "000000", "000000", "000000" };
+            feet = new char[arrows_per_measure];
 
             for (int i = 0; i < arrows_per_measure; i++)
             {
@@ -466,6 +461,7 @@ namespace Stepper
                 {
                     laststep = singlesteps[r.Next(0, singlesteps.Count())];
                     steps[i] = laststep;
+                    feet[i] = 'L';
                     i++;
                 } // end if
                 else
@@ -487,6 +483,7 @@ namespace Stepper
             string laststep = foot_laststep[1];
             arrows_per_measure = beats_per_measure * 2;
             steps = new string[] { "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000" };
+            feet = new char[arrows_per_measure];
 
             for (int i = 0; i < arrows_per_measure; i++)
             {
@@ -500,6 +497,7 @@ namespace Stepper
                 {
                     laststep = singlesteps[r.Next(0, singlesteps.Count())];
                     steps[i] = laststep;
+                    feet[i] = 'L';
                     i++;
                 } // end if
                 else
@@ -519,9 +517,9 @@ namespace Stepper
         {
             string foot = foot_laststep[0];
             string laststep = foot_laststep[1];
-
             arrows_per_measure = beats_per_measure * 2;
             steps = new string[] { "00000", "00000", "00000", "00000", "00000", "00000", "00000", "00000" };
+            feet = new char[arrows_per_measure];
 
             for (int i = 0; i < arrows_per_measure; i++)
             {
@@ -589,7 +587,8 @@ namespace Stepper
                             }
                             steps[i] = step;
                             steps[i + 2] = step;
-
+                            feet[i] = 'R';
+                            feet[i + 2] = 'R';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
@@ -597,12 +596,15 @@ namespace Stepper
                             }
                             steps[i + 1] = step;
                             steps[i + 3] = step;
+                            feet[i + 1] = 'L';
+                            feet[i + 3] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i + 4] = step;
+                            feet[i + 4] = 'R';
                             // prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
                             if (fromJump && (
                                 ((steps[i] == "00001") && (steps[i + 1] == "00010")) ||
@@ -625,6 +627,8 @@ namespace Stepper
                             }
                             steps[i] = step;
                             steps[i + 2] = step;
+                            feet[i] = 'L';
+                            feet[i + 2] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
@@ -632,12 +636,15 @@ namespace Stepper
                             }
                             steps[i + 1] = step;
                             steps[i + 3] = step;
+                            feet[i + 1] = 'R';
+                            feet[i + 3] = 'R';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i + 4] = step;
+                            feet[i + 4] = 'L';
                             // prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
                             if (fromJump && (
                                 ((steps[i] == "00001") && (steps[i + 1] == "00010")) ||
@@ -704,12 +711,15 @@ namespace Stepper
                             }
                             steps[i] = step;
                             steps[i + 2] = step;
+                            feet[i] = 'R';
+                            feet[i + 2] = 'R';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = leftsteps[r.Next(0, leftsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i + 1] = 'L';
                             foot = "right";
                         }
                         else
@@ -721,12 +731,15 @@ namespace Stepper
                             }
                             steps[i] = step;
                             steps[i + 2] = step;
+                            feet[i] = 'L';
+                            feet[i + 2] = 'L';
                             laststep = step;
                             while (step.Equals(laststep))
                             {
                                 step = rightsteps[r.Next(0, rightsteps.Count())];
                             }
                             steps[i + 1] = step;
+                            feet[i + 1] = 'R';
                             foot = "left";
                         }
                         i = i + 3;
@@ -743,6 +756,7 @@ namespace Stepper
                             {
                                 steps[i] = singlesteps[r.Next(0, singlesteps.Count())];
                             }
+                            feet[i] = 'E';
                             // change feet for next (this will impact future triples and quintuples)
                             if (foot.Equals("left"))
                             {
@@ -763,6 +777,7 @@ namespace Stepper
                                     step = jumpsteps[r.Next(0, jumpsteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'B';
                             }
                             else
                             {
@@ -772,6 +787,7 @@ namespace Stepper
                                     step = singlesteps[r.Next(0, singlesteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'E';
                             }
                             // change feet for next (this will impact future triples and quintuples)
                             if (foot.Equals("left"))
@@ -782,7 +798,6 @@ namespace Stepper
                             {
                                 foot = "left";
                             }
-
                         }
                         else if (alternate_foot && !repeat_arrow) // strict alternate foot, no repeats
                         {
@@ -794,6 +809,7 @@ namespace Stepper
                                     step = jumpsteps[r.Next(0, jumpsteps.Count())];
                                 }
                                 steps[i] = step;
+                                feet[i] = 'B';
                                 // change feet for next
                                 if (foot.Equals("left"))
                                 {
@@ -814,6 +830,7 @@ namespace Stepper
                                         step = rightsteps[r.Next(0, rightsteps.Count())];
                                     }
                                     steps[i] = step;
+                                    feet[i] = 'R';
                                     foot = "right";
                                 }
                                 else
@@ -824,16 +841,17 @@ namespace Stepper
                                         step = leftsteps[r.Next(0, leftsteps.Count())];
                                     }
                                     steps[i] = step;
+                                    feet[i] = 'L';
                                     foot = "left";
                                 }
                             }
-
                         }
                         else //if (alternate_foot && repeat_arrow)
                         {
                             if (r.Next(0, 100) < jumps) // insert a jump
                             {
                                 steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
+                                feet[i] = 'B';
                                 // change feet for next
                                 if (foot.Equals("left"))
                                 {
@@ -867,6 +885,11 @@ namespace Stepper
                                     if (!step.Equals(laststep))
                                     {
                                         foot = "right";
+                                        feet[i] = 'L';
+                                    }
+                                    else
+                                    {
+                                        feet[i] = 'R';
                                     }
                                     steps[i] = step;
                                 }
@@ -891,6 +914,11 @@ namespace Stepper
                                     if (!step.Equals(laststep))
                                     {
                                         foot = "left";
+                                        feet[i] = 'R';
+                                    }
+                                    else
+                                    {
+                                        feet[i] = 'L';
                                     }
                                     steps[i] = step;
                                 }
@@ -910,6 +938,5 @@ namespace Stepper
             finish_foot_laststep[1] = laststep;
             return finish_foot_laststep;
         } // end method string generatePumpSingleSteps(string[])
-
     }
 }

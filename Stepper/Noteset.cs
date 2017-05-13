@@ -28,15 +28,17 @@ namespace Stepper
         bool quintuples_either_on_1_or_2;
         char[] feet;
         string[] steps;
+        string[] foot_laststep;
 
         public Noteset()
         {
 
         }
-        
-        public Noteset(string interface_style, string type, int measure, string interface_lvl, int beats_p_measure, bool alt_foot, bool repeat_arrows, 
+
+        public Noteset(string interface_style, string type, int measure, string interface_lvl, int beats_p_measure, bool alt_foot, bool repeat_arrows,
             int percent_stepfill, int percent_onbeat, int percent_jumps, Random random, int percent_quintuples,
-            bool triples_on_1_and_3, bool quintuples_on_1_or_2) {
+            bool triples_on_1_and_3, bool quintuples_on_1_or_2)
+        {
             dance_style = interface_style;
             file_type = type;
             num_measures = measure;
@@ -81,11 +83,28 @@ namespace Stepper
             if (file_type == "SSC" && interface_level == "Expert")
             {
                 note_level = "Challenge";
-            
+
             }
             int numfeet = num_measures * numBeats * 2;
             feet = new char[numfeet];
             steps = new string[numfeet];
+
+            if (dance_style == "dance-single")
+            {
+                foot_laststep = new string[] { "left", "0000" };
+            }
+            else if (dance_style == "dance-solo")
+            {
+                foot_laststep = new string[] { "left", "000000" };
+            }
+            else if (dance_style == "dance-double")
+            {
+                foot_laststep = new string[] { "left", "00000000" };
+            }
+            else if (dance_style == "pump-single")
+            {
+                foot_laststep = new string[] { "left", "00000" };
+            }
         }
 
         public void writeSMSteps(System.IO.StreamWriter file)
@@ -124,89 +143,21 @@ namespace Stepper
 
         public void generateSteps()
         {
-            if (dance_style == "dance-single")
+            for (int i = 0; i < num_measures; i++)
             {
-                string[] foot_laststep = new string[] { "left", "0000" };
-                for (int i = 0; i < num_measures; i++)
+                Measure m = new Measure(dance_style, beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
+                    triples_on_both_1_and_3, quintuples_either_on_1_or_2);
+                foot_laststep = m.generateSteps(foot_laststep);
+                measures[i] = m;
+                char[] thisfoot = m.getFeet();
+                for (int index = 0; index < 8; index++)
                 {
-                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
-                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
-                    foot_laststep = m.generateDanceSingleSteps(foot_laststep);
-                    measures[i] = m;
-                    char[] thisfoot = m.getFeet();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
-                    }
-                    string[] thesesteps = m.getSteps();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
-                    }
-
+                    feet[i * beats_per_measure * 2 + index] = thisfoot[index];
                 }
-            }
-            else if (dance_style == "pump-single")
-            {
-                string[] foot_laststep = new string[] { "left", "00000" };
-                for (int i = 0; i < num_measures; i++)
+                string[] thesesteps = m.getSteps();
+                for (int index = 0; index < 8; index++)
                 {
-                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
-                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
-                    foot_laststep = m.generatePumpSingleSteps(foot_laststep);
-                    measures[i] = m;
-                    char[] thisfoot = m.getFeet();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
-                    }
-                    string[] thesesteps = m.getSteps();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
-                    }
-                }
-            }
-            else if (dance_style == "dance-solo")
-            {
-                string[] foot_laststep = new string[] { "left", "000000" };
-                for (int i = 0; i < num_measures; i++)
-                {
-                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
-                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
-                    foot_laststep = m.generateDanceSoloSteps(foot_laststep);
-                    measures[i] = m;
-                    char[] thisfoot = m.getFeet();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
-                    }
-                    string[] thesesteps = m.getSteps();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
-                    }
-                }
-            }
-            else if (dance_style == "dance-double")
-            {
-                string[] foot_laststep = new string[] { "left", "00000000" };
-                for (int i = 0; i < num_measures; i++)
-                {
-                    Measure m = new Measure(beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
-                        triples_on_both_1_and_3, quintuples_either_on_1_or_2);
-                    foot_laststep = m.generateDanceDoubleSteps(foot_laststep);
-                    measures[i] = m;
-                    char[] thisfoot = m.getFeet();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        feet[i * beats_per_measure * 2 + index] = thisfoot[index];
-                    }
-                    string[] thesesteps = m.getSteps();
-                    for (int index = 0; index < 8; index++)
-                    {
-                        steps[i * beats_per_measure * 2 + index] = thesesteps[index];
-                    }
+                    steps[i * beats_per_measure * 2 + index] = thesesteps[index];
                 }
             }
         }

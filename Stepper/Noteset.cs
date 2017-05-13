@@ -83,7 +83,6 @@ namespace Stepper
             if (file_type == "SSC" && interface_level == "Expert")
             {
                 note_level = "Challenge";
-
             }
             int numfeet = num_measures * numBeats * 2;
             feet = new char[numfeet];

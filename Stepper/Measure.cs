@@ -227,20 +227,130 @@ namespace Stepper
             }
             else if (dance_style.Equals("dance-double"))
             {
-                singlesteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000", "00000100", "00000010", "00000001" };
-                jumpsteps = new string[] { 
-                     "00110000", "01100000", "01010000", "11000000", "10010000", "10100000",  // jumps on the left-hand side
-                      "00000011", "00000110", "00000101", "00001100", "00001001", "00001010",  // jumps on the right-hand side
-                      "10001000", // both left arrows
-                      "01000100", "01001000", // left bottom and right-left or right bottom
-                      "00100010", "00101000", // left top and rightleft or right top
-                      "00011000", "00010100", "00010010", "00010001"   // left right and right left, right top, right bottom or right right
+                singlesteps = new string[] { 
+                    "10000000"
+                    , "01000000"
+                    , "00100000"
+                    , "00010000"
+                    , "00001000"
+                    , "00000100"
+                    , "00000010"
+                    , "00000001"
                 };
-                rightsteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000", "00000100", "00000010", "00000001" };
-                leftsteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000", "00000100", "00000010", "00000001" };
+                jumpsteps = new string[] { 
+                     "00110000"
+                     , "01100000"
+                     , "01010000"
+                     , "11000000"
+                     , "10010000"
+                     , "10100000"  // jumps on the left-hand side
+                     , "00000011"
+                     , "00000110"
+                     , "00000101"
+                     , "00001100"
+                     , "00001001"
+                     , "00001010"  // jumps on the right-hand side
+                     , "10001000" // both left arrows
+                     , "01000100"
+                      , "01001000" // left bottom and right-left or right bottom
+                      ,"00100010"
+                      , "00101000" // left top and rightleft or right top
+                      , "00011000"
+                      , "00010100"
+                      , "00010010"
+                      , "00010001"   // left right and right left, right top, right bottom or right right
+                };
+                rightsteps = new string[] { 
+                    "01000000"
+                    , "00100000"
+                    , "00010000"
+                    , "00001000"
+                    , "00000100"
+                    , "00000010"
+                    , "00000001"
+                };
+                leftsteps = new string[] { 
+                    "10000000"
+                    , "01000000"
+                    , "00100000"
+                    , "00010000"
+                    , "00001000"
+                    , "00000100"
+                    , "00000010" 
+                };
                 fromJump = jumpsteps.Contains(laststep);
                 if (fromJump)
                 {
+                    if (laststep == "11000000") //leftleft and leftbottom
+                    {
+                        leftsteps = new string[] { "10000000", "00100000", "00010000", "00001000" };
+                        // don't try to put the left foot onto the leftbottom arrow, because the right foot is on it right now
+                        // also righttop, rightbottom and rightright are all unreachable from here
+                        singlesteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000" };
+                        rightsteps = new string[] { "01000000", "00100000", "00010000", "00001000" };
+                        jumpsteps = new string[] { 
+                            "00110000", "01100000", "01010000", "11000000", "10010000", "10100000",  // jumps on the left-hand side
+                      //      "00000011", "00000110", "00000101", "00001100", "00001001", "00001010",  // jumps on the right-hand side
+                            "10001000", // both left arrows
+                    //        "01000100", "01001000", // left bottom and right-left or right bottom
+                            "00100010", "00101000", // left top and rightleft or right top
+                            "00011000", "00010100", "00010010", "00010001"   // left right and right left, right top, right bottom or right right
+                };
+                    }
+                    else if (laststep == "101000000") //leftleft and lefttop
+                    {
+                        singlesteps = new string[] { 
+                    "10000000"
+                    , "01000000"
+                    , "00100000"
+                    , "00010000"
+                    , "00001000"
+          //          , "00000100"
+          //          , "00000010"
+          //          , "00000001"
+                };
+                        jumpsteps = new string[] { 
+                     "00110000"
+                     , "01100000"
+                     , "01010000"
+                     , "11000000"
+                     , "10010000"
+                     , "10100000"  // jumps on the left-hand side
+         //            , "00000011"
+          //           , "00000110"
+         //            , "00000101"
+          //           , "00001100"
+          //           , "00001001"
+          //           , "00001010"  // jumps on the right-hand side
+                     , "10001000" // both left arrows
+                     , "01000100"
+                      , "01001000" // left bottom and right-left or right bottom
+         //             ,"00100010"
+         //             , "00101000" // left top and rightleft or right top
+                      , "00011000"
+                      , "00010100"
+                      , "00010010"
+                      , "00010001"   // left right and right left, right top, right bottom or right right
+                };
+                        rightsteps = new string[] { 
+                    "01000000"
+                    , "00100000"
+                    , "00010000"
+                    , "00001000"
+            //        , "00000100"
+            //        , "00000010"
+            //        , "00000001"
+                };
+                        leftsteps = new string[] { 
+                    "10000000"
+                    , "01000000"
+       //             , "00100000"
+                    , "00010000"
+        //            , "00001000"
+        //            , "00000100"
+        //            , "00000010" 
+                };
+                    }
                 }
             }
             else if (dance_style.Equals("pump-single"))

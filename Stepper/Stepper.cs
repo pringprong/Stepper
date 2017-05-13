@@ -27,14 +27,13 @@ namespace Stepper
         private Pen redpen;
         private Pen bluepen;
         private int measures_per_sample = 4;
-
         private int instructionsTextboxGap = 40;
 
         public Stepper()
         {
             InitializeComponent(); 
 
-            // create arrows and pens
+            // create arrows and pens for the Sample windows
             cap = new AdjustableArrowCap(2, 1);
             cap.WidthScale = 1;
             cap.BaseCap = LineCap.Square;
@@ -45,8 +44,6 @@ namespace Stepper
             redpen.CustomEndCap = cap;
             bluepen = new Pen(Color.Blue, 10);
             bluepen.CustomEndCap = cap;
-
-
 
             textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
 
@@ -152,8 +149,7 @@ Warnings:
             toolTip1.SetToolTip(this.quintuples_on_1_or_22, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_23, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            
+            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");            
         }
 
         private void selectFolder_Click(object sender, EventArgs e)
@@ -505,6 +501,8 @@ Warnings:
                         file.Close();
                     }
                 });
+                MessageBox.Show("Step generation succeeded!\n\nDon't forget to clear the cache in \n\nC:\\Users\\<your username>\\AppData\\Roaming\\StepMania 5\\Cache\n\n if this is your first time running Stepper on this folder.");
+                return;
             }
         }
 

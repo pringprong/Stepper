@@ -27,7 +27,6 @@ namespace Stepper
 		string[] leftsteps;
 		string[] rightsteps = new string[] { "0100", "0010", "0001" };
 		bool fromJump;
-		private static Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> steps_3d_dictionary;
 
 		public Measure()
 		{
@@ -69,47 +68,6 @@ namespace Stepper
 			file.WriteLine(",");
 		}
 
-		private bool isUDUDSQuintuple(string steps_i, string steps_i_plus_one)
-		{
-			if (dance_style.Equals("dance-single"))
-			{
-				if (((steps_i == "0100") && (steps_i_plus_one == "0010")) ||
-					((steps_i == "0010") && (steps_i_plus_one == "0100")))
-				{
-					return true;
-				}
-			}
-			else if (dance_style.Equals("dance-solo"))
-			{
-				if (((steps_i == "001000") && (steps_i_plus_one == "000100")) ||
-					((steps_i == "000100") && (steps_i_plus_one == "001000")))
-				{
-					return true;
-				}
-			}
-			else if (dance_style.Equals("dance-double"))
-			{
-				if (((steps_i == "01000000") && (steps_i_plus_one == "00100000")) ||
-					((steps_i == "00100000") && (steps_i_plus_one == "01000000")) ||
-					((steps_i == "00000100") && (steps_i_plus_one == "00000010")) ||
-					((steps_i == "00000010") && (steps_i_plus_one == "00000100")))
-				{
-					return true;
-				}
-			}
-			else if (dance_style.Equals("pump-single"))
-			{
-				if (((steps_i == "00001") && (steps_i_plus_one == "00010")) ||
-					((steps_i == "00010") && (steps_i_plus_one == "00001")) ||
-					((steps_i == "10000") && (steps_i_plus_one == "01000")) ||
-					((steps_i == "01000") && (steps_i_plus_one == "10000")))
-				{
-					return true;
-				}
-			}
-			return false;
-		}
-
 		private void createEmpty()
 		{
 			if (dance_style.Equals("dance-single"))
@@ -130,164 +88,23 @@ namespace Stepper
 			}
 		}
 
-		private void initiateStep3DDictionary()
-		{
-			steps_3d_dictionary = new Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> {
-				{ "dance-single", new Dictionary<string, Dictionary<string, string[]>> {
-					{ "single", new Dictionary<string, string[]>() { 
-						// single steps reachable from the key step with either foot
-						{ "base", new string[] { "1000", "0100", "0010", "0001"} },
-						{ "1000", new string[] { "true", "true", "true", "true"} },
-						{ "0100", new string[] { "true", "true", "true", "true"} },
-						{ "0010", new string[] { "true", "true", "true", "true"} },
-						{ "0001", new string[] { "true", "true", "true", "true"} },
-						{ "0011", new string[] { "true", "true", "true", "true"} },
-						{ "0101", new string[] { "true", "true", "true", "true"} },
-						{ "1001", new string[] { "true", "true", "true", "true"} },
-						{ "0110", new string[] { "true", "true", "true", "true"} },
-						{ "1010", new string[] { "true", "true", "true", "true"} },
-						{ "1100", new string[] { "true", "true", "true", "true"} },
-					} },
-					{ "left", new Dictionary<string, string[]>() { 
-						// single steps reachable with the left foot while the right foot is on the key step (or both feet for jumps)
-						{ "base", new string[] {"1000", "0100", "0010"} },
-						{ "1000", new string[] {"true", "true", "true"} },
-						{ "0100", new string[] {"true", "true", "true"} },
-						{ "0010", new string[] {"true", "true", "true"} },
-						{ "0001", new string[] {"true", "true", "true"} },
-						{ "0011", new string[] {"true", "true", "true"} },
-						{ "0101", new string[] {"true", "true", "true"} },
-						{ "1001", new string[] {"true", "true", "true"} },
-						{ "0110", new string[] {"true", "true", "true"} },
-						{ "1010", new string[] {"true", "true", "FALS"} }, // top and left jump; don't try to put the left foot onto the top arrow, because the right foot is on it
-						{ "1100", new string[] {"true", "FALS", "true"} }, // bottom and left jump don't try to put the left foot onto the bottom arrow, because the right foot is on it right now
-					} },
-					{ "right", new Dictionary<string, string[]>() { 
-						// single steps reachable with the left foot while the right foot is on the key step (or both feet for jumps)
-						{ "base", new string[] {"0100", "0010", "0001"} },
-						{ "1000", new string[] {"true", "true", "true"} },
-						{ "0100", new string[] {"true", "true", "true"} },
-						{ "0010", new string[] {"true", "true", "true"} },
-						{ "0001", new string[] {"true", "true", "true"} },
-						{ "0011", new string[] {"true", "FALS", "true"} }, // top and right
-						{ "0101", new string[] {"FALS", "true", "true"} }, // bottom and right
-						{ "1001", new string[] {"true", "true", "true"} },
-						{ "0110", new string[] {"true", "true", "true"} },
-						{ "1010", new string[] {"true", "true", "true"} }, 
-						{ "1100", new string[] {"true", "true", "true"} }, 
-					} },
-					{ "jump", new Dictionary<string, string[]>() { 
-						// jump steps reachable from the key step
-						{ "base", new string[] {"0011", "0110", "0101", "1100", "1001", "1010"} },
-						{ "1000", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "0100", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "0010", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "0001", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "0011", new string[] {"true", "fals", "true", "true", "true", "true"} }, 
-						{ "0101", new string[] {"fals", "true", "true", "true", "true", "true"} }, 
-						{ "1001", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "0110", new string[] {"true", "true", "true", "true", "true", "true"} },
-						{ "1010", new string[] {"true", "true", "true", "true", "true", "true"} }, 
-						{ "1100", new string[] {"true", "true", "true", "true", "true", "true"} }, 
-					} },
-				} },
-			};
-		}
-
 		private void initiateStep(string laststep)
 		{
 			if (dance_style.Equals("dance-single"))
 			{
-				singlesteps = new string[] { "1000", "0100", "0010", "0001" };
-				jumpsteps = new string[] { "0011", "0110", "0101", "1100", "1001", "1010" };
-				leftsteps = new string[] { "1000", "0100", "0010" };
-				rightsteps = new string[] { "0100", "0010", "0001" };
-				fromJump = jumpsteps.Contains(laststep);
-				if (fromJump)
-				{
-					if (laststep == "0011") // top and right jump
-					{
-						rightsteps = new string[] { "0100", "0001" }; // don't try to put the right foot onto the top arrow, because the left foot is on it right now
-					}
-					else if (laststep == "0101") // bottom and right jump
-					{
-						rightsteps = new string[] { "0010", "0001" }; // don't try to put the right foot onto the bottom arrow, because the left foot is on it right now
-					}
-					else if (laststep == "1010") // top and left jump
-					{
-						leftsteps = new string[] { "1000", "0100" }; // don't try to put the left foot onto the top arrow, because the right foot is on it right now
-					}
-					else if (laststep == "1100") // bottom and left jump
-					{
-						leftsteps = new string[] { "1000", "0010" }; // don't try to put the left foot onto the bottom arrow, because the right foot is on it right now
-					}
-				}
+				leftsteps = StepDictionary.getStepList(dance_style, "left", laststep);
+				rightsteps = StepDictionary.getStepList(dance_style, "right", laststep);
+				jumpsteps = StepDictionary.getStepList(dance_style, "jump", laststep);
+				singlesteps = StepDictionary.getStepList(dance_style, "single", laststep);
+				fromJump = StepDictionary.fromJump(dance_style, laststep);
 			}
 			else if (dance_style.Equals("dance-solo"))
 			{
-				singlesteps = new string[] { "100000", "010000", "001000", "000100", "000010", "000001" };
-				jumpsteps = new string[] { "110000", // left and topleft  
-                                                    "101000", // left and bottom    
-                                                    "100100", // left and top     
-                                                    "100010", // left and topright  
-                                                    "100001", // left and right    
-                                                    "011000", // topleft and bottom  
-                                                    "010100", // topleft and top  
-                                                    "010010", // topleft and topright  
-                                                    "010001", // topleft and right   
-                                                    "001100", // bottom and top  
-                                                    "001010", // bottom and topright 
-                                                    "001001", // bottom and right 
-                                                    "000110", // top and topright
-                                                    "000101", // top and right
-                                                    "000011" // topright and right
-                                                   };
-				leftsteps = new string[] { "100000", "010000", "001000", "000100" };
-				rightsteps = new string[] { "001000", "000100", "000010", "000001" };
-				fromJump = jumpsteps.Contains(laststep);
-				if (fromJump)
-				{
-					if (laststep == "101000")// left and bottom
-					{
-						leftsteps = new string[] { "100000", "010000", "000100" };
-						// don't try to put the left foot onto the bottom arrow, because the right foot is on it right now
-					}
-					else if (laststep == "100100")  // left and top
-					{
-						leftsteps = new string[] { "100000", "010000", "001000" };
-						// don't try to put the left foot onto the top arrow, because the right foot is on it right now
-					}
-					else if (laststep == "011000") // topleft and bottom
-					{
-						leftsteps = new string[] { "100000", "010000", "000100" };
-						// don't try to put the left foot onto the bottom arrow, because the right foot is on it right now
-					}
-					else if (laststep == "010100")  // topleft and top
-					{
-						leftsteps = new string[] { "100000", "010000", "001000" };
-						// don't try to put the left foot onto the top arrow, because the right foot is on it right now
-					}
-					else if (laststep == "001010") // bottom and topright
-					{
-						rightsteps = new string[] { "000100", "000010", "000001" };
-						// don't try to put the right foot onto the bottom arrow, because the left foot is on it right now
-					}
-					else if (laststep == "001001") // bottom and right
-					{
-						rightsteps = new string[] { "000100", "000010", "000001" };
-						// don't try to put the right foot onto the bottom arrow, because the left foot is on it right now
-					}
-					else if (laststep == "000110") // top and topright
-					{
-						rightsteps = new string[] { "001000", "000010", "000001" };
-						// don't try to put the right foot onto the top arrow, because the left foot is on it right now
-					}
-					else if (laststep == "000101") // top and right
-					{
-						rightsteps = new string[] { "001000", "000010", "000001" };
-						// don't try to put the right foot onto the top arrow, because the left foot is on it right now
-					}
-				}
+				leftsteps = StepDictionary.getStepList(dance_style, "left", laststep);
+				rightsteps = StepDictionary.getStepList(dance_style, "right", laststep);
+				jumpsteps = StepDictionary.getStepList(dance_style, "jump", laststep);
+				singlesteps = StepDictionary.getStepList(dance_style, "single", laststep);
+				fromJump = StepDictionary.fromJump(dance_style, laststep);
 			}
 			else if (dance_style.Equals("dance-double"))
 			{
@@ -509,7 +326,7 @@ namespace Stepper
 							feet[i + 4] = 'R';
 
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && isUDUDSQuintuple(steps[i], steps[i + 1]))
+							if (fromJump && StepDictionary.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}
@@ -544,7 +361,7 @@ namespace Stepper
 							steps[i + 4] = step;
 							feet[i + 4] = 'L';
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && isUDUDSQuintuple(steps[i], steps[i + 1]))
+							if (fromJump && StepDictionary.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}

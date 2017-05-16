@@ -90,19 +90,19 @@ namespace Stepper
 
             if (dance_style == "dance-single")
             {
-                foot_laststep = new string[] { "left", "0000" };
+                foot_laststep = new string[] { "left", "0001" };
             }
             else if (dance_style == "dance-solo")
             {
-                foot_laststep = new string[] { "left", "000000" };
+                foot_laststep = new string[] { "left", "000001" };
             }
             else if (dance_style == "dance-double")
             {
-                foot_laststep = new string[] { "left", "00000000" };
+                foot_laststep = new string[] { "left", "00000001" };
             }
             else if (dance_style == "pump-single")
             {
-                foot_laststep = new string[] { "left", "00000" };
+                foot_laststep = new string[] { "left", "00001" };
             }
         }
 

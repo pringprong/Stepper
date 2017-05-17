@@ -20,12 +20,12 @@ namespace Stepper
 		int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
 		bool triples_on_both_1_and_3;
 		bool quintuples_either_on_1_or_2;
-		char[] feet; // set of letters 'L', 'R', 'E' (either), and 'J' (jumps) representing which feet are stepping on the arrows
+		char[] feet; // set of letters StepDeets.L 'L', StepDeets.R 'R', StepDeets.E 'E' (either), and StepDeets.J 'J' (jumps) representing which feet are stepping on the arrows
 		string dance_style;
 		string[] singlesteps;
 		string[] jumpsteps;
 		string[] leftsteps;
-		string[] rightsteps = new string[] { "0100", "0010", "0001" };
+		string[] rightsteps;
 		bool fromJump;
 
 		public Measure()
@@ -70,21 +70,10 @@ namespace Stepper
 
 		private void createEmpty()
 		{
-			if (dance_style.Equals("dance-single"))
+			steps = new string[arrows_per_measure];
+			for (int i = 0; i < arrows_per_measure; i++)
 			{
-				steps = new string[] { "0000", "0000", "0000", "0000", "0000", "0000", "0000", "0000" };
-			}
-			else if (dance_style.Equals("dance-solo"))
-			{
-				steps = new string[] { "000000", "000000", "000000", "000000", "000000", "000000", "000000", "000000" };
-			}
-			else if (dance_style.Equals("dance-double"))
-			{
-				steps = new string[] { "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000" };
-			}
-			else if (dance_style.Equals("pump-single"))
-			{
-				steps = new string[] { "00000", "00000", "00000", "00000", "00000", "00000", "00000", "00000" };
+				steps[i] = StepDeets.emptyStep(dance_style);
 			}
 		}
 
@@ -92,147 +81,27 @@ namespace Stepper
 		{
 			if (dance_style.Equals("dance-single"))
 			{
-				leftsteps = StepDictionary.getStepList(dance_style, "left", laststep);
-				rightsteps = StepDictionary.getStepList(dance_style, "right", laststep);
-				jumpsteps = StepDictionary.getStepList(dance_style, "jump", laststep);
-				singlesteps = StepDictionary.getStepList(dance_style, "single", laststep);
-				fromJump = StepDictionary.fromJump(dance_style, laststep);
+				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
+				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
+				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
+				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
+				fromJump = StepDeets.fromJump(dance_style, laststep);
 			}
 			else if (dance_style.Equals("dance-solo"))
 			{
-				leftsteps = StepDictionary.getStepList(dance_style, "left", laststep);
-				rightsteps = StepDictionary.getStepList(dance_style, "right", laststep);
-				jumpsteps = StepDictionary.getStepList(dance_style, "jump", laststep);
-				singlesteps = StepDictionary.getStepList(dance_style, "single", laststep);
-				fromJump = StepDictionary.fromJump(dance_style, laststep);
+				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
+				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
+				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
+				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
+				fromJump = StepDeets.fromJump(dance_style, laststep);
 			}
 			else if (dance_style.Equals("dance-double"))
 			{
-				singlesteps = new string[] { 
-                    "10000000"
-                    , "01000000"
-                    , "00100000"
-                    , "00010000"
-                    , "00001000"
-                    , "00000100"
-                    , "00000010"
-                    , "00000001"
-                };
-				jumpsteps = new string[] { 
-                     "00110000"
-                     , "01100000"
-                     , "01010000"
-                     , "11000000"
-                     , "10010000"
-                     , "10100000"  // jumps on the left-hand side
-                     , "00000011"
-                     , "00000110"
-                     , "00000101"
-                     , "00001100"
-                     , "00001001"
-                     , "00001010"  // jumps on the right-hand side
-                     , "10001000" // both left arrows
-                     , "01000100"
-                      , "01001000" // left bottom and right-left or right bottom
-                      ,"00100010"
-                      , "00101000" // left top and rightleft or right top
-                      , "00011000"
-                      , "00010100"
-                      , "00010010"
-                      , "00010001"   // left right and right left, right top, right bottom or right right
-                };
-				rightsteps = new string[] { 
-                    "01000000"
-                    , "00100000"
-                    , "00010000"
-                    , "00001000"
-                    , "00000100"
-                    , "00000010"
-                    , "00000001"
-                };
-				leftsteps = new string[] { 
-                    "10000000"
-                    , "01000000"
-                    , "00100000"
-                    , "00010000"
-                    , "00001000"
-                    , "00000100"
-                    , "00000010" 
-                };
-				fromJump = jumpsteps.Contains(laststep);
-				if (fromJump)
-				{
-					if (laststep == "11000000") //leftleft and leftbottom
-					{
-						leftsteps = new string[] { "10000000", "00100000", "00010000", "00001000" };
-						// don't try to put the left foot onto the leftbottom arrow, because the right foot is on it right now
-						// also righttop, rightbottom and rightright are all unreachable from here
-						singlesteps = new string[] { "10000000", "01000000", "00100000", "00010000", "00001000" };
-						rightsteps = new string[] { "01000000", "00100000", "00010000", "00001000" };
-						jumpsteps = new string[] { 
-                            "00110000", "01100000", "01010000", "11000000", "10010000", "10100000",  // jumps on the left-hand side
-                      //      "00000011", "00000110", "00000101", "00001100", "00001001", "00001010",  // jumps on the right-hand side
-                            "10001000", // both left arrows
-                    //        "01000100", "01001000", // left bottom and right-left or right bottom
-                            "00100010", "00101000", // left top and rightleft or right top
-                            "00011000", "00010100", "00010010", "00010001"   // left right and right left, right top, right bottom or right right
-                };
-					}
-					else if (laststep == "101000000") //leftleft and lefttop
-					{
-						singlesteps = new string[] { 
-                    "10000000"
-                    , "01000000"
-                    , "00100000"
-                    , "00010000"
-                    , "00001000"
-          //          , "00000100"
-          //          , "00000010"
-          //          , "00000001"
-                };
-						jumpsteps = new string[] { 
-                     "00110000"
-                     , "01100000"
-                     , "01010000"
-                     , "11000000"
-                     , "10010000"
-                     , "10100000"  // jumps on the left-hand side
-         //            , "00000011"
-          //           , "00000110"
-         //            , "00000101"
-          //           , "00001100"
-          //           , "00001001"
-          //           , "00001010"  // jumps on the right-hand side
-                     , "10001000" // both left arrows
-                     , "01000100"
-                      , "01001000" // left bottom and right-left or right bottom
-         //             ,"00100010"
-         //             , "00101000" // left top and rightleft or right top
-                      , "00011000"
-                      , "00010100"
-                      , "00010010"
-                      , "00010001"   // left right and right left, right top, right bottom or right right
-                };
-						rightsteps = new string[] { 
-                    "01000000"
-                    , "00100000"
-                    , "00010000"
-                    , "00001000"
-            //        , "00000100"
-            //        , "00000010"
-            //        , "00000001"
-                };
-						leftsteps = new string[] { 
-                    "10000000"
-                    , "01000000"
-       //             , "00100000"
-                    , "00010000"
-        //            , "00001000"
-        //            , "00000100"
-        //            , "00000010" 
-                };
-					}
-				}
+				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
+				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
+				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
+				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
+				fromJump = StepDeets.fromJump(dance_style, laststep);
 			}
 			else if (dance_style.Equals("pump-single"))
 			{
@@ -296,7 +165,7 @@ namespace Stepper
 					int rTripQuint = r.Next(0, 100); // random number to choose between triples and quintuples
 					if (rOnBeat >= onBeat && rTripQuint < quintuples && ((i == 0) || (i == 2) && quintuples_either_on_1_or_2))
 					{ // insert a quintuple
-						if (foot.Equals("left"))
+						if (foot.Equals(StepDeets.Left))
 						{
 							string step = laststep;
 							while (step.Equals(laststep))
@@ -304,9 +173,9 @@ namespace Stepper
 								step = rightsteps[r.Next(0, rightsteps.Count())];
 							}
 							steps[i] = step;
-							feet[i] = 'R';
+							feet[i] = StepDeets.R;
 							steps[i + 2] = step;
-							feet[i + 2] = 'R';
+							feet[i + 2] = StepDeets.R;
 
 							laststep = step;
 							while (step.Equals(laststep))
@@ -314,24 +183,24 @@ namespace Stepper
 								step = leftsteps[r.Next(0, leftsteps.Count())];
 							}
 							steps[i + 1] = step;
-							feet[i + 1] = 'L';
+							feet[i + 1] = StepDeets.L;
 							steps[i + 3] = step;
-							feet[i + 3] = 'L';
+							feet[i + 3] = StepDeets.L;
 							laststep = step;
 							while (step.Equals(laststep))
 							{
 								step = rightsteps[r.Next(0, rightsteps.Count())];
 							}
 							steps[i + 4] = step;
-							feet[i + 4] = 'R';
+							feet[i + 4] = StepDeets.R;
 
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDictionary.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
+							if (fromJump && StepDeets.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}
 							laststep = steps[i + 4];
-							foot = "right";
+							foot = StepDeets.Right;
 						}
 						else
 						{
@@ -341,38 +210,38 @@ namespace Stepper
 								step = leftsteps[r.Next(0, leftsteps.Count())];
 							}
 							steps[i] = step;
-							feet[i] = 'L';
+							feet[i] = StepDeets.L;
 							steps[i + 2] = step;
-							feet[i + 2] = 'L';
+							feet[i + 2] = StepDeets.L;
 							laststep = step;
 							while (step.Equals(laststep))
 							{
 								step = rightsteps[r.Next(0, rightsteps.Count())];
 							}
 							steps[i + 1] = step;
-							feet[i + 1] = 'R';
+							feet[i + 1] = StepDeets.R;
 							steps[i + 3] = step;
-							feet[i + 3] = 'R';
+							feet[i + 3] = StepDeets.R;
 							laststep = step;
 							while (step.Equals(laststep))
 							{
 								step = leftsteps[r.Next(0, leftsteps.Count())];
 							}
 							steps[i + 4] = step;
-							feet[i + 4] = 'L';
+							feet[i + 4] = StepDeets.L;
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDictionary.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
+							if (fromJump && StepDeets.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}
 							laststep = steps[i + 4];
-							foot = "left";
+							foot = StepDeets.Left;
 						}
 						i = i + 5;
 					}
 					else if (rOnBeat >= onBeat && rTripQuint >= quintuples && ((i <= 2) || (i == 4) && triples_on_both_1_and_3))
 					{ // insert a triple
-						if (foot.Equals("left"))
+						if (foot.Equals(StepDeets.Left))
 						{
 							string step = laststep;
 							while (step.Equals(laststep))
@@ -380,17 +249,17 @@ namespace Stepper
 								step = rightsteps[r.Next(0, rightsteps.Count())];
 							}
 							steps[i] = step;
-							feet[i] = 'R';
+							feet[i] = StepDeets.R;
 							steps[i + 2] = step;
-							feet[i + 2] = 'R';
+							feet[i + 2] = StepDeets.R;
 							laststep = step;
 							while (step.Equals(laststep))
 							{
 								step = leftsteps[r.Next(0, leftsteps.Count())];
 							}
 							steps[i + 1] = step;
-							feet[i + 1] = 'L';
-							foot = "right";
+							feet[i + 1] = StepDeets.L;
+							foot = StepDeets.Right;
 						}
 						else
 						{
@@ -400,17 +269,17 @@ namespace Stepper
 								step = leftsteps[r.Next(0, leftsteps.Count())];
 							}
 							steps[i] = step;
-							feet[i] = 'L';
+							feet[i] = StepDeets.L;
 							steps[i + 2] = step;
-							feet[i + 2] = 'L';
+							feet[i + 2] = StepDeets.L;
 							laststep = step;
 							while (step.Equals(laststep))
 							{
 								step = rightsteps[r.Next(0, rightsteps.Count())];
 							}
 							steps[i + 1] = step;
-							feet[i + 1] = 'R';
-							foot = "left";
+							feet[i + 1] = StepDeets.R;
+							foot = StepDeets.Left;
 						}
 						i = i + 3;
 					}
@@ -421,21 +290,21 @@ namespace Stepper
 							if (r.Next(0, 100) < jumps) // first decide if it's going to be a jump or not
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
-								feet[i] = 'J';
+								feet[i] = StepDeets.J;
 							}
 							else
 							{
 								steps[i] = singlesteps[r.Next(0, singlesteps.Count())];
-								feet[i] = 'E';
+								feet[i] = StepDeets.E;
 							}
 							// change feet for next (this will impact future triples and quintuples)
-							if (foot.Equals("left"))
+							if (foot.Equals(StepDeets.Left))
 							{
-								foot = "right";
+								foot = StepDeets.Right;
 							}
 							else
 							{
-								foot = "left";
+								foot = StepDeets.Left;
 							}
 						}
 						else if (!alternate_foot && !repeat_arrow) // repeats not allowed, so make sure the step isn't the same as laststep
@@ -448,7 +317,7 @@ namespace Stepper
 									step = jumpsteps[r.Next(0, jumpsteps.Count())];
 								}
 								steps[i] = step;
-								feet[i] = 'J';
+								feet[i] = StepDeets.J;
 							}
 							else
 							{
@@ -458,16 +327,16 @@ namespace Stepper
 									step = singlesteps[r.Next(0, singlesteps.Count())];
 								}
 								steps[i] = step;
-								feet[i] = 'E';
+								feet[i] = StepDeets.E;
 							}
 							// change feet for next (this will impact future triples and quintuples)
-							if (foot.Equals("left"))
+							if (foot.Equals(StepDeets.Left))
 							{
-								foot = "right";
+								foot = StepDeets.Right;
 							}
 							else
 							{
-								foot = "left";
+								foot = StepDeets.Left;
 							}
 						}
 						else if (alternate_foot && !repeat_arrow) // strict alternate foot, no repeats
@@ -480,20 +349,20 @@ namespace Stepper
 									step = jumpsteps[r.Next(0, jumpsteps.Count())];
 								}
 								steps[i] = step;
-								feet[i] = 'J';
+								feet[i] = StepDeets.J;
 								// change feet for next
-								if (foot.Equals("left"))
+								if (foot.Equals(StepDeets.Left))
 								{
-									foot = "right";
+									foot = StepDeets.Right;
 								}
 								else
 								{
-									foot = "left";
+									foot = StepDeets.Left;
 								}
 							}
 							else
 							{
-								if (foot.Equals("left"))
+								if (foot.Equals(StepDeets.Left))
 								{
 									string step = laststep;
 									while (step.Equals(laststep))
@@ -501,8 +370,8 @@ namespace Stepper
 										step = rightsteps[r.Next(0, rightsteps.Count())];
 									}
 									steps[i] = step;
-									feet[i] = 'R';
-									foot = "right";
+									feet[i] = StepDeets.R;
+									foot = StepDeets.Right;
 								}
 								else
 								{
@@ -512,8 +381,8 @@ namespace Stepper
 										step = leftsteps[r.Next(0, leftsteps.Count())];
 									}
 									steps[i] = step;
-									feet[i] = 'L';
-									foot = "left";
+									feet[i] = StepDeets.L;
+									foot = StepDeets.Left;
 								}
 							}
 						}
@@ -522,21 +391,21 @@ namespace Stepper
 							if (r.Next(0, 100) < jumps) // insert a jump
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
-								feet[i] = 'J';
+								feet[i] = StepDeets.J;
 
 								// change feet for next
-								if (foot.Equals("left"))
+								if (foot.Equals(StepDeets.Left))
 								{
-									foot = "right";
+									foot = StepDeets.Right;
 								}
 								else
 								{
-									foot = "left";
+									foot = StepDeets.Left;
 								}
 							}
 							else // insert a single-foot step
 							{
-								if (foot.Equals("left")) // insert a right foot step or a repeat if the previous step was a single-foot step
+								if (foot.Equals(StepDeets.Left)) // insert a right foot step or a repeat if the previous step was a single-foot step
 								{
 									string step;
 									if (singlesteps.Contains(laststep) && !rightsteps.Contains(laststep))
@@ -556,12 +425,12 @@ namespace Stepper
 									}
 									if (!step.Equals(laststep))
 									{
-										foot = "right";
-										feet[i] = 'R';
+										foot = StepDeets.Right;
+										feet[i] = StepDeets.R;
 									}
 									else
 									{
-										feet[i] = 'L';
+										feet[i] = StepDeets.L;
 									}
 									steps[i] = step;
 								}
@@ -585,12 +454,12 @@ namespace Stepper
 									}
 									if (!step.Equals(laststep))
 									{
-										foot = "left";
-										feet[i] = 'L';
+										foot = StepDeets.Left;
+										feet[i] = StepDeets.L;
 									}
 									else
 									{
-										feet[i] = 'R';
+										feet[i] = StepDeets.R;
 									}
 									steps[i] = step;
 								}

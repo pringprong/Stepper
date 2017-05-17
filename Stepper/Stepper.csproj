@@ -80,7 +80,7 @@
       <DependentUpon>SampleWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure.cs" />
-    <Compile Include="StepDictionary.cs" />
+    <Compile Include="StepDeets.cs" />
     <Compile Include="Stepper.cs">
       <SubType>Form</SubType>
     </Compile>

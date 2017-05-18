@@ -77,71 +77,6 @@ namespace Stepper
 			}
 		}
 
-		private void initiateStep(string laststep)
-		{
-			if (dance_style.Equals("dance-single"))
-			{
-				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
-				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
-				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
-				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
-				fromJump = StepDeets.fromJump(dance_style, laststep);
-			}
-			else if (dance_style.Equals("dance-solo"))
-			{
-				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
-				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
-				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
-				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
-				fromJump = StepDeets.fromJump(dance_style, laststep);
-			}
-			else if (dance_style.Equals("dance-double"))
-			{
-				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
-				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
-				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
-				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
-				fromJump = StepDeets.fromJump(dance_style, laststep);
-			}
-			else if (dance_style.Equals("pump-single"))
-			{
-				singlesteps = new string[] { "10000", "01000", "00100", "00010", "00001" };
-				jumpsteps = new string[] { "00011", "00110", "00101", "01100", "01001", "01010", "10001", "10010", "10100", "11000" };
-				leftsteps = new string[] { "10000", "01000", "00100", "00010", "00001" };
-				rightsteps = new string[] { "10000", "01000", "00100", "00010", "00001" };
-				fromJump = jumpsteps.Contains(laststep);
-				if (fromJump)
-				{
-					if (laststep == "01010") // both top arrows
-					{
-						leftsteps = new string[] { "10000", "01000", "00100", "00001" }; // left foot can't go on top right
-						rightsteps = new string[] { "10000", "00100", "00010", "00001" }; // right foot can't go on top left
-					}
-					else if (laststep == "10001") // both bottom arrows
-					{
-						leftsteps = new string[] { "10000", "01000", "00100", "00010" }; // left foot can't go on bottom right
-						rightsteps = new string[] { "01000", "00100", "00010", "00001" }; // right foot can't go on bottom left
-					}
-					else if (laststep == "01100") // top left and center
-					{
-						rightsteps = new string[] { "01000", "00100", "00010", "00001" }; // right foot can't go on top left
-					}
-					else if (laststep == "10100") // bottom left and center
-					{
-						rightsteps = new string[] { "10000", "00100", "00010", "00001" }; // right foot can't go on bottom left
-					}
-					else if (laststep == "00110") // center and top right
-					{
-						leftsteps = new string[] { "10000", "01000", "00100", "00001" }; // left foot can't go on top right
-					}
-					else if (laststep == "00101") // center and bottom right
-					{
-						leftsteps = new string[] { "10000", "01000", "00100", "00010" }; // left foot can't go on bottom right
-					}
-				}
-			}
-		}
-
 		public string[] generateSteps(string[] foot_laststep)
 		{
 			string foot = foot_laststep[0];
@@ -153,7 +88,11 @@ namespace Stepper
 			for (int i = 0; i < arrows_per_measure; i++)
 			{
 				// set initial options for this step
-				initiateStep(laststep);
+				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
+				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
+				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
+				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
+				fromJump = StepDeets.fromJump(dance_style, laststep);
 
 				int rStepFill = r.Next(0, 100);
 				if ((((i == 0) || (i == 4)) && (stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows

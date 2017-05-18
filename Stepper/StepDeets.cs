@@ -22,9 +22,9 @@ namespace Stepper
 		public const char L = 'L'; // left foot
 		public const char J = 'J';  // jump
 		public const char E = 'E';  //either foot
-		
-		private static Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> 
-			steps_3d_dictionary	= new Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> {
+
+		private static Dictionary<string, Dictionary<string, Dictionary<string, string[]>>>
+			steps_3d_dictionary = new Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> {
 				{ StepDeets.DanceSingle, new Dictionary<string, Dictionary<string, string[]>> {
 					{ StepDeets.Left, new Dictionary<string, string[]>() { 
 						// single steps reachable with the left foot while the right foot is on the key step (or both feet for jumps)
@@ -174,35 +174,35 @@ namespace Stepper
 							"00000100", /*rightbottom*/
 							"00000010", /*righttop*/
 						} },
-						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, T} },
-						{ "01000000",/*leftbottom           */ new string[] {T, T, T, T, T, T, T} },
-						{ "00100000",/*lefttop              */ new string[] {T, T, T, T, T, T, T} },
-						{ "00010000",/*leftright            */ new string[] {T, T, T, T, T, T, T} },
-						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, T, T, T} },
-						{ "00000100",/*rightbottom          */ new string[] {T, T, T, T, T, T, T} },
-						{ "00000010",/*righttop             */ new string[] {T, T, T, T, T, T, T} },
-						{ "00000001",/*rightright           */ new string[] {T, T, T, T, T, T, T} },
-                        {"00110000",/*lefttop leftright     */ new string[] {T, T, T, T, T, T, T} },
+						{ "10000000",/*leftleft             */ new string[] {F, F, T, T, F, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {T, F, T, T, T, F, F} },
+						{ "00100000",/*lefttop              */ new string[] {T, T, F, F, F, F, F} },
+						{ "00010000",/*leftright            */ new string[] {T, T, T, F, F, F, F} },
+						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, F, F, F} },
+						{ "00000100",/*rightbottom          */ new string[] {F, T, F, T, T, F, T} },
+						{ "00000010",/*righttop             */ new string[] {F, F, T, T, T, T, F} },
+						{ "00000001",/*rightright           */ new string[] {F, F, F, T, T, T, T} },
+                        {"00110000",/*lefttop leftright     */ new string[] {T, T, T, F, F, F, F} },
                         {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, T} },
-                        {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, T, T, T, T} },
-                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, T} },
-                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, T, T, T, T} },
-                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, T, T, T, T, T} }, // jumps on the left-hand side
-                        {"00000011",/*righttop rightright   */ new string[] {T, T, T, T, T, T, T} },
-                        {"00000110",/*rightbottom righttop  */ new string[] {T, T, T, T, T, T, T} },
-                        {"00000101",/*rightbottom rightright*/ new string[] {T, T, T, T, T, T, T} },
-                        {"00001100",/*rightleft rightbottom */ new string[] {T, T, T, T, T, T, T} },
-                        {"00001001",/*rightleft rightright  */ new string[] {T, T, T, T, T, T, T} },
-                        {"00001010",/*rightleft righttop    */ new string[] {T, T, T, T, T, T, T} }, // jumps on the right-hand side
-                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, T, T, T} }, // both left arrows
-                        {"01000100",/*leftbottom rightbottom*/ new string[] {T, T, T, T, T, T, T} },
-                        {"01001000",/*leftbottom rightleft  */ new string[] {T, T, T, T, T, T, T} },// left bottom and right-left or right bottom
-                        {"00100010",/*lefttop righttop      */ new string[] {T, T, T, T, T, T, T} },
-                        {"00101000",/*lefttop rightleft     */ new string[] {T, T, T, T, T, T, T} },// left top and rightleft or right top
-                        {"00011000",/*leftright rightleft   */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010100",/*leftright rightbottom */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010010",/*leftright righttop    */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010001",/*leftright rightright  */ new string[] {T, T, T, T, T, T, T} },
+                        {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, F, F, F, F} },
+                        {"11000000",/*leftleft leftbottom   */ new string[] {T, F, T, T, T, F, F} },
+                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, F, F, F, F} },
+                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, F, T, F, F, F} }, // jumps on the left-hand side
+                        {"00000011",/*righttop rightright   */ new string[] {F, F, F, T, T, T, T} },
+                        {"00000110",/*rightbottom righttop  */ new string[] {F, T, T, T, T, T, T} },
+                        {"00000101",/*rightbottom rightright*/ new string[] {F, F, F, T, T, T, T} },
+                        {"00001100",/*rightleft rightbottom */ new string[] {F, T, F, T, T, F, T} },
+                        {"00001001",/*rightleft rightright  */ new string[] {F, F, F, T, T, T, T} },
+                        {"00001010",/*rightleft righttop    */ new string[] {F, F, T, T, T, T, F} }, // jumps on the right-hand side
+                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, F, F, F} }, // both left arrows
+                        {"01000100",/*leftbottom rightbottom*/ new string[] {F, T, F, T, T, F, T} },
+                        {"01001000",/*leftbottom rightleft  */ new string[] {T, T, T, T, F, F, F} },// left bottom and right-left or right bottom
+                        {"00100010",/*lefttop righttop      */ new string[] {F, T, T, T, T, T, F} },
+                        {"00101000",/*lefttop rightleft     */ new string[] {T, T, T, T, F, F, F} },// left top and rightleft or right top
+                        {"00011000",/*leftright rightleft   */ new string[] {T, T, T, T, F, F, F} },
+                        {"00010100",/*leftright rightbottom */ new string[] {F, T, F, T, T, F, T} },
+                        {"00010010",/*leftright righttop    */ new string[] {F, F, T, T, T, T, F} },
+                        {"00010001",/*leftright rightright  */ new string[] {F, F, F, T, T, T, T} },
 					} },
 					{ StepDeets.Right, new Dictionary<string, string[]>() { 
 						// single steps reachable with the right foot while the left foot is on the key step (or both feet for jumps)
@@ -214,100 +214,172 @@ namespace Stepper
 							"00000100", /*rightbottom*/
 							"00000010", /*righttop*/
 							"00000001", /*rightright*/} },
-						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, T} },
-						{ "01000000",/*leftbottom           */ new string[] {T, T, T, T, T, T, T} },
-						{ "00100000",/*lefttop              */ new string[] {T, T, T, T, T, T, T} },
-						{ "00010000",/*leftright            */ new string[] {T, T, T, T, T, T, T} },
-						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, T, T, T} },
-						{ "00000100",/*rightbottom          */ new string[] {T, T, T, T, T, T, T} },
-						{ "00000010",/*righttop             */ new string[] {T, T, T, T, T, T, T} },
+						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, F, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {F, T, T, T, T, F, F} },
+						{ "00100000",/*lefttop              */ new string[] {T, F, T, T, F, T, F} },
+						{ "00010000",/*leftright            */ new string[] {F, F, F, T, T, T, T} },
+						{ "00001000",/*rightleft            */ new string[] {F, F, F, F, T, T, T} },
+						{ "00000100",/*rightbottom          */ new string[] {F, F, F, F, F, T, T} },
+						{ "00000010",/*righttop             */ new string[] {F, F, F, F, T, F, T} },
 						{ "00000001",/*rightright           */ new string[] {T, T, T, T, T, T, T} },
-                        {"00110000",/*lefttop leftright     */ new string[] {T, T, T, T, T, T, T} },
-                        {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, T} },
-                        {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, T, T, T, T} },
-                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, T} },
-                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, T, T, T, T} },
-                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, T, T, T, T, T} }, // jumps on the left-hand side
-                        {"00000011",/*righttop rightright   */ new string[] {T, T, T, T, T, T, T} },
+                        {"00110000",/*lefttop leftright     */ new string[] {T, F, T, T, F, T, F} },
+                        {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, F} },
+                        {"01010000",/*leftbottom leftright  */ new string[] {F, T, T, T, T, F, F} },
+                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, F, F, F} },
+                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, T, F, F, F} },
+                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, T, T, F, F, F} }, // jumps on the left-hand side
+                        {"00000011",/*righttop rightright   */ new string[] {F, F, F, F, T, F, T} },
                         {"00000110",/*rightbottom righttop  */ new string[] {T, T, T, T, T, T, T} },
-                        {"00000101",/*rightbottom rightright*/ new string[] {T, T, T, T, T, T, T} },
-                        {"00001100",/*rightleft rightbottom */ new string[] {T, T, T, T, T, T, T} },
-                        {"00001001",/*rightleft rightright  */ new string[] {T, T, T, T, T, T, T} },
-                        {"00001010",/*rightleft righttop    */ new string[] {T, T, T, T, T, T, T} }, // jumps on the right-hand side
-                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, T, T, T} }, // both left arrows
-                        {"01000100",/*leftbottom rightbottom*/ new string[] {T, T, T, T, T, T, T} },
-                        {"01001000",/*leftbottom rightleft  */ new string[] {T, T, T, T, T, T, T} },// left bottom and right-left or right bottom
-                        {"00100010",/*lefttop righttop      */ new string[] {T, T, T, T, T, T, T} },
-                        {"00101000",/*lefttop rightleft     */ new string[] {T, T, T, T, T, T, T} },// left top and rightleft or right top
-                        {"00011000",/*leftright rightleft   */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010100",/*leftright rightbottom */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010010",/*leftright righttop    */ new string[] {T, T, T, T, T, T, T} },
-                        {"00010001",/*leftright rightright  */ new string[] {T, T, T, T, T, T, T} },
+                        {"00000101",/*rightbottom rightright*/ new string[] {F, F, F, F, F, T, T} },
+                        {"00001100",/*rightleft rightbottom */ new string[] {F, F, F, F, T, T, T} },
+                        {"00001001",/*rightleft rightright  */ new string[] {F, F, F, F, T, T, T} },
+                        {"00001010",/*rightleft righttop    */ new string[] {F, F, F, F, T, T, T} }, // jumps on the right-hand side
+                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, F, F, F} }, // both left arrows
+                        {"01000100",/*leftbottom rightbottom*/ new string[] {F, T, T, T, T, F, F} },
+                        {"01001000",/*leftbottom rightleft  */ new string[] {F, T, T, T, T, F, F} },// left bottom and right-left or right bottom
+                        {"00100010",/*lefttop righttop      */ new string[] {T, F, T, T, F, T, F} },
+                        {"00101000",/*lefttop rightleft     */ new string[] {T, F, T, T, F, T, F} },// left top and rightleft or right top
+                        {"00011000",/*leftright rightleft   */ new string[] {F, F, F, T, T, T, T} },
+                        {"00010100",/*leftright rightbottom */ new string[] {F, F, F, T, T, T, T} },
+                        {"00010010",/*leftright righttop    */ new string[] {F, F, F, T, T, T, T} },
+                        {"00010001",/*leftright rightright  */ new string[] {F, F, F, T, T, T, T} },
 					} },
 					{ StepDeets.Jump, new Dictionary<string, string[]>() { 
 						// jump steps reachable from the key step: 
 						{ StepDeets.Base, new string[] {
-                     "00110000",
-                     "01100000",
-                     "01010000",
-                     "11000000",
-                     "10010000",
-                     "10100000", // jumps on the left-hand side
-                     "00000011",
-                     "00000110",
-                     "00000101",
-                     "00001100",
-                     "00001001",
-                     "00001010", // jumps on the right-hand side
-                     "10001000", // both left arrows
-                     "01000100",
-                     "01001000",// left bottom and right-left or right bottom
-                     "00100010",
-                     "00101000",// left top and rightleft or right top
-                     "00011000",
-                     "00010100",
-                     "00010010",
-                     "00010001"} },   // left right and right left, right top, right bottom or right right
-						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "01000000",/*leftbottom           */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00100000",/*lefttop              */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00010000",/*leftright            */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00000100",/*rightbottom          */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00000010",/*righttop             */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-						{ "00000001",/*rightright           */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00110000",/*lefttop leftright     */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} }, // jumps on the left-hand side
-                        {"00000011",/*righttop rightright   */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00000110",/*rightbottom righttop  */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00000101",/*rightbottom rightright*/ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00001100",/*rightleft rightbottom */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00001001",/*rightleft rightright  */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00001010",/*rightleft righttop    */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} }, // jumps on the right-hand side
-                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} }, // both left arrows
-                        {"01000100",/*leftbottom rightbottom*/ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"01001000",/*leftbottom rightleft  */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },// left bottom and right-left or right bottom
-                        {"00100010",/*lefttop righttop      */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00101000",/*lefttop rightleft     */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },// left top and rightleft or right top
-                        {"00011000",/*leftright rightleft   */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00010100",/*leftright rightbottom */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00010010",/*leftright righttop    */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
-                        {"00010001",/*leftright rightright  */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
+                     "00110000",/*lefttop leftright     */
+                     "01100000",/*leftbottom lefttop    */
+                     "01010000",/*leftbottom leftright  */
+                     "11000000",/*leftleft leftbottom   */
+                     "10010000",/*leftleft leftright    */
+                     "10100000",/*leftleft lefttop      */ // jumps on the left-hand side
+                     "00000011",/*righttop rightright   */
+                     "00000110",/*rightbottom righttop  */
+                     "00000101",/*rightbottom rightright*/
+                     "00001100",/*rightleft rightbottom */
+                     "00001001",/*rightleft rightright  */
+                     "00001010",/*rightleft righttop    */ // jumps on the right-hand side
+                     "10001000",/*leftleft rightleft    */ // both left arrows
+                     "01000100",/*leftbottom rightbottom*/
+                     "01001000",/*leftbottom rightleft  */ // left bottom and right-left or right bottom
+                     "00100010",/*lefttop righttop      */
+                     "00101000",/*lefttop rightleft     */ // left top and rightleft or right top
+                     "00011000",/*leftright rightleft   */
+                     "00010100",/*leftright rightbottom */
+                     "00010010",/*leftright righttop    */
+                     "00010001"} }, /*leftright rightright  */  // left right and right left, right top, right bottom or right right
+						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{ "00100000",/*lefttop              */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{ "00010000",/*leftright            */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, T, T, T, F} },
+						{ "00001000",/*rightleft            */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, T, T, T, T, F, T, T, T, T} },
+						{ "00000100",/*rightbottom          */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, F} },
+						{ "00000010",/*righttop             */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, T, F, F, F, F, T} },
+						{ "00000001",/*rightright           */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, T} },
+                        {"00110000",/*lefttop leftright     */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, F, T, T, T, T, T, F, F, F} },
+                        {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, F, F, F, F, F, F, F} },
+                        {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, F, T, T, F, F, T, T, T} },
+                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"10010000",/*leftleft leftright    */ new string[] {0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"10100000",/*leftleft lefttop      */ new string[] {0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, 
+                        {"00000011",/*righttop rightright   */ new string[] {0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"00000110",/*rightbottom righttop  */ new string[] {0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"00000101",/*rightbottom rightright*/ new string[] {0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"00001100",/*rightleft rightbottom */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"00001001",/*rightleft rightright  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+                        {"00001010",/*rightleft righttop    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, 
+                        {"10001000",/*leftleft rightleft    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0} }, 
+                        {"01000100",/*leftbottom rightbottom*/ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0} },
+                        {"01001000",/*leftbottom rightleft  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0} },
+                        {"00100010",/*lefttop righttop      */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0} },
+                        {"00101000",/*lefttop rightleft     */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0} },
+                        {"00011000",/*leftright rightleft   */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0} },
+                        {"00010100",/*leftright rightbottom */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0} },
+                        {"00010010",/*leftright righttop    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0} },
+                        {"00010001",/*leftright rightright  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T} },
 					} },
 				} },
+				{ StepDeets.PumpSingle, new Dictionary<string, Dictionary<string, string[]>> {
+					{ StepDeets.Left, new Dictionary<string, string[]>() { 
+						// single steps reachable with the left foot while the right foot is on the key step (or both feet for jumps)
+						{ StepDeets.Base, new string[] { "10000"/*downleft*/, "01000"/*upleft*/, "00100"/*center*/, "00010"/*upright*/, "00001"/*downright*/ } },
+						{ "10000" /*downleft          */, new string[] {T, T, T, T, T} },
+						{ "01000" /*upleft            */, new string[] {T, T, T, T, T} },
+						{ "00100" /*center            */, new string[] {T, T, T, T, T} },
+						{ "00010" /*upright           */, new string[] {T, T, T, T, T} },
+						{ "00001" /*downright         */, new string[] {T, T, T, T, T} },
+						{ "00011" /*upright downright */, new string[] {T, T, T, T, T} },
+						{ "00110" /*center upright    */, new string[] {T, T, T, F, T} }, // left foot can't go on upright
+						{ "00101" /*center downright  */, new string[] {T, T, T, T, F} }, // left foot can't go on downright
+						{ "01100" /*upleft center     */, new string[] {T, T, F, T, T} }, // left foot can't go on center
+						{ "01001" /*upleft downright  */, new string[] {T, T, T, T, F} }, // left foot can't go on downright
+						{ "01010" /*upleft upright    */, new string[] {T, T, T, F, T} }, // left foot can't go on upright because the right foot is on it
+						{ "10001" /*downleft downright*/, new string[] {T, T, T, T, F} }, // left foot can't go on downright
+						{ "10010" /*downleft upright  */, new string[] {T, T, T, F, T} }, // left foot can't go on upright
+						{ "10100" /*downleft center   */, new string[] {T, T, F, T, T} }, // left foot can't go on center
+						{ "11000" /*downleft upleft   */, new string[] {T, T, T, T, T} },
+					} },
+					{ StepDeets.Right, new Dictionary<string, string[]>() { 
+						// single steps reachable with the right foot while the left foot is on the key step (or both feet for jumps)
+						{ StepDeets.Base, new string[] { "10000"/*downleft*/, "01000"/*upleft*/, "00100"/*center*/, "00010"/*upright*/, "00001"/*downright*/ } },
+						{ "10000" /*downleft          */, new string[] {T, T, T, T, T} },
+						{ "01000" /*upleft            */, new string[] {T, T, T, T, T} },
+						{ "00100" /*center            */, new string[] {T, T, T, T, T} },
+						{ "00010" /*upright           */, new string[] {T, T, T, T, T} },
+						{ "00001" /*downright         */, new string[] {T, T, T, T, T} },
+						{ "00011" /*upright downright */, new string[] {T, T, T, T, T} },
+						{ "00110" /*center upright    */, new string[] {T, T, F, T, T} }, // right foot can't go on center
+						{ "00101" /*center downright  */, new string[] {T, T, F, T, T} }, // right foot can't go on center
+						{ "01100" /*upleft center     */, new string[] {T, F, T, T, T} }, // right foot can't go on upleft
+						{ "01001" /*upleft downright  */, new string[] {T, F, T, T, T} }, // right foot can't go on upleft
+						{ "01010" /*upleft upright    */, new string[] {T, F, T, T, T} }, // right foot can't go on upleft because the left foot is on it
+						{ "10001" /*downleft downright*/, new string[] {F, T, T, T, T} }, // right foot can't go on downleft
+						{ "10010" /*downleft upright  */, new string[] {F, T, T, T, T} }, // right foot can't go on downleft
+						{ "10100" /*downleft center   */, new string[] {F, T, T, T, T} }, // right foot can't go on downleft
+						{ "11000" /*downleft upleft   */, new string[] {T, T, T, T, T} },
+					} },
+					{ StepDeets.Jump, new Dictionary<string, string[]>() { 
+						// jump steps reachable from the key step: all reachable
+						{ StepDeets.Base, new string[] { 
+							"00011"/*upright downright*/, 
+							"00110"/*center upright*/, 
+							"00101"/*center downright*/, 
+							"01100"/*upleft center*/, 
+							"01001"/*upleft downright*/, 
+							"01010"/*upleft upright*/, 
+							"10001"/*downleft downright*/, 
+							"10010"/*downleft upright*/, 
+							"10100"/*downleft center*/, 
+							"11000"/*downleft upleft*/ } },
+						{ "10000" /*downleft          */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "01000" /*upleft            */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00100" /*center            */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00010" /*upright           */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00001" /*downright         */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00011" /*upright downright */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00110" /*center upright    */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "00101" /*center downright  */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "01100" /*upleft center     */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "01001" /*upleft downright  */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "01010" /*upleft upright    */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "10001" /*downleft downright*/, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "10010" /*downleft upright  */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "10100" /*downleft center   */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+						{ "11000" /*downleft upleft   */, new string[] {T, T, T, T, T, T, T, T, T, T} },
+					} },
+				} },
+
 			};
 
 		public static bool fromJump(string dance_style, string laststep)
 		{
 			string[] jumpsteps = steps_3d_dictionary[dance_style][StepDeets.Jump][StepDeets.Base];
-			if (jumpsteps.Contains(laststep)) {
+			if (jumpsteps.Contains(laststep))
+			{
 				return true;
 			}
-			else {
+			else
+			{
 				return false;
 			}
 		}
@@ -414,6 +486,51 @@ namespace Stepper
 			else //if (dance_style.Equals(StepDeets.PumpSingle))
 			{
 				return "00000";
+			}
+		}
+
+		public static string stepTitle(string dance_style)
+		{
+			if (dance_style.Equals(StepDeets.DanceSingle))
+			{
+				return "Dance Single";
+			}
+			else if (dance_style.Equals(StepDeets.DanceSolo))
+			{
+				return "Dance Solo";
+			}
+			else if (dance_style.Equals(StepDeets.DanceDouble))
+			{
+				return "Dance Double";
+			}
+			else //if (dance_style.Equals(StepDeets.PumpSingle))
+			{
+				return "Pump Single";
+			}
+		}
+
+		public static int numPlaces(string dance_style)
+		{
+			return emptyStep(dance_style).Length;
+		}
+
+		public static string[] getInitialStep(string dance_style)
+		{
+			if (dance_style.Equals(StepDeets.DanceSingle))
+			{
+				return new string[] { StepDeets.Left, "0001" };
+			}
+			else if (dance_style.Equals(StepDeets.DanceSolo))
+			{
+				return new string[] { StepDeets.Left, "000001" };
+			}
+			else if (dance_style.Equals(StepDeets.DanceDouble))
+			{
+				return new string[] { StepDeets.Left, "00000001" };
+			}
+			else //if (dance_style.Equals(StepDeets.PumpSingle))
+			{
+				return new string[] { StepDeets.Left, "00001" };
 			}
 		}
 	}

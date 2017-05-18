@@ -87,23 +87,6 @@ namespace Stepper
             int numfeet = num_measures * numBeats * 2;
             feet = new char[numfeet];
             steps = new string[numfeet];
-
-            if (dance_style == "dance-single")
-            {
-                foot_laststep = new string[] { "left", "0001" };
-            }
-            else if (dance_style == "dance-solo")
-            {
-                foot_laststep = new string[] { "left", "000001" };
-            }
-            else if (dance_style == "dance-double")
-            {
-                foot_laststep = new string[] { "left", "00000001" };
-            }
-            else if (dance_style == "pump-single")
-            {
-                foot_laststep = new string[] { "left", "00001" };
-            }
         }
 
         public void writeSMSteps(System.IO.StreamWriter file)
@@ -142,7 +125,8 @@ namespace Stepper
 
         public void generateSteps()
         {
-            for (int i = 0; i < num_measures; i++)
+			foot_laststep = StepDeets.getInitialStep(dance_style);
+			for (int i = 0; i < num_measures; i++)
             {
                 Measure m = new Measure(dance_style, beats_per_measure, alternate_foot, repeat_arrow, stepfill, onBeat, jumps, r, quintuples,
                     triples_on_both_1_and_3, quintuples_either_on_1_or_2);

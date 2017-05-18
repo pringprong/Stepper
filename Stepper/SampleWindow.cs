@@ -30,9 +30,10 @@ namespace Stepper
 
         public SampleWindow(Stepper p, String dc, String l, int nm, char[] f, string[] s, Pen b, Pen red, Pen bl)
         {
-            InitializeComponent();
+			dance_style = dc;
+			Width = (StepDeets.numPlaces(dance_style) + 4) * 64;
+			InitializeComponent();
             parent = p;
-            dance_style = dc;
             level = l;
             nummeasures = nm;
             feet = f;
@@ -47,125 +48,33 @@ namespace Stepper
             {
                 r.Height = sampleDGV.Height / sampleDGV.RowCount;
             }
-            if (dance_style.Equals("dance-single"))
-            {
-                this.Text = "Dance Single " + level;
-                this.sampleDGV.ColumnCount = 7;
-                foreach (DataGridViewColumn c in sampleDGV.Columns)
-                {
-                    if (c.Index == 0)
-                    {
-                        c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
+			Text = StepDeets.stepTitle(dance_style) + " " + level;
+			sampleDGV.ColumnCount = StepDeets.numPlaces(dance_style) + 3;
+			Width = (StepDeets.numPlaces(dance_style) + 4) * 64;
+			foreach (DataGridViewColumn c in sampleDGV.Columns)
+			{
+				if (c.Index == 0)
+				{
+					c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
 
-                    }
-                    else
-                    {
-                        c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
-                    }
-                }
-                for (int r = 1; r < numrows; r++)
-                {
-                    sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
-                    string step = steps[r - 1];
-                    for (int c = 0; c < 4; c++)
-                    {
-                        if (step[c] != '0')
-                        {
-                            sampleDGV.Rows[r].Cells[c + 3].Value = "";
-                        }
-                    }
-                }
-            }
-            else if (dance_style.Equals("dance-solo"))
-            {
-                this.Width = 642;
-                this.Text = "Dance Solo " + level;
-                this.sampleDGV.ColumnCount = 9;
-                foreach (DataGridViewColumn c in sampleDGV.Columns)
-                {
-                    if (c.Index == 0)
-                    {
-                        c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
-
-                    }
-                    else
-                    {
-                        c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
-                    }
-                }
-                for (int r = 1; r < numrows; r++)
-                {
-                    sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
-                    string step = steps[r - 1];
-                    for (int c = 0; c < 6; c++)
-                    {
-                        if (step[c] != '0')
-                        {
-                            sampleDGV.Rows[r].Cells[c + 3].Value = "";
-                        }
-                    }
-                }
-            }
-            else if (dance_style.Equals("dance-double"))
-            {
-                this.Width = 771;
-                this.Text = "Dance Double " + level;
-                this.sampleDGV.ColumnCount = 11;
-                foreach (DataGridViewColumn c in sampleDGV.Columns)
-                {
-                    if (c.Index == 0)
-                    {
-                        c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
-
-                    }
-                    else
-                    {
-                        c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
-                    }
-                }
-                for (int r = 1; r < numrows; r++)
-                {
-                    sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
-                    string step = steps[r - 1];
-                    for (int c = 0; c < 8; c++)
-                    {
-                        if (step[c] != '0')
-                        {
-                            sampleDGV.Rows[r].Cells[c + 3].Value = "";
-                        }
-                    }
-                }
-            }
-            else if (dance_style.Equals("pump-single"))
-            {
-                this.Width = 578;
-                this.Text = "Pump Single " + level;
-                this.sampleDGV.ColumnCount = 8;
-                foreach (DataGridViewColumn c in sampleDGV.Columns)
-                {
-                    if (c.Index == 0)
-                    {
-                        c.Width = sampleDGV.Width * 2 / (sampleDGV.ColumnCount + 1);
-
-                    }
-                    else
-                    {
-                        c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
-                    }
-                }
-                for (int r = 1; r < numrows; r++)
-                {
-                    sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
-                    string step = steps[r - 1];
-                    for (int c = 0; c < 5; c++)
-                    {
-                        if (step[c] != '0')
-                        {
-                            sampleDGV.Rows[r].Cells[c + 3].Value = "";
-                        }
-                    }
-                }
-            }
+				}
+				else
+				{
+					c.Width = sampleDGV.Width / (sampleDGV.ColumnCount + 1);
+				}
+			}
+			for (int r = 1; r < numrows; r++)
+			{
+				sampleDGV.Rows[r].Cells[2].Value = feet[r - 1];
+				string step = steps[r - 1];
+				for (int c = 0; c < StepDeets.numPlaces(dance_style); c++)
+				{
+					if (step[c] != '0')
+					{
+						sampleDGV.Rows[r].Cells[c + 3].Value = "";
+					}
+				}
+			}
             sampleDGV.Rows[0].Cells[0].Value = "Measure";
             sampleDGV.Rows[0].Cells[1].Value = "Beat";
             sampleDGV.Rows[0].Cells[2].Value = "Foot";
@@ -185,7 +94,7 @@ namespace Stepper
                     if (beatcount > 4) { beatcount = 1; }
                 }
             }
-        }
+		}
 
         private void sampleDGV_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -288,7 +197,7 @@ namespace Stepper
 
         private void drawDanceArrows(Pen p, DataGridViewCellPaintingEventArgs e)
         {
-            if (dance_style.Equals("dance-single"))
+            if (dance_style.Equals(StepDeets.DanceSingle))
             {
                 if (e.ColumnIndex == 3)
                 {
@@ -307,7 +216,7 @@ namespace Stepper
                     drawArrow("right", p, e);
                 }
             }
-            else if (dance_style.Equals("dance-solo"))
+            else if (dance_style.Equals(StepDeets.DanceSolo))
             {
                 if (e.ColumnIndex == 3)
                 {
@@ -334,7 +243,7 @@ namespace Stepper
                     drawArrow("right", p, e);
                 }
             }
-            else if (dance_style.Equals("dance-double"))
+            else if (dance_style.Equals(StepDeets.DanceDouble))
             {
                 if (e.ColumnIndex == 3)
                 {
@@ -369,7 +278,7 @@ namespace Stepper
                     drawArrow("right", p, e);
                 }
             }
-            else if (dance_style.Equals("pump-single"))
+            else if (dance_style.Equals(StepDeets.PumpSingle))
             {
                 if (e.ColumnIndex == 3)
                 {

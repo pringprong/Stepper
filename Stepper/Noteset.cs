@@ -56,31 +56,31 @@ namespace Stepper
             quintuples_either_on_1_or_2 = quintuples_on_1_or_2;
 
             difficulty = 1;
-            if (interface_level.Equals("Novice"))
+            if (interface_level.Equals(StepDeets.Novice))
             {
                 note_level = "Beginner";
             }
             else
             {
-                note_level = interface_level;
+                note_level = StepDeets.levelTitle(interface_level);
             }
-            switch (note_level)
+            switch (interface_level)
             {
-                case ("Easy"):
+                case (StepDeets.Easy):
                     difficulty = 4;
                     break;
-                case ("Medium"):
+                case (StepDeets.Medium):
                     difficulty = 6;
                     break;
-                case ("Hard"):
+                case (StepDeets.Hard):
                     difficulty = 8;
                     break;
-                case ("Expert"):
+                case (StepDeets.Expert):
                     difficulty = 10;
                     break;
             }
             measures = new Measure[num_measures];
-            if (file_type == "SSC" && interface_level == "Expert")
+            if (file_type == StepDeets.SSC && interface_level == StepDeets.Expert)
             {
                 note_level = "Challenge";
             }

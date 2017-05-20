@@ -12,7 +12,6 @@ namespace Stepper
 {
     public partial class SampleWindow : Form
     {
-        private Stepper parent;
         private String dance_style;
         private String level;
         private Pen blackpen;
@@ -28,12 +27,11 @@ namespace Stepper
             InitializeComponent();
         }
 
-        public SampleWindow(Stepper p, String dc, String l, int nm, char[] f, string[] s, Pen b, Pen red, Pen bl)
+        public SampleWindow(String dc, String l, int nm, char[] f, string[] s, Pen b, Pen red, Pen bl)
         {
 			dance_style = dc;
 			Width = (StepDeets.numPlaces(dance_style) + 4) * 64;
 			InitializeComponent();
-            parent = p;
             level = l;
             nummeasures = nm;
             feet = f;

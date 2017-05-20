@@ -73,6 +73,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanceStyleTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DanceStyleTabPage.Designer.cs">
+      <DependentUpon>DanceStyleTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesetPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotesetPanel.Designer.cs">
+      <DependentUpon>NotesetPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleWindow.cs">
       <SubType>Form</SubType>
     </Compile>

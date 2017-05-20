@@ -28,10 +28,13 @@ namespace Stepper
         private Pen bluepen;
         private int measures_per_sample = 4;
         private int instructionsTextboxGap = 40;
+		private DanceStyleTabPage dstp1;
 
         public Stepper()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+			r = new Random();
+
 
             // create arrows and pens for the Sample windows
             cap = new AdjustableArrowCap(2, 1);
@@ -44,6 +47,7 @@ namespace Stepper
             redpen.CustomEndCap = cap;
             bluepen = new Pen(Color.Blue, 10);
             bluepen.CustomEndCap = cap;
+			dstp1 = new DanceStyleTabPage(StepDeets.DanceSingle, beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
 
             textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
 
@@ -61,7 +65,6 @@ Warnings:
 3. Some songs use a .dwi file instead of a .sm or .ssc file to store step information. Stepper does not work for .dwi format stepfiles."; 
            
             songs = new List<Song>();
-            r = new Random();
             toolTip1 = new ToolTip();
             // Set up the delays for the ToolTip.
             toolTip1.AutoPopDelay = 5000;
@@ -149,7 +152,9 @@ Warnings:
             toolTip1.SetToolTip(this.quintuples_on_1_or_22, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_23, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");            
+            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
+
+			tabControl1.Controls.Add(dstp1);
         }
 
         private void selectFolder_Click(object sender, EventArgs e)
@@ -1798,7 +1803,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1810,7 +1815,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1822,7 +1827,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1835,7 +1840,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1848,7 +1853,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1861,7 +1866,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSolo, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1873,7 +1878,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSolo, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1886,7 +1891,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSolo, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1899,7 +1904,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSolo, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1912,7 +1917,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceSolo, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
@@ -1925,7 +1930,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceDouble, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1937,7 +1942,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceDouble, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1949,7 +1954,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceDouble, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1961,7 +1966,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceDouble, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1973,7 +1978,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.DanceDouble, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1985,7 +1990,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.PumpSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -1997,7 +2002,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.PumpSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -2009,7 +2014,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.PumpSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -2021,7 +2026,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.PumpSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
@@ -2033,7 +2038,7 @@ Warnings:
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(this, StepDeets.PumpSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
      }

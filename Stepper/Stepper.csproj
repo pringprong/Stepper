@@ -76,20 +76,11 @@
     <Compile Include="DanceStyleTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DanceStyleTabPage.Designer.cs">
-      <DependentUpon>DanceStyleTabPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="NotesetPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NotesetPanel.Designer.cs">
-      <DependentUpon>NotesetPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="SampleWindow.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SampleWindow.Designer.cs">
-      <DependentUpon>SampleWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure.cs" />
     <Compile Include="StepDeets.cs" />

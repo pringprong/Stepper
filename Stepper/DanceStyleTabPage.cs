@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace Stepper
 {
-	public partial class DanceStyleTabPage : TabPage
+	public /*partial*/ class DanceStyleTabPage : TabPage
 	{
+		private System.ComponentModel.IContainer components = null;
 		FlowLayoutPanel flowLayoutPanel2;
 		Panel panel29;
 		Button button2;
@@ -32,6 +33,19 @@ namespace Stepper
 		public DanceStyleTabPage()
 		{
 
+		}
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
 		}
 
 		public DanceStyleTabPage(string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)

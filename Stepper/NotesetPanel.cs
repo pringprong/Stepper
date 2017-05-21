@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace Stepper
 {
-	public partial class NotesetPanel : Panel
+	public class NotesetPanel : Panel
 	{
+		private System.ComponentModel.IContainer components = null;
 		Button sample1;
 		Panel panel28;
 		Panel panel16;
@@ -705,5 +706,20 @@ namespace Stepper
 		{
 			quintupleTypetrackbar.Value = Convert.ToInt32(quintupleType.Value);
 		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+		}
+
 	}
 }

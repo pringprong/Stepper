@@ -17,11 +17,7 @@ namespace Stepper
 		Button button2;
 		Button button3;
 		private int instructionsTextboxGap = 40;
-		NotesetPanel nsp_novice;
-		NotesetPanel nsp_easy;
-		NotesetPanel nsp_medium;
-		NotesetPanel nsp_hard;
-		NotesetPanel nsp_expert;
+		List<NotesetPanel> nsp_list;
 
 //		int beats_per_measure;
 //		int measures_per_sample;
@@ -51,11 +47,11 @@ namespace Stepper
 		public DanceStyleTabPage(string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
 			InitializeComponent();
-			nsp_novice = new NotesetPanel(dance_style, StepDeets.Novice, beats, measures, black, red, blue, random);
-			nsp_easy = new NotesetPanel(dance_style, StepDeets.Easy, beats, measures, black, red, blue, random);
-			nsp_medium = new NotesetPanel(dance_style, StepDeets.Medium, beats, measures, black, red, blue, random);
-			nsp_hard = new NotesetPanel(dance_style, StepDeets.Hard, beats, measures, black, red, blue, random);
-			nsp_expert = new NotesetPanel(dance_style, StepDeets.Expert, beats, measures, black, red, blue, random);
+			nsp_list = new List<NotesetPanel>();
+			foreach (string level in StepDeets.getLevels())
+			{
+				nsp_list.Add(new NotesetPanel(dance_style, level, beats, measures, black, red, blue, random));
+			}
 			button2 = new Button();
 			flowLayoutPanel2 = new FlowLayoutPanel();
 			panel29 = new Panel();
@@ -123,11 +119,10 @@ namespace Stepper
 			// put it all together
 			this.panel29.Controls.Add(this.button3);
 			this.panel29.Controls.Add(this.button2);
-			this.flowLayoutPanel2.Controls.Add(this.nsp_novice);
-			this.flowLayoutPanel2.Controls.Add(this.nsp_easy);
-			this.flowLayoutPanel2.Controls.Add(this.nsp_medium);
-			this.flowLayoutPanel2.Controls.Add(this.nsp_hard);
-			this.flowLayoutPanel2.Controls.Add(this.nsp_expert);
+			foreach(NotesetPanel nsp in nsp_list)
+			{
+				this.flowLayoutPanel2.Controls.Add(nsp);
+			}
 			this.flowLayoutPanel2.Controls.Add(this.panel29);
 			this.Controls.Add(this.flowLayoutPanel2);
 

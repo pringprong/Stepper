@@ -31,6 +31,16 @@ namespace Stepper
 		public const string SM = "SM";
 		public const string SSC = "SSC";
 
+		public static string[] getDanceStyles()
+		{
+			return new string[] { DanceSingle, DanceSolo, DanceDouble, PumpSingle };
+		}
+
+		public static string[] getLevels()
+		{
+			return new string[] { Novice, Easy, Medium, Hard, Expert };
+		}
+
 		private static Dictionary<string, Dictionary<string, Dictionary<string, string[]>>>
 			steps_3d_dictionary = new Dictionary<string, Dictionary<string, Dictionary<string, string[]>>> {
 				{ StepDeets.DanceSingle, new Dictionary<string, Dictionary<string, string[]>> {
@@ -188,7 +198,7 @@ namespace Stepper
 						{ "00010000",/*leftright            */ new string[] {T, T, T, F, F, F, F} },
 						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, F, F, F} },
 						{ "00000100",/*rightbottom          */ new string[] {F, T, F, T, T, F, T} },
-						{ "00000010",/*righttop             */ new string[] {F, F, T, T, T, T, F} },
+						{ "00000010",/*righttop             */ new string[] {F, F, F, T, T, T, F} },
 						{ "00000001",/*rightright           */ new string[] {F, F, F, T, T, T, T} },
                         {"00110000",/*lefttop leftright     */ new string[] {T, T, T, F, F, F, F} },
                         {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, T} },
@@ -223,7 +233,7 @@ namespace Stepper
 							"00000010", /*righttop*/
 							"00000001", /*rightright*/} },
 						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, F, F, F} },
-						{ "01000000",/*leftbottom           */ new string[] {F, T, T, T, T, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {F, T, T, T, F, F, F} },
 						{ "00100000",/*lefttop              */ new string[] {T, F, T, T, F, T, F} },
 						{ "00010000",/*leftright            */ new string[] {F, F, F, T, T, T, T} },
 						{ "00001000",/*rightleft            */ new string[] {F, F, F, F, T, T, T} },
@@ -275,36 +285,36 @@ namespace Stepper
                      "00011000",/*leftright rightleft   */
                      "00010100",/*leftright rightbottom */
                      "00010010",/*leftright righttop    */
-                     "00010001"} }, /*leftright rightright  */  // left right and right left, right top, right bottom or right right
-						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
-						{ "01000000",/*leftbottom           */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
-						{ "00100000",/*lefttop              */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
-						{ "00010000",/*leftright            */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, T, T, T, F} },
-						{ "00001000",/*rightleft            */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, T, T, T, T, F, T, T, T, T} },
-						{ "00000100",/*rightbottom          */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, F} },
-						{ "00000010",/*righttop             */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, T, F, F, F, F, T} },
-						{ "00000001",/*rightright           */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, T} },
+                     "00010001" /*leftright rightright  */} },   // left right and right left, right top, right bottom or right right
+						{"10000000",/*leftleft              */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{"01000000",/*leftbottom            */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{"00100000",/*lefttop               */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, F, F, F, F} },
+						{"00010000",/*leftright             */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, T, T, T, F} },
+						{"00001000",/*rightleft             */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, T, T, T, T, F, T, T, T, T} },
+						{"00000100",/*rightbottom           */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, F} },
+						{"00000010",/*righttop              */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, T, F, F, F, F, T} },
+						{"00000001",/*rightright            */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, F, F, F, F, T, T, T} },
                         {"00110000",/*lefttop leftright     */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, F, T, T, T, T, T, F, F, F} },
                         {"01100000",/*leftbottom lefttop    */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, F, F, F, F, F, F, F} },
                         {"01010000",/*leftbottom leftright  */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, F, T, T, F, F, T, T, T} },
-//                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-//                        {"10010000",/*leftleft leftright    */ new string[] {0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-//                        {"10100000",/*leftleft lefttop      */ new string[] {0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, 
-//                        {"00000011",/*righttop rightright   */ new string[] {0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-//                        {"00000110",/*rightbottom righttop  */ new string[] {0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
- //                       {"00000101",/*rightbottom rightright*/ new string[] {0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
- //                       {"00001100",/*rightleft rightbottom */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-   //                     {"00001001",/*rightleft rightright  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-     //                   {"00001010",/*rightleft righttop    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, 
-       //                 {"10001000",/*leftleft rightleft    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0, 0} }, 
-         //               {"01000100",/*leftbottom rightbottom*/ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0, 0} },
-           //             {"01001000",/*leftbottom rightleft  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0, 0} },
-             //           {"00100010",/*lefttop righttop      */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0, 0} },
-               //         {"00101000",/*lefttop rightleft     */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0, 0} },
-                 //       {"00011000",/*leftright rightleft   */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0, 0} },
-                   //     {"00010100",/*leftright rightbottom */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0, 0} },
-                     //   {"00010010",/*leftright righttop    */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T, 0} },
-                       // {"00010001",/*leftright rightright  */ new string[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, T} },
+                        {"11000000",/*leftleft leftbottom   */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, F, T, T, T, F, F} },
+                        {"10010000",/*leftleft leftright    */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, T, T, T, T, T, T, T, T} },
+                        {"10100000",/*leftleft lefttop      */ new string[] {T, T, T, T, T, T, F, F, F, F, F, F, T, F, T, T, T, F, F, F, F} }, 
+                        {"00000011",/*righttop rightright   */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, F, F, T, T, T, T} },
+                        {"00000110",/*rightbottom righttop  */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, F, F, T, T, T, T} },
+                        {"00000101",/*rightbottom rightright*/ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, F, F, F, F, T, T, T, T} },
+                        {"00001100",/*rightleft rightbottom */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, T, F, F, T, T, T, T} },
+                        {"00001001",/*rightleft rightright  */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, T, F, T, T, T, T, T, T, T} },
+                        {"00001010",/*rightleft righttop    */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, T, F, T, T, T, T, T, T, T} }, 
+                        {"10001000",/*leftleft rightleft    */ new string[] {T, T, T, T, T, T, F, F, F, T, T, T, T, T, T, T, T, T, T, T, T} }, 
+                        {"01000100",/*leftbottom rightbottom*/ new string[] {T, T, T, T, T, F, F, T, T, T, T, T, T, T, T, F, F, T, T, T, T} },
+                        {"01001000",/*leftbottom rightleft  */ new string[] {T, T, T, T, T, T, F, F, F, T, T, T, T, T, T, T, T, T, T, T, T} },
+                        {"00100010",/*lefttop righttop      */ new string[] {F, F, T, F, F, F, F, F, F, T, T, T, T, T, T, T, T, T, T, T, T} },
+                        {"00101000",/*lefttop rightleft     */ new string[] {T, T, T, T, T, T, F, F, F, T, T, T, T, T, T, T, T, T, T, T, T} },
+                        {"00011000",/*leftright rightleft   */ new string[] {T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T} },
+                        {"00010100",/*leftright rightbottom */ new string[] {T, F, T, F, T, F, T, T, T, T, T, T, F, T, T, F, T, T, T, T, T} },
+                        {"00010010",/*leftright righttop    */ new string[] {T, F, T, F, T, F, T, T, T, T, T, T, F, F, T, T, T, T, T, T, T} },
+                        {"00010001",/*leftright rightright  */ new string[] {F, F, F, F, F, F, T, T, T, T, T, T, F, T, T, T, T, T, T, T, T} },
 					} },
 				} },
 				{ StepDeets.PumpSingle, new Dictionary<string, Dictionary<string, string[]>> {

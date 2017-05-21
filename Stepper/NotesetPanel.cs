@@ -397,11 +397,7 @@ namespace Stepper
 			this.onBeat.Size = new System.Drawing.Size(42, 20);
 			this.onBeat.TabIndex = 11;
 			this.onBeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.onBeat.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+			this.onBeat.Value = new decimal(new int[] {100,0,0,0});
 			this.onBeat.ValueChanged += new System.EventHandler(this.onBeat_ValueChanged);
 			// 
 			// label20

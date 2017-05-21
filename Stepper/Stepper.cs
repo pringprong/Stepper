@@ -188,7 +188,7 @@ Warnings:
                 MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
                 return;
             }
-
+			Cursor.Current = Cursors.WaitCursor;
             string[] dirs = Directory.GetDirectories(currentFolder.Text);
             var fileCount = dirs.Count();
             songInfo.ColumnCount = 8;
@@ -297,6 +297,7 @@ Warnings:
                 }
             } // end for (int i = 0; i < fileCount; i++) 
             folderTextChanged = false;
+			Cursor.Current = Cursors.Default;
             if (songs.Count == 0)
             {
                 MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
@@ -322,104 +323,105 @@ Warnings:
                 MessageBoxButtons.YesNo);
             if (result1 == DialogResult.Yes)
             {
-                songs.ForEach(delegate(Song s)
+				Cursor.Current = Cursors.WaitCursor;
+				songs.ForEach(delegate(Song s)
                 {
-                    Noteset note1 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset note1 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     note1.generateSteps();
 
-                    Noteset note2 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset note2 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
                         alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
                         (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
                     note2.generateSteps();
 
-                    Noteset note3 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset note3 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
                        alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
                        (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
                     note3.generateSteps();
 
-                    Noteset note4 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset note4 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
                         alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
                         (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
                     note4.generateSteps();
 
-                    Noteset note5 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset note5 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
                         alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
                         (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
                     note5.generateSteps();
 
-                    Noteset dance_solo1 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset dance_solo1 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
                         alternate_footDS1.Checked, arrow_repeatDS1.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
                         (int)quintuplesDS1.Value, triples_on_1_and_3DS1.Checked, quintuples_on_1_or_2DS1.Checked);
                     dance_solo1.generateSteps();
 
-                    Noteset dance_solo2 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset dance_solo2 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
                         alternate_footDS2.Checked, arrow_repeatDS2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
                         (int)quintuplesDS2.Value, triples_on_1_and_3DS2.Checked, quintuples_on_1_or_2DS2.Checked);
                     dance_solo2.generateSteps();
 
-                    Noteset dance_solo3 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset dance_solo3 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
                        alternate_footDS3.Checked, arrow_repeatDS3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
                        (int)quintuplesDS3.Value, triples_on_1_and_3DS3.Checked, quintuples_on_1_or_2DS3.Checked);
                     dance_solo3.generateSteps();
 
-                    Noteset dance_solo4 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset dance_solo4 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
                         alternate_footDS4.Checked, arrow_repeatDS4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
                         (int)quintuplesDS4.Value, triples_on_1_and_3DS4.Checked, quintuples_on_1_or_2DS4.Checked);
                     dance_solo4.generateSteps();
 
-                    Noteset dance_solo5 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset dance_solo5 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
                         alternate_footDS5.Checked, arrow_repeatDS5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
                         (int)quintuplesDS5.Value, triples_on_1_and_3DS5.Checked, quintuples_on_1_or_2DS5.Checked);
                     dance_solo5.generateSteps();
 
-                    Noteset dance_double1 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset dance_double1 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
                         alternate_footDD1.Checked, arrow_repeatDD1.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
                         (int)quintuplesDD1.Value, triples_on_1_and_3DD1.Checked, quintuples_on_1_or_2DD1.Checked);
                     dance_double1.generateSteps();
 
-                    Noteset dance_double2 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset dance_double2 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
                         alternate_footDD2.Checked, arrow_repeatDD2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
                         (int)quintuplesDD2.Value, triples_on_1_and_3DD2.Checked, quintuples_on_1_or_2DD2.Checked);
                     dance_double2.generateSteps();
 
-                    Noteset dance_double3 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset dance_double3 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
                        alternate_footDD3.Checked, arrow_repeatDD3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
                        (int)quintuplesDD3.Value, triples_on_1_and_3DD3.Checked, quintuples_on_1_or_2DD3.Checked);
                     dance_double3.generateSteps();
 
-                    Noteset dance_double4 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset dance_double4 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
                         alternate_footDD4.Checked, arrow_repeatDD4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
                         (int)quintuplesDD4.Value, triples_on_1_and_3DD4.Checked, quintuples_on_1_or_2DD4.Checked);
                     dance_double4.generateSteps();
 
-                    Noteset dance_double5 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset dance_double5 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
                         alternate_footDD5.Checked, arrow_repeatDD5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
                         (int)quintuplesDD5.Value, triples_on_1_and_3DD5.Checked, quintuples_on_1_or_2DD5.Checked);
                     dance_double5.generateSteps();
 
-                    Noteset pump_single1 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), level.Text, beats_per_measure,
+                    Noteset pump_single1 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
                         alternate_footPS1.Checked, arrow_repeatPS1.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
                         (int)quintuplesPS1.Value, triples_on_1_and_3PS1.Checked, quintuples_on_1_or_2PS1.Checked);
                     pump_single1.generateSteps();
 
-                    Noteset pump_single2 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), level2.Text, beats_per_measure,
+                    Noteset pump_single2 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
                         alternate_footPS2.Checked, arrow_repeatPS2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
                         (int)quintuplesPS2.Value, triples_on_1_and_3PS2.Checked, quintuples_on_1_or_2PS2.Checked);
                     pump_single2.generateSteps();
 
-                    Noteset pump_single3 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), level3.Text, beats_per_measure,
+                    Noteset pump_single3 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
                        alternate_footPS3.Checked, arrow_repeatPS3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
                        (int)quintuplesPS3.Value, triples_on_1_and_3PS3.Checked, quintuples_on_1_or_2PS3.Checked);
                     pump_single3.generateSteps();
 
-                    Noteset pump_single4 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), level4.Text, beats_per_measure,
+                    Noteset pump_single4 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
                         alternate_footPS4.Checked, arrow_repeatPS4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
                         (int)quintuplesPS4.Value, triples_on_1_and_3PS4.Checked, quintuples_on_1_or_2PS4.Checked);
                     pump_single4.generateSteps();
 
-                    Noteset pump_single5 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), level5.Text, beats_per_measure,
+                    Noteset pump_single5 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
                         alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
                         (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
                     pump_single5.generateSteps();
@@ -506,7 +508,8 @@ Warnings:
                         file.Close();
                     }
                 });
-                MessageBox.Show("Step generation succeeded!\n\nDon't forget to clear the cache in \n\nC:\\Users\\<your username>\\AppData\\Roaming\\StepMania 5\\Cache\n\n if this is your first time running Stepper on this folder.");
+				Cursor.Current = Cursors.Default; 
+				MessageBox.Show("Step generation succeeded!\n\nDon't forget to clear the cache in \n\nC:\\Users\\<your username>\\AppData\\Roaming\\StepMania 5\\Cache\n\n if this is your first time running Stepper on this folder.");
                 return;
             }
         }
@@ -1797,248 +1800,248 @@ Warnings:
 
         private void sample1_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, level.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sample2_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, level2.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
                         alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
                         (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sample3_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, level3.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
                        alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
                        (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sample4_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, level4.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
                 alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
                 (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sample5_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, level5.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
                 alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
                 (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sampleDS1_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, level.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
                         alternate_footDS1.Checked, arrow_repeatDS1.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
                         (int)quintuplesDS1.Value, triples_on_1_and_3DS1.Checked, quintuples_on_1_or_2DS1.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sampleDS2_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, level2.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
                         alternate_footDS2.Checked, arrow_repeatDS2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
                         (int)quintuplesDS2.Value, triples_on_1_and_3DS2.Checked, quintuples_on_1_or_2DS2.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sampleDS3_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, level3.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
                         alternate_footDS3.Checked, arrow_repeatDS3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
                         (int)quintuplesDS3.Value, triples_on_1_and_3DS3.Checked, quintuples_on_1_or_2DS3.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sampleDS4_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, level4.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
                         alternate_footDS4.Checked, arrow_repeatDS4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
                         (int)quintuplesDS4.Value, triples_on_1_and_3DS4.Checked, quintuples_on_1_or_2DS4.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sampleDS5_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, level5.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
                         alternate_footDS5.Checked, arrow_repeatDS5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
                         (int)quintuplesDS5.Value, triples_on_1_and_3DS5.Checked, quintuples_on_1_or_2DS5.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
 
         }
 
         private void sampleDD1_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, level.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
                         alternate_footDD1.Checked, arrow_repeatDD1.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
                         (int)quintuplesDD1.Value, triples_on_1_and_3DD1.Checked, quintuples_on_1_or_2DD1.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sampleDD2_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, level2.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
                         alternate_footDD2.Checked, arrow_repeatDD2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
                         (int)quintuplesDD2.Value, triples_on_1_and_3DD2.Checked, quintuples_on_1_or_2DD2.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sampleDD3_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, level3.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
             alternate_footDD3.Checked, arrow_repeatDD3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
             (int)quintuplesDD3.Value, triples_on_1_and_3DD3.Checked, quintuples_on_1_or_2DD3.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sampleDD4_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, level4.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
             alternate_footDD4.Checked, arrow_repeatDD4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
             (int)quintuplesDD4.Value, triples_on_1_and_3DD4.Checked, quintuples_on_1_or_2DD4.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void sampleDD5_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, level5.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
             alternate_footDD5.Checked, arrow_repeatDD5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
             (int)quintuplesDD5.Value, triples_on_1_and_3DD5.Checked, quintuples_on_1_or_2DD5.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void samplePS1_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, level.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
                         alternate_footPS1.Checked, arrow_repeatPS1.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
                         (int)quintuplesPS1.Value, triples_on_1_and_3PS1.Checked, quintuples_on_1_or_2PS1.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, level.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void samplePS2_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, level2.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
                         alternate_footPS2.Checked, arrow_repeatPS2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
                         (int)quintuplesPS2.Value, triples_on_1_and_3PS2.Checked, quintuples_on_1_or_2PS2.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, level2.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void samplePS3_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, level3.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
                         alternate_footPS3.Checked, arrow_repeatPS3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
                         (int)quintuplesPS3.Value, triples_on_1_and_3PS3.Checked, quintuples_on_1_or_2PS3.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, level3.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void samplePS4_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, level4.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
                         alternate_footPS4.Checked, arrow_repeatPS4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
                         (int)quintuplesPS4.Value, triples_on_1_and_3PS4.Checked, quintuples_on_1_or_2PS4.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, level4.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
 
         private void samplePS5_Click(object sender, EventArgs e)
         {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, level5.Text, beats_per_measure,
+            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
             alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
             (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
             sample_noteset.generateSteps();
             char[] f = sample_noteset.getFeet();
             string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, level5.Text, measures_per_sample, f, s, blackpen, redpen, bluepen);
+            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
         }
      }

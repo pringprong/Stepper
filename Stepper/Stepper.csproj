@@ -79,6 +79,7 @@
     <Compile Include="NotesetPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NotesetParameters.cs" />
     <Compile Include="SampleWindow.cs">
       <SubType>Form</SubType>
     </Compile>

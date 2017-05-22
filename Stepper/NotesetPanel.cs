@@ -66,6 +66,27 @@ namespace Stepper
 		private Pen bluepen;
 		Random r;
 
+		public NotesetPanel(NotesetParameters np, int b, int m, Pen bla, Pen re, Pen blu, Random ra)
+		{
+			dance_style = np.dance_style;
+			sdlevel = np.dance_level;
+			beats_per_measure = b;
+			measures_per_sample = m;
+			blackpen = bla;
+			redpen = re;
+			bluepen = blu;
+			r = ra;
+			initialize();
+
+			alternate_foot.Checked = np.alternating_foot;
+			arrow_repeat.Checked = np.repeat_arrows;
+			stepFill_trackbar.Value = np.percent_stepfill;
+			onBeatTrackbar.Value = np.percent_onbeat;
+			jumpsTrackbar.Value = np.percent_jumps;
+			triples_on_1_and_3.Checked = np.triples_on_1_and_3;
+			quintuples_on_1_or_2.Checked = np.quintuples_on_1_or_2;
+		}
+		
 		public NotesetPanel(string ds, string StepDeetslevel, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
 			dance_style = ds;
@@ -76,6 +97,28 @@ namespace Stepper
 			redpen = red;
 			bluepen = blue;
 			r = random;
+			initialize();
+		}
+
+		public void setNotesetParameters(NotesetParameters np) {
+			dance_style = np.dance_style;
+			sdlevel = np.dance_level;
+			alternate_foot.Checked = np.alternating_foot;
+			arrow_repeat.Checked = np.repeat_arrows;
+			stepFill_trackbar.Value = np.percent_stepfill;
+			onBeatTrackbar.Value = np.percent_onbeat;
+			jumpsTrackbar.Value = np.percent_jumps;
+			triples_on_1_and_3.Checked = np.triples_on_1_and_3;
+			quintuples_on_1_or_2.Checked = np.quintuples_on_1_or_2;
+		}
+
+		public NotesetParameters getNotesetParameters()
+		{
+			return new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, stepFill_trackbar.Value,
+				onBeatTrackbar.Value, jumpsTrackbar.Value, quintuplesTrackbar.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+		}
+
+		private void initialize()  {
 			
 			// Constructors
 			sample1 = new Button();
@@ -126,7 +169,7 @@ namespace Stepper
 			InitializeComponent();
 			this.Location = new System.Drawing.Point(12, 275);
 			this.Size = new System.Drawing.Size(575, 248);
-			this.BackColor = StepDeets.levelColor(StepDeetslevel);
+			this.BackColor = StepDeets.levelColor(sdlevel);
 			this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.Location = new System.Drawing.Point(3, 3);
 			this.Size = new System.Drawing.Size(1020, 120);
@@ -228,14 +271,14 @@ namespace Stepper
 			// level
 			// 
 			this.level.AutoSize = true;
-			this.level.BackColor = StepDeets.labelColor(StepDeetslevel);
+			this.level.BackColor = StepDeets.labelColor(sdlevel);
 			this.level.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.level.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.level.Location = new System.Drawing.Point(2, 2);
 			this.level.Name = "level";
 			this.level.Size = new System.Drawing.Size(53, 19);
 			this.level.TabIndex = 0;
-			this.level.Text = StepDeets.levelTitle(StepDeetslevel);
+			this.level.Text = StepDeets.levelTitle(sdlevel);
 			// 
 			// quintupleType
 			// 
@@ -549,7 +592,7 @@ namespace Stepper
 			// Force the ToolTip text to be displayed whether or not the form is active.
 			toolTip1.ShowAlways = true;
 
-			toolTip1.SetToolTip(this.level, "Settings for the \"Novice\" level in Stepmania");
+			toolTip1.SetToolTip(this.level, "Settings for the \"" + StepDeets.levelTitle(sdlevel) + "\" level in Stepmania");
 			toolTip1.SetToolTip(this.alternate_foot, "Check if you want single steps to always alternate between left and right foot");
 			toolTip1.SetToolTip(this.stepFill_trackbar, "Percentage of beats that should have an arrow");
 			toolTip1.SetToolTip(this.stepFill, "Percentage of beats that should have an arrow");
@@ -716,6 +759,5 @@ namespace Stepper
 		{
 			components = new System.ComponentModel.Container();
 		}
-
 	}
 }

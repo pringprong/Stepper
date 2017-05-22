@@ -28,12 +28,14 @@ namespace Stepper
         private Pen bluepen;
         private int measures_per_sample = 4;
         private int instructionsTextboxGap = 40;
-		private DanceStyleTabPage dstp1;
+		private DanceStyleTabPage[] dstp;
+		private TabPage first_dance_style;
 
         public Stepper()
         {
             InitializeComponent();
 			r = new Random();
+			dstp = new DanceStyleTabPage[StepDeets.getDanceStyles().Count()];
 
 
             // create arrows and pens for the Sample windows
@@ -47,7 +49,6 @@ namespace Stepper
             redpen.CustomEndCap = cap;
             bluepen = new Pen(Color.Blue, 10);
             bluepen.CustomEndCap = cap;
-			dstp1 = new DanceStyleTabPage(StepDeets.DanceSingle, beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
 
             textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
 
@@ -154,7 +155,29 @@ Warnings:
             toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
             toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
 
-			tabControl1.Controls.Add(dstp1);
+			int i = 0;
+			foreach (string style in StepDeets.getDanceStyles())
+			{
+				dstp[i] = new DanceStyleTabPage(tabControl1, style, beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
+				tabControl1.Controls.Add(dstp[i]);
+				if (i == 0)
+				{
+					// first dance_style: set instructions tab pointer to this one, set back pointer to instructions tab
+					first_dance_style = dstp[i];
+					dstp[i].setPrev("Instructions", tabPage1);
+				}
+				else // 
+				{
+					// middle dance styles: set next pointer of prev tab to this tabpage, set back pointer of this one to prev tabpage
+					dstp[i - 1].setNext(StepDeets.stepTitle(style), dstp[i]);
+					dstp[i].setPrev(StepDeets.stepTitle(StepDeets.getDanceStyles()[i-1]), dstp[i-1]);
+				}
+				if (i == (StepDeets.getDanceStyles().Count() -1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
+				{
+					dstp[i].setNext("Write Stepfiles", tabPage4);
+				}
+				i++;
+			}
         }
 
         private void selectFolder_Click(object sender, EventArgs e)
@@ -1013,7 +1036,10 @@ Warnings:
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage2;
+			if (first_dance_style != null)
+			{
+				tabControl1.SelectedTab = first_dance_style;
+			}
         }
 
         private void button2_Click(object sender, EventArgs e)

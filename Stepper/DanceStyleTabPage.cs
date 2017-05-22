@@ -18,6 +18,9 @@ namespace Stepper
 		Button button3;
 		private int instructionsTextboxGap = 40;
 		List<NotesetPanel> nsp_list;
+		private TabPage prevTabPage;
+		private TabPage nextTabPage;
+		private TabControl parentControl;
 
 //		int beats_per_measure;
 //		int measures_per_sample;
@@ -44,9 +47,10 @@ namespace Stepper
 			base.Dispose(disposing);
 		}
 
-		public DanceStyleTabPage(string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
+		public DanceStyleTabPage(TabControl parent, string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
 			InitializeComponent();
+			parentControl = parent;
 			nsp_list = new List<NotesetPanel>();
 			foreach (string level in StepDeets.getLevels())
 			{
@@ -146,13 +150,47 @@ namespace Stepper
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			//tabControl1.SelectedTab = tabPage1;
+			if (prevTabPage  != null) {
+				parentControl.SelectedTab = prevTabPage;
+			}
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			//tabControl1.SelectedTab = tabPage5;
+			if (nextTabPage != null)
+			{
+				parentControl.SelectedTab = nextTabPage;
+			}
 		}
 
+		public NotesetParameters[] getNoteSetParametersList()
+		{
+			List<NotesetParameters> l = new List<NotesetParameters>();
+			foreach (NotesetPanel np in nsp_list) {
+				l.Add(np.getNotesetParameters());
+			}
+			return l.ToArray();
+		}
+
+		public void setNoteSetParametersList(NotesetParameters[] nsp_array)
+		{
+			int i = 0;
+			foreach (NotesetPanel np in nsp_list)
+			{
+				np.setNotesetParameters(nsp_array[i]);
+				i++;
+			}
+		}
+
+		public void setPrev(string label, TabPage tp)
+		{
+			button2.Text = "Go back to " + label;
+			prevTabPage = tp;
+		}
+		public void setNext(string label, TabPage tp)
+		{
+			button3.Text = "Continue to " + label;
+			nextTabPage = tp;
+		}
 	}
 }

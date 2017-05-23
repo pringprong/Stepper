@@ -30,12 +30,16 @@ namespace Stepper
         private int instructionsTextboxGap = 40;
 		private DanceStyleTabPage[] dstp;
 		private TabPage first_dance_style;
+	//	private int num_notesets;
+		private List<Noteset> noteset_list;
 
         public Stepper()
         {
             InitializeComponent();
 			r = new Random();
 			dstp = new DanceStyleTabPage[StepDeets.getDanceStyles().Count()];
+	//		num_notesets = StepDeets.getDanceStyles().Count() * StepDeets.getLevels().Count();
+			noteset_list = new List<Noteset>();
 
 
             // create arrows and pens for the Sample windows
@@ -349,7 +353,16 @@ Warnings:
 				Cursor.Current = Cursors.WaitCursor;
 				songs.ForEach(delegate(Song s)
                 {
-                    Noteset note1 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
+					foreach (DanceStyleTabPage page in dstp)
+					{
+						foreach (NotesetParameters n in page.getNoteSetParametersList() )
+						{
+							Noteset note = new Noteset(n, s.getType(), s.getNumMeasures(), r);
+							note.generateSteps();
+							noteset_list.Add(note);
+						}
+					}
+             /*       Noteset note1 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
                         (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
                     note1.generateSteps();
@@ -447,10 +460,10 @@ Warnings:
                     Noteset pump_single5 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
                         alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
                         (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
-                    pump_single5.generateSteps();
+                    pump_single5.generateSteps();*/
 
 
-                    if (s.getType().Equals("SSC"))
+                    if (s.getType().Equals(StepDeets.SSC))
                     {
                         // no ssc file, so backup the old .sm file and then overwrite it
                         string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
@@ -467,30 +480,35 @@ Warnings:
                         {
                             file.WriteLine(header_line);
                         });
-                        note1.writeSSCSteps(file);
-                        note2.writeSSCSteps(file);
-                        note3.writeSSCSteps(file);
-                        note4.writeSSCSteps(file);
-                        note5.writeSSCSteps(file);
-                        dance_solo1.writeSSCSteps(file);
-                        dance_solo2.writeSSCSteps(file);
-                        dance_solo3.writeSSCSteps(file);
-                        dance_solo4.writeSSCSteps(file);
-                        dance_solo5.writeSSCSteps(file);
-                        dance_double1.writeSSCSteps(file);
-                        dance_double2.writeSSCSteps(file);
-                        dance_double3.writeSSCSteps(file);
-                        dance_double4.writeSSCSteps(file);
-                        dance_double5.writeSSCSteps(file);
-                        pump_single1.writeSSCSteps(file);
-                        pump_single2.writeSSCSteps(file);
-                        pump_single3.writeSSCSteps(file);
-                        pump_single4.writeSSCSteps(file);
-                        pump_single5.writeSSCSteps(file);
+						foreach (Noteset n in noteset_list)
+						{
+							n.writeSteps(StepDeets.SSC, file);
+						}
+						/*
+                        note1.writeSteps(StepDeets.SSC, file);
+                        note2.writeSteps(StepDeets.SSC, file);
+                        note3.writeSteps(StepDeets.SSC, file);
+                        note4.writeSteps(StepDeets.SSC, file);
+                        note5.writeSteps(StepDeets.SSC, file);
+                        dance_solo1.writeSteps(StepDeets.SSC, file);
+                        dance_solo2.writeSteps(StepDeets.SSC, file);
+                        dance_solo3.writeSteps(StepDeets.SSC, file);
+                        dance_solo4.writeSteps(StepDeets.SSC, file);
+                        dance_solo5.writeSteps(StepDeets.SSC, file);
+                        dance_double1.writeSteps(StepDeets.SSC, file);
+                        dance_double2.writeSteps(StepDeets.SSC, file);
+                        dance_double3.writeSteps(StepDeets.SSC, file);
+                        dance_double4.writeSteps(StepDeets.SSC, file);
+                        dance_double5.writeSteps(StepDeets.SSC, file);
+                        pump_single1.writeSteps(StepDeets.SSC, file);
+                        pump_single2.writeSteps(StepDeets.SSC, file);
+                        pump_single3.writeSteps(StepDeets.SSC, file);
+                        pump_single4.writeSteps(StepDeets.SSC, file);
+                        pump_single5.writeSteps(StepDeets.SSC, file);*/
 
                         file.Close();
                     }
-                    else if (s.getType().Equals("SM"))
+                    else if (s.getType().Equals(StepDeets.SM))
                     {
                         // no ssc file, so backup the old .sm file and then overwrite it
                         string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
@@ -507,26 +525,32 @@ Warnings:
                         {
                             file.WriteLine(header_line);
                         });
-                        note1.writeSMSteps(file);
-                        note2.writeSMSteps(file);
-                        note3.writeSMSteps(file);
-                        note4.writeSMSteps(file);
-                        note5.writeSMSteps(file);
-                        dance_solo1.writeSMSteps(file);
-                        dance_solo2.writeSMSteps(file);
-                        dance_solo3.writeSMSteps(file);
-                        dance_solo4.writeSMSteps(file);
-                        dance_solo5.writeSMSteps(file);
-                        dance_double1.writeSMSteps(file);
-                        dance_double2.writeSMSteps(file);
-                        dance_double3.writeSMSteps(file);
-                        dance_double4.writeSMSteps(file);
-                        dance_double5.writeSMSteps(file);
-                        pump_single1.writeSMSteps(file);
-                        pump_single2.writeSMSteps(file);
-                        pump_single3.writeSMSteps(file);
-                        pump_single4.writeSMSteps(file);
-                        pump_single5.writeSMSteps(file);
+
+						foreach (Noteset n in noteset_list)
+						{
+							n.writeSteps(StepDeets.SM, file);
+						}
+						/*
+                        note1.writeSteps(StepDeets.SM, file);
+                        note2.writeSteps(StepDeets.SM, file);
+                        note3.writeSteps(StepDeets.SM, file);
+                        note4.writeSteps(StepDeets.SM, file);
+                        note5.writeSteps(StepDeets.SM, file);
+                        dance_solo1.writeSteps(StepDeets.SM, file);
+                        dance_solo2.writeSteps(StepDeets.SM, file);
+                        dance_solo3.writeSteps(StepDeets.SM, file);
+                        dance_solo4.writeSteps(StepDeets.SM, file);
+                        dance_solo5.writeSteps(StepDeets.SM, file);
+                        dance_double1.writeSteps(StepDeets.SM, file);
+                        dance_double2.writeSteps(StepDeets.SM, file);
+                        dance_double3.writeSteps(StepDeets.SM, file);
+                        dance_double4.writeSteps(StepDeets.SM, file);
+                        dance_double5.writeSteps(StepDeets.SM, file);
+                        pump_single1.writeSteps(StepDeets.SM, file);
+                        pump_single2.writeSteps(StepDeets.SM, file);
+                        pump_single3.writeSteps(StepDeets.SM, file);
+                        pump_single4.writeSteps(StepDeets.SM, file);
+                        pump_single5.writeSteps(StepDeets.SM, file);*/
 
                         file.Close();
                     }
@@ -672,7 +696,7 @@ Warnings:
             var groups = measures_list.GroupBy(v => v);
             int maxCount = groups.Max(g => g.Count());
             int mode = groups.First(g => g.Count() == maxCount).Key;
-            Song s = new Song("SSC", file, header_text, mode, trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
+            Song s = new Song(StepDeets.SSC, file, header_text, mode, trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
             return s;
         }
 
@@ -800,7 +824,7 @@ Warnings:
 
                 } while (true);
             } // end using StreamReader; end of song file
-            Song s = new Song("SM", file, header_text, (int)measures_list.Max(), trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
+            Song s = new Song(StepDeets.SM, file, header_text, (int)measures_list.Max(), trimmed_min, trimmed_max, trimmed_count, num_stops, note_sets, measures_list.Min(), measures_list.Max());
             return s;
         }
 
@@ -1824,7 +1848,7 @@ Warnings:
             quintuplesTrackbarPS5.Value = Convert.ToInt32(quintuplesPS5.Value);
         }
 
-        private void sample1_Click(object sender, EventArgs e)
+     /*   private void sample1_Click(object sender, EventArgs e)
         {
             Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
                         alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
@@ -2069,6 +2093,6 @@ Warnings:
             string[] s = sample_noteset.getSteps();
             sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
             sw.Show();
-        }
+        }*/
      }
 }

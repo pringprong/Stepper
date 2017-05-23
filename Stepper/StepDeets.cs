@@ -30,6 +30,16 @@ namespace Stepper
 		public const string Expert = "expert";
 		public const string SM = "SM";
 		public const string SSC = "SSC";
+		public const int beats_per_measure = 4;
+		public const string LeftArrow = "leftarrow";
+		public const string DownArrow = "downarrow";
+		public const string UpArrow = "uparrow";
+		public const string RightArrow = "rightarrow";
+		public const string UpLeftArrow = "upleftarrow";
+		public const string UpRightArrow = "uprightarrow";
+		public const string DownLeftArrow = "downleftarrow";
+		public const string DownRightArrow = "downrightarrow";
+		public const string CenterArrow = "centerarrow";
 
 		public static string[] getDanceStyles()
 		{
@@ -622,6 +632,115 @@ namespace Stepper
 			{
 				return System.Drawing.Color.DeepSkyBlue;
 			}
+		}
+
+		public static string getArrow(string dance_style, int columnIndex)
+		{
+			if (dance_style.Equals(StepDeets.DanceSingle))
+			{
+				if (columnIndex == 3)
+				{
+					return StepDeets.LeftArrow;
+				}
+				else if (columnIndex == 4)
+				{
+					return StepDeets.DownArrow;
+				}
+				else if (columnIndex == 5)
+				{
+					return StepDeets.UpArrow;
+				}
+				else if (columnIndex == 6)
+				{
+					return StepDeets.RightArrow;
+				}
+			}
+			else if (dance_style.Equals(StepDeets.DanceSolo))
+			{
+				if (columnIndex == 3)
+				{
+					return StepDeets.LeftArrow;
+				}
+				else if (columnIndex == 4)
+				{
+					return StepDeets.UpLeftArrow;
+				}
+				else if (columnIndex == 5)
+				{
+					return StepDeets.DownArrow;
+				}
+				else if (columnIndex == 6)
+				{
+					return StepDeets.UpArrow;
+				}
+				else if (columnIndex == 7)
+				{
+					return StepDeets.UpRightArrow;
+				}
+				else if (columnIndex == 8)
+				{
+					return StepDeets.RightArrow;
+				}
+			}
+			else if (dance_style.Equals(StepDeets.DanceDouble))
+			{
+				if (columnIndex == 3)
+				{
+					return StepDeets.LeftArrow;
+				}
+				else if (columnIndex == 4)
+				{
+					return StepDeets.DownArrow;
+				}
+				else if (columnIndex == 5)
+				{
+					return StepDeets.UpArrow;
+				}
+				else if (columnIndex == 6)
+				{
+					return StepDeets.RightArrow;
+				}
+				else if (columnIndex == 7)
+				{
+					return StepDeets.LeftArrow;
+				}
+				else if (columnIndex == 8)
+				{
+					return StepDeets.DownArrow;
+				}
+				else if (columnIndex == 9)
+				{
+					return StepDeets.UpArrow;
+				}
+				else if (columnIndex == 10)
+				{
+					return StepDeets.RightArrow;
+				}
+			}
+			else if (dance_style.Equals(StepDeets.PumpSingle))
+			{
+				if (columnIndex == 3)
+				{
+					return StepDeets.DownLeftArrow;
+				}
+				else if (columnIndex == 4)
+				{
+					return StepDeets.UpLeftArrow;
+				}
+				else if (columnIndex == 5)
+				{
+					return StepDeets.CenterArrow;
+				}
+				else if (columnIndex == 6)
+				{
+					return StepDeets.UpRightArrow;
+				}
+				else if (columnIndex == 7)
+				{
+					return StepDeets.DownRightArrow;
+				}
+			}
+			return "";
 		}
 	}
 }

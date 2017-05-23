@@ -659,9 +659,9 @@ namespace Stepper
 
 		private void sample1_Click(object sender, EventArgs e)
 		{
-			Noteset sample_noteset = new Noteset(dance_style, StepDeets.SM, measures_per_sample, sdlevel, beats_per_measure,
-						alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
-						(int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+			NotesetParameters np = new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value,
+				(int)onBeat.Value, (int)jumps.Value, (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+			Noteset sample_noteset = new Noteset(np, StepDeets.SM, measures_per_sample, r);
 			sample_noteset.generateSteps();
 			char[] f = sample_noteset.getFeet();
 			string[] s = sample_noteset.getSteps();

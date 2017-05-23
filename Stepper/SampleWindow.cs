@@ -42,7 +42,7 @@ namespace Stepper
             redpen = red;
             bluepen = bl;
 
-            int numrows = nummeasures * 8 + 1;
+            int numrows = nummeasures * StepDeets.beats_per_measure*2 + 1;
             sampleDGV.RowCount = numrows;
             foreach (DataGridViewRow r in sampleDGV.Rows)
             {
@@ -82,7 +82,7 @@ namespace Stepper
             int beatcount = 1;
             for (int i = 0; i < numrows; i++)
             {
-                if ((i - 1) % 8 == 0)
+                if (((i - 1) % (StepDeets.beats_per_measure*2)) == 0)
                 {
                     sampleDGV.Rows[i].Cells[0].Value = measurecount;
                     measurecount++;
@@ -100,15 +100,15 @@ namespace Stepper
         {
             if (e.RowIndex == 0)
             {
-                drawDanceArrows(blackpen, e);
+                drawArrow(StepDeets.getArrow(dance_style, e.ColumnIndex), blackpen, e);
             }
             else if (((e.RowIndex % 2) == 0) && (e.ColumnIndex > 2) && sampleDGV[e.ColumnIndex, e.RowIndex].Value != null)
             {
-                drawDanceArrows(bluepen, e);
+				drawArrow(StepDeets.getArrow(dance_style, e.ColumnIndex), bluepen, e);
             }
             else if (((e.RowIndex % 2) == 1) && (e.ColumnIndex > 2) && sampleDGV[e.ColumnIndex, e.RowIndex].Value != null)
             {
-                drawDanceArrows(redpen, e);
+				drawArrow(StepDeets.getArrow(dance_style, e.ColumnIndex), redpen, e);
             }
             e.PaintContent(e.ClipBounds);
             e.Handled = true;
@@ -116,7 +116,7 @@ namespace Stepper
 
         private void drawArrow(string type, Pen p, DataGridViewCellPaintingEventArgs e)
         {
-            if (type.Equals("left"))
+            if (type.Equals(StepDeets.LeftArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
@@ -124,7 +124,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height / 2);
             }
-            else if (type.Equals("down"))
+            else if (type.Equals(StepDeets.DownArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / 2,
@@ -132,7 +132,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width / 2,
                 e.CellBounds.Y + e.CellBounds.Height);
             }
-            else if (type.Equals("up"))
+            else if (type.Equals(StepDeets.UpArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / 2,
@@ -140,7 +140,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width / 2,
                 e.CellBounds.Y);
             }
-            else if (type.Equals("right"))
+            else if (type.Equals(StepDeets.RightArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / scalefactor,
@@ -148,7 +148,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height / 2);
             }
-            else if (type.Equals("upleft"))
+            else if (type.Equals(StepDeets.UpLeftArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
@@ -156,7 +156,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width / scalefactor + e.CellBounds.Height / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height / scalefactor);
             }
-            else if (type.Equals("upright"))
+            else if (type.Equals(StepDeets.UpRightArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / scalefactor + e.CellBounds.Height / scalefactor,
@@ -164,7 +164,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height / scalefactor);
             }
-            else if (type.Equals("downleft"))
+            else if (type.Equals(StepDeets.DownLeftArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
@@ -172,7 +172,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width / scalefactor + e.CellBounds.Height / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height);
             }
-            else if (type.Equals("downright"))
+            else if (type.Equals(StepDeets.DownRightArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / scalefactor + e.CellBounds.Height / scalefactor,
@@ -180,7 +180,7 @@ namespace Stepper
                 e.CellBounds.X + e.CellBounds.Width - e.CellBounds.Width / scalefactor,
                 e.CellBounds.Y + e.CellBounds.Height);
             }
-            else if (type.Equals("center"))
+            else if (type.Equals(StepDeets.CenterArrow))
             {
                 e.Graphics.DrawLine(p,
                 e.CellBounds.X + e.CellBounds.Width / 2,
@@ -192,114 +192,6 @@ namespace Stepper
                 e.CellBounds.Y + e.CellBounds.Height - e.CellBounds.Height / 5,
                 e.CellBounds.X + e.CellBounds.Width / 2,
                 e.CellBounds.Y + e.CellBounds.Height / 2 - e.CellBounds.Height / 5);
-            }
-        }
-
-        private void drawDanceArrows(Pen p, DataGridViewCellPaintingEventArgs e)
-        {
-            if (dance_style.Equals(StepDeets.DanceSingle))
-            {
-                if (e.ColumnIndex == 3)
-                {
-                    drawArrow("left", p, e);
-                }
-                else if (e.ColumnIndex == 4)
-                {
-                    drawArrow("down", p, e);
-                }
-                else if (e.ColumnIndex == 5)
-                {
-                    drawArrow("up", p, e);
-                }
-                else if (e.ColumnIndex == 6)
-                {
-                    drawArrow("right", p, e);
-                }
-            }
-            else if (dance_style.Equals(StepDeets.DanceSolo))
-            {
-                if (e.ColumnIndex == 3)
-                {
-                    drawArrow("left", p, e);
-                }
-                if (e.ColumnIndex == 4)
-                {
-                    drawArrow("upleft", p, e);
-                }
-                else if (e.ColumnIndex == 5)
-                {
-                    drawArrow("down", p, e);
-                }
-                else if (e.ColumnIndex == 6)
-                {
-                    drawArrow("up", p, e);
-                }
-                else if (e.ColumnIndex == 7)
-                {
-                    drawArrow("upright", p, e);
-                }
-                else if (e.ColumnIndex == 8)
-                {
-                    drawArrow("right", p, e);
-                }
-            }
-            else if (dance_style.Equals(StepDeets.DanceDouble))
-            {
-                if (e.ColumnIndex == 3)
-                {
-                    drawArrow("left", p, e);
-                }
-                else if (e.ColumnIndex == 4)
-                {
-                    drawArrow("down", p, e);
-                }
-                else if (e.ColumnIndex == 5)
-                {
-                    drawArrow("up", p, e);
-                }
-                else if (e.ColumnIndex == 6)
-                {
-                    drawArrow("right", p, e);
-                }
-                if (e.ColumnIndex == 7)
-                {
-                    drawArrow("left", p, e);
-                }
-                else if (e.ColumnIndex == 8)
-                {
-                    drawArrow("down", p, e);
-                }
-                else if (e.ColumnIndex == 9)
-                {
-                    drawArrow("up", p, e);
-                }
-                else if (e.ColumnIndex == 10)
-                {
-                    drawArrow("right", p, e);
-                }
-            }
-            else if (dance_style.Equals(StepDeets.PumpSingle))
-            {
-                if (e.ColumnIndex == 3)
-                {
-                    drawArrow("downleft", p, e);
-                }
-                if (e.ColumnIndex == 4)
-                {
-                    drawArrow("upleft", p, e);
-                }
-                else if (e.ColumnIndex == 5)
-                {
-                    drawArrow("center", p, e);
-                }
-                else if (e.ColumnIndex == 6)
-                {
-                    drawArrow("upright", p, e);
-                }
-                else if (e.ColumnIndex == 7)
-                {
-                    drawArrow("downright", p, e);
-                }
             }
         }
 
@@ -377,7 +269,6 @@ namespace Stepper
 			this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			((System.ComponentModel.ISupportInitialize)(this.sampleDGV)).EndInit();
 			this.ResumeLayout(false);
-
 		}
     }
 }

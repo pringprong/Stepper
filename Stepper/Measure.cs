@@ -9,19 +9,10 @@ namespace Stepper
 	class Measure
 	{
 		string[] steps; // set of notes in the form "0010" 
-		int arrows_per_measure; // the number of beats, we assume 4 beats per measure
-		int beats_per_measure;
-		bool alternate_foot; // whether the notes should alternate between left and right foot, not counting repeats and jumps
-		bool repeat_arrow; // whether repeats of exactly the same note are allowed
-		int stepfill; // the percentage of notes that are not "0000" (which is no arrow at all)
-		int onBeat; // the percentage of notes that are only on the beat, with no half-beat 
-		int jumps; // the percentage of notes that are jumps
+		int arrows_per_measure;
 		Random r;
-		int quintuples; // the percentage of half-beat steps that in a quintuple pattern rather than a triple
-		bool triples_on_both_1_and_3;
-		bool quintuples_either_on_1_or_2;
 		char[] feet; // set of letters StepDeets.L 'L', StepDeets.R 'R', StepDeets.E 'E' (either), and StepDeets.J 'J' (jumps) representing which feet are stepping on the arrows
-		string dance_style;
+		NotesetParameters np;
 		string[] singlesteps;
 		string[] jumpsteps;
 		string[] leftsteps;
@@ -33,20 +24,12 @@ namespace Stepper
 
 		}
 
-		public Measure(string dancestyle, int beats_p_measure, bool alt_foot, bool repeat_arrows, int percent_stepfill, int percent_onbeat,
-		   int percent_jumps, Random random, int percent_quintuples, bool triples_on_1_and_3, bool quintuples_on_1_or_2)
+		public Measure(NotesetParameters notesetparams, Random random)
 		{
-			dance_style = dancestyle;
-			beats_per_measure = beats_p_measure;
-			alternate_foot = alt_foot;
-			repeat_arrow = repeat_arrows;
-			stepfill = percent_stepfill;
-			jumps = percent_jumps;
+			np = notesetparams;
 			r = random;
-			quintuples = percent_quintuples;
-			onBeat = percent_onbeat;
-			triples_on_both_1_and_3 = triples_on_1_and_3;
-			quintuples_either_on_1_or_2 = quintuples_on_1_or_2;
+			r = random;
+			arrows_per_measure = StepDeets.beats_per_measure * 2;
 		}
 
 		public char[] getFeet()
@@ -73,7 +56,7 @@ namespace Stepper
 			steps = new string[arrows_per_measure];
 			for (int i = 0; i < arrows_per_measure; i++)
 			{
-				steps[i] = StepDeets.emptyStep(dance_style);
+				steps[i] = StepDeets.emptyStep(np.dance_style);
 			}
 		}
 
@@ -81,28 +64,28 @@ namespace Stepper
 		{
 			string foot = foot_laststep[0];
 			string laststep = foot_laststep[1];
-			arrows_per_measure = beats_per_measure * 2;
+			arrows_per_measure = StepDeets.beats_per_measure * 2;
 			createEmpty();
 			feet = new char[arrows_per_measure];
 
 			for (int i = 0; i < arrows_per_measure; i++)
 			{
 				// set initial options for this step
-				leftsteps = StepDeets.getStepList(dance_style, StepDeets.Left, laststep);
-				rightsteps = StepDeets.getStepList(dance_style, StepDeets.Right, laststep);
-				jumpsteps = StepDeets.getStepList(dance_style, StepDeets.Jump, laststep);
-				singlesteps = StepDeets.getStepList(dance_style, StepDeets.Single, laststep);
-				fromJump = StepDeets.fromJump(dance_style, laststep);
+				leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, laststep);
+				rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, laststep);
+				jumpsteps = StepDeets.getStepList(np.dance_style, StepDeets.Jump, laststep);
+				singlesteps = StepDeets.getStepList(np.dance_style, StepDeets.Single, laststep);
+				fromJump = StepDeets.fromJump(np.dance_style, laststep);
 
 				int rStepFill = r.Next(0, 100);
-				if ((((i == 0) || (i == 4)) && (stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
-					|| ((stepfill >= 50) && (rStepFill < ((stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
-					|| (((i == 0) || (i == 4)) && (rStepFill < (stepfill * 2))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
+				if ((((i == 0) || (i == 4)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
+					|| ((np.percent_stepfill >= 50) && (rStepFill < ((np.percent_stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
+					|| (((i == 0) || (i == 4)) && (rStepFill < (np.percent_stepfill * 2))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
 					) // decide if there will be an arrow here at all
 				{
 					int rOnBeat = r.Next(0, 100); // random number to choose between on-beat and half-beat
 					int rTripQuint = r.Next(0, 100); // random number to choose between triples and quintuples
-					if (rOnBeat >= onBeat && rTripQuint < quintuples && ((i == 0) || (i == 2) && quintuples_either_on_1_or_2))
+					if (rOnBeat >= np.percent_onbeat && rTripQuint < np.percent_quintuples && ((i == 0) || (i == 2) && np.quintuples_on_1_or_2))
 					{ // insert a quintuple
 						if (foot.Equals(StepDeets.Left))
 						{
@@ -134,7 +117,7 @@ namespace Stepper
 							feet[i + 4] = StepDeets.R;
 
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDeets.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
+							if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}
@@ -169,7 +152,7 @@ namespace Stepper
 							steps[i + 4] = step;
 							feet[i + 4] = StepDeets.L;
 							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDeets.isUDUDSQuintuple(dance_style, steps[i], steps[i + 1]))
+							if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
 							{
 								steps[i + 4] = steps[i + 2];
 							}
@@ -178,7 +161,7 @@ namespace Stepper
 						}
 						i = i + 5;
 					}
-					else if (rOnBeat >= onBeat && rTripQuint >= quintuples && ((i <= 2) || (i == 4) && triples_on_both_1_and_3))
+					else if (rOnBeat >= np.percent_onbeat && rTripQuint >= np.percent_quintuples && ((i <= 2) || (i == 4) && np.triples_on_1_and_3))
 					{ // insert a triple
 						if (foot.Equals(StepDeets.Left))
 						{
@@ -224,9 +207,9 @@ namespace Stepper
 					}
 					else
 					{ // no half-beat arrows
-						if (!alternate_foot && repeat_arrow) // repeats allowed, no alternate foot constraint, so choose randomly
+						if (!np.alternating_foot && np.repeat_arrows) // repeats allowed, no alternate foot constraint, so choose randomly
 						{
-							if (r.Next(0, 100) < jumps) // first decide if it's going to be a jump or not
+							if (r.Next(0, 100) < np.percent_jumps) // first decide if it's going to be a jump or not
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
 								feet[i] = StepDeets.J;
@@ -246,9 +229,9 @@ namespace Stepper
 								foot = StepDeets.Left;
 							}
 						}
-						else if (!alternate_foot && !repeat_arrow) // repeats not allowed, so make sure the step isn't the same as laststep
+						else if (!np.alternating_foot && !np.repeat_arrows) // repeats not allowed, so make sure the step isn't the same as laststep
 						{
-							if (r.Next(0, 100) < jumps)
+							if (r.Next(0, 100) < np.percent_jumps)
 							{
 								string step = laststep;
 								while (step.Equals(laststep))
@@ -278,9 +261,9 @@ namespace Stepper
 								foot = StepDeets.Left;
 							}
 						}
-						else if (alternate_foot && !repeat_arrow) // strict alternate foot, no repeats
+						else if (np.alternating_foot && !np.repeat_arrows) // strict alternate foot, no repeats
 						{
-							if (r.Next(0, 100) < jumps)
+							if (r.Next(0, 100) < np.percent_jumps)
 							{
 								string step = laststep;
 								while (step.Equals(laststep))
@@ -327,7 +310,7 @@ namespace Stepper
 						}
 						else //if (alternate_foot && repeat_arrow)
 						{
-							if (r.Next(0, 100) < jumps) // insert a jump
+							if (r.Next(0, 100) < np.percent_jumps) // insert a jump
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
 								feet[i] = StepDeets.J;

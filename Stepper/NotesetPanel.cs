@@ -11,7 +11,7 @@ namespace Stepper
 {
 	public class NotesetPanel : Panel
 	{
-		private System.ComponentModel.IContainer components = null;
+	//	private System.ComponentModel.IContainer components = null;
 		Button sample1;
 		Panel panel28;
 		Panel panel16;
@@ -166,7 +166,7 @@ namespace Stepper
 			toolTip1 = new ToolTip();
 
 			// Initialize this
-			InitializeComponent();
+		//	InitializeComponent();
 			this.Location = new System.Drawing.Point(12, 275);
 			this.Size = new System.Drawing.Size(575, 248);
 			this.BackColor = StepDeets.levelColor(sdlevel);
@@ -746,7 +746,7 @@ namespace Stepper
 			quintupleTypetrackbar.Value = Convert.ToInt32(quintupleType.Value);
 		}
 
-		protected override void Dispose(bool disposing)
+	/*	protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
 			{
@@ -758,6 +758,6 @@ namespace Stepper
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
-		}
+		}*/
 	}
 }

@@ -14,14 +14,12 @@ using System.Drawing.Drawing2D;
 
 namespace Stepper
 {
-    public partial class Stepper : Form
+    public class Stepper : Form
     {
         private List<Song> songs;
         private int beats_per_measure = 4;
         Random r;
         private bool folderTextChanged = false;
-        private ToolTip toolTip1;
-        private SampleWindow sw;
         private AdjustableArrowCap cap;
         private Pen blackpen;
         private Pen redpen;
@@ -30,31 +28,28 @@ namespace Stepper
         private int instructionsTextboxGap = 40;
 		private DanceStyleTabPage[] dstp;
 		private TabPage first_dance_style;
-	//	private int num_notesets;
-		private List<Noteset> noteset_list;
+		private TabPage last_dance_style;
+		private string last_dance_style_name = "";
+
+		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+		private System.Windows.Forms.TabPage tabPage_write_stepfiles;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.Button button_write_stepfiles_back;
+		private System.Windows.Forms.TextBox currentFolder;
+		private System.Windows.Forms.Button folderChooser;
+		private System.Windows.Forms.Button getInfo;
+		private System.Windows.Forms.Button overwriteStepfiles;
+		private System.Windows.Forms.Button close;
+		private System.Windows.Forms.DataGridView songInfo;
+		private System.Windows.Forms.TabPage tabPage_instructions;
+		private System.Windows.Forms.TextBox textBox_intro;
+		private System.Windows.Forms.Button button_intro_continue;
+		private System.Windows.Forms.TabControl tabControl1;
 
         public Stepper()
         {
             InitializeComponent();
-			r = new Random();
-			dstp = new DanceStyleTabPage[StepDeets.getDanceStyles().Count()];
-	//		num_notesets = StepDeets.getDanceStyles().Count() * StepDeets.getLevels().Count();
-			noteset_list = new List<Noteset>();
-
-
-            // create arrows and pens for the Sample windows
-            cap = new AdjustableArrowCap(2, 1);
-            cap.WidthScale = 1;
-            cap.BaseCap = LineCap.Square;
-            cap.Height = 1;
-            blackpen = new Pen(Color.Black, 10);
-            blackpen.CustomEndCap = cap;
-            redpen = new Pen(Color.Red, 10);
-            redpen.CustomEndCap = cap;
-            bluepen = new Pen(Color.Blue, 10);
-            bluepen.CustomEndCap = cap;
-
-            textBox1.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
+            textBox_intro.Text = @"Stepper overwrites existing Stepmania .ssc (or .sm) stepfiles with automatically generated steps. 
 
 Instructions:
 1. Before running Stepper, open C:\Games\StepMania 5\Songs and create a new song group folder such as 'Cardio'
@@ -70,95 +65,6 @@ Warnings:
 3. Some songs use a .dwi file instead of a .sm or .ssc file to store step information. Stepper does not work for .dwi format stepfiles."; 
            
             songs = new List<Song>();
-            toolTip1 = new ToolTip();
-            // Set up the delays for the ToolTip.
-            toolTip1.AutoPopDelay = 5000;
-            toolTip1.InitialDelay = 200;
-            toolTip1.ReshowDelay = 200;
-            // Force the ToolTip text to be displayed whether or not the form is active.
-            toolTip1.ShowAlways = true;
-
-            // Set up the ToolTip text for the Button and Checkbox.
-            toolTip1.SetToolTip(this.folderChooser, "Open folder chooser");
-            toolTip1.SetToolTip(this.getInfo, "Click here to get some information about the song files in the selected folder");
-            toolTip1.SetToolTip(this.overwriteStepfiles, "Overwrite the stepfiles in the selected folder according to the settings below");
-            toolTip1.SetToolTip(this.close, "Close this application");
-            toolTip1.SetToolTip(this.currentFolder, "The currently selected folder");
-
-            toolTip1.SetToolTip(this.level, "Settings for the \"Novice\" level in Stepmania");
-            toolTip1.SetToolTip(this.level2, "Settings for the \"Easy\" level in Stepmania");
-            toolTip1.SetToolTip(this.level3, "Settings for the \"Medium\" level in Stepmania");
-            toolTip1.SetToolTip(this.level4, "Settings for the \"Hard\" level in Stepmania");
-            toolTip1.SetToolTip(this.level5, "Settings for the \"Expert\" level in Stepmania");
-
-            toolTip1.SetToolTip(this.alternate_foot, "Check if you want single steps to always alternate between left and right foot");
-            toolTip1.SetToolTip(this.alternate_foot2, "Check if you want single steps to always alternate between left and right foot");
-            toolTip1.SetToolTip(this.alternate_foot3, "Check if you want single steps to always alternate between left and right foot");
-            toolTip1.SetToolTip(this.alternate_foot4, "Check if you want single steps to always alternate between left and right foot");
-            toolTip1.SetToolTip(this.alternate_foot5, "Check if you want single steps to always alternate between left and right foot");
-
-            toolTip1.SetToolTip(this.stepFill_trackbar, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill_trackbar2, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill2, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill_trackbar3, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill3, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill_trackbar4, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill4, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill_trackbar5, "Percentage of beats that should have an arrow");
-            toolTip1.SetToolTip(this.stepFill5, "Percentage of beats that should have an arrow");
-
-            toolTip1.SetToolTip(this.onBeat, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeatTrackbar, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeat2, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeatTrackbar2, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeat3, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeatTrackbar3, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeat4, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeatTrackbar4, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeat5, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-            toolTip1.SetToolTip(this.onBeatTrackbar5, "Of beats with arrows, percentage of beats that should have only on-beat arrows, no half-beat arrows");
-
-            toolTip1.SetToolTip(this.jumps, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumpsTrackbar, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumps2, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumpsTrackbar2, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumps3, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumpsTrackbar3, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumps4, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumpsTrackbar4, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumps5, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-            toolTip1.SetToolTip(this.jumpsTrackbar5, "Of beats with on-beat arrows, percentage of jumps (both feet) compared to single-foot arrows");
-
-            toolTip1.SetToolTip(this.quintuples, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuplesTrackbar, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuples2, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuplesTrackbar2, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuples3, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuplesTrackbar3, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuples4, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuplesTrackbar4, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuples5, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-            toolTip1.SetToolTip(this.quintuplesTrackbar5, "Of beats with half-beat arrows, percentage of quintuples vs triples");
-
-            toolTip1.SetToolTip(this.arrow_repeat, "Allow the same arrow twice in a row");
-            toolTip1.SetToolTip(this.arrow_repeat2, "Allow the same arrow twice in a row");
-            toolTip1.SetToolTip(this.arrow_repeat3, "Allow the same arrow twice in a row");
-            toolTip1.SetToolTip(this.arrow_repeat4, "Allow the same arrow twice in a row");
-            toolTip1.SetToolTip(this.arrow_repeat5, "Allow the same arrow twice in a row");
-
-            toolTip1.SetToolTip(this.triples_on_1_and_3, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.triples_on_1_and_32, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.triples_on_1_and_33, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.triples_on_1_and_34, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.triples_on_1_and_35, "Allow triples on both the 1st and 3rd beat of a 4-beat measure. Uncheck for 1st beat only");
-
-            toolTip1.SetToolTip(this.quintuples_on_1_or_2, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_22, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_23, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_24, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-            toolTip1.SetToolTip(this.quintuples_on_1_or_25, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
-
 			int i = 0;
 			foreach (string style in StepDeets.getDanceStyles())
 			{
@@ -168,7 +74,7 @@ Warnings:
 				{
 					// first dance_style: set instructions tab pointer to this one, set back pointer to instructions tab
 					first_dance_style = dstp[i];
-					dstp[i].setPrev("Instructions", tabPage1);
+					dstp[i].setPrev("Instructions", tabPage_instructions);
 				}
 				else // 
 				{
@@ -178,10 +84,15 @@ Warnings:
 				}
 				if (i == (StepDeets.getDanceStyles().Count() -1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
 				{
-					dstp[i].setNext("Write Stepfiles", tabPage4);
+					dstp[i].setNext("Write Stepfiles", tabPage_write_stepfiles);
+					last_dance_style = dstp[i];
+					last_dance_style_name = StepDeets.stepTitle(style);
 				}
 				i++;
 			}
+			tabControl1.Controls.Add(this.tabPage_write_stepfiles);
+			button_write_stepfiles_back.Text = "Back to " + this.last_dance_style_name;
+
         }
 
         private void selectFolder_Click(object sender, EventArgs e)
@@ -335,7 +246,8 @@ Warnings:
 
         private void overwriteStepfiles_Click(object sender, EventArgs e)
         {
-            if (songs.Count == 0)
+			List<Noteset> noteset_list = new List<Noteset>();
+			if (songs.Count == 0)
             {
                 MessageBox.Show("Please choose a Stepmania song group folder and click \"Get info\"", "Click Get info");
                 return;
@@ -351,8 +263,9 @@ Warnings:
             if (result1 == DialogResult.Yes)
             {
 				Cursor.Current = Cursors.WaitCursor;
-				songs.ForEach(delegate(Song s)
+				foreach(Song s in songs)
                 {
+					noteset_list.Clear();
 					foreach (DanceStyleTabPage page in dstp)
 					{
 						foreach (NotesetParameters n in page.getNoteSetParametersList() )
@@ -362,110 +275,9 @@ Warnings:
 							noteset_list.Add(note);
 						}
 					}
-             /*       Noteset note1 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
-                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
-                    note1.generateSteps();
-
-                    Noteset note2 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
-                        (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
-                    note2.generateSteps();
-
-                    Noteset note3 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
-                       (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
-                    note3.generateSteps();
-
-                    Noteset note4 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
-                        alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
-                        (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
-                    note4.generateSteps();
-
-                    Noteset note5 = new Noteset(StepDeets.DanceSingle, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
-                        alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
-                        (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
-                    note5.generateSteps();
-
-                    Noteset dance_solo1 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
-                        alternate_footDS1.Checked, arrow_repeatDS1.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
-                        (int)quintuplesDS1.Value, triples_on_1_and_3DS1.Checked, quintuples_on_1_or_2DS1.Checked);
-                    dance_solo1.generateSteps();
-
-                    Noteset dance_solo2 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
-                        alternate_footDS2.Checked, arrow_repeatDS2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
-                        (int)quintuplesDS2.Value, triples_on_1_and_3DS2.Checked, quintuples_on_1_or_2DS2.Checked);
-                    dance_solo2.generateSteps();
-
-                    Noteset dance_solo3 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
-                       alternate_footDS3.Checked, arrow_repeatDS3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
-                       (int)quintuplesDS3.Value, triples_on_1_and_3DS3.Checked, quintuples_on_1_or_2DS3.Checked);
-                    dance_solo3.generateSteps();
-
-                    Noteset dance_solo4 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
-                        alternate_footDS4.Checked, arrow_repeatDS4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
-                        (int)quintuplesDS4.Value, triples_on_1_and_3DS4.Checked, quintuples_on_1_or_2DS4.Checked);
-                    dance_solo4.generateSteps();
-
-                    Noteset dance_solo5 = new Noteset(StepDeets.DanceSolo, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
-                        alternate_footDS5.Checked, arrow_repeatDS5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
-                        (int)quintuplesDS5.Value, triples_on_1_and_3DS5.Checked, quintuples_on_1_or_2DS5.Checked);
-                    dance_solo5.generateSteps();
-
-                    Noteset dance_double1 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
-                        alternate_footDD1.Checked, arrow_repeatDD1.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
-                        (int)quintuplesDD1.Value, triples_on_1_and_3DD1.Checked, quintuples_on_1_or_2DD1.Checked);
-                    dance_double1.generateSteps();
-
-                    Noteset dance_double2 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
-                        alternate_footDD2.Checked, arrow_repeatDD2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
-                        (int)quintuplesDD2.Value, triples_on_1_and_3DD2.Checked, quintuples_on_1_or_2DD2.Checked);
-                    dance_double2.generateSteps();
-
-                    Noteset dance_double3 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
-                       alternate_footDD3.Checked, arrow_repeatDD3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
-                       (int)quintuplesDD3.Value, triples_on_1_and_3DD3.Checked, quintuples_on_1_or_2DD3.Checked);
-                    dance_double3.generateSteps();
-
-                    Noteset dance_double4 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
-                        alternate_footDD4.Checked, arrow_repeatDD4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
-                        (int)quintuplesDD4.Value, triples_on_1_and_3DD4.Checked, quintuples_on_1_or_2DD4.Checked);
-                    dance_double4.generateSteps();
-
-                    Noteset dance_double5 = new Noteset(StepDeets.DanceDouble, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
-                        alternate_footDD5.Checked, arrow_repeatDD5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
-                        (int)quintuplesDD5.Value, triples_on_1_and_3DD5.Checked, quintuples_on_1_or_2DD5.Checked);
-                    dance_double5.generateSteps();
-
-                    Noteset pump_single1 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Novice, beats_per_measure,
-                        alternate_footPS1.Checked, arrow_repeatPS1.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
-                        (int)quintuplesPS1.Value, triples_on_1_and_3PS1.Checked, quintuples_on_1_or_2PS1.Checked);
-                    pump_single1.generateSteps();
-
-                    Noteset pump_single2 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Easy, beats_per_measure,
-                        alternate_footPS2.Checked, arrow_repeatPS2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
-                        (int)quintuplesPS2.Value, triples_on_1_and_3PS2.Checked, quintuples_on_1_or_2PS2.Checked);
-                    pump_single2.generateSteps();
-
-                    Noteset pump_single3 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Medium, beats_per_measure,
-                       alternate_footPS3.Checked, arrow_repeatPS3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
-                       (int)quintuplesPS3.Value, triples_on_1_and_3PS3.Checked, quintuples_on_1_or_2PS3.Checked);
-                    pump_single3.generateSteps();
-
-                    Noteset pump_single4 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Hard, beats_per_measure,
-                        alternate_footPS4.Checked, arrow_repeatPS4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
-                        (int)quintuplesPS4.Value, triples_on_1_and_3PS4.Checked, quintuples_on_1_or_2PS4.Checked);
-                    pump_single4.generateSteps();
-
-                    Noteset pump_single5 = new Noteset(StepDeets.PumpSingle, s.getType(), s.getNumMeasures(), StepDeets.Expert, beats_per_measure,
-                        alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
-                        (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
-                    pump_single5.generateSteps();*/
-
 
                     if (s.getType().Equals(StepDeets.SSC))
                     {
-                        // no ssc file, so backup the old .sm file and then overwrite it
                         string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
                         string old_path = s.getPath();
                         Regex alter_extension = new Regex("\\.ssc");
@@ -480,32 +292,10 @@ Warnings:
                         {
                             file.WriteLine(header_line);
                         });
-						foreach (Noteset n in noteset_list)
+						foreach (Noteset ns in noteset_list)
 						{
-							n.writeSteps(StepDeets.SSC, file);
+							ns.writeSteps(StepDeets.SSC, file);
 						}
-						/*
-                        note1.writeSteps(StepDeets.SSC, file);
-                        note2.writeSteps(StepDeets.SSC, file);
-                        note3.writeSteps(StepDeets.SSC, file);
-                        note4.writeSteps(StepDeets.SSC, file);
-                        note5.writeSteps(StepDeets.SSC, file);
-                        dance_solo1.writeSteps(StepDeets.SSC, file);
-                        dance_solo2.writeSteps(StepDeets.SSC, file);
-                        dance_solo3.writeSteps(StepDeets.SSC, file);
-                        dance_solo4.writeSteps(StepDeets.SSC, file);
-                        dance_solo5.writeSteps(StepDeets.SSC, file);
-                        dance_double1.writeSteps(StepDeets.SSC, file);
-                        dance_double2.writeSteps(StepDeets.SSC, file);
-                        dance_double3.writeSteps(StepDeets.SSC, file);
-                        dance_double4.writeSteps(StepDeets.SSC, file);
-                        dance_double5.writeSteps(StepDeets.SSC, file);
-                        pump_single1.writeSteps(StepDeets.SSC, file);
-                        pump_single2.writeSteps(StepDeets.SSC, file);
-                        pump_single3.writeSteps(StepDeets.SSC, file);
-                        pump_single4.writeSteps(StepDeets.SSC, file);
-                        pump_single5.writeSteps(StepDeets.SSC, file);*/
-
                         file.Close();
                     }
                     else if (s.getType().Equals(StepDeets.SM))
@@ -526,35 +316,13 @@ Warnings:
                             file.WriteLine(header_line);
                         });
 
-						foreach (Noteset n in noteset_list)
+						foreach (Noteset ns in noteset_list)
 						{
-							n.writeSteps(StepDeets.SM, file);
+							ns.writeSteps(StepDeets.SM, file);
 						}
-						/*
-                        note1.writeSteps(StepDeets.SM, file);
-                        note2.writeSteps(StepDeets.SM, file);
-                        note3.writeSteps(StepDeets.SM, file);
-                        note4.writeSteps(StepDeets.SM, file);
-                        note5.writeSteps(StepDeets.SM, file);
-                        dance_solo1.writeSteps(StepDeets.SM, file);
-                        dance_solo2.writeSteps(StepDeets.SM, file);
-                        dance_solo3.writeSteps(StepDeets.SM, file);
-                        dance_solo4.writeSteps(StepDeets.SM, file);
-                        dance_solo5.writeSteps(StepDeets.SM, file);
-                        dance_double1.writeSteps(StepDeets.SM, file);
-                        dance_double2.writeSteps(StepDeets.SM, file);
-                        dance_double3.writeSteps(StepDeets.SM, file);
-                        dance_double4.writeSteps(StepDeets.SM, file);
-                        dance_double5.writeSteps(StepDeets.SM, file);
-                        pump_single1.writeSteps(StepDeets.SM, file);
-                        pump_single2.writeSteps(StepDeets.SM, file);
-                        pump_single3.writeSteps(StepDeets.SM, file);
-                        pump_single4.writeSteps(StepDeets.SM, file);
-                        pump_single5.writeSteps(StepDeets.SM, file);*/
-
                         file.Close();
                     }
-                });
+                }
 				Cursor.Current = Cursors.Default; 
 				MessageBox.Show("Step generation succeeded!\n\nDon't forget to clear the cache in \n\nC:\\Users\\<your username>\\AppData\\Roaming\\StepMania 5\\Cache\n\n if this is your first time running Stepper on this folder.");
                 return;
@@ -833,232 +601,12 @@ Warnings:
             this.Close();
         }
 
-        private void stepFill_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill_trackbar.Value = Convert.ToInt32(stepFill.Value);
-        }
-
-        private void stepFill_trackbar_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill.Value = stepFill_trackbar.Value;
-        }
-
-        private void onBeatTrackbar_ValueChanged(object sender, EventArgs e)
-        {
-            onBeat.Value = onBeatTrackbar.Value;
-        }
-
-        private void onBeat_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbar.Value = Convert.ToInt32(onBeat.Value);
-        }
-
-        private void jumpsTrackbar_ValueChanged(object sender, EventArgs e)
-        {
-            jumps.Value = jumpsTrackbar.Value;
-        }
-
-        private void jumps_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbar.Value = Convert.ToInt32(jumps.Value);
-        }
-
-        private void quintuplesTrackbar_ValueChanged(object sender, EventArgs e)
-        {
-            quintuples.Value = quintuplesTrackbar.Value;
-        }
-
-        private void quintuples_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbar.Value = Convert.ToInt32(quintuples.Value);
-        }
-
-        private void stepFill2_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill_trackbar2.Value = Convert.ToInt32(stepFill2.Value);
-        }
-
-        private void stepFill2_trackbar_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill2.Value = stepFill_trackbar2.Value;
-        }
-
-        private void onBeatTrackbar2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeat2.Value = onBeatTrackbar2.Value;
-        }
-
-        private void onBeat2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbar2.Value = Convert.ToInt32(onBeat2.Value);
-        }
-
-        private void jumpsTrackbar2_ValueChanged(object sender, EventArgs e)
-        {
-            jumps2.Value = jumpsTrackbar2.Value;
-        }
-
-        private void jumps2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbar2.Value = Convert.ToInt32(jumps2.Value);
-        }
-
-        private void quintuplesTrackbar2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuples2.Value = quintuplesTrackbar2.Value;
-        }
-
-        private void quintuples2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbar2.Value = Convert.ToInt32(quintuples2.Value);
-        }
-
-        private void stepFill3_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill_trackbar3.Value = Convert.ToInt32(stepFill3.Value);
-        }
-
-        private void stepFill_trackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill3.Value = stepFill_trackbar3.Value;
-        }
-
-        private void onBeatTrackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeat3.Value = onBeatTrackbar3.Value;
-        }
-
-        private void onBeat3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbar3.Value = Convert.ToInt32(onBeat3.Value);
-        }
-
-        private void jumpsTrackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            jumps3.Value = jumpsTrackbar3.Value;
-        }
-
-        private void jumps3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbar3.Value = Convert.ToInt32(jumps3.Value);
-        }
-
-        private void quintuplesTrackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuples3.Value = quintuplesTrackbar3.Value;
-        }
-
-        private void quintuples3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbar3.Value = Convert.ToInt32(quintuples3.Value);
-        }
-
-        private void stepFill4_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill_trackbar4.Value = Convert.ToInt32(stepFill4.Value);
-        }
-
-        private void stepFill_trackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill4.Value = stepFill_trackbar4.Value;
-        }
-
-        private void onBeatTrackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeat4.Value = onBeatTrackbar4.Value;
-        }
-
-        private void onBeat4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbar4.Value = Convert.ToInt32(onBeat4.Value);
-        }
-
-        private void jumpsTrackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            jumps4.Value = jumpsTrackbar4.Value;
-        }
-
-        private void jumps4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbar4.Value = Convert.ToInt32(jumps4.Value);
-        }
-
-        private void quintuplesTrackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuples4.Value = quintuplesTrackbar4.Value;
-        }
-
-        private void quintuples4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbar4.Value = Convert.ToInt32(quintuples4.Value);
-        }
-
-        private void stepFill5_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill_trackbar5.Value = Convert.ToInt32(stepFill5.Value);
-        }
-
-        private void stepFill_trackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            stepFill5.Value = stepFill_trackbar5.Value;
-        }
-
-        private void onBeatTrackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeat5.Value = onBeatTrackbar5.Value;
-        }
-
-        private void onBeat5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbar5.Value = Convert.ToInt32(onBeat5.Value);
-        }
-
-        private void jumpsTrackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            jumps5.Value = jumpsTrackbar5.Value;
-        }
-
-        private void jumps5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbar5.Value = Convert.ToInt32(jumps5.Value);
-        }
-
-        private void quintuplesTrackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuples5.Value = quintuplesTrackbar5.Value;
-        }
-
-        private void quintuples5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbar5.Value = Convert.ToInt32(quintuples5.Value);
-        }
-
         private void currentFolder_TextChanged(object sender, EventArgs e)
         {
             folderTextChanged = true;
         }
 
-        private void full8thStream_CheckedChanged(object sender, EventArgs e)
-        {
-            if (full8thStream.Checked)
-            {
-                triples_on_1_and_3.Enabled = false;
-                quintuplesTrackbar.Enabled = false;
-                quintuples_on_1_or_2.Enabled = false;
-                quintuples.Enabled = false;
-                label25.Enabled = false;
-            }
-            else
-            {
-                triples_on_1_and_3.Enabled = true;
-                quintuplesTrackbar.Enabled = true;
-                quintuples_on_1_or_2.Enabled = true;
-                quintuples.Enabled = true;
-                label25.Enabled = true;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button_intro_continue_Click(object sender, EventArgs e)
         {
 			if (first_dance_style != null)
 			{
@@ -1068,43 +616,30 @@ Warnings:
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage1;
+            tabControl1.SelectedTab = tabPage_instructions;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage5;
-        }
+		private void button4_Click(object sender, EventArgs e)
+		{
+			tabControl1.SelectedTab = tabPage_write_stepfiles;
+		}
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage6;
-        }
+		private void button_write_stepfiles_back_Click(object sender, EventArgs e)
+		{
+			if (last_dance_style != null)
+			{
+				tabControl1.SelectedTab = last_dance_style;
+			}
+		}
 
-        private void button4_Click(object sender, EventArgs e)
+		private void tabPage_instructions_Resize(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage4;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage3;
-        }
-
-        private void panel30_Resize(object sender, EventArgs e)
-        {
-            button4.Width = panel30.Width / 2 - 5;
-            button5.Width = panel30.Width / 2 - 5;
-        }
-
-        private void tabPage1_Resize(object sender, EventArgs e)
-        {
-            textBox1.Height = tabPage1.Height - instructionsTextboxGap;
+            textBox_intro.Height = tabPage_instructions.Height - instructionsTextboxGap;
         }
 
         private void flowLayoutPanel1_Resize(object sender, EventArgs e)
         {
-            button7.Width = Math.Max(Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15)), button7.MinimumSize.Width);
+            button_write_stepfiles_back.Width = Math.Max(Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15)), button_write_stepfiles_back.MinimumSize.Width);
             currentFolder.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.25));
             folderChooser.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15));
             getInfo.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.15));
@@ -1112,987 +647,254 @@ Warnings:
             close.Width = Convert.ToInt32(Convert.ToDouble(flowLayoutPanel1.Width) * Convert.ToDouble(0.1));
         }
 
-        private void tabPage4_Resize(object sender, EventArgs e)
-        {
-            songInfo.Height = tabPage4.Height - instructionsTextboxGap;
-        }
-
-        private void panel29_Resize(object sender, EventArgs e)
-        {
-            button2.Width = panel29.Width / 2 - 5;
-            button3.Width = panel29.Width / 2 - 5;
-        }
-
-        private void tabPage2_Resize(object sender, EventArgs e)
-        {
-            flowLayoutPanel2.Height = tabPage2.Height - instructionsTextboxGap;
-        }
-
-        private void tripleTypetrackbar_ValueChanged(object sender, EventArgs e)
-        {
-            tripleType.Value = tripleTypetrackbar.Value;
-        }
-
-        private void tripleType_ValueChanged(object sender, EventArgs e)
-        {
-            tripleTypetrackbar.Value = Convert.ToInt32(tripleType.Value);
-        }
-
-        private void tripleTypetrackbar2_ValueChanged(object sender, EventArgs e)
-        {
-            tripleType2.Value = tripleTypetrackbar2.Value;
-        }
-
-        private void tripleType2_ValueChanged(object sender, EventArgs e)
-        {
-            tripleTypetrackbar2.Value = Convert.ToInt32(tripleType2.Value);
-        }
-
-        private void tripleTypetrackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            tripleType3.Value = tripleTypetrackbar3.Value;
-        }
-
-        private void tripleType3_ValueChanged(object sender, EventArgs e)
-        {
-            tripleTypetrackbar3.Value = Convert.ToInt32(tripleType3.Value);
-        }
-
-        private void tripleTypetrackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            tripleType4.Value = tripleTypetrackbar4.Value;
-        }
-
-        private void tripleType4_ValueChanged(object sender, EventArgs e)
-        {
-            tripleTypetrackbar4.Value = Convert.ToInt32(tripleType4.Value);
-        }
-
-        private void tripleTypetrackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            tripleType5.Value = tripleTypetrackbar5.Value;
-        }
-
-        private void tripleType5_ValueChanged(object sender, EventArgs e)
-        {
-            tripleTypetrackbar5.Value = Convert.ToInt32(tripleType5.Value);
-        }
-
-        private void quintupleTypetrackbar_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleType.Value = quintupleTypetrackbar.Value;
-        }
-
-        private void quintupleType_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleTypetrackbar.Value = Convert.ToInt32(quintupleType.Value);
-        }
-
-        private void quintupleTypetrackbar2_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleType2.Value = quintupleTypetrackbar2.Value;
-        }
-
-        private void quintupleType2_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleTypetrackbar2.Value = Convert.ToInt32(quintupleType2.Value);
-        }
-
-        private void quintupleTypetrackbar3_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleType3.Value = quintupleTypetrackbar3.Value;
-        }
-
-        private void quintupleType3_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleTypetrackbar3.Value = Convert.ToInt32(quintupleType3.Value);
-        }
-
-        private void quintupleTypetrackbar4_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleType4.Value = quintupleTypetrackbar4.Value;
-        }
-
-        private void quintupleType4_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleTypetrackbar4.Value = Convert.ToInt32(quintupleType4.Value);
-        }
-
-        private void quintupleTypetrackbar5_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleType5.Value = quintupleTypetrackbar5.Value;
-        }
-
-        private void quintupleType5_ValueChanged(object sender, EventArgs e)
-        {
-            quintupleTypetrackbar5.Value = Convert.ToInt32(quintupleType5.Value);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage2;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage6;
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage5;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage3;
-        }
-
-        private void stepfill_trackbarDS1_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDS1.Value = stepfill_trackbarDS1.Value;
-        }
-
-        private void stepFillDS1_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDS1.Value =  Convert.ToInt32(stepFillDS1.Value);
-        }
-
-        private void stepfill_trackbarDS2_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDS2.Value = stepfill_trackbarDS2.Value;
-        }
-
-         private void stepFillDS2_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDS2.Value = Convert.ToInt32(stepFillDS2.Value);
-        }
-
-        private void stepfill_trackbarDS3_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDS3.Value = stepfill_trackbarDS3.Value;
-        }
-
-        private void stepFillDS3_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDS3.Value = Convert.ToInt32(stepFillDS3.Value);
-        }
-
-        private void stepfill_trackbarDS4_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDS4.Value = stepfill_trackbarDS4.Value;
-        }
-
-        private void stepFillDS4_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDS4.Value = Convert.ToInt32(stepFillDS4.Value);
-        }
-
-        private void stepfill_trackbarDS5_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDS5.Value = stepfill_trackbarDS5.Value;
-        }
-
-        private void stepFillDS5_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDS5.Value = Convert.ToInt32(stepFillDS5.Value);
-        }
-
-        private void stepfill_trackbarDD1_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDD1.Value = stepfill_trackbarDD1.Value;
-        }
-
-        private void stepFillDD1_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDD1.Value = Convert.ToInt32(stepFillDD1.Value);
-        }
-
-        private void stepfill_trackbarDD2_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDD2.Value = stepfill_trackbarDD2.Value;
-        }
-
-        private void stepFillDD2_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDD2.Value = Convert.ToInt32(stepFillDD2.Value);
-        }
-
-        private void stepfill_trackbarDD3_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDD3.Value = stepfill_trackbarDD3.Value;
-        }
-
-        private void stepFillDD3_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDD3.Value = Convert.ToInt32(stepFillDD3.Value);
-        }
-
-        private void stepfill_trackbarDD4_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDD4.Value = stepfill_trackbarDD4.Value;
-        }
-
-        private void stepFillDD4_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDD4.Value = Convert.ToInt32(stepFillDD4.Value);
-        }
-
-        private void stepfill_trackbarDD5_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillDD5.Value = stepfill_trackbarDD5.Value;
-        }
-
-        private void stepFillDD5_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarDD5.Value = Convert.ToInt32(stepFillDD5.Value);
-        }
-
-        private void stepfill_trackbarPS1_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillPS1.Value = stepfill_trackbarPS1.Value;
-        }
-
-        private void stepFillPS1_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarPS1.Value = Convert.ToInt32(stepFillPS1.Value);
-        }
-
-        private void stepfill_trackbarPS2_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillPS2.Value = stepfill_trackbarPS2.Value;
-        }
-
-        private void stepFillPS2_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarPS2.Value = Convert.ToInt32(stepFillPS2.Value);
-        }
-
-        private void stepfill_trackbarPS3_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillPS3.Value = stepfill_trackbarPS3.Value;
-        }
-
-        private void stepFillPS3_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarPS3.Value = Convert.ToInt32(stepFillPS3.Value);
-        }
-
-        private void stepfill_trackbarPS4_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillPS4.Value = stepfill_trackbarPS4.Value;
-        }
-
-        private void stepFillPS4_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarPS4.Value = Convert.ToInt32(stepFillPS4.Value);
-        }
-
-        private void stepfill_trackbarPS5_ValueChanged(object sender, EventArgs e)
-        {
-            stepFillPS5.Value = stepfill_trackbarPS5.Value;
-        }
-
-        private void stepFillPS5_ValueChanged(object sender, EventArgs e)
-        {
-            stepfill_trackbarPS5.Value = Convert.ToInt32(stepFillPS5.Value);
-        }
-
-        private void onBeatDS1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDS1.Value = Convert.ToInt32(onBeatDS1.Value);
-        }
-
-        private void onBeatTrackbarDS1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDS1.Value = onBeatTrackbarDS1.Value;
-        }
-
-        private void onBeatDS2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDS2.Value = Convert.ToInt32(onBeatDS2.Value);
-        }
-
-        private void onBeatTrackbarDS2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDS2.Value = onBeatTrackbarDS2.Value;
-        }
-
-        private void onBeatDS3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDS3.Value = Convert.ToInt32(onBeatDS3.Value);
-        }
-
-        private void onBeatTrackbarDS3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDS3.Value = onBeatTrackbarDS3.Value;
-        }
-
-        private void onBeatDS4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDS4.Value = Convert.ToInt32(onBeatDS4.Value);
-        }
-
-        private void onBeatTrackbarDS4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDS4.Value = onBeatTrackbarDS4.Value;
-        }
-
-        private void onBeatDS5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDS5.Value = Convert.ToInt32(onBeatDS5.Value);
-        }
-
-        private void onBeatTrackbarDS5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDS5.Value = onBeatTrackbarDS5.Value;
-        }
-
-        private void onBeatDD1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDD1.Value = Convert.ToInt32(onBeatDD1.Value);
-        }
-
-        private void onBeatTrackbarDD1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDD1.Value = onBeatTrackbarDD1.Value;
-        }
-
-        private void onBeatDD2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDD2.Value = Convert.ToInt32(onBeatDD2.Value);
-        }
-
-        private void onBeatTrackbarDD2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDD2.Value = onBeatTrackbarDD2.Value;
-        }
-
-        private void onBeatDD3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDD3.Value = Convert.ToInt32(onBeatDD3.Value);
-        }
-
-        private void onBeatTrackbarDD3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDD3.Value = onBeatTrackbarDD3.Value;
-        }
-
-        private void onBeatDD4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDD4.Value = Convert.ToInt32(onBeatDD4.Value);
-        }
-
-        private void onBeatTrackbarDD4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDD4.Value = onBeatTrackbarDD4.Value;
-        }
-
-        private void onBeatDD5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarDD5.Value = Convert.ToInt32(onBeatDD5.Value);
-        }
-
-        private void onBeatTrackbarDD5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatDD5.Value = onBeatTrackbarDD5.Value;
-        }
-
-        private void onBeatPS1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarPS1.Value = Convert.ToInt32(onBeatPS1.Value);
-        }
-
-        private void onBeatTrackbarPS1_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatPS1.Value = onBeatTrackbarPS1.Value;
-        }
-
-        private void onBeatPS2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarPS2.Value = Convert.ToInt32(onBeatPS2.Value);
-        }
-
-        private void onBeatTrackbarPS2_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatPS2.Value = onBeatTrackbarPS2.Value;
-        }
-
-        private void onBeatPS3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarPS3.Value = Convert.ToInt32(onBeatPS3.Value);
-        }
-
-        private void onBeatTrackbarPS3_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatPS3.Value = onBeatTrackbarPS3.Value;
-        }
-
-        private void onBeatPS4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarPS4.Value = Convert.ToInt32(onBeatPS4.Value);
-        }
-
-        private void onBeatTrackbarPS4_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatPS4.Value = onBeatTrackbarPS4.Value;
-        }
-
-        private void onBeatPS5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatTrackbarPS5.Value = Convert.ToInt32(onBeatPS5.Value);
-        }
-
-        private void onBeatTrackbarPS5_ValueChanged(object sender, EventArgs e)
-        {
-            onBeatPS5.Value = onBeatTrackbarPS5.Value;
-        }
-
-        private void jumpsTrackbarDS1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDS1.Value = jumpsTrackbarDS1.Value;
-        }
-
-        private void jumpsDS1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDS1.Value = Convert.ToInt32(jumpsDS1.Value);
-        }
-
-        private void jumpsTrackbarDS2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDS2.Value = jumpsTrackbarDS2.Value;
-        }
-
-        private void jumpsDS2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDS2.Value = Convert.ToInt32(jumpsDS2.Value);
-        }
-
-        private void jumpsTrackbarDS3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDS3.Value = jumpsTrackbarDS3.Value;
-        }
-
-        private void jumpsDS3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDS3.Value = Convert.ToInt32(jumpsDS3.Value);
-        }
-
-        private void jumpsTrackbarDS4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDS4.Value = jumpsTrackbarDS4.Value;
-        }
-
-        private void jumpsDS4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDS4.Value = Convert.ToInt32(jumpsDS4.Value);
-        }
-
-        private void jumpsTrackbarDS5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDS5.Value = jumpsTrackbarDS5.Value;
-        }
-
-        private void jumpsDS5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDS5.Value = Convert.ToInt32(jumpsDS5.Value);
-        }
-
-        private void jumpsTrackbarDD1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDD1.Value = jumpsTrackbarDD1.Value;
-        }
-
-        private void jumpsDD1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDD1.Value = Convert.ToInt32(jumpsDD1.Value);
-        }
-
-        private void jumpsTrackbarDD2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDD2.Value = jumpsTrackbarDD2.Value;
-        }
-
-        private void jumpsDD2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDD2.Value = Convert.ToInt32(jumpsDD2.Value);
-        }
-
-        private void jumpsTrackbarDD3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDD3.Value = jumpsTrackbarDD3.Value;
-        }
-
-        private void jumpsDD3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDD3.Value = Convert.ToInt32(jumpsDD3.Value);
-        }
-
-        private void jumpsTrackbarDD4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDD4.Value = jumpsTrackbarDD4.Value;
-        }
-
-        private void jumpsDD4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDD4.Value = Convert.ToInt32(jumpsDD4.Value);
-        }
-
-        private void jumpsTrackbarDD5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsDD5.Value = jumpsTrackbarDD5.Value;
-        }
-
-        private void jumpsDD5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarDD5.Value = Convert.ToInt32(jumpsDD5.Value);
-        }
-
-        private void jumpsTrackbarPS1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsPS1.Value = jumpsTrackbarPS1.Value;
-        }
-
-        private void jumpsPS1_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarPS1.Value = Convert.ToInt32(jumpsPS1.Value);
-        }
-
-        private void jumpsTrackbarPS2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsPS2.Value = jumpsTrackbarPS2.Value;
-        }
-
-        private void jumpsPS2_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarPS2.Value = Convert.ToInt32(jumpsPS2.Value);
-        }
-
-        private void jumpsTrackbarPS3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsPS3.Value = jumpsTrackbarPS3.Value;
-        }
-
-        private void jumpsPS3_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarPS3.Value = Convert.ToInt32(jumpsPS3.Value);
-        }
-
-        private void jumpsTrackbarPS4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsPS4.Value = jumpsTrackbarPS4.Value;
-        }
-
-        private void jumpsPS4_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarPS4.Value = Convert.ToInt32(jumpsPS4.Value);
-        }
-
-        private void jumpsTrackbarPS5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsPS5.Value = jumpsTrackbarPS5.Value;
-        }
-
-        private void jumpsPS5_ValueChanged(object sender, EventArgs e)
-        {
-            jumpsTrackbarPS5.Value = Convert.ToInt32(jumpsPS5.Value);
-        }
-
-        private void quintuplesTrackbarDS1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDS1.Value = quintuplesTrackbarDS1.Value;
-        }
-
-        private void quintuplesDS1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDS1.Value = Convert.ToInt32(quintuplesDS1.Value);
-        }
-
-        private void quintuplesTrackbarDS2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDS2.Value = quintuplesTrackbarDS2.Value;
-        }
-
-        private void quintuplesDS2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDS2.Value = Convert.ToInt32(quintuplesDS2.Value);
-        }
-
-        private void quintuplesTrackbarDS3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDS3.Value = quintuplesTrackbarDS3.Value;
-        }
-
-        private void quintuplesDS3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDS3.Value = Convert.ToInt32(quintuplesDS3.Value);
-        }
-
-        private void quintuplesTrackbarDS4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDS4.Value = quintuplesTrackbarDS4.Value;
-        }
-
-        private void quintuplesDS4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDS4.Value = Convert.ToInt32(quintuplesDS4.Value);
-        }
-
-        private void quintuplesTrackbarDS5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDS5.Value = quintuplesTrackbarDS5.Value;
-        }
-
-        private void quintuplesDS5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDS5.Value = Convert.ToInt32(quintuplesDS5.Value);
-        }
-
-        private void quintuplesTrackbarDD1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDD1.Value = quintuplesTrackbarDD1.Value;
-        }
-
-        private void quintuplesDD1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDD1.Value = Convert.ToInt32(quintuplesDD1.Value);
-        }
-
-        private void quintuplesTrackbarDD2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDD2.Value = quintuplesTrackbarDD2.Value;
-        }
-
-        private void quintuplesDD2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDD2.Value = Convert.ToInt32(quintuplesDD2.Value);
-        }
-
-        private void quintuplesTrackbarDD3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDD3.Value = quintuplesTrackbarDD3.Value;
-        }
-
-        private void quintuplesDD3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDD3.Value = Convert.ToInt32(quintuplesDD3.Value);
-        }
-
-        private void quintuplesTrackbarDD4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDD4.Value = quintuplesTrackbarDD4.Value;
-        }
-
-        private void quintuplesDD4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDD4.Value = Convert.ToInt32(quintuplesDD4.Value);
-        }
-
-        private void quintuplesTrackbarDD5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesDD5.Value = quintuplesTrackbarDD5.Value;
-        }
-
-        private void quintuplesDD5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarDD5.Value = Convert.ToInt32(quintuplesDD5.Value);
-        }
-
-        private void quintuplesTrackbarPS1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesPS1.Value = quintuplesTrackbarPS1.Value;
-        }
-
-        private void quintuplesPS1_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarPS1.Value = Convert.ToInt32(quintuplesPS1.Value);
-        }
-
-        private void quintuplesTrackbarPS2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesPS2.Value = quintuplesTrackbarPS2.Value;
-        }
-
-        private void quintuplesPS2_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarPS2.Value = Convert.ToInt32(quintuplesPS2.Value);
-        }
-
-        private void quintuplesTrackbarPS3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesPS3.Value = quintuplesTrackbarPS3.Value;
-        }
-
-        private void quintuplesPS3_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarPS3.Value = Convert.ToInt32(quintuplesPS3.Value);
-        }
-
-        private void quintuplesTrackbarPS4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesPS4.Value = quintuplesTrackbarPS4.Value;
-        }
-
-        private void quintuplesPS4_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarPS4.Value = Convert.ToInt32(quintuplesPS4.Value);
-        }
-
-        private void quintuplesTrackbarPS5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesPS5.Value = quintuplesTrackbarPS5.Value;
-        }
-
-        private void quintuplesPS5_ValueChanged(object sender, EventArgs e)
-        {
-            quintuplesTrackbarPS5.Value = Convert.ToInt32(quintuplesPS5.Value);
-        }
-
-     /*   private void sample1_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
-                        alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value, (int)onBeat.Value, (int)jumps.Value, r,
-                        (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sample2_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
-                        alternate_foot2.Checked, arrow_repeat2.Checked, (int)stepFill2.Value, (int)onBeat2.Value, (int)jumps2.Value, r,
-                        (int)quintuples2.Value, triples_on_1_and_32.Checked, quintuples_on_1_or_22.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sample3_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
-                       alternate_foot3.Checked, arrow_repeat3.Checked, (int)stepFill3.Value, (int)onBeat3.Value, (int)jumps3.Value, r,
-                       (int)quintuples3.Value, triples_on_1_and_33.Checked, quintuples_on_1_or_23.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sample4_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
-                alternate_foot4.Checked, arrow_repeat4.Checked, (int)stepFill4.Value, (int)onBeat4.Value, (int)jumps4.Value, r,
-                (int)quintuples4.Value, triples_on_1_and_34.Checked, quintuples_on_1_or_24.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sample5_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSingle, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
-                alternate_foot5.Checked, arrow_repeat5.Checked, (int)stepFill5.Value, (int)onBeat5.Value, (int)jumps5.Value, r,
-                (int)quintuples5.Value, triples_on_1_and_35.Checked, quintuples_on_1_or_25.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSingle, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sampleDS1_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
-                        alternate_footDS1.Checked, arrow_repeatDS1.Checked, (int)stepFillDS1.Value, (int)onBeatDS1.Value, (int)jumpsDS1.Value, r,
-                        (int)quintuplesDS1.Value, triples_on_1_and_3DS1.Checked, quintuples_on_1_or_2DS1.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sampleDS2_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
-                        alternate_footDS2.Checked, arrow_repeatDS2.Checked, (int)stepFillDS2.Value, (int)onBeatDS2.Value, (int)jumpsDS2.Value, r,
-                        (int)quintuplesDS2.Value, triples_on_1_and_3DS2.Checked, quintuples_on_1_or_2DS2.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sampleDS3_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
-                        alternate_footDS3.Checked, arrow_repeatDS3.Checked, (int)stepFillDS3.Value, (int)onBeatDS3.Value, (int)jumpsDS3.Value, r,
-                        (int)quintuplesDS3.Value, triples_on_1_and_3DS3.Checked, quintuples_on_1_or_2DS3.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sampleDS4_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
-                        alternate_footDS4.Checked, arrow_repeatDS4.Checked, (int)stepFillDS4.Value, (int)onBeatDS4.Value, (int)jumpsDS4.Value, r,
-                        (int)quintuplesDS4.Value, triples_on_1_and_3DS4.Checked, quintuples_on_1_or_2DS4.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sampleDS5_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceSolo, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
-                        alternate_footDS5.Checked, arrow_repeatDS5.Checked, (int)stepFillDS5.Value, (int)onBeatDS5.Value, (int)jumpsDS5.Value, r,
-                        (int)quintuplesDS5.Value, triples_on_1_and_3DS5.Checked, quintuples_on_1_or_2DS5.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceSolo, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-
-        }
-
-        private void sampleDD1_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
-                        alternate_footDD1.Checked, arrow_repeatDD1.Checked, (int)stepFillDD1.Value, (int)onBeatDD1.Value, (int)jumpsDD1.Value, r,
-                        (int)quintuplesDD1.Value, triples_on_1_and_3DD1.Checked, quintuples_on_1_or_2DD1.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sampleDD2_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
-                        alternate_footDD2.Checked, arrow_repeatDD2.Checked, (int)stepFillDD2.Value, (int)onBeatDD2.Value, (int)jumpsDD2.Value, r,
-                        (int)quintuplesDD2.Value, triples_on_1_and_3DD2.Checked, quintuples_on_1_or_2DD2.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sampleDD3_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
-            alternate_footDD3.Checked, arrow_repeatDD3.Checked, (int)stepFillDD3.Value, (int)onBeatDD3.Value, (int)jumpsDD3.Value, r,
-            (int)quintuplesDD3.Value, triples_on_1_and_3DD3.Checked, quintuples_on_1_or_2DD3.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sampleDD4_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
-            alternate_footDD4.Checked, arrow_repeatDD4.Checked, (int)stepFillDD4.Value, (int)onBeatDD4.Value, (int)jumpsDD4.Value, r,
-            (int)quintuplesDD4.Value, triples_on_1_and_3DD4.Checked, quintuples_on_1_or_2DD4.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void sampleDD5_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.DanceDouble, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
-            alternate_footDD5.Checked, arrow_repeatDD5.Checked, (int)stepFillDD5.Value, (int)onBeatDD5.Value, (int)jumpsDD5.Value, r,
-            (int)quintuplesDD5.Value, triples_on_1_and_3DD5.Checked, quintuples_on_1_or_2DD5.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.DanceDouble, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void samplePS1_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Novice, beats_per_measure,
-                        alternate_footPS1.Checked, arrow_repeatPS1.Checked, (int)stepFillPS1.Value, (int)onBeatPS1.Value, (int)jumpsPS1.Value, r,
-                        (int)quintuplesPS1.Value, triples_on_1_and_3PS1.Checked, quintuples_on_1_or_2PS1.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Novice, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void samplePS2_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Easy, beats_per_measure,
-                        alternate_footPS2.Checked, arrow_repeatPS2.Checked, (int)stepFillPS2.Value, (int)onBeatPS2.Value, (int)jumpsPS2.Value, r,
-                        (int)quintuplesPS2.Value, triples_on_1_and_3PS2.Checked, quintuples_on_1_or_2PS2.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Easy, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void samplePS3_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Medium, beats_per_measure,
-                        alternate_footPS3.Checked, arrow_repeatPS3.Checked, (int)stepFillPS3.Value, (int)onBeatPS3.Value, (int)jumpsPS3.Value, r,
-                        (int)quintuplesPS3.Value, triples_on_1_and_3PS3.Checked, quintuples_on_1_or_2PS3.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Medium, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void samplePS4_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Hard, beats_per_measure,
-                        alternate_footPS4.Checked, arrow_repeatPS4.Checked, (int)stepFillPS4.Value, (int)onBeatPS4.Value, (int)jumpsPS4.Value, r,
-                        (int)quintuplesPS4.Value, triples_on_1_and_3PS4.Checked, quintuples_on_1_or_2PS4.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Hard, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }
-
-        private void samplePS5_Click(object sender, EventArgs e)
-        {
-            Noteset sample_noteset = new Noteset(StepDeets.PumpSingle, "SM", measures_per_sample, StepDeets.Expert, beats_per_measure,
-            alternate_footPS5.Checked, arrow_repeatPS5.Checked, (int)stepFillPS5.Value, (int)onBeatPS5.Value, (int)jumpsPS5.Value, r,
-            (int)quintuplesPS5.Value, triples_on_1_and_3PS5.Checked, quintuples_on_1_or_2PS5.Checked);
-            sample_noteset.generateSteps();
-            char[] f = sample_noteset.getFeet();
-            string[] s = sample_noteset.getSteps();
-            sw = new SampleWindow(StepDeets.PumpSingle, StepDeets.Expert, measures_per_sample, f, s, blackpen, redpen, bluepen);
-            sw.Show();
-        }*/
+        private void tabPage_write_stepfiles_Resize(object sender, EventArgs e)
+        {
+            songInfo.Height = tabPage_write_stepfiles.Height - instructionsTextboxGap;
+        }
+
+		private void InitializeComponent()
+		{
+			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+			this.tabPage_write_stepfiles = new System.Windows.Forms.TabPage();
+			this.songInfo = new System.Windows.Forms.DataGridView();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.close = new System.Windows.Forms.Button();
+			this.overwriteStepfiles = new System.Windows.Forms.Button();
+			this.getInfo = new System.Windows.Forms.Button();
+			this.folderChooser = new System.Windows.Forms.Button();
+			this.currentFolder = new System.Windows.Forms.TextBox();
+			this.button_write_stepfiles_back = new System.Windows.Forms.Button();
+			this.tabPage_instructions = new System.Windows.Forms.TabPage();
+			this.button_intro_continue = new System.Windows.Forms.Button();
+			this.textBox_intro = new System.Windows.Forms.TextBox();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage_write_stepfiles.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.songInfo)).BeginInit();
+			this.flowLayoutPanel1.SuspendLayout();
+			this.tabPage_instructions.SuspendLayout();
+			this.tabControl1.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// folderBrowserDialog1
+			// 
+			this.folderBrowserDialog1.ShowNewFolderButton = false;
+			// 
+			// tabPage_write_stepfiles
+			// 
+			this.tabPage_write_stepfiles.AutoScroll = true;
+			this.tabPage_write_stepfiles.Controls.Add(this.flowLayoutPanel1);
+			this.tabPage_write_stepfiles.Controls.Add(this.songInfo);
+			this.tabPage_write_stepfiles.Location = new System.Drawing.Point(4, 22);
+			this.tabPage_write_stepfiles.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage_write_stepfiles.Size = new System.Drawing.Size(1038, 672);
+			this.tabPage_write_stepfiles.TabIndex = 3;
+			this.tabPage_write_stepfiles.Text = "Write Stepfiles";
+			this.tabPage_write_stepfiles.UseVisualStyleBackColor = true;
+			this.tabPage_write_stepfiles.Resize += new System.EventHandler(this.tabPage_write_stepfiles_Resize);
+			// 
+			// songInfo
+			// 
+			this.songInfo.AllowUserToAddRows = false;
+			this.songInfo.AllowUserToDeleteRows = false;
+			this.songInfo.AllowUserToResizeColumns = false;
+			this.songInfo.AllowUserToResizeRows = false;
+			this.songInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.songInfo.Dock = System.Windows.Forms.DockStyle.Top;
+			this.songInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+			this.songInfo.Location = new System.Drawing.Point(3, 3);
+			this.songInfo.Name = "songInfo";
+			this.songInfo.ReadOnly = true;
+			this.songInfo.RowHeadersVisible = false;
+			this.songInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.songInfo.ShowEditingIcon = false;
+			this.songInfo.Size = new System.Drawing.Size(1032, 630);
+			this.songInfo.TabIndex = 8;
+			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.flowLayoutPanel1.Controls.Add(this.button_write_stepfiles_back);
+			this.flowLayoutPanel1.Controls.Add(this.currentFolder);
+			this.flowLayoutPanel1.Controls.Add(this.folderChooser);
+			this.flowLayoutPanel1.Controls.Add(this.getInfo);
+			this.flowLayoutPanel1.Controls.Add(this.overwriteStepfiles);
+			this.flowLayoutPanel1.Controls.Add(this.close);
+			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 634);
+			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+			this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(1032, 35);
+			this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(200, 35);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(1032, 35);
+			this.flowLayoutPanel1.TabIndex = 17;
+			this.flowLayoutPanel1.WrapContents = false;
+			this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
+			// 
+			// close
+			// 
+			this.close.BackColor = System.Drawing.Color.Goldenrod;
+			this.close.Location = new System.Drawing.Point(885, 3);
+			this.close.Name = "close";
+			this.close.Size = new System.Drawing.Size(142, 30);
+			this.close.TabIndex = 6;
+			this.close.Text = "Close";
+			this.close.UseVisualStyleBackColor = false;
+			this.close.Click += new System.EventHandler(this.close_Click);
+			// 
+			// overwriteStepfiles
+			// 
+			this.overwriteStepfiles.BackColor = System.Drawing.Color.Orange;
+			this.overwriteStepfiles.Location = new System.Drawing.Point(726, 3);
+			this.overwriteStepfiles.MinimumSize = new System.Drawing.Size(90, 30);
+			this.overwriteStepfiles.Name = "overwriteStepfiles";
+			this.overwriteStepfiles.Size = new System.Drawing.Size(153, 30);
+			this.overwriteStepfiles.TabIndex = 5;
+			this.overwriteStepfiles.Text = "Overwrite Stepfiles";
+			this.overwriteStepfiles.UseVisualStyleBackColor = false;
+			this.overwriteStepfiles.Click += new System.EventHandler(this.overwriteStepfiles_Click);
+			// 
+			// getInfo
+			// 
+			this.getInfo.BackColor = System.Drawing.Color.YellowGreen;
+			this.getInfo.Location = new System.Drawing.Point(647, 3);
+			this.getInfo.Name = "getInfo";
+			this.getInfo.Size = new System.Drawing.Size(73, 30);
+			this.getInfo.TabIndex = 2;
+			this.getInfo.Text = "Get info";
+			this.getInfo.UseVisualStyleBackColor = false;
+			this.getInfo.Click += new System.EventHandler(this.getInfo_Click);
+			// 
+			// folderChooser
+			// 
+			this.folderChooser.BackColor = System.Drawing.Color.LightBlue;
+			this.folderChooser.Location = new System.Drawing.Point(534, 3);
+			this.folderChooser.Name = "folderChooser";
+			this.folderChooser.Size = new System.Drawing.Size(107, 30);
+			this.folderChooser.TabIndex = 0;
+			this.folderChooser.Text = "Change folder";
+			this.folderChooser.UseVisualStyleBackColor = false;
+			this.folderChooser.Click += new System.EventHandler(this.selectFolder_Click);
+			// 
+			// currentFolder
+			// 
+			this.currentFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.currentFolder.Location = new System.Drawing.Point(225, 3);
+			this.currentFolder.Name = "currentFolder";
+			this.currentFolder.Size = new System.Drawing.Size(303, 26);
+			this.currentFolder.TabIndex = 1;
+			this.currentFolder.Text = "C:\\Games\\StepMania 5\\Songs\\Test";
+			this.currentFolder.TextChanged += new System.EventHandler(this.currentFolder_TextChanged);
+			// 
+			// button_write_stepfiles_back
+			// 
+			this.button_write_stepfiles_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.button_write_stepfiles_back.Location = new System.Drawing.Point(3, 3);
+			this.button_write_stepfiles_back.Size = new System.Drawing.Size(216, 30);
+			this.button_write_stepfiles_back.TabIndex = 0;
+			this.button_write_stepfiles_back.Text = "Back to " + this.last_dance_style_name;
+			this.button_write_stepfiles_back.UseVisualStyleBackColor = false;
+			this.button_write_stepfiles_back.Click += new System.EventHandler(this.button_write_stepfiles_back_Click);
+			// 
+			// tabPage_instructions
+			// 
+			this.tabPage_instructions.Controls.Add(this.textBox_intro);
+			this.tabPage_instructions.Controls.Add(this.button_intro_continue);
+			this.tabPage_instructions.Location = new System.Drawing.Point(4, 22);
+			this.tabPage_instructions.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage_instructions.Size = new System.Drawing.Size(1038, 672);
+			this.tabPage_instructions.TabIndex = 0;
+			this.tabPage_instructions.Text = "Instructions";
+			this.tabPage_instructions.UseVisualStyleBackColor = true;
+			this.tabPage_instructions.Resize += new System.EventHandler(this.tabPage_instructions_Resize);
+			// 
+			// button_intro_continue
+			// 
+			this.button_intro_continue.AutoSize = true;
+			this.button_intro_continue.BackColor = System.Drawing.Color.YellowGreen;
+			this.button_intro_continue.CausesValidation = false;
+			this.button_intro_continue.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.button_intro_continue.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.button_intro_continue.Location = new System.Drawing.Point(3, 639);
+			this.button_intro_continue.Name = "button1";
+			this.button_intro_continue.Size = new System.Drawing.Size(1032, 30);
+			this.button_intro_continue.TabIndex = 4;
+			this.button_intro_continue.Text = "Continue";
+			this.button_intro_continue.UseVisualStyleBackColor = false;
+			this.button_intro_continue.Click += new System.EventHandler(this.button_intro_continue_Click);
+			// 
+			// textBox_intro
+			// 
+			this.textBox_intro.Dock = System.Windows.Forms.DockStyle.Top;
+			this.textBox_intro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.textBox_intro.Location = new System.Drawing.Point(3, 3);
+			this.textBox_intro.MaximumSize = new System.Drawing.Size(2000, 1000);
+			this.textBox_intro.MinimumSize = new System.Drawing.Size(100, 100);
+			this.textBox_intro.Multiline = true;
+			this.textBox_intro.ReadOnly = true;
+			this.textBox_intro.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox_intro.Size = new System.Drawing.Size(1032, 630);
+			this.textBox_intro.TabIndex = 5;
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage_instructions);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1046, 698);
+			this.tabControl1.TabIndex = 16;
+			// 
+			// Stepper
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.Control;
+			this.ClientSize = new System.Drawing.Size(1046, 698);
+			this.Controls.Add(this.tabControl1);
+			this.MaximumSize = new System.Drawing.Size(1062, 736);
+			this.Name = "Stepper";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Stepper v2.0";
+			this.tabPage_write_stepfiles.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.songInfo)).EndInit();
+			this.flowLayoutPanel1.ResumeLayout(false);
+			this.flowLayoutPanel1.PerformLayout();
+			this.tabPage_instructions.ResumeLayout(false);
+			this.tabPage_instructions.PerformLayout();
+			this.tabControl1.ResumeLayout(false);
+			this.ResumeLayout(false);
+
+			r = new Random();
+			dstp = new DanceStyleTabPage[StepDeets.getDanceStyles().Count()];
+
+			// create arrows and pens for the Sample windows
+			cap = new AdjustableArrowCap(2, 1);
+			cap.WidthScale = 1;
+			cap.BaseCap = LineCap.Square;
+			cap.Height = 1;
+			blackpen = new Pen(Color.Black, 10);
+			blackpen.CustomEndCap = cap;
+			redpen = new Pen(Color.Red, 10);
+			redpen.CustomEndCap = cap;
+			bluepen = new Pen(Color.Blue, 10);
+			bluepen.CustomEndCap = cap;
+
+
+		}
+
+	/*	private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		} */
      }
 }

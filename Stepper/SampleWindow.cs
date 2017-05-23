@@ -12,7 +12,7 @@ namespace Stepper
 {
     public class SampleWindow : Form
     {
-		private System.ComponentModel.IContainer components = null;
+		//private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.DataGridView sampleDGV;
 		private String dance_style;
         private String level;
@@ -195,14 +195,14 @@ namespace Stepper
             }
         }
 
-		protected override void Dispose(bool disposing)
+	/*	protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
 			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
-		}
+		}*/
 
 		private void InitializeComponent()
 		{

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Stepper
 {
-	public /*partial*/ class DanceStyleTabPage : TabPage
+	public class DanceStyleTabPage : TabPage
 	{
-		private System.ComponentModel.IContainer components = null;
+		//private System.ComponentModel.IContainer components = null;
 		FlowLayoutPanel flowLayoutPanel2;
 		Panel panel29;
 		Button button2;
@@ -22,18 +22,11 @@ namespace Stepper
 		private TabPage nextTabPage;
 		private TabControl parentControl;
 
-//		int beats_per_measure;
-//		int measures_per_sample;
-//		private Pen blackpen;
-//		private Pen redpen;
-//		private Pen bluepen;
-//		Random r;
-
 		public DanceStyleTabPage()
 		{
 
 		}
-		private void InitializeComponent()
+/*		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
 		}
@@ -45,11 +38,11 @@ namespace Stepper
 				components.Dispose();
 			}
 			base.Dispose(disposing);
-		}
+		} */
 
 		public DanceStyleTabPage(TabControl parent, string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
-			InitializeComponent();
+		//	InitializeComponent();
 			parentControl = parent;
 			nsp_list = new List<NotesetPanel>();
 			foreach (string level in StepDeets.getLevels())

@@ -88,9 +88,6 @@
     <Compile Include="Stepper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stepper.Designer.cs">
-      <DependentUpon>Stepper.cs</DependentUpon>
-    </Compile>
     <Compile Include="Noteset.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -100,6 +100,11 @@ namespace Stepper
 			initialize();
 		}
 
+		public string getLevel()
+		{
+			return sdlevel;
+		}
+
 		public void setNotesetParameters(NotesetParameters np) {
 			dance_style = np.dance_style;
 			sdlevel = np.dance_level;

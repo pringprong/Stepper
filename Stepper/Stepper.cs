@@ -66,9 +66,10 @@ Warnings:
            
             songs = new List<Song>();
 			int i = 0;
-			foreach (string style in StepDeets.getDanceStyles())
+			foreach (string style in StepDeets.DanceStyles)
 			{
 				dstp[i] = new DanceStyleTabPage(tabControl1, style, beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
+				dstp[i].setNoteSetParametersList(StepDeets.default_params[style]);
 				tabControl1.Controls.Add(dstp[i]);
 				if (i == 0)
 				{
@@ -80,9 +81,9 @@ Warnings:
 				{
 					// middle dance styles: set next pointer of prev tab to this tabpage, set back pointer of this one to prev tabpage
 					dstp[i - 1].setNext(StepDeets.stepTitle(style), dstp[i]);
-					dstp[i].setPrev(StepDeets.stepTitle(StepDeets.getDanceStyles()[i-1]), dstp[i-1]);
+					dstp[i].setPrev(StepDeets.stepTitle(StepDeets.DanceStyles[i-1]), dstp[i-1]);
 				}
-				if (i == (StepDeets.getDanceStyles().Count() -1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
+				if (i == (StepDeets.DanceStyles.Count() -1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
 				{
 					dstp[i].setNext("Write Stepfiles", tabPage_write_stepfiles);
 					last_dance_style = dstp[i];
@@ -865,7 +866,7 @@ Warnings:
 			this.ResumeLayout(false);
 
 			r = new Random();
-			dstp = new DanceStyleTabPage[StepDeets.getDanceStyles().Count()];
+			dstp = new DanceStyleTabPage[StepDeets.DanceStyles.Count()];
 
 			// create arrows and pens for the Sample windows
 			cap = new AdjustableArrowCap(2, 1);

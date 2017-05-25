@@ -45,7 +45,7 @@ namespace Stepper
 		//	InitializeComponent();
 			parentControl = parent;
 			nsp_list = new List<NotesetPanel>();
-			foreach (string level in StepDeets.getLevels())
+			foreach (string level in StepDeets.Levels)
 			{
 				nsp_list.Add(new NotesetPanel(dance_style, level, beats, measures, black, red, blue, random));
 			}
@@ -165,12 +165,14 @@ namespace Stepper
 			return l.ToArray();
 		}
 
-		public void setNoteSetParametersList(NotesetParameters[] nsp_array)
+		public void setNoteSetParametersList(Dictionary<string,NotesetParameters> npd)
 		{
 			int i = 0;
 			foreach (NotesetPanel np in nsp_list)
 			{
-				np.setNotesetParameters(nsp_array[i]);
+				string level = np.getLevel();
+				NotesetParameters nsp = npd[level];
+				np.setNotesetParameters(nsp);
 				i++;
 			}
 		}

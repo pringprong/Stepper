@@ -18,8 +18,9 @@ namespace Stepper
 		public int percent_quintuples { get; private set; }
 		public bool triples_on_1_and_3 { get; private set; }
 		public bool quintuples_on_1_or_2 { get; private set; }
+		public int triple_type { get; private set; }
 
-		public NotesetParameters(string ds, string dl, bool af, bool ra, int sf, int ob, int j, int q, bool t13, bool q12)
+		public NotesetParameters(string ds, string dl, bool af, bool ra, int sf, int ob, int j, int q, bool t13, bool q12, int tr)
 		{
 			dance_style = ds;
 			dance_level = dl;
@@ -31,6 +32,7 @@ namespace Stepper
 			percent_quintuples = q;
 			triples_on_1_and_3 = t13;
 			quintuples_on_1_or_2 = q12;
+			triple_type = tr;
 		}
 	}
 }

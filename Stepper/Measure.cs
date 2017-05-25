@@ -163,45 +163,123 @@ namespace Stepper
 					}
 					else if (rOnBeat >= np.percent_onbeat && rTripQuint >= np.percent_quintuples && ((i <= 2) || (i == 4) && np.triples_on_1_and_3))
 					{ // insert a triple
-						if (foot.Equals(StepDeets.Left))
-						{
-							string step = laststep;
-							while (step.Equals(laststep))
+						if (r.Next(0, 100) < np.triple_type)
+						{  // insert an ABA triple
+							if (foot.Equals(StepDeets.Left))
 							{
-								step = rightsteps[r.Next(0, rightsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.R;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.R;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.L;
+								foot = StepDeets.Right;
 							}
-							steps[i] = step;
-							feet[i] = StepDeets.R;
-							steps[i + 2] = step;
-							feet[i + 2] = StepDeets.R;
-							laststep = step;
-							while (step.Equals(laststep))
+							else
 							{
-								step = leftsteps[r.Next(0, leftsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.L;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.L;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.R;
+								foot = StepDeets.Left;
 							}
-							steps[i + 1] = step;
-							feet[i + 1] = StepDeets.L;
-							foot = StepDeets.Right;
 						}
-						else
+						else  // insert an ABC triple
 						{
-							string step = laststep;
-							while (step.Equals(laststep))
+							if (foot.Equals(StepDeets.Left))
 							{
-								step = leftsteps[r.Next(0, leftsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.R;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.L;
+								laststep = steps[i];
+								step = steps[i];
+								int limit = 0; // put in a counter to prevent a never-ending loop in case there is no such third step
+								while ((step.Equals(laststep) || step.Equals(steps[i+1])) && limit < 100)
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+									limit++;
+								}
+								if (limit < 100)
+								{
+									steps[i + 2] = step;
+								}
+								else
+								{
+									steps[i + 2] = steps[i];
+								}
+								feet[i + 2] = StepDeets.R;
+								foot = StepDeets.Right;
+								laststep = step;
 							}
-							steps[i] = step;
-							feet[i] = StepDeets.L;
-							steps[i + 2] = step;
-							feet[i + 2] = StepDeets.L;
-							laststep = step;
-							while (step.Equals(laststep))
+							else
 							{
-								step = rightsteps[r.Next(0, rightsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.L;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.R;
+								laststep = steps[i];
+								step = steps[i];
+								int limit = 0; // put in a counter to prevent a never-ending loop in case there is no such third step
+								while ((step.Equals(laststep) || step.Equals(steps[i + 1])) && limit < 100)
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+									limit++;
+								}
+								if (limit < 100)
+								{
+									steps[i + 2] = step;
+								}
+								else
+								{
+									steps[i + 2] = steps[i];
+								}
+								feet[i + 2] = StepDeets.L;
+								foot = StepDeets.Left;
+								laststep = step;
 							}
-							steps[i + 1] = step;
-							feet[i + 1] = StepDeets.R;
-							foot = StepDeets.Left;
 						}
 						i = i + 3;
 					}

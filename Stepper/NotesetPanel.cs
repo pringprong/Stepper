@@ -115,12 +115,13 @@ namespace Stepper
 			jumpsTrackbar.Value = np.percent_jumps;
 			triples_on_1_and_3.Checked = np.triples_on_1_and_3;
 			quintuples_on_1_or_2.Checked = np.quintuples_on_1_or_2;
+			tripleTypetrackbar.Value = np.triple_type;
 		}
 
 		public NotesetParameters getNotesetParameters()
 		{
 			return new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, stepFill_trackbar.Value,
-				onBeatTrackbar.Value, jumpsTrackbar.Value, quintuplesTrackbar.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+				onBeatTrackbar.Value, jumpsTrackbar.Value, quintuplesTrackbar.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked, tripleTypetrackbar.Value);
 		}
 
 		private void initialize()  {
@@ -202,7 +203,6 @@ namespace Stepper
 			// panel16
 			// 
 			this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel16.Enabled = false;
 			this.panel16.Location = new System.Drawing.Point(594, 3);
 			this.panel16.Size = new System.Drawing.Size(117, 112);
 			this.panel16.TabIndex = 18;
@@ -665,7 +665,7 @@ namespace Stepper
 		private void sample1_Click(object sender, EventArgs e)
 		{
 			NotesetParameters np = new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value,
-				(int)onBeat.Value, (int)jumps.Value, (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked);
+				(int)onBeat.Value, (int)jumps.Value, (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked, tripleTypetrackbar.Value);
 			Noteset sample_noteset = new Noteset(np, StepDeets.SM, measures_per_sample, r);
 			sample_noteset.generateSteps();
 			char[] f = sample_noteset.getFeet();

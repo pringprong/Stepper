@@ -170,20 +170,20 @@ Warnings:
                     if (!s.Equals(null))
                     {
                         songs.Add(s);
-                        songInfo[1, i].Value = s.getMinBPM();
-                        songInfo[2, i].Value = s.getMaxBPM();
-                        songInfo[3, i].Value = s.getBPMChanges();
-                        songInfo[4, i].Value = s.getNumStops();
-                        songInfo[5, i].Value = s.getNumNotesets();
-                        if (s.getMinMeasures() == s.getMaxMeasures())
+                        songInfo[1, i].Value = s.min_BPM;
+                        songInfo[2, i].Value = s.max_BPM;
+                        songInfo[3, i].Value = s.BPM_changes;
+                        songInfo[4, i].Value = s.num_stops;
+						songInfo[5, i].Value = s.num_notesets;
+                        if (s.min_measures == s.max_measures)
                         {
-                            songInfo[6, i].Value = s.getMinMeasures();
+                            songInfo[6, i].Value = s.min_measures;
                         }
                         else
                         {
-                            songInfo[6, i].Value = s.getMinMeasures() + "-" + s.getMaxMeasures();
+                            songInfo[6, i].Value = s.min_measures + "-" + s.max_measures;
                         }
-                        songInfo[7, i].Value = s.getType();
+						songInfo[7, i].Value = s.type;
                         songInfo.ClearSelection();
                     }
                 }
@@ -195,20 +195,20 @@ Warnings:
                     if (!s.Equals(null))
                     {
                         songs.Add(s);
-                        songInfo[1, i].Value = s.getMinBPM();
-                        songInfo[2, i].Value = s.getMaxBPM();
-                        songInfo[3, i].Value = s.getBPMChanges();
-                        songInfo[4, i].Value = s.getNumStops();
-                        songInfo[5, i].Value = s.getNumNotesets();
-                        if (s.getMinMeasures() == s.getMaxMeasures())
+                        songInfo[1, i].Value = s.min_BPM;
+                        songInfo[2, i].Value = s.max_BPM;
+						songInfo[3, i].Value = s.BPM_changes;
+						songInfo[4, i].Value = s.num_stops;
+						songInfo[5, i].Value = s.num_notesets;
+                        if (s.min_measures == s.max_measures)
                         {
-                            songInfo[6, i].Value = s.getMinMeasures();
+                            songInfo[6, i].Value = s.min_measures;
                         }
                         else
                         {
-                            songInfo[6, i].Value = s.getMinMeasures() + "-" + s.getMaxMeasures();
+                            songInfo[6, i].Value = s.min_measures + "-" + s.max_measures;
                         }
-                        songInfo[7, i].Value = s.getType();
+                        songInfo[7, i].Value = s.type;
                         songInfo.ClearSelection();
                     }
                 }
@@ -271,16 +271,16 @@ Warnings:
 					{
 						foreach (NotesetParameters n in page.getNoteSetParametersList() )
 						{
-							Noteset note = new Noteset(n, s.getType(), s.getNumMeasures(), r);
+							Noteset note = new Noteset(n, s.type, s.num_measures, r);
 							note.generateSteps();
 							noteset_list.Add(note);
 						}
 					}
 
-                    if (s.getType().Equals(StepDeets.SSC))
+					if (s.type.Equals(StepDeets.SSC))
                     {
                         string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
-                        string old_path = s.getPath();
+                        string old_path = s.path;
                         Regex alter_extension = new Regex("\\.ssc");
                         string backup_path = alter_extension.Replace(old_path, ".ssc." + timestamp + ".bak");
                         if (!File.Exists(backup_path))
@@ -288,7 +288,7 @@ Warnings:
                             System.IO.File.Move(old_path, backup_path);
                         }
                         System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
-                        List<string> header_lines = s.getHeader();
+                        List<string> header_lines = s.header;
                         header_lines.ForEach(delegate(string header_line)
                         {
                             file.WriteLine(header_line);
@@ -299,11 +299,11 @@ Warnings:
 						}
                         file.Close();
                     }
-                    else if (s.getType().Equals(StepDeets.SM))
+					else if (s.type.Equals(StepDeets.SM))
                     {
                         // no ssc file, so backup the old .sm file and then overwrite it
                         string timestamp = DateTime.Now.ToString("yyyyMMddHHmm");
-                        string old_path = s.getPath();
+                        string old_path = s.path;
                         Regex alter_extension = new Regex("\\.sm");
                         string backup_path = alter_extension.Replace(old_path, ".sm." + timestamp + ".bak");
                         if (!File.Exists(backup_path))
@@ -311,7 +311,7 @@ Warnings:
                             System.IO.File.Move(old_path, backup_path);
                         }
                         System.IO.StreamWriter file = new System.IO.StreamWriter(old_path);
-                        List<string> header_lines = s.getHeader();
+                        List<string> header_lines = s.header;
                         header_lines.ForEach(delegate(string header_line)
                         {
                             file.WriteLine(header_line);

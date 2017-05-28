@@ -13,12 +13,12 @@ namespace Stepper
 	{
 	//	private System.ComponentModel.IContainer components = null;
 		Button sample1;
-		Panel panel28;
-		Panel panel16;
+		Panel quintuple_type_panel;
+		Panel triple_type_panel;
 		Label label11;
 		NumericUpDown stepFill;
-		Panel panel3;
-		Panel panel2;
+		Panel on_beat_panel;
+		Panel checkbox_panel;
 		Label label18;
 		Label label17;
 		TrackBar stepFill_trackbar;
@@ -27,6 +27,7 @@ namespace Stepper
 		Label label59;
 		Label label60;
 		Label label61;
+		Label label62;
 		TrackBar quintupleTypetrackbar;
 		NumericUpDown tripleType;
 		Label label56;
@@ -41,8 +42,8 @@ namespace Stepper
 		NumericUpDown onBeat;
 		Label label20;
 		Label label19;
-		Panel panel5;
-		Panel panel4;
+		Panel halfbeat_panel;
+		Panel jumps_panel;
 		TrackBar onBeatTrackbar;
 		Label label25;
 		Label label23;
@@ -85,6 +86,9 @@ namespace Stepper
 			jumpsTrackbar.Value = np.percent_jumps;
 			triples_on_1_and_3.Checked = np.triples_on_1_and_3;
 			quintuples_on_1_or_2.Checked = np.quintuples_on_1_or_2;
+			tripleTypetrackbar.Value = np.triple_type;
+			quintupleTypetrackbar.Value = np.quintuple_type;
+			full8thStream.Checked = np.full8th;
 		}
 		
 		public NotesetPanel(string ds, string StepDeetslevel, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
@@ -116,24 +120,27 @@ namespace Stepper
 			triples_on_1_and_3.Checked = np.triples_on_1_and_3;
 			quintuples_on_1_or_2.Checked = np.quintuples_on_1_or_2;
 			tripleTypetrackbar.Value = np.triple_type;
+			quintupleTypetrackbar.Value = np.quintuple_type;
+			full8thStream.Checked = np.full8th;
 		}
 
 		public NotesetParameters getNotesetParameters()
 		{
 			return new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, stepFill_trackbar.Value,
-				onBeatTrackbar.Value, jumpsTrackbar.Value, quintuplesTrackbar.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked, tripleTypetrackbar.Value);
+				onBeatTrackbar.Value, jumpsTrackbar.Value, quintuplesTrackbar.Value, triples_on_1_and_3.Checked, 
+				quintuples_on_1_or_2.Checked, tripleTypetrackbar.Value, quintupleTypetrackbar.Value, full8thStream.Checked);
 		}
 
 		private void initialize()  {
 			
 			// Constructors
 			sample1 = new Button();
-			panel28 = new Panel();
-			panel16 = new Panel();
+			quintuple_type_panel = new Panel();
+			triple_type_panel = new Panel();
 			label11 = new Label();
 			stepFill = new NumericUpDown();
-			panel3 = new Panel();
-			panel2 = new Panel();
+			on_beat_panel = new Panel();
+			checkbox_panel = new Panel();
 			label18 = new Label();
 			label17 = new Label();
 			stepFill_trackbar = new TrackBar();
@@ -142,6 +149,7 @@ namespace Stepper
 			label59 = new Label();
 			label60 = new Label();
 			label61 = new Label();
+			label62 = new Label();
 			quintupleTypetrackbar = new TrackBar();
 			tripleType = new NumericUpDown();
 			label56 = new Label();
@@ -156,8 +164,8 @@ namespace Stepper
 			onBeat = new NumericUpDown();
 			label20 = new Label();
 			label19 = new Label();
-			panel5 = new Panel();
-			panel4 = new Panel();
+			halfbeat_panel = new Panel();
+			jumps_panel = new Panel();
 			onBeatTrackbar = new TrackBar();
 			label25 = new Label();
 			label23 = new Label();
@@ -192,26 +200,24 @@ namespace Stepper
 			this.sample1.UseVisualStyleBackColor = true;
 			this.sample1.Click += new System.EventHandler(this.sample1_Click);
 			// 
-			// panel28
+			// quintuple_type_panel
 			// 
-			this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel28.Enabled = false;
-			this.panel28.Location = new System.Drawing.Point(715, 3);
-			this.panel28.Size = new System.Drawing.Size(131, 110);
-			this.panel28.TabIndex = 19;
+			this.quintuple_type_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.quintuple_type_panel.Location = new System.Drawing.Point(705, 3);
+			this.quintuple_type_panel.Size = new System.Drawing.Size(141, 110);
+			this.quintuple_type_panel.TabIndex = 19;
 			// 
-			// panel16
+			// triple_type_panel
 			// 
-			this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel16.Location = new System.Drawing.Point(594, 3);
-			this.panel16.Size = new System.Drawing.Size(117, 112);
-			this.panel16.TabIndex = 18;
+			this.triple_type_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.triple_type_panel.Location = new System.Drawing.Point(594, 3);
+			this.triple_type_panel.Size = new System.Drawing.Size(107, 110);
+			this.triple_type_panel.TabIndex = 18;
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Location = new System.Drawing.Point(35, 58);
-			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(55, 13);
 			this.label11.TabIndex = 11;
 			this.label11.Text = "Every 2nd";
@@ -227,21 +233,19 @@ namespace Stepper
 			this.stepFill.Value = new decimal(new int[] { 60, 0, 0, 0 });
 			this.stepFill.ValueChanged += new System.EventHandler(this.stepFill_ValueChanged);
 			// 
-			// panel2
+			// checkbox_panel
 			// 
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel2.Location = new System.Drawing.Point(849, 3);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(157, 110);
-			this.panel2.TabIndex = 9;
+			this.checkbox_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.checkbox_panel.Location = new System.Drawing.Point(849, 3);
+			this.checkbox_panel.Size = new System.Drawing.Size(157, 110);
+			this.checkbox_panel.TabIndex = 9;
 			// 
-			// panel3
+			// on_beat_panel
 			// 
-			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel3.Location = new System.Drawing.Point(129, 3);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(459, 110);
-			this.panel3.TabIndex = 10;
+			this.on_beat_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.on_beat_panel.Location = new System.Drawing.Point(129, 3);
+			this.on_beat_panel.Size = new System.Drawing.Size(459, 110);
+			this.on_beat_panel.TabIndex = 10;
 			// 
 			// label18
 			// 
@@ -287,7 +291,7 @@ namespace Stepper
 			// 
 			// quintupleType
 			// 
-			this.quintupleType.Location = new System.Drawing.Point(82, 42);
+			this.quintupleType.Location = new System.Drawing.Point(10, 42);
 			this.quintupleType.Name = "quintupleType";
 			this.quintupleType.Size = new System.Drawing.Size(42, 20);
 			this.quintupleType.TabIndex = 8;
@@ -306,7 +310,7 @@ namespace Stepper
 			// label60
 			// 
 			this.label60.AutoSize = true;
-			this.label60.Location = new System.Drawing.Point(79, 88);
+			this.label60.Location = new System.Drawing.Point(89, 88);
 			this.label60.Name = "label60";
 			this.label60.Size = new System.Drawing.Size(43, 13);
 			this.label60.TabIndex = 13;
@@ -315,15 +319,24 @@ namespace Stepper
 			// label61
 			// 
 			this.label61.AutoSize = true;
-			this.label61.Location = new System.Drawing.Point(79, 7);
+			this.label61.Location = new System.Drawing.Point(89, 7);
 			this.label61.Name = "label61";
 			this.label61.Size = new System.Drawing.Size(42, 13);
 			this.label61.TabIndex = 15;
 			this.label61.Text = "ABABA";
 			// 
+			// label62
+			// 
+			this.label62.AutoSize = true;
+			this.label62.Location = new System.Drawing.Point(89, 47);
+			this.label62.Name = "label62";
+			this.label62.Size = new System.Drawing.Size(42, 13);
+			this.label62.TabIndex = 15;
+			this.label62.Text = "ABABC";
+			// 
 			// quintupleTypetrackbar
 			// 
-			this.quintupleTypetrackbar.Location = new System.Drawing.Point(53, 3);
+			this.quintupleTypetrackbar.Location = new System.Drawing.Point(63, 3);
 			this.quintupleTypetrackbar.Maximum = 100;
 			this.quintupleTypetrackbar.Name = "quintupleTypetrackbar";
 			this.quintupleTypetrackbar.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -335,7 +348,7 @@ namespace Stepper
 			// 
 			// tripleType
 			// 
-			this.tripleType.Location = new System.Drawing.Point(65, 42);
+			this.tripleType.Location = new System.Drawing.Point(10, 42);
 			this.tripleType.Name = "tripleType";
 			this.tripleType.Size = new System.Drawing.Size(42, 20);
 			this.tripleType.TabIndex = 8;
@@ -354,7 +367,7 @@ namespace Stepper
 			// label57
 			// 
 			this.label57.AutoSize = true;
-			this.label57.Location = new System.Drawing.Point(62, 88);
+			this.label57.Location = new System.Drawing.Point(70, 88);
 			this.label57.Name = "label57";
 			this.label57.Size = new System.Drawing.Size(28, 13);
 			this.label57.TabIndex = 13;
@@ -363,7 +376,7 @@ namespace Stepper
 			// label58
 			// 
 			this.label58.AutoSize = true;
-			this.label58.Location = new System.Drawing.Point(62, 7);
+			this.label58.Location = new System.Drawing.Point(70, 7);
 			this.label58.Name = "label58";
 			this.label58.Size = new System.Drawing.Size(28, 13);
 			this.label58.TabIndex = 15;
@@ -371,7 +384,7 @@ namespace Stepper
 			// 
 			// tripleTypetrackbar
 			// 
-			this.tripleTypetrackbar.Location = new System.Drawing.Point(40, 1);
+			this.tripleTypetrackbar.Location = new System.Drawing.Point(50, 3);
 			this.tripleTypetrackbar.Maximum = 100;
 			this.tripleTypetrackbar.Name = "tripleTypetrackbar";
 			this.tripleTypetrackbar.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -385,7 +398,6 @@ namespace Stepper
 			// full8thStream
 			// 
 			this.full8thStream.AutoSize = true;
-			this.full8thStream.Enabled = false;
 			this.full8thStream.Location = new System.Drawing.Point(5, 85);
 			this.full8thStream.Name = "full8thStream";
 			this.full8thStream.Size = new System.Drawing.Size(94, 17);
@@ -466,21 +478,19 @@ namespace Stepper
 			this.label19.TabIndex = 3;
 			this.label19.Text = "On beat only";
 			// 
-			// panel5
+			// halfbeat_panel
 			// 
-			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel5.Location = new System.Drawing.Point(141, 55);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(310, 50);
-			this.panel5.TabIndex = 16;
+			this.halfbeat_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.halfbeat_panel.Location = new System.Drawing.Point(141, 55);
+			this.halfbeat_panel.Size = new System.Drawing.Size(310, 50);
+			this.halfbeat_panel.TabIndex = 16;
 			// 
-			// panel4
+			// jumps_panel
 			// 
-			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel4.Location = new System.Drawing.Point(141, 2);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(310, 50);
-			this.panel4.TabIndex = 12;
+			this.jumps_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.jumps_panel.Location = new System.Drawing.Point(141, 2);
+			this.jumps_panel.Size = new System.Drawing.Size(310, 50);
+			this.jumps_panel.TabIndex = 12;
 			// 
 			// onBeatTrackbar
 			// 
@@ -612,48 +622,49 @@ namespace Stepper
 			toolTip1.SetToolTip(this.quintuples_on_1_or_2, "Allow quintuples on either the 1st or 2nd beat of a 4-beat measure. Uncheck for 1st beat only");
 
 			// put it all together
-			this.panel28.Controls.Add(this.quintupleType);
-			this.panel28.Controls.Add(this.label59);
-			this.panel28.Controls.Add(this.label60);
-			this.panel28.Controls.Add(this.label61);
-			this.panel28.Controls.Add(this.quintupleTypetrackbar);
-			this.panel16.Controls.Add(this.tripleType);
-			this.panel16.Controls.Add(this.label56);
-			this.panel16.Controls.Add(this.label57);
-			this.panel16.Controls.Add(this.label58);
-			this.panel16.Controls.Add(this.tripleTypetrackbar);
-			this.panel2.Controls.Add(this.full8thStream);
-			this.panel2.Controls.Add(this.quintuples_on_1_or_2);
-			this.panel2.Controls.Add(this.triples_on_1_and_3);
-			this.panel2.Controls.Add(this.arrow_repeat);
-			this.panel2.Controls.Add(this.alternate_foot);
-			this.panel3.Controls.Add(this.onBeat);
-			this.panel3.Controls.Add(this.label20);
-			this.panel3.Controls.Add(this.label19);
-			this.panel3.Controls.Add(this.panel5);
-			this.panel3.Controls.Add(this.panel4);
-			this.panel3.Controls.Add(this.onBeatTrackbar);
+			this.quintuple_type_panel.Controls.Add(this.label59);
+			this.quintuple_type_panel.Controls.Add(this.quintupleType);
+			this.quintuple_type_panel.Controls.Add(this.label60);
+			this.quintuple_type_panel.Controls.Add(this.label61);
+			this.quintuple_type_panel.Controls.Add(this.label62);
+			this.quintuple_type_panel.Controls.Add(this.quintupleTypetrackbar);
+			this.triple_type_panel.Controls.Add(this.tripleType);
+			this.triple_type_panel.Controls.Add(this.label56);
+			this.triple_type_panel.Controls.Add(this.label57);
+			this.triple_type_panel.Controls.Add(this.label58);
+			this.triple_type_panel.Controls.Add(this.tripleTypetrackbar);
+			this.checkbox_panel.Controls.Add(this.full8thStream);
+			this.checkbox_panel.Controls.Add(this.quintuples_on_1_or_2);
+			this.checkbox_panel.Controls.Add(this.triples_on_1_and_3);
+			this.checkbox_panel.Controls.Add(this.arrow_repeat);
+			this.checkbox_panel.Controls.Add(this.alternate_foot);
+			this.on_beat_panel.Controls.Add(this.onBeat);
+			this.on_beat_panel.Controls.Add(this.label20);
+			this.on_beat_panel.Controls.Add(this.label19);
+			this.on_beat_panel.Controls.Add(this.halfbeat_panel);
+			this.on_beat_panel.Controls.Add(this.jumps_panel);
+			this.on_beat_panel.Controls.Add(this.onBeatTrackbar);
 			this.Controls.Add(this.sample1);
-			this.Controls.Add(this.panel28);
-			this.Controls.Add(this.panel16);
+			this.Controls.Add(this.quintuple_type_panel);
+			this.Controls.Add(this.triple_type_panel);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.stepFill);
-			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.on_beat_panel);
+			this.Controls.Add(this.checkbox_panel);
 			this.Controls.Add(this.label18);
 			this.Controls.Add(this.label17);
 			this.Controls.Add(this.stepFill_trackbar);
 			this.Controls.Add(this.level);
-			this.panel5.Controls.Add(this.label25);
-			this.panel5.Controls.Add(this.label23);
-			this.panel5.Controls.Add(this.label24);
-			this.panel5.Controls.Add(this.quintuplesTrackbar);
-			this.panel5.Controls.Add(this.quintuples);
-			this.panel4.Controls.Add(this.label26);
-			this.panel4.Controls.Add(this.label22);
-			this.panel4.Controls.Add(this.label21);
-			this.panel4.Controls.Add(this.jumpsTrackbar);
-			this.panel4.Controls.Add(this.jumps);
+			this.halfbeat_panel.Controls.Add(this.label25);
+			this.halfbeat_panel.Controls.Add(this.label23);
+			this.halfbeat_panel.Controls.Add(this.label24);
+			this.halfbeat_panel.Controls.Add(this.quintuplesTrackbar);
+			this.halfbeat_panel.Controls.Add(this.quintuples);
+			this.jumps_panel.Controls.Add(this.label26);
+			this.jumps_panel.Controls.Add(this.label22);
+			this.jumps_panel.Controls.Add(this.label21);
+			this.jumps_panel.Controls.Add(this.jumpsTrackbar);
+			this.jumps_panel.Controls.Add(this.jumps);
 
 		}
 
@@ -665,7 +676,8 @@ namespace Stepper
 		private void sample1_Click(object sender, EventArgs e)
 		{
 			NotesetParameters np = new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, (int)stepFill.Value,
-				(int)onBeat.Value, (int)jumps.Value, (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked, tripleTypetrackbar.Value);
+				(int)onBeat.Value, (int)jumps.Value, (int)quintuples.Value, triples_on_1_and_3.Checked, quintuples_on_1_or_2.Checked, 
+				tripleTypetrackbar.Value, quintupleTypetrackbar.Value, full8thStream.Checked);
 			Noteset sample_noteset = new Noteset(np, StepDeets.SM, measures_per_sample, r);
 			sample_noteset.generateSteps();
 			char[] f = sample_noteset.getFeet();
@@ -717,19 +729,27 @@ namespace Stepper
 		{
 			if (full8thStream.Checked)
 			{
+				halfbeat_panel.Enabled = false;
+				triple_type_panel.Enabled = false;
+				quintuple_type_panel.Enabled = false;
 				triples_on_1_and_3.Enabled = false;
-				quintuplesTrackbar.Enabled = false;
 				quintuples_on_1_or_2.Enabled = false;
-				quintuples.Enabled = false;
-				label25.Enabled = false;
+				onBeat.Enabled = false;
+				onBeatTrackbar.Enabled = false;
+				label20.Enabled = false;
+				label19.Enabled = false;
 			}
 			else
 			{
+				halfbeat_panel.Enabled = true;
+				triple_type_panel.Enabled = true;
+				quintuple_type_panel.Enabled = true;
 				triples_on_1_and_3.Enabled = true;
-				quintuplesTrackbar.Enabled = true;
 				quintuples_on_1_or_2.Enabled = true;
-				quintuples.Enabled = true;
-				label25.Enabled = true;
+				onBeat.Enabled = true;
+				onBeatTrackbar.Enabled = true;
+				label20.Enabled = true;
+				label19.Enabled = true;
 			}
 		}
 		private void tripleTypetrackbar_ValueChanged(object sender, EventArgs e)

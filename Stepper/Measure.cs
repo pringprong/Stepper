@@ -78,92 +78,253 @@ namespace Stepper
 				fromJump = StepDeets.fromJump(np.dance_style, laststep);
 
 				int rStepFill = r.Next(0, 100);
-				if ((((i == 0) || (i == 4)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
+				if (// if full 8th stream is not checked
+					(!np.full8th &&((((i == 0) || (i == 4)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
 					|| ((np.percent_stepfill >= 50) && (rStepFill < ((np.percent_stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
-					|| (((i == 0) || (i == 4)) && (rStepFill < (np.percent_stepfill * 2))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
+					|| (((i == 0) || (i == 4)) && (rStepFill < (np.percent_stepfill * 2))))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
+					// if full 8th stream is checked
+					|| (np.full8th && ((((i == 0) || (i == 4) || (i == 2) || (i == 6)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the on-beats always have arrows
+					|| ((np.percent_stepfill >= 50) && (rStepFill < ((np.percent_stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
+					|| (((i == 0) || (i == 4) || (i == 2) || (i == 6)) && (rStepFill < (np.percent_stepfill * 2)))))
 					) // decide if there will be an arrow here at all
 				{
 					int rOnBeat = r.Next(0, 100); // random number to choose between on-beat and half-beat
 					int rTripQuint = r.Next(0, 100); // random number to choose between triples and quintuples
-					if (rOnBeat >= np.percent_onbeat && rTripQuint < np.percent_quintuples && ((i == 0) || (i == 2) && np.quintuples_on_1_or_2))
+					if ((rOnBeat >= np.percent_onbeat && rTripQuint < np.percent_quintuples && ((i == 0) || (i == 2) && np.quintuples_on_1_or_2)) && !np.full8th)
 					{ // insert a quintuple
-						if (foot.Equals(StepDeets.Left))
-						{
-							string step = laststep;
-							while (step.Equals(laststep))
+						int rQuintType = r.Next(0, 50); // random number to choose what kind of quintuple
+						if (np.quintuple_type >= 50 && (rQuintType + 50) < np.quintuple_type)
+						{ // insert ABABA quintuple
+							if (foot.Equals(StepDeets.Left))
 							{
-								step = rightsteps[r.Next(0, rightsteps.Count())];
-							}
-							steps[i] = step;
-							feet[i] = StepDeets.R;
-							steps[i + 2] = step;
-							feet[i + 2] = StepDeets.R;
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.R;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.R;
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.R;
 
-							laststep = step;
-							while (step.Equals(laststep))
-							{
-								step = leftsteps[r.Next(0, leftsteps.Count())];
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.L;
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.L;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								laststep = steps[i + 4];
+								foot = StepDeets.Right;
 							}
-							steps[i + 1] = step;
-							feet[i + 1] = StepDeets.L;
-							steps[i + 3] = step;
-							feet[i + 3] = StepDeets.L;
-							laststep = step;
-							while (step.Equals(laststep))
+							else
 							{
-								step = rightsteps[r.Next(0, rightsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.L;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.L;
+								laststep = step;
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.L;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.R;
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.R;
+								laststep = steps[i + 4];
+								foot = StepDeets.Left;
 							}
-							steps[i + 4] = step;
-							feet[i + 4] = StepDeets.R;
-
-							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
-							{
-								steps[i + 4] = steps[i + 2];
-							}
-							laststep = steps[i + 4];
-							foot = StepDeets.Right;
 						}
-						else
+						else if ((np.quintuple_type < 50 && rQuintType < np.quintuple_type) || (np.quintuple_type >= 50 && (rQuintType+50) >= np.quintuple_type))
+						{ // insert ABABC quintuple
+							if (foot.Equals(StepDeets.Left))
+							{
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.R;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.R;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.L;
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.L;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.R;
+
+								// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
+								if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
+								{
+									steps[i + 4] = steps[i + 2];
+								}
+								laststep = steps[i + 4];
+								foot = StepDeets.Right;
+							}
+							else
+							{
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.L;
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.L;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.R;
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.R;
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.L;
+								// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
+								if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
+								{
+									steps[i + 4] = steps[i + 2];
+								}
+								laststep = steps[i + 4];
+								foot = StepDeets.Left;
+							}
+						}
+						else // insert ABCDE quintuple
 						{
-							string step = laststep;
-							while (step.Equals(laststep))
+							if (foot.Equals(StepDeets.Left))
 							{
-								step = leftsteps[r.Next(0, leftsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.R;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.L;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.R;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.L;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.R;
+
+								laststep = steps[i + 4];
+								foot = StepDeets.Right;
 							}
-							steps[i] = step;
-							feet[i] = StepDeets.L;
-							steps[i + 2] = step;
-							feet[i + 2] = StepDeets.L;
-							laststep = step;
-							while (step.Equals(laststep))
+							else
 							{
-								step = rightsteps[r.Next(0, rightsteps.Count())];
+								string step = laststep;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i] = step;
+								feet[i] = StepDeets.L;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 1] = step;
+								feet[i + 1] = StepDeets.R;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 2] = step;
+								feet[i + 2] = StepDeets.L;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = rightsteps[r.Next(0, rightsteps.Count())];
+								}
+								steps[i + 3] = step;
+								feet[i + 3] = StepDeets.R;
+
+								laststep = step;
+								while (step.Equals(laststep))
+								{
+									step = leftsteps[r.Next(0, leftsteps.Count())];
+								}
+								steps[i + 4] = step;
+								feet[i + 4] = StepDeets.L;
+
+								laststep = steps[i + 4];
+								foot = StepDeets.Right;
 							}
-							steps[i + 1] = step;
-							feet[i + 1] = StepDeets.R;
-							steps[i + 3] = step;
-							feet[i + 3] = StepDeets.R;
-							laststep = step;
-							while (step.Equals(laststep))
-							{
-								step = leftsteps[r.Next(0, leftsteps.Count())];
-							}
-							steps[i + 4] = step;
-							feet[i + 4] = StepDeets.L;
-							// prevent up-down-up-down-side type quintuples right after jumps, because it's too likely to start them on the wrong foot
-							if (fromJump && StepDeets.isUDUDSQuintuple(np.dance_style, steps[i], steps[i + 1]))
-							{
-								steps[i + 4] = steps[i + 2];
-							}
-							laststep = steps[i + 4];
-							foot = StepDeets.Left;
 						}
 						i = i + 5;
 					}
-					else if (rOnBeat >= np.percent_onbeat && rTripQuint >= np.percent_quintuples && ((i <= 2) || (i == 4) && np.triples_on_1_and_3))
+					else if ((rOnBeat >= np.percent_onbeat && rTripQuint >= np.percent_quintuples && ((i <= 2) || (i == 4) && np.triples_on_1_and_3)) && !np.full8th)
 					{ // insert a triple
-						if (r.Next(0, 100) < np.triple_type)
+						if (r.Next(0, 100) < np.triple_type)  // random number to choose what kind of triple
 						{  // insert an ABA triple
 							if (foot.Equals(StepDeets.Left))
 							{
@@ -227,7 +388,7 @@ namespace Stepper
 								laststep = steps[i];
 								step = steps[i];
 								int limit = 0; // put in a counter to prevent a never-ending loop in case there is no such third step
-								while ((step.Equals(laststep) || step.Equals(steps[i+1])) && limit < 100)
+								while ((step.Equals(laststep) || step.Equals(steps[i + 1])) && limit < 100)
 								{
 									step = rightsteps[r.Next(0, rightsteps.Count())];
 									limit++;
@@ -287,7 +448,7 @@ namespace Stepper
 					{ // no half-beat arrows
 						if (!np.alternating_foot && np.repeat_arrows) // repeats allowed, no alternate foot constraint, so choose randomly
 						{
-							if (r.Next(0, 100) < np.percent_jumps) // first decide if it's going to be a jump or not
+							if (r.Next(0, 100) < np.percent_jumps && ((i % 2) == 0)) // insert a jump if it's not a half-beat
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
 								feet[i] = StepDeets.J;
@@ -298,18 +459,18 @@ namespace Stepper
 								feet[i] = StepDeets.E;
 							}
 							// change feet for next (this will impact future triples and quintuples)
-							if (foot.Equals(StepDeets.Left))
+					/*		if (foot.Equals(StepDeets.Left))
 							{
 								foot = StepDeets.Right;
 							}
 							else
 							{
 								foot = StepDeets.Left;
-							}
+							}*/
 						}
 						else if (!np.alternating_foot && !np.repeat_arrows) // repeats not allowed, so make sure the step isn't the same as laststep
 						{
-							if (r.Next(0, 100) < np.percent_jumps)
+							if (r.Next(0, 100) < np.percent_jumps && ((i % 2) == 0)) // insert a jump if it's not a half-beat
 							{
 								string step = laststep;
 								while (step.Equals(laststep))
@@ -330,18 +491,18 @@ namespace Stepper
 								feet[i] = StepDeets.E;
 							}
 							// change feet for next (this will impact future triples and quintuples)
-							if (foot.Equals(StepDeets.Left))
+					/*		if (foot.Equals(StepDeets.Left))
 							{
 								foot = StepDeets.Right;
 							}
 							else
 							{
 								foot = StepDeets.Left;
-							}
+							}*/
 						}
 						else if (np.alternating_foot && !np.repeat_arrows) // strict alternate foot, no repeats
 						{
-							if (r.Next(0, 100) < np.percent_jumps)
+							if (r.Next(0, 100) < np.percent_jumps && ((i % 2) == 0)) // insert a jump if it's not a half-beat
 							{
 								string step = laststep;
 								while (step.Equals(laststep))
@@ -351,14 +512,14 @@ namespace Stepper
 								steps[i] = step;
 								feet[i] = StepDeets.J;
 								// change feet for next
-								if (foot.Equals(StepDeets.Left))
+					/*			if (foot.Equals(StepDeets.Left))
 								{
 									foot = StepDeets.Right;
 								}
 								else
 								{
 									foot = StepDeets.Left;
-								}
+								}*/
 							}
 							else
 							{
@@ -388,20 +549,20 @@ namespace Stepper
 						}
 						else //if (alternate_foot && repeat_arrow)
 						{
-							if (r.Next(0, 100) < np.percent_jumps) // insert a jump
+							if ((r.Next(0, 100) < np.percent_jumps) && ((i % 2) == 0)) // insert a jump if it's not a half-beat
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
 								feet[i] = StepDeets.J;
 
 								// change feet for next
-								if (foot.Equals(StepDeets.Left))
+					/*			if (foot.Equals(StepDeets.Left))
 								{
 									foot = StepDeets.Right;
 								}
 								else
 								{
 									foot = StepDeets.Left;
-								}
+								}**/
 							}
 							else // insert a single-foot step
 							{
@@ -466,12 +627,12 @@ namespace Stepper
 							}
 						}
 						laststep = steps[i];
-						i++; // skip the half-beat arrow, which is prefilled with an empty step
+						if (!np.full8th) { i++; }  // skip the half-beat arrow, which is prefilled with an empty step
 					} // end else: no half-beat arrow 
 				}  // end if (rInt < stepfill)
 				else
 				{
-					i++; // no arrow so skip the half-beat arrow, which is prefilled with an empty step
+					if(!np.full8th) {i++;} // no arrow so skip the half-beat arrow, which is prefilled with an empty step
 				}
 			} // end for loop
 			string[] finish_foot_laststep = new string[2];

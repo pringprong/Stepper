@@ -78,19 +78,22 @@ namespace Stepper
 				fromJump = StepDeets.fromJump(np.dance_style, laststep);
 
 				int rStepFill = r.Next(0, 100);
-				if (// if full 8th stream is not checked
+				if ( // decide if there will be an arrow here at all
+					// if full 8th stream is not checked
 					(!np.full8th &&((((i == 0) || (i == 4)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the 1st and 3rd beats always have arrows
 					|| ((np.percent_stepfill >= 50) && (rStepFill < ((np.percent_stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
 					|| (((i == 0) || (i == 4)) && (rStepFill < (np.percent_stepfill * 2))))) // for stepfill < 50, the 2nd and 4th beats are always empty,  1st and 3rd beat are randomly chosen
 					// if full 8th stream is checked
 					|| (np.full8th && ((((i == 0) || (i == 4) || (i == 2) || (i == 6)) && (np.percent_stepfill >= 50)) // for stepfill > 50, the on-beats always have arrows
 					|| ((np.percent_stepfill >= 50) && (rStepFill < ((np.percent_stepfill - 50) * 2))) // for stepfill > 50, the 2nd and 4th beats are randomly chosen
-					|| (((i == 0) || (i == 4) || (i == 2) || (i == 6)) && (rStepFill < (np.percent_stepfill * 2)))))
-					) // decide if there will be an arrow here at all
+					|| (((i == 0) || (i == 4) || (i == 2) || (i == 6)) && (rStepFill < (np.percent_stepfill * 2)))))) 
 				{
 					int rOnBeat = r.Next(0, 100); // random number to choose between on-beat and half-beat
 					int rTripQuint = r.Next(0, 100); // random number to choose between triples and quintuples
-					if ((rOnBeat >= np.percent_onbeat && rTripQuint < np.percent_quintuples && ((i == 0) || (i == 2) && np.quintuples_on_1_or_2)) && !np.full8th)
+					if (!np.full8th // 8th stream is not checked
+						&& rOnBeat >= np.percent_onbeat  // AND random number is on correct side of on-beat slider
+						&& rTripQuint < np.percent_quintuples  // AND random number is on correct side of triples-vs-quintuples slider
+						&& ((i == 0) || ((i == 2) &&! np.quintuples_on_1_only))) // AND (first beat OR second beat and quintuples-on-1st-beat-only is unchecked
 					{ // insert a quintuple
 						int rQuintType = r.Next(0, 50); // random number to choose what kind of quintuple
 						if (np.quintuple_type >= 50 && (rQuintType + 50) < np.quintuple_type)
@@ -192,7 +195,7 @@ namespace Stepper
 								foot = StepDeets.Right;
 							}
 							else
-							{
+							{ 
 								string step = laststep;
 								while (step.Equals(laststep))
 								{
@@ -322,7 +325,11 @@ namespace Stepper
 						}
 						i = i + 5;
 					}
-					else if ((rOnBeat >= np.percent_onbeat && rTripQuint >= np.percent_quintuples && ((i <= 2) || (i == 4) && np.triples_on_1_and_3)) && !np.full8th)
+					else if (!np.full8th   // full 8th stream is not checked
+						&& (rOnBeat >= np.percent_onbeat)   // AND random number is on the correct side of the onbeat slider
+						&& (rTripQuint >= np.percent_quintuples)  // AND random number is on the correct side of the triples-vs-quintuples slider
+						&& ((i == 0)  // AND ( first beat of measure
+							|| ((i == 2) || (i == 4)) && !np.triples_on_1_only))  // OR second or third beat of measure, and "triples on 1st beat only" is unchecked)
 					{ // insert a triple
 						if (r.Next(0, 100) < np.triple_type)  // random number to choose what kind of triple
 						{  // insert an ABA triple
@@ -458,15 +465,6 @@ namespace Stepper
 								steps[i] = singlesteps[r.Next(0, singlesteps.Count())];
 								feet[i] = StepDeets.E;
 							}
-							// change feet for next (this will impact future triples and quintuples)
-					/*		if (foot.Equals(StepDeets.Left))
-							{
-								foot = StepDeets.Right;
-							}
-							else
-							{
-								foot = StepDeets.Left;
-							}*/
 						}
 						else if (!np.alternating_foot && !np.repeat_arrows) // repeats not allowed, so make sure the step isn't the same as laststep
 						{
@@ -490,15 +488,6 @@ namespace Stepper
 								steps[i] = step;
 								feet[i] = StepDeets.E;
 							}
-							// change feet for next (this will impact future triples and quintuples)
-					/*		if (foot.Equals(StepDeets.Left))
-							{
-								foot = StepDeets.Right;
-							}
-							else
-							{
-								foot = StepDeets.Left;
-							}*/
 						}
 						else if (np.alternating_foot && !np.repeat_arrows) // strict alternate foot, no repeats
 						{
@@ -511,15 +500,6 @@ namespace Stepper
 								}
 								steps[i] = step;
 								feet[i] = StepDeets.J;
-								// change feet for next
-					/*			if (foot.Equals(StepDeets.Left))
-								{
-									foot = StepDeets.Right;
-								}
-								else
-								{
-									foot = StepDeets.Left;
-								}*/
 							}
 							else
 							{
@@ -553,16 +533,6 @@ namespace Stepper
 							{
 								steps[i] = jumpsteps[r.Next(0, jumpsteps.Count())];
 								feet[i] = StepDeets.J;
-
-								// change feet for next
-					/*			if (foot.Equals(StepDeets.Left))
-								{
-									foot = StepDeets.Right;
-								}
-								else
-								{
-									foot = StepDeets.Left;
-								}**/
 							}
 							else // insert a single-foot step
 							{

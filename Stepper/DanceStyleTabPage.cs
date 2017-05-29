@@ -11,75 +11,60 @@ namespace Stepper
 {
 	public class DanceStyleTabPage : TabPage
 	{
-		//private System.ComponentModel.IContainer components = null;
-		FlowLayoutPanel flowLayoutPanel2;
-		Panel panel29;
-		Button button2;
-		Button button3;
+		FlowLayoutPanel nsp_panel;
+		FlowLayoutPanel bottom_panel;
+		Button back_button;
+		Button forward_button;
+		Button config_button;
 		private int instructionsTextboxGap = 40;
 		List<NotesetPanel> nsp_list;
 		private TabPage prevTabPage;
 		private TabPage nextTabPage;
 		private TabControl parentControl;
-
-		public DanceStyleTabPage()
-		{
-
-		}
-/*		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		} */
+		private StepConfig stepconfig;
 
 		public DanceStyleTabPage(TabControl parent, string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
-		//	InitializeComponent();
 			parentControl = parent;
 			nsp_list = new List<NotesetPanel>();
 			foreach (string level in StepDeets.Levels)
 			{
 				nsp_list.Add(new NotesetPanel(dance_style, level, beats, measures, black, red, blue, random));
 			}
-			button2 = new Button();
-			flowLayoutPanel2 = new FlowLayoutPanel();
-			panel29 = new Panel();
-			button3 = new Button();
+			back_button = new Button();
+			nsp_panel = new FlowLayoutPanel();
+			bottom_panel = new FlowLayoutPanel();
+			forward_button = new Button();
+			config_button = new Button();
+			stepconfig = new StepConfig(dance_style);
 
 
 			// 
-			// flowLayoutPanel2
+			// nsp_panel
 			// 
-			this.flowLayoutPanel2.AutoScroll = true;
-			this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-			this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(1032, 630);
-			this.flowLayoutPanel2.TabIndex = 20;
-			this.flowLayoutPanel2.WrapContents = false;
+			this.nsp_panel.AutoScroll = true;
+			this.nsp_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.nsp_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.nsp_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+			this.nsp_panel.Location = new System.Drawing.Point(3, 3);
+			this.nsp_panel.Margin = new System.Windows.Forms.Padding(0);
+			this.nsp_panel.Size = new System.Drawing.Size(1032, 630);
+			this.nsp_panel.TabIndex = 20;
+			this.nsp_panel.WrapContents = false;
 
 			// 
-			// panel29
+			// bottomPanel
 			// 
-			this.panel29.AutoSize = true;
-			this.panel29.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel29.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel29.Location = new System.Drawing.Point(3, 639);
-			this.panel29.MinimumSize = new System.Drawing.Size(100, 30);
-			this.panel29.Size = new System.Drawing.Size(1032, 30);
-			this.panel29.TabIndex = 14;
-			this.panel29.Resize += new System.EventHandler(this.panel29_Resize);
+			this.bottom_panel.AutoSize = true;
+			this.bottom_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.bottom_panel.Location = new System.Drawing.Point(3, 639);
+			this.bottom_panel.Margin = new System.Windows.Forms.Padding(0);
+			this.bottom_panel.MinimumSize = new System.Drawing.Size(100, 30);
+			this.bottom_panel.MaximumSize = new System.Drawing.Size(1032, 30);
+			this.bottom_panel.Size = new System.Drawing.Size(1032, 30);
 
+			// this
 			this.Location = new System.Drawing.Point(4, 22);
 			this.Padding = new System.Windows.Forms.Padding(3);
 			this.Size = new System.Drawing.Size(1038, 672);
@@ -89,40 +74,43 @@ namespace Stepper
 			this.Resize += new System.EventHandler(this.tabPage2_Resize);
 
 			// 
-			// button3
+			// forward_button
 			// 
-			this.button3.BackColor = System.Drawing.Color.YellowGreen;
-			this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-			this.button3.Location = new System.Drawing.Point(518, 0);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(514, 30);
-			this.button3.TabIndex = 1;
-			this.button3.Text = "Continue to Dance Solo";
-			this.button3.UseVisualStyleBackColor = false;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
+			this.forward_button.BackColor = System.Drawing.Color.YellowGreen;
+			this.forward_button.Size = new System.Drawing.Size(333, 28);
+			this.forward_button.TabIndex = 1;
+			this.forward_button.Text = "Continue to Dance Solo";
+			this.forward_button.UseVisualStyleBackColor = false;
+			this.forward_button.Click += new System.EventHandler(this.forward_button_Click);
 			// 
-			// button2
+			// config_button
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.button2.Location = new System.Drawing.Point(0, 0);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(514, 30);
-			this.button2.TabIndex = 0;
-			this.button2.Text = "Back to Instructions";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.config_button.BackColor = System.Drawing.Color.Gray;
+			this.config_button.Size = new System.Drawing.Size(333, 28);
+			this.config_button.TabIndex = 1;
+			this.config_button.Text = "Configure step options for " + StepDeets.stepTitle(dance_style);
+			this.config_button.UseVisualStyleBackColor = false;
+			this.config_button.Click += new System.EventHandler(this.config_button_Click);
+			// 
+			// back_button
+			// 
+			this.back_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.back_button.Size = new System.Drawing.Size(333, 28);
+			this.back_button.TabIndex = 0;
+			this.back_button.Text = "Back to Instructions";
+			this.back_button.UseVisualStyleBackColor = false;
+			this.back_button.Click += new System.EventHandler(this.back_button_Click);
 
 			// put it all together
-			this.panel29.Controls.Add(this.button3);
-			this.panel29.Controls.Add(this.button2);
-			foreach(NotesetPanel nsp in nsp_list)
+			this.bottom_panel.Controls.Add(this.back_button);
+			this.bottom_panel.Controls.Add(this.config_button);
+			this.bottom_panel.Controls.Add(this.forward_button);
+			foreach (NotesetPanel nsp in nsp_list)
 			{
-				this.flowLayoutPanel2.Controls.Add(nsp);
+				this.nsp_panel.Controls.Add(nsp);
 			}
-			this.flowLayoutPanel2.Controls.Add(this.panel29);
-			this.Controls.Add(this.flowLayoutPanel2);
-
+			this.nsp_panel.Controls.Add(this.bottom_panel);
+			this.Controls.Add(this.nsp_panel);
 		}
 
 		protected override void OnPaint(PaintEventArgs pe)
@@ -132,28 +120,33 @@ namespace Stepper
 
 		private void tabPage2_Resize(object sender, EventArgs e)
 		{
-			flowLayoutPanel2.Height = this.Height - instructionsTextboxGap;
+			nsp_panel.Height = this.Height - instructionsTextboxGap;
 		}
 
-		private void panel29_Resize(object sender, EventArgs e)
+		private void bottom_panel_Resize(object sender, EventArgs e)
 		{
-			button2.Width = panel29.Width / 2 - 5;
-			button3.Width = panel29.Width / 2 - 5;
+			back_button.Width = bottom_panel.Width / 2 - 5;
+			forward_button.Width = bottom_panel.Width / 2 - 5;
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void back_button_Click(object sender, EventArgs e)
 		{
 			if (prevTabPage  != null) {
 				parentControl.SelectedTab = prevTabPage;
 			}
 		}
 
-		private void button3_Click(object sender, EventArgs e)
+		private void forward_button_Click(object sender, EventArgs e)
 		{
 			if (nextTabPage != null)
 			{
 				parentControl.SelectedTab = nextTabPage;
 			}
+		}
+
+		private void config_button_Click(object sender, EventArgs e)
+		{
+			stepconfig.ShowDialog();
 		}
 
 		public NotesetParameters[] getNoteSetParametersList()
@@ -179,12 +172,12 @@ namespace Stepper
 
 		public void setPrev(string label, TabPage tp)
 		{
-			button2.Text = "Go back to " + label;
+			back_button.Text = "Go back to " + label;
 			prevTabPage = tp;
 		}
 		public void setNext(string label, TabPage tp)
 		{
-			button3.Text = "Continue to " + label;
+			forward_button.Text = "Continue to " + label;
 			nextTabPage = tp;
 		}
 	}

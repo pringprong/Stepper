@@ -84,6 +84,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Measure.cs" />
+    <Compile Include="StepConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StepConfigTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StepDeets.cs" />
     <Compile Include="Stepper.cs">
       <SubType>Form</SubType>

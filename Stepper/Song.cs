@@ -20,7 +20,8 @@ namespace Stepper
 		public int min_measures { get; private set; }
 		public int max_measures { get; private set; }
 
-        public Song(string t, string p, List<string> h, int nm, int minbpm, int maxbpm, int numbpmchanges, int numstops, int numnotesets, int minmeasures, int maxmeasures)
+        public Song(string t, string p, List<string> h, int nm, int minbpm, int maxbpm, int numbpmchanges, int numstops, 
+			int numnotesets, int minmeasures, int maxmeasures)
         {
             type = t;
             path = p;

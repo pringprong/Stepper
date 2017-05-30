@@ -1502,5 +1502,46 @@ namespace Stepper
 			}
 			return "";
 		}
+
+		public static double[] getXCoordinateScaleFactor(string ds)
+		{
+			if (ds.Equals(DanceSingle))
+			{
+				return new double[] { 0.2, 0.4, 0.4, 0.6 };
+			}
+			else if (ds.Equals(DanceSolo))
+			{
+				return new double[] { 0.2, 0.2, 0.4, 0.4, 0.6, 0.6 };
+			}
+			else if (ds.Equals(DanceDouble))
+			{
+				return new double[] { 0.125, 0.25, 0.25, 0.375, 0.5, 0.625, 0.625, 0.75 };
+			}
+			else // if (ds.Equals(PumpSingle)) 
+			{
+				return new double[] { 0.2, 0.2, 0.4, 0.6, 0.6 };
+			}
+		}
+
+		public static double[] getYCoordinateScaleFactor(string ds)
+		{
+			if (ds.Equals(DanceSingle))
+			{
+				return new double[] { 0.4, 0.6, 0.2, 0.4 };
+			}
+			else if (ds.Equals(DanceSolo))
+			{
+				return new double[] { 0.4, 0.2, 0.6, 0.2, 0.2, 0.4 };
+			}
+			else if (ds.Equals(DanceDouble))
+			{
+				return new double[] { 0.4, 0.6, 0.2, 0.4, 0.4, 0.6, 0.2, 0.4 };
+			}
+			else // if (ds.Equals(PumpSingle)) 
+			{
+				return new double[] { 0.6, 0.2, 0.4, 0.2, 0.6 };
+			}
+		}
 	}
+
 }

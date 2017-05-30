@@ -22,8 +22,10 @@ namespace Stepper
 		private String dance_style;
 		private Pen blackpen;
 		private Pen graypen;
+		private Pen lightgraypen;
 		private SolidBrush blackbrush;
 		private SolidBrush graybrush;
+		private SolidBrush lightgraybrush;
 		private SolidBrush whitebrush;
 
 		public StepConfig(String dc)
@@ -41,11 +43,13 @@ namespace Stepper
 			reset_button = new Button();
 			step_subsets_tc = new TabControl();
 			sctpl = new List<StepConfigTabPage>();
-			blackpen = new Pen(Color.Black, 4);
-			graypen = new Pen(Color.Gray, 4);
+			blackpen = new Pen(Color.Black, 2);
+			graypen = new Pen(Color.DarkGray, 2);
+			lightgraypen = new Pen(Color.LightGray, 2);
 			blackbrush = new SolidBrush(Color.Black);
 			graybrush = new SolidBrush(Color.Gray);
 			whitebrush = new SolidBrush(Color.White);
+			lightgraybrush = new SolidBrush(Color.LightGray);
 
 			// 
 			// StepConfig
@@ -113,7 +117,7 @@ namespace Stepper
 			{
 				Dictionary<string, string[]> sg = StepDeets.getTempStepGrid(dance_style, type);
 				StepConfigTabPage sctp = new StepConfigTabPage(dance_style, type, sg, step_subsets_tc.Width, step_subsets_tc.Height, 
-					blackpen, graypen, blackbrush, graybrush, whitebrush);
+					blackpen, graypen, lightgraypen, blackbrush, graybrush, lightgraybrush, whitebrush);
 				sctpl.Add(sctp);
 				step_subsets_tc.Controls.Add(sctp);
 			}
@@ -173,8 +177,10 @@ namespace Stepper
 		{
 			blackpen.Dispose();
 			graypen.Dispose();
+			lightgraypen.Dispose();
 			blackbrush.Dispose();
 			graybrush.Dispose();
+			lightgraybrush.Dispose();
 			whitebrush.Dispose();
 			base.Dispose(disposing);
 		}

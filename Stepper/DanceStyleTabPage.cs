@@ -38,7 +38,6 @@ namespace Stepper
 			config_button = new Button();
 			stepconfig = new StepConfig(dance_style);
 
-
 			// 
 			// nsp_panel
 			// 
@@ -85,10 +84,10 @@ namespace Stepper
 			// 
 			// config_button
 			// 
-			this.config_button.BackColor = System.Drawing.Color.Gray;
+			this.config_button.BackColor = System.Drawing.Color.LightGray;
 			this.config_button.Size = new System.Drawing.Size(333, 28);
 			this.config_button.TabIndex = 1;
-			this.config_button.Text = "Configure step options for " + StepDeets.stepTitle(dance_style);
+			this.config_button.Text = StepDeets.stepTitle(dance_style) + " Options";
 			this.config_button.UseVisualStyleBackColor = false;
 			this.config_button.Click += new System.EventHandler(this.config_button_Click);
 			// 

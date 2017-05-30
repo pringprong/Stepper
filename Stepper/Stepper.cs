@@ -881,6 +881,7 @@ Warnings:
 			bluepen.CustomEndCap = cap;
 
 
+
 		}
 
 	/*	private System.ComponentModel.IContainer components = null;

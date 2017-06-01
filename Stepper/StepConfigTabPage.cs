@@ -113,17 +113,17 @@ namespace Stepper
 				{
 					if (r == 0 && c > 0)
 					{
-						dgv.Rows[r].Cells[c].Value = column_headers[c - 1];
+						dgv.Rows[r].Cells[c].Tag = column_headers[c - 1];
 					}
 					else
 					{
 						if (c == 0)
 						{
-							dgv.Rows[r].Cells[c].Value = keys[r];
+							dgv.Rows[r].Cells[c].Tag = keys[r];
 						}
 						else
 						{
-							dgv.Rows[r].Cells[c].Value = stepgrid[keys[r]][c - 1];
+							dgv.Rows[r].Cells[c].Tag = stepgrid[keys[r]][c - 1];
 						}
 					}
 				}
@@ -173,6 +173,11 @@ namespace Stepper
 			{
 				squarewidth = (int)(e.CellBounds.Width / 11.1);
 			}
+			else if (dance_style.Equals(StepDeets.DanceSolo))
+			{
+				squarewidth = (int)(e.CellBounds.Width / 10.1);
+				squareheight = (int)(e.CellBounds.Height / 6.1);
+			}
 			else
 			{
 				squarewidth = (int)(e.CellBounds.Width / 8.1);
@@ -184,10 +189,10 @@ namespace Stepper
 			string indexstring = "dummy";
 			if (e.ColumnIndex > 0)
 			{
-				indexstring = (string)dgv.Rows[0].Cells[e.ColumnIndex].Value;
+				indexstring = (string)dgv.Rows[0].Cells[e.ColumnIndex].Tag;
 			}
 			else if (e.ColumnIndex == 0) {
-				indexstring = (string)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+				indexstring = (string)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag;
 			}
 			if (!indexstring.Equals("dummy"))
 			{
@@ -201,7 +206,7 @@ namespace Stepper
 			}
 
 			string color = "black";
-			if ((e.RowIndex == 0 && e.ColumnIndex == 0) || dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+			if ((e.RowIndex == 0 && e.ColumnIndex == 0) || dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag == null)
 			{
 				e.PaintContent(e.ClipBounds);
 				e.Handled = true;
@@ -211,11 +216,11 @@ namespace Stepper
 			{
 				color = "black";
 			}
-			else if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.Equals(StepDeets.T))
+			else if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag.Equals(StepDeets.T))
 			{
 				color = "dg";
 			}
-			else if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.Equals(StepDeets.F))
+			else if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag.Equals(StepDeets.F))
 			{
 				color = "lg";
 			}
@@ -223,7 +228,16 @@ namespace Stepper
 			{
 				int x = (int)(e.CellBounds.X + e.CellBounds.Width * xcoords[i]);
 				int y = (int)(e.CellBounds.Y + e.CellBounds.Height * ycoords[i]);
+		/*		if (indexstring.Equals("filled"))
+				{
+					squareheight = squareheight + 4;
+					squarewidth = squarewidth + 4;
+					x = x - 3;
+					y = y - 3;
+
+				} */
 				draw(types[i], color, x, y, squarewidth, squareheight, e);
+
 			}
 			e.PaintContent(e.ClipBounds);
 			e.Handled = true;
@@ -265,14 +279,14 @@ namespace Stepper
 
 		private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string v = (string)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+			string v = (string)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag;
 			if (v.Equals(StepDeets.F))
 			{
-				dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = StepDeets.T;
+				dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag = StepDeets.T;
 			}
 			else if (v.Equals(StepDeets.T))
 			{
-				dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = StepDeets.F;
+				dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag = StepDeets.F;
 			}
 		}
 
@@ -284,7 +298,7 @@ namespace Stepper
 			{
 				for (int c = 1; c < num_columns; c++)
 				{
-					stepgrid[keys[r - 1]][c - 1] = (string)dgv.Rows[r].Cells[c].Value;
+					stepgrid[keys[r - 1]][c - 1] = (string)dgv.Rows[r].Cells[c].Tag;
 				}
 			}
 		}

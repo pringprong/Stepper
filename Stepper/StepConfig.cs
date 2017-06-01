@@ -43,11 +43,16 @@ namespace Stepper
 			reset_button = new Button();
 			step_subsets_tc = new TabControl();
 			sctpl = new List<StepConfigTabPage>();
-			blackpen = new Pen(Color.Black, 2);
-			graypen = new Pen(Color.DarkGray, 2);
-			lightgraypen = new Pen(Color.LightGray, 2);
-			blackbrush = new SolidBrush(Color.Black);
-			graybrush = new SolidBrush(Color.Gray);
+
+			blackpen = new Pen(Color.Blue, 1);
+			blackpen.Alignment = PenAlignment.Inset;
+			graypen = new Pen(Color.Black, 1);
+			graypen.Alignment = PenAlignment.Inset;
+			lightgraypen = new Pen(Color.LightGray, 1);
+			lightgraypen.Alignment = PenAlignment.Inset;
+
+			blackbrush = new SolidBrush(Color.Blue);
+			graybrush = new SolidBrush(Color.Black);
 			whitebrush = new SolidBrush(Color.White);
 			lightgraybrush = new SolidBrush(Color.LightGray);
 

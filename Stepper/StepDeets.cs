@@ -229,8 +229,8 @@ namespace Stepper
 							"00000010", /*righttop*/
 							"00000001", /*rightright*/
 						} },
-						{ "10000000",/*leftleft             */ new string[] {F, F, T, T, F, F, F, F} },
-						{ "01000000",/*leftbottom           */ new string[] {T, F, T, T, T, F, F, F} },
+						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {T, T, T, F, F, F, F, F} },
 						{ "00100000",/*lefttop              */ new string[] {T, T, F, F, F, F, F, F} },
 						{ "00010000",/*leftright            */ new string[] {T, T, T, F, F, F, F, F} },
 						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, F, F, F, F} },
@@ -578,8 +578,8 @@ namespace Stepper
 							"00000010", /*righttop*/
 							"00000001", /*rightright*/
 						} },
-						{ "10000000",/*leftleft             */ new string[] {F, F, T, T, F, F, F, F} },
-						{ "01000000",/*leftbottom           */ new string[] {T, F, T, T, T, F, F, F} },
+						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {T, T, T, F, F, F, F, F} },
 						{ "00100000",/*lefttop              */ new string[] {T, T, F, F, F, F, F, F} },
 						{ "00010000",/*leftright            */ new string[] {T, T, T, F, F, F, F, F} },
 						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, F, F, F, F} },
@@ -927,9 +927,9 @@ namespace Stepper
 							"00000010", /*righttop*/
 							"00000001", /*rightright*/
 						} },
-						{ "10000000",/*leftleft             */ new string[] {F, F, T, T, F, F, F, F} },
-						{ "01000000",/*leftbottom           */ new string[] {T, F, T, T, T, F, F, F} },
-						{ "00100000",/*lefttop              */ new string[] {T, T, F, F, F, F, F, F} },
+						{ "10000000",/*leftleft             */ new string[] {T, T, T, T, T, T, F, F} },
+						{ "01000000",/*leftbottom           */ new string[] {T, T, T, F, F, F, F, F} },
+						{ "00100000",/*lefttop              */ new string[] {T, T, F, T, F, F, F, F} },
 						{ "00010000",/*leftright            */ new string[] {T, T, T, F, F, F, F, F} },
 						{ "00001000",/*rightleft            */ new string[] {T, T, T, T, F, F, F, F} },
 						{ "00000100",/*rightbottom          */ new string[] {F, T, F, T, T, F, T, F} },
@@ -1511,7 +1511,7 @@ namespace Stepper
 			}
 			else if (ds.Equals(DanceSolo))
 			{
-				return new double[] { 0.2, 0.2, 0.4, 0.4, 0.6, 0.6 };
+				return new double[] { 0.18, 0.18, 0.4, 0.4, 0.62, 0.62 };
 			}
 			else if (ds.Equals(DanceDouble))
 			{
@@ -1531,7 +1531,7 @@ namespace Stepper
 			}
 			else if (ds.Equals(DanceSolo))
 			{
-				return new double[] { 0.4, 0.2, 0.6, 0.2, 0.2, 0.4 };
+				return new double[] { 0.4, 0.18, 0.62, 0.18, 0.18, 0.4 };
 			}
 			else if (ds.Equals(DanceDouble))
 			{

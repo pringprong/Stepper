@@ -228,14 +228,6 @@ namespace Stepper
 			{
 				int x = (int)(e.CellBounds.X + e.CellBounds.Width * xcoords[i]);
 				int y = (int)(e.CellBounds.Y + e.CellBounds.Height * ycoords[i]);
-		/*		if (indexstring.Equals("filled"))
-				{
-					squareheight = squareheight + 4;
-					squarewidth = squarewidth + 4;
-					x = x - 3;
-					y = y - 3;
-
-				} */
 				draw(types[i], color, x, y, squarewidth, squareheight, e);
 
 			}

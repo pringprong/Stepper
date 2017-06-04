@@ -61,7 +61,7 @@ namespace Stepper
 			// 
 			this.BackColor = Color.White;
 			this.StartPosition = FormStartPosition.CenterScreen;
-			this.Text = StepDeets.stepTitle(dance_style) + " Step Configuration";
+			this.Text = StepDeets.stepTitle(dance_style) + " Step Configuration: Double-click to toggle";
 			this.TransparencyKey = Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.AutoScroll = true;
 			this.MinimumSize = new Size(450, 300);

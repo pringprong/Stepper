@@ -1124,25 +1124,31 @@ namespace Stepper
 				} },
 			};
 
-		public static void setStepList(string ds, string foot, Dictionary<string, string[]> d)
+		public static void setStepList(string ds, string foot)
 		{
-			steps_3d_dictionary[ds][foot] = d;
+			foreach (string step in steps_3d_dictionary_temp[ds][foot].Keys)
+			{
+				string[] string_array = steps_3d_dictionary_temp[ds][foot][step];
+				for (int i = 0; i < string_array.Count(); i++)
+				{
+					steps_3d_dictionary[ds][foot][step][i] = steps_3d_dictionary_temp[ds][foot][step][i];
+				}
+			}
 		}
 
 		public static void resetStepList(string ds, string foot)
 		{
-			foreach (string step in steps_3d_dictionary_default[ds][foot].Keys)
+			foreach (string step in steps_3d_dictionary_temp[ds][foot].Keys)
 			{
-				string[] string_array = steps_3d_dictionary_default[ds][foot][step];
+				string[] string_array = steps_3d_dictionary_temp[ds][foot][step];
 				for (int i = 0; i < string_array.Count(); i++)
 				{
-					steps_3d_dictionary[ds][foot][step][i] = steps_3d_dictionary_default[ds][foot][step][i];
+					steps_3d_dictionary_temp[ds][foot][step][i] = steps_3d_dictionary_default[ds][foot][step][i];
 				}
 			}
-			resetTempStepList(ds, foot);
 		}
 
-		public static void resetTempStepList(string ds, string foot)
+		public static void cancelTempStepList(string ds, string foot)
 		{
 			foreach (string step in steps_3d_dictionary_temp[ds][foot].Keys)
 			{
@@ -1503,7 +1509,46 @@ namespace Stepper
 			return "";
 		}
 
-		public static double[] getXCoordinateScaleFactor(string ds)
+		public static double getConfigSquareHeightScaleFactor(string ds)
+		{
+			if (ds.Equals(DanceSingle))
+			{
+				return 5.1;
+			}
+			else if (ds.Equals(DanceSolo))
+			{
+				return 6.1;
+			}
+			else if (ds.Equals(DanceDouble))
+			{
+				return 5.1;
+			}
+			else // if (ds.Equals(PumpSingle)) 
+			{
+				return 5.1;
+			}
+		}
+
+		public static double getConfigSquareWidthScaleFactor(string ds)
+		{
+			if (ds.Equals(DanceSingle))
+			{
+				return 6.1;
+			}
+			else if (ds.Equals(DanceSolo))
+			{
+				return 10.1;
+			}
+			else if (ds.Equals(DanceDouble))
+			{
+				return 11.1;
+			}
+			else // if (ds.Equals(PumpSingle)) 
+			{
+				return 6.1;
+			}
+		}
+		public static double[] getConfigSquareXCoordinateScaleFactor(string ds)
 		{
 			if (ds.Equals(DanceSingle))
 			{
@@ -1523,7 +1568,7 @@ namespace Stepper
 			}
 		}
 
-		public static double[] getYCoordinateScaleFactor(string ds)
+		public static double[] getConfigSquareYCoordinateScaleFactor(string ds)
 		{
 			if (ds.Equals(DanceSingle))
 			{

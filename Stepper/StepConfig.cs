@@ -139,30 +139,14 @@ namespace Stepper
 
 		private void ok_button_Click(object sender, EventArgs e)
 		{
-			saveSettings();
-			this.Close();
-		}
-
-		private void reset_button_Click(object sender, EventArgs e)
-		{
-			resetSettings();
-		}
-
-		private void cancel_button_Click(object sender, EventArgs e)
-		{
-			cancelSettings();
-			this.Close();
-		}
-
-		private void saveSettings()
-		{
 			foreach (StepConfigTabPage sctp in sctpl)
 			{
 				sctp.saveSettings();
 			}
+			this.Close();
 		}
 
-		private void resetSettings()
+		private void reset_button_Click(object sender, EventArgs e)
 		{
 			foreach (StepConfigTabPage sctp in sctpl)
 			{
@@ -170,12 +154,13 @@ namespace Stepper
 			}
 		}
 
-		private void cancelSettings()
+		private void cancel_button_Click(object sender, EventArgs e)
 		{
 			foreach (StepConfigTabPage sctp in sctpl)
 			{
 				sctp.cancelSettings();
-			}
+			} 
+			this.Close();
 		}
 
 		protected override void Dispose(bool disposing)

@@ -147,17 +147,15 @@ namespace Stepper
 		
 		private void dgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
 		{
-			// 1. Number of squares : 4 for dance single, 6 for dance solo, 8 for dance double, 5 for pump single
-			// 2. Size of squares: 
-			//		height: 1/5 the height of the cell
-			//		width: 1/5 the width of the cell for dsi, dso, and psi, 1/8 of the width for dd
-			// 3. Placement of squares
+			// 1. Get the number of squares : 4 for dance single, 6 for dance solo, 8 for dance double, 5 for pump single
+			// 2. Get the size of the squares from StepDeets
+			// 3. Get the placement of the squares from StepDeets
 			// 4. Whether they are open or filled
 			//		get string from column header
 			//		split up string into 1 and 0
 			//		associate 1 and 0 with square index
 			//		1 = filled, 0 = open
-			// 5. Color of the squares:
+			// 5. Color of the squares:  later I changed the Pens and Brushes colors to Blue-Black-Grey
  			//		index column and row: black
 			//		value T:  dark gray
 			//      value F:  light gray
@@ -167,25 +165,12 @@ namespace Stepper
 				e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width, e.CellBounds.Height));
 
 			int numsquares = StepDeets.emptyStep(dance_style).Count();
-			int squareheight = (int)(e.CellBounds.Height / 5.1);
-			int squarewidth;
-			if (dance_style.Equals(StepDeets.DanceDouble))
-			{
-				squarewidth = (int)(e.CellBounds.Width / 11.1);
-			}
-			else if (dance_style.Equals(StepDeets.DanceSolo))
-			{
-				squarewidth = (int)(e.CellBounds.Width / 10.1);
-				squareheight = (int)(e.CellBounds.Height / 6.1);
-			}
-			else
-			{
-				squarewidth = (int)(e.CellBounds.Width / 8.1);
-			}
-			double[] xcoords = StepDeets.getXCoordinateScaleFactor(dance_style);
-			double[] ycoords = StepDeets.getYCoordinateScaleFactor(dance_style);
+			int squareheight = (int)(e.CellBounds.Height / StepDeets.getConfigSquareHeightScaleFactor(dance_style));
+			int squarewidth = (int)(e.CellBounds.Width / StepDeets.getConfigSquareWidthScaleFactor(dance_style)); ;
+			double[] xcoords = StepDeets.getConfigSquareXCoordinateScaleFactor(dance_style);
+			double[] ycoords = StepDeets.getConfigSquareYCoordinateScaleFactor(dance_style);
 
-			string[] types = new string[] { "open", "open", "open", "open", "open", "open", "open", "open"};
+			string[] types = new string[] { "open", "open", "open", "open", "open", "open", "open", "open", "open", "open"};
 			string indexstring = "dummy";
 			if (e.ColumnIndex > 0)
 			{
@@ -241,7 +226,7 @@ namespace Stepper
 			{
 				if (color.Equals("black"))
 				{
-					e.Graphics.DrawRectangle(blackpen, new Rectangle( x, y, w, h));
+					e.Graphics.DrawRectangle(blackpen, new Rectangle(x, y, w, h));
 				}
 				else if (color.Equals("dg"))
 				{
@@ -284,27 +269,36 @@ namespace Stepper
 
 		public void saveSettings()
 		{
+			// write the current state of the datagridview  to the temp step dictionary
 			string[] keys = stepgrid.Keys.ToArray();
 			string[] column_headers = stepgrid[StepDeets.Base].ToArray();
-			for (int r = 2; r < num_rows; r++)
+			for (int rr = 1; rr < num_rows; rr++)
 			{
-				for (int c = 1; c < num_columns; c++)
+				for (int cc = 1; cc < num_columns; cc++)
 				{
-					stepgrid[keys[r - 1]][c - 1] = (string)dgv.Rows[r].Cells[c].Tag;
+					stepgrid[keys[rr]][cc - 1] = (string)dgv.Rows[rr].Cells[cc].Tag;
 				}
 			}
+			// then write the temp step dictionary to the current running step dictionary
+			StepDeets.setStepList(dance_style, foot);
 		}
 
 		public void resetSettings()
 		{
+			// write the default step dictionary to the temp step dictionary
 			StepDeets.resetStepList(dance_style, foot);
+			// then read the temp step dictionary into the datagridview
 			fill();
+			dgv.Refresh();
 		}
 
 		public void cancelSettings()
 		{
-			StepDeets.resetTempStepList(dance_style, foot);
+			// write the current running step dictionary back over the temp step dictionary
+			StepDeets.cancelTempStepList(dance_style, foot);
+			// then read the temp step dictionary to the datagridview
 			fill();
+			dgv.Refresh();
 		}
 	}
 }

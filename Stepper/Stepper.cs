@@ -16,37 +16,41 @@ namespace Stepper
 {
     public class Stepper : Form
     {
-        private List<Song> songs;
-        private int beats_per_measure = 4;
-        Random r;
-        private bool folderTextChanged = false;
+		private TabControl tabControl1;
+	//	private int instructionsTextboxGap = 40;
+		private TabPage tabPage_instructions;
+		private TextBox textBox_intro;
+		private Button button_intro_continue;
+
+		private DanceStyleTabPage[] dstp;
+		private TabPage first_dance_style;
+		private TabPage last_dance_style;
+		private string last_dance_style_name = "";
+		private Random r;
         private AdjustableArrowCap cap;
         private Pen blackpen;
         private Pen redpen;
         private Pen bluepen;
         private int measures_per_sample = 4;
-        private int instructionsTextboxGap = 40;
-		private DanceStyleTabPage[] dstp;
-		private TabPage first_dance_style;
-		private TabPage last_dance_style;
-		private string last_dance_style_name = "";
 
-		private FolderBrowserDialog folderBrowserDialog1;
+		private List<Song> songs;
 		private TabPage tabPage_source_folder;
-		private TabPage tabPage_write_stepfiles;
-		private Panel source_flowLayoutPanel;
-		private Panel destination_Panel;
-		private Button button_write_stepfiles_back;
-		private TextBox currentFolder;
-		private Button folderChooser;
+		private FolderBrowserDialog select_source_folderBrowserDialog;
+		private bool folderTextChanged = false;
+		private FlowLayoutPanel source_flowLayoutPanel;
+		private TextBox current_folder_TextBox;
+		private Button folder_chooser_button;
 		private Button getInfo;
+		private DataGridView songInfo;
+		private Button source_folder_back_button;
+		private FlowLayoutPanel source_prev_next_flowLayoutPanel;
+		private Button source_next_button;
+		private Label source_text;
+
+		private TabPage tabPage_write_stepfiles;
+		private Panel destination_Panel;
 		private Button overwriteStepfiles;
 		private Button close;
-		private DataGridView songInfo;
-		private TabPage tabPage_instructions;
-		private TextBox textBox_intro;
-		private Button button_intro_continue;
-		private TabControl tabControl1;
 
         public Stepper()
         {
@@ -70,7 +74,7 @@ Warnings:
 			int i = 0;
 			foreach (string style in StepDeets.DanceStyles)
 			{
-				dstp[i] = new DanceStyleTabPage(tabControl1, style, beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
+				dstp[i] = new DanceStyleTabPage(tabControl1, style, StepDeets.beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
 				dstp[i].setNoteSetParametersList(StepDeets.default_params[style]);
 				tabControl1.Controls.Add(dstp[i]);
 				if (i == 0)
@@ -87,36 +91,36 @@ Warnings:
 				}
 				if (i == (StepDeets.DanceStyles.Count() -1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
 				{
-					dstp[i].setNext("Write Stepfiles", tabPage_source_folder);
+					dstp[i].setNext("Choose Source Folder", tabPage_source_folder);
 					last_dance_style = dstp[i];
 					last_dance_style_name = StepDeets.stepTitle(style);
 				}
 				i++;
 			}
 			tabControl1.Controls.Add(this.tabPage_source_folder);
-			button_write_stepfiles_back.Text = "Back to " + this.last_dance_style_name;
+			source_folder_back_button.Text = "Back to " + this.last_dance_style_name;
 			tabControl1.Controls.Add(this.tabPage_write_stepfiles);
         }
 
-        private void selectFolder_Click(object sender, EventArgs e)
+        private void folder_chooser_button_Click(object sender, EventArgs e)
         {
             string default_folder = "C:\\Games\\StepMania 5\\Test";
-            if ((Directory.Exists(currentFolder.Text)))
+            if ((Directory.Exists(current_folder_TextBox.Text)))
             {
-                folderBrowserDialog1.SelectedPath = currentFolder.Text;
+                select_source_folderBrowserDialog.SelectedPath = current_folder_TextBox.Text;
             }
             else if ((Directory.Exists(default_folder)))
             {
-                folderBrowserDialog1.SelectedPath = default_folder;
+                select_source_folderBrowserDialog.SelectedPath = default_folder;
             }
             else
             {
-                folderBrowserDialog1.SelectedPath = "";
+                select_source_folderBrowserDialog.SelectedPath = "";
             }
-            var result = folderBrowserDialog1.ShowDialog();
+			var result = select_source_folderBrowserDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                currentFolder.Text = folderBrowserDialog1.SelectedPath;
+                current_folder_TextBox.Text = select_source_folderBrowserDialog.SelectedPath;
                 folderTextChanged = true;
             }
         }
@@ -124,13 +128,13 @@ Warnings:
         private void getInfo_Click(object sender, EventArgs e)
         {
             songs.Clear();
-            if (!(Directory.Exists(currentFolder.Text)))
+            if (!(Directory.Exists(current_folder_TextBox.Text)))
             {
                 MessageBox.Show("Please choose a valid Stepmania song group folder", "Folder name invalid");
                 return;
             }
 			Cursor.Current = Cursors.WaitCursor;
-            string[] dirs = Directory.GetDirectories(currentFolder.Text);
+            string[] dirs = Directory.GetDirectories(current_folder_TextBox.Text);
             var fileCount = dirs.Count();
             songInfo.ColumnCount = 8;
             songInfo.Columns[0].HeaderText = "Song Path";
@@ -260,7 +264,7 @@ Warnings:
                 MessageBox.Show("The folder name has changed or is invalid. Please choose a Stepmania song group folder and click \"Get info\" to update the song info table", "Click Get info");
                 return;
             }
-            DialogResult result1 = MessageBox.Show("Are you sure you want to overwrite the stepfiles in " + currentFolder.Text + " ? This action cannot be undone.",
+            DialogResult result1 = MessageBox.Show("Are you sure you want to overwrite the stepfiles in " + current_folder_TextBox.Text + " ? This action cannot be undone.",
                 "Warning: Overwriting stepfiles",
                 MessageBoxButtons.YesNo);
             if (result1 == DialogResult.Yes)
@@ -604,7 +608,7 @@ Warnings:
             this.Close();
         }
 
-        private void currentFolder_TextChanged(object sender, EventArgs e)
+        private void current_folder_TextBox_TextChanged(object sender, EventArgs e)
         {
             folderTextChanged = true;
         }
@@ -627,7 +631,7 @@ Warnings:
 			tabControl1.SelectedTab = tabPage_source_folder;
 		}
 
-		private void button_write_stepfiles_back_Click(object sender, EventArgs e)
+		private void source_folder_back_button_Click(object sender, EventArgs e)
 		{
 			if (last_dance_style != null)
 			{
@@ -635,72 +639,108 @@ Warnings:
 			}
 		}
 
-		private void tabPage_instructions_Resize(object sender, EventArgs e)
-        {
-            textBox_intro.Height = tabPage_instructions.Height - instructionsTextboxGap;
-        }
-
-        private void source_flowLayoutPanel_Resize(object sender, EventArgs e)
-        {
-            button_write_stepfiles_back.Width = Math.Max(Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.15)), button_write_stepfiles_back.MinimumSize.Width);
-            currentFolder.Width = Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.25));
-            folderChooser.Width = Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.15));
-            getInfo.Width = Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.15));
-            overwriteStepfiles.Width = Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.15));
-            close.Width = Convert.ToInt32(Convert.ToDouble(source_flowLayoutPanel.Width) * Convert.ToDouble(0.1));
-        }
-
-        private void tabPage_source_folder_Resize(object sender, EventArgs e)
-        {
-            songInfo.Height = tabPage_source_folder.Height - instructionsTextboxGap;
-        }
+		private void source_next_button_Click(object sender, EventArgs e)
+		{
+			tabControl1.SelectedTab = tabPage_write_stepfiles;
+		}
 
 		private void InitializeComponent()
 		{
-			this.folderBrowserDialog1 = new FolderBrowserDialog();
+			this.select_source_folderBrowserDialog = new FolderBrowserDialog();
 			this.tabPage_source_folder = new TabPage();
 			this.tabPage_write_stepfiles = new TabPage();
 			this.songInfo = new DataGridView();
-			this.source_flowLayoutPanel = new Panel();
+			this.source_flowLayoutPanel = new FlowLayoutPanel();
 			this.destination_Panel = new Panel();
 			this.close = new Button();
 			this.overwriteStepfiles = new Button();
 			this.getInfo = new Button();
-			this.folderChooser = new Button();
-			this.currentFolder = new TextBox();
-			this.button_write_stepfiles_back = new Button();
+			this.folder_chooser_button = new Button();
+			this.current_folder_TextBox = new TextBox();
+			this.source_folder_back_button = new Button();
 			this.tabPage_instructions = new TabPage();
 			this.button_intro_continue = new Button();
 			this.textBox_intro = new TextBox();
 			this.tabControl1 = new TabControl();
+			this.source_prev_next_flowLayoutPanel = new FlowLayoutPanel();
+			this.source_next_button = new Button();
+			this.source_text = new Label();
 			// 
-			// folderBrowserDialog1
+			// Stepper
 			// 
-			this.folderBrowserDialog1.ShowNewFolderButton = false;
+			this.ClientSize = new Size(1060, 735);
+			this.MaximumSize = this.ClientSize;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.AutoScroll = true;
+			this.Text = "Stepper v2.0";
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Location = new Point(0, 0);
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(this.Width-16, this.Height-41);
+			// 
+			// tabPage_instructions
+			// 
+			this.tabPage_instructions.Text = "Instructions";
+			this.tabPage_instructions.Size = tabControl1.Size;
+			// 
+			// button_intro_continue
+			// 
+			this.button_intro_continue.BackColor = Color.YellowGreen;
+			this.button_intro_continue.Location = new Point(3, 639);
+			this.button_intro_continue.Size = new Size(tabPage_instructions.Width-20, 30);
+			this.button_intro_continue.Text = "Continue";
+			this.button_intro_continue.Click += new System.EventHandler(this.button_intro_continue_Click);
+			// 
+			// textBox_intro
+			// 
+			this.textBox_intro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.textBox_intro.Location = new System.Drawing.Point(3, 3);
+			this.textBox_intro.Multiline = true;
+			this.textBox_intro.ReadOnly = true;
+	//		this.textBox_intro.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox_intro.Size = new System.Drawing.Size(tabPage_instructions.Width-20,tabPage_instructions.Height-60);
 			// 
 			// tabPage_source_folder
 			// 
-			this.tabPage_source_folder.AutoScroll = true;
-//			this.tabPage_source_folder.Controls.Add(this.flowLayoutPanel1);
-			this.tabPage_source_folder.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_source_folder.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_source_folder.Size = new System.Drawing.Size(1038, 672);
-	//		this.tabPage_source_folder.TabIndex = 3;
 			this.tabPage_source_folder.Text = "Choose Source Folder";
-			this.tabPage_source_folder.UseVisualStyleBackColor = true;
-			this.tabPage_source_folder.Resize += new System.EventHandler(this.tabPage_source_folder_Resize);
+			this.tabPage_source_folder.Size = tabControl1.Size;
+			this.tabPage_source_folder.Padding = new Padding(3);
+			// 
+			// source_flowLayoutPanel
+			// 
+			this.source_flowLayoutPanel.Location = new Point(3, 3);
+			this.source_flowLayoutPanel.Margin = new Padding(3);
+			this.source_flowLayoutPanel.Size = new Size(tabPage_source_folder.Width - 20, 35);
 			//
-			// tabPage_write_stepfiles
+			// source_text
 			//
-			this.tabPage_write_stepfiles.AutoScroll = true;
-	//		this.tabPage_write_stepfiles.Controls.Add(this.songInfo);
-			this.tabPage_write_stepfiles.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_write_stepfiles.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_write_stepfiles.Size = new System.Drawing.Size(1038, 672);
-	//		this.tabPage_write_stepfiles.TabIndex = 3;
-			this.tabPage_write_stepfiles.Text = "Write Stepfiles";
-			this.tabPage_write_stepfiles.UseVisualStyleBackColor = true;
-	//		this.tabPage_write_stepfiles.Resize += new System.EventHandler(this.tabPage_write_stepfiles_Resize);
+			this.source_text.Font = new Font("Microsoft Sans Serif", 12F);
+			this.source_text.Text = "Choose a source folder and click Get Info:";
+			this.source_text.Size = new Size(340, 30);
+			this.source_text.TextAlign = ContentAlignment.MiddleLeft;
+			// 
+			// getInfo
+			// 
+			this.getInfo.BackColor = Color.YellowGreen;
+			this.getInfo.Size = new Size(source_flowLayoutPanel.Width/ 6, 30);
+			this.getInfo.Text = "Get Info";
+			this.getInfo.Click += new System.EventHandler(this.getInfo_Click);
+			// 
+			// folder_chooser_button
+			// 
+			this.folder_chooser_button.BackColor = Color.LightBlue;
+			this.folder_chooser_button.Size = new Size(source_flowLayoutPanel.Width / 6, 30);
+			this.folder_chooser_button.Text = "Change folder";
+			this.folder_chooser_button.Click += new System.EventHandler(this.folder_chooser_button_Click);
+			// 
+			// current_folder_TextBox
+			// 
+			this.current_folder_TextBox.Font = new Font("Microsoft Sans Serif", 12F);
+			this.current_folder_TextBox.Size = new Size(303, 30);
+			this.current_folder_TextBox.Text = "C:\\Games\\StepMania 5\\Songs\\Test";
+			this.current_folder_TextBox.TextChanged += new System.EventHandler(this.current_folder_TextBox_TextChanged);
 			// 
 			// songInfo
 			// 
@@ -708,8 +748,6 @@ Warnings:
 			this.songInfo.AllowUserToDeleteRows = false;
 			this.songInfo.AllowUserToResizeColumns = false;
 			this.songInfo.AllowUserToResizeRows = false;
-			this.songInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.songInfo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.songInfo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.songInfo.Location = new System.Drawing.Point(3, 40);
 			this.songInfo.Name = "songInfo";
@@ -717,24 +755,39 @@ Warnings:
 			this.songInfo.RowHeadersVisible = false;
 			this.songInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.songInfo.ShowEditingIcon = false;
-			this.songInfo.Size = new System.Drawing.Size(1032, 630);
-		//	this.songInfo.TabIndex = 8;
+			this.songInfo.Size = new System.Drawing.Size(tabPage_source_folder.Width - 20, tabPage_source_folder.Height-100);
+			//
+			// source_prev_next_panel
+			//
+			this.source_prev_next_flowLayoutPanel.Size = new Size(tabPage_source_folder.Width - 20, 35);
+			this.source_prev_next_flowLayoutPanel.Location = new Point(3, tabPage_source_folder.Height - 60);
 			// 
-			// flowLayoutPanel1
+			// source_folder_back_button
 			// 
-			this.source_flowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-	//		this.source_flowLayoutPanel.Controls.Add(this.overwriteStepfiles);
-	//		this.source_flowLayoutPanel.Controls.Add(this.close);
-	//		this.source_flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.source_flowLayoutPanel.Location = new Point(3, 3);
-			this.source_flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-	//		this.source_flowLayoutPanel.MaximumSize = new System.Drawing.Size(1032, 35);
-	//		this.source_flowLayoutPanel.MinimumSize = new System.Drawing.Size(200, 35);
-	//		this.source_flowLayoutPanel.Name = "flowLayoutPanel1";
-			this.source_flowLayoutPanel.Size = new System.Drawing.Size(1032, 35);
-	//		this.source_flowLayoutPanel.TabIndex = 17;
-		//	this.source_flowLayoutPanel.WrapContents = false;
-			this.source_flowLayoutPanel.Resize += new System.EventHandler(this.source_flowLayoutPanel_Resize);
+			this.source_folder_back_button.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.source_folder_back_button.Size = new Size(source_prev_next_flowLayoutPanel.Width/2 - 8, 30);
+			this.source_folder_back_button.Text = "Back to " + this.last_dance_style_name;
+			this.source_folder_back_button.Click += new System.EventHandler(this.source_folder_back_button_Click);
+			//
+			// source_next_button
+			//
+			this.source_next_button.Size = source_folder_back_button.Size;
+			this.source_next_button.Text = "Continue to Write Stepfiles";
+			this.source_next_button.BackColor = Color.YellowGreen;
+			this.source_next_button.Click += new System.EventHandler(this.source_next_button_Click);
+			// 
+			// select_source_folderBrowserDialog
+			// 
+			this.select_source_folderBrowserDialog.ShowNewFolderButton = false;
+			//
+			// tabPage_write_stepfiles
+			//
+			this.tabPage_write_stepfiles.AutoScroll = true;
+			this.tabPage_write_stepfiles.Location = new System.Drawing.Point(4, 22);
+			this.tabPage_write_stepfiles.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage_write_stepfiles.Size = new System.Drawing.Size(1038, 672);
+			this.tabPage_write_stepfiles.Text = "Write Stepfiles";
+			this.tabPage_write_stepfiles.UseVisualStyleBackColor = true;
 			//
 			// destination_Panel
 			//
@@ -764,116 +817,22 @@ Warnings:
 			this.overwriteStepfiles.Text = "Overwrite Stepfiles";
 			this.overwriteStepfiles.UseVisualStyleBackColor = false;
 			this.overwriteStepfiles.Click += new System.EventHandler(this.overwriteStepfiles_Click);
-			// 
-			// getInfo
-			// 
-			this.getInfo.BackColor = System.Drawing.Color.YellowGreen;
-			this.getInfo.Location = new System.Drawing.Point(647, 3);
-			this.getInfo.Name = "getInfo";
-			this.getInfo.Size = new System.Drawing.Size(73, 30);
-		//	this.getInfo.TabIndex = 2;
-			this.getInfo.Text = "Get info";
-			this.getInfo.UseVisualStyleBackColor = false;
-			this.getInfo.Click += new System.EventHandler(this.getInfo_Click);
-			// 
-			// folderChooser
-			// 
-			this.folderChooser.BackColor = System.Drawing.Color.LightBlue;
-			this.folderChooser.Location = new System.Drawing.Point(534, 3);
-			this.folderChooser.Name = "folderChooser";
-			this.folderChooser.Size = new System.Drawing.Size(107, 30);
-	//		this.folderChooser.TabIndex = 0;
-			this.folderChooser.Text = "Change folder";
-			this.folderChooser.UseVisualStyleBackColor = false;
-			this.folderChooser.Click += new System.EventHandler(this.selectFolder_Click);
-			// 
-			// currentFolder
-			// 
-			this.currentFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.currentFolder.Location = new System.Drawing.Point(225, 3);
-			this.currentFolder.Name = "currentFolder";
-			this.currentFolder.Size = new System.Drawing.Size(303, 26);
-	//		this.currentFolder.TabIndex = 1;
-			this.currentFolder.Text = "C:\\Games\\StepMania 5\\Songs\\Test";
-			this.currentFolder.TextChanged += new System.EventHandler(this.currentFolder_TextChanged);
-			// 
-			// button_write_stepfiles_back
-			// 
-			this.button_write_stepfiles_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.button_write_stepfiles_back.Location = new System.Drawing.Point(3, 3);
-			this.button_write_stepfiles_back.Size = new System.Drawing.Size(216, 30);
-	//		this.button_write_stepfiles_back.TabIndex = 0;
-			this.button_write_stepfiles_back.Text = "Back to " + this.last_dance_style_name;
-			this.button_write_stepfiles_back.UseVisualStyleBackColor = false;
-			this.button_write_stepfiles_back.Click += new System.EventHandler(this.button_write_stepfiles_back_Click);
-			// 
-			// tabPage_instructions
-			// 
-			this.tabPage_instructions.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_instructions.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_instructions.Size = new System.Drawing.Size(1038, 672);
-		//	this.tabPage_instructions.TabIndex = 0;
-			this.tabPage_instructions.Text = "Instructions";
-			this.tabPage_instructions.UseVisualStyleBackColor = true;
-			this.tabPage_instructions.Resize += new System.EventHandler(this.tabPage_instructions_Resize);
-			// 
-			// button_intro_continue
-			// 
-			this.button_intro_continue.AutoSize = true;
-			this.button_intro_continue.BackColor = System.Drawing.Color.YellowGreen;
-			this.button_intro_continue.CausesValidation = false;
-			this.button_intro_continue.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.button_intro_continue.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.button_intro_continue.Location = new System.Drawing.Point(3, 639);
-			this.button_intro_continue.Name = "button1";
-			this.button_intro_continue.Size = new System.Drawing.Size(1032, 30);
-	//		this.button_intro_continue.TabIndex = 4;
-			this.button_intro_continue.Text = "Continue";
-			this.button_intro_continue.UseVisualStyleBackColor = false;
-			this.button_intro_continue.Click += new System.EventHandler(this.button_intro_continue_Click);
-			// 
-			// textBox_intro
-			// 
-			this.textBox_intro.Dock = System.Windows.Forms.DockStyle.Top;
-			this.textBox_intro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.textBox_intro.Location = new System.Drawing.Point(3, 3);
-			this.textBox_intro.MaximumSize = new System.Drawing.Size(2000, 1000);
-			this.textBox_intro.MinimumSize = new System.Drawing.Size(100, 100);
-			this.textBox_intro.Multiline = true;
-			this.textBox_intro.ReadOnly = true;
-			this.textBox_intro.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox_intro.Size = new System.Drawing.Size(1032, 630);
-	//		this.textBox_intro.TabIndex = 5;
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1046, 698);
-	//		this.tabControl1.TabIndex = 16;
-			// 
-			// Stepper
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(1046, 698);
-			this.MaximumSize = new System.Drawing.Size(1062, 736);
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Stepper v2.0";
 
+			// put it all together
 			this.tabPage_source_folder.Controls.Add(this.source_flowLayoutPanel);
 			this.tabPage_write_stepfiles.Controls.Add(this.destination_Panel);
-			this.source_flowLayoutPanel.Controls.Add(this.button_write_stepfiles_back);
-			this.source_flowLayoutPanel.Controls.Add(this.currentFolder);
-			this.source_flowLayoutPanel.Controls.Add(this.folderChooser);
+			this.source_flowLayoutPanel.Controls.Add(this.source_text);
+			this.source_flowLayoutPanel.Controls.Add(this.current_folder_TextBox);
+			this.source_flowLayoutPanel.Controls.Add(this.folder_chooser_button);
 			this.source_flowLayoutPanel.Controls.Add(this.getInfo);
 			this.destination_Panel.Controls.Add(this.overwriteStepfiles);
 			this.destination_Panel.Controls.Add(this.close);
+			this.tabPage_source_folder.Controls.Add(this.songInfo);
+			this.source_prev_next_flowLayoutPanel.Controls.Add(this.source_folder_back_button);
+			this.source_prev_next_flowLayoutPanel.Controls.Add(this.source_next_button);
+			this.tabPage_source_folder.Controls.Add(this.source_prev_next_flowLayoutPanel);
 			this.tabPage_instructions.Controls.Add(this.textBox_intro);
 			this.tabPage_instructions.Controls.Add(this.button_intro_continue);
-			this.tabPage_source_folder.Controls.Add(this.songInfo);
 			this.tabControl1.Controls.Add(this.tabPage_instructions);
 			this.Controls.Add(this.tabControl1);
 

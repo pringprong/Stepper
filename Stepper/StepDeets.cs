@@ -40,6 +40,8 @@ namespace Stepper
 		public const string DownLeftArrow = "downleftarrow";
 		public const string DownRightArrow = "downrightarrow";
 		public const string CenterArrow = "centerarrow";
+		public const string DefaultSourceFolder = "C:\\Games\\StepMania 5\\Test";
+		public const string DefaultDestinationFolder = "C:\\Games\\StepMania 5\\Test";
 
 		public static string[] DanceStyles = new string[] { DanceSingle, DanceSolo, DanceDouble, PumpSingle };
 		public static string[] Levels = new string[] { Novice, Easy, Medium, Hard, Expert };

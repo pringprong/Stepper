@@ -87,13 +87,14 @@ namespace Stepper
 
 			alternate_foot.Checked = np.alternating_foot;
 			arrow_repeat.Checked = np.repeat_arrows;
-			step_fill_trackbar.Value = np.percent_stepfill;
-			on_beat_trackbar.Value = np.percent_onbeat;
-			jumps_trackbar.Value = np.percent_jumps;
 			triples_on_1_only.Checked = np.triples_on_1_only;
 			quintuples_on_1_only.Checked = np.quintuples_on_1_only;
 			triple_type_trackbar.Value = np.triple_type;
 			quintuple_type_trackbar.Value = np.quintuple_type;
+			half_beat_trackbar.Value = np.percent_quintuples;
+			step_fill_trackbar.Value = np.percent_stepfill;
+			on_beat_trackbar.Value = np.percent_onbeat;
+			jumps_trackbar.Value = np.percent_jumps;
 			full8thStream.Checked = np.full8th;
 		}
 		
@@ -120,13 +121,14 @@ namespace Stepper
 			sdlevel = np.dance_level;
 			alternate_foot.Checked = np.alternating_foot;
 			arrow_repeat.Checked = np.repeat_arrows;
-			step_fill_trackbar.Value = np.percent_stepfill;
-			on_beat_trackbar.Value = np.percent_onbeat;
-			jumps_trackbar.Value = np.percent_jumps;
 			triples_on_1_only.Checked = np.triples_on_1_only;
 			quintuples_on_1_only.Checked = np.quintuples_on_1_only;
 			triple_type_trackbar.Value = np.triple_type;
 			quintuple_type_trackbar.Value = np.quintuple_type;
+			half_beat_trackbar.Value = np.percent_quintuples;
+			step_fill_trackbar.Value = np.percent_stepfill;
+			on_beat_trackbar.Value = np.percent_onbeat;
+			jumps_trackbar.Value = np.percent_jumps;
 			full8thStream.Checked = np.full8th;
 		}
 
@@ -411,6 +413,8 @@ namespace Stepper
 			this.triples_on_1_only.TabIndex = 5;
 			this.triples_on_1_only.Text = "Triples only on first beat";
 			this.triples_on_1_only.UseVisualStyleBackColor = true;
+			this.triples_on_1_only.CheckedChanged += new System.EventHandler(this.triples_on_1_only_CheckedChanged);
+
 			// 
 			// arrow_repeat
 			// 
@@ -440,7 +444,7 @@ namespace Stepper
 			this.on_beat_nud.Size = new System.Drawing.Size(42, 20);
 			this.on_beat_nud.TabIndex = 11;
 			this.on_beat_nud.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.on_beat_nud.Value = new decimal(new int[] {100,0,0,0});
+			this.on_beat_nud.Value = 50;
 			this.on_beat_nud.ValueChanged += new System.EventHandler(this.on_beat_nud_ValueChanged);
 			// 
 			// on_beat_plus_half_beat_label
@@ -483,7 +487,7 @@ namespace Stepper
 			this.on_beat_trackbar.Size = new System.Drawing.Size(45, 102);
 			this.on_beat_trackbar.TabIndex = 2;
 			this.on_beat_trackbar.TickFrequency = 10;
-			this.on_beat_trackbar.Value = 100;
+			this.on_beat_trackbar.Value = 50;
 			this.on_beat_trackbar.ValueChanged += new System.EventHandler(this.on_beat_trackbar_ValueChanged);
 			// 
 			// on_beat_label
@@ -526,6 +530,7 @@ namespace Stepper
 			this.half_beat_trackbar.Size = new System.Drawing.Size(177, 45);
 			this.half_beat_trackbar.TabIndex = 14;
 			this.half_beat_trackbar.TickFrequency = 10;
+			this.half_beat_trackbar.Value = 50;
 			this.half_beat_trackbar.ValueChanged += new System.EventHandler(this.half_beat_trackbar_ValueChanged);
 			// 
 			// half_beat_nud
@@ -533,6 +538,7 @@ namespace Stepper
 			this.half_beat_nud.Location = new System.Drawing.Point(257, 6);
 			this.half_beat_nud.Size = new System.Drawing.Size(42, 20);
 			this.half_beat_nud.TabIndex = 8;
+			this.half_beat_nud.Value = 50;
 			this.half_beat_nud.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.half_beat_nud.ValueChanged += new System.EventHandler(this.half_beat_nud_ValueChanged);
 			// 
@@ -698,6 +704,7 @@ namespace Stepper
 		private void on_beat_trackbar_ValueChanged(object sender, EventArgs e)
 		{
 			on_beat_nud.Value = on_beat_trackbar.Value;
+			reset_panels();
 		}
 
 		private void on_beat_nud_ValueChanged(object sender, EventArgs e)
@@ -718,6 +725,7 @@ namespace Stepper
 		private void half_beat_trackbar_ValueChanged(object sender, EventArgs e)
 		{
 			half_beat_nud.Value = half_beat_trackbar.Value;
+			reset_panels();
 		}
 
 		private void half_beat_nud_ValueChanged(object sender, EventArgs e)
@@ -727,33 +735,14 @@ namespace Stepper
 
 		private void full8thStream_CheckedChanged(object sender, EventArgs e)
 		{
-			if (full8thStream.Checked)
-			{
-				halfbeat_panel.Enabled = false;
-				triple_type_panel.Enabled = false;
-				quintuple_type_panel.Enabled = false;
-				triples_on_1_only.Enabled = false;
-				quintuples_on_1_only.Enabled = false;
-				on_beat_nud.Enabled = false;
-				on_beat_trackbar.Enabled = false;
-				on_beat_plus_half_beat_label.Enabled = false;
-				on_beat_only_label.Enabled = false;
-				full8thStream.Font = new Font(full8thStream.Font, FontStyle.Bold);
-			}
-			else
-			{
-				halfbeat_panel.Enabled = true;
-				triple_type_panel.Enabled = true;
-				quintuple_type_panel.Enabled = true;
-				triples_on_1_only.Enabled = true;
-				quintuples_on_1_only.Enabled = true;
-				on_beat_nud.Enabled = true;
-				on_beat_trackbar.Enabled = true;
-				on_beat_plus_half_beat_label.Enabled = true;
-				on_beat_only_label.Enabled = true;
-				full8thStream.Font = new Font(full8thStream.Font, FontStyle.Regular);
-			}
+			reset_panels();
 		}
+
+		private void triples_on_1_only_CheckedChanged(object sender, EventArgs e)
+		{
+			reset_panels();
+		}
+ 
 		private void triple_type_trackbar_ValueChanged(object sender, EventArgs e)
 		{
 			triple_type_nud.Value = triple_type_trackbar.Value;
@@ -772,6 +761,70 @@ namespace Stepper
 		private void quintuple_type_nud_ValueChanged(object sender, EventArgs e)
 		{
 			quintuple_type_trackbar.Value = Convert.ToInt32(quintuple_type_nud.Value);
+		}
+
+		private void reset_panels()
+		{
+			jumps_panel.Enabled = true;
+			if (full8thStream.Checked)
+			{
+				halfbeat_panel.Enabled = false;
+				triple_type_panel.Enabled = false;
+				quintuple_type_panel.Enabled = false;
+				triples_on_1_only.Enabled = false;
+				quintuples_on_1_only.Enabled = false;
+				on_beat_nud.Enabled = false;
+				on_beat_trackbar.Enabled = false;
+				on_beat_plus_half_beat_label.Enabled = false;
+				on_beat_only_label.Enabled = false;
+				full8thStream.Font = new Font(full8thStream.Font, FontStyle.Bold);
+			}
+			else
+			{
+				full8thStream.Font = new Font(full8thStream.Font, FontStyle.Regular);
+				on_beat_nud.Enabled = true;
+				on_beat_trackbar.Enabled = true;
+				on_beat_plus_half_beat_label.Enabled = true;
+				on_beat_only_label.Enabled = true;
+				if (on_beat_nud.Value == 100)
+				{
+					halfbeat_panel.Enabled = false;
+					triple_type_panel.Enabled = false;
+					quintuple_type_panel.Enabled = false;
+					triples_on_1_only.Enabled = false;
+					quintuples_on_1_only.Enabled = false;
+				}
+				else
+				{
+					halfbeat_panel.Enabled = true; 
+					if (half_beat_nud.Value == 100)
+					{
+						triple_type_panel.Enabled = false;
+						triples_on_1_only.Enabled = false;
+					}
+					else // if (half_beat_nud.Value < 100)
+					{
+						triple_type_panel.Enabled = true;
+						triples_on_1_only.Enabled = true;
+					}
+					if (half_beat_nud.Value == 0)
+					{
+						quintuple_type_panel.Enabled = false;
+						quintuples_on_1_only.Enabled = false;
+						if (!triples_on_1_only.Checked && on_beat_nud.Value == 0)
+						{
+							// special case: if half_beat is set to 0 AND onbeat is set to 0 AND triples_on_1_only is not checked, 
+							// then there will not be room for any jumps because the entire measure will be filled with 2 triples
+							jumps_panel.Enabled = false;
+						}
+					}
+					else // if (half_beat_nud.Value > 0)
+					{
+						quintuple_type_panel.Enabled = true;
+						quintuples_on_1_only.Enabled = true;
+					}
+				}
+			}
 		}
 	}
 }

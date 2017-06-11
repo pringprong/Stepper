@@ -1314,19 +1314,19 @@ namespace Stepper
 		{
 			if (dance_style.Equals(StepDeets.DanceSingle))
 			{
-				return new string[] { StepDeets.Left, "0001" };
+				return new string[] { StepDeets.Left, "1000" };
 			}
 			else if (dance_style.Equals(StepDeets.DanceSolo))
 			{
-				return new string[] { StepDeets.Left, "000001" };
+				return new string[] { StepDeets.Left, "100000" };
 			}
 			else if (dance_style.Equals(StepDeets.DanceDouble))
 			{
-				return new string[] { StepDeets.Left, "00000001" };
+				return new string[] { StepDeets.Left, "10000000" };
 			}
 			else //if (dance_style.Equals(StepDeets.PumpSingle))
 			{
-				return new string[] { StepDeets.Left, "00001" };
+				return new string[] { StepDeets.Left, "10000" };
 			}
 		}
 

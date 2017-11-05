@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="DanceStyleTabPage.cs">
       <SubType>Component</SubType>
     </Compile>

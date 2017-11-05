@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
+
 namespace Stepper
 {
-	static class StepDeets
+	public static class StepDeets
 	{
 		public const string DanceSingle = "dance-single";
 		public const string DanceSolo = "dance-solo";
@@ -40,13 +41,11 @@ namespace Stepper
 		public const string DownLeftArrow = "downleftarrow";
 		public const string DownRightArrow = "downrightarrow";
 		public const string CenterArrow = "centerarrow";
-		public const string DefaultSourceFolder = "C:\\Games\\StepMania 5\\Test";
-		public const string DefaultDestinationFolder = "C:\\Games\\StepMania 5\\Test";
 
 		public static string[] DanceStyles = new string[] { DanceSingle, DanceSolo, DanceDouble, PumpSingle };
 		public static string[] Levels = new string[] { Novice, Easy, Medium, Hard, Expert };
 		public static string[] StepTypes = new string[] { Left, Right, Jump };
-
+		
 		public static Dictionary<string, Dictionary<string, NotesetParameters>> 
 			default_params = new Dictionary<string,Dictionary<string,NotesetParameters>> {
 				{ StepDeets.DanceSingle, new Dictionary<string, NotesetParameters> {

@@ -16,10 +16,14 @@ namespace Stepper
 {
 	public class Stepper : Form
 	{
+		private Config config = Config.Instance;
+
 		private TabControl tabControl1;
 		private TabPage instructions_tabPage;
 		private TextBox intro_textBox;
+		private FlowLayoutPanel intro_config_continue_flowLayoutPanel;
 		private Button intro_continue_button;
+		private Button load_config_button;
 
 		private DanceStyleTabPage[] dstp;
 		private TabPage first_dance_style;
@@ -99,7 +103,7 @@ namespace Stepper
 
 		private void source_folder_chooser_button_Click(object sender, EventArgs e)
 		{
-			string default_folder = StepDeets.DefaultSourceFolder;
+			string default_folder = config.DefaultSourceFolder;
 			if ((Directory.Exists(source_folder_TextBox.Text)))
 			{
 				select_source_folderBrowserDialog.SelectedPath = source_folder_TextBox.Text;
@@ -122,7 +126,7 @@ namespace Stepper
 
 		private void destination_folder_chooser_button_Click(object sender, EventArgs e)
 		{
-			string default_folder = StepDeets.DefaultDestinationFolder;
+			string default_folder = config.DefaultDestinationFolder;
 			if ((Directory.Exists(destination_folder_TextBox.Text)))
 			{
 				select_destination_folderBrowserDialog.SelectedPath = destination_folder_TextBox.Text;
@@ -653,6 +657,7 @@ namespace Stepper
 		{
 			destination_folder_text_changed = true;
 		}
+
 		private void intro_continue_button_Click(object sender, EventArgs e)
 		{
 			if (first_dance_style != null)
@@ -661,9 +666,23 @@ namespace Stepper
 			}
 		}
 
+		private void load_config_button_Click(object sender, EventArgs e)
+		{
+			Config.Load();
+			destination_folder_TextBox.Text = config.DefaultDestinationFolder;
+			source_folder_TextBox.Text = config.DefaultSourceFolder;
+		}
+
 		private void destination_back_button_Click(object sender, EventArgs e)
 		{
 			tabControl1.SelectedTab = source_folder_tabPage;
+		}
+
+		private void save_config_button_Click(object sender, EventArgs e)
+		{
+			config.DefaultDestinationFolder = destination_folder_TextBox.Text;
+			config.DefaultSourceFolder = source_folder_TextBox.Text;
+			Config.Save();
 		}
 
 		private void source_folder_back_button_Click(object sender, EventArgs e)
@@ -703,11 +722,17 @@ namespace Stepper
 				{
 					destination_folder_text_changed = false;
 				}
-				destination_flowLayoutPanel.Enabled = false;
+				destination_Label.Enabled = false;
+				destination_folder_TextBox.Enabled = false;
+				destination_folder_chooser_button.Enabled = false;
+				destination_get_info_button.Enabled = false;
 			}
 			else
 			{
-				destination_flowLayoutPanel.Enabled = false;
+				destination_Label.Enabled = true;
+				destination_folder_TextBox.Enabled = true;
+				destination_folder_chooser_button.Enabled = true;
+				destination_get_info_button.Enabled = true;
 				destination_folder_text_changed = true;
 			}
 		}
@@ -718,6 +743,8 @@ namespace Stepper
 			this.instructions_tabPage = new TabPage();
 			this.intro_textBox = new TextBox();
 			this.intro_continue_button = new Button();
+			this.load_config_button = new Button();
+			this.intro_config_continue_flowLayoutPanel = new FlowLayoutPanel();
 
 			this.source_folder_tabPage = new TabPage();
 			this.select_source_folderBrowserDialog = new FolderBrowserDialog();
@@ -769,13 +796,33 @@ namespace Stepper
 			this.instructions_tabPage.Text = "Instructions";
 			this.instructions_tabPage.Size = tabControl1.Size;
 			// 
+			// intro_config_continue_flowLayoutPanel
+			// 
+			this.intro_config_continue_flowLayoutPanel.Location = new Point(3, 639);
+			this.intro_config_continue_flowLayoutPanel.Margin = new Padding(3);
+			this.intro_config_continue_flowLayoutPanel.Size = new Size(instructions_tabPage.Width - 20, 35);
+			// 
 			// intro_continue_button
 			// 
 			this.intro_continue_button.BackColor = Color.YellowGreen;
-			this.intro_continue_button.Location = new Point(3, 639);
-			this.intro_continue_button.Size = new Size(instructions_tabPage.Width - 20, 30);
+		//	this.intro_continue_button.Location = new Point(3, 639);
+			this.intro_continue_button.Size = new Size((intro_config_continue_flowLayoutPanel.Width - 20) / 2, 30);
 			this.intro_continue_button.Text = "Continue";
 			this.intro_continue_button.Click += new System.EventHandler(this.intro_continue_button_Click);
+			// 
+			// load_config_button
+			// 
+			this.load_config_button.BackColor = Color.YellowGreen;
+		//	this.intro_continue_button.Location = new Point(3, 639);
+			this.load_config_button.Size = new Size((intro_config_continue_flowLayoutPanel.Width - 20) / 2, 30);
+			this.load_config_button.Text = "Load Configuration";
+			this.load_config_button.Click += new System.EventHandler(this.load_config_button_Click);
+			// 
+			// intro_config_continue_flowLayoutPanel
+			// 
+			this.intro_config_continue_flowLayoutPanel.Location = new Point(3, 632);
+			this.intro_config_continue_flowLayoutPanel.Margin = new Padding(3);
+			this.intro_config_continue_flowLayoutPanel.Size = new Size(instructions_tabPage.Width - 20, 35);
 			// 
 			// textBox_intro
 			// 
@@ -784,7 +831,7 @@ namespace Stepper
 			this.intro_textBox.Multiline = true;
 			this.intro_textBox.ReadOnly = true;
 			//this.textBox_intro.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.intro_textBox.Size = new System.Drawing.Size(instructions_tabPage.Width - 20, instructions_tabPage.Height - 60);
+			this.intro_textBox.Size = new System.Drawing.Size(instructions_tabPage.Width - 20, instructions_tabPage.Height - 70);
 			// 
 			// source_folder_tabPage
 			// 
@@ -808,14 +855,14 @@ namespace Stepper
 			// source_get_info_button
 			// 
 			this.source_get_info_button.BackColor = Color.YellowGreen;
-			this.source_get_info_button.Size = new Size(source_flowLayoutPanel.Width / 6, 30);
+			this.source_get_info_button.Size = new Size(source_flowLayoutPanel.Width / 7, 30);
 			this.source_get_info_button.Text = "Get Info";
 			this.source_get_info_button.Click += new System.EventHandler(this.source_get_info_button_Click);
 			// 
 			// source_folder_chooser_button
 			// 
 			this.source_folder_chooser_button.BackColor = Color.LightBlue;
-			this.source_folder_chooser_button.Size = new Size(source_flowLayoutPanel.Width / 6, 30);
+			this.source_folder_chooser_button.Size = new Size(source_flowLayoutPanel.Width / 7, 30);
 			this.source_folder_chooser_button.Text = "Change folder";
 			this.source_folder_chooser_button.Click += new System.EventHandler(this.source_folder_chooser_button_Click);
 			// 
@@ -823,7 +870,7 @@ namespace Stepper
 			// 
 			this.source_folder_TextBox.Font = new Font("Microsoft Sans Serif", 12F);
 			this.source_folder_TextBox.Size = new Size(303, 30);
-			this.source_folder_TextBox.Text = "C:\\Games\\StepMania 5\\Songs\\Test";
+			this.source_folder_TextBox.Text = config.DefaultSourceFolder;
 			this.source_folder_TextBox.TextChanged += new System.EventHandler(this.source_folder_TextBox_TextChanged);
 			// 
 			// source_song_info_dgv
@@ -872,17 +919,18 @@ namespace Stepper
 			//
 			// destination_folder_same_checkbox
 			//
-			this.destination_folder_same_checkbox.Text = "Destination folder same as source folder";
-			this.destination_folder_same_checkbox.Size = new Size(400, 20);
+			this.destination_folder_same_checkbox.Text = "Same as source folder";
+			this.destination_folder_same_checkbox.Size = new Size(190, 20);
 			this.destination_folder_same_checkbox.Location = new Point(400, 3);
 			this.destination_folder_same_checkbox.Font = new Font("Microsoft Sans Serif", 12F);
 			this.destination_folder_same_checkbox.CheckedChanged += new System.EventHandler(this.destination_folder_same_checkbox_CheckedChanged);
 			//
 			// destination_flowLayoutPanel
 			//
-			this.destination_flowLayoutPanel.Location = new Point(3, 30);
+			this.destination_flowLayoutPanel.Location = new Point(3, 3);
 			this.destination_flowLayoutPanel.Margin = new Padding(3);
 			this.destination_flowLayoutPanel.Size = new Size(destination_tabPage.Width - 20, 35);
+
 			//
 			// destination_Label
 			//
@@ -894,14 +942,14 @@ namespace Stepper
 			// destination_get_info_button
 			// 
 			this.destination_get_info_button.BackColor = Color.YellowGreen;
-			this.destination_get_info_button.Size = new Size(source_flowLayoutPanel.Width / 9, 30);
+			this.destination_get_info_button.Size = new Size(destination_flowLayoutPanel.Width / 15, 30);
 			this.destination_get_info_button.Text = "Get Info";
 			this.destination_get_info_button.Click += new System.EventHandler(this.destination_get_info_button_Click);
 			// 
 			// destination_folder_chooser_button
 			// 
 			this.destination_folder_chooser_button.BackColor = Color.LightBlue;
-			this.destination_folder_chooser_button.Size = new Size(destination_flowLayoutPanel.Width / 9, 30);
+			this.destination_folder_chooser_button.Size = new Size(destination_flowLayoutPanel.Width / 12, 30);
 			this.destination_folder_chooser_button.Text = "Change folder";
 			this.destination_folder_chooser_button.Click += new System.EventHandler(this.destination_folder_chooser_button_Click);
 			// 
@@ -927,12 +975,13 @@ namespace Stepper
 			this.destination_song_info_dgv.AllowUserToResizeColumns = false;
 			this.destination_song_info_dgv.AllowUserToResizeRows = false;
 			this.destination_song_info_dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-			this.destination_song_info_dgv.Location = new Point(3, 70);
+			this.destination_song_info_dgv.Location = new Point(3, 40);
 			this.destination_song_info_dgv.ReadOnly = true;
 			this.destination_song_info_dgv.RowHeadersVisible = false;
 			this.destination_song_info_dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			this.destination_song_info_dgv.ShowEditingIcon = false;
-			this.destination_song_info_dgv.Size = new Size(destination_tabPage.Width - 18, destination_tabPage.Height - 160);
+			this.destination_song_info_dgv.Size = new Size(destination_tabPage.Width - 18, destination_tabPage.Height - 100);
+
 			//
 			// destination_prev_next_flowLayoutPanel
 			//
@@ -949,9 +998,10 @@ namespace Stepper
 			// save_config_button
 			//
 			this.close_button.BackColor = System.Drawing.Color.LightGray;
-			this.save_config_button.Size = new Size(destination_prev_next_flowLayoutPanel.Width / 3 - 8, 30);
+			this.save_config_button.Size = new Size(destination_prev_next_flowLayoutPanel.Width / 5 - 8, 30);
 			this.save_config_button.Text = "Save Configuration";
-			this.save_config_button.Enabled = false;
+			this.save_config_button.Click += new System.EventHandler(this.save_config_button_Click);
+
 			// 
 			// close_button
 			// 
@@ -962,30 +1012,36 @@ namespace Stepper
 
 			// put it all together
 			this.source_folder_tabPage.Controls.Add(this.source_flowLayoutPanel);
-			this.source_flowLayoutPanel.Controls.Add(this.source_Label);
 			this.source_flowLayoutPanel.Controls.Add(this.source_folder_TextBox);
+			this.source_flowLayoutPanel.Controls.Add(this.source_Label);
 			this.source_flowLayoutPanel.Controls.Add(this.source_folder_chooser_button);
 			this.source_flowLayoutPanel.Controls.Add(this.source_get_info_button);
+		//	this.source_flowLayoutPanel.Controls.Add(this.overwrite_stepfiles_button);
+
 			this.source_folder_tabPage.Controls.Add(this.source_song_info_dgv);
 			this.source_prev_next_flowLayoutPanel.Controls.Add(this.source_folder_back_button);
 			this.source_prev_next_flowLayoutPanel.Controls.Add(this.source_next_button);
 			this.source_folder_tabPage.Controls.Add(this.source_prev_next_flowLayoutPanel);
 
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_Label);
+			this.destination_flowLayoutPanel.Controls.Add(this.destination_folder_same_checkbox);
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_folder_TextBox);
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_folder_chooser_button);
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_get_info_button);
 			this.destination_tabPage.Controls.Add(this.destination_flowLayoutPanel);
-			this.destination_tabPage.Controls.Add(this.destination_folder_same_checkbox);
+	//		this.destination_tabPage.Controls.Add(this.destination_folder_same_checkbox);
 			this.destination_tabPage.Controls.Add(this.destination_song_info_dgv);
-			this.destination_tabPage.Controls.Add(this.overwrite_stepfiles_button);
+		//	this.destination_tabPage.Controls.Add(this.overwrite_stepfiles_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.destination_back_button);
+			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.overwrite_stepfiles_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.save_config_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.close_button);
 			this.destination_tabPage.Controls.Add(this.destination_prev_next_flowLayoutPanel);
 
 			this.instructions_tabPage.Controls.Add(this.intro_textBox);
-			this.instructions_tabPage.Controls.Add(this.intro_continue_button);
+			this.instructions_tabPage.Controls.Add(this.intro_config_continue_flowLayoutPanel);
+			this.intro_config_continue_flowLayoutPanel.Controls.Add(this.load_config_button);
+			this.intro_config_continue_flowLayoutPanel.Controls.Add(this.intro_continue_button);
 			this.tabControl1.Controls.Add(this.instructions_tabPage);
 			this.Controls.Add(this.tabControl1);
 

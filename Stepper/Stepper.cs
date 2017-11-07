@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing.Drawing2D;
+using System.Xml.Serialization;
+using System.IO;
 
 
 namespace Stepper
 {
 	public class Stepper : Form
 	{
-		private Config config = Config.Instance;
+		//	private Config config = Config.Instance;
+		private Config config;
 
 		private TabControl tabControl1;
 		private TabPage instructions_tabPage;
@@ -69,12 +72,13 @@ namespace Stepper
 
 		public Stepper()
 		{
+			config = new Config();
 			InitializeComponent();
 			int i = 0;
 			foreach (string style in StepDeets.DanceStyles)
 			{
 				dstp[i] = new DanceStyleTabPage(tabControl1, style, StepDeets.beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
-				dstp[i].setNoteSetParametersList(StepDeets.default_params[style]);
+				dstp[i].getNoteSetParametersList(config.default_params[style]);
 				tabControl1.Controls.Add(dstp[i]);
 				if (i == 0)
 				{
@@ -315,7 +319,7 @@ namespace Stepper
 					noteset_list.Clear();
 					foreach (DanceStyleTabPage page in dstp)
 					{
-						foreach (NotesetParameters n in page.getNoteSetParametersList())
+						foreach (NotesetParameters n in page.setNoteSetParametersList())
 						{
 							Noteset note = new Noteset(n, s.type, s.num_measures, r);
 							note.generateSteps();
@@ -666,9 +670,27 @@ namespace Stepper
 			}
 		}
 
+		private void save_config()
+		{
+			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Create))
+			{
+				var XML = new XmlSerializer(typeof(Config));
+				XML.Serialize(stream, config);
+			}
+		}
+
+		public void load_config()
+		{
+			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Open))
+			{
+				var XML = new XmlSerializer(typeof(Config));
+				config = (Config)XML.Deserialize(stream);
+			}
+		}
+
 		private void load_config_button_Click(object sender, EventArgs e)
 		{
-			Config.Load();
+			load_config();
 			destination_folder_TextBox.Text = config.DefaultDestinationFolder;
 			source_folder_TextBox.Text = config.DefaultSourceFolder;
 		}
@@ -680,9 +702,17 @@ namespace Stepper
 
 		private void save_config_button_Click(object sender, EventArgs e)
 		{
+			Dictionary<string, Dictionary<string, NotesetParameters>> parameters_to_save;
+			parameters_to_save = new Dictionary<string, Dictionary<string, NotesetParameters>>();
+
+			foreach (DanceStyleTabPage page in dstp)
+			{
+				parameters_to_save.Add(page.ds, page.setNoteSetParametersDictionary());
+			}
+			config.default_params = parameters_to_save;
 			config.DefaultDestinationFolder = destination_folder_TextBox.Text;
 			config.DefaultSourceFolder = source_folder_TextBox.Text;
-			Config.Save();
+			save_config();
 		}
 
 		private void source_folder_back_button_Click(object sender, EventArgs e)
@@ -709,7 +739,7 @@ namespace Stepper
 			{
 				MessageBox.Show("The folder name has changed or is invalid. Please choose a Stepmania song group folder and click \"Get info\" to update the song info table", "Click Get info");
 				tabControl1.SelectedTab = this.source_folder_tabPage;
-			}			
+			}
 		}
 
 		private void destination_folder_same_checkbox_CheckedChanged(object sender, EventArgs e)
@@ -805,7 +835,7 @@ namespace Stepper
 			// intro_continue_button
 			// 
 			this.intro_continue_button.BackColor = Color.YellowGreen;
-		//	this.intro_continue_button.Location = new Point(3, 639);
+			//	this.intro_continue_button.Location = new Point(3, 639);
 			this.intro_continue_button.Size = new Size((intro_config_continue_flowLayoutPanel.Width - 20) / 2, 30);
 			this.intro_continue_button.Text = "Continue";
 			this.intro_continue_button.Click += new System.EventHandler(this.intro_continue_button_Click);
@@ -813,7 +843,7 @@ namespace Stepper
 			// load_config_button
 			// 
 			this.load_config_button.BackColor = Color.YellowGreen;
-		//	this.intro_continue_button.Location = new Point(3, 639);
+			//	this.intro_continue_button.Location = new Point(3, 639);
 			this.load_config_button.Size = new Size((intro_config_continue_flowLayoutPanel.Width - 20) / 2, 30);
 			this.load_config_button.Text = "Load Configuration";
 			this.load_config_button.Click += new System.EventHandler(this.load_config_button_Click);
@@ -915,7 +945,7 @@ namespace Stepper
 			this.destination_tabPage.Padding = new Padding(3);
 			this.destination_tabPage.Size = tabControl1.Size;
 			this.destination_tabPage.Text = "Write Stepfiles";
-		//	this.destination_tabPage += 
+			//	this.destination_tabPage += 
 			//
 			// destination_folder_same_checkbox
 			//
@@ -1016,7 +1046,7 @@ namespace Stepper
 			this.source_flowLayoutPanel.Controls.Add(this.source_Label);
 			this.source_flowLayoutPanel.Controls.Add(this.source_folder_chooser_button);
 			this.source_flowLayoutPanel.Controls.Add(this.source_get_info_button);
-		//	this.source_flowLayoutPanel.Controls.Add(this.overwrite_stepfiles_button);
+			//	this.source_flowLayoutPanel.Controls.Add(this.overwrite_stepfiles_button);
 
 			this.source_folder_tabPage.Controls.Add(this.source_song_info_dgv);
 			this.source_prev_next_flowLayoutPanel.Controls.Add(this.source_folder_back_button);
@@ -1029,9 +1059,9 @@ namespace Stepper
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_folder_chooser_button);
 			this.destination_flowLayoutPanel.Controls.Add(this.destination_get_info_button);
 			this.destination_tabPage.Controls.Add(this.destination_flowLayoutPanel);
-	//		this.destination_tabPage.Controls.Add(this.destination_folder_same_checkbox);
+			//		this.destination_tabPage.Controls.Add(this.destination_folder_same_checkbox);
 			this.destination_tabPage.Controls.Add(this.destination_song_info_dgv);
-		//	this.destination_tabPage.Controls.Add(this.overwrite_stepfiles_button);
+			//	this.destination_tabPage.Controls.Add(this.overwrite_stepfiles_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.destination_back_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.overwrite_stepfiles_button);
 			this.destination_prev_next_flowLayoutPanel.Controls.Add(this.save_config_button);

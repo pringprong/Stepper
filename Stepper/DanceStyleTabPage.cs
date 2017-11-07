@@ -22,6 +22,7 @@ namespace Stepper
 		private TabPage nextTabPage;
 		private TabControl parentControl;
 		private StepConfig stepconfig;
+		public string ds { get; private set; }
 
 		public DanceStyleTabPage(TabControl parent, string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
 		{
@@ -37,6 +38,7 @@ namespace Stepper
 			forward_button = new Button();
 			config_button = new Button();
 			stepconfig = new StepConfig(dance_style);
+			ds = dance_style;
 
 			// 
 			// nsp_panel
@@ -148,7 +150,7 @@ namespace Stepper
 			stepconfig.ShowDialog();
 		}
 
-		public NotesetParameters[] getNoteSetParametersList()
+		public NotesetParameters[] setNoteSetParametersList()
 		{
 			List<NotesetParameters> l = new List<NotesetParameters>();
 			foreach (NotesetPanel np in nsp_list) {
@@ -157,7 +159,7 @@ namespace Stepper
 			return l.ToArray();
 		}
 
-		public void setNoteSetParametersList(Dictionary<string,NotesetParameters> npd)
+		public void getNoteSetParametersList(Dictionary<string,NotesetParameters> npd)
 		{
 			int i = 0;
 			foreach (NotesetPanel np in nsp_list)
@@ -167,6 +169,16 @@ namespace Stepper
 				np.setNotesetParameters(nsp);
 				i++;
 			}
+		}
+
+		public Dictionary<string, NotesetParameters> setNoteSetParametersDictionary()
+		{
+			Dictionary<string, NotesetParameters> this_page_params = new Dictionary<string, NotesetParameters>();
+			foreach (NotesetPanel np in nsp_list)
+			{
+				this_page_params.Add(np.getLevel(), np.getNotesetParameters());
+			}
+			return this_page_params;
 		}
 
 		public void setPrev(string label, TabPage tp)

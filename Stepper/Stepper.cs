@@ -11,14 +11,14 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing.Drawing2D;
 using System.Xml.Serialization;
-using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO.Compression;
 
 
 namespace Stepper
 {
 	public class Stepper : Form
 	{
-		//	private Config config = Config.Instance;
 		private Config config;
 
 		private TabControl tabControl1;
@@ -670,29 +670,56 @@ namespace Stepper
 			}
 		}
 
-		private void save_config()
+		void serialize_config<Config>(FileStream stream)
 		{
-			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Create))
+			var formatter = new BinaryFormatter();
+			try
 			{
-				var XML = new XmlSerializer(typeof(Config));
-				XML.Serialize(stream, config);
+				formatter.Serialize(stream, config);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Failed to serialize. Reason: " + e.Message);
+				throw;
+			}
+			finally
+			{
+				stream.Close();
 			}
 		}
 
-		public void load_config()
+		public Config deserialize_config<Config>(FileStream stream)
 		{
-			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Open))
+			var formatter = new BinaryFormatter();
+			Config temp_config;
+			try
 			{
-				var XML = new XmlSerializer(typeof(Config));
-				config = (Config)XML.Deserialize(stream);
+				temp_config = (Config)formatter.Deserialize(stream);
 			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Failed to deserialize. Reason: " + e.Message);
+				throw;
+			}
+			finally
+			{
+				stream.Close();
+			}
+			return temp_config;
 		}
 
 		private void load_config_button_Click(object sender, EventArgs e)
 		{
-			load_config();
+			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Open);
+			config = deserialize_config<Config>(stream);
 			destination_folder_TextBox.Text = config.DefaultDestinationFolder;
 			source_folder_TextBox.Text = config.DefaultSourceFolder;
+			int i = 0;
+			foreach (string style in StepDeets.DanceStyles)
+			{
+				dstp[i].getNoteSetParametersList(config.default_params[style]);
+				i++;
+			}
 		}
 
 		private void destination_back_button_Click(object sender, EventArgs e)
@@ -712,7 +739,8 @@ namespace Stepper
 			config.default_params = parameters_to_save;
 			config.DefaultDestinationFolder = destination_folder_TextBox.Text;
 			config.DefaultSourceFolder = source_folder_TextBox.Text;
-			save_config();
+			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Create);
+			serialize_config<Config>(stream);
 		}
 
 		private void source_folder_back_button_Click(object sender, EventArgs e)

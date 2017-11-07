@@ -21,7 +21,6 @@ namespace Stepper
 
 		public Config()
 		{		
-		//private Config() {
 			DefaultSourceFolder = "C:\\Games\\StepMania 5\\Songs\\Test";
 			DefaultDestinationFolder = "C:\\Games\\StepMania 5\\Songs\\Test";
 			default_params = new Dictionary<string, Dictionary<string, NotesetParameters>> {
@@ -55,42 +54,5 @@ namespace Stepper
 				} },
 			};
 		}
-
-	/*	public static Config Instance
-		{
-			get
-			{
-				return config_instance;
-			}
-		} */
-
-//		public static void Save()
-	/*	public  void Save()
-		{
-			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Create))
-			{
-				var XML = new XmlSerializer(typeof(Config));
-		//		XML.Serialize(stream, config_instance);
-				XML.Serialize(stream, this);
-			}
-		}
-
-	//	public static void Load()
-		public  void Load()
-		{
-			Config temp_config;
-			using (var stream = new FileStream("C://Users//Public//Documents//xml.xml", FileMode.Open))
-			{
-				var XML = new XmlSerializer(typeof(Config));
-				//temp_config = (Config)XML.Deserialize(stream);
-				temp_config = (Config)XML.Deserialize(stream);
-			}
-			this = temp_config;
-			/*
-			config_instance.DefaultDestinationFolder = temp_config.DefaultDestinationFolder;
-			config_instance.DefaultSourceFolder = temp_config.DefaultSourceFolder;
-			config_instance.default_params = temp_config.default_params;
-			 * */
-	//	}
 	}
 }

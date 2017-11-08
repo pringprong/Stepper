@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Stepper
 {
-	[Serializable] public class Config
+	[Serializable] public class ConfigSettings
 	{
 
 		public string DefaultSourceFolder { get; set; }
@@ -20,7 +20,7 @@ namespace Stepper
 		public string F = StepDeets.F;
 
 
-		public Config()
+		public ConfigSettings()
 		{
 			DefaultSourceFolder = "C:\\Games\\StepMania 5\\Songs\\Test";
 			DefaultDestinationFolder = "C:\\Games\\StepMania 5\\Songs\\Test";

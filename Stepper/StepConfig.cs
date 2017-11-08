@@ -27,10 +27,12 @@ namespace Stepper
 		private SolidBrush graybrush;
 		private SolidBrush lightgraybrush;
 		private SolidBrush whitebrush;
+		private ConfigSettings config;
 
-		public StepConfig(String dc)
+		public StepConfig(String dc, ConfigSettings c)
 		{
 			dance_style = dc;
+			config = c;
 			InitializeComponent();
 		}
 
@@ -120,9 +122,10 @@ namespace Stepper
 			//
 			foreach (string type in StepDeets.StepTypes)
 			{
-				Dictionary<string, string[]> sg = StepDeets.getTempStepGrid(dance_style, type);
+				//Dictionary<string, string[]> sg = StepDeets.getTempStepGrid(dance_style, type);
+				Dictionary<string, string[]> sg = config.getTempStepGrid(dance_style, type);
 				StepConfigTabPage sctp = new StepConfigTabPage(dance_style, type, sg, step_subsets_tc.Width, step_subsets_tc.Height, 
-					blackpen, graypen, lightgraypen, blackbrush, graybrush, lightgraybrush, whitebrush);
+					blackpen, graypen, lightgraypen, blackbrush, graybrush, lightgraybrush, whitebrush, config);
 				sctpl.Add(sctp);
 				step_subsets_tc.Controls.Add(sctp);
 			}
@@ -173,6 +176,15 @@ namespace Stepper
 			lightgraybrush.Dispose();
 			whitebrush.Dispose();
 			base.Dispose(disposing);
+		}
+
+		public void set_config(ConfigSettings c)
+		{
+			config = c;
+			foreach (StepConfigTabPage sctp in sctpl)
+			{
+				sctp.set_config(c);
+			}
 		}
 	}
 }

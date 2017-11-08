@@ -72,8 +72,9 @@ namespace Stepper
 		private Pen redpen;
 		private Pen bluepen;
 		Random r;
+		ConfigSettings config;
 
-		public NotesetPanel(NotesetParameters np, int b, int m, Pen bla, Pen re, Pen blu, Random ra)
+		public NotesetPanel(NotesetParameters np, int b, int m, Pen bla, Pen re, Pen blu, Random ra, ConfigSettings c)
 		{
 			dance_style = np.dance_style;
 			sdlevel = np.dance_level;
@@ -83,6 +84,7 @@ namespace Stepper
 			redpen = re;
 			bluepen = blu;
 			r = ra;
+			config = c;
 			initialize();
 
 			alternate_foot.Checked = np.alternating_foot;
@@ -98,7 +100,7 @@ namespace Stepper
 			full8thStream.Checked = np.full8th;
 		}
 		
-		public NotesetPanel(string ds, string StepDeetslevel, int beats, int measures, Pen black, Pen red, Pen blue, Random random)
+		public NotesetPanel(string ds, string StepDeetslevel, int beats, int measures, Pen black, Pen red, Pen blue, Random random, ConfigSettings c)
 		{
 			dance_style = ds;
 			sdlevel = StepDeetslevel;
@@ -108,6 +110,7 @@ namespace Stepper
 			redpen = red;
 			bluepen = blue;
 			r = random;
+			config = c;
 			initialize();
 		}
 
@@ -684,7 +687,7 @@ namespace Stepper
 			NotesetParameters np = new NotesetParameters(dance_style, sdlevel, alternate_foot.Checked, arrow_repeat.Checked, (int)step_fill_nud.Value,
 				(int)on_beat_nud.Value, (int)jumps_nud.Value, (int)half_beat_nud.Value, triples_on_1_only.Checked, quintuples_on_1_only.Checked, 
 				triple_type_trackbar.Value, quintuple_type_trackbar.Value, full8thStream.Checked);
-			Noteset sample_noteset = new Noteset(np, StepDeets.SM, measures_per_sample, r);
+			Noteset sample_noteset = new Noteset(np, StepDeets.SM, measures_per_sample, r, config);
 			sample_noteset.generateSteps();
 			char[] f = sample_noteset.getFeet();
 			string[] s = sample_noteset.getSteps();

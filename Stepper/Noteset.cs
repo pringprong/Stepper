@@ -19,19 +19,21 @@ namespace Stepper
         char[] feet;
         string[] steps;
         string[] foot_laststep;
+		ConfigSettings config;
 
         public Noteset()
         {
 
         }
 
-		public Noteset(NotesetParameters notesetparams, string type, int nummeasures, Random random)
+		public Noteset(NotesetParameters notesetparams, string type, int nummeasures, Random random, ConfigSettings c)
 		{
 			np = notesetparams;
 			file_type = type;
 			num_measures = nummeasures;
 			numBeats = num_measures * StepDeets.beats_per_measure;
 			r = random;
+			c = config;
 
 			difficulty = 1;
 			if (np.dance_level.Equals(StepDeets.Novice))
@@ -108,7 +110,7 @@ namespace Stepper
 			foot_laststep = StepDeets.getInitialStep(np.dance_style);
 			for (int i = 0; i < num_measures; i++)
             {
-                Measure m = new Measure(np, r);
+                Measure m = new Measure(np, r, config);
                 foot_laststep = m.generateSteps(foot_laststep);
                 measures[i] = m;
                 char[] thisfoot = m.getFeet();

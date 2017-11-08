@@ -18,17 +18,18 @@ namespace Stepper
 		string[] leftsteps;
 		string[] rightsteps;
 		bool fromJump;
+		ConfigSettings config;
 
 		public Measure()
 		{
 
 		}
 
-		public Measure(NotesetParameters notesetparams, Random random)
+		public Measure(NotesetParameters notesetparams, Random random, ConfigSettings c)
 		{
 			np = notesetparams;
 			r = random;
-			r = random;
+			config = c;
 			arrows_per_measure = StepDeets.beats_per_measure * 2;
 		}
 
@@ -71,11 +72,11 @@ namespace Stepper
 			for (int i = 0; i < arrows_per_measure; i++)
 			{
 				// set initial options for this step
-				leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, laststep);
-				rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, laststep);
-				jumpsteps = StepDeets.getStepList(np.dance_style, StepDeets.Jump, laststep);
-				singlesteps = StepDeets.getStepList(np.dance_style, StepDeets.Single, laststep);
-				fromJump = StepDeets.fromJump(np.dance_style, laststep);
+				leftsteps = config.getStepList(np.dance_style, StepDeets.Left, laststep);
+				rightsteps = config.getStepList(np.dance_style, StepDeets.Right, laststep);
+				jumpsteps = config.getStepList(np.dance_style, StepDeets.Jump, laststep);
+				singlesteps = config.getStepList(np.dance_style, StepDeets.Single, laststep);
+				fromJump = config.fromJump(np.dance_style, laststep);
 
 				int rStepFill = r.Next(0, 100);
 				if ( // decide if there will be an arrow here at all
@@ -112,7 +113,7 @@ namespace Stepper
 								steps[i + 4] = step;
 								feet[i + 4] = StepDeets.R;
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -139,7 +140,7 @@ namespace Stepper
 								steps[i + 4] = step;
 								feet[i + 4] = StepDeets.L;
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -167,7 +168,7 @@ namespace Stepper
 								steps[i + 2] = step;
 								feet[i + 2] = StepDeets.R;
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -178,7 +179,7 @@ namespace Stepper
 								steps[i + 3] = step;
 								feet[i + 3] = StepDeets.L;
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -207,7 +208,7 @@ namespace Stepper
 								steps[i + 2] = step;
 								feet[i + 2] = StepDeets.L;
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -218,7 +219,7 @@ namespace Stepper
 								steps[i + 3] = step;
 								feet[i + 3] = StepDeets.R;
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -248,7 +249,7 @@ namespace Stepper
 								feet[i] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -258,7 +259,7 @@ namespace Stepper
 								feet[i + 1] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -268,7 +269,7 @@ namespace Stepper
 								feet[i + 2] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -278,7 +279,7 @@ namespace Stepper
 								feet[i + 3] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -301,7 +302,7 @@ namespace Stepper
 								feet[i] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -311,7 +312,7 @@ namespace Stepper
 								feet[i + 1] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -321,7 +322,7 @@ namespace Stepper
 								feet[i + 2] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -331,7 +332,7 @@ namespace Stepper
 								feet[i + 3] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -366,7 +367,7 @@ namespace Stepper
 								steps[i + 2] = step;
 								feet[i + 2] = StepDeets.R;
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -388,7 +389,7 @@ namespace Stepper
 								steps[i + 2] = step;
 								feet[i + 2] = StepDeets.L;
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -412,7 +413,7 @@ namespace Stepper
 								feet[i] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -422,7 +423,7 @@ namespace Stepper
 								feet[i + 1] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -445,7 +446,7 @@ namespace Stepper
 								feet[i] = StepDeets.L;
 
 								// reset rightsteps because the set of appropriate options might have changed (for Dance Double)
-								rightsteps = StepDeets.getStepList(np.dance_style, StepDeets.Right, step);
+								rightsteps = config.getStepList(np.dance_style, StepDeets.Right, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{
@@ -455,7 +456,7 @@ namespace Stepper
 								feet[i + 1] = StepDeets.R;
 
 								// reset leftsteps because the set of appropriate options might have changed (for Dance Double)
-								leftsteps = StepDeets.getStepList(np.dance_style, StepDeets.Left, step);
+								leftsteps = config.getStepList(np.dance_style, StepDeets.Left, step);
 								laststep = step;
 								while (step.Equals(laststep))
 								{

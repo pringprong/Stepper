@@ -15,7 +15,7 @@ namespace Stepper
 		DataGridView dgv;
 		private string dance_style;
 		private string foot;
-		Dictionary<string, string[]> stepgrid;
+		private Dictionary<string, string[]> stepgrid;
 		public int num_rows { get; private set; }
 		public int num_columns { get; private set; }
 		private Pen blackpen;
@@ -25,9 +25,10 @@ namespace Stepper
 		private SolidBrush graybrush;
 		private SolidBrush lightgraybrush;
 		private SolidBrush whitebrush;
+		private ConfigSettings config;
 
 		public StepConfigTabPage(string ds, string f, Dictionary<string, string[]> sg, int w, int h, 
-			Pen bp, Pen gp, Pen lgp, SolidBrush bb, SolidBrush gb, SolidBrush lgb, SolidBrush wb)
+			Pen bp, Pen gp, Pen lgp, SolidBrush bb, SolidBrush gb, SolidBrush lgb, SolidBrush wb, ConfigSettings c)
 		{
 			dance_style = ds;
 			foot = f;
@@ -43,6 +44,7 @@ namespace Stepper
 			stepgrid = sg;
 			num_rows = stepgrid.Keys.Count();
 			num_columns = stepgrid[StepDeets.Base].Count() + 1;
+			config = c;
 			InitializeComponent();
 			fill();
 		}
@@ -280,13 +282,14 @@ namespace Stepper
 				}
 			}
 			// then write the temp step dictionary to the current running step dictionary
-			StepDeets.setStepList(dance_style, foot);
+			config.setStepList(dance_style, foot);
 		}
 
 		public void resetSettings()
 		{
 			// write the default step dictionary to the temp step dictionary
-			StepDeets.resetStepList(dance_style, foot);
+			//StepDeets.resetStepList(dance_style, foot);
+			config.resetStepList(dance_style, foot);
 			// then read the temp step dictionary into the datagridview
 			fill();
 			dgv.Refresh();
@@ -295,8 +298,17 @@ namespace Stepper
 		public void cancelSettings()
 		{
 			// write the current running step dictionary back over the temp step dictionary
-			StepDeets.cancelTempStepList(dance_style, foot);
+			//StepDeets.cancelTempStepList(dance_style, foot);
+			config.cancelTempStepList(dance_style, foot);
 			// then read the temp step dictionary to the datagridview
+			fill();
+			dgv.Refresh();
+		}
+
+		public void set_config(ConfigSettings c)
+		{
+			stepgrid = c.getTempStepGrid(dance_style, foot);
+			config = c;
 			fill();
 			dgv.Refresh();
 		}

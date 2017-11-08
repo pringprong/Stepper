@@ -19,7 +19,7 @@ namespace Stepper
 {
 	public class Stepper : Form
 	{
-		private Config config;
+		private ConfigSettings config;
 
 		private TabControl tabControl1;
 		private TabPage instructions_tabPage;
@@ -72,12 +72,12 @@ namespace Stepper
 
 		public Stepper()
 		{
-			config = new Config();
+			config = new ConfigSettings();
 			InitializeComponent();
 			int i = 0;
 			foreach (string style in StepDeets.DanceStyles)
 			{
-				dstp[i] = new DanceStyleTabPage(tabControl1, style, StepDeets.beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r);
+				dstp[i] = new DanceStyleTabPage(tabControl1, style, StepDeets.beats_per_measure, measures_per_sample, blackpen, redpen, bluepen, r, config);
 				dstp[i].getNoteSetParametersList(config.default_params[style]);
 				tabControl1.Controls.Add(dstp[i]);
 				if (i == 0)
@@ -321,7 +321,7 @@ namespace Stepper
 					{
 						foreach (NotesetParameters n in page.setNoteSetParametersList())
 						{
-							Noteset note = new Noteset(n, s.type, s.num_measures, r);
+							Noteset note = new Noteset(n, s.type, s.num_measures, r, config);
 							note.generateSteps();
 							noteset_list.Add(note);
 						}
@@ -711,13 +711,14 @@ namespace Stepper
 		private void load_config_button_Click(object sender, EventArgs e)
 		{
 			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Open);
-			config = deserialize_config<Config>(stream);
+			config = deserialize_config<ConfigSettings>(stream);
 			destination_folder_TextBox.Text = config.DefaultDestinationFolder;
 			source_folder_TextBox.Text = config.DefaultSourceFolder;
 			int i = 0;
 			foreach (string style in StepDeets.DanceStyles)
 			{
 				dstp[i].getNoteSetParametersList(config.default_params[style]);
+				dstp[i].set_config(config);
 				i++;
 			}
 		}
@@ -740,7 +741,7 @@ namespace Stepper
 			config.DefaultDestinationFolder = destination_folder_TextBox.Text;
 			config.DefaultSourceFolder = source_folder_TextBox.Text;
 			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Create);
-			serialize_config<Config>(stream);
+			serialize_config<ConfigSettings>(stream);
 		}
 
 		private void source_folder_back_button_Click(object sender, EventArgs e)

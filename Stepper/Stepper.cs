@@ -92,7 +92,7 @@ namespace Stepper
 					dstp[i - 1].setNext(StepDeets.stepTitle(style), dstp[i]);
 					dstp[i].setPrev(StepDeets.stepTitle(StepDeets.DanceStyles[i - 1]), dstp[i - 1]);
 				}
-				if (i == (StepDeets.DanceStyles.Count() - 1)) // last dance style: set next pointer of this tab to "write stepfiles" page 
+				if (i == (StepDeets.DanceStyles.Count() - 1)) // last dance style: set next pointer of this tab to "source folder" page 
 				{
 					dstp[i].setNext("Choose Source Folder", source_folder_tabPage);
 					last_dance_style = dstp[i];

@@ -27,6 +27,7 @@ namespace Stepper
 
 		public DanceStyleTabPage(TabControl parent, string dance_style, int beats, int measures, Pen black, Pen red, Pen blue, Random random, ConfigSettings c)
 		{
+			config = c;
 			parentControl = parent;
 			nsp_list = new List<NotesetPanel>();
 			foreach (string level in StepDeets.Levels)
@@ -38,7 +39,6 @@ namespace Stepper
 			bottom_panel = new FlowLayoutPanel();
 			forward_button = new Button();
 			config_button = new Button();
-			config = c;
 			stepconfig = new StepConfig(dance_style, config);
 			ds = dance_style;
 
@@ -151,6 +151,10 @@ namespace Stepper
 		{
 			config = c;
 			stepconfig.set_config(c);
+			foreach (NotesetPanel np in nsp_list)
+			{
+				np.setConfig(c);
+			}
 		}
 
 		private void config_button_Click(object sender, EventArgs e)

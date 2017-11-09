@@ -114,6 +114,11 @@ namespace Stepper
 			initialize();
 		}
 
+		public void setConfig(ConfigSettings c)
+		{
+			config = c;
+		}
+
 		public string getLevel()
 		{
 			return sdlevel;

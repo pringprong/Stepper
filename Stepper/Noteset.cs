@@ -33,7 +33,7 @@ namespace Stepper
 			num_measures = nummeasures;
 			numBeats = num_measures * StepDeets.beats_per_measure;
 			r = random;
-			c = config;
+			config = c;
 
 			difficulty = 1;
 			if (np.dance_level.Equals(StepDeets.Novice))

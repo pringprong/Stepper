@@ -710,16 +710,24 @@ namespace Stepper
 
 		private void load_config_button_Click(object sender, EventArgs e)
 		{
-			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Open);
-			config = deserialize_config<ConfigSettings>(stream);
-			destination_folder_TextBox.Text = config.DefaultDestinationFolder;
-			source_folder_TextBox.Text = config.DefaultSourceFolder;
-			int i = 0;
-			foreach (string style in StepDeets.DanceStyles)
+			OpenFileDialog ofd = new OpenFileDialog();
+			ofd.Filter = "Stepper files (*.stp)|*.stp|All files (*.*)|*.*";
+			ofd.FilterIndex = 1;
+
+			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
-				dstp[i].getNoteSetParametersList(config.default_params[style]);
-				dstp[i].set_config(config);
-				i++;
+				var stream = new FileStream(ofd.FileName, FileMode.Open);
+				config = deserialize_config<ConfigSettings>(stream);
+				stream.Close();
+				destination_folder_TextBox.Text = config.DefaultDestinationFolder;
+				source_folder_TextBox.Text = config.DefaultSourceFolder;
+				int i = 0;
+				foreach (string style in StepDeets.DanceStyles)
+				{
+					dstp[i].getNoteSetParametersList(config.default_params[style]);
+					dstp[i].set_config(config);
+					i++;
+				}
 			}
 		}
 
@@ -740,8 +748,20 @@ namespace Stepper
 			config.default_params = parameters_to_save;
 			config.DefaultDestinationFolder = destination_folder_TextBox.Text;
 			config.DefaultSourceFolder = source_folder_TextBox.Text;
-			var stream = new FileStream("C://Users//Public//Documents//config.binary", FileMode.Create);
-			serialize_config<ConfigSettings>(stream);
+			SaveFileDialog sfd = new SaveFileDialog();
+		//	sfd.InitialDirectory = @"C:\";
+			sfd.Title = "Save text Files";
+		//	sfd.CheckFileExists = true;
+			sfd.CheckPathExists = true;
+			sfd.DefaultExt = "stp";
+			sfd.Filter = "Stepper files (*.stp)|*.stp|All files (*.*)|*.*";
+			sfd.FilterIndex = 1;
+			sfd.RestoreDirectory = true;  
+			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				var stream = new FileStream(sfd.FileName, FileMode.Create);
+				serialize_config<ConfigSettings>(stream);
+			}
 		}
 
 		private void source_folder_back_button_Click(object sender, EventArgs e)
